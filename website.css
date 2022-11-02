@@ -1,5 +1,4 @@
 
-
 body{
   background-color: #ecf0f1;
   font-family: helvetica, arial, sans-serif;
@@ -15,4 +14,8 @@ header{
   position: fixed;
   top: 0;
   overflow: hidden;
+}
+
+#header {
+    font-size:20px;
 }

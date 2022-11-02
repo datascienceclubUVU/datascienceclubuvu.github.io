@@ -136,7 +136,7 @@ section{
 /* Sticky Header Style */ 
 /* ---------------------------------------- */ 
 body.sticky-header{
-  padding-top: 100px;
+  padding-top: 200px;
   header{
     height: 60px;
     background-color: rgba(52,152,219,.9);
@@ -144,4 +144,26 @@ body.sticky-header{
       @include scale(0);
     }
   }
+}
+
+.wrapperTutorials {
+    width: 1350px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    column-gap: 50px;
+    row-gap: 50px;
+    margin-left: 10%;
+}
+
+.item1 {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
 }

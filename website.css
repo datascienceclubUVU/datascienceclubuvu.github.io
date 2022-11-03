@@ -154,7 +154,7 @@ body.sticky-header{
 
 .grid-container {
     display: grid;
-    column-gap: 50px;
+    column-gap: 0px;
     row-gap: 50px;
     margin-left: 10%;
 }
@@ -162,6 +162,105 @@ body.sticky-header{
 .item1 {
     grid-column: 1;
     grid-row: 1;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item2 {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item3 {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item4 {
+    grid-column: 4;
+    grid-row: 1;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item5 {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item6 {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item7 {
+    grid-column: 3;
+    grid-row: 2;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item8 {
+    grid-column: 4;
+    grid-row: 2;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item9 {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item10 {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item11 {
+    grid-column: 3;
+    grid-row: 3;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.item12 {
+    grid-column: 4;
+    grid-row: 3;
     font-size: 20px;
     text-decoration: none;
     color: darkgreen;

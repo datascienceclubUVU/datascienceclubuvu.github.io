@@ -114,13 +114,48 @@
         </section>
         </div>
 
+                                                        <!-- MIN Function -->
 
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>MIN</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        The <b><i>MIN</i></b> function finds the smallest value in either a numerical or categorical column. For a categorical column, it will return the string that begins with the letter closest to "A". This function is used to find the range of values within numerical columns or compare categorical values.</p>
+        <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;SELECT state, <b>MIN(sales)</b> AS minSales, year<br>
+        &ensp;&ensp;&ensp;FROM dbo.sales<br>
+        &ensp;&ensp;&ensp;GROUP BY state, year<br>
+        &ensp;&ensp;&ensp;ORDER BY minSales DESC;
+        <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
+        <img style="margin-left:99px;" src="Images/minex.jpg">
+        </p><br>
+        </section>
+        </div>
+
+                                                    <!-- MAX Function -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>MAX</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        The <b><i>MAX</i></b> function finds the largest value in either a numerical or categorical column. For a categorical column, it will return the string that begins with the letter closest to "Z". This function is used to find the range of values within numerical columns or compare categorical values.</p>
+        <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;SELECT state, <b>MAX(sales)</b> AS maxSales, year<br>
+        &ensp;&ensp;&ensp;FROM dbo.sales<br>
+        &ensp;&ensp;&ensp;GROUP BY state, year<br>
+        &ensp;&ensp;&ensp;ORDER BY maxSales DESC;
+        <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
+        <img style="margin-left:99px;" src="Images/maxex.jpg">
+        </p><br>
+        </section>
+        </div>
 
                                                         <!-- Next Steps -->
     <div class="wrapperTutorials" style="width:1200px;">
         <section>
-        <h3 style="margin-left:99px;font-size:22px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">See? SQL isn't that complicated. Let's kick it up a notch a learn about some basic functions:<br>
-            <a href="Aggregates.html" style="text-decoration:none;color:black;font-weight:bolder;">- Aggregate Functions Tutorial  (Click here)</a>
+        <h3 style="margin-left:99px;font-size:22px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">Understanding aggregate functions is the first step to become a Data Analyst. The next step is to learn how to work with multiple tables and queries:<br>
+            <a href="Joins.html" style="text-decoration:none;color:black;font-weight:bolder;">- Joins and Unions Tutorial  (Click here)</a>
         </p>
         </section>
         </div>

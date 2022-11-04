@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="tutorials.css">
+<title>SQL Tutorials: Aggregate Functions</title>
 <header>
 <h1 style="text-align:center;">SQL Tutorials</h1>
     <div class="navbar">
@@ -57,35 +58,74 @@
       </p>
       <h3 style="margin-left:99px;"><b><u>Description</u></b></h3>
       <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        The most common aggregate functions used in SQL include SUM, AVG (Average), COUNT, MIN, and MAX. These are described in more detail below:
-      <h3 style="margin-left:99px;"><b>SUM</b></h3>
+        The most common aggregate functions used in SQL include SUM, COUNT AVG (Average), MIN, and MAX. These are described in more detail below:</p>
+    </div>
+
+                                                       <!-- SUM Function -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+      <h3 style="margin-left:99px;font-size:30px;"><b>SUM</b></h3>
       <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
         The <b><i>SUM</i></b> function is used to add together numerical values. This is used for comparing totals across groups (e.g., sales by state) and identifying anomalies in your data.</p>
-      <h4 style="margin-left:99px;"><b>Example</b></h4>
+      <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
       <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        &ensp;&ensp;&ensp;SELECT state, SUM(sales) grossSales  -- "grossSales" is an alias for the aggregate column<br>
+        &ensp;&ensp;&ensp;SELECT state, <b>SUM(sales)</b> AS grossSales, year  -- "grossSales" is an alias for the aggregate column<br>
         &ensp;&ensp;&ensp;FROM dbo.sales<br>
-        &ensp;&ensp;&ensp;WHERE state != 'Puerto Rico' -- The "!=" symbol means "not equal to"<br>
         &ensp;&ensp;&ensp;GROUP BY state<br>
         &ensp;&ensp;&ensp;ORDER BY grossSales DESC;
-        </p>
-        <h3 style="margin-left:99px;"><b>AVG (Average)</b></h3>
-      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        The <b><i>SUM</i></b> function is used to add together numerical values. This is used for comparing totals across groups (e.g., sales by state) and identifying anomalies in your data.</p>
-      <h4 style="margin-left:99px;"><b>Example</b></h4>
-      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        &ensp;&ensp;&ensp;SELECT state, SUM(sales) grossSales  -- "grossSales" is an alias for the aggregate column<br>
-        &ensp;&ensp;&ensp;FROM dbo.sales<br>
-        &ensp;&ensp;&ensp;WHERE state != 'Puerto Rico' -- The "!=" symbol means "not equal to"<br>
-        &ensp;&ensp;&ensp;GROUP BY state<br>
-        &ensp;&ensp;&ensp;ORDER BY grossSales DESC;
-        </p>
-        <h3 style="margin-left:99px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">See? SQL isn't that complicated. Let's kick it up a notch a learn about some basic functions:<br>
-            <a href="Aggregates.html" style="text-decoration:none;color:black;font-weight:bolder;">- Aggregate Functions Tutorial  (Click here)</a>
-        
-        </p>
-        </p>
-        </p>
+        <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
+        <img style="margin-left:99px;" src="Images/sumex.jpg">
+        </p><br>
     </section>
     </div>
+                                                        <!-- COUNT Function -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>COUNT</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            The <b><i>COUNT</i></b> function finds the number of rows included in the calculation. This is used for locating duplicates in your data and removing unnecessary values.</p>
+        <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            &ensp;&ensp;&ensp;SELECT state, <b>COUNT(sales)</b> AS numSales, year<br>
+            &ensp;&ensp;&ensp;FROM dbo.sales<br>
+            &ensp;&ensp;&ensp;GROUP BY state, year<br>
+            &ensp;&ensp;&ensp;ORDER BY numSales DESC;
+            <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
+            <img style="margin-left:99px;" src="Images/countex.jpg">
+            </p><br>
+        </section>
+        </div>
+
+                                                         <!-- AVG Function -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>AVG (Average)</b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        The <b><i>AVG (average)</i></b> function finds the total of all the numerical values and divides it by the count of the rows included. This is used for comparing trends across groups.</p>
+      <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;SELECT state, <b>AVG(sales)</b> AS avgSales, year<br>
+        &ensp;&ensp;&ensp;FROM dbo.sales<br>
+        &ensp;&ensp;&ensp;GROUP BY state, year<br>
+        &ensp;&ensp;&ensp;ORDER BY avgSales DESC;
+        <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
+        <img style="margin-left:99px;" src="Images/avgex.jpg">
+        </p><br>
+        </section>
+        </div>
+
+
+
+                                                        <!-- Next Steps -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:22px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">See? SQL isn't that complicated. Let's kick it up a notch a learn about some basic functions:<br>
+            <a href="Aggregates.html" style="text-decoration:none;color:black;font-weight:bolder;">- Aggregate Functions Tutorial  (Click here)</a>
+        </p>
+        </section>
+        </div>
+        </p>
+
+
+    
 </html>

@@ -68,7 +68,7 @@
     </p>
     </div>
 
-                                                       <!-- SUM Function -->
+                                                       <!-- Inner Join -->
     <div class="wrapperTutorials" style="width:1200px;">
         <section>
       <h3 style="margin-left:99px;font-size:30px;"><b>INNER JOIN</b></h3>
@@ -87,7 +87,7 @@
         </p><br>
     </section>
     </div>
-                                                        <!-- COUNT Function -->
+                                                        <!-- Left/Right Join -->
     <div class="wrapperTutorials" style="width:1200px;">
         <section>
         <h3 style="margin-left:99px;font-size:30px;"><b>LEFT/RIGHT JOIN</b></h3>
@@ -104,7 +104,7 @@
             <p style="text-align:justify;padding-right:0px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-bottom:0px;" class="item2">
                 &ensp;&ensp;&ensp;SELECT reportID, storeName, state, month, year, totalSales,<br>&ensp;&ensp;&ensp;foodSales, cleaningSales, clothingSales, stores.storeID<br>
                 &ensp;&ensp;&ensp;FROM salesReports AS reports<br>
-                &ensp;&ensp;&ensp;<b>LEFT JOIN</b> stores <b>ON</b> reports.storeID = stores.storeID 
+                &ensp;&ensp;&ensp;<b>RIGHT JOIN</b> stores <b>ON</b> reports.storeID = stores.storeID 
         </p>
     </p>
 
@@ -118,21 +118,21 @@
         </section>
         </div>
 
-                                                         <!-- AVG Function -->
+                                                         <!-- Full Join -->
     <div class="wrapperTutorials" style="width:1200px;">
-        <section>
+    <section>
         <h3 style="margin-left:99px;font-size:30px;"><b>FULL JOIN</b></h3>
-      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        The <b><i>AVG (average)</i></b> function finds the total of all the numerical values and divides it by the count of the rows included. This is used for comparing trends across groups.</p>
-      <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
-      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        &ensp;&ensp;&ensp;SELECT state, <b>AVG(sales)</b> AS avgSales, year<br>
-        &ensp;&ensp;&ensp;FROM dbo.sales<br>
-        &ensp;&ensp;&ensp;GROUP BY state, year<br>
-        &ensp;&ensp;&ensp;ORDER BY avgSales DESC;
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        The <b><i>FULL JOIN</i></b> operation is the least common type of join. With this operation, you return all of the rows from both tables stated in the JOIN clause.</p>
+        <img style="margin-left:99px;height:140px;" src="Images/fulljoin.jpg">
+        <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;SELECT reportID, storeName, state, month, year, totalSales, foodSales, cleaningSales, clothingSales, stores.storeID* <br>
+        &ensp;&ensp;&ensp;FROM salesReports AS reports<br>
+        &ensp;&ensp;&ensp;<b>FULL JOIN</b> stores <b>ON</b> reports.storeID = stores.storeID<br>
         <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
-        <img style="margin-left:99px;" src="Images/avgex.jpg">
-        </p><br>
+        <img style="margin-left:99px;" src="Images/rightjoinex.jpg">
+            </p><br>
         </section>
         </div>
 
@@ -142,33 +142,20 @@
         <section>
         <h3 style="margin-left:99px;font-size:30px;"><b>UNIONS</b></h3>
         <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        The <b><i>MIN</i></b> function finds the smallest value in either a numerical or categorical column. For a categorical column, it will return the string that begins with the letter closest to "A". This function is used to find the range of values within numerical columns or compare categorical values.</p>
+        <b><i>UNIONS</i></b> allow you to merge multiple queries together. There are two primary stipulations when it comes to unions: First, all queries must have the same number of columns. This allows the output table to maintain a consistent structure. Second, all columns in the same position must have the same data type. This is because it's impossible to have more than one data type assigned to a column.</p>
         <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
         <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        &ensp;&ensp;&ensp;SELECT state, <b>MIN(sales)</b> AS minSales, year<br>
-        &ensp;&ensp;&ensp;FROM dbo.sales<br>
-        &ensp;&ensp;&ensp;GROUP BY state, year<br>
-        &ensp;&ensp;&ensp;ORDER BY minSales DESC;
+        &ensp;&ensp;&ensp;SELECT reportID, stores.storeID, storeName, state, totalSales, foodSales, cleaningSales, clothingSales<br>
+        &ensp;&ensp;&ensp;FROM stores<br>
+        &ensp;&ensp;&ensp;JOIN salesReports reports ON stores.storeID = reports.storeID<br>
+        &ensp;&ensp;&ensp;WHERE state = 'Texas' AND totalSales < 10000<br>
+        &ensp;&ensp;&ensp;<b>UNION</b><br>
+        &ensp;&ensp;&ensp;SELECT reportID, stores.storeID, storeName, state, totalSales, foodSales, cleaningSales, clothingSales<br>
+        &ensp;&ensp;&ensp;FROM stores<br>
+        &ensp;&ensp;&ensp;JOIN salesReports reports ON stores.storeID = reports.storeID<br>
+        &ensp;&ensp;&ensp;WHERE state = 'California' AND totalSales < 20000
         <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
-        <img style="margin-left:99px;" src="Images/minex.jpg">
-        </p><br>
-        </section>
-        </div>
-
-                                                    <!-- MAX Function -->
-    <div class="wrapperTutorials" style="width:1200px;">
-        <section>
-        <h3 style="margin-left:99px;font-size:30px;"><b>MAX</b></h3>
-        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        The <b><i>MAX</i></b> function finds the largest value in either a numerical or categorical column. For a categorical column, it will return the string that begins with the letter closest to "Z". This function is used to find the range of values within numerical columns or compare categorical values.</p>
-        <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
-        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        &ensp;&ensp;&ensp;SELECT state, <b>MAX(sales)</b> AS maxSales, year<br>
-        &ensp;&ensp;&ensp;FROM dbo.sales<br>
-        &ensp;&ensp;&ensp;GROUP BY state, year<br>
-        &ensp;&ensp;&ensp;ORDER BY maxSales DESC;
-        <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
-        <img style="margin-left:99px;" src="Images/maxex.jpg">
+        <img style="margin-left:99px;" src="Images/unionsex.jpg">
         </p><br>
         </section>
         </div>
@@ -176,8 +163,8 @@
                                                         <!-- Next Steps -->
     <div class="wrapperTutorials" style="width:1200px;">
         <section>
-        <h3 style="margin-left:99px;font-size:22px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">Understanding aggregate functions is the first step to become a Data Analyst. The next step is to learn how to work with multiple tables and queries:<br>
-            <a href="Joins.html" style="text-decoration:none;color:black;font-weight:bolder;">- Joins and Unions Tutorial  (Click here)</a>
+        <h3 style="margin-left:99px;font-size:22px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">Working with multiple tables and queries gives you the opportunity to create complex queries and drive business value. Before we get into the more advanced section of this learning series, let's take a look at how we can better manage our databases:<br>
+            <a href="Constraints.html" style="text-decoration:none;color:black;font-weight:bolder;">- Constraints Tutorial  (Click here)</a>
         </p>
         </section>
         </div>

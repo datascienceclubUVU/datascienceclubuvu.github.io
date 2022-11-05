@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="tutorials.css">
+<title>SQL Tutorials: Constraints</title>
+<header>
+<h1 style="text-align:center;">SQL Tutorials</h1>
+    <div class="navbar">
+        <a href="/Tutorials/SQLTutorials.html">Return to Home</a>
+        <div class="dropdown" style="margin-left:80px;">
+            <button class="dropbtn" style="margin-left:80px;">Learning Paths
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:150px;margin-left:5.2%;">
+            <a href="DSBeginner.html">Data Science</a>
+            <a href="DSIntermediate.html">Data Engineering</a>
+            <a href="DSAdvanced.html">Software Engineering</a>
+            <a href="Projects.html">Data Analytics</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Challenges
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="max-width:190px;margin-left:4%;">
+            <a href="DEBeginner.html">Beginner</a>
+            <a href="DEIntermediate.html">Intermediate</a>
+            <a href="DEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Projects
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:170px;margin-left:5.2%;">
+            <a href="SEBeginner.html">Beginner</a>
+            <a href="SEIntermediate.html">Intermediate</a>
+            <a href="SEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Related Topics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:155px;margin-left:4.5%;">
+            <a href="DABeginner.html">Python</a>
+            <a href="DAIntermediate.html">NoSQL Databases</a>
+            <a href="DAAdvanced.html">Tableau</a>
+            <a href="Projects.html">Pandas</a>
+          </div>
+        </div>
+      </div>
+  </header>
+  <div class="wrapperTutorials" style="width:1200px;">
+    <section>
+      <h2><u>BEGINNER SQL: CONSTRAINTS</u></h2><br><br>
+      <h3 style="margin-left:99px;"><b><u>Introduction</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        Databases are powerful tools that can drive business value and prevent data loss. However, database objects can't determine when a logical error (such as whether or not you ment to delete data) occurs. To help with this, RDBMSs allow users to add rules, known as <b><i>CONSTRAINTS</i></b> to prevent mistakes and optimize query performance. In locally based RDBMSs, as opposed to cloud-based RDBSms, there are two types of object constraints: Table Constraints and Column Constraints.
+      </p>
+      </section>
+      </div>
+
+                                                       <!-- Table Constraints -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+      <h3 style="margin-left:99px;font-size:30px;"><b>TABLE CONSTRAINTS</b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        <b><i>TABLE CONSTRAINTS</i></b> allow you to place rules or limits on a database table to reduce errors, keep data consistent, and optimzie query performance. There are three primary types of table constraints:</p>
+        <ul style="margin-left:110px;">
+            <li style="line-height:30px;"><b>PRIMARY KEY</b> Constraint - This specifies the primary key of the table.</li>
+            <li style="line-height:30px;"><b>FOREIGN KEY</b> Constraint - This specifies the primary key and the table to reference. This column must be the same data type.</li>
+            <li style="line-height:30px;"><b>INDEX</b> Constraint - This specifies the column in which the index is based on. An <b><i>INDEX</i></b> is an external tool used to quickly look up rows in a large query.</li>
+        </ul>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">These constraints enable you to maintain order within your database objects and reduce the likelihood of redundancy and data quality errors. Indexes are very useful when your table is in excess of 10,000 rows. These will be discussed in a later tutorial.</p>
+      <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;CREATE TABLE salesReports (reportID INT <b>PRIMARY KEY</b>, totalSales INT, foodSales INT,<br> 
+        &ensp;&ensp;&ensp;cleaningSales INT, clothingSales INT, month VARCHAR(25), year INT,<br>
+        &ensp;&ensp;&ensp;storeID INT <b>FOREIGN KEY</b> REFERENCES stores (storeID);)<br><br>
+        &ensp;&ensp;&ensp;<b>CREATE INDEX</b> idx_storeID ON salesReports (reportID);
+        </p><br>
+    </section>
+    </div>
+                                                        <!-- Column Constraints -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>COLUMN CONSTRAINTS</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            <b><i>COLUMN CONSTRAINTS</i></b> allow you to place limits on the data inserted into your tables, rules for how data is presented, and compress certain data types to save space. There are four primary types of column constraints:
+            <ul style="margin-left:110px;">
+                <li style="line-height:30px;"><b>NOT NULL</b> Constraint - This forces the user to enter a value for the specified column.</li>
+                <li style="line-height:30px;"><b>IDENTITY</b> - Primarily used for primary keys, this auto-increments the column's values. This is only allowed for integer columns.</li>
+                <li style="line-height:30px;"><b>CHECK</b> Constraint - This limits the data that can be inserted into a column value to a list of options.</li>
+                <li style="line-height:30px;"><b>UNIQUE</b> Constraint - This forces the user to enter only unique valeus for each row in the column.</li>
+                <li style="line-height:30px;"><b>DEFAULT</b> Constraint - If there is not a NOT NULL constraint, this value sets a default value for any NULL values.</li>
+            </ul>
+        <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            &ensp;&ensp;&ensp;CREATE TABLE salesReports (reportID INT PRIMARY KEY <b>IDENTITY(1, 1)</b>, totalSales INT <b>NOT NULL</b>,<br>
+            &ensp;&ensp;&ensp;foodSales INT <b>DEFAULT</b> 0, cleaningSales INT, clothingSales INT,<br>
+            &ensp;&ensp;&ensp;month VARCHAR(25) <b>CHECK</b> (month IN('January', 'February', 'March', 'April', 'May', 'June',<br> 
+            &ensp;&ensp;&ensp;'July', 'August', 'September', 'October', 'November', 'December')), year INT,<br>
+            &ensp;&ensp;&ensp;storeID INT FOREIGN KEY REFERENCES stores (storeID);)<br><br>
+            </p>
+        </p>
+        </section>
+        </div>
+
+
+                                                        <!-- Next Steps -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:22px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">Congratulations! You made it to the end of the Beginner section of this learning series and are ready to move on to the Intermediate section:<br>
+            <a href="Subqueries.html" style="text-decoration:none;color:black;font-weight:bolder;">- Subqueries Tutorial  (Click here)</a>
+        </p>
+        </section>
+        </div>
+        </p>
+
+
+    
+</html>

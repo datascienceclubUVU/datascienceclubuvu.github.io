@@ -127,7 +127,7 @@
         </ul>
         <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
         <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        &ensp;&ensp;&ensp;SELECT reportID, storeName, totalSales, foodSales, cleaningSales, clothingSales<br>
+        &ensp;&ensp;&ensp;SELECT reportID, storeName, SUM(foodSales) foodSales<br>
         &ensp;&ensp;&ensp;FROM salesReports reports<br>
         &ensp;&ensp;&ensp;JOIN stores ON reports.storeID = stores.storeID<br>
         &ensp;&ensp;&ensp;WHERE storeName IN <b>(SELECT storeName FROM stores WHERE storeName IN('T-Mart', 'G-Mart', 'M-Mart'))</b>

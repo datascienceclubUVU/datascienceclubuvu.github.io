@@ -1,5 +1,4 @@
 if (yesBtn) {
-    <form>
-        <select></select>
-    </form>
+    question = "Would you like to provide feedback or request help?";
+    alert(question);
 }

@@ -133,6 +133,13 @@ section{
   @include box-shadow(0 1px 0 rgba(0,0,0,.2));
 }
 
+fieldset {
+  display: none;
+}
+
+.show_fieldset {
+  display: inline;
+}
 
 /* Sticky Header Style */ 
 /* ---------------------------------------- */ 

@@ -25,22 +25,45 @@
   <div class="wrapper">
     <section id='steezy'>
         
-      <p style="text-align:center;">Are You A Member of the Data Science Club?<br>
-        <form action="contactForm.js">
-        <input type="radio" name="membership" style="text-align:center;margin-left:42%;" value="Yes">Yes
-        <input type="radio" name="membership" value="No">No
-        </form>
-      </p>
-    </section>
+      <h1 style="text-align:center;color:black;">Contact Form</h1><br>
+      <h4>What Would You Like to Do?</h4>
 
-    <section>
-      <h2>What Do We Do?</h2>
-   
-    </section>
-
-    <section>
-      <h2>How Do I Join?</h2>
-
+      <input type="radio" onclick="showFieldset('fieldset_login', 'fieldset_register')">Provide Feedback
+      <input type="radio" onclick="showFieldset('fieldset_register', 'fieldset_login')">Ask Question
+      <br>
+      <br>
+      <form id="login" name="login">
+        <fieldset id="fieldset_login">
+          <p>
+            Are You A Member of the Data Science Club?<br>
+            <input type="radio" id="membership">Yes
+            <input type="radio" id="membership">No
+          </p>
+          <p>
+            Please Enter Your Feedback:<br>
+            <textarea name="feedback" cols="40" rows="5"></textarea>
+          </p>
+          <p>
+            <button name="button" id="button">Submit</button>
+            <input type="reset">
+          </p>
+        </fieldset>
+        <fieldset id="fieldset_register">
+            <p>
+                Are You A Member of the Data Science Club?<br>
+                <input type="radio" id="membership">Yes
+                <input type="radio" id="membership">No
+              </p>
+              <p>
+                What Is Your Question?:<br>
+                <textarea name="feedback" cols="40" rows="5"></textarea>
+              </p>
+              <p>
+                <button name="button" id="button">Submit</button>
+                <input type="reset">
+              </p>
+        </fieldset>
+      </form>
     </section>
   </div>
 </body>

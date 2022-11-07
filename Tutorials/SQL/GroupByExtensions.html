@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="tutorials.css">
+<title>SQL Tutorials: Group By Extensions</title>
+<header>
+<h1 style="text-align:center;">SQL Tutorials</h1>
+    <div class="navbar">
+        <a href="/Tutorials/SQLTutorials.html">Return to Home</a>
+        <div class="dropdown" style="margin-left:80px;">
+            <button class="dropbtn" style="margin-left:80px;">Learning Paths
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:150px;margin-left:5.2%;">
+            <a href="DSBeginner.html">Data Science</a>
+            <a href="DSIntermediate.html">Data Engineering</a>
+            <a href="DSAdvanced.html">Software Engineering</a>
+            <a href="Projects.html">Data Analytics</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Challenges
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="max-width:190px;margin-left:4%;">
+            <a href="DEBeginner.html">Beginner</a>
+            <a href="DEIntermediate.html">Intermediate</a>
+            <a href="DEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Projects
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:170px;margin-left:5.2%;">
+            <a href="SEBeginner.html">Beginner</a>
+            <a href="SEIntermediate.html">Intermediate</a>
+            <a href="SEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Related Topics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:155px;margin-left:4.5%;">
+            <a href="DABeginner.html">Python</a>
+            <a href="DAIntermediate.html">NoSQL Databases</a>
+            <a href="DAAdvanced.html">Tableau</a>
+            <a href="Projects.html">Pandas</a>
+          </div>
+        </div>
+      </div>
+  </header>
+  <div class="wrapperTutorials" style="width:1200px;">
+    <section>
+      <h2><u>INTERMEDIATE SQL: Group By Extensions</u></h2><br><br>
+      <h3 style="margin-left:99px;"><b><u>Introduction</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        When you are aggregating data, it's helpful to alter the level of detail to look at different layers of analysis. Since SQL has been around for nearly 50 years, many level of detail extensions have been added including the following:
+        <ul style="margin-left:110px;">
+            <li style="line-height:25px;">ROLLUP</li>
+            <li style="line-height:25px;">CUBE</li>
+            <li style="line-height:25px;">GROUPING_ID</li>
+            <li style="line-height:25px;">GROUPING_SETS</li>
+        </ul>
+      </p>
+    </div>
+
+                                                       <!-- CTEs vs. Subqueries -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+      <h3 style="margin-left:99px;font-size:30px;"><b>THE ROLLUP EXTENSION</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        When aggregating column values, it can be difficult to identify outliers and changes over time. Luckily, the ROLLUP extension allows us to see how numerical values aggregate over time. THis is also known as a <b><i>RUNNING TOTAL or MOVING AVERAGE</i></b>:
+        </p>
+      <h4 style="margin-left:99px;font-size:22px;"><b>Examples</b></h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;SELECT storeName, SUM(totalSales) runningTotal<br> 
+        &ensp;&ensp;&ensp;FROM salesReports AS reports<br>
+        &ensp;&ensp;&ensp;JOIN stores ON reports.storeID = stores.storeID<br>
+        &ensp;&ensp;&ensp;GROUP BY ROLLUP(storeName) <br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<b>(SELECT DISTINCT customer_id FROM completed_sales);</b><br>
+        &ensp;&ensp;&ensp;HAVING sales_total > 1500;</p>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            As can be seen above, although the CTE is much longer, it is much easier to understand the query due to the use of aliases and jojns rather than an unnamed subquery. However, there are times when subqueries may be necessary. For example, if you are trying to find customers with a particular characteristic (say their activity status), the characteristic will more than likely change over time. In these chases, it may be necessary to use a combination of both subqueries and CTEs.
+        </p>
+    </section>
+    </div>
+                                                        <!-- Best Practices -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>THE CUBE EXTENSION</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            Just like anything in SQL, there is always a good, bad, and better way of doing things. In the context of CTEs, listed below are some general rules of thumb to write effective CTEs:
+            <ol style="margin-left:110px;">
+                <li style="line-height:20px;margin-bottom:10px;"><b>ALWAYS write detailed aliases</b></li>
+                <p style="line-height:25px;margin-left:30px;padding-right:100px;margin-bottom:15px;">The reason for this is <b>CLARITY</b>. If you are working on a team of analysts and one of your co-workers names a CTE "x" or "query", it makes it much more difficult to know what that CTE contains.</p>
+                <li style="line-height:25px;margin-bottom:10px;"><b>Be LIBERAL with your comments</b></li>
+                <p style="line-height:25px;margin-left:30px;padding-right:100px;margin-bottom:15px;">Just because it's easy for you to understand the query doesn't mean everyone else will understand it. Keep in mind that business stakeholders and other analysts will read your queries to make sure the data is correct. Comments allow you to "show your work" and explain your thought process.</p>
+                <li style="line-height:25px;margin-bottom:10px;"><b>ALWAYS be descriptive when renaming columns</b></li>
+                <p style="line-height:25px;margin-left:30px;padding-right:100px;margin-bottom:60px;">Similar to the first rule of thumb, when you are using aggregations or other functions within your CTEs, the calculations involvees can become mixed up within other CTEs. To help with this, it never hurts to rename the columns to something more descriptive. For example, rather than naming <b>SUM(sales)</b> "sales", name it something like "totalSales".</p>
+            </ol>
+        </p>
+        </section>
+        </div>
+
+                                                         <!-- Conclusion -->
+    <div class="wrapperTutorials" style="width:1200px;">
+    <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>THE GROUPING_ID EXTENSION</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        Although we didn't go into too much depth on the topic of the syntax of CTEs, it's more important to understand the use cases of them over subqueries. It's also very important to know when to use subqueries over CTEs or a combination of both. In any case, deep business knowledge is necessary to understand the type of analysis you're trying to conduct and how to most effectively communicate how you got the results.</p>
+        </section>
+        </div>
+
+
+                                                        <!-- Next Steps -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:22px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">Writing queries can be a tedious endeavor. Let's take a break and learn more about SQL's Data Analysis capabilities::<br>
+            <a href="GroupByExtensions.html" style="text-decoration:none;color:black;font-weight:bolder;">- Group By Extensions Tutorial  (Click here)</a>
+        </p>
+        </section>
+        </div>
+        </p>
+
+
+    
+</html>

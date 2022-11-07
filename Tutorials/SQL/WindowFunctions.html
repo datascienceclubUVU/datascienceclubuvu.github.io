@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="tutorials.css">
-<title>SQL Tutorials: Group By Extensions</title>
+<title>SQL Tutorials: Window Functions</title>
 <header>
 <h1 style="text-align:center;">SQL Tutorials</h1>
     <div class="navbar">
@@ -51,15 +51,15 @@
   </header>
   <div class="wrapperTutorials" style="width:1200px;">
     <section>
-      <h2><u>INTERMEDIATE SQL: Group By Extensions</u></h2><br><br>
+      <h2><u>ADVANCED SQL: WINDOW FUNCTIONS</u></h2><br><br>
       <h3 style="margin-left:99px;"><b><u>Introduction</u></b></h3>
       <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        When you are aggregating data, it's helpful to alter the level of detail to look at different layers of analysis. Since SQL has been around for nearly 50 years, many level of detail extensions have been added including the following:
+        Welcome to the first ADVANCED tutorial in this learning series! This section will primarily focus on working with large datasets. One of the most common methods to analyze large amounts of data is to <b><i>partition</i></b>, or separate, the data into individual groups. This can be done using various <b>Window Functions.</b> A <b><i>Window Function</i></b> splits the data into individual groups based on a specified boundary (e.g., id, name, date). These are widely used for creating running totals, grouping data without changing the level of detail, and making it easier to identify potential duplicates. There are tens of window function available, so we'll just be focusing on the following categories:
         <ul style="margin-left:110px;">
-            <li style="line-height:25px;">ROLLUP</li>
-            <li style="line-height:25px;">CUBE</li>
-            <li style="line-height:25px;">GROUPING_ID</li>
-            <li style="line-height:25px;">GROUPING_SETS</li>
+            <li style="line-height:25px;">Ranking Functions</li>
+            <li style="line-height:25px;">Aggregate Functions</li>
+            <li style="line-height:25px;">Comparison Functions</li>
+            <li style="line-height:25px;">Statistical Functions</li>
         </ul>
       </p>
     </div>
@@ -67,9 +67,16 @@
                                                        <!-- Rollup Extension -->
     <div class="wrapperTutorials" style="width:1200px;">
         <section>
-      <h3 style="margin-left:99px;font-size:30px;"><b>THE ROLLUP EXTENSION</b></h3>
+      <h3 style="margin-left:99px;font-size:30px;"><b>RANKING FUNCTIONS</b></h3>
         <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        When aggregating column values, it can be difficult to identify outliers and changes over time. Luckily, the ROLLUP extension allows us to see how numerical values aggregate over time. This is also known as a <b><i>RUNNING TOTAL or MOVING AVERAGE</i></b>:
+            Within every organization, there is a need to measure attributes between various groups or departments. This allows organizations to create more detailed Key Performance Indicators (KPIs) and allow managers to measure the performance of their employees. Before we start learning about these functions, let's take a look at the general syntax below:</i></b><br>
+            <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:18px;line-height:25px;">
+                [window function name]() <b>OVER</b>(<b>PARTITION BY</b> [column name] ORDER BY [column name]) [new column name]
+            </p>
+        </p>
+        <h4 style="margin-left:99px;font-size:25px;">ROW_NUMBER</h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            The purpose of the ROW_NUMBER function is to specify the index number of each row within a partition. In the example below, we will illustrate how this function can be used in conjunction with CTEs:
         </p>
         <div class="grid-container">
             <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
@@ -100,7 +107,7 @@
                                                         <!-- Cube Extension -->
     <div class="wrapperTutorials" style="width:1200px;">
         <section>
-        <h3 style="margin-left:99px;font-size:30px;"><b>THE CUBE EXTENSION</b></h3>
+        <h3 style="margin-left:99px;font-size:30px;"><b>AGGREGATE FUNCTIONS</b></h3>
         <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
             The CUBE extension is a more detailed version of the ROLLUP extension. Rather than only showing only two levels of detail with the moving aggregates, the CUBE extension shows you every possible aggregation possible:
         <div class="grid-container">
@@ -133,7 +140,7 @@
                                                          <!-- Conclusion -->
     <div class="wrapperTutorials" style="width:1200px;">
     <section>
-        <h3 style="margin-left:99px;font-size:30px;"><b>THE GROUPING_ID EXTENSION</b></h3>
+        <h3 style="margin-left:99px;font-size:30px;"><b>COMPARISON FUNCTIONS</b></h3>
         <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
         One issue with the ROLLUP and CUBE extensions is the lack of identity associated with each level of detail. To help with this, the GROUPING_ID function was created:</p>
         <div class="grid-container">
@@ -166,9 +173,9 @@
 
         <div class="wrapperTutorials" style="width:1200px;">
             <section>
-                <h3 style="margin-left:99px;font-size:30px;"><b>THE GROUPING_SETS EXTENSION</b></h3>
+                <h3 style="margin-left:99px;font-size:30px;"><b>STATISTICAL FUNCTIONS</b></h3>
                 <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-                The GROUPING SETS extension is almost identical to the previous example, except it's much easier to read and you can customize the columns being aggregated:</p>
+                </p>
                 <div class="grid-container">
                     <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
                     <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>

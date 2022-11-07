@@ -32,19 +32,39 @@
       <input type="radio" onclick="showFieldset('fieldset_register', 'fieldset_login')">Ask Question
       <br>
       <br>
+      <script  
+      src="https://code.jquery.com/jquery-3.4.1.js"  
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  
+      crossorigin="anonymous">
+    </script>
+    <script>
+      function SubForm (){
+        $.ajax({
+          url:"https://api.apispreadsheets.com/data/GDUYecDBVKfYUGXa/",
+          type:"post",
+          data:$("#myForm").serializeArray(),
+          success: function(){
+            alert("Form Data Submitted :)")
+          },
+          error: function(){
+            alert("There was an error :(")
+          }
+        });
+      }
+    </script>
       <form id="login" name="login">
         <fieldset id="fieldset_login">
           <p>
             Are You A Member of the Data Science Club?<br>
-            <input type="radio" id="membership">Yes
-            <input type="radio" id="membership">No
+            <input type="radio" name="member">Yes
+            <input type="radio" name="member">No
           </p>
           <p>
             Please Enter Your Feedback:<br>
             <textarea name="feedback" cols="40" rows="5"></textarea>
           </p>
           <p>
-            <button name="button" id="button">Submit</button>
+            <button name="button" id="button" onclick="SubForm()">Submit</button>
             <input type="reset">
           </p>
         </fieldset>
@@ -56,12 +76,16 @@
               </p>
               <p>
                 What Is Your Question?:<br>
-                <textarea name="feedback" cols="40" rows="5"></textarea>
+                <textarea name="question" cols="40" rows="5"></textarea>
               </p>
               <p>
-                <button name="button" id="button">Submit</button>
-                <input type="reset">
+                What Is Your Email?<br>
+                <input type="text" name="email">
               </p>
+              <p>
+              <button name="button" id="button" onclick="SubForm()">Submit</button>
+                <input type="reset">
+                </p>
         </fieldset>
       </form>
     </section>

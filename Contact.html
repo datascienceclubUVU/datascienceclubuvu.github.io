@@ -24,70 +24,14 @@
   <img style="width:100%;padding-top:0px;margin-top:0px;height:250px;z-index:-1;" src="Screenshot 2022-11-02 140310.png">
   <div class="wrapper">
     <section id='steezy'>
-        
-      <h1 style="text-align:center;color:black;">Contact Form</h1><br>
-      <h4>What Would You Like to Do?</h4>
+      <h3 style="font-size:22px;text-align:center;"><u>General Contact Information</u></h3>
+      <p style="margin-left:160px;">
+        <b>Email:</b> uvudataclub@gmail.com | 
+        <b>Slack:</b> uvudatascienceclub.slack.com
+      </p><br><br>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMiukuGW6qS7MNDZvX19pf814-x8oAolxuvmMOERrvRXXu3w/viewform?embedded=true" width="770" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
-      <input type="radio" onclick="showFieldset('fieldset_login', 'fieldset_register')">Provide Feedback
-      <input type="radio" onclick="showFieldset('fieldset_register', 'fieldset_login')">Ask Question
-      <br>
-      <br>
-      <script  
-      src="https://code.jquery.com/jquery-3.4.1.js"  
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  
-      crossorigin="anonymous">
-    </script>
-    <script>
-      function SubForm (){
-        $.ajax({
-          url:"https://api.apispreadsheets.com/data/GDUYecDBVKfYUGXa/",
-          type:"post",
-          data:$("#myForm").serializeArray(),
-          success: function(){
-            alert("Form Data Submitted :)")
-          },
-          error: function(){
-            alert("There was an error :(")
-          }
-        });
-      }
-    </script>
-      <form id="login" name="login">
-        <fieldset id="fieldset_login">
-          <p>
-            Are You A Member of the Data Science Club?<br>
-            <input type="radio" name="member">Yes
-            <input type="radio" name="member">No
-          </p>
-          <p>
-            Please Enter Your Feedback:<br>
-            <textarea name="feedback" cols="40" rows="5"></textarea>
-          </p>
-          <p>
-            <button name="button" id="button" onclick="SubForm()">Submit</button>
-            <input type="reset">
-          </p>
-        </fieldset>
-        <fieldset id="fieldset_register">
-            <p>
-                Are You A Member of the Data Science Club?<br>
-                <input type="radio" id="membership">Yes
-                <input type="radio" id="membership">No
-              </p>
-              <p>
-                What Is Your Question?:<br>
-                <textarea name="question" cols="40" rows="5"></textarea>
-              </p>
-              <p>
-                What Is Your Email?<br>
-                <input type="text" name="email">
-              </p>
-              <p>
-              <button name="button" id="button" onclick="SubForm()">Submit</button>
-                <input type="reset">
-                </p>
-        </fieldset>
-      </form>
+
     </section>
   </div>
 </body>

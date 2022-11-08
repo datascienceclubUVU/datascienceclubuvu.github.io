@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="tutorials.css">
+<title>SQL Tutorials: Joins and Unions</title>
+<header>
+<h1 style="text-align:center;">SQL Tutorials</h1>
+    <div class="navbar">
+        <a href="/Tutorials/SQLTutorials.html">Return to Home</a>
+        <div class="dropdown" style="margin-left:80px;">
+            <button class="dropbtn" style="margin-left:80px;">Learning Paths
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:150px;margin-left:5.2%;">
+            <a href="DSBeginner.html">Data Science</a>
+            <a href="DSIntermediate.html">Data Engineering</a>
+            <a href="DSAdvanced.html">Software Engineering</a>
+            <a href="Projects.html">Data Analytics</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Challenges
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="max-width:190px;margin-left:4%;">
+            <a href="DEBeginner.html">Beginner</a>
+            <a href="DEIntermediate.html">Intermediate</a>
+            <a href="DEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Projects
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:170px;margin-left:5.2%;">
+            <a href="SEBeginner.html">Beginner</a>
+            <a href="SEIntermediate.html">Intermediate</a>
+            <a href="SEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Related Topics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:155px;margin-left:4.5%;">
+            <a href="DABeginner.html">Python</a>
+            <a href="DAIntermediate.html">NoSQL Databases</a>
+            <a href="DAAdvanced.html">Tableau</a>
+            <a href="Projects.html">Pandas</a>
+          </div>
+        </div>
+      </div>
+  </header>
+  <div class="wrapperTutorials" style="width:1200px;">
+    <section>
+      <h2><u>BEGINNER SQL: JOINS & UNIONS</u></h2><br><br>
+      <h3 style="margin-left:99px;"><b><u>Introduction</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        SQL primarily deals with Relational Databases. The reason why these types of databases are named "relational" is because the objects can have relationships. How are objects related? That's what we'll be learning in this tutorial.
+      </p>
+      <h3 style="margin-left:99px;"><b><u>Definitions</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        Before we dive into how objects are related, let's go over some of the terminaology used in this tutorial:
+        <ul style="margin-left:110px;">
+            <li style="line-height:25px;"><b>Primary Key:  </b>This describes the column in a table that is used to uniqely identify a row. <br>&ensp;&ensp;&ensp;<b>Example:</b> UVIDs, Social Security Numbers, Driver License Numbers may all be Primary Keys.</li>
+            <li style="line-height:25px;"><b>Foreign Key: </b> This is a column in a table the references the primary key of another table.
+            <br>&ensp;&ensp;&ensp;<b>Example: </b>The UVID column in a table that contains information about courses students are taking.</li>
+        </ul>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">Now that we are caught up on the terminology, let's look into how to build relationships between tables:</p>
+    </p>
+    </div>
+
+                                                       <!-- Inner Join -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+      <h3 style="margin-left:99px;font-size:30px;"><b>INNER JOIN</b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        The <b><i>INNER JOIN</i></b> operation is the most common type of join. This is used to retrieve rows from two tables that have matching primary and foreign keys.</p>
+        <img style="margin-left:99px;height:140px;" src="Images/innerjoin.jpg">
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">The inner join is unique because you don't need to use the "inner" keyword when creating the join. It's also worthy to note that if you select all columns from the table specified in the FROM clause, it will return all columns from both tables.</p>
+      <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;SELECT reportID, storeName, state, month, year, totalSales, foodSales, cleaningSales, clothingSales, stores.storeID* <br>
+        &ensp;&ensp;&ensp;FROM salesReports AS reports<br>
+        &ensp;&ensp;&ensp;<b>JOIN</b> stores <b>ON</b> reports.storeID = stores.storeID<br>
+        &ensp;&ensp;&ensp;*if the two tables have a column that has the same name, you must specify which table to pull it from
+        <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
+        <img style="margin-left:99px;" src="Images/innerjoinex.jpg">
+        </p><br>
+    </section>
+    </div>
+                                                        <!-- Left/Right Join -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>LEFT/RIGHT JOIN</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            The <b><i>LEFT JOIN</i></b> operation returns all rows from both tables but only the rows from the LEFT table in the join operation will have all values filled. If the keys don't match or don't exist the rows will return all NULL values. The <b><i>RIGHT JOIN</i></b> operation is the complete opposite of the LEFT JOIN. All the rows in the RIGHT table in the join operation will have all values filled.
+            <div class="grid-container"><img style="margin-left:99px;height:150px;" src="Images/leftjoin.jpg" class="item1"><img style="height:150px;" src="Images/rightjoin.jpg" class="item2"></div>
+        <h4 style="margin-left:99px;font-size:22px;"><b>Examples</b></h4>
+
+        <div class="grid-container" style="margin-left:70px;">
+        <p style="text-align:left;padding-right:0px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-bottom:0px;"class="item1">
+        &ensp;&ensp;&ensp;SELECT reportID, storeName, state, month, year, totalSales,<br>&ensp;&ensp;&ensp;foodSales, cleaningSales, clothingSales, stores.storeID<br>
+        &ensp;&ensp;&ensp;FROM salesReports AS reports<br>
+        &ensp;&ensp;&ensp;<b>LEFT JOIN</b> stores <b>ON</b> reports.storeID = stores.storeID 
+            <p style="text-align:justify;padding-right:0px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-bottom:0px;" class="item2">
+                &ensp;&ensp;&ensp;SELECT reportID, storeName, state, month, year, totalSales,<br>&ensp;&ensp;&ensp;foodSales, cleaningSales, clothingSales, stores.storeID<br>
+                &ensp;&ensp;&ensp;FROM salesReports AS reports<br>
+                &ensp;&ensp;&ensp;<b>RIGHT JOIN</b> stores <b>ON</b> reports.storeID = stores.storeID 
+        </p>
+    </p>
+
+    </div>
+        <h4 style="margin-left:99px;font-size:22px;margin-top:0px;padding-top:0px;"><b>Output</b></h4>
+        <h5 style="margin-left:99px;font-size:22px;margin-top:0px;padding-top:0px;"><b>Left Join</b></h5>
+        <div class="grid-container" style="margin-left:70px;">
+            <img style="margin-left:50px;height:150px;" src="Images/leftjoinex.jpg" class="item1"><h5 style="margin-left:40px;font-size:22px;margin-top:0px;padding-top:0px;margin-bottom:0px;color:black;" class="item5"><b>Right Join</b></h5><img src="Images/rightjoinex.jpg" class="item9" style="margin-left:40px;">
+        </div>
+        </p><br>
+        </section>
+        </div>
+
+                                                         <!-- Full Join -->
+    <div class="wrapperTutorials" style="width:1200px;">
+    <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>FULL JOIN</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        The <b><i>FULL JOIN</i></b> operation is the least common type of join. With this operation, you return all of the rows from both tables stated in the JOIN clause.</p>
+        <img style="margin-left:99px;height:140px;" src="Images/fulljoin.jpg">
+        <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;SELECT reportID, storeName, state, month, year, totalSales, foodSales, cleaningSales, clothingSales, stores.storeID* <br>
+        &ensp;&ensp;&ensp;FROM salesReports AS reports<br>
+        &ensp;&ensp;&ensp;<b>FULL JOIN</b> stores <b>ON</b> reports.storeID = stores.storeID<br>
+        <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
+        <img style="margin-left:99px;" src="Images/rightjoinex.jpg">
+            </p><br>
+        </section>
+        </div>
+
+                                                        <!-- MIN Function -->
+
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>UNIONS</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        <b><i>UNIONS</i></b> allow you to merge multiple queries together. There are two primary stipulations when it comes to unions: First, all queries must have the same number of columns. This allows the output table to maintain a consistent structure. Second, all columns in the same position must have the same data type. This is because it's impossible to have more than one data type assigned to a column.</p>
+        <h4 style="margin-left:99px;font-size:22px;"><b>Example</b></h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;SELECT reportID, stores.storeID, storeName, state, totalSales, foodSales, cleaningSales, clothingSales<br>
+        &ensp;&ensp;&ensp;FROM stores<br>
+        &ensp;&ensp;&ensp;JOIN salesReports reports ON stores.storeID = reports.storeID<br>
+        &ensp;&ensp;&ensp;WHERE state = 'Texas' AND totalSales < 10000<br>
+        &ensp;&ensp;&ensp;<b>UNION</b><br>
+        &ensp;&ensp;&ensp;SELECT reportID, stores.storeID, storeName, state, totalSales, foodSales, cleaningSales, clothingSales<br>
+        &ensp;&ensp;&ensp;FROM stores<br>
+        &ensp;&ensp;&ensp;JOIN salesReports reports ON stores.storeID = reports.storeID<br>
+        &ensp;&ensp;&ensp;WHERE state = 'California' AND totalSales < 20000
+        <h4 style="margin-left:99px;font-size:22px;"><b>Output</b></h4>
+        <img style="margin-left:99px;" src="Images/unionsex.jpg">
+        </p><br>
+        </section>
+        </div>
+
+                                                        <!-- Next Steps -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:22px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">Working with multiple tables and queries gives you the opportunity to create complex queries and drive business value. Before we get into the more advanced section of this learning series, let's take a look at how we can better manage our databases:<br>
+            <a href="Constraints.html" style="text-decoration:none;color:black;font-weight:bolder;">- Constraints Tutorial  (Click here)</a>
+        </p>
+        </section>
+        </div>
+        </p>
+
+
+    
+</html>

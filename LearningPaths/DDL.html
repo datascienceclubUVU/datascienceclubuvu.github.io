@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="tutorials.css">
+<header>
+<h1 style="text-align:center;">SQL Tutorials</h1>
+    <div class="navbar">
+        <a href="/Tutorials.html">Return to Home</a>
+        <div class="dropdown" style="margin-left:80px;">
+            <button class="dropbtn" style="margin-left:80px;">Learning Paths
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:150px;margin-left:5.2%;">
+            <a href="DSBeginner.html">Data Science</a>
+            <a href="DSIntermediate.html">Data Engineering</a>
+            <a href="DSAdvanced.html">Software Engineering</a>
+            <a href="Projects.html">Data Analytics</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Challenges
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="max-width:190px;margin-left:4%;">
+            <a href="DEBeginner.html">Beginner</a>
+            <a href="DEIntermediate.html">Intermediate</a>
+            <a href="DEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Projects
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:170px;margin-left:5.2%;">
+            <a href="SEBeginner.html">Beginner</a>
+            <a href="SEIntermediate.html">Intermediate</a>
+            <a href="SEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Related Topics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:155px;margin-left:4.5%;">
+            <a href="DABeginner.html">Python</a>
+            <a href="DAIntermediate.html">NoSQL Databases</a>
+            <a href="DAAdvanced.html">Tableau</a>
+            <a href="Projects.html">Pandas</a>
+          </div>
+        </div>
+      </div>
+  </header>
+  <div class="wrapperTutorials" style="width:1200px;">
+    <section>
+      <h2><u>BEGINNER SQL: Data Definition Language (DDL)</u></h2><br><br>
+      <h3 style="margin-left:99px;"><b><u>Introduction</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        Databases are a collection of objects including tables, views, and stored procedures. All of these objects don't just magically appear as you need them, they must be created using a subset of SQL known as <b><i>Data Definitiona Language (DDL).</i></b> Let's dive right into this sub-language.
+      </p>
+      <h3 style="margin-left:99px;"><b><u>DDL Statements</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        DDL offers a wide array of statements to create, alter, and drop database objects. Listed below are the most common DDL statements used when creating and maintaining a Relational Database Management System (RDBMS):
+        <ul style="margin-left:110px;">
+            <li style="line-height:30px;"><b>CREATE DATABASE [database name]:  </b>This allows you to create a database.</li><br>
+            <li style="line-height:20px;"><b>CREATE SCHEMA [schema name]: </b> This allows you to create a schema within the database in which you are running the statement. A <b><i>schema</i></b> is a database object that is a collection of tables.</li><br>
+            <li style="line-height:20px;"><b>CREATE TABLE [schema name].[table name] ([column name1] [data type], [column name2] [data type], [constraint1]): </b> This allows you to create a table and specify its columns and their associated data types and specify its schema within the database in which you are running the statement.<br><br>
+            <li><b>CREATE VIEW [view name] AS ([query]): </b> This allows you to create a <b><i>view</i></b>, a custom table created from a SELECT query, within the database in which you are running the statement.<br><br>
+            <li style="line-height:20px;"><b>ALTER TABLE [schema name].[table name] ADD [column name] [data type]: </b> This allows you to add a new column to the specified table and specify its data type.<br><br>
+            <li style="line-height:20px;"><b>ALTER TABLE [schema name].[table name] ALTER COLUMN [column name] [new data type]: </b> This allows you to change the data type of the specified column in the specified table.<br><br>
+            <li style="line-height:20px;"><b>DROP TABLE [schema name].[table name]: </b> This allows you to remove the specified table from the database in which you are running the statement.<br><br>
+            <li style="line-height:20px;"><b>DROP VIEW [view name]: </b> This allows you to remove the specified view from the database in which you are running the statement.<br><br>
+            <li style="line-height:20px;"><b>DROP SCHEMA [schema name]: </b> This allows you to remove the specified schemas and the tables it contains from the database in which you are running the statement.<br><br>
+            <li style="line-height:20px;"><b>DROP DATABASE [database name]: </b> This allows you to remove the specified database and the schemas, tables, and views it contains from the server.<br><br>
+        </ul>
+        <h3 style="margin-left:99px;"><b><u>Example</u></b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        &ensp;&ensp;&ensp;<b>CREATE DATABASE</b> sales;<br>
+        &ensp;&ensp;&ensp;<b>CREATE SCHEMA</b> managers;<br>
+        &ensp;&ensp;&ensp;<b>CREATE TABLE</b> managers.salesReps (repID INT PRIMARY KEY, firstName VARCHAR(25), lastName(25), hireDate DATE);<br>
+        &ensp;&ensp;&ensp;<b>CREATE VIEW</b> totalSalesByRep AS ( SELECT repID, firstName, lastName, hireDate, FROM salesReps<br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;WHERE hireDate >= '01-01-2017' AND < '01-01-2019');
+        </p>
+        <h3 style="margin-left:99px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">Now that you know how to create, alter, and drop database objects, let's learn how to manipulate them:<br>
+            <a href="DML.html" style="text-decoration:none;color:black;font-weight:bolder;">- DML Tutorial  (Click here)</a>
+        
+        </p>
+        </p>
+        </p>
+    </section>
+    </div>
+</html>

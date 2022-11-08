@@ -109,17 +109,21 @@ h1{
     display: block;
   }
 h2{
-  font-size: 34px;
+  font-size: 40px;
   text-transform: uppercase;
   font-weight: 100;
   line-height: 1;
   color: #2c3e50;
   text-align: center;
 }
+h3 {
+  font-size: 25px;
+}
 p{
   margin-bottom: 2rem;
   line-height: 2;
   color: #595e5e;
+  padding-right:100px;
 }
 .wrapper{
   width: 850px;

@@ -161,32 +161,19 @@
             <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>
         </div>
             <div class="grid-container">
-        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:20px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
-        &ensp;&ensp;&ensp;-- Get all rows from table<br>
-        &ensp;&ensp;&ensp;WITH all_tracks AS (<br> 
-        &ensp;&ensp;&ensp;SELECT * FROM tracks),<br><br>
-        &ensp;&ensp;&ensp;-- find the songs that occur more than once<br>
-        &ensp;&ensp;&ensp;track_num AS ( <br>
-        &ensp;&ensp;&ensp;SELECT track, artist<br>
-        &ensp;&ensp;&ensp;FROM tracks<br>
-        &ensp;&ensp;&ensp;GROUP BY track, artist<br>
-        &ensp;&ensp;&ensp;HAVING COUNT(*) > 1),<br><br>
-        &ensp;&ensp;&ensp;-- assign row numbers<br>
-        &ensp;&ensp;&ensp;row_nums AS (<br>
-        &ensp;&ensp;&ensp;SELECT <b>ROW_NUMBER()<br>
-        &ensp;&ensp;&ensp;OVER(PARTITION BY track ORDER BY track, artist) row_num,</b><br>
-        &ensp;&ensp;&ensp;track, artist<br>
-        &ensp;&ensp;&ensp;FROM all_tracks<br><br>
-        &ensp;&ensp;&ensp;-- join tables together<br>
-        &ensp;&ensp;&ensp;SELECT row_nums.* FROM row_nums<br>
-        &ensp;&ensp;&ensp;JOIN track_num ON row_nums.track = track_num.track<br>
-        &ensp;&ensp;&ensp;ORDER BY row_nums.track, row_nums.artist, row_num;
+        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
+        &ensp;&ensp;&ensp;SELECT track_name, artist_name, track_count,<br> 
+        &ensp;&ensp;&ensp;<b>SUM(track_count) OVER(PARTITION BY artist_name)</b><br>
+        &ensp;&ensp;&ensp;running_total<br>
+        &ensp;&ensp;&ensp;FROM song_popularity<br>
+        &ensp;&ensp;&ensp;WHERE track_count > 3<br>
+        &ensp;&ensp;&ensp;ORDER BY artist_name, track_count
         </p>
-        <img style="margin-bottom:20px;" src="Images/rownumberex.jpg" class="item2">
+        <img style="margin-bottom:20px;" src="Images/runningtotalex.jpg" class="item2">
     </div>
     <h4 style="margin-left:99px;font-size:25px;">AVG (AVERAGE)</h4>
         <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-            As you might assume, this function is used to rank items within a specified group. This is commonly used to identify the best-selling products, most-productive employees, and highest gross profit. The one difference between this function and the ROW_NUMBER function is that the ORDER BY clause is REQUIRED.
+            When working with metrics that are based on continuous measures rather than discrete, it can be daunting to calculate the moving average. To help solve this, the average window function allows us to see how averages within a group changes over time.
         </p>
         <div class="grid-container">
             <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
@@ -194,34 +181,14 @@
         </div>
             <div class="grid-container">
         <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
-        &ensp;&ensp;&ensp;SELECT <b>RANK() OVER(PARTITION BY artist_name </b><br>
-        &ensp;&ensp;&ensp;<b>ORDER BY track_count DESC)</b> popularity_rank, track_name<br> 
-        &ensp;&ensp;&ensp;artist_name, track_count<br>
-        &ensp;&ensp;&ensp;FROM song_popularity<br>
-        &ensp;&ensp;&ensp;WHERE track_count > 3;
+            &ensp;&ensp;&ensp;SELECT track_name, artist_name, track_count,<br> 
+            &ensp;&ensp;&ensp;<b>AVG(track_count) OVER(PARTITION BY artist_name)</b><br>
+            &ensp;&ensp;&ensp;moving_average<br>
+            &ensp;&ensp;&ensp;FROM song_popularity<br>
+            &ensp;&ensp;&ensp;WHERE track_count > 3<br>
+            &ensp;&ensp;&ensp;ORDER BY artist_name, track_count
         </p>
-        <img style="margin-bottom:20px;" src="Images/rankex.jpg" class="item2">
-    </div>
-    <h4 style="margin-left:99px;font-size:25px;">DENSE_RANK</h4>
-    <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        The main issue with the RANK function is that it skips ranks when there are duplicate values. This can make it difficult to interpret the results. To help with this, the DENSE_RANK function continues the rank rather than skips. This is usually used in place of the RANK function. In the example below, the highlighted rows show a great example of continuing the rank. If the RANK function was used the next row after the second highlighted row would be Ranked 4th.
-    </p>
-    <div class="grid-container">
-        <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
-        <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>
-    </div>
-        <div class="grid-container">
-    <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
-    &ensp;&ensp;&ensp;SELECT <b>DENSE_RANK() <br>
-    &ensp;&ensp;&ensp;OVER(PARTITION BY artist_name </b><br>
-    &ensp;&ensp;&ensp;<b>ORDER BY track_count DESC)</b> popularity_rank, track_name<br> 
-    &ensp;&ensp;&ensp;artist_name, track_count<br>
-    &ensp;&ensp;&ensp;FROM song_popularity<br>
-    &ensp;&ensp;&ensp;WHERE track_count > 3;
-    </p>
-    <img style="margin-bottom:40px;" src="Images/denserankex.jpg" class="item2">
-</div>
-    </section>
+        <img style="margin-bottom:40px;" src="Images/movingaverageex.jpg" class="item2">
     </div>
         </section>
         </div>
@@ -231,31 +198,31 @@
     <section>
         <h3 style="margin-left:99px;font-size:30px;"><b>COMPARISON FUNCTIONS</b></h3>
         <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-        One issue with the ROLLUP and CUBE extensions is the lack of identity associated with each level of detail. To help with this, the GROUPING_ID function was created:</p>
+        Have you ever wondered how stock brokers get rich fast? They take past data and compare it with current data. This is the basic premise of comparison window functions. It takes the current row value and compares it with either the first value, last value, previous value, or future value in the group.</p>
+        <h4 style="margin-left:99px;font-size:25px;">LAG</h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            As mentioned above, analysts compare past and current data to predict future outcomes. The LAG function allows you to do just that. It simply takes the value of the previous N rows and compares it with the current row:
+        </p>
         <div class="grid-container">
             <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
             <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>
         </div>
             <div class="grid-container">
-        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;" class="item1">
-        &ensp;&ensp;&ensp;SELECT state, month, SUM(sales) runningTotal,<br>
-        &ensp;&ensp;&ensp;<b>GROUPING_ID</b>(state, month) levelOfDetail<br>
-        &ensp;&ensp;&ensp;FROM sales<br>
-        &ensp;&ensp;&ensp;GROUP BY <b>CUBE</b> (state, month) <br>
-        &ensp;&ensp;&ensp;ORDER BY state, CASE month<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          WHEN 'January' THEN 1<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          WHEN 'February' THEN 2<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          WHEN 'March' THEN 3<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          ELSE 4<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          END, levelOfDetail
-                                        </p>
-        
-        <img style="margin-bottom:20px;" src="Images/groupingidex.jpg" class="item2">
+        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
+            &ensp;&ensp;&ensp;-- get previous values<br>
+            &ensp;&ensp;&ensp;WITH lag_value AS (<br>
+            &ensp;&ensp;&ensp;SELECT track_name, artist_name, track_count,<br> 
+            &ensp;&ensp;&ensp;<b>LAG(track_count, 1) OVER(PARTITION BY artist_name<br>
+            &ensp;&ensp;&ensp;ORDER BY track_count)</b><br>
+            &ensp;&ensp;&ensp;previous_value<br>
+            &ensp;&ensp;&ensp;FROM song_popularity<br>
+            &ensp;&ensp;&ensp;WHERE track_count > 3)<br><br>
+            &ensp;&ensp;&ensp;-- create column for comparison<br>
+            &ensp;&ensp;&ensp;SELECT *, (previous_value - track_count) difference<br>
+            &ensp;&ensp;&ensp;FROM lag_value<br>
+            &ensp;&ensp;&ensp;ORDER BY artist_name, track_count
+        </p>
+        <img style="margin-bottom:40px;width:550px;" src="Images/lagvalueex.jpg" class="item2">
     </div>
         </section>
         </div>

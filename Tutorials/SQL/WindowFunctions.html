@@ -83,56 +83,145 @@
             <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>
         </div>
             <div class="grid-container">
-        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;" class="item1">
-        &ensp;&ensp;&ensp;SELECT state, month, SUM(sales) runningTotal<br> 
-        &ensp;&ensp;&ensp;FROM sales<br>
-        &ensp;&ensp;&ensp;GROUP BY <b>ROLLUP</b> (state, month) <br>
-        &ensp;&ensp;&ensp;ORDER BY state, CASE month<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          WHEN 'January' THEN 1<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          WHEN 'February' THEN 2<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          WHEN 'March' THEN 3<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          ELSE 4<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          END
-                                        </p>
-        
-        <img style="margin-bottom:20px;" src="Images/rollupex.jpg" class="item2">
+        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:20px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
+        &ensp;&ensp;&ensp;-- Get all rows from table<br>
+        &ensp;&ensp;&ensp;WITH all_tracks AS (<br> 
+        &ensp;&ensp;&ensp;SELECT * FROM tracks),<br><br>
+        &ensp;&ensp;&ensp;-- find the songs that occur more than once<br>
+        &ensp;&ensp;&ensp;track_num AS ( <br>
+        &ensp;&ensp;&ensp;SELECT track, artist<br>
+        &ensp;&ensp;&ensp;FROM tracks<br>
+        &ensp;&ensp;&ensp;GROUP BY track, artist<br>
+        &ensp;&ensp;&ensp;HAVING COUNT(*) > 1),<br><br>
+        &ensp;&ensp;&ensp;-- assign row numbers<br>
+        &ensp;&ensp;&ensp;row_nums AS (<br>
+        &ensp;&ensp;&ensp;SELECT <b>ROW_NUMBER()<br>
+        &ensp;&ensp;&ensp;OVER(PARTITION BY track ORDER BY track, artist) row_num,</b><br>
+        &ensp;&ensp;&ensp;track, artist<br>
+        &ensp;&ensp;&ensp;FROM all_tracks<br><br>
+        &ensp;&ensp;&ensp;-- join tables together<br>
+        &ensp;&ensp;&ensp;SELECT row_nums.* FROM row_nums<br>
+        &ensp;&ensp;&ensp;JOIN track_num ON row_nums.track = track_num.track<br>
+        &ensp;&ensp;&ensp;ORDER BY row_nums.track, row_nums.artist, row_num;
+        </p>
+        <img style="margin-bottom:20px;" src="Images/rownumberex.jpg" class="item2">
     </div>
-    </section>
-    </div>
-                                                        <!-- Cube Extension -->
-    <div class="wrapperTutorials" style="width:1200px;">
-        <section>
-        <h3 style="margin-left:99px;font-size:30px;"><b>AGGREGATE FUNCTIONS</b></h3>
+    <h4 style="margin-left:99px;font-size:25px;">RANK</h4>
         <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
-            The CUBE extension is a more detailed version of the ROLLUP extension. Rather than only showing only two levels of detail with the moving aggregates, the CUBE extension shows you every possible aggregation possible:
+            As you might assume, this function is used to rank items within a specified group. This is commonly used to identify the best-selling products, most-productive employees, and highest gross profit. The one difference between this function and the ROW_NUMBER function is that the ORDER BY clause is REQUIRED.
+        </p>
         <div class="grid-container">
             <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
             <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>
         </div>
             <div class="grid-container">
-        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;" class="item1">
-        &ensp;&ensp;&ensp;SELECT state, month, SUM(sales) runningTotal<br> 
-        &ensp;&ensp;&ensp;FROM sales<br>
-        &ensp;&ensp;&ensp;GROUP BY <b>CUBE</b> (state, month) <br>
-        &ensp;&ensp;&ensp;ORDER BY state, CASE month<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          WHEN 'January' THEN 1<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          WHEN 'February' THEN 2<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          WHEN 'March' THEN 3<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          ELSE 4<br>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                          END
-                                        </p>
-        
-        <img style="margin-bottom:20px;" src="Images/cubeex.jpg" class="item2">
+        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
+        &ensp;&ensp;&ensp;SELECT <b>RANK() OVER(PARTITION BY artist_name </b><br>
+        &ensp;&ensp;&ensp;<b>ORDER BY track_count DESC)</b> popularity_rank, track_name<br> 
+        &ensp;&ensp;&ensp;artist_name, track_count<br>
+        &ensp;&ensp;&ensp;FROM song_popularity<br>
+        &ensp;&ensp;&ensp;WHERE track_count > 3;
+        </p>
+        <img style="margin-bottom:20px;" src="Images/rankex.jpg" class="item2">
+    </div>
+    <h4 style="margin-left:99px;font-size:25px;">DENSE_RANK</h4>
+    <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        The main issue with the RANK function is that it skips ranks when there are duplicate values. This can make it difficult to interpret the results. To help with this, the DENSE_RANK function continues the rank rather than skips. This is usually used in place of the RANK function. In the example below, the highlighted rows show a great example of continuing the rank. If the RANK function was used the next row after the second highlighted row would be Ranked 4th.
+    </p>
+    <div class="grid-container">
+        <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
+        <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>
+    </div>
+        <div class="grid-container">
+    <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
+    &ensp;&ensp;&ensp;SELECT <b>DENSE_RANK() <br>
+    &ensp;&ensp;&ensp;OVER(PARTITION BY artist_name </b><br>
+    &ensp;&ensp;&ensp;<b>ORDER BY track_count DESC)</b> popularity_rank, track_name<br> 
+    &ensp;&ensp;&ensp;artist_name, track_count<br>
+    &ensp;&ensp;&ensp;FROM song_popularity<br>
+    &ensp;&ensp;&ensp;WHERE track_count > 3;
+    </p>
+    <img style="margin-bottom:40px;" src="Images/denserankex.jpg" class="item2">
+</div>
+    </section>
+    </div>
+
+                                                        <!-- Cube Extension -->
+    <div class="wrapperTutorials" style="width:1200px;">
+        <section>
+        <h3 style="margin-left:99px;font-size:30px;"><b>AGGREGATE FUNCTIONS</b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            As mentioned in the Group By Extensions Tutorial, running totals and moving average allow businesses to see how pars contribute to a whole over time. This is the basic premise of the aggregate window functions. These allow you to see the cumulative amounts or moving averages in each group. This method is very similar to the CUBE or ROLLUP Group By Extensions, though these provide a more sophisticate view of your data and tned to be more accurate.
+        <h4 style="margin-left:99px;font-size:25px;">SUM</h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            As mentioned above, this function is a more sophisticated version of the ROLLUP Group By Extension. This window function allows you to see the cumulative sum of values within a group over a period of time or a series of events. In the example below, we will be creating a running total:
+        </p>
+        <div class="grid-container">
+            <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
+            <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>
+        </div>
+            <div class="grid-container">
+        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:20px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
+        &ensp;&ensp;&ensp;-- Get all rows from table<br>
+        &ensp;&ensp;&ensp;WITH all_tracks AS (<br> 
+        &ensp;&ensp;&ensp;SELECT * FROM tracks),<br><br>
+        &ensp;&ensp;&ensp;-- find the songs that occur more than once<br>
+        &ensp;&ensp;&ensp;track_num AS ( <br>
+        &ensp;&ensp;&ensp;SELECT track, artist<br>
+        &ensp;&ensp;&ensp;FROM tracks<br>
+        &ensp;&ensp;&ensp;GROUP BY track, artist<br>
+        &ensp;&ensp;&ensp;HAVING COUNT(*) > 1),<br><br>
+        &ensp;&ensp;&ensp;-- assign row numbers<br>
+        &ensp;&ensp;&ensp;row_nums AS (<br>
+        &ensp;&ensp;&ensp;SELECT <b>ROW_NUMBER()<br>
+        &ensp;&ensp;&ensp;OVER(PARTITION BY track ORDER BY track, artist) row_num,</b><br>
+        &ensp;&ensp;&ensp;track, artist<br>
+        &ensp;&ensp;&ensp;FROM all_tracks<br><br>
+        &ensp;&ensp;&ensp;-- join tables together<br>
+        &ensp;&ensp;&ensp;SELECT row_nums.* FROM row_nums<br>
+        &ensp;&ensp;&ensp;JOIN track_num ON row_nums.track = track_num.track<br>
+        &ensp;&ensp;&ensp;ORDER BY row_nums.track, row_nums.artist, row_num;
+        </p>
+        <img style="margin-bottom:20px;" src="Images/rownumberex.jpg" class="item2">
+    </div>
+    <h4 style="margin-left:99px;font-size:25px;">AVG (AVERAGE)</h4>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+            As you might assume, this function is used to rank items within a specified group. This is commonly used to identify the best-selling products, most-productive employees, and highest gross profit. The one difference between this function and the ROW_NUMBER function is that the ORDER BY clause is REQUIRED.
+        </p>
+        <div class="grid-container">
+            <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
+            <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>
+        </div>
+            <div class="grid-container">
+        <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
+        &ensp;&ensp;&ensp;SELECT <b>RANK() OVER(PARTITION BY artist_name </b><br>
+        &ensp;&ensp;&ensp;<b>ORDER BY track_count DESC)</b> popularity_rank, track_name<br> 
+        &ensp;&ensp;&ensp;artist_name, track_count<br>
+        &ensp;&ensp;&ensp;FROM song_popularity<br>
+        &ensp;&ensp;&ensp;WHERE track_count > 3;
+        </p>
+        <img style="margin-bottom:20px;" src="Images/rankex.jpg" class="item2">
+    </div>
+    <h4 style="margin-left:99px;font-size:25px;">DENSE_RANK</h4>
+    <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        The main issue with the RANK function is that it skips ranks when there are duplicate values. This can make it difficult to interpret the results. To help with this, the DENSE_RANK function continues the rank rather than skips. This is usually used in place of the RANK function. In the example below, the highlighted rows show a great example of continuing the rank. If the RANK function was used the next row after the second highlighted row would be Ranked 4th.
+    </p>
+    <div class="grid-container">
+        <h4 style="font-size:22px;color:black;" class="item1"><b>Example</b></h4>
+        <h4 style="font-size:22px;color:black;" class="item2"><b>Output</b></h4>
+    </div>
+        <div class="grid-container">
+    <p style="text-align:justify;padding-left:0px;padding-right:50px;font-size:16px;line-height:25px;color:black;font-weight:lighter;margin-left:0px;" class="item1">
+    &ensp;&ensp;&ensp;SELECT <b>DENSE_RANK() <br>
+    &ensp;&ensp;&ensp;OVER(PARTITION BY artist_name </b><br>
+    &ensp;&ensp;&ensp;<b>ORDER BY track_count DESC)</b> popularity_rank, track_name<br> 
+    &ensp;&ensp;&ensp;artist_name, track_count<br>
+    &ensp;&ensp;&ensp;FROM song_popularity<br>
+    &ensp;&ensp;&ensp;WHERE track_count > 3;
+    </p>
+    <img style="margin-bottom:40px;" src="Images/denserankex.jpg" class="item2">
+</div>
+    </section>
     </div>
         </section>
         </div>

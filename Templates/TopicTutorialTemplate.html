@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/Tutorials/tutorials.css">
+<title>Topic Tutorial Template</title>
+<header>
+<h1 style="text-align:center;">[Topic] Tutorials</h1>
+    <div class="navbar">
+        <a href="/Tutorials/SQLTutorials.html">Return to Home</a>
+        <div class="dropdown" style="margin-left:80px;">
+            <button class="dropbtn" style="margin-left:80px;">Learning Paths
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:150px;margin-left:5.2%;">
+            <a href="DSBeginner.html">Data Science</a>
+            <a href="DSIntermediate.html">Data Engineering</a>
+            <a href="DSAdvanced.html">Software Engineering</a>
+            <a href="Projects.html">Data Analytics</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Challenges
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="max-width:190px;margin-left:4%;">
+            <a href="FilePath">Beginner</a>
+            <a href="DEIntermediate.html">Intermediate</a>
+            <a href="DEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Projects
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:170px;margin-left:5.2%;">
+            <a href="SEBeginner.html">Beginner</a>
+            <a href="SEIntermediate.html">Intermediate</a>
+            <a href="SEAdvanced.html">Advanced</a>
+          </div>
+        </div>
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Related Topics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:155px;margin-left:4.5%;">
+            <a href="DABeginner.html">Item 1</a>
+            <a href="DAIntermediate.html">Item 2</a>
+            <a href="DAAdvanced.html">Item 3</a>
+            <a href="Projects.html">Item 4</a>
+          </div>
+        </div>
+      </div>
+  </header>
+  <body>
+  <div class="wrapperTutorials" style="width:1200px;">
+    <section>
+      <h2><u>BEGINNER [Topic]: [Tutorial Name]</u></h2><br><br>
+      <h3 style="margin-left:99px;"><b><u>Introduction</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        [Topic Introduction]
+      </p>
+      <h3 style="margin-left:99px;"><b><u>Definitions</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        Before we dive into the semantics of SQL, let's take a look at some common terminology:
+        <ul style="margin-left:110px;">
+            <li><b>Column:  </b>Also called an <b><i>"attribute" or "field"</i></b>, this describes an aspect of a data point. <br>&ensp;&ensp;&ensp;<b>Example:</b> Height, weight, and age may all be columns.</li>
+            <li><b>Row: </b> Also called a <b><i>record</i></b>, this is a collection of columns that represent a single data point.
+            <br>&ensp;&ensp;&ensp;<b>Example: </b>One row may represent one hospital patient and may have attributes like age, weight, and height.</li>
+            <li><b>Table: </b> This is a collection of rows and columns. This is the most basic unit found in a database and will be the foundation of this tutorial.
+            <li><b>Query: </b> This is a specific selection of columns from a table that can include filters to limit the rows retrieved. A google search is an example of a query.
+            </ul>
+        </section>
+    </div>
+        <h3 style="margin-left:99px;"><b><u>The 5 Basic SQL Statements</u></b></h3>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        Since this is a tutorial for beginners, I’m going to show you how to write a query if you wanted to extract data from one table.<br>
+        There are five components to a basic query:
+        <ul style="margin-left:110px;">
+            <li style="line-height:30px;"><b>SELECT <i>(mandatory): </i></b>This is how to start a query and is used to specify the columns to return.
+            <li style="line-height:30px;"><b>FROM <i>(mandatory): </i> </b> This is used to specify the table to query.
+            <li style="line-height:30px;"><b>WHERE: </b> This is used to filter the rows that are returned.
+            <li style="line-height:30px;"><b>GROUP BY: </b> This is used in conjunction with aggregate functions (SUM, COUNT, MAX, etc.) to specify the level of detail to provide.
+                <li style="line-height:30px;"><b>ORDER BY: </b>This is used to specify the sort order of the results.</li>
+        </ul>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">The structure is as follows:<br>
+        &ensp;&ensp;&ensp;<b>SELECT</b> [column1], [column2], [column3]<br>
+        &ensp;&ensp;&ensp;<b>FROM</b> [table name]<br>
+        &ensp;&ensp;&ensp;<b>WHERE </b>[condition]<br>
+        &ensp;&ensp;&ensp;<b>GROUP BY</b> [all columns NOT being aggregated]<br>
+        &ensp;&ensp;&ensp;<b>ORDER BY</b> [column1], [column2] ('ASC' (default)/'DESC')<br><br>
+        <b><u>EXAMPLE</u></b><br><br>
+        &ensp;&ensp;&ensp;<b>SELECT</b> customerID, name, age, SUM(numOrders)<br>
+        &ensp;&ensp;&ensp;<b>FROM</b> customers<br>
+        &ensp;&ensp;&ensp;<b>WHERE </b>age > 20<br>
+        &ensp;&ensp;&ensp;<b>GROUP BY</b> customerID, name, age<br>
+        &ensp;&ensp;&ensp;<b>ORDER BY</b> customerID;<br><br>
+        </p>
+        <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:18px;line-height:25px;"><b><u>Next Steps</u></b><br>Now that you're familiar with how SQL works, let's take a closer look at how Database objects are created:<br>
+            <a href="DDL.html" style="text-decoration:none;color:black;font-weight:bolder;">- DDL Tutorial  (Click here)</a>
+        
+        </p>
+        </p>
+        </p>
+    </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/Tutorials/tutorials.css">
+<title>SQL Tutorials: Helpful Keywords</title>
+<header>
+<h1 style="text-align:center;">SQL Tutorials</h1>
+    <div class="navbar">
+        <a href="/Tutorials/SQLTutorials.html">Return to Home</a>
+
+                                <!-- Links to individual learning paths -->
+
+        <div class="dropdown" style="margin-left:80px;">
+            <button class="dropbtn" style="margin-left:80px;">Learning Paths
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:150px;margin-left:5.2%;">
+            <a href="DSBeginner.html">Data Science</a>
+            <a href="DSIntermediate.html">Data Engineering</a>
+            <a href="DSAdvanced.html">Software Engineering</a>
+            <a href="/LearningPaths/DALearningPath.html">Data Analytics</a>
+          </div>
+        </div>
+
+                    <!-- Links to challenges based on the general topic (e.g., Python, SQL, or JavaScript) -->
+
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Challenges
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="max-width:190px;margin-left:4%;">
+            <a href="FilePath">Beginner</a>
+            <a href="FilePath">Intermediate</a>
+            <a href="FilePath">Advanced</a>
+          </div>
+        </div>
+
+                    <!-- Links to Projects Hub for the general topic (e.g., Python, SQL, or JavaScript)-->
+
+        <div class="dropdown">
+          <button class="dropbtn">Projects
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:170px;margin-left:5.2%;">
+            <a href="FilePath">Beginner</a>
+            <a href="FilePath">Intermediate</a>
+            <a href="FilePath">Advanced</a>
+          </div>
+        </div>
+
+                    <!-- Links to Related general topics -->
+
+        <div class="dropdown" style="margin-left:0px;">
+            <button class="dropbtn" style="margin-left:60px;">Related Topics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" style="min-width:155px;margin-left:4.5%;">
+            <a href="/Tutorials/PythonTutorials.html">Python</a>
+            <a href="/Tutorials/Pandas/PandasTutorials.html">Pandas</a>
+            <a href="FilePath">NoSQL Databases</a>
+            <a href="FilePath">Tableau</a>
+          </div>
+        </div>
+      </div>
+  </header>
+  <body>
+  <div class="wrapperTutorials" style="width:1200px;">
+    <section>
+      <h2><u>BEGINNER SQL: HELPFUL KEYWORDS</u></h2><br><br>
+      <h3 style="margin-left:99px;"><b><u>Introduction</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        Writing queries in SQL can either be very simple or very complex. Rarely are they ever in between. To help you expand your SQL tool belt, this tutorial will introduce you to some common keywords used in conjunction with the 5 basic SQL statements we learned in the first tutorial.
+      </p>
+    </section>
+</div>
+<div class="wrapperTutorials" style="width:1200px;">
+    <section>
+      <h3 style="margin-left:99px;"><b><u>Helpful Keywords</u></b></h3>
+      <p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:16px;line-height:25px;">
+        In the previous tutorial, we looked at table and column constraints and the benefits they provide performance-wise. In addition to those constraints, SQL also provides an array of keywords to be used in the queries themselves. Listed below are some common keywords and their use cases:
+        <ul style="margin-left:99px;">
+            <li style="line-height:25px;font-size:18px;"><b>DISTINCT</b> - This keyword is used to eliminate duplicate rows. This is very useful for identifying the actual number of cutomers and<br>
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;reducing errors in your analyses.<br>
+            &ensp;&ensp;&ensp;<b>Example:</b> SELECT <b>DISTINCT</b> customer_id FROM customers;</li>
+            <li style="line-height:25px;font-size:18px;padding-top:20px;"><b>TOP</b> - This keyword is used to limit the number of rows returned. This is very useful when working with massive datasets.<br>
+            &ensp;&ensp;&ensp;<b>Example:</b> SELECT <b>TOP</b> 100 * FROM customers;</li>
+            <li style="line-height:25px;font-size:18px;padding-top:20px;"><b>LIKE</b> - This keyword is used in conjunction with the WHERE clause. This is used to do a "fuzzy" match with strings that contain certain<br>
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;characters.<br>
+            &ensp;&ensp;&ensp;<b>Example:</b> SELECT * FROM customers WHERE firstName <b>LIKE 'Mic%'</b>;</li>
+            <li style="line-height:25px;font-size:18px;padding-top:20px;"><b>IN</b> - This keyword is also used in conjunction with the WHERE clause. This is used to identify items in a list.<br>
+            &ensp;&ensp;&ensp;<b>Example:</b> SELECT * FROM customers WHERE firstName <b>IN('Aaron', 'Carlos', 'Stacy')</b>;</li>
+            <li style="line-height:25px;font-size:18px;padding-top:20px;"><b>OFFSET</b> - This keyword is used in conjunction with the ORDER BY clause. This is used to skip "n" rows from the top of the result set.<br>
+            &ensp;&ensp;&ensp;<b>Example:</b> SELECT * FROM customers ORDER BY firstName <b>OFFSET 10 ROWS</b>;</li>
+        </ul>
+      </p>
+        </section>
+    </div>
+<div class="wrapperTutorials" style="width:1200px;">
+    <section>
+       <h3 style="margin-left:99px;"><b><u>Next Steps</u></b></h3><p style="text-align:justify;padding-left:100px;padding-right:100px;font-size:18px;line-height:25px;color:black;">Congratulations! You just completed the Beginner section of this learning series! Luckily this tutorial wasn't too bad. If you're ready for a new challenge, feel free to begin the Intermediate section of this learning series:<br>
+            <a href="/Tutorials/SQL/Subqueries.html" style="text-decoration:none;color:black;font-weight:bolder;">- Subqueries Tutorial  (Click here)</a>
+        
+        </p>
+        </p>
+        </p>
+    </section>
+    </div>
+</body>
+</html>

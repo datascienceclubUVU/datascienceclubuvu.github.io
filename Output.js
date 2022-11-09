@@ -1,1 +1,2 @@
-showMessage('Test Message');
+
+showMessage('Upcoming Events');

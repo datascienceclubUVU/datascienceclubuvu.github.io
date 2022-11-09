@@ -1,3 +1,3 @@
 function showMessage(message) {
-    document.getElementById('upcomingevents').textContent = message;
+    document.getElementById("upcomingevents").textContent = message;
 }

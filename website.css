@@ -159,7 +159,6 @@ body.sticky-header{
   text-align: center;
   color: white;
   background-image: "Screenshot 2022-11-02 140310.png";
-  z-index:-1;
 }
 
 /* Centered text */

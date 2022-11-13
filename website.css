@@ -23,6 +23,8 @@ header{
   position: relative;
   position: fixed;
   top: 0;
+  margin-left: 0%;
+  padding-left: 0%;
   @include transition(all .5s ease);  
 }
 
@@ -49,7 +51,7 @@ h1{
     font-size: 22px;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 0.5% 1%;
     text-decoration: none;
   }
   
@@ -200,7 +202,7 @@ body.sticky-header{
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 80%;
   position: relative;
   margin: auto;
 }

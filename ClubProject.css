@@ -1,3 +1,8 @@
+@import "compass/css3";
+
+@import "compass/css3";
+@import "compass/reset";
+
 header{
     width: 100%;
     height: 115px;
@@ -25,3 +30,50 @@ header{
     color: white;
     padding-top:10px;
   }
+
+  body{
+    background-color: #ecf0f1;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    padding-top: 142px;
+    padding-left: 0px;
+    width: 100%;
+    @include transition(padding-top .5s ease);
+  }
+
+  .wrapper{
+    width: 1200px;
+    margin: 0 auto;
+  }
+  section{
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: #fff;
+  }
+
+  h3 {
+    margin-left: 60px;
+  }
+
+  h4 {
+    margin-left:60px;
+    font-weight:lighter;
+  }
+
+  .grid-container {
+    display: grid;
+    column-gap: 0px;
+    row-gap: 50px;
+}
+
+.item1 {
+    grid-column: 1;
+    grid-row: 1;
+    text-decoration: none;
+}
+
+.item2 {
+    grid-column: 2;
+    grid-row: 1;
+    text-decoration: none;
+}

@@ -15,7 +15,7 @@
           Data Science as a discipline encompasses a variety of fields, including <b>Machine Learning, Data Engineering, Software Engineering, and Data Analytics.</b> Because of this, employers expect Data Scientists to understand the core concepts surrounding these fields.
         </p>
         <p style="text-align:left;padding-left:60px;padding-right:60px;font-size:16px;line-height:23px;">
-            For our first collaborative project, we will be building off Spotify's <a href="https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge">Million Playlist Dataset Challenge</a> by creating a web app that allows suers to choose, create, or import a custom playlist and receive a list of suggested songs to add to their playlist.
+            For our first collaborative project, we will be building off Spotify's <a href="https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge">Million Playlist Dataset Challenge</a> by creating a web app that allows users to choose, create, or import a custom playlist and receive a list of suggested songs to add to their playlist.
         </p>
       </section>
   </div>
@@ -79,15 +79,14 @@
           Now that we have specified what roles are necessary to complete this project, we will outline the individual tasks that need to be accomplshed. To keep things organized, we will name the Data Science & Software Engineering Team, <b>"Team A"</b> and the Data Engineering & Data Analytics Team, <b>"Team B"</b>:<br><br>
           &ensp;&ensp;&ensp;&ensp;<b style="font-size:18px;"><u>PHASE 1: DATA WAREHOUSE CONFIGURATION</u></b>
           <ol style="margin-left:45px;font-size:18px;">
-            <li style="line-height:30px;">Download Million Playlist Dataset <b>(Team B)</b></li>
             <li style="line-height:30px;">Create Connection to Spotify API <b>(Team A)</b></li>
-            <li style="line-height:30px;">Create Local Database for Staging Tables <b>(Team B)</b></li>
-            <li style="line-height:30px;">Extract Sample Data to Identify Fields Used <b>(Team B)</b></li>
+            <li style="line-height:30px;">Create Ingestion Pipeline <b>(Team B)</b></li>
+            <li style="line-height:30px;">Create Data Model using dbt <b>(Team B)</b></li>
             <li style="line-height:30px;">Design and Implement Data Warehouse for Data Storage <b>(Team B)</b></li>
             <li style="line-height:30px;">Deploy CDC Features in Data Warehouse <b>(Team B)</b><br><br><b><u>PHASE 2: ETL PROCEDURES</u></b></li><br>
-            <li style="line-height:30px;">Design and Implement the Batch ETL Pipeline <b>(Team B)</b></li>
-            <li style="line-height:30px;">Deploy Workflow Orchestration Tool <b>(Team B)</b></li>
-            <li style="line-height:30px;">Create ELT Pipeline to Load Output Data to Parquet Files <b>(Team B)</b></li><br><br><b><u>PHASE 3: MACHINE LEARNING MODEL DEVELOPMENT</u></b><br><br>
+            <li style="line-height:30px;">Design and Implement Batch ELT Pipeline <b>(Team B)</b></li>
+            <li style="line-height:30px;">Create and Deploy Prefect Workflows <b>(Team B)</b></li>
+            <li style="line-height:30px;">Create Indexes and Views <b>(Team B)</b></li><br><br><b><u>PHASE 3: MACHINE LEARNING MODEL DEVELOPMENT</u></b><br><br>
             <li style="line-height:30px;">Build KNN Model <b>(Team A)</b></li>
             <li style="line-height:30px;">Create Training Dataset <b>(Team B)</b></li>
             <li style="line-height:30px;">Train KNN Model <b>(Team A)</b></li>
@@ -109,16 +108,17 @@
           To accomplish the tasks outlined above, we will be using the following tools (in order of appearance):
           <ul style="margin-left:45px;font-size:18px;">
             <li style="line-height:30px;">Spotipy (Python Library)</li>
-            <li style="line-height:30px;">Snowflake</li>
-            <li style="line-height:30px;">AWS Glue</li>
+            <li style="line-height:30px;">Prefect</li>
+            <li style="line-height:30px;">Snowflake*</li>
             <li style="line-height:30px;">dbt</li>
             <li style="line-height:30px;">Pandas (Python Library)</li>
-            <li style="line-height:30px;">PyTorch (Python Library)</li>
+            <li style="line-height:30px;">PyTorch (Python Library)*</li>
             <li style="line-height:30px;">Tableau</li>
-            <li style="line-height:30px;">Flask (Python UI Framework)</li>
+            <li style="line-height:30px;">Streamlit (Python UI Framework)</li>
             <li style="line-height:30px;">GitHub Actions</li>
-            <li style="line-height:30px;">PyTest (Python Library)</li>
+            <li style="line-height:30px;">PyTest (Python Library)*</li>
           </ul>
+          <p style="font-size:15px;margin-left:50px;">* subject to change</p>
       </section>
   </div>
 

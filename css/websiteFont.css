@@ -1,0 +1,10 @@
+:root {
+    /* Sets Bootstrap's default font */
+    --bs-font-sans-serif:
+        /* Google Font */
+        "IBM Plex Sans Condensed",
+        /* Bootstrap's default fonts */
+        system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}

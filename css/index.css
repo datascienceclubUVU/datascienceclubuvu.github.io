@@ -4,8 +4,8 @@
             rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.6)
         ), 
-        url(../images/deepMindArt.jpg);
-    background-position: center;
+        url(../images/wideDataScience.png);
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
 }

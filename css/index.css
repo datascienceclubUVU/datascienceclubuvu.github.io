@@ -9,3 +9,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 3.5vw;
+    height: 3.5vw;
+}
+
+.carouselTab {
+    width: 3vw;
+    height: 0.35vw;
+}

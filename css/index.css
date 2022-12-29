@@ -10,6 +10,10 @@
     background-size: cover;
 }
 
+#googleCalendar {
+    height: 350px;
+}
+
 .carousel-control-prev-icon, .carousel-control-next-icon {
     width: 3.5vw;
     height: 3.5vw;

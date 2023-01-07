@@ -1,0 +1,9 @@
+#contentWrapper {
+    background-color: #ecf0f1;
+}
+
+footer {
+    height: 70px;
+    /* In case page doesn't extend to bottom of screen. */
+    box-shadow: 0 50vh 0 50vh #212529;
+}

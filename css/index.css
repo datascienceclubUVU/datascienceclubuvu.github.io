@@ -1,0 +1,25 @@
+#heroImage { 
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ), 
+        url(../imgs/wide-data-science.png);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#googleCalendar {
+    height: 350px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 3.5vw;
+    height: 3.5vw;
+}
+
+.carouselTab {
+    width: 3vw;
+    height: 0.35vw;
+}

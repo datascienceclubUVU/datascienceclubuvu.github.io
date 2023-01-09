@@ -1,1 +1,1 @@
-# Club-Website
+# Data Science Club Website

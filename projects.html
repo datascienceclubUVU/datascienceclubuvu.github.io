@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script defer src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/website-base.css">
+    <title>Projects | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                SPOTIFY PLAYLIST SONG RECOMMENDATION APP
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown mx-4">
+                        <a
+                            class="nav-link active dropdown-toggle text-center" 
+                            href="#"
+                            id="navbarDropdownMenuLink"
+                            role="button"
+                            data-bs-toggle="dropdown">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark shadow border-white bg-secondary">
+                            <li><a class="dropdown-item" href="learning-paths.html">Learning Paths</a></li>
+                            <li><a class="dropdown-item" href="tutorials.html">Tutorials</a></li>
+                            <li><a class="dropdown-item" href="workshops.html">Workshops</a></li>
+                            <li><a class="dropdown-item active" href="projects.html">Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="about-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="contact-us.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <!-- Overview section. -->
+                <section class="container-fluid">
+                    <div class="row">
+                        <h2 class="col mb-3 mx-1 text-start border-start border-3 border-secondary text-primary">
+                            OVERVIEW
+                        </h2>
+                        <p class="col-12">
+                            Data Science as a discipline encompasses a variety of fields, including <strong>Machine Learning</strong>,
+                            <strong>Data Engineering</strong>, <strong>Software Engineering</strong>, and <strong>Data Analytics</strong>.
+                            Because of this, employers expect Data Scientists to understand the core concepts surrounding these fields.
+                        </p>
+                        <p class="col-12">
+                            For our first collaborative project, we will be building off of Spotify's
+                            <a
+                                href="https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Million Playlist Dataset Challenge
+                            </a>
+                            by creating a web app that allows users to choose, create, or import a custom playlist and receive a list of
+                            suggested songs to add to their playlist.
+                        </p>
+                    </div>
+                </section>
+                <!-- Teams section. -->
+                <section class="container-fluid">
+                    <div class="row">
+                        <h2 class="col mt-2 mb-3 mx-1 text-start border-start border-3 border-secondary text-primary">
+                            TEAMS
+                        </h2>
+                        <p class="col-12">
+                            As mentioned above, this will be a collaborative project. Thus, we will be breaking out into the following teams:
+                        </p>
+                        <!-- Data Science & Software Engineering Team. -->
+                        <div class="col-12 col-sm-6">
+                            <h5>
+                                Data Science & Software Engineering
+                            </h5>
+                            <dl>
+                                <dt>Team Leader</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Jacob Banuelos</li>
+                                    </ul>
+                                </dd>
+                                <dt>Team Roles</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Front-End Developer</li>
+                                        <li>Back-End Developer</li>
+                                        <li>Machine Learning Engineer</li>
+                                        <li>Unit Testing Specialist</li>
+                                    </ul>
+                                </dd>
+                                <dt>Team Responsibilities</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Build front-end UI</li>
+                                        <li>Build CI/CD pipeline</li>
+                                        <li>Deploy web app</li>
+                                        <li>Conduct unit testing</li>
+                                        <li>Build KNN or K-Means model to find clusters</li>
+                                        <li>Train and test KNN or K-Means model</li>
+                                        <li>Validate KNN or K-Means model</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!-- Data Engineering & Data Analytics Team. -->
+                        <div class="col-12 col-sm-6">
+                            <h5>
+                                Data Engineering & Data Analytics
+                            </h5>
+                            <dl>
+                                <dt>Team Leader</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Chase Pattee</li>
+                                    </ul>
+                                </dd>
+                                <dt>Team Roles</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Database Administrator (DBA)</li>
+                                        <li>ELT Developer</li>
+                                        <li>Workflow Optimization Specialist</li>
+                                        <li>Query Optimization Specialist</li>
+                                        <li>Tableau Developer</li>
+                                    </ul>
+                                </dd>
+                                <dt>Team Responsibilities</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Build batch ELT pipeline</li>
+                                        <li>Deploy workflow orchestration tool</li>
+                                        <li>Build and deploy data storage tools</li>
+                                        <li>Create local DB for temporary data storage</li>
+                                        <li>Create back-end data warehouse</li>
+                                        <li>Create training and testing datasets</li>
+                                        <li>Create reporting dashboard for project metrics</li>
+                                        <li>Deploy Change Data Capture (CDC) techniques for data warehouse</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <!-- Tasks Section. -->
+                <section class="container-fluid">
+                    <div class="row">
+                        <h2 class="col mt-2 mb-3 mx-1 text-start border-start border-3 border-secondary text-primary">
+                            TASKS
+                        </h2>
+                        <p class="col-12">
+                            Now that we have specified what roles are necessary to complete this project, we will outline the individual
+                            tasks that need to be accomplished. To keep things organized, we will refer to the Data Science & Software
+                            Engineering Team as <strong>Team A</strong> and the Data Engineering & Data Analytics Team as
+                            <strong>Team B</strong>.
+                        </p>
+                        <h5 class="col-12">
+                            Phase 1: Data Warehouse Configuration
+                        </h5>
+                        <ol class="col-12 ps-5">
+                            <li>Create connection to Spotify API (Team A)</li>
+                            <li>Create ingestion pipeline (Team B)</li>
+                            <li>Create data model using dbt (Team B)</li>
+                            <li>Design and implement data warehouse for data storage (Team B)</li>
+                            <li>Deploy CDC features in data warehouse (Team B)</li>
+                        </ol>
+                        <h5 class="col-12">
+                            Phase 2: ELT Procedures
+                        </h5>
+                        <ol class="col-12 ps-5">
+                            <li>Design and implement batch ELT  pipeline (Team B)</li>
+                            <li>Create and deploy Prefect workflows (Team B)</li>
+                            <li>Create indexes and views (Team B)</li>
+                        </ol>
+                        <h5 class="col-12">
+                            Phase 3: Machine Learning Model Development
+                        </h5>
+                        <ol class="col-12 ps-5">
+                            <li>Build KNN or K-Means model (Team A)</li>
+                            <li>Create training dataset (Team B)</li>
+                            <li>Traing KNN or K-Means model (Team A)</li>
+                            <li>Identify KPIs used in reporting dashboard (Team B)</li>
+                            <li>Create testing dataset (Team B)</li>
+                            <li>Test and validate KNN or K-Means model (Team A)</li>
+                            <li>Build front-end UI (Team A)</li>
+                            <li>Build CI/CD pipeline (Team A)</li>
+                        </ol>
+                        <h5 class="col-12">
+                            Phase 4: Deploy and Test Web App
+                        </h5>
+                        <ol class="col-12 ps-5">
+                            <li>Conduct unit testing (Team A)</li>
+                            <li>Deploy web app (Team A)</li>
+                            <li>Create reporting dashboard (Team B)</li>
+                        </ol>
+                    </div>
+                </section>
+                <!-- Tools section. -->
+                <section class="container-fluid">
+                    <div class="row">
+                        <h2 class="col mt-2 mb-3 mx-1 text-start border-start border-3 border-secondary text-primary">
+                            TOOLS
+                        </h2>
+                        <p class="col-12">
+                            To accomplish the tasks outlined above, we will be using the following tools (in order of appearance):
+                        </p>
+                        <ul class="col-12 ps-5">
+                            <li>Spotipy (Python library)</li>
+                            <li>Prefect</li>
+                            <li>Snowflake*</li>
+                            <li>dbt</li>
+                            <li>Pandas (Python library)</li>
+                            <li>PyTorch (Python library)*</li>
+                            <li>Tableau</li>
+                            <li>Streamlit (Python UI framework)</li>
+                            <li>GitHub Actions</li>
+                            <li>PyTest (Python library)*</li>
+                        </ul>
+                        <p class="col-12">
+                            * subject to change
+                        </p>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

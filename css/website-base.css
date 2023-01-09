@@ -3,7 +3,7 @@
 }
 
 footer {
-    height: 70px;
+    height: 90px;
     /* In case page doesn't extend to bottom of screen. */
     box-shadow: 0 50vh 0 50vh #212529;
 }

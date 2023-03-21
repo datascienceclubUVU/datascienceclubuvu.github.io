@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>SQL Tutorials: Relational Databases | Data Science Club @ UVU</title>
+    <title>SQL Tutorials: DDL | Data Science Club @ UVU</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            SQL Tutorials: Relational Databases
+                            SQL Tutorials: DDL
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,9 +79,8 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/relational-database.jfif"
+                                src="../../imgs/ddl.png"
                                 alt="%UPDATE% Picture of the word python written on a stick note."
-                                width="100%"
                             >  <!-- %UPDATE% -->
                         </div>
                     </div>
@@ -89,21 +88,19 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Welcome to the first lesson in the SQL Learning Series! Listed below are the learning objectives covered
-                                in this lesson:
+                                Now that you have a clear understanding of the core concepts behind Relational Databases, let's learn how
+                                to create, update, and delete database objects. Listed below are the learning objectives in this lesson:
                             </p>
                             <ul>
-                                <li>Database Objects</li>
-                                <li>Primary Keys vs. Foreign Keys</li>
-                                <li>Normalization</li>
-                                <li>Types of Relationships</li>
-                                <li>Data Types</li>
-                                <li>Entity Relationship Diagrams (ERDs)</li>
+                                <li>Creating Database Objects</li>
+                                <li>Altering Database Objects</li>
+                                <li>Dropping Database Objects</li>
+                                <li>Truncating Database Objects</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="pt-3"><u>Database Objects</u></h2>
+                        <h2 class="pt-3"><u>Creating Database Objects</u></h2>
                         <p style="padding-top:1%">To keep things organized, Relational Database Management Systems (RDBMSs) create
                             business logic in a hierarchy of objects. These include <b><i>Databases, Schemas, Tables, </i></b> and
                             <b><i>Attributes</i></b>. view the videos below to learn more about these objects:
@@ -122,7 +119,7 @@
                             <li class="pt-2">A <b><i>Schema</i></b> is a collection of tables that have a common structure and have limitations called 
                             constraints to ensure data quality.</li>
                         </ul>
-                        <h2 class="pt-5"><u>Primary Keys vs. Foreign Keys</u></h2>
+                        <h2 class="pt-5"><u>Altering Database Objects</u></h2>
                         <p style="padding-top:1%">The main reason data professionals prefer relational databases over spreadsheets is their <b><i>relational</i></b> 
                             properties that come in the form of <b><i>primary keys</i></b> and <b><i>foreign keys.</i></b> Take a look at the videos below
                             to learn about this concept:</p>
@@ -140,7 +137,7 @@
                             <li class="pt-2"><b><i>Candidate Keys</i></b> are columns that <i>can</i> be used to uniquely identify each row in a table, though haven't 
                             been designated as primary keys yet.</li>
                         </ul>
-                        <h2 style="padding-top:5%"><u>Data Types</u></h2>
+                        <h2 style="padding-top:5%"><u>Dropping Database Objects</u></h2>
                         <p>Just like in any programming language, there is more than one type of data. This is because some data may be
                             numeric in nature, whereas other might be textual in nature. Let's take a look at the various data types:
                         </p>
@@ -159,7 +156,7 @@
                             <li class="pt-2"><b><i>DATE/TIME/DATETIME</i></b> data types represent time-series data, or data that occurs along a timeline. 
                             This may or may not include timezone information or may simply be limited to just a date.</li>
                         </ul>
-                        <h2 class="pt-5"><u>Types of Relationships</u></h2>
+                        <h2 class="pt-5"><u>Truncating Database Objects</u></h2>
                         <p>Before you get started with designing your first Relational Database, it's critical to understand the different types
                             of relationships available. Let's review them down below:
                         </p>
@@ -176,27 +173,7 @@
                             two tables that have multiple entries in one table that match with multiple entries in the other table. These should be
                             avoided because it makes understanding business logic much more difficult.</li>
                         </ul>
-                        <h2 class="pt-5"><u>Normalization</u></h2>
-                        <p>In designing relational databases, the concept of referential integrity is critical to ensuring you have the correct data 
-                           and that the attributes associated with that data are aligned only with a specified data point. Take a gander at the 
-                           videos below to gain a better understanding of this topic:
-                        </p>
-                        <ul>
-                            <a href="https://youtu.be/J-drts33N8g">First, Second, and Third Normal Forms</a><br>
-                            <a href="https://www.youtube.com/watch?v=siiYInWniFs">How to Normalize a Database Table</a>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2"><b><i>First Normal Form</i></b> states that all rows in a given table are unique and all cells
-                            (intersections between attributes and rows) must contain only one value (no lists, arrays, or dictionaries).</li>
-                            <li class="pt-2"><b><i>Second Normal Form</i></b> states that once a database is in first normal form, all
-                            attribute values should be dependent on the primary key (not another common attribute). Rather than having
-                            a composite key that describe two different entities, it's better to separate the entities into two different
-                            tables to create a relationship.</li>
-                            <li class="pt-2"><b><i>Third Normal Form</i></b> states that once a database is in second normal form, all attributes
-                            must be dependent only on the primary key, not on other keys.</li>
-                        </ul>
-                        <h2 class="pt-5"><u>Entity Relationship Diagrams (ERDs)</u></h2>
+                        <h2 class="pt-5"><u>Exercise</u></h2>
                         <p>Now that you're familiar with how tables are related, the different types of relationships, and how to normalize a database
                             schema, let's learn how to visualize these relationships:
                         </p>
@@ -211,8 +188,14 @@
                             <li class="pt-2"><b><i>Crows Foot Notation</i></b> is an ERD design practice that makes it easier to identify One-to-Many
                                 relationships between entities.</li>
                         </ul>
+                        <div class="row mt-2 mb-3">
+                            <div class="col">
+                        <button class="btn btn-outline-primary py-2 w-25 text-center fs-5
+                        border border-primary" style="margin-left:10%;"><a href="Relational-Databases.html" style="text-decoration:none;">Previous Topic</a></button>
                         <button class="btn btn-outline-primary py-2 w-25 text-center fs-5
                         border border-primary" style="margin-left:72%;"><a href="DDL.html" style="text-decoration:none;">Next Topic</a></button>
+                    </div>
+                    </div>
                 </section>
             </div>
             <div class="col-md-1 col-lg-2 col-xxl-3"></div>

@@ -100,6 +100,7 @@
                                 <li>Altering Database Objects</li>
                                 <li>Dropping Database Objects</li>
                                 <li>Truncating Database Objects</li>
+                                <li>Constraints</li>
                             </ul>
                         </div>
                     </div>
@@ -127,22 +128,22 @@
                             with the <b><i>USE DATABASE [db_name]</i></b> statement to ensure you create the table in the correct database.</li>
                         </ul>
                         <h2 class="pt-5"><u>Altering Database Objects</u></h2>
-                        <p style="padding-top:1%">The main reason data professionals prefer relational databases over spreadsheets is their <b><i>relational</i></b> 
-                            properties that come in the form of <b><i>primary keys</i></b> and <b><i>foreign keys.</i></b> Take a look at the videos below
-                            to learn about this concept:</p>
+                        <p style="padding-top:1%">Sometimes, you may need to rename or restructure a database obejct. View the following views to learn
+                        more about these options:</p>
                             <ul>
-                                <a href="https://youtu.be/8wUUMOKAK-c">Primary Keys vs. Foreign Keys Tutorial</a></li>
+                                <a href="https://www.youtube.com/watch?v=vDr2DZeU5mY">How to Alter Database Tables</a><br>
+                                <a href="https://youtube.com/clip/Ugkx-nTo9FPlmVdzR-SG4wkw3E_LmNwYGknh">How to Rename Databases</a>
                             </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2"><b><i>Primary Keys</i></b> are the central component of relational databases and are used to 
-                            uniquely identify rows in a table.</li>
-                            <li class="pt-2"><b><i>Foreign Keys</i></b> are primary keys stored in another table to create a relationship between
-                            two tables.</li>
-                            <li class="pt-2"><b><i>Composite Keys</i></b> are primary keys composed of more than one column. These are used when more than column
-                            is requried to uniquesly identify each row in a table.</li>
-                            <li class="pt-2"><b><i>Candidate Keys</i></b> are columns that <i>can</i> be used to uniquely identify each row in a table, though haven't 
-                            been designated as primary keys yet.</li>
+                            <li class="pt-2">To add a column/attribute to a table, use the following syntax: 
+                                <br><b><i>ALTER TABLE [table_name] ADD [col_name] [data_type];</i></b></li>
+                            <li class="pt-2">To drop a column/attribute from a table, use the following syntax: <br>
+                                <b><i>ALTER TABLE [table_name] DROP [col_name];</i></b></li>
+                            <li class="pt-2">To change an attribute's data type, use the following syntax (differs between RDBMSs): 
+                                <br><b><i>ALTER TABLE [table_name] MODIFY [col_name] [new_data_type] [constraint]</i></b></li>
+                            <li class="pt-2">To Rename a database, use the following syntax (differs between RDBMSs):
+                                <br><b><i>ALTER DATABASE [db_name] MODIFY name = [new_name];</i></b></li>
                         </ul>
                         <h2 style="padding-top:5%"><u>Dropping Database Objects</u></h2>
                         <p>Just like in any programming language, there is more than one type of data. This is because some data may be

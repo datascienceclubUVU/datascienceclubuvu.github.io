@@ -88,8 +88,12 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
+                                <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
+                                   We recommend using either PostgreSQL, MS SQL Server, or MySQL.
+                                </b><br><br>
                                 Now that you have a clear understanding of the core concepts behind Relational Databases, let's learn how
-                                to create, update, and delete database objects. Listed below are the learning objectives in this lesson:
+                                to create, update, and delete database objects. <b><i>Data Definition Language (DDL)</i></b> is a form of SQL used
+                                 specifically for creating, altering, and dropping database objects. Listed below are the learning objectives in this lesson:
                             </p>
                             <ul>
                                 <li>Creating Database Objects</li>
@@ -101,23 +105,26 @@
                     </div>
                     <div>
                         <h2 class="pt-3"><u>Creating Database Objects</u></h2>
-                        <p style="padding-top:1%">To keep things organized, Relational Database Management Systems (RDBMSs) create
-                            business logic in a hierarchy of objects. These include <b><i>Databases, Schemas, Tables, </i></b> and
-                            <b><i>Attributes</i></b>. view the videos below to learn more about these objects:
+                        <p style="padding-top:1%">As mentioned in the previous tutorial, Relational Databases are comprised of four primary
+                            objects: Databases, Schemas, Tables, and Attributes. The videos below describe how to create the first three of these objects:
                         </p>
                         <ul>
-                            <a href="https://youtu.be/WXPZJF9c3wQ">What is a Relational Database?</a><br>
-                            <a href="https://youtube.com/clip/UgkxK8LptHMOzHwmt5-ll5P9TiwUAvRCyXth">Why Are Tables Used in Relational Databases?</a><br>
-                            <a href="https://youtu.be/3BZz8R7mqu0">What is a Database Schema?</a>
+                            <a href="https://www.youtube.com/watch?v=PPFyoXA_FC0">How to Create A Database</a><br>
+                            <a href="https://www.youtube.com/watch?v=q3uBm7585ew">How to Create A Schema</a><br>
+                            <a href="https://www.youtube.com/watch?v=XfrgCK6BX5w">How to Create A Table</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">A <b><i>Relational Database</i></b> is a system comprised of tables that represent real-world objects
-                            and contain Attributes (Columns) and rows of data.</li>
-                            <li class="pt-2">A <b><i>Table</i></b> is a unit of data that contains Columns (Attributes) and Rows (Records) to
-                            describe the data.</li>
-                            <li class="pt-2">A <b><i>Schema</i></b> is a collection of tables that have a common structure and have limitations called 
-                            constraints to ensure data quality.</li>
+                            <li class="pt-1">The <b><i>CREATE DATABASE</i></b> statement is used to create databases in an RDBMS. Once you have
+                            multiple databases created, it's helpful to use the optional <b><i>IF NOT EXISTS</i></b> keyword to check if the 
+                            name has already been used.</li>
+                            <li class="pt-2">The <b><i>CREATE SCHEMA</i></b> statement is used to create a schema within a database. These can 
+                            be used to differentiate different business units and provide security for sensitive data. It's recommended to use this
+                            this statement in conjunction with the <b><i>USE DATABASE [db_name]</i></b> statement to ensure you create the schema
+                            in the correct database.</li>
+                            <li class="pt-2">The <b><i>CREATE TABLE</i></b> statement is used to define the name and structure of a table in a database.
+                            You must specify each column and its associated data type in the table. It's recommended to use this statement in conjunction
+                            with the <b><i>USE DATABASE [db_name]</i></b> statement to ensure you create the table in the correct database.</li>
                         </ul>
                         <h2 class="pt-5"><u>Altering Database Objects</u></h2>
                         <p style="padding-top:1%">The main reason data professionals prefer relational databases over spreadsheets is their <b><i>relational</i></b> 

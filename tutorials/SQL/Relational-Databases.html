@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div>
-                        <h2 class="pt-5">Database Objects</h2>
+                        <h2 class="pt-3"><u>Database Objects</u></h2>
                         <p style="padding-top:1%">To keep things organized, Relational Database Management Systems (RDBMSs) create
                             business logic in a hierarchy of objects. These include <b><i>Databases, Schemas, Tables, </i></b> and
                             <b><i>Attributes</i></b>. view the videos below to learn more about these objects:
@@ -122,7 +122,7 @@
                             <li class="pt-2">A <b><i>Schema</i></b> is a collection of tables that have a common structure and have limitations called 
                             constraints to ensure data quality.</li>
                         </ul>
-                        <h2 class="pt-5">Primary Keys vs. Foreign Keys</h2>
+                        <h2 class="pt-5"><u>Primary Keys vs. Foreign Keys</u></h2>
                         <p style="padding-top:1%">The main reason data professionals prefer relational databases over spreadsheets is their <b><i>relational</i></b> 
                             properties that come in the form of <b><i>primary keys</i></b> and <b><i>foreign keys.</i></b> Take a look at the videos below
                             to learn about this concept:</p>
@@ -131,20 +131,52 @@
                             </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li><b><i>Primary Keys</i></b> are the central component of relational databases and are used to 
+                            <li class="pt-2"><b><i>Primary Keys</i></b> are the central component of relational databases and are used to 
                             uniquely identify rows in a table.</li>
-                            <li><b><i>Foreign Keys</i></b> are primary keys stored in another table to create a relationship between
+                            <li class="pt-2"><b><i>Foreign Keys</i></b> are primary keys stored in another table to create a relationship between
                             two tables.</li>
-                            <li><b><i>Composite Keys</i></b> are primary keys composed of more than one column. These are used when more than column
+                            <li class="pt-2"><b><i>Composite Keys</i></b> are primary keys composed of more than one column. These are used when more than column
                             is requried to uniquesly identify each row in a table.</li>
-                            <li><b><i>Candidate Keys</i></b> are columns that <i>can</i> be used to uniquely identify each row in a table, though haven't 
+                            <li class="pt-2"><b><i>Candidate Keys</i></b> are columns that <i>can</i> be used to uniquely identify each row in a table, though haven't 
                             been designated as primary keys yet.</li>
                         </ul>
-                        <h2 style="padding-top:5%">Data Types</h2>
-                        <p></p>
-                        <h2 style="padding-top:5%">Types of Relationships</h2>
-                        <p></p>
-                        <h2>Normalization</h2>
+                        <h2 style="padding-top:5%"><u>Data Types</u></h2>
+                        <p>Just like in any programming language, there is more than one type of data. This is because some data may be
+                            numeric in nature, whereas other might be textual in nature. Let's take a look at the various data types:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=btjcNSOUTOg">Common SQL Data Types</a>
+                        </ul>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2"><b><i>VARCHAR/CHAR</i></b> data types represent textual data. These are short for <b>VAR</b>ying <b>CHAR</b>acter and <b>CHAR</b>acter, 
+                                respecitively. The primary difference between these two is that <b><i>CHAR</i></b> is a fixed limit on the number of characters
+                                allowed, whereas <b><i>VARCHAR</i></b> allows a strong of characters up to a specified limit.</li>
+                            <li class="pt-2"><b><i>DECIMAL/NUMERIC/FLOAT</i></b> data types represent non-integer numerical data. These are used interchangeably and represent numbers
+                            with a fixed number of decimal points.</li>
+                            <li class="pt-2"><b><i>INT/INTEGER</i></b> data types represent numerical data without deciaml places. These are used
+                            interchangeably and are used to represent attributes with discrete values (numbers that can't be partial).</li>
+                            <li class="pt-2"><b><i>DATE/TIME/DATETIME</i></b> data types represent time-series data, or data that occurs along a timeline. 
+                            This may or may not include timezone information or may simply be limited to just a date.</li>
+                        </ul>
+                        <h2 class="pt-5">Types of Relationships</h2>
+                        <p>Before you get started with designing your first Relational Database, it's critical to understand the different types
+                            of relationships available. Let's review them down below:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=4q-keGvUnag">Types of Table Relationships</a><br>
+                            <a href="https://www.youtube.com/watch?v=urTwxelK-Xc">How to Manage Many-to-Many Relationships</a>
+                        </ul>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2"><b><i>One-to-Many Relationships</i></b> are the most common relationship and are represented by a lookup
+                            table representeing distinct items in the database and another table that references the items in that table multiple
+                            times via a foreign key.</li>
+                            <li class="pt-2"><b><i>Many-to-Many Relationships</i></b> should be avoided whenever possible. These are represented by
+                            two tables that have multiple entries in one table that match with multiple entries in the other table. These should be
+                            avoided because it makes understanding business logic much more difficult.</li>
+                        </ul>
+                        <h2 class="pt-5">Normalization</h2>
                         <p></p>
                         <h2>Entity Relationship Diagrams (ERDs)</h2>
                         <p></p>

@@ -182,21 +182,59 @@
                             <li class="pt-2">To truncate a table, use the following syntax (differs between RDBMSs):
                                 <br><b><i>TRUNCATE TABLE [table_name];</i></b></li>
                         </ul>
-                        <h2 class="pt-5"><u>Exercise</u></h2>
-                        <p>Now that you're familiar with how tables are related, the different types of relationships, and how to normalize a database
-                            schema, let's learn how to visualize these relationships:
+                        <h2 class="pt-5"><u>Constraints</u></h2>
+                        <p>When dealing with large amounts of data, you'll want to place some limitations on the types of data or how the data
+                            is presented. Tehse are known as <b><i>Constraints</i></b> and can be placed on the Schema, Table, or Column level.
+                            The following videos give a breif outline of the different constraints available:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=5nGC4fyFPes">Basic Concepts of Entity-Relationship Models</a>
+                            <a href="https://www.youtube.com/watch?v=boj9b5XqliU">Creating Column-Level Constraints using the CREATE TABLE Statement</a><br>
+                            <a href="https://youtube.com/clip/UgkxFKeRNseYu2M9ckaydZT90AHWvmF2Sx-3">Types of Column-Level Constraints</a><br>
+                            <a href="https://www.youtube.com/watch?v=3CuijVrhWYc">Types of Table-Level Constraints</a>
                         </ul>
-                        <h4 class="pt-3">Instructions:</h4>
+                        <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">An <b><i>Entity</i></b> is a "thing" in the real world that is represented as a table in a relational database.</li>
-                            <li class="pt-2">An <b><i>Entity Relationship Diagram</i></b> is a chart that visualizes the relationship of entities stored in 
-                                a database schema. These are also used to help dveelopers create databases based on a predefined schema.</li>
-                            <li class="pt-2"><b><i>Crows Foot Notation</i></b> is an ERD design practice that makes it easier to identify One-to-Many
-                                relationships between entities.</li>
+                            <li class="pt-2">To create a column-level constraint using the CREATE TABLE statement, use the following syntax (differs between RDBMSs):
+                                <br><b><i>CREATE TABLE [table_name]([col_name] [data_type] CONSTRAINT [constraint_name] [constraint_type, etc.)</i></b></li>
+                            <li class="pt-2">There are six primary column-level constraints: <b><i>Primary Key, Foreign Key, Unique, Not Null, Check, and Default.</i></b></li>
                         </ul>
+                        <h2 class="pt-5"><u>Exercise</u></h2>
+                        <p><b>Congratulations!</b> You just completed the DDL Tutorial! We hope you leanred a lot and feel more prepared to enter
+                            the workforce. To help test your knowledge, let's complete a simple exercise.
+                        </p>
+                        <h4 class="pt-3">Instructions:</h4>
+                        <ol>
+                            <li class="pt-2">Get access to an RDBMS system (e.g., PostgreSQL, MS Sql Server, MySQL)</li>
+                            <li class="pt-2">Create a Database named "Sales".</li>
+                            <li class="pt-2">In the 'Sales" Database, create two schemas named "Orders" and "Employees".</li>
+                            <li class="pt-2">Using the "Orders" schema, create the following four tables:
+                                <br><b>Customers</b>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;customer_id (INT) [PRIMARY KEY]
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;first_name (VARCHAR(100)) [NOT NULL]
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;last_name (VARCHAR(100)) [NOT NULL]
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;street (VARCHAR(500))
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;city (VARCHAR(100))
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;state (CHAR(2))
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;zip (CHAR(5))
+                                <br>
+                                <br><b>Orders</b>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;order_id (INT) [PRIMARY KEY]
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;order_date (DATETIME)
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;customer_id (VARCHAR(100)) [FOREIGN KEY] 
+                                <br>
+                                <br><b>Order_Items</b>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;order_id (INT) [PRIMARY KEY/FOREIGN KEY] 
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;item_num (INT) [PRIMARY KEY] 
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;item_name (VARCHAR(250)) [NOT NULL]
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;item_description (VARCHAR(250))
+                                <br>
+                                <br><b>Colors</b>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;color_id (INT) [PRIMARY KEY] 
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;name (VARCHAR(50)) [NOT NULL] 
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;description (VARCHAR(100))
+                            </li>
+                            <li class="pt-3">Drop the "Colors" table.</li>
+                        </ol>
                         <div class="row mt-2 mb-3">
                             <div class="col">
                         <button class="btn btn-outline-primary py-2 w-25 text-center fs-5

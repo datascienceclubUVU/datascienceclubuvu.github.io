@@ -128,7 +128,7 @@
                             with the <b><i>USE DATABASE [db_name]</i></b> statement to ensure you create the table in the correct database.</li>
                         </ul>
                         <h2 class="pt-5"><u>Altering Database Objects</u></h2>
-                        <p style="padding-top:1%">Sometimes, you may need to rename or restructure a database obejct. View the following views to learn
+                        <p style="padding-top:1%">Sometimes, you may need to rename or restructure a database object. View the following views to learn
                         more about these options:</p>
                             <ul>
                                 <a href="https://www.youtube.com/watch?v=vDr2DZeU5mY">How to Alter Database Tables</a><br>
@@ -146,17 +146,19 @@
                                 <br><b><i>ALTER DATABASE [db_name] MODIFY name = [new_name];</i></b></li>
                         </ul>
                         <h2 style="padding-top:5%"><u>Dropping Database Objects</u></h2>
-                        <p>Just like in any programming language, there is more than one type of data. This is because some data may be
-                            numeric in nature, whereas other might be textual in nature. Let's take a look at the various data types:
+                        <p>If you can create database objects, there must be a way to drop those objects. The following videos will teach you about
+                            the common DROP statements:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=btjcNSOUTOg">Common SQL Data Types</a>
+                            <a href="">How to Drop Table Attributes</a><br>
+                            <a href="">How to Drop Database Tables</a><br>
+                            <a href="">How to Drop Database Schemas</a><br>
+                            <a href="">How to Drop A Database</a>
                         </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2"><b><i>VARCHAR/CHAR</i></b> data types represent textual data. These are short for <b>VAR</b>ying <b>CHAR</b>acter and <b>CHAR</b>acter, 
-                                respecitively. The primary difference between these two is that <b><i>CHAR</i></b> is a fixed limit on the number of characters
-                                allowed, whereas <b><i>VARCHAR</i></b> allows a strong of characters up to a specified limit.</li>
+                            <li class="pt-2">To drop a database, use the following syntax (differs between RDBMSs):
+                                <br><b><i>DROP DATABASE [db_name];</i></b>. This can be used in conjunction with the <b><i>IF EXISTS</i></b> keyword</li>
                             <li class="pt-2"><b><i>DECIMAL/NUMERIC/FLOAT</i></b> data types represent non-integer numerical data. These are used interchangeably and represent numbers
                             with a fixed number of decimal points.</li>
                             <li class="pt-2"><b><i>INT/INTEGER</i></b> data types represent numerical data without deciaml places. These are used

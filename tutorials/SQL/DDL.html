@@ -99,7 +99,7 @@
                                 <li>Creating Database Objects</li>
                                 <li>Altering Database Objects</li>
                                 <li>Dropping Database Objects</li>
-                                <li>Truncating Database Objects</li>
+                                <li>Truncating Database Tables</li>
                                 <li>Constraints</li>
                             </ul>
                         </div>
@@ -142,7 +142,7 @@
                                 <b><i>ALTER TABLE [table_name] DROP [col_name];</i></b></li>
                             <li class="pt-2">To change an attribute's data type, use the following syntax (differs between RDBMSs): 
                                 <br><b><i>ALTER TABLE [table_name] MODIFY [col_name] [new_data_type] [constraint]</i></b></li>
-                            <li class="pt-2">To Rename a database, use the following syntax (differs between RDBMSs):
+                            <li class="pt-2">To rename a database, use the following syntax (differs between RDBMSs):
                                 <br><b><i>ALTER DATABASE [db_name] MODIFY name = [new_name];</i></b></li>
                         </ul>
                         <h2 style="padding-top:5%"><u>Dropping Database Objects</u></h2>
@@ -150,38 +150,37 @@
                             the common DROP statements:
                         </p>
                         <ul>
-                            <a href="">How to Drop Table Attributes</a><br>
-                            <a href="">How to Drop Database Tables</a><br>
-                            <a href="">How to Drop Database Schemas</a><br>
-                            <a href="">How to Drop A Database</a>
+                            <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Drop Table Columns</a><br>
+                            <a href="https://www.youtube.com/watch?v=5G4_SbkeRuU">How to Drop Database Tables</a><br>
+                            <a href="https://youtube.com/clip/UgkxQ5bjM54pAP1RMytJiEhAzGUFsAEl2I0F">How to Drop Database Schemas</a><br>
+                            <a href="https://youtube.com/clip/UgkxZbTa_mtmbTvHKuJUOKmPATC8t1lhIxDD">How to Drop A Database</a>
                         </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
+                            <li class="pt-2">To drop a column in a table, use the following syntax (differs between RDBMSs):
+                                <br><b><i>ALTER TABLE [table_name] DROP COLUMN [col_name];</i></b></li>
+                            <li class="pt-2">To drop a table in a database, use the following syntax (differs between RDBMSs). This should be used in
+                                conjunction with the <b><i>USE [db_name]</i></b> statement to ensure you drop the correct table.
+                                <br><b><i>DROP TABLE [IF EXISTS] [table_name];</i></b></li>
+                            <li class="pt-2">To drop a database schema, use the following syntax (differs between RDBMSs):
+                                <br><b><i>DROP SCHEMA [IF EXISTS] [schema_name];</i></b></li>
                             <li class="pt-2">To drop a database, use the following syntax (differs between RDBMSs):
-                                <br><b><i>DROP DATABASE [db_name];</i></b>. This can be used in conjunction with the <b><i>IF EXISTS</i></b> keyword</li>
-                            <li class="pt-2"><b><i>DECIMAL/NUMERIC/FLOAT</i></b> data types represent non-integer numerical data. These are used interchangeably and represent numbers
-                            with a fixed number of decimal points.</li>
-                            <li class="pt-2"><b><i>INT/INTEGER</i></b> data types represent numerical data without deciaml places. These are used
-                            interchangeably and are used to represent attributes with discrete values (numbers that can't be partial).</li>
-                            <li class="pt-2"><b><i>DATE/TIME/DATETIME</i></b> data types represent time-series data, or data that occurs along a timeline. 
-                            This may or may not include timezone information or may simply be limited to just a date.</li>
+                                <br><b><i>DROP DATABASE [IF EXISTS] [db_name];</i></b></li>
                         </ul>
-                        <h2 class="pt-5"><u>Truncating Database Objects</u></h2>
-                        <p>Before you get started with designing your first Relational Database, it's critical to understand the different types
-                            of relationships available. Let's review them down below:
+                        <h2 class="pt-5"><u>Truncating Database Tables</u></h2>
+                        <p>When you <b><i>Truncate</i></b> a database object, you remove all the existing data and keep the structure. This is useful
+                           for when you are testing out a new RDBMS or a new schema design. To learn more about truncating database objects, watch the
+                           following videos:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=4q-keGvUnag">Types of Table Relationships</a><br>
-                            <a href="https://www.youtube.com/watch?v=urTwxelK-Xc">How to Manage Many-to-Many Relationships</a>
+                            <a href="https://www.youtube.com/watch?v=PbqU83LtDII">How to Truncate A Database Table</a><br>
                         </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2"><b><i>One-to-Many Relationships</i></b> are the most common relationship and are represented by a lookup
-                            table representeing distinct items in the database and another table that references the items in that table multiple
-                            times via a foreign key.</li>
-                            <li class="pt-2"><b><i>Many-to-Many Relationships</i></b> should be avoided whenever possible. These are represented by
-                            two tables that have multiple entries in one table that match with multiple entries in the other table. These should be
-                            avoided because it makes understanding business logic much more difficult.</li>
+                            <li class="pt-2"><b><i>Truncating</i></b> involves removing all the data from a table to reconstruct the table's 
+                            schema or restructure a schema without altering the data.</li>
+                            <li class="pt-2">To truncate a table, use the following syntax (differs between RDBMSs):
+                                <br><b><i>TRUNCATE TABLE [table_name];</i></b></li>
                         </ul>
                         <h2 class="pt-5"><u>Exercise</u></h2>
                         <p>Now that you're familiar with how tables are related, the different types of relationships, and how to normalize a database
@@ -190,7 +189,7 @@
                         <ul>
                             <a href="https://www.youtube.com/watch?v=5nGC4fyFPes">Basic Concepts of Entity-Relationship Models</a>
                         </ul>
-                        <h4 class="pt-3">Summary:</h4>
+                        <h4 class="pt-3">Instructions:</h4>
                         <ul>
                             <li class="pt-2">An <b><i>Entity</i></b> is a "thing" in the real world that is represented as a table in a relational database.</li>
                             <li class="pt-2">An <b><i>Entity Relationship Diagram</i></b> is a chart that visualizes the relationship of entities stored in 

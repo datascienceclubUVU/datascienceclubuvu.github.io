@@ -108,25 +108,32 @@
                     <div>
                         <h2 class="pt-3"><u>SELECT Statement Syntax</u></h2>
                         <p style="padding-top:1%">As mentioned in the introduction, the SELECT statement is the most common statement in SQL,
-                            therefore it's critical to master the basic syntax. Watch the following video(s) to get a better understanding of
+                            therefore it's critical to master the basic syntax. Watch the following video to get a better understanding of
                             SELECT statement syntax:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=VkabxQgtGsA">How to Insert Data into a Table</a><br>
-                            <a href="https://www.youtube.com/watch?v=fAETcQ5CST0">How to Insert Data from CSV to SQL Server</a>
+                            <a href="https://www.youtube.com/watch?v=YufocuHbYZo">SELECT Statement Basics</a><br>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">To insert a single row into a database table, use the following syntax (may differ between RDBMSs).
-                                It should be noted that the order of the list of values MUST follow the order of the columns when you created the
-                                table.
-                                <br><b><i>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.);</i></b></li>
-                            <li class="pt-2">To insert multiple rows into a database table, use the following syntax (may differ between RDBMSs):
-                                <br><b><i>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.), ([col_value], [col_value], etc.);
-                                </i></b></li>
-                            <li class="pt-2">To import CSV data into a database, use the following syntax (differs between RDBMSs):
-                                <br><b><i>BULK INSERT [table_name] FROM '[file_path]'<br>WITH (FIELDTERMINATOR='[delimiter]', ROWTERMINATOR='\n', 
-                                    <br>FIRSTROW=[first non-header row]);</i></b></li>
+                            <li class="pt-2">The <b><i>Result Set</i></b> is the rows returned as a result of the query executed.</li>
+                            <li class="pt-1">To retrieve all rows in a specified table, use the following syntax:
+                                <br><b><i>SELECT * FROM [table_name];</i></b></li>
+                            <li class="pt-2">To retrieve the total number of rows in a specified table, use the following syntax (We will go over
+                                the COUNT function in the next tutorial):
+                                <br><b><i>SELECT COUNT(*) <br>FROM [table_name];</i></b></li>
+                            <li class="pt-2">To retrieve all the rows in a specified table but limit which columns are returned, use the following
+                                syntax:
+                                <br><b><i>SELECT [col1], [col2], [col3], [col4] <br>FROM [table_name];</i></b></li>
+                                <li class="pt-2">To retrieve all rows in a specified table that match a specified condition, use the <b>WHERE</b>
+                                clause with the following syntax:
+                                <br><b><i>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)];</i></b></li>
+                                <li class="pt-2">To order the result set in either ascending or descending order, use the <b>ORDER BY</b> clause
+                                with the following syntax:
+                                <br><b><i>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC];</i></b></li>
+                                <li class="pt-2">When working with large result sets, it's a best practice to use the <b>LIMIT</b> Keyword
+                                to reduce the amount of memory your query uses:
+                                <br><b>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC] <br>LIMIT [integer];</b></li>
                         </ul>
                         <h2 class="pt-5"><u>WHERE Clause</u></h2>
                         <p style="padding-top:1%">Once you have data loaded, you may need to change some information. The following videos will teach you how

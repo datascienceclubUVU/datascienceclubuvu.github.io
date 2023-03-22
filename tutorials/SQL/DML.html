@@ -185,54 +185,45 @@
                                         </li>
                             <li class="pt-2">Insert the following data into the "Orders" table in the "Orders" schema of the
                                             "Sales" database:<br>
-                                            189230191, 1, Camping Chair, Large Black Luxury Camping Chair made by Trident<br>
+                                            189230191, 1, Camping Chair (Black), Luxury Camping Chair made by Trident<br>
                                             189230191, 2, Camping Tent, 4-person Tent with Rain Cover and Exterior Shoe Rack<br>
-                                            189230191, 3, Fire Roasting Sticks, Metal Rods used for Roasting Hot Dogs and Marshmallows over Campfire<br>
-                                            189230192, 1, 
-                                <br><b>Customers</b>
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;customer_id (INT) [PRIMARY KEY]
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;first_name (VARCHAR(100)) [NOT NULL]
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;last_name (VARCHAR(100)) [NOT NULL]
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;street (VARCHAR(500))
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;city (VARCHAR(100))
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;state (CHAR(2))
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;zip (CHAR(5))
-                                <br>
-                                <br><b>Orders</b>
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;order_id (INT) [PRIMARY KEY]
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;order_date (DATETIME)
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;customer_id (VARCHAR(100)) [FOREIGN KEY] 
-                                <br>
-                                <br><b>Order_Items</b>
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;order_id (INT) [PRIMARY KEY/FOREIGN KEY] 
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;item_num (INT) [PRIMARY KEY] 
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;item_name (VARCHAR(250)) [NOT NULL]
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;item_description (VARCHAR(250))
-                                <br>
-                                <br><b>Colors</b>
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;color_id (INT) [PRIMARY KEY] 
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;name (VARCHAR(50)) [NOT NULL] 
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;description (VARCHAR(100))
+                                            189230191, 3, Fire Roasting Sticks (4-Pack), Metal Rods used for Roasting Hot Dogs and Marshmallows over Campfire<br>
+                                            189230192, 1, X-Large Tarp, 20'x 20' Tarp used for Camping Tents<br>
+                                            189230193, 1, White Noice Machine, Electronic device used to create soothing noices for sleeping<br>
+                                            189230193, 2, Sleeping Mask (Black), Cloth to place over eyes while sleeping<br>
+                                            189230193, 3, Melatonin (5 mg, 500 ML), Over-the-Counter pills to improve sleep<br>
+                                            189230009, 1, White Undershirt (XL), XL White Undershirt made by Fruit of the Loom<br>
+                                            189212443, 1, White Socks (6-Pair), Plain White Socks made by Fruit of the Loom<br>
+                                            190000124, 1, Rubber Bands (125-Pack), Plain Rubber Bands<br>
+                                            190000124, 2, Scissors (2-Pack), Small Blue Scissors made by Elmer 
                             </li>
-                            <li class="pt-3">Drop the "Colors" table.</li>
-                            <li class="pt-2">Alter the "Order_Items" table by adding the following column: item_price (FLOAT).</li>
-                            <li class="pt-2">Alter the "Customers" table by changing the data type of the "state" column to VARCHAR(50).</li>
-                            <li class="pt-2">Drop the "Employees" schema.</li>
-                            <li class="pt-2">Design an ERD to visualize the "Orders" schema.</li>
+                            <li class="pt-3">In the "Orders" Table, delete the row with an "order_id" of <b><i>190001121</i></b> since
+                                            it was cancelled.</li>
+                            <li class="pt-2">A Customer Service Representative reached out to Samantha Olivier and got her address. Update
+                                            the appropriate row in the "Customers" table.<br>
+                                            <b><i>424 Seashell Avenue, Newport Beach, CA, 91080</i></b></li>
+                            <li class="pt-2">It looks like John Thornton prefers to go by Johnny. Update the appropriate row in the "Customers"
+                                            table with the new information.
+                            </li>
+                            <li class="pt-2"><b>Exercise Completed!</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>
                         </ol>
-                        <div class="row row-cols-1 row-cols-lg-2 g-4 mb-2">
-                            <div class="col pt-4">
-                                <button class="btn btn-outline-primary py-2 w-50 text-center fs-5
-                            border border-primary" style="margin-left:50%;"><a href="DDL.html" style="text-decoration:none;">Previous Topic</a></button>
-                            </div>
-                            <div class="col pt-4">
-                                <button class="btn btn-outline-primary py-2 w-50 text-center fs-5
-                                border border-primary" style="margin-left:0%;"><a href="DDL.html" style="text-decoration:none;">Next Topic</a></button>
-                            </div>
-                        </div>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="DDL.html">
+                            Previous Topic
+                        </a>
+                        <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="DML.html">
+                            Next Topic
+                        </a>
+                    </div>
                 </section>
             </div>
             <div class="col-md-1 col-lg-2 col-xxl-3"></div>

@@ -108,7 +108,7 @@
                     <div class="row">
                         <div class="col">
                             <h2 class="mt-3 px-4 px-sm-3 border-start border-3 border-secondary">Creating Database Objects</h2>
-                            <p style="padding-top:1%">As mentioned in the previous tutorial, Relational Databases are comprised of four primary
+                            <p class="pt-3">As mentioned in the previous tutorial, Relational Databases are comprised of four primary
                                 objects: Databases, Schemas, Tables, and Attributes. The videos below describe how to create the first three of these objects:
                             </p>
                             <ul>
@@ -129,8 +129,8 @@
                                 You must specify each column and its associated data type in the table. It's recommended to use this statement in conjunction
                                 with the <code>USE DATABASE [db_name]</code> statement to ensure you create the table in the correct database.</li>
                             </ul>
-                            <h2 class="pt-5"><u>Altering Database Objects</u></h2>
-                            <p style="padding-top:1%">Sometimes, you may need to rename or restructure a database object. View the following views to learn
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Altering Database Objects</h2>
+                            <p class="pt-3">Sometimes, you may need to rename or restructure a database object. View the following views to learn
                             more about these options:</p>
                                 <ul>
                                     <a href="https://www.youtube.com/watch?v=vDr2DZeU5mY">How to Alter Database Tables</a><br>
@@ -147,8 +147,8 @@
                                 <li class="pt-2">To rename a database, use the following syntax (differs between RDBMSs):
                                     <br><code>ALTER DATABASE [db_name] MODIFY name = [new_name];</code></li>
                             </ul>
-                            <h2 style="padding-top:5%"><u>Dropping Database Objects</u></h2>
-                            <p>If you can create database objects, there must be a way to drop those objects. The following videos will teach you about
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Dropping Database Objects</h2>
+                            <p class="pt-3">If you can create database objects, there must be a way to drop those objects. The following videos will teach you about
                                 the common DROP statements:
                             </p>
                             <ul>
@@ -160,17 +160,17 @@
                             <h4 class="pt-3">Summary:</h4>
                             <ul>
                                 <li class="pt-2">To drop a column in a table, use the following syntax (differs between RDBMSs):
-                                    <br><b><i>ALTER TABLE [table_name] DROP COLUMN [col_name];</i></b></li>
+                                    <br><code>ALTER TABLE [table_name] DROP COLUMN [col_name];</code></li>
                                 <li class="pt-2">To drop a table in a database, use the following syntax (differs between RDBMSs). This should be used in
-                                    conjunction with the <b><i>USE [db_name]</i></b> statement to ensure you drop the correct table.
-                                    <br><b><i>DROP TABLE [IF EXISTS] [table_name];</i></b></li>
+                                    conjunction with the <code>USE [db_name];</code> statement to ensure you drop the correct table.
+                                    <br><code>DROP TABLE [IF EXISTS] [table_name];</code></li>
                                 <li class="pt-2">To drop a database schema, use the following syntax (differs between RDBMSs):
-                                    <br><b><i>DROP SCHEMA [IF EXISTS] [schema_name];</i></b></li>
+                                    <br><code>DROP SCHEMA [IF EXISTS] [schema_name];</code></li>
                                 <li class="pt-2">To drop a database, use the following syntax (differs between RDBMSs):
-                                    <br><b><i>DROP DATABASE [IF EXISTS] [db_name];</i></b></li>
+                                    <br><code>DROP DATABASE [IF EXISTS] [db_name];</code></li>
                             </ul>
-                            <h2 class="pt-5"><u>Truncating Database Tables</u></h2>
-                            <p>When you <b><i>Truncate</i></b> a database object, you remove all the existing data and keep the structure. This is useful
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Truncating Database Tables</h2>
+                            <p class="pt-3">When you <b><i>Truncate</i></b> a database object, you remove all the existing data and keep the structure. This is useful
                             for when you are testing out a new RDBMS or a new schema design. To learn more about truncating database objects, watch the
                             following videos:
                             </p>
@@ -182,10 +182,10 @@
                                 <li class="pt-2"><b><i>Truncating</i></b> involves removing all the data from a table to reconstruct the table's 
                                 schema or restructure a schema without altering the data.</li>
                                 <li class="pt-2">To truncate a table, use the following syntax (differs between RDBMSs):
-                                    <br><b><i>TRUNCATE TABLE [table_name];</i></b></li>
+                                    <br><code>TRUNCATE TABLE [table_name];</code></li>
                             </ul>
-                            <h2 class="pt-5"><u>Constraints</u></h2>
-                            <p>When dealing with large amounts of data, you'll want to place some limitations on the types of data or how the data
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Constraints</h2>
+                            <p class="pt-3">When dealing with large amounts of data, you'll want to place some limitations on the types of data or how the data
                                 is presented. Tehse are known as <b><i>Constraints</i></b> and can be placed on the Schema, Table, or Column level.
                                 The following videos give a breif outline of the different constraints available:
                             </p>
@@ -197,11 +197,11 @@
                             <h4 class="pt-3">Summary:</h4>
                             <ul>
                                 <li class="pt-2">To create a column-level constraint using the CREATE TABLE statement, use the following syntax (differs between RDBMSs):
-                                    <br><b><i>CREATE TABLE [table_name]([col_name] [data_type] CONSTRAINT [constraint_name] [constraint_type, etc.)</i></b></li>
+                                    <br><code>CREATE TABLE [table_name]([col_name] [data_type] CONSTRAINT [constraint_name] [constraint_type], etc.)</code></li>
                                 <li class="pt-2">There are six primary column-level constraints: <b><i>Primary Key, Foreign Key, Unique, Not Null, Check, and Default.</i></b></li>
                             </ul>
-                            <h2 class="pt-5"><u>Exercise</u></h2>
-                            <p><b>Congratulations!</b> You just completed the DDL Tutorial! We hope you leanred a lot and feel more prepared to enter
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Exercise</h2>
+                            <p class="pt-3"><b>Congratulations!</b> You just completed the DDL Tutorial! We hope you leanred a lot and feel more prepared to enter
                                 the workforce. To help test your knowledge, let's complete a simple exercise.
                             </p>
                             <h4 class="pt-3">Instructions:</h4>

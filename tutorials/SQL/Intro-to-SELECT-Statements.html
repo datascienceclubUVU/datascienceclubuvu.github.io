@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>SQL Tutorials: DML | Data Science Club @ UVU</title>
+    <title>SQL Tutorials: Intro to SELECT Statements | Data Science Club @ UVU</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            SQL Tutorials: DML
+                            SQL Tutorials: Intro to SELECT Statements
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/data-manupulation-language.jpg"
+                                src="../../imgs/select-statement.png"
                                 alt="%UPDATE% Picture of the word python written on a stick note."
                             >  <!-- %UPDATE% -->
                         </div>
@@ -91,22 +91,25 @@
                                 <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
                                    We recommend using either PostgreSQL, MS SQL Server, or MySQL.
                                 </b><br><br>
-                                Congraulations on creating your first database! Now that you have a clear understanding of the first third of SQL,
-                                let's continue the journey. <b><i>Data Manipulation Language (DML)</i></b> is a form of SQL used
-                                 specifically for inserting, updating, selecting, and deleting data stored in database objects. 
-                                 Listed below are the learning objectives in this lesson:
+                                Hopefully the lessons in this learning series are giving you a good understanding of the underlying nature of
+                                relational databases because from here on out, we will be working almost exclusively with SELECT statements. 
+                                <b><i>SELECT statements</i></b> are the most common statements in SQL and are sued to execute queries on 
+                                tables and views (we cover those in a later tutorial). To get started with SELECT statements, we'll cover the
+                                following objectives:
                             </p>
                             <ul>
-                                <li>Inserting Data</li>
-                                <li>Updating Data</li>
-                                <li>Deleting Data</li>
+                                <li>SELECT Statement Syntax</li>
+                                <li>WHERE Clause</li>
+                                <li>GROUP BY Clause</li>
+                                <li>ORDER BY Clause</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="pt-3"><u>Inserting Data</u></h2>
-                        <p style="padding-top:1%">Once you have your initial database, schema, and tables, you'll want to start adding data.
-                            The videos below will teach you how to do this:
+                        <h2 class="pt-3"><u>SELECT Statement Syntax</u></h2>
+                        <p style="padding-top:1%">As mentioned in the introduction, the SELECT statement is the most common statement in SQL,
+                            therefore it's critical to master the basic syntax. Watch the following video(s) to get a better understanding of
+                            SELECT statement syntax:
                         </p>
                         <ul>
                             <a href="https://www.youtube.com/watch?v=VkabxQgtGsA">How to Insert Data into a Table</a><br>
@@ -125,7 +128,7 @@
                                 <br><b><i>BULK INSERT [table_name] FROM '[file_path]'<br>WITH (FIELDTERMINATOR='[delimiter]', ROWTERMINATOR='\n', 
                                     <br>FIRSTROW=[first non-header row]);</i></b></li>
                         </ul>
-                        <h2 class="pt-5"><u>Updating Data</u></h2>
+                        <h2 class="pt-5"><u>WHERE Clause</u></h2>
                         <p style="padding-top:1%">Once you have data loaded, you may need to change some information. The following videos will teach you how
                             to do this:</p>
                             <ul>
@@ -141,7 +144,20 @@
                             <li class="pt-2">To update multiple columns in the same statement, use the following syntax: 
                                 <br><b><i>UPDATE [table_name] SET [col_name] = [new_value], [col_name] = [new_value];</i></b></li>
                         </ul>
-                        <h2 style="padding-top:5%"><u>Deleting Data</u></h2>
+                        <h2 style="padding-top:5%"><u>GROUP BY Clause</u></h2>
+                        <p>If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
+                        </p>
+                        <ul>
+                            <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Delete Data From a Table</a><br>
+                        </ul>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2">To delete all the data in a table, refer to the <b>TRUNCATE</b> statement in the previous tutorial.</li>
+                            <li class="pt-2">To delete specific rows in a table, use the following syntax:
+                                <br><b><i>DELETE FROM [table_name] WHERE [condition];</i></b></li>
+                            <li class="pt-2">Make sure to <b><i>double-check</i></b> your code before executing the statement.</li>
+                        </ul>
+                        <h2 style="padding-top:5%"><u>ORDER BY Clause</u></h2>
                         <p>If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
                         </p>
                         <ul>
@@ -220,7 +236,7 @@
                         <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="Intro-to-SELECT-Statements.html">
+                            href="DML.html">
                             Next Topic
                         </a>
                     </div>

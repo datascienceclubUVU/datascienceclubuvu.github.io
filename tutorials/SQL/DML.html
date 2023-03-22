@@ -117,13 +117,12 @@
                             <li class="pt-1">To insert a single row into a database table, use the following syntax (may differ between RDBMSs).
                                 It should be noted that the order of the list of values MUST follow the order of the columns when you created the
                                 table.
-                                <br><b><i>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.);</i></b></li>
+                                <br><code>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.);</code></li>
                             <li class="pt-2">To insert multiple rows into a database table, use the following syntax (may differ between RDBMSs):
-                                <br><b><i>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.), ([col_value], [col_value], etc.);
-                                </i></b></li>
+                                <br><code>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.), ([col_value], [col_value], etc.);</code></li>
                             <li class="pt-2">To import CSV data into a database, use the following syntax (differs between RDBMSs):
-                                <br><b><i>BULK INSERT [table_name] FROM '[file_path]'<br>WITH (FIELDTERMINATOR='[delimiter]', ROWTERMINATOR='\n', 
-                                    <br>FIRSTROW=[first non-header row]);</i></b></li>
+                                <br><code>BULK INSERT [table_name] FROM '[file_path]'<br>WITH (FIELDTERMINATOR='[delimiter]', ROWTERMINATOR='\n', 
+                                    <br>FIRSTROW=[first non-header row]);</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Updating Data</h2>
                         <p class="pt-3">Once you have data loaded, you may need to change some information. The following videos will teach you how
@@ -134,12 +133,12 @@
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
                             <li class="pt-2">To update all the rows in a column, use the following syntax: 
-                                <br><b><i>UPDATE [table_name] SET [col_name] = [new_value];</i></b></li>
+                                <br><code>UPDATE [table_name] SET [col_name] = [new_value];</code></li>
                             <li class="pt-2">To update specific rows in a column, use the following syntax. We will learn more about
                                             the <b>WHERE</b> clause in the next tutorial.
-                                <br><b><i>UPDATE [table_name] SET [col_name] = [new_value] WHERE [condition];</i></b></li>
+                                <br><code>UPDATE [table_name] SET [col_name] = [new_value] WHERE [condition];</code></li>
                             <li class="pt-2">To update multiple columns in the same statement, use the following syntax: 
-                                <br><b><i>UPDATE [table_name] SET [col_name] = [new_value], [col_name] = [new_value];</i></b></li>
+                                <br><code>UPDATE [table_name] SET [col_name] = [new_value], [col_name] = [new_value];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Deleting Data</h2>
                         <p class="pt-3">If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
@@ -151,7 +150,7 @@
                         <ul>
                             <li class="pt-2">To delete all the data in a table, refer to the <b>TRUNCATE</b> statement in the previous tutorial.</li>
                             <li class="pt-2">To delete specific rows in a table, use the following syntax:
-                                <br><b><i>DELETE FROM [table_name] WHERE [condition];</i></b></li>
+                                <br><code>DELETE FROM [table_name] WHERE [condition];</code></li>
                             <li class="pt-2">Make sure to <b><i>double-check</i></b> your code before executing the statement.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Exercise</h2>

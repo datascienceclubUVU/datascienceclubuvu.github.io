@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>SQL Tutorials: DDL | Data Science Club @ UVU</title>
+    <title>SQL Tutorials: DML | Data Science Club @ UVU</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            SQL Tutorials: DDL
+                            SQL Tutorials: DML
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/ddl.png"
+                                src="../../imgs/data-manupulation-language.jpg"
                                 alt="%UPDATE% Picture of the word python written on a stick note."
                             >  <!-- %UPDATE% -->
                         </div>
@@ -91,21 +91,20 @@
                                 <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
                                    We recommend using either PostgreSQL, MS SQL Server, or MySQL.
                                 </b><br><br>
-                                Now that you have a clear understanding of the core concepts behind Relational Databases, let's learn how
-                                to create, update, and delete database objects. <b><i>Data Definition Language (DDL)</i></b> is a form of SQL used
-                                 specifically for creating, altering, and dropping database objects. Listed below are the learning objectives in this lesson:
+                                Congraulations on creating your first database! Now that you have a clear understanding of the first third of SQL,
+                                let's continue the journey. <b><i>Data Manipulation Language (DML)</i></b> is a form of SQL used
+                                 specifically for inserting, updating, selecting, and deleting data stored in database objects. 
+                                 Listed below are the learning objectives in this lesson:
                             </p>
                             <ul>
-                                <li>Creating Database Objects</li>
-                                <li>Altering Database Objects</li>
-                                <li>Dropping Database Objects</li>
-                                <li>Truncating Database Tables</li>
-                                <li>Constraints</li>
+                                <li>Inserting Data</li>
+                                <li>Updating Data</li>
+                                <li>Deleting Data</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="pt-3"><u>Creating Database Objects</u></h2>
+                        <h2 class="pt-3"><u>Inserting Data</u></h2>
                         <p style="padding-top:1%">As mentioned in the previous tutorial, Relational Databases are comprised of four primary
                             objects: Databases, Schemas, Tables, and Attributes. The videos below describe how to create the first three of these objects:
                         </p>
@@ -127,7 +126,7 @@
                             You must specify each column and its associated data type in the table. It's recommended to use this statement in conjunction
                             with the <b><i>USE DATABASE [db_name]</i></b> statement to ensure you create the table in the correct database.</li>
                         </ul>
-                        <h2 class="pt-5"><u>Altering Database Objects</u></h2>
+                        <h2 class="pt-5"><u>Updating Data</u></h2>
                         <p style="padding-top:1%">Sometimes, you may need to rename or restructure a database object. View the following views to learn
                         more about these options:</p>
                             <ul>
@@ -145,7 +144,7 @@
                             <li class="pt-2">To rename a database, use the following syntax (differs between RDBMSs):
                                 <br><b><i>ALTER DATABASE [db_name] MODIFY name = [new_name];</i></b></li>
                         </ul>
-                        <h2 style="padding-top:5%"><u>Dropping Database Objects</u></h2>
+                        <h2 style="padding-top:5%"><u>Deleting Data</u></h2>
                         <p>If you can create database objects, there must be a way to drop those objects. The following videos will teach you about
                             the common DROP statements:
                         </p>
@@ -166,37 +165,6 @@
                                 <br><b><i>DROP SCHEMA [IF EXISTS] [schema_name];</i></b></li>
                             <li class="pt-2">To drop a database, use the following syntax (differs between RDBMSs):
                                 <br><b><i>DROP DATABASE [IF EXISTS] [db_name];</i></b></li>
-                        </ul>
-                        <h2 class="pt-5"><u>Truncating Database Tables</u></h2>
-                        <p>When you <b><i>Truncate</i></b> a database object, you remove all the existing data and keep the structure. This is useful
-                           for when you are testing out a new RDBMS or a new schema design. To learn more about truncating database objects, watch the
-                           following videos:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=PbqU83LtDII">How to Truncate A Database Table</a><br>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2"><b><i>Truncating</i></b> involves removing all the data from a table to reconstruct the table's 
-                            schema or restructure a schema without altering the data.</li>
-                            <li class="pt-2">To truncate a table, use the following syntax (differs between RDBMSs):
-                                <br><b><i>TRUNCATE TABLE [table_name];</i></b></li>
-                        </ul>
-                        <h2 class="pt-5"><u>Constraints</u></h2>
-                        <p>When dealing with large amounts of data, you'll want to place some limitations on the types of data or how the data
-                            is presented. Tehse are known as <b><i>Constraints</i></b> and can be placed on the Schema, Table, or Column level.
-                            The following videos give a breif outline of the different constraints available:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=boj9b5XqliU">Creating Column-Level Constraints using the CREATE TABLE Statement</a><br>
-                            <a href="https://youtube.com/clip/UgkxFKeRNseYu2M9ckaydZT90AHWvmF2Sx-3">Types of Column-Level Constraints</a><br>
-                            <a href="https://www.youtube.com/watch?v=3CuijVrhWYc">Types of Table-Level Constraints</a>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2">To create a column-level constraint using the CREATE TABLE statement, use the following syntax (differs between RDBMSs):
-                                <br><b><i>CREATE TABLE [table_name]([col_name] [data_type] CONSTRAINT [constraint_name] [constraint_type, etc.)</i></b></li>
-                            <li class="pt-2">There are six primary column-level constraints: <b><i>Primary Key, Foreign Key, Unique, Not Null, Check, and Default.</i></b></li>
                         </ul>
                         <h2 class="pt-5"><u>Exercise</u></h2>
                         <p><b>Congratulations!</b> You just completed the DDL Tutorial! We hope you leanred a lot and feel more prepared to enter
@@ -249,7 +217,7 @@
                             </div>
                             <div class="col pt-4">
                                 <button class="btn btn-outline-primary py-2 w-50 text-center fs-5
-                                border border-primary" style="margin-left:0%;"><a href="DML.html" style="text-decoration:none;">Next Topic</a></button>
+                                border border-primary" style="margin-left:0%;"><a href="DDL.html" style="text-decoration:none;">Next Topic</a></button>
                             </div>
                         </div>
                 </section>

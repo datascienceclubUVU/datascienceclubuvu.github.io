@@ -105,77 +105,90 @@
                     </div>
                     <div>
                         <h2 class="pt-3"><u>Inserting Data</u></h2>
-                        <p style="padding-top:1%">As mentioned in the previous tutorial, Relational Databases are comprised of four primary
-                            objects: Databases, Schemas, Tables, and Attributes. The videos below describe how to create the first three of these objects:
+                        <p style="padding-top:1%">Once you have your initial database, schema, and tables, you'll want to start adding data.
+                            The videos below will teach you how to do this:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=PPFyoXA_FC0">How to Create A Database</a><br>
-                            <a href="https://www.youtube.com/watch?v=q3uBm7585ew">How to Create A Schema</a><br>
-                            <a href="https://www.youtube.com/watch?v=XfrgCK6BX5w">How to Create A Table</a>
+                            <a href="https://www.youtube.com/watch?v=VkabxQgtGsA">How to Insert Data into a Table</a><br>
+                            <a href="https://www.youtube.com/watch?v=fAETcQ5CST0">How to Insert Data from CSV to SQL Server</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>CREATE DATABASE</i></b> statement is used to create databases in an RDBMS. Once you have
-                            multiple databases created, it's helpful to use the optional <b><i>IF NOT EXISTS</i></b> keyword to check if the 
-                            name has already been used.</li>
-                            <li class="pt-2">The <b><i>CREATE SCHEMA</i></b> statement is used to create a schema within a database. These can 
-                            be used to differentiate different business units and provide security for sensitive data. It's recommended to use this
-                            this statement in conjunction with the <b><i>USE DATABASE [db_name]</i></b> statement to ensure you create the schema
-                            in the correct database.</li>
-                            <li class="pt-2">The <b><i>CREATE TABLE</i></b> statement is used to define the name and structure of a table in a database.
-                            You must specify each column and its associated data type in the table. It's recommended to use this statement in conjunction
-                            with the <b><i>USE DATABASE [db_name]</i></b> statement to ensure you create the table in the correct database.</li>
+                            <li class="pt-1">To insert a single row into a database table, use the following syntax (may differ between RDBMSs).
+                                It should be noted that the order of the list of values MUST follow the order of the columns when you created the
+                                table.
+                                <br><b><i>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.);</i></b></li>
+                            <li class="pt-2">To insert multiple rows into a database table, use the following syntax (may differ between RDBMSs):
+                                <br><b><i>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.), ([col_value], [col_value], etc.);
+                                </i></b></li>
+                            <li class="pt-2">To import CSV data into a database, use the following syntax (differs between RDBMSs):
+                                <br><b><i>BULK INSERT [table_name] FROM '[file_path]'<br>WITH (FIELDTERMINATOR='[delimiter]', ROWTERMINATOR='\n', 
+                                    <br>FIRSTROW=[first non-header row]);</i></b></li>
                         </ul>
                         <h2 class="pt-5"><u>Updating Data</u></h2>
-                        <p style="padding-top:1%">Sometimes, you may need to rename or restructure a database object. View the following views to learn
-                        more about these options:</p>
+                        <p style="padding-top:1%">Once you have data loaded, you may need to change some information. The following videos will teach you how
+                            to do this:</p>
                             <ul>
-                                <a href="https://www.youtube.com/watch?v=vDr2DZeU5mY">How to Alter Database Tables</a><br>
-                                <a href="https://youtube.com/clip/Ugkx-nTo9FPlmVdzR-SG4wkw3E_LmNwYGknh">How to Rename Databases</a>
+                                <a href="https://www.youtube.com/watch?v=cd-hSl7_pGQ">How to Update Data in a Table</a><br>
                             </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To add a column/attribute to a table, use the following syntax: 
-                                <br><b><i>ALTER TABLE [table_name] ADD [col_name] [data_type];</i></b></li>
-                            <li class="pt-2">To drop a column/attribute from a table, use the following syntax: <br>
-                                <b><i>ALTER TABLE [table_name] DROP [col_name];</i></b></li>
-                            <li class="pt-2">To change an attribute's data type, use the following syntax (differs between RDBMSs): 
-                                <br><b><i>ALTER TABLE [table_name] MODIFY [col_name] [new_data_type] [constraint]</i></b></li>
-                            <li class="pt-2">To rename a database, use the following syntax (differs between RDBMSs):
-                                <br><b><i>ALTER DATABASE [db_name] MODIFY name = [new_name];</i></b></li>
+                            <li class="pt-2">To update all the rows in a column, use the following syntax: 
+                                <br><b><i>UPDATE [table_name] SET [col_name] = [new_value];</i></b></li>
+                            <li class="pt-2">To update specific rows in a column, use the following syntax. We will learn more about
+                                            the <b>WHERE</b> clause in the next tutorial.
+                                <br><b><i>UPDATE [table_name] SET [col_name] = [new_value] WHERE [condition];</i></b></li>
+                            <li class="pt-2">To update multiple columns in the same statement, use the following syntax: 
+                                <br><b><i>UPDATE [table_name] SET [col_name] = [new_value], [col_name] = [new_value];</i></b></li>
                         </ul>
                         <h2 style="padding-top:5%"><u>Deleting Data</u></h2>
-                        <p>If you can create database objects, there must be a way to drop those objects. The following videos will teach you about
-                            the common DROP statements:
+                        <p>If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
                         </p>
                         <ul>
-                            <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Drop Table Columns</a><br>
-                            <a href="https://www.youtube.com/watch?v=5G4_SbkeRuU">How to Drop Database Tables</a><br>
-                            <a href="https://youtube.com/clip/UgkxQ5bjM54pAP1RMytJiEhAzGUFsAEl2I0F">How to Drop Database Schemas</a><br>
-                            <a href="https://youtube.com/clip/UgkxZbTa_mtmbTvHKuJUOKmPATC8t1lhIxDD">How to Drop A Database</a>
+                            <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Delete Data From a Table</a><br>
                         </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To drop a column in a table, use the following syntax (differs between RDBMSs):
-                                <br><b><i>ALTER TABLE [table_name] DROP COLUMN [col_name];</i></b></li>
-                            <li class="pt-2">To drop a table in a database, use the following syntax (differs between RDBMSs). This should be used in
-                                conjunction with the <b><i>USE [db_name]</i></b> statement to ensure you drop the correct table.
-                                <br><b><i>DROP TABLE [IF EXISTS] [table_name];</i></b></li>
-                            <li class="pt-2">To drop a database schema, use the following syntax (differs between RDBMSs):
-                                <br><b><i>DROP SCHEMA [IF EXISTS] [schema_name];</i></b></li>
-                            <li class="pt-2">To drop a database, use the following syntax (differs between RDBMSs):
-                                <br><b><i>DROP DATABASE [IF EXISTS] [db_name];</i></b></li>
+                            <li class="pt-2">To delete all the data in a table, refer to the <b>TRUNCATE</b> statement in the previous tutorial.</li>
+                            <li class="pt-2">To delete specific rows in a table, use the following syntax:
+                                <br><b><i>DELETE FROM [table_name] WHERE [condition];</i></b></li>
+                            <li class="pt-2">Make sure to <b><i>double-check</i></b> your code before executing the statement.</li>
                         </ul>
                         <h2 class="pt-5"><u>Exercise</u></h2>
-                        <p><b>Congratulations!</b> You just completed the DDL Tutorial! We hope you leanred a lot and feel more prepared to enter
-                            the workforce. To help test your knowledge, let's complete a simple exercise.
+                        <p><b>Congratulations!</b> You just completed the DML Tutorial!To help test your knowledge, let's complete the exercise
+                            outlined below. This exercise is based on the exercise of the previous exercise. <b><i>It's highly recommended that you
+                            complete the exercise outlined in the previous tutorial before beginning this exercise.</i></b>
+                            </i></b>
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">Get access to an RDBMS system (e.g., PostgreSQL, MS Sql Server, MySQL)</li>
-                            <li class="pt-2">Create a Database named "Sales".</li>
-                            <li class="pt-2">In the 'Sales" Database, create two schemas named "Orders" and "Employees".</li>
-                            <li class="pt-2">Using the "Orders" schema, create the following four tables:
+                            <li class="pt-2">Open your RDBMS Client.</li>
+                            <li class="pt-2">Insert the following data into the "Customers" table in the "Orders" schema of the
+                                            "Sales" database:
+                                            1000, John, Thornton, 123 Main Street, Chicago, IL, 12345<br>
+                                            1001, Susan, Freeman, 700 Huntington Avenue, Los Angeles, CA, 91980<br>
+                                            1002, Barbara, Smith, 303 Polish Road, Denver, CO, 81210<br>
+                                            1003, Gregory, Turis, 35 Frankfurt Way #104, Seattle, WA, 91772<br>
+                                            1004, Gregory, Hurst, 656 N 705 W, New Haven, CT, 21342<br>
+                                            1005, Samantha, Olivier, NULL, NULL, NULL
+                            </li>
+                            <li class="pt-2">Insert the following data into the "Orders" table in the "Orders" schema of the
+                                            "Sales" database:<br>
+                                            189230191, 2021-09-01, 1000<br>
+                                            189230192, 2021-09-01, 1000<br>
+                                            189230193, 2021-09-02, 1001<br>
+                                            189230009, 2020-12-13, 1000<br>
+                                            189212443, 2019-05-06, 1004<br>
+                                            190000124, 2022-10-11, 1002<br>
+                                            189229132, 2020-08-12, 1002<br>
+                                            190001121, 2023-01-04, 1003
+                                        </li>
+                            <li class="pt-2">Insert the following data into the "Orders" table in the "Orders" schema of the
+                                            "Sales" database:<br>
+                                            189230191, 1, Camping Chair, Large Black Luxury Camping Chair made by Trident<br>
+                                            189230191, 2, Camping Tent, 4-person Tent with Rain Cover and Exterior Shoe Rack<br>
+                                            189230191, 3, Fire Roasting Sticks, Metal Rods used for Roasting Hot Dogs and Marshmallows over Campfire<br>
+                                            189230192, 1, 
                                 <br><b>Customers</b>
                                 <br>&nbsp;&nbsp;&nbsp;&nbsp;customer_id (INT) [PRIMARY KEY]
                                 <br>&nbsp;&nbsp;&nbsp;&nbsp;first_name (VARCHAR(100)) [NOT NULL]
@@ -213,7 +226,7 @@
                         <div class="row row-cols-1 row-cols-lg-2 g-4 mb-2">
                             <div class="col pt-4">
                                 <button class="btn btn-outline-primary py-2 w-50 text-center fs-5
-                            border border-primary" style="margin-left:50%;"><a href="Relational-Databases.html" style="text-decoration:none;">Previous Topic</a></button>
+                            border border-primary" style="margin-left:50%;"><a href="DDL.html" style="text-decoration:none;">Previous Topic</a></button>
                             </div>
                             <div class="col pt-4">
                                 <button class="btn btn-outline-primary py-2 w-50 text-center fs-5

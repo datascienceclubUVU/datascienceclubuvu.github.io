@@ -93,7 +93,7 @@
                                 </b><br><br>
                                 Hopefully the lessons in this learning series are giving you a good understanding of the underlying nature of
                                 relational databases because from here on out, we will be working almost exclusively with SELECT statements. 
-                                <b><i>SELECT statements</i></b> are the most common statements in SQL and are sued to execute queries on 
+                                <b><i>SELECT statements</i></b> are the most common statements in SQL and are used to execute queries on 
                                 tables and views (we cover those in a later tutorial). To get started with SELECT statements, we'll cover the
                                 following objectives:
                             </p>
@@ -125,7 +125,7 @@
                             <li class="pt-2">To retrieve all the rows in a specified table but limit which columns are returned, use the following
                                 syntax:
                                 <br><code>SELECT [col1], [col2], [col3], [col4] <br>FROM [table_name];</code></li>
-                                <li class="pt-2">To retrieve all rows in a specified table that match a specified condition, use the <b>WHERE</b>
+                                <li class="pt-2">To filter the rows returned in the result set, use the <b>WHERE</b>
                                 clause with the following syntax:
                                 <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)];</code></li>
                                 <li class="pt-2">To order the result set in either ascending or descending order, use the <b>ORDER BY</b> clause
@@ -179,7 +179,7 @@
                             <li class="pt-2">The <b><i>GROUP BY</i></b> clause is used in conjunction with aggregate functions (e.g., COUNT(),
                                     AVERAGE/AVG(), SUM()) to gather identical data into <i>groups.</i></li>
                             <li class="pt-2">To delete group rows in a table based on one or more columns, use the following syntax:
-                                <br><code>SELECT [col1], [col2], [AGGREGATE FUNCTION]([*/[col_name]])<br> FROM [table_name]
+                                <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]
                                     <br>GROUP BY [col1], [col2];</code></li>
                             <li class="pt-2">The <b><i>HAVING</i></b> clause is used in conjunction with the <b><i>GROUP BY</i></b> clause
                                     and is sued to filter aggregated columns. This is used with the following syntax:
@@ -187,75 +187,51 @@
                             <li class="pt-2">The difference between the <b><i>WHERE</i></b> clause and the <b><i>HAVING</i></b> clause is that the
                                 HAVING clause can only handle conditions based on aggregated columns, whereas the WHERE clause handles conditions based on
                                 non-aggregated columns.</li>
-                            <li class="pt-2"><b>QUICK TIP:</b> you can use column indexes when specifying columns in the GROUP BY clause rather than writing
-                            out the full column name. This is done with the collowing context:
+                            <li class="pt-2"><b>QUICK TIP:</b> When dealing with a large number of columns, you can use column indexes when specifying columns in the GROUP BY clause rather than writing
+                            out the full column name. This is done with the following syntax:
                                 <br><code>SELECT [col1], [col2], [col3], COUNT(*)<br> FROM [table_name]<br> GROUP BY 1, 2, 3;</code></li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ORDER BY Clause</h2>
-                        <p class="pt-3">If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
+                        <p class="pt-3">Once you've retrieved the correct columns, filtered the result set, and aggregated data, you'll want to
+                            organize it to make it more readable. The following video explains how to do this:
                         </p>
                         <ul>
-                            <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Delete Data From a Table</a><br>
+                            <a href="https://www.youtube.com/watch?v=wyWnJ7QYME4">How to Order Data in a Result Set</a><br>
                         </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To delete all the data in a table, refer to the <b>TRUNCATE</b> statement in the previous tutorial.</li>
-                            <li class="pt-2">To delete specific rows in a table, use the following syntax:
-                                <br><b><i>DELETE FROM [table_name] WHERE [condition];</i></b></li>
-                            <li class="pt-2">Make sure to <b><i>double-check</i></b> your code before executing the statement.</li>
+                            <li class="pt-2">To order a result set by a specific column in <b><i>Ascending order (A-Z, Lowest-Highest)</i></b>, use the following syntax:
+                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name];</code></li>
+                            <li class="pt-2">To order a result set by a specific column in <b><i>Descending order (Z-A, Highest-Lowest)</i></b>, use the following syntax:</b>
+                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] DESC;</code></li>
+                            <li class="pt-2">To order a result set by multiple columns in either ascending or descending order, use the following 
+                                syntax. This will sort the result set by the first specified column, THEN by the second column.
+                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] [DESC], [col_name] [DESC];</code></li>
+                            <li class="pt-2">To order a result set by specific column(s) and restrict the number of rows returned, use the following
+                                syntax:
+                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] [DESC], [col_name] [DESC]<br> LIMIT [integer];</code></li>
                         </ul>
                         <h2 class="pt-5"><u>Exercise</u></h2>
-                        <p><b>Congratulations!</b> You just completed the DML Tutorial!To help test your knowledge, let's complete the exercise
-                            outlined below. This exercise is based on the exercise of the previous exercise. <b><i>It's highly recommended that you
-                            complete the exercise outlined in the previous tutorial before beginning this exercise.</i></b>
+                        <p><b>Congratulations!</b> You just completed the Intro to SQL Statements Tutorial! To help test your knowledge, let's use
+                            the database you populated in the previous tutorial to run some basic queries. This exercise is based on the exercise of 
+                            the previous tutorial. <br>**<b><i>It's highly recommended that you
+                            complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
                             </i></b>
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your RDBMS Client.</li>
-                            <li class="pt-2">Insert the following data into the "Customers" table in the "Orders" schema of the
-                                            "Sales" database:
-                                            1000, John, Thornton, 123 Main Street, Chicago, IL, 12345<br>
-                                            1001, Susan, Freeman, 700 Huntington Avenue, Los Angeles, CA, 91980<br>
-                                            1002, Barbara, Smith, 303 Polish Road, Denver, CO, 81210<br>
-                                            1003, Gregory, Turis, 35 Frankfurt Way #104, Seattle, WA, 91772<br>
-                                            1004, Gregory, Hurst, 656 N 705 W, New Haven, CT, 21342<br>
-                                            1005, Samantha, Olivier, NULL, NULL, NULL
-                            </li>
-                            <li class="pt-2">Insert the following data into the "Orders" table in the "Orders" schema of the
-                                            "Sales" database:<br>
-                                            189230191, 2021-09-01, 1000<br>
-                                            189230192, 2021-09-01, 1000<br>
-                                            189230193, 2021-09-02, 1001<br>
-                                            189230009, 2020-12-13, 1000<br>
-                                            189212443, 2019-05-06, 1004<br>
-                                            190000124, 2022-10-11, 1002<br>
-                                            189229132, 2020-08-12, 1002<br>
-                                            190001121, 2023-01-04, 1003
-                                        </li>
-                            <li class="pt-2">Insert the following data into the "Orders" table in the "Orders" schema of the
-                                            "Sales" database:<br>
-                                            189230191, 1, Camping Chair (Black), Luxury Camping Chair made by Trident<br>
-                                            189230191, 2, Camping Tent, 4-person Tent with Rain Cover and Exterior Shoe Rack<br>
-                                            189230191, 3, Fire Roasting Sticks (4-Pack), Metal Rods used for Roasting Hot Dogs and Marshmallows over Campfire<br>
-                                            189230192, 1, X-Large Tarp, 20'x 20' Tarp used for Camping Tents<br>
-                                            189230193, 1, White Noice Machine, Electronic device used to create soothing noices for sleeping<br>
-                                            189230193, 2, Sleeping Mask (Black), Cloth to place over eyes while sleeping<br>
-                                            189230193, 3, Melatonin (5 mg, 500 ML), Over-the-Counter pills to improve sleep<br>
-                                            189230009, 1, White Undershirt (XL), XL White Undershirt made by Fruit of the Loom<br>
-                                            189212443, 1, White Socks (6-Pair), Plain White Socks made by Fruit of the Loom<br>
-                                            190000124, 1, Rubber Bands (125-Pack), Plain Rubber Bands<br>
-                                            190000124, 2, Scissors (2-Pack), Small Blue Scissors made by Elmer 
-                            </li>
-                            <li class="pt-3">In the "Orders" Table, delete the row with an "order_id" of <b><i>190001121</i></b> since
-                                            it was cancelled.</li>
-                            <li class="pt-2">A Customer Service Representative reached out to Samantha Olivier and got her address. Update
-                                            the appropriate row in the "Customers" table.<br>
-                                            <b><i>424 Seashell Avenue, Newport Beach, CA, 91080</i></b></li>
-                            <li class="pt-2">It looks like John Thornton prefers to go by Johnny. Update the appropriate row in the "Customers"
-                                            table with the new information.
-                            </li>
-                            <li class="pt-2"><b>Exercise Completed!</b></li>
+                            <li class="pt-2">Using the "Sales" database, answer the following questions:</li>
+                            <ol type="a">
+                                <li class="pt-3"><b>How Many Rows are in the Orders Table?</b></li>
+                                <li class="pt-3"><b>How Many Orders Were Placed by the Customer with an ID of 1000?</b></li>
+                                <li class="pt-3"><b>When was the Latest Order Placed?</b></li>
+                                <li class="pt-3"><b>How Many Customers Live in California?</b></li>
+                                <li class="pt-3"><b>How Many Camping-Related Items have been Ordered?</b></li>
+                                <li class="pt-3"><b>How Many Orders Contain MORE than 1 Item?</b></li>
+                                <li class="pt-3"><b>What are the Top 3 Largest Orders by Item Count? Limit The Result Set to 3 Rows.</b></li>
+                            </ol>
+                            <li class="pt-2"><b>Exercise Completed! Click <a href="SELECT-Exercise-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

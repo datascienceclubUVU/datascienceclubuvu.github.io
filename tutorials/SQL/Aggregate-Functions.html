@@ -96,6 +96,7 @@
                                 cover the following learning objectives:
                             </p>
                             <ul>
+                                <li>Arithmetic Operators</li>
                                 <li>COUNT Function</li>
                                 <li>SUM Function</li>
                                 <li>AVERAGE/AVG Function</li>
@@ -104,6 +105,28 @@
                         </div>
                     </div>
                     <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Arithmetic Operators</h2>
+                        <p class="pt-3">When working with either numerical or categorical data (such as strings), you'll want to manipulate them to create
+                            new columns or find certain values. Watch the following video to get a better understanding of the arithemtic operators in SQL:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=ua7U2pmnbcE">Using SQL Arithmetic Operators</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">To multiply a column by a certain value, use the <b>*</b> character with the following syntax:
+                                <br><code>SELECT [col_name] * [value]<br> FROM [table_name];</code></li>
+                            <li class="pt-2">To either add a column by a certain value or concatenate/combine two or more columns, use the <b>+</b> character 
+                            with the following syntax (differs between RDBMSs):
+                                <br><code>SELECT [col_name] + [value]/[col_name2]<br> FROM [table_name];</code></li>
+                            <li class="pt-2">To divide a column by a certain value, use the <b>/</b> character with the following syntax:
+                                <br><code>SELECT [col_name] / [value]<br> FROM [table_name];</code></li>
+                            <li class="pt-2">To retrieve the remainder as a result of dividing a column by a certain value, use the <b>%</b> character with the 
+                            following syntax:
+                                <br><code>SELECT [col_name] % [value]<br> FROM [table_name];</code></li>
+                            <li class="pt-2">To subtract a column by a certain value, use the <b>-</b> character with the following syntax:
+                                <br><code>SELECT [col_name] - [value]<br> FROM [table_name];</code></li>
+                        </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">COUNT Function</h2>
                         <p class="pt-3">The COUNT Function can be used for both finding the number of items in a group or fidning the total number of
                             rows in a table, as seen in the previous tutorial. Watch the following video to get a better understanding of this 
@@ -133,66 +156,50 @@
                             </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To filter the result set with a single condition, use the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name] <br>WHERE [col_name] = [value];</code></li>
-                            <li class="pt-2">To filter the result set by multiple conditions, use the <b>AND</b> and <b>OR</b> keywords with
+                            <li class="pt-2">To retrieve the total of all values in a specific column, use the following syntax::
+                                <br><code>SELECT SUM([col_name])<br> FROM [table_name]</code></li>
+                            <li class="pt-2">To retrieve the total of all values in a specific column based on a set of conditions, use the
                                 the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] = [value] [AND/OR] [col_name] = [value];</code></li>
-                            <li class="pt-2">To filter the result set by a text string fuzzy match, use the <b>LIKE</b> keyword and the <b>%</b> 
-                                wildcard operator with the following syntax: 
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] LIKE 'text_str%' OR [col_name] LIKE '%text_str' OR [col_name] LIKE '%text_str%';</code></li>
-                            <li class="pt-2">To filter the result set with a single negative condition, use the <b>NOT</b> keyword with the
+                                <br><code>SELECT SUM([col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
+                            <li class="pt-2">When working with aggregated columns, it's best to rename the columns. This can be done with the
                                 following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE NOT [col_name] LIKE 'text_str%';</code></li>
-                            <li class="pt-2">To filter the result set with a single condition within a range of numerical values, use the
-                                <b>BETWEEN</b> keyword in conjunction with the <b>AND</b> keyword with the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] BETWEEN [min_val] AND [max_val];</code>
-                            </li>
-                            <li class="pt-2">To filter a result set by a list of values, use the <b>IN</b> keyword with the following syntax:
-                            <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IN([val1], [val2], [val3]);</code></li>
-                            <li class="pt-2">To filter a result set by a null condition, use the <b>IS NULL</b> or the <b>IS NOT NULL</b> keywords
-                                with the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IS [NOT] NULL;</code></li>
+                                <br><code>SELECT SUM([col_name]) [new_name]<br> FROM [table_name];</code></li>
+                            <li class="pt-2">To calculate the average of one or more columns, use the following syntax:
+                                <br><code>SELECT SUM([col_name]), COUNT([col_name]), SUM([col_name])/COUNT([col_name])<br> FROM [table_name];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">AVERAGE/AVG Function</h2>
-                        <p class="pt-3">Wow. That last section was a long one, yet an important one. Once you know how to fitler data, your
-                                        querying skills go from nothing to something. Let's level up your querying skills by learning how
-                                        to aggregate data using the <b>GROUP BY clause</b>:
+                        <p class="pt-3">If you've taken basic Algebra, you'll know that an average of a set of numbers is computed as the sum of that
+                            list divided by the count of the items in that list. However, SQL enables you to reduce this to one step using the
+                            <b><i>AVERAGE/AVG</i></b> function (the actual function name differs between RDBMSs):
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=nNrgRVIzeHg">How to Aggregate Data in SQL</a><br>
-                            <a href="https://www.youtube.com/watch?v=cAKTaHyDxWQ">Difference Between WHERE and HAVING Clauses</a>
+                            <a href="https://www.youtube.com/watch?v=9DLG0GBo0WE">Intro to SQL Average Function</a><br>
                         </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">The <b><i>GROUP BY</i></b> clause is used in conjunction with aggregate functions (e.g., COUNT(),
-                                    AVERAGE/AVG(), SUM()) to gather identical data into <i>groups.</i></li>
-                            <li class="pt-2">To delete group rows in a table based on one or more columns, use the following syntax:
-                                <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]
-                                    <br>GROUP BY [col1], [col2];</code></li>
-                            <li class="pt-2">The <b><i>HAVING</i></b> clause is used in conjunction with the <b><i>GROUP BY</i></b> clause
-                                    and is sued to filter aggregated columns. This is used with the following syntax:
-                                <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]<br> GROUP BY [col1], [col2]<br> HAVING COUNT(*) >= 5;</code></li>
-                            <li class="pt-2">The difference between the <b><i>WHERE</i></b> clause and the <b><i>HAVING</i></b> clause is that the
-                                HAVING clause can only handle conditions based on aggregated columns, whereas the WHERE clause handles conditions based on
-                                non-aggregated columns.</li>
-                            <li class="pt-2"><b>QUICK TIP:</b> When dealing with a large number of columns, you can use column indexes when specifying columns in the GROUP BY clause rather than writing
-                            out the full column name. This is done with the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3], COUNT(*)<br> FROM [table_name]<br> GROUP BY 1, 2, 3;</code></li>
+                            <li class="pt-2">To retrieve the average value from a specific column, use the following syntax (differs between RDBMSs):
+                                <br><code>SELECT AVG([col_name])<br> FROM [table_name];</code>
+                            </li>
+                            <li class="pt-2">To retrieve the average value from a specific column based on a set of conditions, use the
+                                the following syntax (differs between RDBMSs):
+                                <br><code>SELECT AVG([col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
+                            <li class="pt-2"><b>QUICK NOTE:</b> Some RDBMSs may include NULL row values when calculating averages. In this scenario,
+                                use the following syntax to calculate the average:
+                                <br><code>SELECT SUM([col_name])/COUNT([col_name])<br> FROM [table_name];</code></li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">MIN/MAX Functions</h2>
-                        <p class="pt-3">Once you've retrieved the correct columns, filtered the result set, and aggregated data, you'll want to
-                            organize it to make it more readable. The following video explains how to do this:
+                        <p class="pt-3">When doing Data Analysis, it's good to know the range of values you're working with. This can be found using
+                            SQL's MIN and MAX Functions. Watch the following video to get a better understanding of these functions:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=wyWnJ7QYME4">How to Order Data in a Result Set</a><br>
+                            <a href="https://www.youtube.com/watch?v=VKJvhwrjU9U">Intro to SQL Min Function</a><br>
                         </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To order a result set by a specific column in <b><i>Ascending order (A-Z, Lowest-Highest)</i></b>, use the following syntax:
-                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name];</code></li>
-                            <li class="pt-2">To order a result set by a specific column in <b><i>Descending order (Z-A, Highest-Lowest)</i></b>, use the following syntax:</b>
-                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] DESC;</code></li>
+                            <li class="pt-2">To retrieve the lowest number in a specific column, use the following syntax:
+                                <br><code>SELECT MIN([col_name])<br> FROM [table_name];</code></li>
+                            <li class="pt-2">To retrieve the lowest number in a specific column based on a set of conditions, use the following syntax:</b>
+                                <br><code>SELECT MIN([col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
                             <li class="pt-2">To order a result set by multiple columns in either ascending or descending order, use the following 
                                 syntax. This will sort the result set by the first specified column, THEN by the second column.
                                 <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] [DESC], [col_name] [DESC];</code></li>

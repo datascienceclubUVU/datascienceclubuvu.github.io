@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>SQL Tutorials: Aggregate Functions | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                SQL TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            SQL Tutorials: Aggregate Functions
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/select-statement.png"
+                                alt="%UPDATE% Picture of the word python written on a stick note."
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
+                                   We recommend using either PostgreSQL, MS SQL Server, or MySQL.
+                                </b><br><br>
+                                Isn't querying fun? Data Analysis is all about asking and answering questions using querying techniques such as
+                                SELECT statements. Let's expand our querying skills by learning how to work with numerical data. This lesson will
+                                cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>COUNT Function</li>
+                                <li>SUM Function</li>
+                                <li>AVERAGE/AVG Function</li>
+                                <li>MIN/MAX Functions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">COUNT Function</h2>
+                        <p class="pt-3">The COUNT Function can be used for both finding the number of items in a group or fidning the total number of
+                            rows in a table, as seen in the previous tutorial. Watch the following video to get a better understanding of this 
+                            function:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=yY0Go4a4IZU">Intro to SQL Count Function</a><br>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-2">The <b><i>Result Set</i></b> is the rows returned as a result of the query executed.</li>
+                            <li class="pt-1">To retrieve all rows in a specified table, use the following syntax:
+                                <br><code>SELECT * <br>FROM [table_name];</code></li>
+                            <li class="pt-2">To retrieve the total number of rows in a specified table, use the following syntax (We will go over
+                                the COUNT function in the next tutorial):
+                                <br><code>SELECT COUNT(*) <br>FROM [table_name];</code></li>
+                            <li class="pt-2">To retrieve all the rows in a specified table but limit which columns are returned, use the following
+                                syntax:
+                                <br><code>SELECT [col1], [col2], [col3], [col4] <br>FROM [table_name];</code></li>
+                                <li class="pt-2">To filter the rows returned in the result set, use the <b>WHERE</b>
+                                clause with the following syntax:
+                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)];</code></li>
+                                <li class="pt-2">To order the result set in either ascending or descending order, use the <b>ORDER BY</b> clause
+                                with the following syntax:
+                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC];</code></li>
+                                <li class="pt-2">When working with large result sets, it's a best practice to use the <b>LIMIT</b> Keyword
+                                to reduce the amount of memory your query uses:
+                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC] <br>LIMIT [integer];</code></li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SUM Function</h2>
+                        <p class="pt-3">Although you have used the WHERE clause before, there's a lot more to it. Let's explore this
+                            clause in the video below:
+                        </p>
+                            <ul>
+                                <a href="https://www.youtube.com/watch?v=4Uv0o8IBqw0">How to Filter with the WHERE Clause in SQL</a><br>
+                            </ul>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2">To filter the result set with a single condition, use the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name] <br>WHERE [col_name] = [value];</code></li>
+                            <li class="pt-2">To filter the result set by multiple conditions, use the <b>AND</b> and <b>OR</b> keywords with
+                                the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] = [value] [AND/OR] [col_name] = [value];</code></li>
+                            <li class="pt-2">To filter the result set by a text string fuzzy match, use the <b>LIKE</b> keyword and the <b>%</b> 
+                                wildcard operator with the following syntax: 
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] LIKE 'text_str%' OR [col_name] LIKE '%text_str' OR [col_name] LIKE '%text_str%';</code></li>
+                            <li class="pt-2">To filter the result set with a single negative condition, use the <b>NOT</b> keyword with the
+                                following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE NOT [col_name] LIKE 'text_str%';</code></li>
+                            <li class="pt-2">To filter the result set with a single condition within a range of numerical values, use the
+                                <b>BETWEEN</b> keyword in conjunction with the <b>AND</b> keyword with the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] BETWEEN [min_val] AND [max_val];</code>
+                            </li>
+                            <li class="pt-2">To filter a result set by a list of values, use the <b>IN</b> keyword with the following syntax:
+                            <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IN([val1], [val2], [val3]);</code></li>
+                            <li class="pt-2">To filter a result set by a null condition, use the <b>IS NULL</b> or the <b>IS NOT NULL</b> keywords
+                                with the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IS [NOT] NULL;</code></li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">AVERAGE/AVG Function</h2>
+                        <p class="pt-3">Wow. That last section was a long one, yet an important one. Once you know how to fitler data, your
+                                        querying skills go from nothing to something. Let's level up your querying skills by learning how
+                                        to aggregate data using the <b>GROUP BY clause</b>:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=nNrgRVIzeHg">How to Aggregate Data in SQL</a><br>
+                            <a href="https://www.youtube.com/watch?v=cAKTaHyDxWQ">Difference Between WHERE and HAVING Clauses</a>
+                        </ul>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2">The <b><i>GROUP BY</i></b> clause is used in conjunction with aggregate functions (e.g., COUNT(),
+                                    AVERAGE/AVG(), SUM()) to gather identical data into <i>groups.</i></li>
+                            <li class="pt-2">To delete group rows in a table based on one or more columns, use the following syntax:
+                                <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]
+                                    <br>GROUP BY [col1], [col2];</code></li>
+                            <li class="pt-2">The <b><i>HAVING</i></b> clause is used in conjunction with the <b><i>GROUP BY</i></b> clause
+                                    and is sued to filter aggregated columns. This is used with the following syntax:
+                                <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]<br> GROUP BY [col1], [col2]<br> HAVING COUNT(*) >= 5;</code></li>
+                            <li class="pt-2">The difference between the <b><i>WHERE</i></b> clause and the <b><i>HAVING</i></b> clause is that the
+                                HAVING clause can only handle conditions based on aggregated columns, whereas the WHERE clause handles conditions based on
+                                non-aggregated columns.</li>
+                            <li class="pt-2"><b>QUICK TIP:</b> When dealing with a large number of columns, you can use column indexes when specifying columns in the GROUP BY clause rather than writing
+                            out the full column name. This is done with the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3], COUNT(*)<br> FROM [table_name]<br> GROUP BY 1, 2, 3;</code></li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">MIN/MAX Functions</h2>
+                        <p class="pt-3">Once you've retrieved the correct columns, filtered the result set, and aggregated data, you'll want to
+                            organize it to make it more readable. The following video explains how to do this:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=wyWnJ7QYME4">How to Order Data in a Result Set</a><br>
+                        </ul>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2">To order a result set by a specific column in <b><i>Ascending order (A-Z, Lowest-Highest)</i></b>, use the following syntax:
+                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name];</code></li>
+                            <li class="pt-2">To order a result set by a specific column in <b><i>Descending order (Z-A, Highest-Lowest)</i></b>, use the following syntax:</b>
+                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] DESC;</code></li>
+                            <li class="pt-2">To order a result set by multiple columns in either ascending or descending order, use the following 
+                                syntax. This will sort the result set by the first specified column, THEN by the second column.
+                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] [DESC], [col_name] [DESC];</code></li>
+                            <li class="pt-2">To order a result set by specific column(s) and restrict the number of rows returned, use the following
+                                syntax:
+                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] [DESC], [col_name] [DESC]<br> LIMIT [integer];</code></li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the Intro to SQL Statements Tutorial! To help test your knowledge, let's use
+                            the database you populated in the previous tutorial to run some basic queries. This exercise is based on the exercise of 
+                            the previous tutorial. <br>**<b><i>It's highly recommended that you
+                            complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </i></b>
+                        </p>
+                        <h4 class="pt-3">Instructions:</h4>
+                        <ol>
+                            <li class="pt-2">Open your RDBMS Client.</li>
+                            <li class="pt-2">Using the "Sales" database, answer the following questions:</li>
+                            <ol type="a">
+                                <li class="pt-3"><b>How Many Rows are in the Orders Table?</b></li>
+                                <li class="pt-3"><b>How Many Orders Were Placed by the Customer with an ID of 1000?</b></li>
+                                <li class="pt-3"><b>When was the Latest Order Placed?</b></li>
+                                <li class="pt-3"><b>How Many Customers Live in California, Washington, or Utah?</b></li>
+                                <li class="pt-3"><b>How Many Items with the word "Camp" in the Name have been Ordered?</b></li>
+                                <li class="pt-3"><b>How Many Orders Contain MORE than 1 Item?</b></li>
+                                <li class="pt-3"><b>What are the Top 3 Largest Orders by Item Count? Limit The Result Set to 3 Rows.</b></li>
+                            </ol>
+                            <li class="pt-2"><b>Exercise Completed! Click <a href="SELECT-Exercise-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <div class="col">
+                                <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                            </div>
+                        </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="Intro-to-SELECT-Statements.html">
+                            Previous Topic
+                        </a>
+                        <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="DML.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

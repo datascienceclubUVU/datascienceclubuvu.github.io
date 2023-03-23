@@ -91,9 +91,10 @@
                                 <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
                                    We recommend using either PostgreSQL, MS SQL Server, or MySQL.
                                 </b><br><br>
-                                Now that you have a clear understanding of the core concepts behind Relational Databases, let's learn how
-                                to create, update, and delete database objects. <b><i>Data Definition Language (DDL)</i></b> is a form of SQL used
-                                 specifically for creating, altering, and dropping database objects. Listed below are the learning objectives in this lesson:
+                                Now that you have a clear understanding of the core concepts behind Relational Databases, let's learn some basic
+                                SQL. <b><i>Data Definition Language (DDL)</i></b> is a form of SQL used
+                                 specifically for creating, altering, and dropping database objects. Listed below are the learning objectives 
+                                 covered in this lesson:
                             </p>
                             <ul>
                                 <li>Creating Database Objects</li>
@@ -109,7 +110,8 @@
                         <div class="col">
                             <h2 class="mt-3 px-4 px-sm-3 border-start border-3 border-secondary">Creating Database Objects</h2>
                             <p class="pt-3">As mentioned in the previous tutorial, Relational Databases are comprised of four primary
-                                objects: Databases, Schemas, Tables, and Attributes. The videos below describe how to create the first three of these objects:
+                                objects: Databases, Schemas, Tables, and Attributes. Watch the following videos to get a better
+                                understanding of these concepts:
                             </p>
                             <ul>
                                 <a href="https://www.youtube.com/watch?v=PPFyoXA_FC0">How to Create A Database</a><br>
@@ -123,15 +125,16 @@
                                 name has already been used.</li>
                                 <li class="pt-2">The <code>CREATE SCHEMA</code> statement is used to create a schema within a database. These can 
                                 be used to differentiate different business units and provide security for sensitive data. It's recommended to use this
-                                this statement in conjunction with the <code>USE DATABASE [db_name]</code> statement to ensure you create the schema
+                                statement in conjunction with the <code>USE DATABASE [db_name]</code> statement to ensure you create the schema
                                 in the correct database.</li>
                                 <li class="pt-2">The <code>CREATE TABLE</code> statement is used to define the name and structure of a table in a database.
                                 You must specify each column and its associated data type in the table. It's recommended to use this statement in conjunction
                                 with the <code>USE DATABASE [db_name]</code> statement to ensure you create the table in the correct database.</li>
                             </ul>
                             <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Altering Database Objects</h2>
-                            <p class="pt-3">Sometimes, you may need to rename or restructure a database object. View the following views to learn
-                            more about these options:</p>
+                            <p class="pt-3">When working with large amounts of data originating from various sources, you may need to make some changes
+                                to existing database objects. Watch the following videos to get a better understanding of these concepts:
+                            </p>
                                 <ul>
                                     <a href="https://www.youtube.com/watch?v=vDr2DZeU5mY">How to Alter Database Tables</a><br>
                                     <a href="https://youtube.com/clip/Ugkx-nTo9FPlmVdzR-SG4wkw3E_LmNwYGknh">How to Rename Databases</a>
@@ -148,8 +151,9 @@
                                     <br><code>ALTER DATABASE [db_name] MODIFY name = [new_name];</code></li>
                             </ul>
                             <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Dropping Database Objects</h2>
-                            <p class="pt-3">If you can create database objects, there must be a way to drop those objects. The following videos will teach you about
-                                the common DROP statements:
+                            <p class="pt-3">As mentioned above, when working with large amounts of data, you may need to drop, or delete, existing
+                                database objects to make room for new and improved data. Watch the following videos to get a better understanding
+                                of this concept:
                             </p>
                             <ul>
                                 <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Drop Table Columns</a><br>
@@ -171,8 +175,8 @@
                             </ul>
                             <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Truncating Database Tables</h2>
                             <p class="pt-3">When you <b><i>Truncate</i></b> a database object, you remove all the existing data and keep the structure. This is useful
-                            for when you are testing out a new RDBMS or a new schema design. To learn more about truncating database objects, watch the
-                            following videos:
+                            for when you are testing out a new RDBMS or a new schema design. Watch the following video to get a better understanding of this 
+                            concept:
                             </p>
                             <ul>
                                 <a href="https://www.youtube.com/watch?v=PbqU83LtDII">How to Truncate A Database Table</a><br>
@@ -186,8 +190,8 @@
                             </ul>
                             <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Constraints</h2>
                             <p class="pt-3">When dealing with large amounts of data, you'll want to place some limitations on the types of data or how the data
-                                is presented. Tehse are known as <b><i>Constraints</i></b> and can be placed on the Schema, Table, or Column level.
-                                The following videos give a breif outline of the different constraints available:
+                                is presented. These are known as <b><i>Constraints</i></b> and can be placed on the Schema, Table, or Column level.
+                                Watch the following video to get a better understanding of this concept:
                             </p>
                             <ul>
                                 <a href="https://www.youtube.com/watch?v=boj9b5XqliU">Creating Column-Level Constraints using the CREATE TABLE Statement</a><br>

@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/select-statement.png"
+                                src="../../imgs/aggregate-functions.png"
                                 alt="%UPDATE% Picture of the word python written on a stick note."
                             >  <!-- %UPDATE% -->
                         </div>
@@ -114,31 +114,22 @@
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-2">The <b><i>Result Set</i></b> is the rows returned as a result of the query executed.</li>
-                            <li class="pt-1">To retrieve all rows in a specified table, use the following syntax:
-                                <br><code>SELECT * <br>FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the total number of rows in a specified table, use the following syntax (We will go over
-                                the COUNT function in the next tutorial):
+                            <li class="pt-1">To retrieve the total number of rows in a table, use the following syntax:
                                 <br><code>SELECT COUNT(*) <br>FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve all the rows in a specified table but limit which columns are returned, use the following
-                                syntax:
-                                <br><code>SELECT [col1], [col2], [col3], [col4] <br>FROM [table_name];</code></li>
-                                <li class="pt-2">To filter the rows returned in the result set, use the <b>WHERE</b>
-                                clause with the following syntax:
-                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)];</code></li>
-                                <li class="pt-2">To order the result set in either ascending or descending order, use the <b>ORDER BY</b> clause
-                                with the following syntax:
-                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC];</code></li>
-                                <li class="pt-2">When working with large result sets, it's a best practice to use the <b>LIMIT</b> Keyword
-                                to reduce the amount of memory your query uses:
-                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC] <br>LIMIT [integer];</code></li>
+                            <li class="pt-2">To retrieve the total number of rows in a filtered result set, use the following syntax:
+                                <br><code>SELECT COUNT(*) <br>FROM [table_name] <br>WHERE [condition(s)];</code></li>
+                            <li class="pt-2">To retrieve the total number of <b>DISTINCT</b> items in a specified column, use the COUNT function
+                                with the <b><i>DISTINCT</i></b> keyword using the following syntax:
+                                <br><code>SELECT COUNT(DISTINCT [col_name]) <br>FROM [table_name];</code></li>
+                            <li class="pt-2">To retrieve the total number of <b>NON-NULL</b> rows in a specific column, use the following syntax:
+                                <br><code>SELECT COUNT([col_name]) <br>FROM [table_name];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SUM Function</h2>
-                        <p class="pt-3">Although you have used the WHERE clause before, there's a lot more to it. Let's explore this
-                            clause in the video below:
+                        <p class="pt-3">Gathering totals is probably the most common type of analytics activity. In SQL, this is conducted using the SUM()
+                            function. It should be noted that this function only works on <b><i>NUMERIC</i></b> columns. Watch the following video to get a better understanding of this function:
                         </p>
                             <ul>
-                                <a href="https://www.youtube.com/watch?v=4Uv0o8IBqw0">How to Filter with the WHERE Clause in SQL</a><br>
+                                <a href="https://www.youtube.com/watch?v=pI_n_RPcsnM">Intro to SQL Sum Function</a><br>
                             </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>

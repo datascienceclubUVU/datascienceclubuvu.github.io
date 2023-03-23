@@ -100,7 +100,7 @@
                             <ul>
                                 <li>SELECT Statement Syntax</li>
                                 <li>WHERE Clause</li>
-                                <li>GROUP BY Clause</li>
+                                <li>GROUP BY and HAVING Clauses</li>
                                 <li>ORDER BY Clause</li>
                             </ul>
                         </div>
@@ -165,19 +165,32 @@
                                 with the following syntax:
                                 <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IS [NOT] NULL;</code></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">GROUP BY Clause</h2>
-                        <p class="pt-3">If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">GROUP BY and HAVING Clauses</h2>
+                        <p class="pt-3">Wow. That last section was a long one, yet an important one. Once you know how to fitler data, your
+                                        querying skills go from nothing to something. Let's level up your querying skills by learning how
+                                        to aggregate data using the <b>GROUP BY clause</b>:
                         </p>
                         <ul>
-                            <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Delete Data From a Table</a><br>
+                            <a href="https://www.youtube.com/watch?v=nNrgRVIzeHg">How to Aggregate Data in SQL</a><br>
+                            <a href="https://www.youtube.com/watch?v=cAKTaHyDxWQ">Difference Between WHERE and HAVING Clauses</a>
                         </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To delete all the data in a table, refer to the <b>TRUNCATE</b> statement in the previous tutorial.</li>
-                            <li class="pt-2">To delete specific rows in a table, use the following syntax:
-                                <br><b><i>DELETE FROM [table_name] WHERE [condition];</i></b></li>
-                            <li class="pt-2">Make sure to <b><i>double-check</i></b> your code before executing the statement.</li>
-                        </ul>
+                            <li class="pt-2">The <b><i>GROUP BY</i></b> clause is used in conjunction with aggregate functions (e.g., COUNT(),
+                                    AVERAGE/AVG(), SUM()) to gather identical data into <i>groups.</i></li>
+                            <li class="pt-2">To delete group rows in a table based on one or more columns, use the following syntax:
+                                <br><code>SELECT [col1], [col2], [AGGREGATE FUNCTION]([*/[col_name]])<br> FROM [table_name]
+                                    <br>GROUP BY [col1], [col2];</code></li>
+                            <li class="pt-2">The <b><i>HAVING</i></b> clause is used in conjunction with the <b><i>GROUP BY</i></b> clause
+                                    and is sued to filter aggregated columns. This is used with the following syntax:
+                                <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]<br> GROUP BY [col1], [col2]<br> HAVING COUNT(*) >= 5;</code></li>
+                            <li class="pt-2">The difference between the <b><i>WHERE</i></b> clause and the <b><i>HAVING</i></b> clause is that the
+                                HAVING clause can only handle conditions based on aggregated columns, whereas the WHERE clause handles conditions based on
+                                non-aggregated columns.</li>
+                            <li class="pt-2"><b>QUICK TIP:</b> you can use column indexes when specifying columns in the GROUP BY clause rather than writing
+                            out the full column name. This is done with the collowing context:
+                                <br><code>SELECT [col1], [col2], [col3], COUNT(*)<br> FROM [table_name]<br> GROUP BY 1, 2, 3;</code></li>
+                            </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ORDER BY Clause</h2>
                         <p class="pt-3">If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
                         </p>

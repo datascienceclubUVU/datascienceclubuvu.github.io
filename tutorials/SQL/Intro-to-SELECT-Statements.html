@@ -106,8 +106,8 @@
                         </div>
                     </div>
                     <div>
-                        <h2 class="pt-3"><u>SELECT Statement Syntax</u></h2>
-                        <p style="padding-top:1%">As mentioned in the introduction, the SELECT statement is the most common statement in SQL,
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SELECT Statement Syntax</h2>
+                        <p class="pt-3">As mentioned in the introduction, the SELECT statement is the most common statement in SQL,
                             therefore it's critical to master the basic syntax. Watch the following video to get a better understanding of
                             SELECT statement syntax:
                         </p>
@@ -118,25 +118,25 @@
                         <ul>
                             <li class="pt-2">The <b><i>Result Set</i></b> is the rows returned as a result of the query executed.</li>
                             <li class="pt-1">To retrieve all rows in a specified table, use the following syntax:
-                                <br><b><i>SELECT * FROM [table_name];</i></b></li>
+                                <br><code>SELECT * <br>FROM [table_name];</code></li>
                             <li class="pt-2">To retrieve the total number of rows in a specified table, use the following syntax (We will go over
                                 the COUNT function in the next tutorial):
-                                <br><b><i>SELECT COUNT(*) <br>FROM [table_name];</i></b></li>
+                                <br><code>SELECT COUNT(*) <br>FROM [table_name];</code></li>
                             <li class="pt-2">To retrieve all the rows in a specified table but limit which columns are returned, use the following
                                 syntax:
-                                <br><b><i>SELECT [col1], [col2], [col3], [col4] <br>FROM [table_name];</i></b></li>
+                                <br><code>SELECT [col1], [col2], [col3], [col4] <br>FROM [table_name];</code></li>
                                 <li class="pt-2">To retrieve all rows in a specified table that match a specified condition, use the <b>WHERE</b>
                                 clause with the following syntax:
-                                <br><b><i>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)];</i></b></li>
+                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)];</code></li>
                                 <li class="pt-2">To order the result set in either ascending or descending order, use the <b>ORDER BY</b> clause
                                 with the following syntax:
-                                <br><b><i>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC];</i></b></li>
+                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC];</code></li>
                                 <li class="pt-2">When working with large result sets, it's a best practice to use the <b>LIMIT</b> Keyword
                                 to reduce the amount of memory your query uses:
-                                <br><b>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC] <br>LIMIT [integer];</b></li>
+                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC] <br>LIMIT [integer];</code></li>
                         </ul>
-                        <h2 class="pt-5"><u>WHERE Clause</u></h2>
-                        <p style="padding-top:1%">Although you have used the WHERE clause before, there's a lot more to it. Let's explore this
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">WHERE Clause</h2>
+                        <p class="pt-3">Although you have used the WHERE clause before, there's a lot more to it. Let's explore this
                             clause in the video below:
                         </p>
                             <ul>
@@ -144,16 +144,29 @@
                             </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To retrieve all rows in a specified, use the following syntax: 
-                                <br><b><i>UPDATE [table_name] SET [col_name] = [new_value];</i></b></li>
-                            <li class="pt-2">To update specific rows in a column, use the following syntax. We will learn more about
-                                            the <b>WHERE</b> clause in the next tutorial.
-                                <br><b><i>UPDATE [table_name] SET [col_name] = [new_value] WHERE [condition];</i></b></li>
-                            <li class="pt-2">To update multiple columns in the same statement, use the following syntax: 
-                                <br><b><i>UPDATE [table_name] SET [col_name] = [new_value], [col_name] = [new_value];</i></b></li>
+                            <li class="pt-2">To filter the result set with a single condition, use the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name] <br>WHERE [col_name] = [value];</code></li>
+                            <li class="pt-2">To filter the result set by multiple conditions, use the <b>AND</b> and <b>OR</b> keywords with
+                                the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] = [value] [AND/OR] [col_name] = [value];</code></li>
+                            <li class="pt-2">To filter the result set by a text string fuzzy match, use the <b>LIKE</b> keyword and the <b>%</b> 
+                                wildcard operator with the following syntax: 
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] LIKE 'text_str%' OR [col_name] LIKE '%text_str' OR [col_name] LIKE '%text_str%';</code></li>
+                            <li class="pt-2">To filter the result set with a single negative condition, use the <b>NOT</b> keyword with the
+                                following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE NOT [col_name] LIKE 'text_str%';</code></li>
+                            <li class="pt-2">To filter the result set with a single condition within a range of numerical values, use the
+                                <b>BETWEEN</b> keyword in conjunction with the <b>AND</b> keyword with the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] BETWEEN [min_val] AND [max_val];</code>
+                            </li>
+                            <li class="pt-2">To filter a result set by a list of values, use the <b>IN</b> keyword with the following syntax:
+                            <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IN([val1], [val2], [val3]);</code></li>
+                            <li class="pt-2">To filter a result set by a null condition, use the <b>IS NULL</b> or the <b>IS NOT NULL</b> keywords
+                                with the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IS [NOT] NULL;</code></li>
                         </ul>
-                        <h2 style="padding-top:5%"><u>GROUP BY Clause</u></h2>
-                        <p>If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">GROUP BY Clause</h2>
+                        <p class="pt-3">If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
                         </p>
                         <ul>
                             <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Delete Data From a Table</a><br>
@@ -165,8 +178,8 @@
                                 <br><b><i>DELETE FROM [table_name] WHERE [condition];</i></b></li>
                             <li class="pt-2">Make sure to <b><i>double-check</i></b> your code before executing the statement.</li>
                         </ul>
-                        <h2 style="padding-top:5%"><u>ORDER BY Clause</u></h2>
-                        <p>If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ORDER BY Clause</h2>
+                        <p class="pt-3">If you're able to insert data, you must be able to delete that same data. Let's learn how to do just that:
                         </p>
                         <ul>
                             <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Delete Data From a Table</a><br>

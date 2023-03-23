@@ -128,7 +128,7 @@
                                 <br><code>SELECT [col_name] - [value]<br> FROM [table_name];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">COUNT Function</h2>
-                        <p class="pt-3">The COUNT Function can be used for both finding the number of items in a group or fidning the total number of
+                        <p class="pt-3">The COUNT Function can be used for both finding the number of items in a group or finding the total number of
                             rows in a table, as seen in the previous tutorial. Watch the following video to get a better understanding of this 
                             function:
                         </p>
@@ -148,7 +148,7 @@
                                 <br><code>SELECT COUNT([col_name]) <br>FROM [table_name];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SUM Function</h2>
-                        <p class="pt-3">Gathering totals is probably the most common type of analytics activity. In SQL, this is conducted using the SUM()
+                        <p class="pt-3">Gathering totals is probably the most common type of analytics activity. In SQL, this is conducted using the SUM
                             function. It should be noted that this function only works on <b><i>NUMERIC</i></b> columns. Watch the following video to get a better understanding of this function:
                         </p>
                             <ul>
@@ -170,7 +170,8 @@
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">AVERAGE/AVG Function</h2>
                         <p class="pt-3">If you've taken basic Algebra, you'll know that an average of a set of numbers is computed as the sum of that
                             list divided by the count of the items in that list. However, SQL enables you to reduce this to one step using the
-                            <b><i>AVERAGE/AVG</i></b> function (the actual function name differs between RDBMSs):
+                            <b><i>AVERAGE/AVG</i></b> function (the actual function name differs between RDBMSs). Watch the following video to get a
+                            better understanding of this function:
                         </p>
                         <ul>
                             <a href="https://www.youtube.com/watch?v=9DLG0GBo0WE">Intro to SQL Average Function</a><br>
@@ -193,23 +194,22 @@
                         </p>
                         <ul>
                             <a href="https://www.youtube.com/watch?v=VKJvhwrjU9U">Intro to SQL Min Function</a><br>
+                            <a href="https://www.youtube.com/watch?v=TC4h5XN20-o">Intro to SQL Max Function</a>
                         </ul>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To retrieve the lowest number in a specific column, use the following syntax:
+                            <li class="pt-2">To retrieve the smallest number in a specific column, use the following syntax:
                                 <br><code>SELECT MIN([col_name])<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the lowest number in a specific column based on a set of conditions, use the following syntax:</b>
+                            <li class="pt-2">To retrieve the smallest number in a specific column based on a set of conditions, use the following syntax:</b>
                                 <br><code>SELECT MIN([col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
-                            <li class="pt-2">To order a result set by multiple columns in either ascending or descending order, use the following 
-                                syntax. This will sort the result set by the first specified column, THEN by the second column.
-                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] [DESC], [col_name] [DESC];</code></li>
-                            <li class="pt-2">To order a result set by specific column(s) and restrict the number of rows returned, use the following
-                                syntax:
-                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] [DESC], [col_name] [DESC]<br> LIMIT [integer];</code></li>
+                            <li class="pt-2">To retrieve the largest number in a specific column, use the following syntax:
+                                <br><code>SELECT MAX([col_name])<br> FROM [table_name];</code></li>
+                            <li class="pt-2">To retrieve the largest number in a specific column based on a set of conditions, use the following syntax:
+                                <br><code>SELECT MAX(col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Intro to SQL Statements Tutorial! To help test your knowledge, let's use
-                            the database you populated in the previous tutorial to run some basic queries. This exercise is based on the exercise of 
+                        <p><b>Congratulations!</b> You just completed the Aggregate Functions Tutorial! To help test your knowledge, let's use
+                            the database you populated in the previous tutorial to run some intermediate queries. This exercise is based on the exercise of 
                             the previous tutorial. <br>**<b><i>It's highly recommended that you
                             complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
                             </i></b>
@@ -219,15 +219,17 @@
                             <li class="pt-2">Open your RDBMS Client.</li>
                             <li class="pt-2">Using the "Sales" database, answer the following questions:</li>
                             <ol type="a">
-                                <li class="pt-3"><b>How Many Rows are in the Orders Table?</b></li>
-                                <li class="pt-3"><b>How Many Orders Were Placed by the Customer with an ID of 1000?</b></li>
-                                <li class="pt-3"><b>When was the Latest Order Placed?</b></li>
-                                <li class="pt-3"><b>How Many Customers Live in California, Washington, or Utah?</b></li>
-                                <li class="pt-3"><b>How Many Items with the word "Camp" in the Name have been Ordered?</b></li>
-                                <li class="pt-3"><b>How Many Orders Contain MORE than 1 Item?</b></li>
-                                <li class="pt-3"><b>What are the Top 3 Largest Orders by Item Count? Limit The Result Set to 3 Rows.</b></li>
+                                <li class="pt-3"><b>How Many Items Cost More than $20?</b></li>
+                                <li class="pt-3"><b>How Many Customers Placed at least 2 Orders? Name the Aggregated Column "num_orders".</b></li>
+                                <li class="pt-3"><b>What is the Total Purchase Price for the Order Number 189230191? Name the Aggregated Column "total_purchase_price".</b></li>
+                                <li class="pt-3"><b>How Many Items Cost between $5 and $15?</b></li>
+                                <li class="pt-3"><b>What is the Price of the the Least Expensive Item Purchased?</b></li>
+                                <li class="pt-3"><b>What is the Average Purchase Price for all Orders? Show the Order ID Column and Name the Aggregated Column "avg_purchase_price".
+                                    Order the Result Set by the Aggregated Column in Descending Order.</b></li>
+                                <li class="pt-3"><b>What are the Top 3 Most Expensive Orders by Total Purchase Price? Show the Order ID Column, Limit The Result Set to 3 Rows, 
+                                    Name the Aggregated Column "total_purchase_price", and Order the Result Set by the Aggregated Column in Descending Order.</b></li>
                             </ol>
-                            <li class="pt-2"><b>Exercise Completed! Click <a href="SELECT-Exercise-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <li class="pt-2"><b>Exercise Completed! Click <a href="./Aggregate-Exercise-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

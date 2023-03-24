@@ -128,15 +128,30 @@
                             are some common keywords used in conjunction with the WHERE clause:
                         </p>
                         <ul>
-                            <li class="pt-1">To retrieve the total number of rows in a table, use the following syntax:
-                                <br><code>SELECT COUNT(*) <br>FROM [table_name];</code></li>
-                            <li class="pt-4">To retrieve the total number of rows in a filtered result set, use the following syntax:
-                                <br><code>SELECT COUNT(*) <br>FROM [table_name] <br>WHERE [condition(s)];</code></li>
-                            <li class="pt-4">To retrieve the total number of <b>DISTINCT</b> items in a specified column, use the COUNT function
-                                with the <b><i>DISTINCT</i></b> keyword using the following syntax:
-                                <br><code>SELECT COUNT(DISTINCT [col_name]) <br>FROM [table_name];</code></li>
-                            <li class="pt-4">To retrieve the total number of <b>NON-NULL</b> rows in a specific column, use the following syntax:
-                                <br><code>SELECT COUNT([col_name]) <br>FROM [table_name];</code></li>
+                            <li class="pt-1"><b><i>NOT.</i></b> This keyword is used to create a negative condition. This is useful when
+                                working with multiple logical conditions or complex logical conditions. To use this keyword, use the following
+                                syntax:
+                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> WHERE NOT [condition];</code></li>
+                            <li class="pt-4"><b><i>AND</i></b>. This keyword is used to filter the result set by more than one condition. To
+                                use this keyword, use the following syntax:
+                                <br><code>SELECT [col_name], [col_name] <br>FROM [table_name]<br> WHERE [condition1] AND [condition2];</code></li>
+                            <li class="pt-4"><b><i>OR</i></b>. Much like the AND keyword, this keyword is used to filter the result set by more than
+                                one condition. However, this is also used to create a more flexible filter on the result set. To use this keyword, use
+                                the following syntax:
+                                <br><code>SELECT [col_name], [col_name] <br>FROM [table_name] <br>WHERE [condition1] OR [condition2];</code></li>
+                            <li class="pt-4"><b><i>BETWEEN AND</i></b>. This keyword is used to filter a numeric column by specifying a range of values.
+                                To use this keyword, use the following syntax:
+                                <br><code>SELECT [col_name], [col_name] <br>FROM [table_name]<br> WHERE [numeric_col] BETWEEN [min_value] AND [max_value];</code></li>
+                            <li class="pt-4"><b><i>LIKE</i></b>. This keyword is used to filter a textual column by specifying a substring to be retrieved.
+                                This is sued in conjunction with the <b>%</b> wildcard to specify whether the specified substring is at the beginning, middle,
+                                or end of the actual string. To use this keyword, assuming the desired substring is in the beginning, use the following syntax:
+                                <br><code>SELECT [col_name], [col_name] <br>FROM [table_name]<br> WHERE [text_col] LIKE '[substr]%';</code></li>
+                            <li class="pt-4"><b><i>IN.</i></b> This keyword is used to filter a result set by a list of desired values. These values can
+                                be either numeric values or string values, but never both. To use this keyword, use the following syntax:
+                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> WHERE [col_name] IN([value1], [value2], [value3]);</code></li>
+                            <li class="pt-4"><b><i>IS NULL.</i></b> This keyword is used to filter a result set by a row's NULL status. This is helpful
+                                when exploring datasets or identifying outliers for computations. To use this keyword, use the following syntax:
+                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> WHERE [col_name] IS NULL;</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ORDER BY Clause Keywords</h2>
                         <p class="pt-3">Gathering totals is probably the most common type of analytics activity. In SQL, this is conducted using the SUM

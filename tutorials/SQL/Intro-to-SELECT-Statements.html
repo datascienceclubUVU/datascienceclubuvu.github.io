@@ -136,8 +136,9 @@
                                 <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC] <br>LIMIT [integer];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">WHERE Clause</h2>
-                        <p class="pt-3">Although you have used the WHERE clause before, there's a lot more to it. Let's explore this
-                            clause in the video below:
+                        <p class="pt-3">Filtering result sets may be the most important analytics activity, simply because it can prevent
+                            errorneous data and provide better insights. Watch the following video to get a better understanding of this
+                            concept:
                         </p>
                             <ul>
                                 <a href="https://www.youtube.com/watch?v=4Uv0o8IBqw0">How to Filter with the WHERE Clause in SQL</a><br>
@@ -166,9 +167,9 @@
                                 <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IS [NOT] NULL;</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">GROUP BY and HAVING Clauses</h2>
-                        <p class="pt-3">Wow. That last section was a long one, yet an important one. Once you know how to fitler data, your
-                                        querying skills go from nothing to something. Let's level up your querying skills by learning how
-                                        to aggregate data using the <b>GROUP BY clause</b>:
+                        <p class="pt-3">Filtering data is only part of the querying equation. As a Data Scientist/Analyst/Engineer, you'll
+                            eventually want to run some calculations on your data. This requires aggregating data into groups. Watch the
+                            following videos to get a better understanding of these clauses:
                         </p>
                         <ul>
                             <a href="https://www.youtube.com/watch?v=nNrgRVIzeHg">How to Aggregate Data in SQL</a><br>
@@ -182,7 +183,7 @@
                                 <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]
                                     <br>GROUP BY [col1], [col2];</code></li>
                             <li class="pt-2">The <b><i>HAVING</i></b> clause is used in conjunction with the <b><i>GROUP BY</i></b> clause
-                                    and is sued to filter aggregated columns. This is used with the following syntax:
+                                    and is used to filter aggregated columns. This is used with the following syntax:
                                 <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]<br> GROUP BY [col1], [col2]<br> HAVING COUNT(*) >= 5;</code></li>
                             <li class="pt-2">The difference between the <b><i>WHERE</i></b> clause and the <b><i>HAVING</i></b> clause is that the
                                 HAVING clause can only handle conditions based on aggregated columns, whereas the WHERE clause handles conditions based on
@@ -193,7 +194,7 @@
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ORDER BY Clause</h2>
                         <p class="pt-3">Once you've retrieved the correct columns, filtered the result set, and aggregated data, you'll want to
-                            organize it to make it more readable. The following video explains how to do this:
+                            organize it to make it more readable. Watch the following video to get a better understanding of the ORDER BY clause:
                         </p>
                         <ul>
                             <a href="https://www.youtube.com/watch?v=wyWnJ7QYME4">How to Order Data in a Result Set</a><br>

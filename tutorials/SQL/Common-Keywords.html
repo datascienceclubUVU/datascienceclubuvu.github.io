@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>SQL Tutorials: Aggregate Functions | Data Science Club @ UVU</title>
+    <title>SQL Tutorials: Common Keywords | Data Science Club @ UVU</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/aggregate-functions.png"
+                                src="../../imgs/common-keywords.jfif"
                                 alt="%UPDATE% Picture of the word python written on a stick note."
                             >  <!-- %UPDATE% -->
                         </div>
@@ -91,63 +91,54 @@
                                 <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
                                    We recommend using either PostgreSQL, MS SQL Server, or MySQL.
                                 </b><br><br>
-                                Isn't querying fun? Data Analysis is all about asking and answering questions using querying techniques such as
-                                SELECT statements. Let's expand our querying skills by learning how to work with numerical data. This lesson will
-                                cover the following learning objectives:
+                                The most difficult part of querying is writing a query that other people can understand. This is where keywords
+                                come in. In SQL, <b><i>Keywords</i></b> are used to make your SQL queries more readable and user-friendly. There
+                                are tens of keywords in SQL, so we'll just cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>Arithmetic Operators</li>
-                                <li>COUNT Function</li>
-                                <li>SUM Function</li>
-                                <li>AVERAGE/AVG Function</li>
-                                <li>MIN/MAX Functions</li>
+                                <li>SELECT Statement Keywords</li>
+                                <li>WHERE Clause Keywords</li>
+                                <li>ORDER BY Clause Keywords</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Arithmetic Operators</h2>
-                        <p class="pt-3">When working with either numerical or categorical data (such as strings), you'll want to manipulate them to create
-                            new columns or find certain values. Watch the following video to get a better understanding of the arithemtic operators in SQL:
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SELECT Statement Keywords</h2>
+                        <p class="pt-3">Writing clean SQL is what differentiates a Junior and Senior Data Professional. Since you
+                            have some experience writing basic SELECT statements, let's kick it up a notch by using the following
+                            keywords:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=ua7U2pmnbcE">Using SQL Arithmetic Operators</a>
+                            <li class="pt-1"><b><i>AS</i></b>. This keyword is used to assign an alias to a newly created column. Although
+                                not required, it's a best practice to use this keyword to make it more obvious that the column is being temporarily
+                                renamed. To use this keyword, use the following syntax:
+                                <br><code>SELECT [col_name] AS [new_name]<br> FROM [table_name];</code></li>
+                            <li class="pt-4"><b><i>DISTINCT</i></b>. This keyword is used to remove any duplicated data in the result set. One
+                                downside to this keyword is that it decreases performance, though if you have duplicate data, then it's better to
+                                have a slower query than an incorrect result set. To use this keyword, use the following syntax:
+                                <br><code>SELECT DISTINCT [col_name], [col_name], [col_name]<br> FROM [table_name];</code></li>
+                            <li class="pt-4"><b><i>TOP</i></b>. This keyword is used by some RDBMSs to limit the number of rows in the result set.
+                                It's a best practice to use this keyword when working with large datasets. To use this keyword, use the following
+                                syntax:
+                                <br><code>SELECT TOP [integer] [col_name], [col_name], [col_name]<br> FROM [table_name];</code></li>
                         </ul>
-                        <h4 class="pt-4">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">To multiply a column by a certain value, use the <b>*</b> character with the following syntax:
-                                <br><code>SELECT [col_name] * [value]<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To either add a column by a certain value or concatenate/combine two or more columns, use the <b>+</b> character 
-                            with the following syntax (differs between RDBMSs):
-                                <br><code>SELECT [col_name] + [value]/[col_name2]<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To divide a column by a certain value, use the <b>/</b> character with the following syntax:
-                                <br><code>SELECT [col_name] / [value]<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the remainder as a result of dividing a column by a certain value, use the <b>%</b> character with the 
-                            following syntax:
-                                <br><code>SELECT [col_name] % [value]<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To subtract a column by a certain value, use the <b>-</b> character with the following syntax:
-                                <br><code>SELECT [col_name] - [value]<br> FROM [table_name];</code></li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">COUNT Function</h2>
-                        <p class="pt-3">The COUNT Function can be used for both finding the number of items in a group or finding the total number of
-                            rows in a table, as seen in the previous tutorial. Watch the following video to get a better understanding of this 
-                            function:
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">WHERE Clause Keywords</h2>
+                        <p class="pt-3">In the previous tutorial, we learned how to filter data in a variety of ways using the WHERE clause. The
+                            purpose of this section of this tutorial is to summarize the keywords mentioned in the previous tutorial. Listed below
+                            are some common keywords used in conjunction with the WHERE clause:
                         </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=yY0Go4a4IZU">Intro to SQL Count Function</a><br>
-                        </ul>
-                        <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1">To retrieve the total number of rows in a table, use the following syntax:
                                 <br><code>SELECT COUNT(*) <br>FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the total number of rows in a filtered result set, use the following syntax:
+                            <li class="pt-4">To retrieve the total number of rows in a filtered result set, use the following syntax:
                                 <br><code>SELECT COUNT(*) <br>FROM [table_name] <br>WHERE [condition(s)];</code></li>
-                            <li class="pt-2">To retrieve the total number of <b>DISTINCT</b> items in a specified column, use the COUNT function
+                            <li class="pt-4">To retrieve the total number of <b>DISTINCT</b> items in a specified column, use the COUNT function
                                 with the <b><i>DISTINCT</i></b> keyword using the following syntax:
                                 <br><code>SELECT COUNT(DISTINCT [col_name]) <br>FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the total number of <b>NON-NULL</b> rows in a specific column, use the following syntax:
+                            <li class="pt-4">To retrieve the total number of <b>NON-NULL</b> rows in a specific column, use the following syntax:
                                 <br><code>SELECT COUNT([col_name]) <br>FROM [table_name];</code></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SUM Function</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ORDER BY Clause Keywords</h2>
                         <p class="pt-3">Gathering totals is probably the most common type of analytics activity. In SQL, this is conducted using the SUM
                             function. It should be noted that this function only works on <b><i>NUMERIC</i></b> columns. Watch the following video to get a better understanding of this function:
                         </p>
@@ -166,46 +157,6 @@
                                 <br><code>SELECT SUM([col_name]) [new_name]<br> FROM [table_name];</code></li>
                             <li class="pt-2">To calculate the average of one or more columns, use the following syntax:
                                 <br><code>SELECT SUM([col_name]), COUNT([col_name]), SUM([col_name])/COUNT([col_name])<br> FROM [table_name];</code></li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">AVERAGE/AVG Function</h2>
-                        <p class="pt-3">If you've taken basic Algebra, you'll know that an average of a set of numbers is computed as the sum of that
-                            list divided by the count of the items in that list. However, SQL enables you to reduce this to one step using the
-                            <b><i>AVERAGE/AVG</i></b> function (the actual function name differs between RDBMSs). Watch the following video to get a
-                            better understanding of this function:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=9DLG0GBo0WE">Intro to SQL Average Function</a><br>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2">To retrieve the average value from a specific column, use the following syntax (differs between RDBMSs):
-                                <br><code>SELECT AVG([col_name])<br> FROM [table_name];</code>
-                            </li>
-                            <li class="pt-2">To retrieve the average value from a specific column based on a set of conditions, use the
-                                the following syntax (differs between RDBMSs):
-                                <br><code>SELECT AVG([col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
-                            <li class="pt-2"><b>QUICK NOTE:</b> Some RDBMSs may include NULL row values when calculating averages. In this scenario,
-                                use the following syntax to calculate the average:
-                                <br><code>SELECT SUM([col_name])/COUNT([col_name])<br> FROM [table_name];</code></li>
-                            </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">MIN/MAX Functions</h2>
-                        <p class="pt-3">When doing Data Analysis, it's good to know the range of values you're working with. This can be found using
-                            SQL's MIN and MAX Functions. Watch the following video to get a better understanding of these functions:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=VKJvhwrjU9U">Intro to SQL Min Function</a><br>
-                            <a href="https://www.youtube.com/watch?v=TC4h5XN20-o">Intro to SQL Max Function</a>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2">To retrieve the smallest number in a specific column, use the following syntax:
-                                <br><code>SELECT MIN([col_name])<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the smallest number in a specific column based on a set of conditions, use the following syntax:</b>
-                                <br><code>SELECT MIN([col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
-                            <li class="pt-2">To retrieve the largest number in a specific column, use the following syntax:
-                                <br><code>SELECT MAX([col_name])<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the largest number in a specific column based on a set of conditions, use the following syntax:
-                                <br><code>SELECT MAX(col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Aggregate Functions Tutorial! To help test your knowledge, let's use

@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Exercise: Answer Key| Data Science Club @ UVU</title>
+    <title>Exercise: Answer Key | Data Science Club @ UVU</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,16 +71,17 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Aggregate Functions Exercise Answer Key
+                            Common Keywords Exercise Answer Key
                         </h2>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
-                            <li class="pt-2">There are <b>3</b> items that cost more than $20. Query used:
-                                <br><code>SELECT COUNT(*)<br> FROM orders.order_items<br> WHERE item_price > 20;</code></li>
-                            <li class="pt-2">There are <b>2</b> customers who placed at least 2 orders. Query used:
-                                <br><code>SELECT customer_id, COUNT(*) num_orders<br> FROM orders.orders<br> GROUP BY customer_id HAVING COUNT(*) > 1</code></li>
+                            <li class="pt-2">There are <b>4</b> items that either cost less than $5 or cost more than $25. Query used:
+                                <br><code>SELECT COUNT(*)<br> FROM orders.order_items<br> WHERE item_price < 5 OR item_price > 20
+                                <br>ORDER BY item_price DESC;</code></li>
+                            <li class="pt-2">There are <b>6</b> distinct orders in the "Order_Items" table. Query used:
+                                <br><code>SELECT COUNT(DISTINCT order_id) AS num_orders<br> FROM orders.order_items;</code></li>
                             <li class="pt-2">The Total Purchase Price for Order #189230191 is <b>$97.47</b>. Query used:
                                 <br><code>SELECT order_id, SUM(item_price) total_purchase_price<br> FROM orders.order_items<br> 
                                         WHERE order_id = 189230191<br> GROUP BY order_id;</code></li>

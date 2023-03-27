@@ -82,26 +82,20 @@
                                 <br>ORDER BY item_price DESC;</code></li>
                             <li class="pt-2">There are <b>6</b> distinct orders in the "Order_Items" table. Query used:
                                 <br><code>SELECT COUNT(DISTINCT order_id) AS num_orders<br> FROM orders.order_items;</code></li>
-                            <li class="pt-2">The Total Purchase Price for Order #189230191 is <b>$97.47</b>. Query used:
-                                <br><code>SELECT order_id, SUM(item_price) total_purchase_price<br> FROM orders.order_items<br> 
-                                        WHERE order_id = 189230191<br> GROUP BY order_id;</code></li>
-                            <li class="pt-2">There are <b>5</b> Items that cost between $5 and $15. Query used:
-                                <br><code>SELECT COUNT(*)<br> FROM orders.order_items<br> WHERE item_price BETWEEN 5 AND 15;</code></li>
-                            <li class="pt-2">The Price of the Least Expensive Item Purchased is <b>$3.99</b>. Query used:
-                                <br><code>SELECT MIN(item_price)<br> FROM orders.order_items;</code></li>
+                            <li class="pt-2">There are <b>5</b> items that either have the substring "Mel" or cost more than 15. Query used:
+                                <br><code>SELECT COUNT(*) AS num_items<br> FROM orders.order_items<br> 
+                                        WHERE item_name LIKE '%Mel%' OR item_price > 15;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT order_id, AVG(item_price) avg_purchase_price<br> FROM orders.order_items<br> GROUP BY order_id<br> 
-                                    ORDER BY avg_purchase_price DESC;</code></li>
-                            <li class="pt-2">The Top 3 Most Expensive Orders by Total Purchase Price have IDs of <b>189230191, 189230193, and 189230192.</b> Query used:
-                                <br><code>SELECT order_id, SUM(item_price) total_purchase_price<br> FROM orders.order_items<br> GROUP BY order_id
-                                <br> ORDER BY total_purchase_price DESC
-                                <br> LIMIT 3;</code></li>
+                                <br><code>SELECT *<br> FROM orders.customers<br> WHERE first_name LIKE 'S%' AND zip LIKE '%0';</code></li>
+                            <li class="pt-2">Query used:
+                                <br><code>SELECT *<br> FROM orders.orders<br> WHERE order_date BETWEEN '2020-08-01' AND '2021-09-01'
+                                <br>ORDER BY order_date ASC;</code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="/tutorials/SQL/Aggregate-Functions.html#exercise">
+                            href="/tutorials/SQL/Common-Keywords.html#exercise">
                             Return to Exercise
                         </a>
                 </section>

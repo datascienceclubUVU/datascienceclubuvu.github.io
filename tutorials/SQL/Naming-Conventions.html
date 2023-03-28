@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/joins.jfif"
+                                src="../../imgs/naming-conventions.jfif"
                                 alt="%UPDATE% Picture of the word python written on a stick note."
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -110,7 +110,7 @@
                             do you know where the "from" clause starts? Read the following article to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=a-xlrdG-fpY">INNER JOIN in SQL</a>
+                            <a href="https://dataschool.com/how-to-teach-people-sql/syntax-conventions/#:~:text=All%20Caps%20SQL%20Commands&text=For%20readability%2C%20all%20SQL%20commands,what%20the%20query%20is%20executing.">SQL Syntax Conventions</a>
                         </ul>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
@@ -127,7 +127,7 @@
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Snake Case vs. Camel Case</h2>
                         <p class="pt-3">If you're a seasoned programmer, you understand the difference between Snake Case (snake_case) and Camel/Pascal Case
-                            (camelCase). These both have their use cases, but both also have their places. Read the following article to get a better understanding
+                            (camelCase). These both have their use cases, but both also have their places. Read the following article (Snake Case Section) to get a better understanding
                             of this concept:
                         </p>
                         <ul>
@@ -135,34 +135,33 @@
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>LEFT JOIN</i></b> retrieves all rows in the left table and all rows that match the primary key
-                                in the right table. All other rows that don't match the primary key will be null. To create a left join, use the
-                                following syntax:
-                                <br><code>SELECT *<br> FROM [tableA]<br> LEFT JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
-                            <li class="pt-4">The <b><i>RIGHT JOIN</i></b> retrieves all rows in the right table and all rows that match the primary key
-                                in the left table. All other rows that don't match the primary key will be null. To create a right join, use the 
-                                following syntax:
-                                <br><code>SELECT *<br>FROM [tableA]<br> RIGHT JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
-                            <li class="pt-4"><b>QUICK NOTE</b>: These types of joins can be used interchangeably by simply changing which table you
-                                specify in the "FROM" clause. However, it's a best practice to use LEFT JOIN as default to keep your queries consistent.</li>
+                            <li class="pt-1"><b><i>Snake Case (snake_case)</i></b> is best for naming primary and foreign keys.</li>
+                            <li class="pt-4"><b><i>Camel Case (camelCase)</i></b> is best for naming columns and tables.</li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Object Naming Best Practices</h2>
-                        <p class="pt-3">The most versatile type of join is a <b><i>FULL OUTER Join</i></b>. This is because you can view the contents of
-                            both tables while simultaneously viewing what they have in common. Watch the following video to get a better understanding of
-                            this concept:
+                        <p class="pt-3">One of the first things you learn when programming is to name your variables something meaningful. For example,
+                            if you have a variable representing an animal's name, rather than naming the variable "x" or "myVar", name it something
+                            like "animal_name". This same principle applies when naming database objects. Read the following article to get a better
+                            understanding of this concept:
                         </p>
                         <ul>
-                            <a href="https://youtube.com/clip/Ugkxj35qsGIRO6l67XQlOgpeGiiZjp5ZKUkH">Object Naming Best Practices</a>
+                            <a href="https://www.sqlshack.com/learn-sql-naming-conventions/">Object Naming Best Practices</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">As mentioned above, the <b><i>FULL OUTER Join</i></b> is used to retrieve all rows from both
-                                tables contained in the join clause, whether or not they match the primary key. To create a full join, use the
-                                following syntax:
-                                <br><code>SELECT *<br> FROM [tableA]<br> FULL JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
-                            <li class="pt-4"><b>QUICK NOTE:</b> Make sure to view your RDBMSs documentation to see if the "OUTER" keyword is required or
-                                not. This may help to clarify the join type, though it's implicitly an outer join by nature.</li>
-                        </ul>
+                            <li class="pt-1"><b>Tables:</b> "If you're naming entities that represent real-world facts, you should use nouns... If possible, use a
+                                single word that exactly describes what is in the table." (sqlshack.com, 2020):
+                                <br><code>CREATE TABLE customers ...;</code></li>
+                            <li class="pt-4"><b>Primary Keys:</b> "You should usually have only 1 column serving as a primary key. It would be the best to simply name this column
+                                "id". You should also name your PK constraint in a meaningful way." (sqlshack.com, 2020):
+                                <br><code>ALTER TABLE customers ADD CONSTRAINT customers_pk PRIMARY KEY (customer_id);</code></li>
+                            <li class="pt-4"><b>Foreign Keys: </b>"[With foreign keys], since they store values from the range of primary key of the referenced table, you
+                                should use that table name and "id"." (sqlshack.com, 2020):
+                                <br><code>ALTER TABLE orders ADD CONSTRAINT customers_fk FOREIGN KEY (customer_id) REFERENCES customers (customer_id);</code></li>
+                            <li class="pt-4"><b>Data Columns: </b>"You should use the least possible words to describe what is stored in that column."
+                                (sqlshack.com, 2020):
+                                <br><code>ALTER TABLE customers ADD date_joined DATE;</code></li>
+                            </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Alias Naming Best Practices</h2>
                         <p class="pt-3">The most seldom used join type is the <b><i>CROSS Join</i></b>. This is because it typically doesn't provide
                             much business value and is difficult to understand. However, it may come up in a technical interview so it never hurts to

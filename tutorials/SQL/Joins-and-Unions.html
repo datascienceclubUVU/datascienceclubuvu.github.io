@@ -197,20 +197,26 @@
                             activity used for changing the granularity of a dataset. SELF Joins can be used for scaffolding in most cases.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Unions</h2>
-                        <p class="pt-3">You have already used the keywords described in this section, though it never hurts to review them. When sorting
-                            result sets, you have two options: Ascending order or Descending order. Let's take a look at how to best sort result sets below:
+                        <p class="pt-3">Now that you're a master of querying multiple tables, let's learn how to combine result sets. When working with
+                            data, you may need to query multiple data sources, whether it be text files, JSON/XML files, or other databases. <b><i>Unions</i></b>
+                            allow you to gather identically structured datasets to create one master dataset. Watch the following video to get a better understanding
+                            of this concept:
                         </p>
                         <ul>
-                            <li class="pt-1"><b><i>ASC</i></b>. This keyword is used to order the result set in ascending order. Although this is
-                                the default sort order in every RDBMS, it's a best practice to specify the sort order for readability purposes.
-                                To use this keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] ASC;</code></li>
-                            <li class="pt-4"><b><i>DESC</i></b>. This keyword is used to order the result set in descending order. To use this
-                                keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] DESC;</code></li>
+                            <a href="https://www.youtube.com/watch?v=Jva68Yh_s1E">SQL Union and Union All</a>
+                        </ul>
+                        <ul>
+                            <li class="pt-1">The <b><i>UNION ALL</i></b> operator allows you to append rows to the end of a query. The primary requirement to
+                                create this type of query is that both queries MUST have the same number and names of columns. To use this operator, use the 
+                                following syntax:
+                                <br><code>SELECT *<br> FROM [table_name]<br> WHERE [conditions]<br> UNION ALL<br> SELECT * <br>FROM [table_name]<br> WHERE [conditions];</code></li>
+                            <li class="pt-4">The <b><i>UNION</i></b> operator allows you to combine result sets and eliminates any duplicate rows. The primary 
+                                requirement to create this type of query is that both queries MUST have the same number and names of columns. To use this operator, 
+                                use the following syntax:
+                                <br><code>SELECT *<br> FROM [table_name]<br> WHERE [conditions]<br> UNION<br> SELECT * <br>FROM [table_name]<br> WHERE [conditions];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Common Keywords Tutorial! To help test your knowledge, let's use
+                        <p><b>Congratulations!</b> You just completed the Joins and Unions Tutorial! To help test your knowledge, let's use
                             the database you populated in the previous tutorial to run some more readable queries. This exercise is based on the exercise of 
                             the previous tutorial. <br>**<b><i>It's highly recommended that you
                             complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../css/website-base.css">  <!-- %UPDATE% -->
+    <title>SQL Tutorials | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item dropdown ms-4 me-4 me-lg-5 mb-1 mb-lg-0">
+                        <a
+                            class="nav-link dropdown-toggle text-center" 
+                            href="#"
+                            id="navbarDropdownMenuLink"
+                            role="button"
+                            data-bs-toggle="dropdown">
+                            Related Topics
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark shadow border-white bg-secondary">
+                            <li><a class="dropdown-item active" href="../work-in-progress.html">Python</a></li>  <!-- %UPDATE% -->
+                            <li><a class="dropdown-item" href="../work-in-progress.html">Data Manipulation</a></li>  <!-- %UPDATE% -->
+                            <li><a class="dropdown-item" href="../work-in-progress.html">Data Processing</a></li>  <!-- %UPDATE% -->
+                            <li><a class="dropdown-item" href="Data-Visualization-Tutorial.html">Data Visualization</a></li>  <!-- %UPDATE% -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            SQL TUTORIALS
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../imgs/sql-tutorial.jfif"
+                                alt="%UPDATE% Picture of the word python written on a stick note."
+                                width="100%"
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <p class="col pt-2">
+                            <b><i>Structured Query Language (SQL)</i></b> is the most popular programming language used for 
+                            querying relational databases and serves as the backend for various forms of data visualization 
+                            and data manipulation technologies. In the tutorials below, you will learn why SQL is a critical
+                            skill for any data professional, how it can be used in conjunction with various data analytics
+                            activities, and why it has been used for over 50 years. Let's get started!
+                        </p>
+                    </div>
+                    <div class="row gy-4 mb-4">
+                        <!-- Beginner. -->
+                        <div class="col-12">
+                            <div class="accordion" id="beginnerAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="beginnerHeading">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#beginnerCollapse">
+                                            <h3>Beginner</h3>
+                                        </button>
+                                    </h2>
+                                    <div
+                                        id="beginnerCollapse"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#beginnerAccordion">
+                                        <div class="accordion-body">
+                                            <!-- Buttons/links in dropdown. -->
+                                            <div class="row row-cols-1 row-cols-lg-2 g-4 mb-2">
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="./SQL/Relational-Databases.html">  <!-- %UPDATE% -->
+                                                        Relational Databases
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="./SQL/DDL.html"> 
+                                                        DDL
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="./SQL/DML.html">
+                                                        DML
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="./SQL/Intro-to-SELECT-Statements.html">
+                                                        Intro to SELECT Statements
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                              border border-primary"
+                                                              href="./SQL/Aggregate-Functions.html">
+                                                              Aggregate Functions
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="./SQL/Common-Keywords.html">
+                                                        Common Keywords
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <!-- <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        Joins & Unions
+                                                    </a> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Intermediate. -->
+                        <!-- <div class="col-12">
+                            <div class="accordion" id="intermediateAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="intermediateHeading">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#intermediateCollapse">
+                                            <h3>Intermediate</h3>
+                                        </button>
+                                    </h2>
+                                    <div
+                                        id="intermediateCollapse"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#intermediateAccordion">
+                                        <div class="accordion-body">
+
+                                            <div class="row row-cols-1 row-cols-lg-2 g-4 mb-2">
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        Naming Conventions
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html"> 
+                                                        Subqueries
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        Common Table Expressions (CTEs)
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        EXISTS vs. IN Operations
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        Indexes
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        Data Manipulation Techniques
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="accordion" id="advancedAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="advancedHeading">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#advancedCollapse">
+                                            <h3>Advanced</h3>
+                                        </button>
+                                    </h2>
+                                    <div
+                                        id="advancedCollapse"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#advancedAccordion">
+                                        <div class="accordion-body">
+                                            
+                                            <div class="row row-cols-1 row-cols-lg-2 g-4 mb-2">
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        User-Defined Functions
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        Recursive Queries
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        Windowing Functions
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        Query Optimization Techniques
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        Working with Date-Time Values
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <a
+                                                        class="btn btn-outline-primary py-2 w-100 text-center fs-5
+                                                        border border-primary"
+                                                        href="work-in-progress.html">
+                                                        CDL
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div> -->
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

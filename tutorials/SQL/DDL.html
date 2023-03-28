@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>SQL Tutorials: DDL | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                SQL TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            SQL Tutorials: DDL
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/ddl.png"
+                                alt="%UPDATE% Picture of the word python written on a stick note."
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
+                                   We recommend using either PostgreSQL, MS SQL Server, or MySQL.
+                                </b><br><br>
+                                Now that you have a clear understanding of the core concepts behind Relational Databases, let's learn some basic
+                                SQL. <b><i>Data Definition Language (DDL)</i></b> is a form of SQL used
+                                 specifically for creating, altering, and dropping database objects. Listed below are the learning objectives 
+                                 covered in this lesson:
+                            </p>
+                            <ul>
+                                <li>Creating Database Objects</li>
+                                <li>Altering Database Objects</li>
+                                <li>Dropping Database Objects</li>
+                                <li>Truncating Database Tables</li>
+                                <li>Constraints</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Content. -->
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="mt-3 px-4 px-sm-3 border-start border-3 border-secondary">Creating Database Objects</h2>
+                            <p class="pt-3">As mentioned in the previous tutorial, Relational Databases are comprised of four primary
+                                objects: Databases, Schemas, Tables, and Attributes. Watch the following videos to get a better
+                                understanding of these concepts:
+                            </p>
+                            <ul>
+                                <a href="https://www.youtube.com/watch?v=PPFyoXA_FC0">How to Create A Database</a><br>
+                                <a href="https://www.youtube.com/watch?v=q3uBm7585ew">How to Create A Schema</a><br>
+                                <a href="https://www.youtube.com/watch?v=XfrgCK6BX5w">How to Create A Table</a>
+                            </ul>
+                            <h4 class="pt-4">Summary:</h4>
+                            <ul>
+                                <li class="pt-1">The <code>CREATE DATABASE</code> statement is used to create databases in an RDBMS. Once you have
+                                multiple databases created, it's helpful to use the optional <code>IF NOT EXISTS</code> keyword to check if the 
+                                name has already been used.</li>
+                                <li class="pt-2">The <code>CREATE SCHEMA</code> statement is used to create a schema within a database. These can 
+                                be used to differentiate different business units and provide security for sensitive data. It's recommended to use this
+                                statement in conjunction with the <code>USE DATABASE [db_name]</code> statement to ensure you create the schema
+                                in the correct database.</li>
+                                <li class="pt-2">The <code>CREATE TABLE</code> statement is used to define the name and structure of a table in a database.
+                                You must specify each column and its associated data type in the table. It's recommended to use this statement in conjunction
+                                with the <code>USE DATABASE [db_name]</code> statement to ensure you create the table in the correct database.</li>
+                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Altering Database Objects</h2>
+                            <p class="pt-3">When working with large amounts of data originating from various sources, you may need to make some changes
+                                to existing database objects. Watch the following videos to get a better understanding of these concepts:
+                            </p>
+                                <ul>
+                                    <a href="https://www.youtube.com/watch?v=vDr2DZeU5mY">How to Alter Database Tables</a><br>
+                                    <a href="https://youtube.com/clip/Ugkx-nTo9FPlmVdzR-SG4wkw3E_LmNwYGknh">How to Rename Databases</a>
+                                </ul>
+                            <h4 class="pt-3">Summary:</h4>
+                            <ul>
+                                <li class="pt-2">To add a column/attribute to a table, use the following syntax: 
+                                    <br><code>ALTER TABLE [table_name] ADD [col_name] [data_type];</code></li>
+                                <li class="pt-2">To drop a column/attribute from a table, use the following syntax:
+                                    <br><code>ALTER TABLE [table_name] DROP [col_name];</code></li>
+                                <li class="pt-2">To change an attribute's data type, use the following syntax (differs between RDBMSs): 
+                                    <br><code>ALTER TABLE [table_name] MODIFY [col_name] [new_data_type] [constraint];</code></li>
+                                <li class="pt-2">To rename a database, use the following syntax (differs between RDBMSs):
+                                    <br><code>ALTER DATABASE [db_name] MODIFY name = [new_name];</code></li>
+                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Dropping Database Objects</h2>
+                            <p class="pt-3">As mentioned above, when working with large amounts of data, you may need to drop, or delete, existing
+                                database objects to make room for new and improved data. Watch the following videos to get a better understanding
+                                of this concept:
+                            </p>
+                            <ul>
+                                <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Drop Table Columns</a><br>
+                                <a href="https://www.youtube.com/watch?v=5G4_SbkeRuU">How to Drop Database Tables</a><br>
+                                <a href="https://youtube.com/clip/UgkxQ5bjM54pAP1RMytJiEhAzGUFsAEl2I0F">How to Drop Database Schemas</a><br>
+                                <a href="https://youtube.com/clip/UgkxZbTa_mtmbTvHKuJUOKmPATC8t1lhIxDD">How to Drop A Database</a>
+                            </ul>
+                            <h4 class="pt-3">Summary:</h4>
+                            <ul>
+                                <li class="pt-2">To drop a column in a table, use the following syntax (differs between RDBMSs):
+                                    <br><code>ALTER TABLE [table_name] DROP COLUMN [col_name];</code></li>
+                                <li class="pt-2">To drop a table in a database, use the following syntax (differs between RDBMSs). This should be used in
+                                    conjunction with the <code>USE [db_name];</code> statement to ensure you drop the correct table.
+                                    <br><code>DROP TABLE [IF EXISTS] [table_name];</code></li>
+                                <li class="pt-2">To drop a database schema, use the following syntax (differs between RDBMSs):
+                                    <br><code>DROP SCHEMA [IF EXISTS] [schema_name];</code></li>
+                                <li class="pt-2">To drop a database, use the following syntax (differs between RDBMSs):
+                                    <br><code>DROP DATABASE [IF EXISTS] [db_name];</code></li>
+                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Truncating Database Tables</h2>
+                            <p class="pt-3">When you <b><i>Truncate</i></b> a database object, you remove all the existing data and keep the structure. This is useful
+                            for when you are testing out a new RDBMS or a new schema design. Watch the following video to get a better understanding of this 
+                            concept:
+                            </p>
+                            <ul>
+                                <a href="https://www.youtube.com/watch?v=PbqU83LtDII">How to Truncate A Database Table</a><br>
+                            </ul>
+                            <h4 class="pt-3">Summary:</h4>
+                            <ul>
+                                <li class="pt-2"><b><i>Truncating</i></b> involves removing all the data from a table to reconstruct the table's 
+                                schema or restructure a schema without altering the data.</li>
+                                <li class="pt-2">To truncate a table, use the following syntax (differs between RDBMSs):
+                                    <br><code>TRUNCATE TABLE [table_name];</code></li>
+                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Constraints</h2>
+                            <p class="pt-3">When dealing with large amounts of data, you'll want to place some limitations on the types of data or how the data
+                                is presented. These are known as <b><i>Constraints</i></b> and can be placed on the Schema, Table, or Column level.
+                                Watch the following video to get a better understanding of this concept:
+                            </p>
+                            <ul>
+                                <a href="https://www.youtube.com/watch?v=boj9b5XqliU">Creating Column-Level Constraints using the CREATE TABLE Statement</a><br>
+                                <a href="https://youtube.com/clip/UgkxFKeRNseYu2M9ckaydZT90AHWvmF2Sx-3">Types of Column-Level Constraints</a><br>
+                                <a href="https://www.youtube.com/watch?v=3CuijVrhWYc">Types of Table-Level Constraints</a>
+                            </ul>
+                            <h4 class="pt-3">Summary:</h4>
+                            <ul>
+                                <li class="pt-2">To create a column-level constraint using the CREATE TABLE statement, use the following syntax (differs between RDBMSs):
+                                    <br><code>CREATE TABLE [table_name]([col_name] [data_type] CONSTRAINT [constraint_name] [constraint_type], etc.)</code></li>
+                                <li class="pt-2">There are six primary column-level constraints: <b><i>Primary Key, Foreign Key, Unique, Not Null, Check, and Default.</i></b></li>
+                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Exercise</h2>
+                            <p class="pt-3"><b>Congratulations!</b> You just completed the DDL Tutorial! We hope you learned a lot and feel more prepared to enter
+                                the workforce. To help test your knowledge, let's complete a simple exercise.
+                            </p>
+                            <h4 class="pt-3">Instructions:</h4>
+                            <ol>
+                                <li class="pt-2">Get access to an RDBMS system (e.g., PostgreSQL, MS Sql Server, MySQL)</li>
+                                <li class="pt-2">Create a Database named "Sales".</li>
+                                <li class="pt-2">In the 'Sales" Database, create two schemas named "Orders" and "Employees".</li>
+                                <li class="pt-2">Using the "Orders" schema, create the following four tables:
+                                    <br><b>Customers</b>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;customer_id (INT) [PRIMARY KEY]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;first_name (VARCHAR(100)) [NOT NULL]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;last_name (VARCHAR(100)) [NOT NULL]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;street (VARCHAR(500))
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;city (VARCHAR(100))
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;state (CHAR(2))
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;zip (CHAR(5))
+                                    <br>
+                                    <br><b>Orders</b>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;order_id (INT) [PRIMARY KEY]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;order_date (DATE)
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;customer_id (VARCHAR(100)) [FOREIGN KEY] 
+                                    <br>
+                                    <br><b>Order_Items</b>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;order_id (INT) [PRIMARY KEY/FOREIGN KEY] 
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;item_num (INT) [PRIMARY KEY] 
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;item_name (VARCHAR(250)) [NOT NULL]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;item_description (VARCHAR(250))
+                                    <br>
+                                    <br><b>Colors</b>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;color_id (INT) [PRIMARY KEY] 
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;name (VARCHAR(50)) [NOT NULL] 
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;description (VARCHAR(100))
+                                </li>
+                                <li class="pt-3">Drop the "Colors" table.</li>
+                                <li class="pt-2">Alter the "Order_Items" table by adding the following column: item_price (FLOAT).</li>
+                                <li class="pt-2">Alter the "Customers" table by changing the data type of the "state" column to VARCHAR(50).</li>
+                                <li class="pt-2">Drop the "Employees" schema.</li>
+                                <li class="pt-2">Design an ERD to visualize the "Orders" schema.</li>
+                                <div class="col">
+                                    <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                                </div>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="Relational-Databases.html">
+                            Previous Topic
+                        </a>
+                        <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="DML.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>SQL Tutorials: DML | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                SQL TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            SQL Tutorials: DML
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/data-manupulation-language.jpg"
+                                alt="%UPDATE% Picture of the word python written on a stick note."
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
+                                   We recommend using either PostgreSQL, MS SQL Server, or MySQL.
+                                </b><br><br>
+                                Congratulations on creating your first database! Now that you have a clear understanding of the first third of SQL,
+                                let's continue the journey. <b><i>Data Manipulation Language (DML)</i></b> is a form of SQL used
+                                 specifically for inserting, updating, selecting, and deleting data stored in database objects. 
+                                 Listed below are the learning objectives in this lesson:
+                            </p>
+                            <ul>
+                                <li>Inserting Data</li>
+                                <li>Updating Data</li>
+                                <li>Deleting Data</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Inserting Data</h2>
+                        <p class="pt-3">Once you have your initial database, schema, and tables, you'll want to start adding data.
+                            Watch the following videos to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=VkabxQgtGsA">How to Insert Data into a Table</a><br>
+                            <a href="https://www.youtube.com/watch?v=fAETcQ5CST0">How to Insert Data from CSV to SQL Server</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">To insert a single row into a database table, use the following syntax (may differ between RDBMSs).
+                                It should be noted that the order of the list of values MUST follow the order of the columns when you created the
+                                table.
+                                <br><code>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.);</code></li>
+                            <li class="pt-2">To insert multiple rows into a database table, use the following syntax (may differ between RDBMSs):
+                                <br><code>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.), ([col_value], [col_value], etc.);</code></li>
+                            <li class="pt-2">To import CSV data into a database, use the following syntax (differs between RDBMSs):
+                                <br><code>BULK INSERT [table_name] FROM '[file_path]'<br>WITH (FIELDTERMINATOR='[delimiter]', ROWTERMINATOR='\n', 
+                                    <br>FIRSTROW=[first non-header row]);</code></li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Updating Data</h2>
+                        <p class="pt-3">As your business grows, you may need to make changes to customer or employee data based on industry changes or
+                                natural changes such as someone moving addresses. Watch the following video to get a better understanding of this concept:
+                        </p>
+                            <ul>
+                                <a href="https://www.youtube.com/watch?v=cd-hSl7_pGQ">How to Update Data in a Table</a><br>
+                            </ul>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2">To update all the rows in a column, use the following syntax: 
+                                <br><code>UPDATE [table_name] SET [col_name] = [new_value];</code></li>
+                            <li class="pt-2">To update specific rows in a column, use the following syntax. We will learn more about
+                                            the <b>WHERE</b> clause in the next tutorial.
+                                <br><code>UPDATE [table_name] SET [col_name] = [new_value] WHERE [condition];</code></li>
+                            <li class="pt-2">To update multiple columns in the same statement, use the following syntax: 
+                                <br><code>UPDATE [table_name] SET [col_name] = [new_value], [col_name] = [new_value];</code></li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Deleting Data</h2>
+                        <p class="pt-3">Similar to the previous section, as your business grows, you'll naturally lose customers and employees,
+                            which may require deleting sensitive data that's no longer necessary. Watch the following video to get a better
+                            understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Delete Data From a Table</a><br>
+                        </ul>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2">To delete all the data in a table, refer to the <b>TRUNCATE</b> statement in the previous tutorial.</li>
+                            <li class="pt-2">To delete specific rows in a table, use the following syntax:
+                                <br><code>DELETE FROM [table_name] WHERE [condition];</code></li>
+                            <li class="pt-2">Make sure to <b><i>double-check</i></b> your code before executing the statement.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Exercise</h2>
+                        <p class="pt-3"><b>Congratulations!</b> You just completed the DML Tutorial! To help test your knowledge, let's complete the exercise
+                            outlined below. This exercise is based on the exercise of the previous tutorial. 
+                            <br><b><i>**It's highly recommended that you
+                            complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </i></b>
+                        </p>
+                        <h4 class="pt-3">Instructions:</h4>
+                        <ol>
+                            <li class="pt-2">Open your RDBMS Client.</li>
+                            <li class="pt-2">Insert the following data into the "Customers" table in the "Orders" schema of the
+                                            "Sales" database:
+                                            1000, John, Thornton, 123 Main Street, Chicago, IL, 12345<br>
+                                            1001, Susan, Freeman, 700 Huntington Avenue, Los Angeles, CA, 91980<br>
+                                            1002, Barbara, Smith, 303 Polish Road, Denver, CO, 81210<br>
+                                            1003, Gregory, Turis, 35 Frankfurt Way #104, Seattle, WA, 91772<br>
+                                            1004, Gregory, Hurst, 656 N 705 W, New Haven, CT, 21342<br>
+                                            1005, Samantha, Olivier, NULL, NULL, NULL, NULL
+                            </li>
+                            <li class="pt-2">Insert the following data into the "Orders" table in the "Orders" schema of the
+                                            "Sales" database:<br>
+                                            189230191, 2021-09-01, 1000<br>
+                                            189230192, 2021-09-01, 1000<br>
+                                            189230193, 2021-09-02, 1001<br>
+                                            189230009, 2020-12-13, 1000<br>
+                                            189212443, 2019-05-06, 1004<br>
+                                            190000124, 2022-10-11, 1002<br>
+                                            189229132, 2020-08-12, 1002<br>
+                                            190001121, 2023-01-04, 1003
+                                        </li>
+                            <li class="pt-2">Insert the following data into the "Orders" table in the "Orders" schema of the
+                                            "Sales" database:<br>
+                                            189230191, 1, Camping Chair (Black), Luxury Camping Chair made by Trident, 29.99<br>
+                                            189230191, 2, Camping Tent, 4-person Tent with Rain Cover and Exterior Shoe Rack, 54.99<br>
+                                            189230191, 3, Fire Roasting Sticks (4-Pack), Metal Rods used for Roasting Hot Dogs and Marshmallows over Campfire, 12.49<br>
+                                            189230192, 1, X-Large Tarp, 20ft x 20ft Tarp used for Camping Tents, 19.99<br>
+                                            189230193, 1, White Noise Machine, Electronic device used to create soothing noises for sleeping, 39.99<br>
+                                            189230193, 2, Sleeping Mask (Black), Cloth to place over eyes while sleeping, 5.69<br>
+                                            189230193, 3, Melatonin (5 mg, 500 ML), Over-the-Counter pills to improve sleep, 17.49<br>
+                                            189230009, 1, White Undershirt (XL), XL White Undershirt made by Fruit of the Loom, 8.99<br>
+                                            189212443, 1, White Socks (6-Pair), Plain White Socks made by Fruit of the Loom, 6.99<br>
+                                            190000124, 1, Rubber Bands (125-Pack), Plain Rubber Bands, 3.99<br>
+                                            190000124, 2, Scissors (2-Pack), Small Blue Scissors made by Elmer, 9.99
+                            </li>
+                            <li class="pt-3">In the "Orders" Table, delete the row with an "order_id" of <b><i>190001121</i></b> since
+                                            it was canceled.</li>
+                            <li class="pt-2">A Customer Service Representative reached out to Samantha Olivier and got her address. Update
+                                            the appropriate row in the "Customers" table.<br>
+                                            <b><i>424 Seashell Avenue, Newport Beach, CA, 91080</i></b></li>
+                            <li class="pt-2">It looks like John Thornton prefers to go by Johnny. Update the appropriate row in the "Customers"
+                                            table with the new information.
+                            </li>
+                            <li class="pt-2"><b>Exercise Completed!</b></li>
+                            <div class="col">
+                                <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                            </div>
+                        </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="DDL.html">
+                            Previous Topic
+                        </a>
+                        <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="Intro-to-SELECT-Statements.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

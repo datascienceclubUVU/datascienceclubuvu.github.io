@@ -92,49 +92,46 @@
                                 <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
                                    We recommend using either PostgreSQL, MS SQL Server, or MySQL.
                                 </b><br><br>
-                                Welcome to the last Beginner-level tutorial! To finish off the basics, we will transition from writing queries
-                                with one table to writing queries with multiple tables using <b><i>Joins</i></b> and combining queries with
-                                <b><i>Unions</i></b>. In this tutorial, we will cover the following learning objectives:
+                                Welcome to the last Beginner-level tutorial! To finish off the basics, we will learn how to write clean SQL and
+                                best practices about formatting code. In this tutorial, we will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>INNER Joins</li>
-                                <li>LEFT and RIGHT OUTER Joins</li>
-                                <li>FULL OUTER Joins</li>
-                                <li>CROSS Joins</li>
-                                <li>SELF Joins</li>
-                                <li>Unions</li>
+                                <li>SQL Capitalization Notation</li>
+                                <li>Snake Case vs. Camel Case</li>
+                                <li>Object Naming Best Practices</li>
+                                <li>Alias Naming Best Practices</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">INNER Joins</h2>
-                        <p class="pt-3">The most basic and common join type is that of identifying what two tables have in common. Although
-                            this can be done in a variety of ways, the <b><i>Inner Join</i></b> is by far the most simple. Watch the following
-                            video to get a better understanding of this concept:
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SQL Capitalization Notation</h2>
+                        <p class="pt-3">As you may have noticed over the past several tutorials, it's common to capitalize keywords and clauses in
+                            queries. Why? Simply because it vastly improves readability. If you are selecting ten columns from a table, how
+                            do you know where the "from" clause starts? Read the following article to get a better understanding of this concept:
                         </p>
                         <ul>
                             <a href="https://www.youtube.com/watch?v=a-xlrdG-fpY">INNER JOIN in SQL</a>
                         </ul>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>INNER JOIN</i></b> is used to connect primary and foreign keys in two or more tables. This
-                                is used to explicitly define the relationship between tables. To create an inner join, use the following syntax:
-                                <br><code>SELECT *<br> FROM [tableA]<br> [INNER] JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
-                            <li class="pt-4">To conduct an inner join between more than two tables, use the following syntax:
-                                <br><code>SELECT *<br> FROM [tableA]<br> [INNER] JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey]<br>
-                                [INNER] JOIN [tableC] ON [tableB].[primaryKey] = [tableC].[foreignKey];</code>
+                            <li class="pt-1">"All SQL commands should be written in uppercase letter. This allows the reader to identify the keywords
+                                in the SQL statement and easily determine what the query is executing." (dataschool.com, 2021). Example:
+                                <br><code>SELECT first_name, last_name, street, city, state FROM customers WHERE city = 'Los Angeles';</code></li>
+                            <li class="pt-4">"Lay out each column or logical statement on new lines so that it['s] easy to identify what is being queried
+                                and filtered." (dataschool.com, 2021). Example:
+                                <br><code>SELECT first_name, last_name, street, city, state<br> FROM customers<br> WHERE city = 'Los Angeles';</code>
                             </li>
-                            <li class="pt-4"><b>QUICK NOTE:</b> The "INNER" keyword is optional and is rarely used when writing queries in a business
-                                context.</li>
+                            <li class="pt-4">"[When grouping,] It is generally recommended to use column names [rather than column index numbers] to be
+                                clear as to what you are grouping by" (dataschool.com, 2021). Example:
+                                <br><code>SELECT first_name, COUNT(*) AS num_names<br> FROM customers<br> GROUP BY first_name;</code></li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">LEFT and RIGHT OUTER Joins</h2>
-                        <p class="pt-3">The second most common join types are LEFT and RIGHT OUTER joins. These are called <b><i>OUTER</i></b> joins
-                            because it includes both items inside and outside both tables. Watch the following videos to get a better understanding of
-                            this concept:
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Snake Case vs. Camel Case</h2>
+                        <p class="pt-3">If you're a seasoned programmer, you understand the difference between Snake Case (snake_case) and Camel/Pascal Case
+                            (camelCase). These both have their use cases, but both also have their places. Read the following article to get a better understanding
+                            of this concept:
                         </p>
                         <ul>
-                            <a href="https://youtube.com/clip/UgkxsurR6ZUZnY4jZMNk6wfr74ZwfJWsW02i">LEFT Joins in SQL</a><br>
-                            <a href="https://youtube.com/clip/Ugkx7PETKzytHMaJqtK4pST8P6YsQQcFBIvK">RIGHT Joins in SQL</a>
+                            <a href="https://xpromx.me/blog/database-table-and-column-naming-converntions">Database, Table, and Column Naming Conventions</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
@@ -149,13 +146,13 @@
                             <li class="pt-4"><b>QUICK NOTE</b>: These types of joins can be used interchangeably by simply changing which table you
                                 specify in the "FROM" clause. However, it's a best practice to use LEFT JOIN as default to keep your queries consistent.</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">FULL OUTER Joins</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Object Naming Best Practices</h2>
                         <p class="pt-3">The most versatile type of join is a <b><i>FULL OUTER Join</i></b>. This is because you can view the contents of
                             both tables while simultaneously viewing what they have in common. Watch the following video to get a better understanding of
                             this concept:
                         </p>
                         <ul>
-                            <a href="https://youtube.com/clip/Ugkxj35qsGIRO6l67XQlOgpeGiiZjp5ZKUkH">FULL Joins in SQL</a>
+                            <a href="https://youtube.com/clip/Ugkxj35qsGIRO6l67XQlOgpeGiiZjp5ZKUkH">Object Naming Best Practices</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
@@ -166,7 +163,7 @@
                             <li class="pt-4"><b>QUICK NOTE:</b> Make sure to view your RDBMSs documentation to see if the "OUTER" keyword is required or
                                 not. This may help to clarify the join type, though it's implicitly an outer join by nature.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">CROSS Joins</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Alias Naming Best Practices</h2>
                         <p class="pt-3">The most seldom used join type is the <b><i>CROSS Join</i></b>. This is because it typically doesn't provide
                             much business value and is difficult to understand. However, it may come up in a technical interview so it never hurts to
                             understand why and when to use it. Watch the following video to get a better understanding of this concept:
@@ -183,42 +180,6 @@
                             granularity, of your data. This is helpful when trying to guide your stakeholders through an analysis. To see an example
                             of this, watch the video above (towards the end).</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SELF Joins</h2>
-                        <p class="pt-3">While on the topic of joins, why don't we learn a more advanced join type? The <b><i>SELF Join</i></b> is used
-                            primarily for hierarchical, recursive queries used for creating hierarchies between dimensions. Watch the following video
-                            to get a better understanding of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=eKyj16bX_fs">SQL Self Join</a>
-                        </ul>
-                        <h4 class="pt-4">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">As mentioned above, The <b>SELF<i> Join</i></b> is used to extract an underlying hierarchy within
-                                a single table. This is a more advanced use case, though if you want to try out a self join, use the following
-                                syntax:
-                                <br><code>SELECT *<br> FROM [tableA]<br> [INNER] JOIN [tableA] AS [alias] ON [tableA].[primaryKey] = [alias].[secondaryColumn];</code></li>
-                            <li class="pt-4">As mentioned in the CROSS Join section, <b><i>scaffolding</i></b> data is a common data manipulation
-                            activity used for changing the granularity of a dataset. SELF Joins can be used for scaffolding in most cases.</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Unions</h2>
-                        <p class="pt-3">Now that you're a master of querying multiple tables, let's learn how to combine result sets. When working with
-                            data, you may need to query multiple data sources, whether it be text files, JSON/XML files, or other databases. <b><i>Unions</i></b>
-                            allow you to gather identically structured datasets to create one master dataset. Watch the following video to get a better understanding
-                            of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=Jva68Yh_s1E">SQL Union and Union All</a>
-                        </ul>
-                        <ul>
-                            <li class="pt-1">The <b><i>UNION ALL</i></b> operator allows you to append rows to the end of a query. The primary requirement to
-                                create this type of query is that both queries MUST have the same number and names of columns. To use this operator, use the 
-                                following syntax:
-                                <br><code>SELECT *<br> FROM [table_name]<br> WHERE [conditions]<br> UNION ALL<br> SELECT * <br>FROM [table_name]<br> WHERE [conditions];</code></li>
-                            <li class="pt-4">The <b><i>UNION</i></b> operator allows you to combine result sets and eliminates any duplicate rows. The primary 
-                                requirement to create this type of query is that both queries MUST have the same number and names of columns. To use this operator, 
-                                use the following syntax:
-                                <br><code>SELECT *<br> FROM [table_name]<br> WHERE [conditions]<br> UNION<br> SELECT * <br>FROM [table_name]<br> WHERE [conditions];</code></li>
-                        </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Joins and Unions Tutorial! To help test your knowledge, let's use
                             the database you populated in the previous tutorial to run some more readable queries. This exercise is based on the exercise of 
@@ -229,41 +190,6 @@
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your RDBMS Client.</li>
-                            <li class= "pt-2">To keep things interesting, let's add some more data to our Sales database:</li>
-                            <ul class="pt-3">
-                                <b>Customers</b>
-                                <br>1006, Samuel, Jackson, 700 N Julia Lane, Los Angeles, CA, 91982
-                                <br>1007, Jackson, Mills, 56 Tyson Boulevard, Tucson, AZ, 88709
-                                <br>1008, Paula, Hurst, 755 Frett Road, Henrico, VA, 21321
-                                <br>1009, Simon, Fitzpatrick, 680 Porter Street, Richmond, VA, 21244
-                                <br>1010, Patricia, Simmons, 550 N 440 S, Salt Lake City, UT, 84044
-                                <br>
-                                <br>
-                                <b>Orders</b>
-                                <br>190001130, 2023-01-31, 1001
-                                <br>190001131, 2023-01-31, 1008
-                                <br>190001132, 2023-01-31, 1000
-                                <br>190001133, 2023-02-01, 1003
-                                <br>190001134, 2023-02-01, 1002
-                                <br>190001135, 2023-02-01, 1009
-                                <br>190001136, 2023-02-01, 1004
-                                <br>
-                                <br>
-                                <b>Order_Items</b>
-                                <br>190001130, 1, Assorted Socks (3-Pair), White, Grey, and Black Socks. 100% Cotton, 8.99
-                                <br>190001130, 2, Pajama Bottoms - XL, X-Large Pajama Bottoms, 100% Cotton, Fruit of the Loom, 12.49
-                                <br>190001130, 3, White Undershirt (XL), XL White Undershirt made by Fruit of the Loom, 8.99
-                                <br>190001130, 4, Funny Slippers (2-Pack), 2 Pairs of customized silly slippers, 33.99
-                                <br>190001131, 1, Bike Rack, Bike rack for large SUV. Can carry up to 4 bicyles, 119.99
-                                <br>190001131, 2, Bike U-Lock, U-Lock for bicycles. Can withstand up to 150 lbs of force, 49.99
-                                <br>190001132, 1, Pantry Storage Container (4-Pack), Food storage container for dry foods, 9.99
-                                <br>190001133, 1, Rain Jacket (Large), Light duty rain jacket for men, 21.49
-                                <br>190001134, 1, Snow Shoes (Mens), Size 14 men's snow shoes, 34.49
-                                <br>190001134, 2, Snow Gloves (Mens), Large Heavy-Duty gloves for use in snowy conditions, 13.49
-                                <br>190001134, 3, Thermal Undergarments (4-Pack), XL thermal undergarments for cold conditions, 24.99
-                                <br>190001136, 1, Ice Fishing Kit, Collection of bait and tackle gear for ice fishing activities, 59.99
-                                <br>
-                            </ul>
                             <li class="pt-4">Using the "Sales" database, answer the following questions:</li>
                             <ol type="a">
                                 <li class="pt-3"><b>Write a query that shows the address (street, city, state columns) for each customer who placed an

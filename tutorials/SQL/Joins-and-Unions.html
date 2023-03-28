@@ -120,6 +120,10 @@
                             <li class="pt-1">The <b><i>INNER JOIN</i></b> is used to connect primary and foreign keys in two or more tables. This
                                 is used to explicitly define the relationship between tables. To create an inner join, use the following syntax:
                                 <br><code>SELECT *<br> FROM [tableA]<br> [INNER] JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
+                            <li class="pt-4">To conduct an inner join between more than two tables, use the following syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> [INNER] JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey]<br>
+                                [INNER] JOIN [tableC] ON [tableB].[primaryKey] = [tableC].[foreignKey];</code>
+                            </li>
                             <li class="pt-4"><b>QUICK NOTE:</b> The "INNER" keyword is optional and is rarely used when writing queries in a business
                                 context.</li>
                             </ul>
@@ -262,12 +266,14 @@
                             </ul>
                             <li class="pt-4">Using the "Sales" database, answer the following questions:</li>
                             <ol type="a">
-                                <li class="pt-3"><b>How Many Items Cost Less Than $5 or Greater Than $25? Order the Result Set by Price in Descending Order.</b></li>
-                                <li class="pt-3"><b>How Many Distinct Orders are there in the "Order_Items" table? Name the Aggregated Column "num_orders".</b></li>
-                                <li class="pt-3"><b>How Many Items Have the Substring "Mel" or Cost More than $15? Name the Aggregated Column "num_items".</b></li>
-                                <li class="pt-3"><b>Write a query that shows all customers with a first name starting with "S" and zip code ending in "0".</b></li>
-                                <li class="pt-3"><b>Write a query that shows all orders placed between August 1, 2020 and September 1, 2021. Order the result set
-                                                    in ascending order.
+                                <li class="pt-3"><b>Write a query that shows the address (street, city, state columns) for each customer who placed an
+                                                    order between 2022-01-01 and 2022-12-31.
+                                </b></li>
+                                <li class="pt-3"><b>Write a query that shows all customers and whether or not they placed an order.</b></li>
+                                <li class="pt-3"><b>Write a query that shows all items in both the "Customers" and "Orders" tables.</b></li>
+                                <li class="pt-3"><b>Write a query that shows every possible combination of "Orders" and "Order_Items" tables.</b></li>
+                                <li class="pt-3"><b>Write three separate queries that show all unique orders either placed between August 1, 2020 and September 1, 2021, an item count
+                                                    of 2 or greater, or was palced by a customer with the substring "Sam". Combine all queries.
                                 </b></li>
                             </ol>
                             <li class="pt-2"><b>Exercise Completed! Click <a href="./Common-Keywords-Exercise-Key.html">here</a> to view the answers.</b></li>

@@ -101,87 +101,100 @@
                                 <li>LEFT and RIGHT OUTER Joins</li>
                                 <li>FULL OUTER Joins</li>
                                 <li>CROSS Joins</li>
+                                <li>SELF Joins</li>
                                 <li>Unions</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">INNER Joins</h2>
-                        <p class="pt-3">Writing clean SQL is what differentiates a Junior and Senior Data Professional. Since you
-                            have some experience writing basic SELECT statements, let's kick it up a notch by using the following
-                            keywords:
+                        <p class="pt-3">The most basic and common join type is that of identifying what two tables have in common. Although
+                            this can be done in a variety of ways, the <b><i>Inner Join</i></b> is by far the most simple. Watch the following
+                            video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <li class="pt-1"><b><i>AS</i></b>. This keyword is used to assign an alias to a newly created column. Although
-                                not required, it's a best practice to use this keyword to make it more obvious that the column is being temporarily
-                                renamed. To use this keyword, use the following syntax:
-                                <br><code>SELECT [col_name] AS [new_name]<br> FROM [table_name];</code></li>
-                            <li class="pt-4"><b><i>DISTINCT</i></b>. This keyword is used to remove any duplicated data in the result set. One
-                                downside to this keyword is that it decreases performance, though if you have duplicate data, then it's better to
-                                have a slower query than an incorrect result set. To use this keyword, use the following syntax:
-                                <br><code>SELECT DISTINCT [col_name], [col_name], [col_name]<br> FROM [table_name];</code></li>
-                            <li class="pt-4"><b><i>TOP</i></b>. This keyword is used by some RDBMSs to limit the number of rows in the result set.
-                                It's a best practice to use this keyword when working with large datasets. In some RDBMSs, the <b><i>LIMIT</i></b>
-                                keyword is used rather than this keyword. To use this keyword, use the following
-                                syntax:
-                                <br><code>SELECT TOP [integer] [col_name], [col_name], [col_name]<br> FROM [table_name];</code></li>
+                            <a href="https://www.youtube.com/watch?v=a-xlrdG-fpY">INNER JOIN in SQL</a>
                         </ul>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>INNER JOIN</i></b> is used to connect primary and foreign keys in two or more tables. This
+                                is used to explicitly define the relationship between tables. To create an inner join, use the following syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> [INNER] JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
+                            <li class="pt-4"><b>QUICK NOTE:</b> The "INNER" keyword is optional and is rarely used when writing queries in a business
+                                context.</li>
+                            </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">LEFT and RIGHT OUTER Joins</h2>
-                        <p class="pt-3">In the previous tutorial, we learned how to filter data in a variety of ways using the WHERE clause. The
-                            purpose of this section of this tutorial is to summarize the keywords mentioned in the previous tutorial. Listed below
-                            are some common keywords used in conjunction with the WHERE clause:
+                        <p class="pt-3">The second most common join types are LEFT and RIGHT OUTER joins. These are called <b><i>OUTER</i></b> joins
+                            because it includes both items inside and outside both tables. Watch the following videos to get a better understanding of
+                            this concept:
                         </p>
                         <ul>
-                            <li class="pt-1"><b><i>NOT.</i></b> This keyword is used to create a negative condition. This is useful when
-                                working with multiple logical conditions or complex logical conditions. To use this keyword, use the following
-                                syntax:
-                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> WHERE NOT [condition];</code></li>
-                            <li class="pt-4"><b><i>AND</i></b>. This keyword is used to filter the result set by more than one condition. To
-                                use this keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name] <br>FROM [table_name]<br> WHERE [condition1] AND [condition2];</code></li>
-                            <li class="pt-4"><b><i>OR</i></b>. Much like the AND keyword, this keyword is used to filter the result set by more than
-                                one condition. However, this is also used to create a more flexible filter on the result set. To use this keyword, use
-                                the following syntax:
-                                <br><code>SELECT [col_name], [col_name] <br>FROM [table_name] <br>WHERE [condition1] OR [condition2];</code></li>
-                            <li class="pt-4"><b><i>BETWEEN AND</i></b>. This keyword is used to filter a numeric column by specifying a range of values.
-                                To use this keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name] <br>FROM [table_name]<br> WHERE [numeric_col] BETWEEN [min_value] AND [max_value];</code></li>
-                            <li class="pt-4"><b><i>LIKE</i></b>. This keyword is used to filter a textual column by specifying a substring to be retrieved.
-                                This is used in conjunction with the <b>%</b> wildcard to specify whether the specified substring is at the beginning, middle,
-                                or end of the actual string. To use this keyword, assuming the desired substring is in the beginning, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name] <br>FROM [table_name]<br> WHERE [text_col] LIKE '[substr]%';</code></li>
-                            <li class="pt-4"><b><i>IN.</i></b> This keyword is used to filter a result set by a list of desired values. These values can
-                                be either numeric values or string values, but never both. To use this keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> WHERE [col_name] IN([value1], [value2], [value3]);</code></li>
-                            <li class="pt-4"><b><i>IS NULL.</i></b> This keyword is used to filter a result set by a row's NULL status. This is helpful
-                                when exploring datasets or identifying outliers for computations. To use this keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> WHERE [col_name] IS NULL;</code></li>
+                            <a href="https://youtube.com/clip/UgkxsurR6ZUZnY4jZMNk6wfr74ZwfJWsW02i">LEFT Joins in SQL</a><br>
+                            <a href="https://youtube.com/clip/Ugkx7PETKzytHMaJqtK4pST8P6YsQQcFBIvK">RIGHT Joins in SQL</a>
                         </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>LEFT JOIN</i></b> retrieves all rows in the left table and all rows that match the primary key
+                                in the right table. All other rows that don't match the primary key will be null. To create a left join, use the
+                                following syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> LEFT JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
+                            <li class="pt-4">The <b><i>RIGHT JOIN</i></b> retrieves all rows in the right table and all rows that match the primary key
+                                in the left table. All other rows that don't match the primary key will be null. To create a right join, use the 
+                                following syntax:
+                                <br><code>SELECT *<br>FROM [tableA]<br> RIGHT JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
+                            <li class="pt-4"><b>QUICK NOTE</b>: These types of joins can be used interchangeably by simply changing which table you
+                                specify in the "FROM" clause. However, it's a best practice to use LEFT JOIN as default to keep your queries consistent.</li>
+                            </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">FULL OUTER Joins</h2>
-                        <p class="pt-3">You have already used the keywords described in this section, though it never hurts to review them. When sorting
-                            result sets, you have two options: Ascending order or Descending order. Let's take a look at how to best sort result sets below:
+                        <p class="pt-3">The most versatile type of join is a <b><i>FULL OUTER Join</i></b>. This is because you can view the contents of
+                            both tables while simultaneously viewing what they have in common. Watch the following video to get a better understanding of
+                            this concept:
                         </p>
                         <ul>
-                            <li class="pt-1"><b><i>ASC</i></b>. This keyword is used to order the result set in ascending order. Although this is
-                                the default sort order in every RDBMS, it's a best practice to specify the sort order for readability purposes.
-                                To use this keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] ASC;</code></li>
-                            <li class="pt-4"><b><i>DESC</i></b>. This keyword is used to order the result set in descending order. To use this
-                                keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] DESC;</code></li>
+                            <a href="https://youtube.com/clip/Ugkxj35qsGIRO6l67XQlOgpeGiiZjp5ZKUkH">FULL Joins in SQL</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">As mentioned above, the <b><i>FULL OUTER Join</i></b> is used to retrieve all rows from both
+                                tables contained in the join clause, whether or not they match the primary key. To create a full join, use the
+                                following syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> FULL JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
+                            <li class="pt-4"><b>QUICK NOTE:</b> Make sure to view your RDBMSs documentation to see if the "OUTER" keyword is required or
+                                not. This may help to clarify the join type, though it's implicitly an outer join by nature.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">CROSS Joins</h2>
-                        <p class="pt-3">You have already used the keywords described in this section, though it never hurts to review them. When sorting
-                            result sets, you have two options: Ascending order or Descending order. Let's take a look at how to best sort result sets below:
+                        <p class="pt-3">The most seldom used join type is the <b><i>CROSS Join</i></b>. This is because it typically doesn't provide
+                            much business value and is difficult to understand. However, it may come up in a technical interview so it never hurts to
+                            understand why and when to use it. Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <li class="pt-1"><b><i>ASC</i></b>. This keyword is used to order the result set in ascending order. Although this is
-                                the default sort order in every RDBMS, it's a best practice to specify the sort order for readability purposes.
-                                To use this keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] ASC;</code></li>
-                            <li class="pt-4"><b><i>DESC</i></b>. This keyword is used to order the result set in descending order. To use this
-                                keyword, use the following syntax:
-                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] DESC;</code></li>
+                            <a href="https://www.youtube.com/watch?v=DH7c5BT_KZE">SQL Cross Join</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>CROSS Join</i></b> creates a cartesian product. A <b><i>Cartesian Product</i></b> is when you
+                                create every possible combination of attributes. To create a CROSS Join, use the following syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> CROSS JOIN [tableB];</code></li>
+                            <li class="pt-4">When conducting data manipulation activities, you may need to <b><i>scaffold</i></b>, or change the
+                            granularity, of your data. This is helpful when trying to guide your stakeholders through an analysis. To see an example
+                            of this, watch the video above (towards the end).</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SELF Joins</h2>
+                        <p class="pt-3">While on the topic of joins, why don't we learn a more advanced join type? The <b><i>SELF Join</i></b> is used
+                            primarily for hierarchical, recursive queries used for creating hierarchies between dimensions. Watch the following video
+                            to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=eKyj16bX_fs">SQL Self Join</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">As mentioned above, The <b>SELF<i> Join</i></b> is used to extract an underlying hierarchy within
+                                a single table. This is a more advanced use case, though if you want to try out a self join, use the following
+                                syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> [INNER] JOIN [tableA] AS [alias] ON [tableA].[primaryKey] = [alias].[secondaryColumn];</code></li>
+                            <li class="pt-4">As mentioned in the CROSS Join section, <b><i>scaffolding</i></b> data is a common data manipulation
+                            activity used for changing the granularity of a dataset. SELF Joins can be used for scaffolding in most cases.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Unions</h2>
                         <p class="pt-3">You have already used the keywords described in this section, though it never hurts to review them. When sorting
@@ -206,7 +219,42 @@
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your RDBMS Client.</li>
-                            <li class="pt-2">Using the "Sales" database, answer the following questions:</li>
+                            <li class= "pt-2">To keep things interesting, let's add some more data to our Sales database:</li>
+                            <ul class="pt-3">
+                                <b>Customers</b>
+                                <br>1006, Samuel, Jackson, 700 N Julia Lane, Los Angeles, CA, 91982
+                                <br>1007, Jackson, Mills, 56 Tyson Boulevard, Tucson, AZ, 88709
+                                <br>1008, Paula, Hurst, 755 Frett Road, Henrico, VA, 21321
+                                <br>1009, Simon, Fitzpatrick, 680 Porter Street, Richmond, VA, 21244
+                                <br>1010, Patricia, Simmons, 550 N 440 S, Salt Lake City, UT, 84044
+                                <br>
+                                <br>
+                                <b>Orders</b>
+                                <br>190001130, 2023-01-31, 1001
+                                <br>190001131, 2023-01-31, 1008
+                                <br>190001132, 2023-01-31, 1000
+                                <br>190001133, 2023-02-01, 1003
+                                <br>190001134, 2023-02-01, 1002
+                                <br>190001135, 2023-02-01, 1009
+                                <br>190001136, 2023-02-01, 1004
+                                <br>
+                                <br>
+                                <b>Order_Items</b>
+                                <br>190001130, 1, Assorted Socks (3-Pair), White, Grey, and Black Socks. 100% Cotton, 8.99
+                                <br>190001130, 2, Pajama Bottoms - XL, X-Large Pajama Bottoms, 100% Cotton, Fruit of the Loom, 12.49
+                                <br>190001130, 3, White Undershirt (XL), XL White Undershirt made by Fruit of the Loom, 8.99
+                                <br>190001130, 4, Funny Slippers (2-Pack), 2 Pairs of customized silly slippers, 33.99
+                                <br>190001131, 1, Bike Rack, Bike rack for large SUV. Can carry up to 4 bicyles, 119.99
+                                <br>190001131, 2, Bike U-Lock, U-Lock for bicycles. Can withstand up to 150 lbs of force, 49.99
+                                <br>190001132, 1, Pantry Storage Container (4-Pack), Food storage container for dry foods, 9.99
+                                <br>190001133, 1, Rain Jacket (Large), Light duty rain jacket for men, 21.49
+                                <br>190001134, 1, Snow Shoes (Mens), Size 14 men's snow shoes, 34.49
+                                <br>190001134, 2, Snow Gloves (Mens), Large Heavy-Duty gloves for use in snowy conditions, 13.49
+                                <br>190001134, 3, Thermal Undergarments (4-Pack), XL thermal undergarments for cold conditions, 24.99
+                                <br>190001136, 1, Ice Fishing Kit, Collection of bait and tackle gear for ice fishing activities, 59.99
+                                <br>
+                            </ul>
+                            <li class="pt-4">Using the "Sales" database, answer the following questions:</li>
                             <ol type="a">
                                 <li class="pt-3"><b>How Many Items Cost Less Than $5 or Greater Than $25? Order the Result Set by Price in Descending Order.</b></li>
                                 <li class="pt-3"><b>How Many Distinct Orders are there in the "Order_Items" table? Name the Aggregated Column "num_orders".</b></li>

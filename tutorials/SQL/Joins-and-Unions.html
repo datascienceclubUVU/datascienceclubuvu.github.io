@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>SQL Tutorials: Common Keywords | Data Science Club @ UVU</title>
+    <title>SQL Tutorials: Joins and Unions | Data Science Club @ UVU</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            SQL Tutorials: Common Keywords
+                            SQL Tutorials: Joins and Unions
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,8 +79,9 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/common-keywords.jfif"
+                                src="../../imgs/joins.jfif"
                                 alt="%UPDATE% Picture of the word python written on a stick note."
+                                width=100%
                             >  <!-- %UPDATE% -->
                         </div>
                     </div>
@@ -91,19 +92,21 @@
                                 <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
                                    We recommend using either PostgreSQL, MS SQL Server, or MySQL.
                                 </b><br><br>
-                                The most difficult part of querying is writing a query that other people can understand. This is where keywords
-                                come in. In SQL, <b><i>Keywords</i></b> are used to make your SQL queries more readable and user-friendly. There
-                                are tens of keywords in SQL, so we'll just cover the following learning objectives:
+                                Welcome to the last Beginner-level tutorial! To finish off the basics, we will transition from writing queries
+                                with one table to writing queries with multiple tables using <b><i>Joins</i></b> and combining queries with
+                                <b><i>Unions</i></b>. In this tutorial, we will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>SELECT Statement Keywords</li>
-                                <li>WHERE Clause Keywords</li>
-                                <li>ORDER BY Clause Keywords</li>
+                                <li>INNER Joins</li>
+                                <li>LEFT and RIGHT OUTER Joins</li>
+                                <li>FULL OUTER Joins</li>
+                                <li>CROSS Joins</li>
+                                <li>Unions</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SELECT Statement Keywords</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">INNER Joins</h2>
                         <p class="pt-3">Writing clean SQL is what differentiates a Junior and Senior Data Professional. Since you
                             have some experience writing basic SELECT statements, let's kick it up a notch by using the following
                             keywords:
@@ -123,7 +126,7 @@
                                 syntax:
                                 <br><code>SELECT TOP [integer] [col_name], [col_name], [col_name]<br> FROM [table_name];</code></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">WHERE Clause Keywords</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">LEFT and RIGHT OUTER Joins</h2>
                         <p class="pt-3">In the previous tutorial, we learned how to filter data in a variety of ways using the WHERE clause. The
                             purpose of this section of this tutorial is to summarize the keywords mentioned in the previous tutorial. Listed below
                             are some common keywords used in conjunction with the WHERE clause:
@@ -154,7 +157,33 @@
                                 when exploring datasets or identifying outliers for computations. To use this keyword, use the following syntax:
                                 <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> WHERE [col_name] IS NULL;</code></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ORDER BY Clause Keywords</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">FULL OUTER Joins</h2>
+                        <p class="pt-3">You have already used the keywords described in this section, though it never hurts to review them. When sorting
+                            result sets, you have two options: Ascending order or Descending order. Let's take a look at how to best sort result sets below:
+                        </p>
+                        <ul>
+                            <li class="pt-1"><b><i>ASC</i></b>. This keyword is used to order the result set in ascending order. Although this is
+                                the default sort order in every RDBMS, it's a best practice to specify the sort order for readability purposes.
+                                To use this keyword, use the following syntax:
+                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] ASC;</code></li>
+                            <li class="pt-4"><b><i>DESC</i></b>. This keyword is used to order the result set in descending order. To use this
+                                keyword, use the following syntax:
+                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] DESC;</code></li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">CROSS Joins</h2>
+                        <p class="pt-3">You have already used the keywords described in this section, though it never hurts to review them. When sorting
+                            result sets, you have two options: Ascending order or Descending order. Let's take a look at how to best sort result sets below:
+                        </p>
+                        <ul>
+                            <li class="pt-1"><b><i>ASC</i></b>. This keyword is used to order the result set in ascending order. Although this is
+                                the default sort order in every RDBMS, it's a best practice to specify the sort order for readability purposes.
+                                To use this keyword, use the following syntax:
+                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] ASC;</code></li>
+                            <li class="pt-4"><b><i>DESC</i></b>. This keyword is used to order the result set in descending order. To use this
+                                keyword, use the following syntax:
+                                <br><code>SELECT [col_name], [col_name]<br> FROM [table_name]<br> ORDER BY [col_name] DESC;</code></li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Unions</h2>
                         <p class="pt-3">You have already used the keywords described in this section, though it never hurts to review them. When sorting
                             result sets, you have two options: Ascending order or Descending order. Let's take a look at how to best sort result sets below:
                         </p>
@@ -196,16 +225,16 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="Aggregate-Functions.html">
+                            href="Common-Keywords.html">
                             Previous Topic
                         </a>
-                        <div class="col-0 col-sm-4"></div>
+                        <!-- <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="Joins-and-Unions.html">
+                            href="DML.html">
                             Next Topic
                         </a>
-                    </div>
+                    </div> -->
                 </section>
             </div>
             <div class="col-md-1 col-lg-2 col-xxl-3"></div>

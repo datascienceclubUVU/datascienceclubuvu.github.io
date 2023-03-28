@@ -81,15 +81,16 @@
                                 <br><code>SELECT street, city, state<br> FROM orders.customers<br> JOIN orders.orders ON customers.customer_id = orders.customer_id
                                 <br>WHERE order_date BETWEEN '2022-01-01' AND '2022-12-31';</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT COUNT(DISTINCT order_id) AS num_orders<br> FROM orders.order_items;</code></li>
+                                <br><code>SELECT *<br> FROM orders.customers<br> LEFT JOIN orders.orders ON customers.customer_id = orders.customer_id;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT COUNT(*) AS num_items<br> FROM orders.order_items<br> 
-                                        WHERE item_name LIKE '%Mel%' OR item_price > 15;</code></li>
+                                <br><code>SELECT *<br> FROM orders.customers<br> FULL JOIN orders.orders ON customers.customer_id = orders.customer_id;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT *<br> FROM orders.customers<br> WHERE first_name LIKE 'S%' AND zip LIKE '%0';</code></li>
+                                <br><code>SELECT *<br> FROM orders.orders<br> CROSS JOIN orders.order_items;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT *<br> FROM orders.orders<br> WHERE order_date BETWEEN '2020-08-01' AND '2021-09-01'
-                                <br>ORDER BY order_date ASC;</code></li>
+                                <br><code>SELECT DISTINCT *<br> FROM orders.orders<br> WHERE order_date BETWEEN '2020-08-01' AND '2021-09-01'
+                                <br>UNION<br> SELECT DISTINCT orders.*<br> FROM orders.orders<br> JOIN orders.customers ON orders.customer_id = customers.customer_id
+                                <br>WHERE state IN('CA', 'WA', 'VA')<br> UNION<br> SELECT DISTINCT orders.*<br> FROM orders.orders<br> JOIN orders.customers ON
+                                orders.customer_id = customers.customer_id<br> WHERE customers.first_name LIKE 'S%'<br> ORDER BY order_date DESC;</code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

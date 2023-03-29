@@ -96,6 +96,7 @@
                             <ul>
                                 <li>Using the CASE Statement in SELECT Statements</li>
                                 <li>Using the CASE Statement in Aggregate Functions</li>
+                                <li>Using the CASE Statement in the GROUP BY Clause</li>
                                 <li>Using the CASE Statement in the ORDER BY Clause</li>
                                 <li>Using the CASE Statement with UPDATE Statements</li>
                             </ul>
@@ -158,6 +159,39 @@
                             <br>GROUP BY [col1], [col2];</code>
                             </li>
                             </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the GROUP BY Clause</h2>
+                            <p class="pt-3">Once you've estalished the conditions by which you want to populate your new column, you'll likely want
+                                to group that data to get an idea of how many values you're working with. This can be done by using a CASE
+                                statement in the GROUP BY Clause in addition to using the same CASE statement in your SELECT statement. Watch the
+                                following video to get a better understanding of this concept:
+                            </p>
+                            <ul>
+                                <a href="https://youtube.com/clip/Ugkxr_qL6wqQ2v52C9hyMAlYCqtx9Njf3H0m">Group Data by Conditional Column SQL</a>
+                            </ul>
+                            <h4 class="pt-4">Summary:</h4>
+                            <ul>
+                                <li class="pt-1">When aggregating data based on a conditional column, you'll need to use the same CASE statement in
+                                    both the SELECT statement and the GROUP BY Clause. To implement this, use the following syntax:
+                                    <br><code>SELECT [col1], [col2],
+                                    <br>&ensp;&ensp;&ensp;CASE
+                                    <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [value]
+                                    <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [value]
+                                    <br>&ensp;&ensp;&ensp;ELSE [value]
+                                    <br>&ensp;&ensp;&ensp;END AS [new_col_name], COUNT(*) AS [alias]
+                                    <br>FROM [table_name]
+                                    <br> GROUP BY [col1], [col2],
+                                    <br>&ensp;&ensp;&ensp;CASE
+                                    <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [value]
+                                    <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [value]
+                                    <br>&ensp;&ensp;&ensp;ELSE [value]
+                                    <br>&ensp;&ensp;&ensp;END;
+                                    </code>
+                                </li>
+                                <li class="pt-4">As you may have noticed, this query becomes very long very quickly. To help simplify the logic
+                                    behind this query, it's a best practice to use a Common Table Expression (CTE). We will cover how to create
+                                    those in a future tutorial.
+                                </li>
+                            </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the ORDER BY Clause</h2>
                         <p class="pt-3">When building reports, sorting data may be dependent on what the stakeholder is looking for. If you are
                             working with categorical data and need to present it in a specific order, you can use a conditional statement in the
@@ -186,26 +220,28 @@
                             </li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement with UPDATE Statements</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">When applying updates to database objects, you may come across numerous categorical columns that may have an
+                            impact on another value in the table. In this scenario, it's recommended to use a CASE statement in the UPDATE statement
+                            to reduce the lines of code your update query uses. Read the following article to get a better understanding of this
+                            concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.ibm.com/docs/en/informix-servers/12.10?topic=rows-case-expression-update-column">CASE Expression to Update a Column</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">When applying an UPDATE statement with multiple conditions, it's a best practice to use a CASE statement. To implement
+                                this, use the following syntax:
+                                <br><code>UPDATE [table_name] SET [col_name] = CASE
+                                <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [new_value]
+                                <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [new_value]
+                                <br>&ensp;&ensp;&ensp;ELSE [other_value]
+                                <br>&ensp;&ensp;&ensp;END;
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
+                            <li class="pt-4">Although you may not be using this type of SQL query very often, it's good to know that it's possible to use the CASE
+                                statement in this scenario since it's a common interview question.
                                 <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
                             </li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise [Optional]</h2>

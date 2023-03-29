@@ -103,30 +103,34 @@
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 1</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in SELECT Statements</h2>
+                        <p class="pt-3">When writing complex queries, it's useful to use conditional columns to better categorize data for grouping
+                            or sorting purposes. In SQL, this can be done using the CASE statement. Watch the following video to get a better 
+                            understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=Twusw__OzA8">Case Statements in SQL SELECT Statements</a>
                         </ul>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                        <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">The <b><i>CASE</i></b> statement is used to create a column whose values are derived from the value of
+                                one or more other columns. To create a CASE statement, use the following syntax:
+                                        <br><code>SELECT [col1], [col2],
+                                            <br>&ensp;&ensp;&ensp;CASE
+                                        <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [value]
+                                        <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [value]
+                                        <br>&ensp;&ensp;&ensp;ELSE [value]
+                                        <br>&ensp;&ensp;&ensp;END AS [new_col_name]
+                                        <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">This technique can be used with any data type, though the resulting column must be the same data type
+                                across conditions.
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4"><b>QUICK TIP:</b> This technique is very useful when categorizing data for grouping purposes.
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 2</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in Aggregate Functions</h2>
                         <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here.
@@ -149,7 +153,7 @@
                                 etc...
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 3</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the GROUP BY Clause</h2>
                         <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here.
@@ -172,7 +176,30 @@
                                 etc...
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 4</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the ORDER BY Clause</h2>
+                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
+                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
+                            Enter description here.
+                        </p>
+                        <ul>
+                            <a href="#">[Enter video/article title here]</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">[Enter first key point here].
+                                <br><code>[Enter code sample here (if applicable)]</code>
+                            </li>
+                            <li class="pt-4">[Enter second key point here].
+                                <br><code>[Enter code sample here (if applicable)]</code>
+                            </li>
+                            <li class="pt-4">[Enter third key point here].
+                                <br><code>[Enter code sample here (if applicable)]</code>
+                            </li>
+                            <li class="pt-4">
+                                etc...
+                            </li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement with UPDATE Statements</h2>
                         <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here.

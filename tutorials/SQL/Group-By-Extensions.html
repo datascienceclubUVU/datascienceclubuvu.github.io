@@ -112,8 +112,8 @@
                         <h4 class="pt-4">Summary</h4>
                         <ul>
                             <li class="pt-1">The <b><i>ROLLUP Clause</i></b> is a subclause of the GROUP BY Clause and assumes there is a hierarchy
-                                among columns. It's primary purpose is to generate subtotals for reporting. To create subtotals using the ROLLUP
-                                extension, use the following syntax:
+                                among columns. It's primary purpose is to generate subtotals for reporting. To implement this extension
+                                use the following syntax:
                                         <br><code>SELECT [col1], SUM([col2]) AS [alias]<br> FROM [table_name]<br> GROUP BY ROLLUP ([col1]);</code>
                             </li>
                             <li class="pt-4">If you only have a date column that represents a single day in time, you can use the MONTH() and YEAR()
@@ -155,17 +155,15 @@
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">The <b><i>GROUPING SETS</i></b> extension is a more refined version of the CUBE extension in that
+                                rather than giving you every possible combination of groups, GROUPING SETS allows you to specify which combinations
+                                you want to compare. To implement this extension, use the following syntax:
+                                <br><code>SELECT [col1], [col2], SUM([col3]) AS [alias]<br> FROM [table_name]<br> GROUP BY GROUPING SETS 
+                                ([col1], [col2], ([col1], [col2]));</code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">This extension is very widely used when doing basic aggregations and table calculations within data
+                                visualizations. This tool is also widely used as a unit testing measure for data engineers to make sure values
+                                in numerical columns are correct.
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>

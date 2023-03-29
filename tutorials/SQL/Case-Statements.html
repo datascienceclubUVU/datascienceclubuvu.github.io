@@ -96,7 +96,6 @@
                             <ul>
                                 <li>Using the CASE Statement in SELECT Statements</li>
                                 <li>Using the CASE Statement in Aggregate Functions</li>
-                                <li>Using the CASE Statement in the GROUP BY Clause</li>
                                 <li>Using the CASE Statement in the ORDER BY Clause</li>
                                 <li>Using the CASE Statement with UPDATE Statements</li>
                             </ul>
@@ -131,72 +130,59 @@
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in Aggregate Functions</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">If you've ever used Excel or Google Sheets, you may be familiar with the SUMIF or COUNTIF functions. Simply
+                            put, these functions aggregate data that meet a specific condition. In SQL, this can be done by nesting a CASE statement
+                            in the aggregate function. Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=ImiEKaEBvjE">CASE WHEN with Aggregate Functions</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">CASE statements can be used in conjunction with aggregate functions to aggregate data that meets a
+                                certain condition. To create a conditional aggregate function, use the following syntax:
+                                <br><code>SELECT [col1], [col2], COUNT(CASE WHEN [condition] THEN [col_to_aggregate] END) AS [alias]
+                                <br>FROM [table_name]
+                                <br>GROUP BY [col1], [col2];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">As mentioned in the Aggregate Functions tutorial, the COUNT function can be used to aggregate both
+                                string and numeric columns, whereas the other aggregate functions can only be used with numeric columns.
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
-                            </li>
-                            </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the GROUP BY Clause</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
-                        </p>
-                        <ul>
-                            <a href="#">[Enter video/article title here]</a>
-                        </ul>
-                        <h4 class="pt-4">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">When working with any aggregate function other than COUNT, you can use multiple conditions to set
+                                a condition as a specific numerical value to change its weight. To implement this, use the following syntax:
+                                <br><code>SELECT [col1], [col2], 
+                                <br>&ensp;&ensp;&ensp;SUM(CASE WHEN [condition] THEN [integer]
+                            <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;WHEN [condition] THEN [integer]) AS [alias]
+                            <br>FROM [table_name]
+                            <br>GROUP BY [col1], [col2];</code>
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the ORDER BY Clause</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">When building reports, sorting data may be dependent on what the stakeholder is looking for. If you are
+                            working with categorical data and need to present it in a specific order, you can use a conditional statement in the
+                            ORDER BY Clause. Watch the following video to get a better idea of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://youtube.com/clip/Ugkxbc5j0by9AmGSkx1FUyZVrAEZf_EaNZBe">CASE Statement in ORDER BY Clause</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">The ORDER BY Clause is limited to sorting values in either ascending or descending order. However,
+                                you can work around this by adding a CASE statement to the order by clause. To implement this, use the following
+                                syntax:
+                                <br><code>SELECT [col1], [col2], [col3]
+                                <br>FROM [table_name]
+                                <br>ORDER BY CASE [col_to_sort_by]
+                                <br>&ensp;&ensp;&ensp;WHEN [value] THEN 1
+                                <br>&ensp;&ensp;&ensp;WHEN [value] THEN 2
+                                <br>&ensp;&ensp;&ensp;WHEN [value] THEN 3
+                                <br>&ensp;&ensp;&ensp;ELSE 4
+                                <br>END;
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">Although rarely used, this technique is a good thing to know when working with picky stakeholders
+                                that want to preview data in a specific order.
                             </li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement with UPDATE Statements</h2>

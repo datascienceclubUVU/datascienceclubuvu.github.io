@@ -163,21 +163,21 @@
                                 <br><code>ALTER TABLE customers ADD date_joined DATE;</code></li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Alias Naming Best Practices</h2>
-                        <p class="pt-3">The most seldom used join type is the <b><i>CROSS Join</i></b>. This is because it typically doesn't provide
-                            much business value and is difficult to understand. However, it may come up in a technical interview so it never hurts to
-                            understand why and when to use it. Watch the following video to get a better understanding of this concept:
+                        <p class="pt-3">As mentioned in the previous tutorial, it's a best practice to give long column names or aggregated columns
+                            aliases using the "AS" keyword. These can also be used to give temporary names for tables when doing joins. Watch the
+                            following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=DH7c5BT_KZE">SQL Cross Join</a>
+                            <a href="https://www.techonthenet.com/sql/alias.php">SQL Aliases Best Practices</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>CROSS Join</i></b> creates a cartesian product. A <b><i>Cartesian Product</i></b> is when you
-                                create every possible combination of attributes. To create a CROSS Join, use the following syntax:
-                                <br><code>SELECT *<br> FROM [tableA]<br> CROSS JOIN [tableB];</code></li>
-                            <li class="pt-4">When conducting data manipulation activities, you may need to <b><i>scaffold</i></b>, or change the
-                            granularity, of your data. This is helpful when trying to guide your stakeholders through an analysis. To see an example
-                            of this, watch the video above (towards the end).</li>
+                            <li class="pt-1">"<b>Column Aliases:</b> [These] are used to make column heads in your result set easier to read."
+                                (techonthenet.com, 2022). Example:
+                                <br><code>SELECT first_name, date_first_joined AS join_date<br> FROM customers;</code></li>
+                            <li class="pt-4">"<b>Table Aliases: </b> are used to shorten your SQL to make it easier to read or when you are performing
+                                a self join." (techonthenet.com, 2022). Example:
+                                <br><code>SELECT customer_id, first_name, last_name <br>FROM customers AS c<br>JOIN orders AS o ON c.customer_id = o.customer_id; </code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Joins and Unions Tutorial! To help test your knowledge, let's use

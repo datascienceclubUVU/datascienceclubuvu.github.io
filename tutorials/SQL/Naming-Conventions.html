@@ -114,7 +114,7 @@
                         </ul>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">"All SQL commands should be written in uppercase letter. This allows the reader to identify the keywords
+                            <li class="pt-1">"All SQL commands should be written in uppercase letters. This allows the reader to identify the keywords
                                 in the SQL statement and easily determine what the query is executing." (dataschool.com, 2021). Example:
                                 <br><code>SELECT first_name, last_name, street, city, state FROM customers WHERE city = 'Los Angeles';</code></li>
                             <li class="pt-4">"Lay out each column or logical statement on new lines so that it['s] easy to identify what is being queried
@@ -127,7 +127,7 @@
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Snake Case vs. Camel Case</h2>
                         <p class="pt-3">If you're a seasoned programmer, you understand the difference between Snake Case (snake_case) and Camel/Pascal Case
-                            (camelCase). These both have their use cases, but both also have their places. Read the following article (Snake Case Section) to get a better understanding
+                            (camelCase). These both have their use cases. Read the following article (Snake Case Section) to get a better understanding
                             of this concept:
                         </p>
                         <ul>
@@ -137,6 +137,8 @@
                         <ul>
                             <li class="pt-1"><b><i>Snake Case (snake_case)</i></b> is best for naming primary and foreign keys.</li>
                             <li class="pt-4"><b><i>Camel Case (camelCase)</i></b> is best for naming columns and tables.</li>
+                            <li class="pt-4"><b>QUICK TIP:</b> You aren't required to use either notation, just keep things consistent. For example, for all
+                                column and table names in the "Sales" database, we use snake case. This is a personal preference.</li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Object Naming Best Practices</h2>
                         <p class="pt-3">One of the first things you learn when programming is to name your variables something meaningful. For example,
@@ -172,10 +174,10 @@
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">"<b>Column Aliases:</b> [These] are used to make column heads in your result set easier to read."
+                            <li class="pt-1">"<b>Column Aliases:</b> [These] are used to make column headers in your result set easier to read."
                                 (techonthenet.com, 2022). Example:
                                 <br><code>SELECT first_name, date_first_joined AS join_date<br> FROM customers;</code></li>
-                            <li class="pt-4">"<b>Table Aliases: </b> are used to shorten your SQL to make it easier to read or when you are performing
+                            <li class="pt-4">"<b>Table Aliases: </b> [These] are used to shorten your SQL to make it easier to read or when you are performing
                                 a self join." (techonthenet.com, 2022). Example:
                                 <br><code>SELECT customer_id, first_name, last_name <br>FROM customers AS c<br>JOIN orders AS o ON c.customer_id = o.customer_id; </code></li>
                         </ul>

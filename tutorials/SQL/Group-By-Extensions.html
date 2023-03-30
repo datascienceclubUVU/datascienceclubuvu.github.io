@@ -168,18 +168,29 @@
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the GROUP BY Extensions Tutorial! To help test your knowledge, let's
-                            [enter creative sentence here]. This exercise is based on the exercise of 
+                            use the "Sales" database to practice using the GROUP BY extensions covered in this tutorial. This exercise is based on the exercise of 
                             the previous tutorial. <br>**<b><i>It's highly recommended that you
                             complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
                             </i></b>
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">[Step 1]</li>
-                            <li class="pt-4">[Step 2]</li>
+                            <li class="pt-2">Open your RDBMS Client</li>
+                            <li class="pt-4">Alter the "Orders" table by adding two new columns: "order_year" and "order_month" with data type INT.</li>
+                            <li class="pt-4">Set the values in the two new columns to the year and month of the "order_date" column, respectively.
+                                If you're unfamiliar with extracting parts of dates in SQL, search for your RDBMS' documentation for
+                                more details.
+                            </li>
+                            <li class="pt-4">Using the "Sales" database, solve the following problems:</li>
+                            <ol type="a">
+                                <li><b>Write a query that generates subtotals across the order_year, order_month, and order_date attributes and 
+                                    the SUM of item_price. Give the aggregated column an appropriate alias. Order the result set first by order_year
+                                    then by order_month.
+                                </b></li>
+                            </ol>
                             <li class="pt-4">[Step 3]</li>
                             <li class="pt-4">etc...</li>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="#">here</a> to view the answers.</b></li>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Group-By-Extensions-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>
@@ -188,16 +199,16 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="#">
+                            href="Case-Statements.html">
                             Previous Topic
                         </a>
-                        <div class="col-0 col-sm-4"></div>
+                        <!-- <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
                             href="#">
                             Next Topic
                         </a>
-                    </div>
+                    </div> -->
                 </section>
             </div>
             <div class="col-md-1 col-lg-2 col-xxl-3"></div>

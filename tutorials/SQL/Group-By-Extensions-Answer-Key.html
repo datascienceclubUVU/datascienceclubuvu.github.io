@@ -78,29 +78,18 @@
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT DISTINCT c.*, CASE <br>&ensp;&ensp;&ensp;WHEN o.order_date IS NULL OR o.order_date NOT BETWEEN '2022-01-01' AND
-                                '2023-02-01' THEN 'No'<br> &ensp;&ensp;&ensp;ELSE 'Yes'
-                                <br>&ensp;&ensp;&ensp;END AS placed_order<br>FROM customers AS c<br> LEFT JOIN orders AS o ON c.customer_id = o.customer_id
-                                <br>ORDER BY o.order_date DESC;</code></li>
-                            <li class="pt-2">Query used [PostgreSQL Specific]:
-                                <br><code>SELECT c.*, SUM(item_price) AS total_amt_spent, CASE state<br> &ensp;&ensp;&ensp;WHEN 'WA' THEN 1
-                                <br>&ensp;&ensp;&ensp;WHEN 'CA' THEN 2 <br>&ensp;&ensp;&ensp;WHEN 'AZ' THEN 3 <br>&ensp;&ensp;&ensp;WHEN 'UT' THEN 4
-                                <br>&ensp;&ensp;&ensp;WHEN 'CO' THEN 5 <br>&ensp;&ensp;&ensp;WHEN 'IL' THEN 6 <br>&ensp;&ensp;&ensp;WHEN 'VA' THEN 7
-                                <br>&ensp;&ensp;&ensp;WHEN 'CT' THEN 8 <br>&ensp;&ensp;&ensp;END AS order_index
-                                <br> FROM orders.customers AS c<br> LEFT JOIN orders.orders AS o ON customers.customer_id = orders.customer_id
-                                <br> LEFT JOIN orders.order_items AS oi ON o.order_id = oi.order_id <br>GROUP BY c.customer_id, c.first_name, c.last_name,
-                                c.street, c.city, c.state, c.zip
-                                <br> ORDER BY CASE state<br> &ensp;&ensp;&ensp;WHEN 'WA' THEN 1
-                                <br>&ensp;&ensp;&ensp;WHEN 'CA' THEN 2 <br>&ensp;&ensp;&ensp;WHEN 'AZ' THEN 3 <br>&ensp;&ensp;&ensp;WHEN 'UT' THEN 4
-                                <br>&ensp;&ensp;&ensp;WHEN 'CO' THEN 5 <br>&ensp;&ensp;&ensp;WHEN 'IL' THEN 6 <br>&ensp;&ensp;&ensp;WHEN 'VA' THEN 7
-                                <br>&ensp;&ensp;&ensp;WHEN 'CT' THEN 8 <br>&ensp;&ensp;&ensp;END;</code></li>
+                                <br><code>SELECT order_year, order_month, order_date, SUM(item_price) AS total_revenue<br> FROM orders.orders AS o
+                                <br> JOIN orders.order_items AS oi ON o.order_id = oi.order_id<br> GROUP BY ROLLUP(order_year, order_month, order_date)
+                                <br> ORDER BY order_year, order_month;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>UPDATE orders.customers SET zip = CASE
-                                    <br>&ensp;&ensp;&ensp;WHEN city = 'Los Angeles' THEN '91020'
-                                    <br>&ensp;&ensp;&ensp;WHEN city = 'Seattle' THEN '98122'
-                                    <br>&ensp;&ensp;&ensp;WHEN state = 'CT' THEN '02840'
-                                    <br>&ensp;&ensp;&ensp;ELSE zip
-                                    <br>&ensp;&ensp;&ensp;END;
+                                <br><code>SELECT city, state, CASE<br> &ensp;&ensp;&ensp;WHEN state IN('WA', 'CA', 'AZ') THEN 'West'
+                                <br>&ensp;&ensp;&ensp;WHEN state IN('UT', 'CO') THEN 'Mountain'<br> &ensp;&ensp;&ensp;WHEN state = 'IL' THEN 'Central'
+                                <br>&ensp;&ensp;&ensp;ELSE 'Northeast'
+                                <br>&ensp;&ensp;&ensp;END AS region, SUM(item_price) AS total_revenue <br>FROM orders.customers AS c
+                                <br>JOIN orders.orders AS o ON c.customer_id = o.customer_id <br>JOIN orders.order_items AS oi ON o.order_id = oi.order_id
+                                <br>GROUP BY CUBE(city, state, region);</code></li>
+                            <li class="pt-2">Query used:
+                                <br>
                                 </code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->

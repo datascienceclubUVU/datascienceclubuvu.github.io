@@ -89,8 +89,13 @@
                                 <br>JOIN orders.orders AS o ON c.customer_id = o.customer_id <br>JOIN orders.order_items AS oi ON o.order_id = oi.order_id
                                 <br>GROUP BY CUBE(city, state, region);</code></li>
                             <li class="pt-2">Query used:
-                                <br>
-                                </code></li>
+                                <br><code>SELECT city, state, CASE<br> &ensp;&ensp;&ensp;WHEN state IN('WA', 'CA', 'AZ') THEN 'West'
+                                    <br>&ensp;&ensp;&ensp;WHEN state IN('UT', 'CO') THEN 'Mountain'<br> &ensp;&ensp;&ensp;WHEN state = 'IL' THEN 'Central'
+                                    <br>&ensp;&ensp;&ensp;ELSE 'Northeast'
+                                    <br>&ensp;&ensp;&ensp;END AS region, SUM(item_price) AS total_revenue <br>FROM orders.customers AS c
+                                    <br>JOIN orders.orders AS o ON c.customer_id = o.customer_id <br>JOIN orders.order_items AS oi ON o.order_id = oi.order_id
+                                    <br>GROUP BY GROUPING SETS((city, state), (region));</code>
+                            </li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

@@ -107,7 +107,8 @@
                             in the GROUP BY clause. Watch the following video to get a better understanding of the concept:
                         </p>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=gTxwd6ga9Ss">Subtotals with SQL using ROLLUP</a>
+                            <a href="https://www.youtube.com/watch?v=gTxwd6ga9Ss">Subtotals with SQL using ROLLUP</a><br>
+                            <a href="https://www.sqltutorial.org/sql-rollup/">ROLLUP in SQL</a>
                         </ul>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
@@ -133,7 +134,8 @@
                             That's where the CUBE extension comes in. Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="https://youtube.com/clip/UgkxSC1PVi8og9c0MsadcgW7oJICA7xZKxkp">Working with Cubes in SQL</a>
+                            <a href="https://youtube.com/clip/UgkxSC1PVi8og9c0MsadcgW7oJICA7xZKxkp">Working with Cubes in SQL</a><br>
+                            <a href="https://www.sqltutorial.org/sql-cube/">CUBE in SQL (Article)</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
@@ -151,7 +153,8 @@
                             if you want to limit the levels of detail returned in the result set? That's where the GROUPING SETS extension comes in.
                             Watch the following video to get a better understanding of this topic:</p>
                         <ul>
-                            <a href="https://youtube.com/clip/Ugkx71GbE1NBqxSFeatJhjHBaWSmPlUR2_ay">Working with Grouping Sets in SQL</a>
+                            <a href="https://youtube.com/clip/Ugkx71GbE1NBqxSFeatJhjHBaWSmPlUR2_ay">Working with Grouping Sets in SQL</a><br>
+                            <a href="https://www.sqlservertutorial.net/sql-server-basics/sql-server-grouping-sets/">Grouping Sets in SQL (Article)</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
@@ -183,15 +186,18 @@
                             </li>
                             <li class="pt-4">Using the "Sales" database, solve the following problems:</li>
                             <ol type="a">
-                                <li><b>Write a query that generates subtotals across the order_year, order_month, and order_date attributes and 
+                                <li class="pt-2"><b>Write a query that generates subtotals across the order_year, order_month, and order_date attributes and 
                                     the SUM of item_price. Give the aggregated column an appropriate alias. Order the result set first by order_year
                                     then by order_month.
                                 </b></li>
-                                <li><b>Write a query that creates a conditional column to categorize customer's addresses into the following regions:
+                                <li class="pt-4"><b>Write a query that creates a conditional column to categorize customer's addresses into the following regions:
                                     If the state equals "WA", "CA", or "AZ", then region is "West". If the state equals "UT" or "CO", then the region
-                                    is "Mountain". If the state equals "IL" then the region is "Central". Otherwise, the region is 'Northeast'.
+                                    is "Mountain". If the state equals "IL" then the region is "Central". Otherwise, the region is "Northeast".
                                     <br><br>Once you have the conditional column created, generate all possible combinations of comparison groups
                                     between city, state, and region when comparing SUM of "item_price".
+                                </b></li>
+                                <li class="pt-4"><b>Write the same query as above, but include the GROUPING SETS operator. Play around and create
+                                    custom grouping sets that make sense for analysis.
                                 </b></li>
                             </ol>
                             <li class="pt-4"><b>Exercise Completed! Click <a href="./Group-By-Extensions-Answer-Key.html">here</a> to view the answers.</b></li>

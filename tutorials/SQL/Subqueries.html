@@ -89,113 +89,86 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                                Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                                Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                                This tutorial will cover the following learning objectives:
+                                If you've ever worked with Excel, you may be familiar with nested functions. These allow you to set other functions
+                                as the arguments to a parent function. This is the basic premise behind subqueries. This is a common topic for technical
+                                interviews as it tests how you think about queries. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
                                 <li>Subqueries in the SELECT Clause</li>
                                 <li>Subqueries in the FROM Clause</li>
                                 <li>Subqueries in the WHERE Clause</li>
-                                <li>Subqueries in the JOIN Clause</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the SELECT Clause</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">Subqueries are traditionally used to create intermediate calculations between raw tables and
+                            output datasets. These calculations can be used as numerators/denominators, or references to make sure you
+                            output the correct answer. Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=Xz25sCRHxBg">Subqueries in the SELECT Clause</a>
                         </ul>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                        <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">A <b><i>Subquery</i></b> is a query nested inside another query. When used in the SELECT Clause, the
+                                subquery MUST return exactly one row with exactly one column.
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">This particular type of subquery is commonly used in conjunction with aggregate function since they
+                                return only one value. To write a subquery in the SELECT Clause, use the following syntax:
+                                <br><code>SELECT [col1], [col2], (SELECT SUM([col3]) FROM [table_name2]) AS [alias]<br>
+                                    FROM [table_name1];</code>
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the FROM Clause</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">When comparing aggregates, you may need to find an aggregate of an aggregate. For example, you
+                            may need to find the highest average salary by department. However, you can't find the highest average salary
+                            without nesting an aggregate function inside another aggregate function. This can be done using a subquery in
+                            the FROM Clause. Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=SM6ZJCPJZLY">Subqueries in the FROM Clause</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">Subqueries in the FROM Clause are used to create a temporary table based on a query. This enables you
+                                to run aggregates on aggregated columns. To write a subquery in the FROM Clause, use the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]
+                                <br>FROM (SELECT * FROM [table_name] WHERE [list of conditions]);
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">As mentioned above, this type of subquery can be used to run aggregates on aggregated column. To write
+                                this type of subquery, use the following syntax:
+                                <br><code>SELECT MAX([aggregated column])
+                                <br>FROM (SELECT [col1], SUM([col2]) FROM [table_name] GROUP BY [col1]);
+                                </code>
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the WHERE Clause</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">This is the most common use case of Subqueries. When writing queries, you may need to create filters that include
+                            pre-filtered values. Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=um3GXj_TB5U">Subqueries in the WHERE Clause</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">Subqueries used in the WHERE Clause allow you to filter the result set of the
+                                outer query by the values of the subquery. To write a subquery in the WHERE Clause, use the following syntax:
+                                <br><code>SELECT [col1], [col2]
+                                <br>FROM [table_name1]
+                                <br>WHERE [col1] IN(SELECT [col] FROM [table_name2]);
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">Although rarely used, you can write a subquery in the WHERE Clause where the condition outputs true
+                                for a single value. To write this type of subquery, use the following syntax: 
+                                <br><code>SELECT [col1], [col2]
+                                <br>FROM [table_name1]
+                                <br>WHERE [col1] = (SELECT SUM([col] FROM [table_name2]));
+                                </code>
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the JOIN Clause</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
-                        </p>
-                        <ul>
-                            <a href="#">[Enter video/article title here]</a>
-                        </ul>
-                        <h4 class="pt-4">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
-                            </li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise [Optional]</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Subqueries Tutorial! To help test your knowledge, let's
                             [enter creative sentence here]. This exercise is based on the exercise of 
                             the previous tutorial. <br>**<b><i>It's highly recommended that you
@@ -217,15 +190,15 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="#">
+                            href="./Group-By-Extensions.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>
-                        <a
+                        <!-- <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
                             href="#">
                             Next Topic
-                        </a>
+                        </a> -->
                     </div>
                 </section>
             </div>

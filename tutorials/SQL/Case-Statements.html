@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>SQL Tutorials: CASE Statements | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                SQL TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            SQL Tutorials: CASE Statements
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/case-statements.png"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                When conducting data analysis tasks, you will be working with two types of variables: discrete/categorical and
+                                continuous/scalar. In this tutorial, we will be focusing on how to create categorical variables through the
+                                use of a conditional column. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>Using the CASE Statement in SELECT Statements</li>
+                                <li>Using the CASE Statement in Aggregate Functions</li>
+                                <li>Using the CASE Statement in the GROUP BY Clause</li>
+                                <li>Using the CASE Statement in the ORDER BY Clause</li>
+                                <li>Using the CASE Statement with UPDATE Statements</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in SELECT Statements</h2>
+                        <p class="pt-3">When writing complex queries, it's useful to use conditional columns to better categorize data for grouping
+                            or sorting purposes. In SQL, this can be done using the CASE statement. Watch the following video to get a better 
+                            understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=Twusw__OzA8">Case Statements in SQL SELECT Statements</a>
+                        </ul>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>CASE</i></b> statement is used to create a column whose values are derived from the value of
+                                one or more other columns. To create a CASE statement, use the following syntax:
+                                        <br><code>SELECT [col1], [col2],
+                                            <br>&ensp;&ensp;&ensp;CASE
+                                        <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [value]
+                                        <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [value]
+                                        <br>&ensp;&ensp;&ensp;ELSE [value]
+                                        <br>&ensp;&ensp;&ensp;END AS [new_col_name]
+                                        <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">This technique can be used with any data type, though the resulting column must be the same data type
+                                across conditions.
+                            </li>
+                            <li class="pt-4"><b>QUICK TIP:</b> This technique is very useful when categorizing data for grouping purposes.
+                            </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in Aggregate Functions</h2>
+                        <p class="pt-3">If you've ever used Excel or Google Sheets, you may be familiar with the SUMIF or COUNTIF functions. Simply
+                            put, these functions aggregate data that meet a specific condition. In SQL, this can be done by nesting a CASE statement
+                            in the aggregate function. Watch the following video to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=ImiEKaEBvjE">CASE WHEN with Aggregate Functions</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">CASE statements can be used in conjunction with aggregate functions to aggregate data that meets a
+                                certain condition. To create a conditional aggregate function, use the following syntax:
+                                <br><code>SELECT [col1], [col2], COUNT(CASE WHEN [condition] THEN [col_to_aggregate] END) AS [alias]
+                                <br>FROM [table_name]
+                                <br>GROUP BY [col1], [col2];
+                                </code>
+                            </li>
+                            <li class="pt-4">As mentioned in the Aggregate Functions tutorial, the COUNT function can be used to aggregate both
+                                string and numeric columns, whereas the other aggregate functions can only be used with numeric columns.
+                            </li>
+                            <li class="pt-4">When working with any aggregate function other than COUNT, you can use multiple conditions to set
+                                a condition as a specific numerical value to change its weight. To implement this, use the following syntax:
+                                <br><code>SELECT [col1], [col2], 
+                                <br>&ensp;&ensp;&ensp;SUM(CASE WHEN [condition] THEN [integer]
+                            <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;WHEN [condition] THEN [integer]) AS [alias]
+                            <br>FROM [table_name]
+                            <br>GROUP BY [col1], [col2];</code>
+                            </li>
+                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the GROUP BY Clause</h2>
+                            <p class="pt-3">Once you've estalished the conditions by which you want to populate your new column, you'll likely want
+                                to group that data to get an idea of how many values you're working with. This can be done by using a CASE
+                                statement in the GROUP BY Clause in addition to using the same CASE statement in your SELECT statement. Watch the
+                                following video to get a better understanding of this concept:
+                            </p>
+                            <ul>
+                                <a href="https://youtube.com/clip/Ugkxr_qL6wqQ2v52C9hyMAlYCqtx9Njf3H0m">Group Data by Conditional Column SQL</a>
+                            </ul>
+                            <h4 class="pt-4">Summary:</h4>
+                            <ul>
+                                <li class="pt-1">When aggregating data based on a conditional column, you'll need to use the same CASE statement in
+                                    both the SELECT statement and the GROUP BY Clause. To implement this, use the following syntax:
+                                    <br><code>SELECT [col1], [col2],
+                                    <br>&ensp;&ensp;&ensp;CASE
+                                    <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [value]
+                                    <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [value]
+                                    <br>&ensp;&ensp;&ensp;ELSE [value]
+                                    <br>&ensp;&ensp;&ensp;END AS [new_col_name], COUNT(*) AS [alias]
+                                    <br>FROM [table_name]
+                                    <br> GROUP BY [col1], [col2],
+                                    <br>&ensp;&ensp;&ensp;CASE
+                                    <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [value]
+                                    <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [value]
+                                    <br>&ensp;&ensp;&ensp;ELSE [value]
+                                    <br>&ensp;&ensp;&ensp;END;
+                                    </code>
+                                </li>
+                                <li class="pt-4">As you may have noticed, this query becomes very long very quickly. To help simplify the logic
+                                    behind this query, it's a best practice to use a Common Table Expression (CTE). We will cover how to create
+                                    those in a future tutorial.
+                                </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the ORDER BY Clause</h2>
+                        <p class="pt-3">When building reports, sorting data may be dependent on what the stakeholder is looking for. If you are
+                            working with categorical data and need to present it in a specific order, you can use a conditional statement in the
+                            ORDER BY Clause. Watch the following video to get a better idea of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://youtube.com/clip/Ugkxbc5j0by9AmGSkx1FUyZVrAEZf_EaNZBe">CASE Statement in ORDER BY Clause</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The ORDER BY Clause is limited to sorting values in either ascending or descending order. However,
+                                you can work around this by adding a CASE statement to the order by clause. To implement this, use the following
+                                syntax:
+                                <br><code>SELECT [col1], [col2], [col3]
+                                <br>FROM [table_name]
+                                <br>ORDER BY CASE [col_to_sort_by]
+                                <br>&ensp;&ensp;&ensp;WHEN [value] THEN 1
+                                <br>&ensp;&ensp;&ensp;WHEN [value] THEN 2
+                                <br>&ensp;&ensp;&ensp;WHEN [value] THEN 3
+                                <br>&ensp;&ensp;&ensp;ELSE 4
+                                <br>END;
+                                </code>
+                            </li>
+                            <li class="pt-4">Although rarely used, this technique is a good thing to know when working with picky stakeholders
+                                that want to preview data in a specific order.
+                            </li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement with UPDATE Statements</h2>
+                        <p class="pt-3">When applying updates to database objects, you may come across numerous categorical columns that may have an
+                            impact on another value in the table. In this scenario, it's recommended to use a CASE statement in the UPDATE statement
+                            to reduce the lines of code your update query uses. Read the following article to get a better understanding of this
+                            concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.ibm.com/docs/en/informix-servers/12.10?topic=rows-case-expression-update-column">CASE Expression to Update a Column</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">When applying an UPDATE statement with multiple conditions, it's a best practice to use a CASE statement. To implement
+                                this, use the following syntax:
+                                <br><code>UPDATE [table_name] SET [col_name] = CASE
+                                <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [new_value]
+                                <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [new_value]
+                                <br>&ensp;&ensp;&ensp;ELSE [other_value]
+                                <br>&ensp;&ensp;&ensp;END;
+                                </code>
+                            </li>
+                            <li class="pt-4">Although you may not be using this type of SQL query very often, it's good to know that it's possible to use the CASE
+                                statement in this scenario since it's a common interview question.
+                            </li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the CASE Statements Tutorial! To help test your knowledge, let's
+                            use the "Sales" database to run some queries with CASE statements. This exercise is based on the exercise of 
+                            the previous tutorial. <br>**<b><i>It's highly recommended that you
+                            complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </i></b>
+                        </p>
+                        <h4 class="pt-3">Instructions:</h4>
+                        <ol>
+                            <li class="pt-2">Open your RDBMS Client</li>
+                            <li class="pt-4">Using the "Sales" Database, solve the following problems:</li>
+                            <ol type="a">
+                                <li class="pt-2"><b>Write a query that shows whether or not each customer placed an order 
+                                    between January 1, 2022 and February 1, 2023 sorted by order_date in descending order. Create a column called 
+                                    "placed_order" that indicates whehter or not the customer placed an order.
+                                </b></li>
+                                <li class="pt-2"><b>Write a query that shows each unique customer and the total amount of money they have spent.
+                                    Order the result set by state in the following order: 'WA', 'CA', 'AZ', 'UT', 'CO', 'IL', 'VA', 'CT'. Name
+                                    the aggregated column "total_amount_spent". 
+                                </b></li>
+                                <li class="pt-2"><b>Write a query that updates all records in the "Customers" table with zip code of 91020 if
+                                    the customer lives in Los Angeles, 98122 if the customer lives in Seattle, and 02840 if they live in CT.
+                                    Otherwise keep the original value.
+                                </b></li>
+                            </ol>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="Case-Statements-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <div class="col">
+                                <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                            </div>
+                        </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="Joins-and-Unions.html">
+                            Previous Topic
+                        </a>
+                        <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="Group-By-Extensions.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

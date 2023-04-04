@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>SQL Tutorials: GROUP BY Extensions | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                SQL TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            SQL Tutorials: GROUP BY Extensions
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/group-by-extensions.png"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                As you can tell, aggregating data is a very popular task in data analytics. Because of this, SQL provides various
+                                extensions to the GROUP BY Clause to give you more power with your aggregations. This tutorial will cover the
+                                following learning objectives:
+                            </p>
+                            <ul>
+                                <li>ROLLUP Extension</li>
+                                <li>CUBE Extension</li>
+                                <li>GROUPING SETS Extension</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ROLLUP Extension</h2>
+                        <p class="pt-3">The SUM function is limited in its analytical abilities. It can only aggregate columns based on row
+                            conditions. However, SQL provides a tool that enables you to gather subtotals by groups by speciying the groups
+                            in the GROUP BY clause. Watch the following video to get a better understanding of the concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=gTxwd6ga9Ss">Subtotals with SQL using ROLLUP</a><br>
+                            <a href="https://www.sqltutorial.org/sql-rollup/">ROLLUP in SQL</a>
+                        </ul>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>ROLLUP Clause</i></b> is a subclause of the GROUP BY Clause and assumes there is a hierarchy
+                                among columns. It's primary purpose is to generate subtotals for reporting. To implement this extension
+                                use the following syntax:
+                                        <br><code>SELECT [col1], SUM([col2]) AS [alias]<br> FROM [table_name]<br> GROUP BY ROLLUP ([col1]);</code>
+                            </li>
+                            <li class="pt-4">If you only have a date column that represents a single day in time, you can use the MONTH() and YEAR()
+                                functions to change the granularity of the data and get more out of the ROLLUP extension. To implement this, use the
+                                following syntax:
+                                <br><code>SELECT [date_col], YEAR([date_col]) AS [alias1], MONTH([date_col]) AS [alias2], SUM([col2]) AS [alias3]
+                                <br> FROM [table_name] <br>GROUP BY ROLLUP ([alias1], [alias2], [date_col])</code>
+                            </li>
+                            <li class="pt-4">If you don't want to include a grand total in your result set, use the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3], SUM([col4]) <br>FROM [table_name] <br>GROUP BY [col1],
+                                ROLLUP ([col2], [col3])</code>
+                            </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">CUBE Extension</h2>
+                        <p class="pt-3">The ROLLUP extension is a great tool that can provide data professionals with clear and quick insights into
+                            various metrics on different granularities. But what if you wanted to see how different combinations of groups relate?
+                            That's where the CUBE extension comes in. Watch the following video to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://youtube.com/clip/UgkxSC1PVi8og9c0MsadcgW7oJICA7xZKxkp">Working with Cubes in SQL</a><br>
+                            <a href="https://www.sqltutorial.org/sql-cube/">CUBE in SQL (Article)</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>CUBE</i></b> operator allows you to find the sum of every combination of a list of attributes
+                                (or dimensions) to compare subtotals across groups. To implement this extension, use the following syntax:
+                                <br><code>SELECT [col1], [col2], SUM([col2])<br> FROM [table_name]<br> GROUP BY CUBE([col1], [col2]);</code>
+                            </li>
+                            <li class="pt-4">Although not used very often, the <b><i>CUBE</i></b> extension is a common SQL Interview question as
+                                it shows that you know the different grouping methods available in SQL.
+                            </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">GROUPING SETS Extension</h2>
+                        <p class="pt-3">Grouping data by similar categories enables analysts to compare metrics across geographic regions and
+                            product categories. The CUBE extension provides a great glance at how to compare different levels of detail, but what
+                            if you want to limit the levels of detail returned in the result set? That's where the GROUPING SETS extension comes in.
+                            Watch the following video to get a better understanding of this topic:</p>
+                        <ul>
+                            <a href="https://youtube.com/clip/Ugkx71GbE1NBqxSFeatJhjHBaWSmPlUR2_ay">Working with Grouping Sets in SQL</a><br>
+                            <a href="https://www.sqlservertutorial.net/sql-server-basics/sql-server-grouping-sets/">Grouping Sets in SQL (Article)</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>GROUPING SETS</i></b> extension is a more refined version of the CUBE extension in that
+                                rather than giving you every possible combination of groups, GROUPING SETS allows you to specify which combinations
+                                you want to compare. To implement this extension, use the following syntax:
+                                <br><code>SELECT [col1], [col2], SUM([col3]) AS [alias]<br> FROM [table_name]<br> GROUP BY GROUPING SETS 
+                                ([col1], [col2], ([col1], [col2]));</code>
+                            </li>
+                            <li class="pt-4">This extension is very widely used when doing basic aggregations and table calculations within data
+                                visualizations. This tool is also widely used as a unit testing measure for data engineers to make sure values
+                                in numerical columns are correct.
+                            </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the GROUP BY Extensions Tutorial! To help test your knowledge, let's
+                            use the "Sales" database to practice using the GROUP BY extensions covered in this tutorial. This exercise is based on the exercise of 
+                            the previous tutorial. <br>**<b><i>It's highly recommended that you
+                            complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </i></b>
+                        </p>
+                        <h4 class="pt-3">Instructions:</h4>
+                        <ol>
+                            <li class="pt-2">Open your RDBMS Client</li>
+                            <li class="pt-4">Alter the "Orders" table by adding two new columns: "order_year" and "order_month" with data type INT.</li>
+                            <li class="pt-4">Set the values in the two new columns to the year and month of the "order_date" column, respectively.
+                                If you're unfamiliar with extracting parts of dates in SQL, search for your RDBMS' documentation for
+                                more details.
+                            </li>
+                            <li class="pt-4">Using the "Sales" database, solve the following problems:</li>
+                            <ol type="a">
+                                <li class="pt-2"><b>Write a query that generates subtotals across the order_year, order_month, and order_date attributes and 
+                                    the SUM of item_price. Give the aggregated column an appropriate alias. Order the result set first by order_year
+                                    then by order_month.
+                                </b></li>
+                                <li class="pt-4"><b>Write a query that creates a conditional column to categorize customer's addresses into the following regions:
+                                    If the state equals "WA", "CA", or "AZ", then region is "West". If the state equals "UT" or "CO", then the region
+                                    is "Mountain". If the state equals "IL" then the region is "Central". Otherwise, the region is "Northeast".
+                                    <br><br>Once you have the conditional column created, generate all possible combinations of comparison groups
+                                    between city, state, and region when comparing SUM of "item_price".
+                                </b></li>
+                                <li class="pt-4"><b>Write the same query as above, but include the GROUPING SETS operator. Play around and create
+                                    custom grouping sets that make sense for analysis.
+                                </b></li>
+                            </ol>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Group-By-Extensions-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <div class="col">
+                                <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                            </div>
+                        </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="Case-Statements.html">
+                            Previous Topic
+                        </a>
+                        <!-- <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="#">
+                            Next Topic
+                        </a>
+                    </div> -->
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

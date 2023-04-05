@@ -143,9 +143,7 @@
                             <li class="pt-4">Views are very convenient because they store your queries in a virtualized table format. This enables you
                                 to query the View the same as a table.
                             </li>
-                            <li class="pt-4">One pitfall of Views is that you can't use the ORDER BY Clause. This is because since the View is based
-                                on an underlying set of tables, the order of the rows will constantly be changing and may slow down the database
-                                dramatically on update.
+                            <li class="pt-4">Depending on your RDBMS, Views may not allow the ORDER BY Clause for performance purposes.
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Create Views</h2>
@@ -163,10 +161,6 @@
                             </li>
                             <li class="pt-4">Certain keywords prevent you from adding, updating, or deleting data from a view. This will be covered
                                 in a future tutorial.
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Views Best Practices</h2>
@@ -201,7 +195,7 @@
                             <li class="pt-2">Open your RDBMS client.</li>
                             <li class="pt-4">Using the "Sales" database, solve the following problems:</li>
                             <ol type="a">
-                                <li class="pt-2"><b>Create a view that shows total revenue by state. Use a CTE in your query.</b></li>
+                                <li class="pt-2"><b>Create a view that shows total revenue by state.</b></li>
                                 <li class="pt-2"><b>Create a view that shows the top 5 largest orders.</b></li>
                                 <li class="pt-2"><b>Create a view that shows all orders placed in the year 2022 and in the following states:
                                     "UT", "CO", "CA". Show the customer's first and last name, the items ordered, and the cost of each item.
@@ -219,13 +213,13 @@
                             href="#">
                             Previous Topic
                         </a>
-                        <div class="col-0 col-sm-4"></div>
+                        <!-- <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
                             href="#">
                             Next Topic
                         </a>
-                    </div>
+                    </div> -->
                 </section>
             </div>
             <div class="col-md-1 col-lg-2 col-xxl-3"></div>

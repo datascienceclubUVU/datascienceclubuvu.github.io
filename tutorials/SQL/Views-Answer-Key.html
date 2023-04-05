@@ -71,55 +71,36 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Common Table Expressions (CTEs) Exercise Answer Key
+                            Views Exercise Answer Key
                         </h2>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
                             <li class="pt-2">Query used:
-                                <br><code>WITH total_prices AS (
-                                <br>&ensp;&ensp;&ensp;SELECT order_id, SUM(item_price) AS total_price
-                                <br>&ensp;&ensp;&ensp;FROM orders.order_items
-                                <br>&ensp;&ensp;&ensp;GROUP BY order_id),
-                                <br>
-                                <br>avg_price AS (
-                                <br>&ensp;&ensp;&ensp;SELECT AVG(total_price) AS avg_price
-                                <br>&ensp;&ensp;&ensp;FROM total_prices)
-                                <br>
-                                <br>SELECT o.*
-                                <br>FROM orders.order AS o
-                                <br>JOIN total_prices AS tp ON o.order_id = tp.order_id
-                                <br>CROSS JOIN avg_price
-                                <br>WHERE total_price > avg_price.avg_price;
+                                <br><code>CREATE VIEW orders.revenue_by_state AS
+                                <br>&ensp;&ensp;&ensp;SELECT state, SUM(item_price) AS totol_revenue
+                                <br>&ensp;&ensp;&ensp;FROM orders.customers AS c
+                                <br>&ensp;&ensp;&ensp;JOIN orders.orders AS o ON c.customer_id = o.customer_id
+                                <br>&ensp;&ensp;&ensp;JOIN orders.order_items AS oi ON o.order_id = oi.order_id
+                                <br>&ensp;&ensp;&ensp;GROUP BY state;
                                 </code></li>
                             <li class="pt-2">Query used:
-                                <br><code>WITH total_prices AS (
-                                    <br>&ensp;&ensp;&ensp;SELECT order_id, SUM(item_price) AS total_price
-                                    <br>&ensp;&ensp;&ensp;FROM orders.order_items
-                                    <br>&ensp;&ensp;&ensp;GROUP BY order_id),
-                                    <br>
-                                    <br>max_price AS (
-                                    <br>&ensp;&ensp;&ensp;SELECT AVG(total_price) AS highest_price
-                                    <br>&ensp;&ensp;&ensp;FROM total_prices)
-                                    <br>
-                                    <br>SELECT o.*
-                                    <br>FROM orders.order AS o
-                                    <br>JOIN total_prices AS tp ON o.order_id = tp.order_id
-                                    <br>CROSS JOIN max_price
-                                    <br>WHERE total_price = highest_price;
-                                </code></li>
-                            <li class="pt-2">Query used:
-                                <br><code>WITH filtered_orders AS (
-                                <br>&ensp;&ensp;&ensp;SELECT order_id, order_date
+                                <br><code>CREATE VIEW orders.largest_orders AS
+                                <br>&ensp;&ensp;&ensp;SELECT o.*, SUM(item_price) AS total_price
                                 <br>&ensp;&ensp;&ensp;FROM orders.orders AS o
-                                <br>&ensp;&ensp;&ensp;JOIN orders.customers AS c ON o.customer_id = c.customer_id
-                                <br>&ensp;&ensp;&ensp;WHERE state IN('CA', 'CO', 'CT'))
-                                <br>
-                                <br>SELECT order_date, SUM(item_price) AS total_revenue
-                                <br>FROM filtered_orders AS fo
-                                <br>JOIN orders.order_items AS oi ON fo.order_id = oi.order_id
-                                <br>GROUP BY order_date;
+                                <br>&ensp;&ensp;&ensp;JOIN orders.order_items AS oi ON o.order_id = oi.order_id
+                                <br>&ensp;&ensp;&ensp;GROUP BY o.order_id, order_date
+                                <br>&ensp;&ensp;&ensp;ORDER BY total_price DESC
+                                <br>&ensp;&ensp;&ensp;LIMIT 5;
+                                </code></li>
+                            <li class="pt-2">Query used:
+                                <br><code>CREATE VIEW orders.orders_2022 AS
+                                <br>&ensp;&ensp;&ensp;SELECT first_name, last_name, item_name, item_description, item_price
+                                <br>&ensp;&ensp;&ensp;FROM orders.customers AS c
+                                <br>&ensp;&ensp;&ensp;JOIN orders.orders AS o ON c.customer_id = o.customer_id
+                                <br>&ensp;&ensp;&ensp;JOIN orders.order_items AS oi ON o.order_id = oi.order_id
+                                <br>&ensp;&ensp;&ensp;WHERE order_year = 2022;
                                 </code>
                             </li>
                         </ol>

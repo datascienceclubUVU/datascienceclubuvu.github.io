@@ -125,64 +125,84 @@
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">CTE Syntax</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">Now that you have a basic understanding of when to use a CTE, let's learn how to write one. Watch the following
+                            video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=_SanZ41uTlw">SQL WITH Statements (Common Table Expressions - CTE)</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1"><b><i>CTEs</i></b> are used to make reading multiple Subqueries easier. To create a CTE with a single
+                                Subquery, use the following syntax:
+                                <br><code>WITH [alias] AS (
+                                    <br>SELECT [col1], [col2]
+                                    <br>FROM [table_name]
+                                    <br>WHERE [list of conditions]
+                                    <br>)
+                                    <br>
+                                    <br>SELECT *
+                                    <br>FROM [cte_alias]
+                                    <br>WHERE [list of conditions];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">To create a CTE with multiple Subqueries, use the following syntax:
+                                <br><code>WITH [alias1] AS (
+                                    <br>SELECT [col1], [col2]
+                                    <br>FROM [table_name]
+                                    <br>WHERE [list of conditions]
+                                    <br>),
+                                    <br><br>
+                                    [alias2] AS (
+                                    <br>SELECT [col1], [col2]
+                                    <br>FROM [alias1]
+                                    <br>WHERE [list of conditions]
+                                    <br>
+                                    )
+                                    <br>
+                                    <br>SELECT *
+                                    <br>FROM [cte_alias]
+                                    <br>WHERE [list of conditions];</code>
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Use Cases</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">Although we have already covered some of the common use cases behind CTEs, let's dive deeper into
+                            why they are preferred over Subqueries. Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=UcTuw1klZJU">When to Use CTE</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">CTEs are used in-memory and avoid creating temp tables (which are created when using Subqueries).
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">As a Database Administrator (DBA), CTEs make it much easier to allow new users to view previous
+                                queries without having to give them unnecessary security privileges.
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">Although CTEs contain more lines of code than traditional Subqueries, they make it easier to update
+                                the Subqueries as explained in the video.
                             </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">CTEs prevent human error by only requiring updates in a single Subquery rather than multiple.
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Common Table Expressions (CTEs) Tutorial! To help test your knowledge, let's
-                            [enter creative sentence here]. This exercise is based on the exercise of 
-                            the previous tutorial. <br>**<b><i>It's highly recommended that you
+                            complete the same questions as the previous exercise, but using CTEs rather than Subqueries. This exercise is based on 
+                            the exercise of the previous tutorial. <br>**<b><i>It's highly recommended that you
                             complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
                             </i></b>
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">[Step 1]</li>
-                            <li class="pt-4">[Step 2]</li>
-                            <li class="pt-4">[Step 3]</li>
-                            <li class="pt-4">etc...</li>
+                            <li class="pt-2">Open your RDBMS client.</li>
+                            <li class="pt-4">Using the "Sales database, solve the following problems:</li>
+                            <ol type="a">
+                                <li class="pt-2"><b>Using a CTE, write a query that returns revenue by state.</b></li>
+                                <li class="pt-2"><b>Using a CTE, write a query that returns the highest purchase_price by order.</b></li>
+                                <li class="pt-2"><b>Using a CTE, write a query that returns revenue by order date. Filter to include the following
+                                    states: "CA", "CO", "CT".
+                                </b></li>
+                            </ol>
                             <li class="pt-4"><b>Exercise Completed! Click <a href="#">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>

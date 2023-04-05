@@ -122,13 +122,10 @@
                             <li class="pt-4">Because views are virtualized, they only take up database space when a query runs, whereas tables take up
                                 space while they exist.
                             </li>
-                            <li class="pt-4">Views cannot have data appended, updated, or deleted, whereas tables support all of these actions.
-                            </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Why Use Views</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">Views are one of the most helpful tools when working with complex queries. But, when should you use them?
+                            Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
                             <a href="https://www.youtube.com/watch?v=nEAAtj8jbBI&t=1s">How Views Work in SQL and Why You Should Use Them</a>
@@ -152,65 +149,65 @@
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Create Views</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">Now that you have a clear understanding of how a View differs from a table and when to use views, let's take
+                            a look at how to create Views. Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=vLLkNI-vkV8&t=65s">SQL Views in 4 Minutes</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">Compared to other DDL commands, the <code>CREATE VIEW </code>command is pretty straight forward.
+                                To create a basic view, use the following syntax:
+                                <br><code>CREATE VIEW [view_name] AS [query];</code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
+                            <li class="pt-4">Certain keywords prevent you from adding, updating, or deleting data from a view. This will be covered
+                                in a future tutorial.
                                 <br><code>[Enter code sample here (if applicable)]</code>
                             </li>
                             <li class="pt-4">[Enter third key point here].
                                 <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Views Best Practices</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">Once you have started creating Views, it can be easy to get carried away by creating too many views. Thus,
+                            there are some industry best practices to prevent this from happening. Read the following article to get a better
+                            understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://docs.vmware.com/en/VMware-Tanzu-Greenplum/7/greenplum-database/GUID-admin_guide-ddl-ddl-view-best-practices.html">Best Practices When Creating Views</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">"If a subquery is associated with a single query, consider using the <code> WITH </code> Clause of the <code>
+                                 SELECT </code> command instead of creating a seldom-used view." (docs.vmware.com, 2023)
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">"Defining a denormalized 'world' view. A view that joins a large number of database table that is used
+                                for a wide variety of queries. [This can cause performance issues]." (docs.vmware.com, 2023)
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">"Performance issues can occur for some queries that use [views with] some <code> WHERE </code> conditions
+                                while other <code>WHERE </code> conditions work well." (docs.vmware.com, 2023)
                             </li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise [Optional]</h2>
-                        <p><b>Congratulations!</b> You just completed the [Enter tutorial name here] Tutorial! To help test your knowledge, let's
-                            [enter creative sentence here]. This exercise is based on the exercise of 
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the Views Tutorial! To help test your knowledge, let's
+                            practice by creating some basic views. This exercise is based on the exercise of 
                             the previous tutorial. <br>**<b><i>It's highly recommended that you
                             complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
                             </i></b>
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">[Step 1]</li>
-                            <li class="pt-4">[Step 2]</li>
-                            <li class="pt-4">[Step 3]</li>
-                            <li class="pt-4">etc...</li>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="#">here</a> to view the answers.</b></li>
+                            <li class="pt-2">Open your RDBMS client.</li>
+                            <li class="pt-4">Using the "Sales" database, solve the following problems:</li>
+                            <ol type="a">
+                                <li class="pt-2"><b>Create a view that shows total revenue by state. Use a CTE in your query.</b></li>
+                                <li class="pt-2"><b>Create a view that shows the top 5 largest orders.</b></li>
+                                <li class="pt-2"><b>Create a view that shows all orders placed in the year 2022 and in the following states:
+                                    "UT", "CO", "CA". Show the customer's first and last name, the items ordered, and the cost of each item.
+                                </b></li>
+                            </ol>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="Views-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

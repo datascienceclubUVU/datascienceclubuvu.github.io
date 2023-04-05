@@ -103,26 +103,26 @@
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Views vs. Tables</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">Before we get into how to create views, we need to understand the difference between views and tables.
+                            Watch the following videos to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=cnIhpax1ExM">What is the difference between tables and views?</a><br>
+                            <a href="https://www.geeksforgeeks.org/difference-between-view-and-table/">Difference Between View and Table (GeeksforGeeks)</a>
                         </ul>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                        <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">The difference between a view and a table is that <b><i>Views</i></b> are definitions built on top of
+                                other tables (or views), and do not hold data themselves. In essence, they are virtualized variables that hold the
+                                results of a common query.
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">Views are dependent on tables. Therefore, when deleting tables, you must delete all views that depend on that
+                                table first.
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">Because views are virtualized, they only take up database space when a query runs, whereas tables take up
+                                space while they exist.
                             </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">Views cannot have data appended, updated, or deleted, whereas tables support all of these actions.
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Why Use Views</h2>
@@ -131,21 +131,24 @@
                             Enter description here.
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=nEAAtj8jbBI&t=1s">How Views Work in SQL and Why You Should Use Them</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">Since Views are based on queries, it can be helpful to store your most complex queries as views so that
+                                when you run that same query, all you have to do is write the following line of code:
+                                <br><code>SELECT *<br>FROM [view_name];</code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">As a general security best practice, you may want to hide certain columns containing sensitive information
+                                such as credit card numbers, passwords, or social security numbers. You can hide these by excluding them from the
+                                underlying query.
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">Views are very convenient because they store your queries in a virtualized table format. This enables you
+                                to query the View the same as a table.
                             </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">One pitfall of Views is that you can't use the ORDER BY Clause. This is because since the View is based
+                                on an underlying set of tables, the order of the rows will constantly be changing and may slow down the database
+                                dramatically on update.
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Create Views</h2>

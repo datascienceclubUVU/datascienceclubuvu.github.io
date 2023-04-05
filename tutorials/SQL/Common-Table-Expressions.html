@@ -29,14 +29,14 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>[Topic] Tutorials: [Tutorial Name] | Data Science Club @ UVU</title>
+    <title>SQL Tutorials: Common Table Expressions | Data Science Club @ UVU</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
     <header class="container-fluid">
         <div class="row py-4 bg-primary">
             <h1 class="col text-center text-white">
-                [TOPIC] TUTORIALS
+                SQL TUTORIALS
             </h1>
         </div>
     </header>
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            [Topic] Tutorials: [Tutorial Name]
+                            SQL Tutorials: Common Table Expressions (CTEs)
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="#"
+                                src="../../imgs/common-table-expressions.png"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,45 +89,42 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                                Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                                Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                                This tutorial will cover the following learning objectives:
+                                In the previous tutorial, we learned how Subqueries can be used to compare query results without using multiple joins.
+                                However, when using multiple Subqueries, it can become very difficult to see where one Subquery ends and another begins.
+                                Enter the Common Table Expression (CTE). This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>Learning Objective 1</li>
-                                <li>Learning Objective 2</li>
-                                <li>Learning Objective 3</li>
-                                <li>Learning Objective 4</li>
-                                <li>etc...</li>
+                                <li>Subqueries vs. CTEs</li>
+                                <li>CTE Syntax</li>
+                                <li>Use Cases</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 1</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries vs. CTEs</h2>
+                        <p class="pt-3">When writing complex queries, it may be tempting to use multi-nested Subqueries in the WHERE Clause. However,
+                            this makes it much more difficult to read the query. <b><i>Common Table Expressions (CTEs)</b></i> help solve this problem.
+                            Watch the following videos to better understand this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=tlvxb7UduJw">When to Use a Subquery in SQL</a><br>
+                            <a href="https://youtube.com/clip/UgkxuVAfNeQNGHvqXMmlIb5UNEvNenFhYgV1">What is a CTE?</a>
                         </ul>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                        <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">You should use a subquery when the results of one query need to be used in another query.
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">When working with Subqueries in the WHERE Clause, the Subquery must either be a single value 
+                                (when comparing aggregates) or a list of values from a single column (when working with categorical data).
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">Whether your query is using Subqueries or CTEs, break down your query and write it in parts. This makes
+                                your query much more readable.
                             </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4"><b><i>Common Table Expressions (CTEs)</i></b> have the same benefits and use cases as Subqueries, though are
+                                much easier to read.
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 2</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">CTE Syntax</h2>
                         <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here.
@@ -150,7 +147,7 @@
                                 etc...
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 3</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Use Cases</h2>
                         <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here.
@@ -173,31 +170,8 @@
                                 etc...
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 4</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
-                        </p>
-                        <ul>
-                            <a href="#">[Enter video/article title here]</a>
-                        </ul>
-                        <h4 class="pt-4">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
-                            </li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise [Optional]</h2>
-                        <p><b>Congratulations!</b> You just completed the [Enter tutorial name here] Tutorial! To help test your knowledge, let's
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the Common Table Expressions (CTEs) Tutorial! To help test your knowledge, let's
                             [enter creative sentence here]. This exercise is based on the exercise of 
                             the previous tutorial. <br>**<b><i>It's highly recommended that you
                             complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
@@ -218,7 +192,7 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="#">
+                            href="Subqueries.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>

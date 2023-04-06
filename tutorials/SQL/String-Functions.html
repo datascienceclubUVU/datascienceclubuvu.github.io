@@ -280,19 +280,70 @@
                                 </code>
                             </li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise [Optional]</h2>
-                        <p><b>Congratulations!</b> You just completed the [Enter tutorial name here] Tutorial! To help test your knowledge, let's
-                            [enter creative sentence here]. This exercise is based on the exercise of 
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the String Functions Tutorial! To help test your knowledge, let's
+                            see how these can be utilized by completeing a few practice problems. This exercise is based on the exercise of 
                             the previous tutorial. <br>**<b><i>It's highly recommended that you
                             complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
                             </i></b>
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">[Step 1]</li>
-                            <li class="pt-4">[Step 2]</li>
-                            <li class="pt-4">[Step 3]</li>
-                            <li class="pt-4">etc...</li>
+                            <li class="pt-2">Open your RDBMS Client.</li>
+                            <li class="pt-4">Insert the Following Data into the "Orders" Schema of the "Sales" Database:</li>
+                            <li class= "pt-2">To keep things interesting, let's add some more data to our Sales database:</li>
+                            <ul class="pt-3">
+                                <b>Customers</b>
+                                <br>1011, [enter 4 spaces] Trevor, Wilkins, 700 W 1800 N, OREM, ut, 84058
+                                <br>1012, Samantha, Grettel [enter 4 spaces], 121 Center Street, provo, UT, 84064
+                                <br>1013, Paul, HIDDICK, [enter 4 spaces] 443 North Wind Drive [enter 4 spaces], AtlanTA, gA, 21321
+                                <br>1014, simone, fredericks - StringError, 9008 Pratt Corner, DES Moines, Ia, 56217
+                                <br>1015, THADIUS, clements, 3900 S Main Street, murray, ut, 84048
+                                <br>
+                                <br>
+                                <b>Orders</b>
+                                <br>190001137, 2023-02-02, 1011
+                                <br>190001138, 2023-02-02, 1011
+                                <br>190001139, 2023-02-02, 1012
+                                <br>190001140, 2023-02-03, 1013
+                                <br>190001141, 2023-02-04, 1013
+                                <br>190001142, 2023-02-04, 1014
+                                <br>190001143, 2023-02-04, 1015
+                                <br>
+                                <br>
+                                <b>Order_Items</b>
+                                <br>190001137, 1, Wet Suit (Mens), XXL Mens Wet Suit for Scuba Diving and Snorkeling, 68.99
+                                <br>190001137, 2, Swimming Goggles, Unisex Adjustable Eyewear for Water use, 12.99
+                                <br>190001137, 3, Beach Towel (2-Pack), Beach Towels with Tropical pattern. 100% Cotton, 21.29
+                                <br>190001137, 4, Sunscreen SPF 50, Light Duty Sunscreen for Outdoor Use, 11.49
+                                <br>190001138, 1, Ski Poles, Unisex Poles for Powder, 29.99
+                                <br>190001138, 2, Winter Coat (Womens), Heavy Duty Winter Coat for Women, 54.99
+                                <br>190001139, 1, USB-C Cable, USB-C Cable for Phones and Laptops, 3.29
+                                <br>190001140, 1, Lightning Cable, Apple iPhone Charger, 21.49
+                                <br>190001141, 1, Water Backpack, Outdoor Backpack with Water Pouch (up to 50 ML), 54.49
+                                <br>190001141, 2, Cooling Towel, Heavy Duty Cooling Towel for Outdoor Use, 31.99
+                                <br>190001141, 3, Wool Socks (Mens), Thick Wool Socks for Outdoor Use, 9.99
+                                <br>190001142, 1, Pillow Case, Cotton Pillow Case, 9.99
+                                <br>
+                            </ul>
+                            <li class="pt-4">Using the "Sales" Database, solve the following problems:</li>
+                            <ol type="a">
+                                <li class="pt-2"><b>Write a query that cleans all the columns in the "customers" table from leading and trailing spaces.
+                                    Return all customers with a customer_id greater than 1010.
+                                </b></li>
+                                <li class="pt-2"><b>Write an appropriate query to clean all the columns in the "customers" table in the
+                                    correct string format according to the column's previous string format. </b></li>
+                                <li class="pt-2"><b>Write a query that replaces all instances of "mens" or "womens" in the "item_name"
+                                    column of the "order_items" table with "Unisex".
+                                </b></li>
+                                <li class="pt-2"><b>Write a query that returns all customers with the substring "Sam" in their first name or
+                                    that live in "UT" or "CO". Use the SUBSTRING Function.
+                                </b></li>
+                                <li class="pt-2"><b>Add a new column to the "customers" table titled "email" with a data type of VARCHAR(50). This
+                                    column will be populated as a single string with the first 4 letters of the customer's first name, the last
+                                    3 letters of the customer's last name, followed by "@gmail.com".
+                                </b></li>
+                            </ol>
                             <li class="pt-4"><b>Exercise Completed! Click <a href="#">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
@@ -302,7 +353,7 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="#">
+                            href="Views.html">
                             Previous Topic
                         </a>
                         <!-- <div class="col-0 col-sm-4"></div>

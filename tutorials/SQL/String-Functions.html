@@ -29,14 +29,14 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>[Topic] Tutorials: [Tutorial Name] | Data Science Club @ UVU</title>
+    <title>SQL Tutorials: String Functions | Data Science Club @ UVU</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
     <header class="container-fluid">
         <div class="row py-4 bg-primary">
             <h1 class="col text-center text-white">
-                [TOPIC] TUTORIALS
+                SQL TUTORIALS
             </h1>
         </div>
     </header>
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            [Topic] Tutorials: [Tutorial Name]
+                            SQL Tutorials: String Functions
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="#"
+                                src="../../imgs/string-functions.jfif"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,45 +89,53 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                                Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                                Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                                This tutorial will cover the following learning objectives:
+                                Strings are one of the most common data types and can be difficult to work with. In this tutorial, we will go over 
+                                some basic string manipulation techniques found in most RDBMSs. This tutorial will cover the following learning 
+                                objectives:
                             </p>
                             <ul>
-                                <li>Learning Objective 1</li>
-                                <li>Learning Objective 2</li>
-                                <li>Learning Objective 3</li>
-                                <li>Learning Objective 4</li>
-                                <li>etc...</li>
+                                <li>String Concatenation</li>
+                                <li>UPPER, LOWER, and INITCAP Functions</li>
+                                <li>LEFT and RIGHT Functions</li>
+                                <li>String Formatting Functions</li>
+                                <li>Miscellaneous String Functions</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 1</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">String Concatenation</h2>
+                        <p class="pt-3">In SQL, <b><i>String Concatenation</i></b> is the process of combining two or more columns of data type
+                            "VARCHAR" or "CHAR" to create a more comprehensible group of data in a single column. Watch the following video
+                            to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=jZrKS-bWAe8">How to Concatenate in SQL</a>
                         </ul>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                        <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1"><b><i>Concatenation</i></b> is the process of joining two or more strings. To concatenate two or
+                                more columns, use the following syntax (differs between RDBMSs). It should be noted that you need to manually
+                                enter a space between the strings.
+                                    <br><code>SELECT [col1] || ' ' || [col2] AS [alias]
+                                    <br>FROM [table_name];
+                                    </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">Another way to concatenate strings in SQL is to use either the <b><i>CONCAT</i></b> or
+                                <b><i>CONCATENATE</i></b> functions (differs between RDBMSs). To concatenate strings using one of these
+                                functions, use the following syntax:
+                                <br><code>SELECT CONCAT([col1], ' ', [col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">A third way to concatenate strings in SQL is by using the "+" operator. This is commonly used
+                                in certain RDBMSs to make reading queries easier. To concatenate strings with this operator, use the following
+                                syntax:
+                                <br><code>SELECT [col1] + ' ' + [col2] AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 2</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">UPPER, LOWER, and INITCAP Functions</h2>
                         <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here.
@@ -150,7 +158,7 @@
                                 etc...
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 3</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">LEFT and RIGHT Functions</h2>
                         <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here.
@@ -173,7 +181,30 @@
                                 etc...
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Learning Objective 4</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">String Formatting Functions</h2>
+                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
+                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
+                            Enter description here.
+                        </p>
+                        <ul>
+                            <a href="#">[Enter video/article title here]</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">[Enter first key point here].
+                                <br><code>[Enter code sample here (if applicable)]</code>
+                            </li>
+                            <li class="pt-4">[Enter second key point here].
+                                <br><code>[Enter code sample here (if applicable)]</code>
+                            </li>
+                            <li class="pt-4">[Enter third key point here].
+                                <br><code>[Enter code sample here (if applicable)]</code>
+                            </li>
+                            <li class="pt-4">
+                                etc...
+                            </li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Miscellaneous String Functions</h2>
                         <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
                             Enter description here.
@@ -221,13 +252,13 @@
                             href="#">
                             Previous Topic
                         </a>
-                        <div class="col-0 col-sm-4"></div>
+                        <!-- <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
                             href="#">
                             Next Topic
                         </a>
-                    </div>
+                    </div> -->
                 </section>
             </div>
             <div class="col-md-1 col-lg-2 col-xxl-3"></div>

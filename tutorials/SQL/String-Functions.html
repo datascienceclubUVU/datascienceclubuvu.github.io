@@ -120,8 +120,8 @@
                                     <br>FROM [table_name];
                                     </code>
                             </li>
-                            <li class="pt-4">Another way to concatenate strings in SQL is to use either the <b><i>CONCAT</i></b> or
-                                <b><i>CONCATENATE</i></b> functions (differs between RDBMSs). To concatenate strings using one of these
+                            <li class="pt-4">Another way to concatenate strings in SQL is to use either the <b><i>CONCAT()</i></b> or
+                                <b><i>CONCATENATE()</i></b> functions (differs between RDBMSs). To concatenate strings using one of these
                                 functions, use the following syntax:
                                 <br><code>SELECT CONCAT([col1], ' ', [col2]) AS [alias]
                                 <br>FROM [table_name];
@@ -136,26 +136,32 @@
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">UPPER, LOWER, and INITCAP Functions</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">When presenting query results to stakeholders in a tabular format, it helps to format the strings the
+                            way they were designed to be presented. Watch the following video to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=bT5a4bRBOKw">UPPER, LOWER, INITCAP in SQL</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">The <b><i>LOWER()</i></b> function makes all characters in the string lowercase. This is commonly used
+                                when formatting product descriptions or other long strings. To use this function, use the following syntax:
+                                <br><code>SELECT LOWER([col1]) AS [alias], LOWER([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">The <b><i>UPPER()</i></b> function makes all characters in the string uppercase. This is commonly used
+                                when formatting acronyms, categories, or stock market abbrevations. To use this function, use the following syntax:
+                                <br><code>SELECT UPPER([col1]) AS [alias], UPPER([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">The <b><i>INITCAP()</i></b> function makes the first letter of every word in the string uppercase. This
+                                is commonly used when formatting formal names such as first and last names, product names, and city names. To use this
+                                function, use the following syntax:
+                                <br><code>SELECT INITCAP([col1]) AS [alias], INITCAP([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">LEFT and RIGHT Functions</h2>

@@ -165,72 +165,119 @@
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">LEFT and RIGHT Functions</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">Although SQL isn't built for automation like other languages such as Python and Java, it does provide
+                            some automated features that allow you to quickly manipulate data. Watch the following video to get a better
+                            understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.youtube.com/watch?v=LG9evKDGX3o">Using the LEFT and RIGHT SQL Functions</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">The <b><i>LEFT()</i></b> function gets the first "n" number of characters from the start of the string. 
+                                This is commonly used to create abbreviations or codes. To use this function, use the following syntax:
+                                <br><code>SELECT LEFT([col1], 4) AS [alias], LEFT([col2], 2) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">The <b><i>RIGHT()</i></b> function gets the first "n" number of characters from the end of the string.
+                                This is commonly used to preview long strings. To use this function, use the following syntax:
+                                <br><code>SELECT RIGHT([col1], 4) AS [alias], RIGHT([col2], 6) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">These functions are common interview questions and should not be overlooked.
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">String Formatting Functions</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">When verifying outputs, it helps to present data in a comprehensible format. For example, if you're
+                            working with financial data, it may be helpful to add dollar signs to add some context to your result sets. Read
+                            the following article to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.postgresqltutorial.com/postgresql-string-functions/postgresql-format/">PostgreSQL FORMAT Function</a>
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">The <b><i>FORMAT()</i></b> function is used to customize strings in a column. This is commonly used
+                                when creating mail merge scripts or backend application placeholder text. To use this function to format a string,
+                                use the following syntax:
+                                <br><code>SELECT FORMAT('[new_string] %s', [col_name]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">To make your result sets more readable, you can specify flags to limit the characters returned or specify
+                                the string's alignment. To return a column of string data type with a maximum of 10 characters and left-align the
+                                contents, use the following syntax:
+                                <br><code>SELECT FORMAT('|%-10s|', [col_name]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
-                            </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">When working with a list of string values, either when uploading data from a semi-structured format such]
+                                as JSON or XML, it's helpful to format strings with multiple parameters. To format strings based on certain categories,
+                                use the following syntax:
+                                <br><code>SELECT FORMAT('%1$s [value], %2$s [value], %1$s [value]', '[string1]', '[string2]') AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Miscellaneous String Functions</h2>
-                        <p class="pt-3">Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here. Enter description here. Enter description here. Enter description here. Enter description here.
-                            Enter description here.
+                        <p class="pt-3">While the functions we've learned so far in this tutorial cover about 80% of all the string manipulation
+                            you'll ever need when querying data, there are some other functions available that cover the other 20%. View the
+                            following resources to get a better understanding of this concept:
                         </p>
                         <ul>
-                            <a href="#">[Enter video/article title here]</a>
+                            <a href="https://www.postgresqltutorial.com/postgresql-string-functions/">PostgreSQL String Functions</a><br>
+                            <a href="https://www.youtube.com/watch?v=GQj6_6V_jVA&t=25s">String Functions + Use Cases</a>
+                            
                         </ul>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">[Enter first key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-1">The <b><i>SPLIT_PART()</i></b> function splits a string based on a specified delimiter and allows
+                                you to choose which chunk you would like to return. This function is specific to PostgreSQL, though may have
+                                variants in other RDBMSs. To use this function, use the following syntax:
+                                <br><code>SELECT SPLIT_PART([col_name], '[delimiter]', [chunk_number]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter second key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">The <b><i>LENGTH()</i></b> function returns the number of characters in the string. This function
+                                is also called the <b><i>LEN()</i></b> function depending on your RDBMS. To use this function, use the following
+                                syntax:
+                                <br><code>SELECT LENGTH([col_name]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">[Enter third key point here].
-                                <br><code>[Enter code sample here (if applicable)]</code>
+                            <li class="pt-4">The <b><i>TRIM()</i></b> function removes both leading and trailing spaces from a string. This is
+                                commonly used when cleaning datasets. To use this function, use the following syntax:
+                                <br><code>SELECT TRIM([col1]) AS [alias], TRIM([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
-                            <li class="pt-4">
-                                etc...
+                            <li class="pt-4">The <b><i>LTRIM()</i></b> function is used to remove only leading spaces from a string. This is
+                                commonly used after splitting string columns based on a delimiter. To use this function, use the following syntax:
+                                <br><code>SELECT LTRIM([col1]) AS [alias], LTRIM([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>RTRIM()</i></b> function is used to remove only trailing spaces from a string. This is
+                                also commonly used after splitting string columns based on a delimiter. To use this function, use the following
+                                syntax:
+                                <br><code>SELECT RTRIM([col1]) AS [alias], RTRIM([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>REPLACE()</i></b> function is used to replace specific characters in a string with new
+                                characters. This is commonly used when cleaning datasets. To use this function, use the following syntax:
+                                <br><code>SELECT REPLACE([col_name], '[old_string]', '[new_string]') AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>SUBSTRING()</i></b> function is used to retrieve a specified range of characters from
+                                the middle of a string. This is commonly used when removing certain characters from strings or extracting parts
+                                of a string. To use this function, use the following syntax:
+                                <br><code>SELECT SUBSTRING([col_name], [start_position], [end_position]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
                             </li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise [Optional]</h2>

@@ -114,7 +114,7 @@
                             <li class="pt-1">A <b><i>Subquery</i></b> is a query nested inside another query. When used in the SELECT Clause, the
                                 subquery MUST return exactly one row with exactly one column.
                             </li>
-                            <li class="pt-4">This particular type of subquery is commonly used in conjunction with aggregate function since they
+                            <li class="pt-4">This particular type of subquery is commonly used in conjunction with aggregate functions since they
                                 return only one value. To write a subquery in the SELECT Clause, use the following syntax:
                                 <br><code>SELECT [col1], [col2], (SELECT SUM([col3]) FROM [table_name2]) AS [alias]<br>
                                     FROM [table_name1];</code>
@@ -137,7 +137,7 @@
                                 <br>FROM (SELECT * FROM [table_name] WHERE [list of conditions]);
                                 </code>
                             </li>
-                            <li class="pt-4">As mentioned above, this type of subquery can be used to run aggregates on aggregated column. To write
+                            <li class="pt-4">As mentioned above, this type of subquery can be used to run aggregates on aggregated columns. To write
                                 this type of subquery, use the following syntax:
                                 <br><code>SELECT MAX([aggregated column])
                                 <br>FROM (SELECT [col1], SUM([col2]) FROM [table_name] GROUP BY [col1]);

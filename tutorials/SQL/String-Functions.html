@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>SQL Tutorials: String Functions | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                SQL TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            SQL Tutorials: String Functions
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/string-functions.jfif"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                Strings are one of the most common data types and can be difficult to work with. In this tutorial, we will go over 
+                                some basic string manipulation techniques found in most RDBMSs. This tutorial will cover the following learning 
+                                objectives:
+                            </p>
+                            <ul>
+                                <li>String Concatenation</li>
+                                <li>UPPER, LOWER, and INITCAP Functions</li>
+                                <li>LEFT and RIGHT Functions</li>
+                                <li>String Formatting Functions</li>
+                                <li>Miscellaneous String Functions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">String Concatenation</h2>
+                        <p class="pt-3">In SQL, <b><i>String Concatenation</i></b> is the process of combining two or more columns of data type
+                            "VARCHAR" or "CHAR" to create a more comprehensible group of data in a single column. Watch the following video
+                            to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=jZrKS-bWAe8">How to Concatenate in SQL</a>
+                        </ul>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Concatenation</i></b> is the process of joining two or more strings. To concatenate two or
+                                more columns, use the following syntax (differs between RDBMSs). It should be noted that you need to manually
+                                enter a space between the strings.
+                                    <br><code>SELECT [col1] || ' ' || [col2] AS [alias]
+                                    <br>FROM [table_name];
+                                    </code>
+                            </li>
+                            <li class="pt-4">Another way to concatenate strings in SQL is to use either the <b><i>CONCAT()</i></b> or
+                                <b><i>CONCATENATE()</i></b> functions (differs between RDBMSs). To concatenate strings using one of these
+                                functions, use the following syntax:
+                                <br><code>SELECT CONCAT([col1], ' ', [col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">A third way to concatenate strings in SQL is by using the "+" operator. This is commonly used
+                                in certain RDBMSs to make reading queries easier. To concatenate strings with this operator, use the following
+                                syntax:
+                                <br><code>SELECT [col1] + ' ' + [col2] AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">UPPER, LOWER, and INITCAP Functions</h2>
+                        <p class="pt-3">When presenting query results to stakeholders in a tabular format, it helps to format the strings the
+                            way they were designed to be presented. Watch the following video to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=bT5a4bRBOKw">UPPER, LOWER, INITCAP in SQL</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>LOWER()</i></b> function makes all characters in the string lowercase. This is commonly used
+                                when formatting product descriptions or other long strings. To use this function, use the following syntax:
+                                <br><code>SELECT LOWER([col1]) AS [alias], LOWER([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>UPPER()</i></b> function makes all characters in the string uppercase. This is commonly used
+                                when formatting acronyms, categories, or stock market abbrevations. To use this function, use the following syntax:
+                                <br><code>SELECT UPPER([col1]) AS [alias], UPPER([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>INITCAP()</i></b> function makes the first letter of every word in the string uppercase. This
+                                is commonly used when formatting formal names such as first and last names, product names, and city names. To use this
+                                function, use the following syntax:
+                                <br><code>SELECT INITCAP([col1]) AS [alias], INITCAP([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">LEFT and RIGHT Functions</h2>
+                        <p class="pt-3">Although SQL isn't built for automation like other languages such as Python and Java, it does provide
+                            some automated features that allow you to quickly manipulate data. Watch the following video to get a better
+                            understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=LG9evKDGX3o">Using the LEFT and RIGHT SQL Functions</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>LEFT()</i></b> function gets the first "n" number of characters from the start of the string. 
+                                This is commonly used to create abbreviations or codes. To use this function, use the following syntax:
+                                <br><code>SELECT LEFT([col1], 4) AS [alias], LEFT([col2], 2) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>RIGHT()</i></b> function gets the first "n" number of characters from the end of the string.
+                                This is commonly used to preview long strings. To use this function, use the following syntax:
+                                <br><code>SELECT RIGHT([col1], 4) AS [alias], RIGHT([col2], 6) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">These functions are common interview questions and should not be overlooked.
+                            </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">String Formatting Functions</h2>
+                        <p class="pt-3">When verifying outputs, it helps to present data in a comprehensible format. For example, if you're
+                            working with financial data, it may be helpful to add dollar signs to add some context to your result sets. Read
+                            the following article to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.postgresqltutorial.com/postgresql-string-functions/postgresql-format/">PostgreSQL FORMAT Function</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>FORMAT()</i></b> function is used to customize strings in a column. This is commonly used
+                                when creating mail merge scripts or backend application placeholder text. To use this function to format a string,
+                                use the following syntax:
+                                <br><code>SELECT FORMAT('[new_string] %s', [col_name]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">To make your result sets more readable, you can specify flags to limit the characters returned or specify
+                                the string's alignment. To return a column of string data type with a maximum of 10 characters and left-align the
+                                contents, use the following syntax:
+                                <br><code>SELECT FORMAT('|%-10s|', [col_name]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">When working with a list of string values, either when uploading data from a semi-structured format such]
+                                as JSON or XML, it's helpful to format strings with multiple parameters. To format strings based on certain categories,
+                                use the following syntax:
+                                <br><code>SELECT FORMAT('%1$s [value], %2$s [value], %1$s [value]', '[string1]', '[string2]') AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Miscellaneous String Functions</h2>
+                        <p class="pt-3">While the functions we've learned so far in this tutorial cover about 80% of all the string manipulation
+                            you'll ever need when querying data, there are some other functions available that cover the other 20%. View the
+                            following resources to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.postgresqltutorial.com/postgresql-string-functions/">PostgreSQL String Functions</a><br>
+                            <a href="https://www.youtube.com/watch?v=GQj6_6V_jVA&t=25s">String Functions + Use Cases</a>
+                            
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>SPLIT_PART()</i></b> function splits a string based on a specified delimiter and allows
+                                you to choose which chunk you would like to return. This function is specific to PostgreSQL, though may have
+                                variants in other RDBMSs. To use this function, use the following syntax:
+                                <br><code>SELECT SPLIT_PART([col_name], '[delimiter]', [chunk_number]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>LENGTH()</i></b> function returns the number of characters in the string. This function
+                                is also called the <b><i>LEN()</i></b> function depending on your RDBMS. To use this function, use the following
+                                syntax:
+                                <br><code>SELECT LENGTH([col_name]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>TRIM()</i></b> function removes both leading and trailing spaces from a string. This is
+                                commonly used when cleaning datasets. To use this function, use the following syntax:
+                                <br><code>SELECT TRIM([col1]) AS [alias], TRIM([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>LTRIM()</i></b> function is used to remove only leading spaces from a string. This is
+                                commonly used after splitting string columns based on a delimiter. To use this function, use the following syntax:
+                                <br><code>SELECT LTRIM([col1]) AS [alias], LTRIM([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>RTRIM()</i></b> function is used to remove only trailing spaces from a string. This is
+                                also commonly used after splitting string columns based on a delimiter. To use this function, use the following
+                                syntax:
+                                <br><code>SELECT RTRIM([col1]) AS [alias], RTRIM([col2]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>REPLACE()</i></b> function is used to replace specific characters in a string with new
+                                characters. This is commonly used when cleaning datasets. To use this function, use the following syntax:
+                                <br><code>SELECT REPLACE([col_name], '[old_string]', '[new_string]') AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                            <li class="pt-4">The <b><i>SUBSTRING()</i></b> function is used to retrieve a specified range of characters from
+                                the middle of a string. This is commonly used when removing certain characters from strings or extracting parts
+                                of a string. To use this function, use the following syntax:
+                                <br><code>SELECT SUBSTRING([col_name], [start_position], [end_position]) AS [alias]
+                                <br>FROM [table_name];
+                                </code>
+                            </li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the String Functions Tutorial! To help test your knowledge, let's
+                            see how these can be utilized by completeing a few practice problems. This exercise is based on the exercise of 
+                            the previous tutorial. <br>**<b><i>It's highly recommended that you
+                            complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </i></b>
+                        </p>
+                        <h4 class="pt-3">Instructions:</h4>
+                        <ol>
+                            <li class="pt-2">Open your RDBMS Client.</li>
+                            <li class="pt-4">Insert the Following Data into the "Orders" Schema of the "Sales" Database:</li>
+                            <li class= "pt-2">To keep things interesting, let's add some more data to our Sales database:</li>
+                            <ul class="pt-3">
+                                <b>Customers</b>
+                                <br>1011, [enter 4 spaces] Trevor, Wilkins, 700 W 1800 N, OREM, ut, 84058
+                                <br>1012, Samantha, Grettel [enter 4 spaces], 121 Center Street, provo, UT, 84064
+                                <br>1013, Paul, HIDDICK, [enter 4 spaces] 443 North Wind Drive [enter 4 spaces], AtlanTA, gA, 21321
+                                <br>1014, simone, fredericks - StringError, 9008 Pratt Corner, DES Moines, Ia, 56217
+                                <br>1015, THADIUS, clements, 3900 S Main Street, murray, ut, 84048
+                                <br>
+                                <br>
+                                <b>Orders</b>
+                                <br>190001137, 2023-02-02, 2023, 2, 1011
+                                <br>190001138, 2023-02-02, 2023, 2, 1011
+                                <br>190001139, 2023-02-02, 2023, 2, 1012
+                                <br>190001140, 2023-02-03, 2023, 2, 1013
+                                <br>190001141, 2023-02-04, 2023, 2, 1013
+                                <br>190001142, 2023-02-04, 2023, 2, 1014
+                                <br>190001143, 2023-02-04, 2023, 2, 1015
+                                <br>
+                                <br>
+                                <b>Order_Items</b>
+                                <br>190001137, 1, Wet Suit (Mens), XXL Mens Wet Suit for Scuba Diving and Snorkeling, 68.99
+                                <br>190001137, 2, Swimming Goggles, Unisex Adjustable Eyewear for Water use, 12.99
+                                <br>190001137, 3, Beach Towel (2-Pack), Beach Towels with Tropical pattern. 100% Cotton, 21.29
+                                <br>190001137, 4, Sunscreen SPF 50, Light Duty Sunscreen for Outdoor Use, 11.49
+                                <br>190001138, 1, Ski Poles, Unisex Poles for Powder, 29.99
+                                <br>190001138, 2, Winter Coat (Womens), Heavy Duty Winter Coat for Women, 54.99
+                                <br>190001139, 1, USB-C Cable, USB-C Cable for Phones and Laptops, 3.29
+                                <br>190001140, 1, Lightning Cable, Apple iPhone Charger, 21.49
+                                <br>190001141, 1, Water Backpack, Outdoor Backpack with Water Pouch (up to 50 ML), 54.49
+                                <br>190001141, 2, Cooling Towel, Heavy Duty Cooling Towel for Outdoor Use, 31.99
+                                <br>190001141, 3, Wool Socks (Mens), Thick Wool Socks for Outdoor Use, 9.99
+                                <br>190001142, 1, Pillow Case, Cotton Pillow Case, 9.99
+                                <br>
+                            </ul>
+                            <li class="pt-4">Using the "Sales" Database, solve the following problems:</li>
+                            <ol type="a">
+                                <li class="pt-2"><b>Write a query that cleans all text columns in the "customers" table from leading and trailing spaces.
+                                    Return all customers with a customer_id greater than 1010.
+                                </b></li>
+                                <li class="pt-2"><b>Write an appropriate query to clean all the columns in the "customers" table in the
+                                    correct string format according to the column's previous string format. </b></li>
+                                <li class="pt-2"><b>Write a query that replaces all instances of "mens" or "womens" in the "item_name"
+                                    column of the "order_items" table with "Unisex".
+                                </b></li>
+                                <li class="pt-2"><b>Write a query that returns all customers with the substring "Sam" is in the first 3 letters of
+                                    their first name or that live in "UT" or "CO". Use the SUBSTRING Function.
+                                </b></li>
+                                <li class="pt-2"><b>Add a new column to the "customers" table titled "email" with a data type of VARCHAR(50). This
+                                    column will be populated as a single string with the first 4 letters of the customer's first name, the last
+                                    3 letters of the customer's last name, followed by "@gmail.com".
+                                </b></li>
+                            </ol>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="String-Functions-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <div class="col">
+                                <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                            </div>
+                        </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="Views.html">
+                            Previous Topic
+                        </a>
+                        <!-- <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="#">
+                            Next Topic
+                        </a>
+                    </div> -->
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

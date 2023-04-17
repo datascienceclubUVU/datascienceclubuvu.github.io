@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>SQL Tutorials: Subqueries | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                SQL TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            SQL Tutorials: Subqueries
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/subqueries.png"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                If you've ever worked with Excel, you may be familiar with nested functions. These allow you to set other functions
+                                as the arguments to a parent function. This is the basic premise behind subqueries. This is a common topic for technical
+                                interviews as it tests how you think about queries. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>Subqueries in the SELECT Clause</li>
+                                <li>Subqueries in the FROM Clause</li>
+                                <li>Subqueries in the WHERE Clause</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the SELECT Clause</h2>
+                        <p class="pt-3">Subqueries are traditionally used to create intermediate calculations between raw tables and
+                            output datasets. These calculations can be used as numerators/denominators, or references to make sure you
+                            output the correct answer. Watch the following video to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=Xz25sCRHxBg">Subqueries in the SELECT Clause</a>
+                        </ul>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">A <b><i>Subquery</i></b> is a query nested inside another query. When used in the SELECT Clause, the
+                                subquery MUST return exactly one row with exactly one column.
+                            </li>
+                            <li class="pt-4">This particular type of subquery is commonly used in conjunction with aggregate functions since they
+                                return only one value. To write a subquery in the SELECT Clause, use the following syntax:
+                                <br><code>SELECT [col1], [col2], (SELECT SUM([col3]) FROM [table_name2]) AS [alias]<br>
+                                    FROM [table_name1];</code>
+                            </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the FROM Clause</h2>
+                        <p class="pt-3">When comparing aggregates, you may need to find an aggregate of an aggregate. For example, you
+                            may need to find the highest average salary by department. However, you can't find the highest average salary
+                            without nesting an aggregate function inside another aggregate function. This can be done using a subquery in
+                            the FROM Clause. Watch the following video to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=SM6ZJCPJZLY">Subqueries in the FROM Clause</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">Subqueries in the FROM Clause are used to create a temporary table based on a query. This enables you
+                                to run aggregates on aggregated columns. To write a subquery in the FROM Clause, use the following syntax:
+                                <br><code>SELECT [col1], [col2], [col3]
+                                <br>FROM (SELECT * FROM [table_name] WHERE [list of conditions]);
+                                </code>
+                            </li>
+                            <li class="pt-4">As mentioned above, this type of subquery can be used to run aggregates on aggregated columns. To write
+                                this type of subquery, use the following syntax:
+                                <br><code>SELECT MAX([aggregated column])
+                                <br>FROM (SELECT [col1], SUM([col2]) FROM [table_name] GROUP BY [col1]);
+                                </code>
+                            </li>
+                            <li class="pt-4">These types of Subqueries are commonly referred to as <b><i>Derived Tables.</i></b></li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the WHERE Clause</h2>
+                        <p class="pt-3">This is the most common use case of Subqueries. When writing queries, you may need to create filters that include
+                            pre-filtered values. Watch the following video to get a better understanding of this concept:
+                        </p>
+                        <ul>
+                            <a href="https://www.youtube.com/watch?v=um3GXj_TB5U">Subqueries in the WHERE Clause</a>
+                        </ul>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">Subqueries used in the WHERE Clause allow you to filter the result set of the
+                                outer query by the values of the subquery. To write a subquery in the WHERE Clause, use the following syntax:
+                                <br><code>SELECT [col1], [col2]
+                                <br>FROM [table_name1]
+                                <br>WHERE [col1] IN(SELECT [col] FROM [table_name2]);
+                                </code>
+                            </li>
+                            <li class="pt-4">Although rarely used, you can write a subquery in the WHERE Clause where the condition outputs true
+                                for a single value. To write this type of subquery, use the following syntax: 
+                                <br><code>SELECT [col1], [col2]
+                                <br>FROM [table_name1]
+                                <br>WHERE [col1] = (SELECT SUM([col] FROM [table_name2]));
+                                </code>
+                            </li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the Subqueries Tutorial! To help test your knowledge, let's
+                            practice using them with some real-world applications. This exercise is based on the exercise of 
+                            the previous tutorial. <br>**<b><i>It's highly recommended that you
+                            complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </i></b>
+                        </p>
+                        <h4 class="pt-3">Instructions:</h4>
+                        <ol>
+                            <li class="pt-2">Open your RDBMS client.</li>
+                            <li class="pt-4">Using the "Sales" database, solve the following problems:</li>
+                            <ol type="a">
+                                <li class="pt-2"><b>Write a query that returns revenue by state. Use a subquery in the SELECT Clause.</b></li>
+                                <li class="pt-2"><b>Write a query that returns the highest purchase_price by order. Use a subquery in the FROM Clause.</b></li>
+                                <li class="pt-2"><b>Write a query that returns revenue by order_date. Filter to include the following states: "CA", "CO", "CT".
+                                    Use a subquery in the WHERE Clause. </b></li>
+                            </ol>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Subqueries-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <div class="col">
+                                <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                            </div>
+                        </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="./Group-By-Extensions.html">
+                            Previous Topic
+                        </a>
+                        <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="Common-Table-Expressions.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

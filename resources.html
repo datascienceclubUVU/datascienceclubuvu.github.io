@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script defer src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/website-base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Resources</title>
+    <style>
+      /* Add some style and color  */
+      body {
+        background-color: #ffffff
+      }
+      .section {
+        padding: 20px;
+        text-align: center;
+      }
+      .site {
+        display: inline-block;
+        margin: 20px;
+      }     
+      .site a {
+        display: block;
+        margin-top: 10px;
+      }
+      .logo {
+        height: 100px;
+      }
+    </style>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                RESOURCES
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="learning-paths.html">Learning Paths</a>
+                    </li>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="tutorials.html">Tutorials</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="workshops.html">Workshops</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="projects.html">Projects</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="section">
+      <h2>Coding Tutorials</h2>
+      <div class="row">
+        <p class="col">
+            <strong>The following sites have great tutorials for topic such as Python, SQL, Machine learning,
+                    and deep learning: </strong>
+        </p>
+    </div>
+
+      <div class="site">
+        <img class="logo" src="imgs/pluralsight-vector-logo-2022.png">
+        <a href="https://www.pluralsight.com/">PluralSight</a>
+      </div>
+
+      <div class="site">
+        <img class="logo" src="imgs/LinkedIn Learning Lynda logo spotlight square.png">
+        <a href="https://www.linkedin.com/learning/">LinkedIn Learning</a>
+      </div>
+
+      <div class="site">
+        <img class="logo" src="imgs/super data science.png">
+        <a href="https://www.superdatascience.com/">Super Data Science</a>
+      </div>
+
+      <div class="site">
+        <img class="logo" src="imgs/kaggle-logo-gray-300.png">
+        <a href="https://www.kaggle.com/">Kaggle</a>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Coding Challenges</h2>
+      <div class="row">
+        <p class="col">
+            <strong>The following sites have great challenges to test your knowledge on various Data Science topics: </strong>
+        </p>
+    </div>
+
+      <div class="site">
+        <img class="logo" src="imgs/datalemur.png">
+        <a href="https://datalemur.com">DataLemur</a>
+      </div>
+
+      <div class="site">
+        <img class="logo" src="imgs/LeetCode_Sharing.png">
+        <a href="https://leetcode.com">LeetCode</a>
+      </div>
+
+      <div class="site">
+        <img class="logo" src="imgs/800px-HackerRank_Icon-1000px.png" >
+        <a href="https://HackerRank.com">HackerRank</a>
+      </div>
+
+      <div class="site">
+			<img class="logo" src="imgs/codewars.png">
+			<a href="https://www.codewars.com/">CodeWars</a>
+		 </div>
+	</div>
+	
+	<div class="section">
+		<h2>Coding Competitions</h2>
+    <div class="row">
+      <p class="col">
+          <strong>The following sites host ongoing Data Science competitions: </strong>
+      </p>
+  </div>
+		<div class="site">
+			<img class = "logo" src = "imgs/kaggle-logo-gray-300.png">
+			<a href="https://www.kaggle.com/competitions">Kaggle</a>
+		</div>
+		
+		<div class="site">
+			<img class="logo" src="imgs/Crowd Ai.png">
+			<a href="https://www.aicrowd.com">AI Crowd</a>
+    </div>
+    <div class="site">
+        <img class="logo" src="imgs/DrivenDAta.png">
+        <a href="https://www.drivendata.org">Driven Data</a>
+    </div>    
+    		<div class="site">
+          <img class="logo" src="imgs/datacamp.png">
+          <a href="https://www.datacamp.com">DataCamp</a>   
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>

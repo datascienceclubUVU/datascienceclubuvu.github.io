@@ -55,21 +55,9 @@
                     <li class="nav-item mx-4">
                         <a class="nav-link active text-center" href="#">Home</a>
                     </li>
-                    <li class="nav-item dropdown mx-4">
-                        <a
-                            class="nav-link dropdown-toggle text-center" 
-                            href="#"
-                            id="navbarDropdownMenuLink"
-                            role="button"
-                            data-bs-toggle="dropdown">
-                            Resources
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark shadow border-white bg-secondary">
-                            <li><a class="dropdown-item" href="learning-paths.html">Learning Paths</a></li>
-                            <li><a class="dropdown-item" href="tutorials.html">Tutorials</a></li>
-                            <li><a class="dropdown-item" href="workshops.html">Workshops</a></li>
-                            <li><a class="dropdown-item" href="projects.html">Projects</a></li>
-                        </ul>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="resources.html">Resources</a>
+                    </li>
                     </li>
                     <li class="nav-item mx-4">
                         <a class="nav-link text-center" href="leadership.html">Leadership</a>
@@ -167,7 +155,16 @@
                                     px-lg-1 px-xl-2 px-xxl-3 border-0 carouselTab">
                             </button>
                         </div>
-                        <div class="col-1"></div> 
+                        <div class="col-1 d-flex justify-content-center align-items-center carouselTabContainer">
+                            <button
+                                type="button" 
+                                data-bs-target="#newsCarousel"
+                                data-bs-slide-to="3"
+                                class="mb-1 mb-sm-2 mb-md-3 mb-lg-2 mb-xl-3 mb-xxl-4
+                                    px-lg-1 px-xl-2 px-xxl-3 border-0 carouselTab">
+                            </button>
+                        </div>
+                        
                         <div class="col-1"></div> 
                         <div class="col-1"></div> 
                         <div class="col-1"></div> 
@@ -175,12 +172,23 @@
                     <!-- Carousel images. -->
                     <div class="carousel-inner">
                         <!-- First image. -->
+                        
                         <div class="carousel-item active">
                             <img src="/imgs/news-slide-secretary-ad.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
                             <a href="projects.html">
                                 <img src="/imgs/news-slide-club-project.jpg" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                        <div class="carousel-item ">
+                            <a href="leadership.html">
+                                <img src="/imgs/news-slide-vice-pres-ad.png" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="projects.html">
+                                <img src="imgs/news-slide-peer-mentor-positions.jpg" class="d-block w-100" alt="...">
                             </a>
                         </div>
                     </div>
@@ -243,4 +251,4 @@
         </div>
     </footer>
 </body>
-</html> 
+</html>

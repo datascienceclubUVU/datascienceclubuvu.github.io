@@ -6008,7 +6008,7 @@ textarea.form-control-lg {
   height: 3px;
   padding: 0;
   margin-right: 3px;
-  margin-left: 3px;
+/*   margin-left: 3px; commenting this out for now to see if this fixes the issue */
   text-indent: -999px;
   cursor: pointer;
   background-color: #fff;

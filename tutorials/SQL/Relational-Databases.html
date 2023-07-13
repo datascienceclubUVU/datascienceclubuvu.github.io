@@ -103,96 +103,52 @@
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Database Objects</h2>
-                        <p style="padding-top:1%">To keep things organized, Relational Database Management Systems (RDBMSs) create
-                            business logic in a hierarchy of objects. These include <b><i>Databases, Schemas, Tables, </i></b> and
-                            <b><i>Attributes</i></b>. Watch the following videos to get a better understanding of these concepts:
-                        </p>
-                        <ul>
-                            <a href="https://youtu.be/WXPZJF9c3wQ">What is a Relational Database?</a><br>
-                            <a href="https://youtube.com/clip/UgkxK8LptHMOzHwmt5-ll5P9TiwUAvRCyXth">Why Are Tables Used in Relational Databases?</a><br>
-                            <a href="https://youtu.be/3BZz8R7mqu0">What is a Database Schema?</a>
-                        </ul>
+                        <br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is a Relational Database? What are it's Primary Components?</h2>
+                        <br>
+                        <a href="https://www.youtube.com/watch?v=OqjJjpjDRLc&t=9s"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/OqjJjpjDRLc/maxresdefault.jpg"></a>
+                        <br>
+                        <br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1">A <b><i>Relational Database</i></b> is a system comprised of tables that represent real-world objects
                             and contain Attributes (Columns) and rows of data.</li>
-                            <li class="pt-2">A <b><i>Table</i></b> is a unit of data that contains Columns (Attributes) and Rows (Records) to
-                            describe the data.</li>
-                            <li class="pt-2">A <b><i>Schema</i></b> is a collection of tables that have a common structure and have limitations called 
-                            constraints to ensure data quality.</li>
+                            <li class="pt-2">A <b><i>Table</i></b> is a database object that represents an entity (such as products). Tables
+                            contain Columns (AKA Attributes) that describe each feature of the entity, Rows (or records) that represent a single
+                        data point, and an ID field to uniquely identify each record in the table.</li>
+                            <li class="pt-2"><b><i>Structured Query Language (SQL)</i></b> is the primary coding language used to query one or more tables in a relational database.
+                            </li>
+                            <li class="pt-2"><b><i>Relationships</i></b> are defined between the ID fields in various tables. The most common type
+                            of relationship is <b><i>one-to-many</i></b>. In this relationship, one record in Table A matches with multiple records in Table B.</li>
+                            <li class="pt-2">Another popular type of relationship is <b><i>one-to-one</i></b>. In this relationship, one record in Table A matches ONLY ONE record in Table B.</li>
+                            <li class="pt-2">Relationships are created using Primary Keys and Foreign Keys. A <b><i>Primary Key</i></b> is the field in the table that uniquely identifies each record, whereas a <b><i>Foreign Key</i></b> is the Primary Key in Table A being represented in Table B and is used to create an explicit relationship between the two tables.</li>
+                            <li class="pt-2">An <b><i>Index</i></b> is used on commonly used fields to help speed up queries. These take each unique value in the column and stores it in a cached "lookup" table for reference. <b><i>Don't worry, we'll go over indices in much greater detail in later tutorials.</i></b></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Primary Keys vs. Foreign Keys</h2>
-                        <p class="pt-3">The main reason data professionals prefer relational databases over spreadsheets is their <b><i>relational</i></b> 
-                            properties that come in the form of <b><i>primary keys</i></b> and <b><i>foreign keys.</i></b> Watch the following video
-                            to get a better understanding of this concept:</p>
-                            <ul>
-                                <a href="https://youtu.be/8wUUMOKAK-c">Primary Keys vs. Foreign Keys Tutorial</a></li>
-                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Are the Most Common Data Types Found in Relational Databases?</h2>
+                        <br>
+                        <a href="https://www.youtube.com/watch?v=4MoUJJNZqbM&t=68s"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/4MoUJJNZqbM/maxresdefault.jpg"></a>
+                        <br><br>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2"><b><i>Primary Keys</i></b> are the central component of relational databases and are used to 
-                            uniquely identify rows in a table.</li>
-                            <li class="pt-2"><b><i>Foreign Keys</i></b> are primary keys stored in another table to create a relationship between
-                            two tables.</li>
-                            <li class="pt-2"><b><i>Composite Keys</i></b> are primary keys composed of more than one column. These are used when more than  one column
-                            is required to uniquely identify each row in a table.</li>
-                            <li class="pt-2"><b><i>Candidate Keys</i></b> are columns that <i>can</i> be used to uniquely identify each row in a table, though haven't 
-                            been designated as primary keys yet.</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Data Types</h2>
-                        <p class="pt-3">Just like in any programming language, there is more than one type of data. This is because some data may be
-                            numeric in nature, whereas other data might be textual in nature. Watch the following video to get a better understanding of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=btjcNSOUTOg">Common SQL Data Types</a>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2"><b><i>VARCHAR/CHAR</i></b> data types represent textual data. These are short for <b>VAR</b>ying <b>CHAR</b>acter and <b>CHAR</b>acter, 
-                                respecitively. The primary difference between these two is that <b><i>CHAR</i></b> is a fixed limit on the number of characters
-                                allowed, whereas <b><i>VARCHAR</i></b> allows a string of characters up to a specified limit.</li>
-                            <li class="pt-2"><b><i>DECIMAL/NUMERIC/FLOAT</i></b> data types represent non-integer numerical data. These are used interchangeably and represent numbers
-                            with a fixed number of decimal points.</li>
-                            <li class="pt-2"><b><i>INT/INTEGER</i></b> data types represent numerical data without decimal places. These are are used to represent
-                                attributes with discrete values (numbers that can't be partial).</li>
-                            <li class="pt-2"><b><i>DATE/TIME/DATETIME</i></b> data types represent time-series data, or data that occurs along a timeline. 
+                            <li class="pt-2"><b><i>INT/INTEGER</i></b> data types represent numerical data without decimal places. This data type can traditionally hold values between -2,147,483,648 and 2,147,483,647. The <b><i>SMALLINT</i></b> variation is used when you want to save space on disk or limit the range of values.</li>
+                            <li class="pt-2"><b><i>DECIMAL/NUMERIC/FLOAT</i></b> data types represent numerical data with decimal points. These are used interchangeably. These data types accept optional parameters called Precision and Scale. <b><i>Precision</i></b> refers to how many numbers can be shown in total (between the numbers before and after the decimal point), whereas <b><i>Scale</i></b> is used to specify the count of numbers allowed AFTER the decimal point.</li>
+                            <li class="pt-2">The <b><i>CHAR</i></b> data type represents textual data. This is used when you want the text to be a fixed length (such as a phone number or state abbreviation).</li>
+                            <li class="pt-2">The <b><i>VARCHAR</i></b> data types also represents textual data. This is used when you want the text to fit a variable length with a spcified maximum (much like Tweets).</li>
+                            <li class="pt-2"><b><i>DATE/TIME/DATETIME/TIMESTAMP</i></b> data types represent time-series data, or data that occurs along a timeline. 
                             This may include both date and time data or simply just dates or times separately.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Types of Relationships</h2>
-                        <p class="pt-3">Before you get started with designing your first Relational Database, it's critical to understand the different types
-                            of relationships available. Watch the following video to get a better understanding of these concepts:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=4q-keGvUnag">Types of Table Relationships</a><br>
-                            <a href="https://www.youtube.com/watch?v=urTwxelK-Xc">How to Manage Many-to-Many Relationships</a>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2"><b><i>One-to-Many Relationships</i></b> are the most common type of relationship and are represented by a lookup
-                            table representing distinct items in the database and another table that references the items in that table multiple
-                            times via a foreign key.</li>
-                            <li class="pt-2"><b><i>Many-to-Many Relationships</i></b> should be avoided whenever possible. These are represented by
-                            two tables that have multiple entries in one table that match with multiple entries in the other table. These should be
-                            avoided because it makes understanding business logic much more difficult.</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Normalization</h2>
-                        <p class="pt-3">In designing relational databases, the concept of <b><i>referential integrity</i></b> is critical to ensuring you have the correct data 
-                           and that the attributes associated with that data are aligned only with a specified data point. Watch the following videos to
-                           get a better understanding of these concepts:
-                        </p>
-                        <ul>
-                            <a href="https://youtu.be/J-drts33N8g">First, Second, and Third Normal Forms</a><br>
-                            <a href="https://www.youtube.com/watch?v=siiYInWniFs">How to Normalize a Database Table</a>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How is Data in a Relational Database Kept Consistent?</h2>
+                        <br>
+                        <a href="https://www.youtube.com/watch?v=J-drts33N8g"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/J-drts33N8g/maxresdefault.jpg"></a>
+                        <br>
+                        <br>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
                             <li class="pt-2"><b><i>First Normal Form</i></b> states that all rows in a given table are unique and all cells
-                            (intersections between attributes and rows) must contain only one value (no lists, arrays, or dictionaries).</li>
+                            (intersections between columns and rows) must contain only one value (no lists, arrays, or dictionaries).</li>
                             <li class="pt-2"><b><i>Second Normal Form</i></b> states that once a database is in first normal form, all
                             attribute values should be dependent on the primary key (not another common attribute). Rather than having
-                            a composite key that describe two different entities, it's better to separate the entities into two different
-                            tables to create a relationship.</li>
+                            a composite key (two columns that are used together as a Primary Key) that describes two different entities, it's better to separate the entities into two different tables and create a relationship.</li>
                             <li class="pt-2"><b><i>Third Normal Form</i></b> states that once a database is in second normal form, all attributes
                             must be dependent only on the primary key, not on other keys.</li>
                         </ul>

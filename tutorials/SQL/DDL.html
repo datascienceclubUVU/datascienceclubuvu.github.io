@@ -88,8 +88,8 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
-                                   We recommend using either PostgreSQL, MS SQL Server, or MySQL.
+                                <b>DISCLAIMER: The Examples in this Tutorial use PostgreSQL. It's highly recommended that you download this application at the link below to follow along: <br><br>
+                                    <a href="https://www.postgresql.org/download/">Download PostgreSQL</a>
                                 </b><br><br>
                                 Now that you have a clear understanding of the core concepts behind Relational Databases, let's learn some basic
                                 SQL. <b><i>Data Definition Language (DDL)</i></b> is a form of SQL used
@@ -108,101 +108,81 @@
                     <!-- Content. -->
                     <div class="row">
                         <div class="col">
-                            <h2 class="mt-3 px-4 px-sm-3 border-start border-3 border-secondary">Creating Database Objects</h2>
-                            <p class="pt-3">As mentioned in the previous tutorial, Relational Databases are comprised of four primary
-                                objects: Databases, Schemas, Tables, and Attributes. Watch the following videos to get a better
-                                understanding of these concepts:
-                            </p>
-                            <ul>
-                                <a href="https://www.youtube.com/watch?v=PPFyoXA_FC0">How to Create A Database</a><br>
-                                <a href="https://www.youtube.com/watch?v=q3uBm7585ew">How to Create A Schema</a><br>
-                                <a href="https://www.youtube.com/watch?v=XfrgCK6BX5w">How to Create A Table</a>
-                            </ul>
+                            <h2 class="mt-3 px-4 px-sm-3 border-start border-3 border-secondary">How to Create a Database in PostgreSQL</h2>
+                            <br>
+                            <a href="https://www.youtube.com/watch?v=eM44kljTa-U"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/eM44kljTa-U/maxresdefault.jpg"></a>
+                            
                             <h4 class="pt-4">Summary:</h4>
                             <ul>
-                                <li class="pt-1">The <code>CREATE DATABASE</code> statement is used to create databases in an RDBMS. Once you have
-                                multiple databases created, it's helpful to use the optional <code>IF NOT EXISTS</code> keyword to check if the 
-                                name has already been used.</li>
-                                <li class="pt-2">The <code>CREATE SCHEMA</code> statement is used to create a schema within a database. These can 
-                                be used to differentiate different business units and provide security for sensitive data. It's recommended to use this
-                                statement in conjunction with the <code>USE DATABASE [db_name]</code> statement to ensure you create the schema
-                                in the correct database.</li>
-                                <li class="pt-2">The <code>CREATE TABLE</code> statement is used to define the name and structure of a table in a database.
-                                You must specify each column and its associated data type in the table. It's recommended to use this statement in conjunction
-                                with the <code>USE DATABASE [db_name]</code> statement to ensure you create the table in the correct database.</li>
-                            </ul>
-                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Altering Database Objects</h2>
-                            <p class="pt-3">When working with large amounts of data originating from various sources, you may need to make some changes
-                                to existing database objects. Watch the following videos to get a better understanding of these concepts:
-                            </p>
-                                <ul>
-                                    <a href="https://www.youtube.com/watch?v=vDr2DZeU5mY">How to Alter Database Tables</a><br>
-                                    <a href="https://youtube.com/clip/Ugkx-nTo9FPlmVdzR-SG4wkw3E_LmNwYGknh">How to Rename Databases</a>
+                                <li class="pt-1">There are two ways to create a database in PgAdmin: via GUI or SQL.</li>
+                                <li class="pt-2">To create a database using the GUI, right click on your server, choose the "Create" menu, and select "Database". Give the database a descriptive name and designate an owner (the "postgres" user is the master account).</li>
+                                <li class="pt-2">The <code>CREATE DATABASE</code> statement is used to define the name of the new database. This statement has the following syntax: <code>CREATE DATABASE [db_name];</code></li>
+                                <li class="pt-2"><b>NOTE:</b> A <b><i>Schema</i></b> is a collection of tables in a database. These are used for separating sensitive data from publicly accessible data.</li>
                                 </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Create Tables in a Relational Database</h2>
+                            <br>
+                            <a href="https://www.youtube.com/watch?v=UzoiAE-kfVs"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/UzoiAE-kfVs/maxresdefault.jpg"></a>
                             <h4 class="pt-3">Summary:</h4>
                             <ul>
-                                <li class="pt-2">To add a column/attribute to a table, use the following syntax: 
-                                    <br><code>ALTER TABLE [table_name] ADD [col_name] [data_type];</code></li>
-                                <li class="pt-2">To drop a column/attribute from a table, use the following syntax:
-                                    <br><code>ALTER TABLE [table_name] DROP [col_name];</code></li>
-                                <li class="pt-2">To change an attribute's data type, use the following syntax (differs between RDBMSs): 
-                                    <br><code>ALTER TABLE [table_name] MODIFY [col_name] [new_data_type] [constraint];</code></li>
-                                <li class="pt-2">To rename a database, use the following syntax (differs between RDBMSs):
-                                    <br><code>ALTER DATABASE [db_name] MODIFY name = [new_name];</code></li>
+                                <li class="pt-2">If you're using PgAdmin, you can create a table using either the GUI or SQL. 
+                                <li class="pt-2">To create a table using the PgAdmin GUI, open your database schema, right click on "Tables", click "Create".Give the table a descriptive name and specify the columns and data types in the "Columns" Tab.
+                                <li class="pt-2">The <code>CREATE TABLE</code> statement is used to create a table in a database using SQL. This statement has the following syntax:<br>
+                                <code>CREATE TABLE [table_name] ([column1] [data_type], [column2] [data type], etc.);</code></li>
+                                <li class="pt-2">If you want to have your column names to have specific capitalization, put them between double quotes. Just know that when you run queries against any table, the capitalization doesn't matter (as we'll see later on).</li>
+                                <li class="pt-2"><b>NOTE:</b> In most query editors, if you have multiple queries lined up, you can highlight a single query to execute, rather than executing them all.</li>
+                                <li class="pt-2"><b>NOTE:</b> If you are worried that you're going to create a duplicate table on accident, you can use the <code>IF NOT EXISTS</code> keyword. This has the following syntaxes:<br>
+                                <code>CREATE DATABASE IF NOT EXISTS [db_name];</code> <br>
+                                <code>CREATE TABLE IF NOT EXISTS [table_name] ([column1] [data_type]...);</code></li>
                             </ul>
-                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Dropping Database Objects</h2>
-                            <p class="pt-3">As mentioned above, when working with large amounts of data, you may need to drop, or delete, existing
-                                database objects to make room for new and improved data. Watch the following videos to get a better understanding
-                                of this concept:
-                            </p>
-                            <ul>
-                                <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Drop Table Columns</a><br>
-                                <a href="https://www.youtube.com/watch?v=5G4_SbkeRuU">How to Drop Database Tables</a><br>
-                                <a href="https://youtube.com/clip/UgkxQ5bjM54pAP1RMytJiEhAzGUFsAEl2I0F">How to Drop Database Schemas</a><br>
-                                <a href="https://youtube.com/clip/UgkxZbTa_mtmbTvHKuJUOKmPATC8t1lhIxDD">How to Drop A Database</a>
-                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Delete Tables in a Relational Database</h2>
+                            <br>
+                            <p><b>NOTE:</b> To avoid confusion, stop watching the video below at the <b><u>2:47</u></b> mark:</p>
+                            <a href="https://www.youtube.com/watch?v=xaKUVgyrEys"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/xaKUVgyrEys/maxresdefault.jpg"></a>
+                            <br>
+                            <br>
                             <h4 class="pt-3">Summary:</h4>
                             <ul>
-                                <li class="pt-2">To drop a column in a table, use the following syntax (differs between RDBMSs):
-                                    <br><code>ALTER TABLE [table_name] DROP COLUMN [col_name];</code></li>
-                                <li class="pt-2">To drop a table in a database, use the following syntax (differs between RDBMSs). This should be used in
-                                    conjunction with the <code>USE [db_name];</code> statement to ensure you drop the correct table.
-                                    <br><code>DROP TABLE [IF EXISTS] [table_name];</code></li>
-                                <li class="pt-2">To drop a database schema, use the following syntax (differs between RDBMSs):
-                                    <br><code>DROP SCHEMA [IF EXISTS] [schema_name];</code></li>
-                                <li class="pt-2">To drop a database, use the following syntax (differs between RDBMSs):
-                                    <br><code>DROP DATABASE [IF EXISTS] [db_name];</code></li>
+                                <li class="pt-2">Although you can drop a table using the PgAdmin GUI, we'll focus on using SQL. To drop a table using SQL, use the <code>DROP TABLE</code> statement. This statement has the following syntax:
+                                    <br><code>DROP TABLE [table_name];</code></li>
+                                <li class="pt-2">Just like with the <code>CREATE TABLE</code> statement, you can use the <code>IF NOT EXISTS</code> keyword to avoid any coding errors. However, when dropping tables it's likely you'll want to use the <code>IF EXISTS</code> keyword to make an actual change in your database.</li>
+                                <li class="pt-2">If you want to drop multiple tables at the same time, you simply just separate the table names with commas after the <code>DROP TABLE</code> statement:
+                                    <br><code>DROP TABLE [table_name1], [table_name2], [table_name3];</code></li>
                             </ul>
-                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Truncating Database Tables</h2>
-                            <p class="pt-3">When you <b><i>Truncate</i></b> a database object, you remove all the existing data and keep the structure. This is useful
-                            for when you are testing out a new RDBMS or a new schema design. Watch the following video to get a better understanding of this 
-                            concept:
-                            </p>
-                            <ul>
-                                <a href="https://www.youtube.com/watch?v=PbqU83LtDII">How to Truncate A Database Table</a><br>
-                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Add Columns to Tables in a Relational Database</h2>
+                            <br>
+                            <p><b>NOTE:</b> To avoid confusion, stop watching the video below at the <b><u>3:58</u></b> mark:</p>
+                            <a href="https://www.youtube.com/watch?v=XUq93XJ-Rfg"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/XUq93XJ-Rfg/maxresdefault.jpg"></a>
+                            <br>
+                            <br>
                             <h4 class="pt-3">Summary:</h4>
                             <ul>
-                                <li class="pt-2"><b><i>Truncating</i></b> involves removing all the data from a table to reconstruct the table's 
-                                schema or restructure a schema without altering the data.</li>
-                                <li class="pt-2">To truncate a table, use the following syntax (differs between RDBMSs):
-                                    <br><code>TRUNCATE TABLE [table_name];</code></li>
+                                <li class="pt-2">Although you can add a column to a table using the PgAdmin GUI, we'll focus on using SQL. To add a column to a table using SQL, use the <code>ALTER TABLE</code> statement. This statement has the following syntax:
+                                    <br><code>ALTER TABLE [table_name] ADD COLUMN [column_name] [data_type];</code></li>
+                                <li class="pt-2">If you want to add multiple columns to a table at the same time, you simply just separate the <code>ADD COLUMN</code> keyword with a comma: <br>
+                                    <code>ALTER TABLE ADD COLUMN [column_name1] [data_type], ADD COLUMN [column_name2] [data_type], etc.;</code></li>
                             </ul>
-                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Constraints</h2>
-                            <p class="pt-3">When dealing with large amounts of data, you'll want to place some limitations on the types of data or how the data
-                                is presented. These are known as <b><i>Constraints</i></b> and can be placed on the Schema, Table, or Column level.
-                                Watch the following video to get a better understanding of this concept:
-                            </p>
-                            <ul>
-                                <a href="https://www.youtube.com/watch?v=boj9b5XqliU">Creating Column-Level Constraints using the CREATE TABLE Statement</a><br>
-                                <a href="https://youtube.com/clip/UgkxFKeRNseYu2M9ckaydZT90AHWvmF2Sx-3">Types of Column-Level Constraints</a><br>
-                                <a href="https://www.youtube.com/watch?v=3CuijVrhWYc">Types of Table-Level Constraints</a>
-                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What are Common Constraints Applied to Columns?</h2>
+                            <br>
+                            <a href="https://www.youtube.com/watch?v=xEqvxU3LuS0"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/xEqvxU3LuS0/maxresdefault.jpg"></a> <br><br>
+                            <a href="https://www.youtube.com/watch?v=3CuijVrhWYc"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/3CuijVrhWYc/maxresdefault.jpg"></a>
+                            <br>
+                            <br>
                             <h4 class="pt-3">Summary:</h4>
                             <ul>
-                                <li class="pt-2">To create a column-level constraint using the CREATE TABLE statement, use the following syntax (differs between RDBMSs):
-                                    <br><code>CREATE TABLE [table_name]([col_name] [data_type] CONSTRAINT [constraint_name] [constraint_type], etc.)</code></li>
-                                <li class="pt-2">There are six primary column-level constraints: <b><i>Primary Key, Foreign Key, Unique, Not Null, Check, and Default.</i></b></li>
+                                <li class="pt-2">In SQL, <b><i>Constraints</i></b> are used to specify rules on data. These are used to enforce data quality rules and can be applied at either the table or column level.</li>
+                                <li class="pt-2">There are six primary constraints: <b><i>Not Null, Unique, Primary Key, Foreign Key, Check, and Default.</i></b></li>
+                                <li class="pt-2">The <b><i>Not Null</i></b> constraint forces each row to have a value. If a null is ingested, the transaction will be aborted. This constraint can be applied to a column when you first create it or are adding it later on.</li>
+                                <li class="pt-2">The <b><i>Unique</i></b> constraint forces each value in the column to be unique. This is very useful when working with large datasets that can have duplicate entries. Similar to the Not Null constraint, you can apply this constraint to a column when you first create it or are adding it later on.</li>
+                                <li class="pt-2">As you'd expect, the <b><i>Primary Key</i></b> constraint designates a column as the Primary Key for the table. This infers that all values in the column be unique AND none of the values are null. You can add this either when you first create the table or add the constraint later on.</li>
+                                <li class="pt-2">The <b><i>Foreign Key</i></b> constraint designates a column as the Foreign Key for the table. This infers that all values in the column match AT LEAST one record in the related table (e.g., if you have a column in the other table titled, "StudentID" and it ranges from 1-10 and your current table has a value of 11, the relationship would be invalid).</li>
+                                <li class="pt-2">To add a Foreign Key Constraint in the <code>CREATE TABLE</code> statement, use the following syntax: <br>
+                                    <code>CREATE TABLE [child_table_name] ([column_name] [data_type], [column_name] [data type], FOREIGN KEY ([column_name]) REFERENCES [parent_table_name]([primary_key]));</code></li>
+                                <li class="pt-2">The table containing the Primary Key is the <b><i>parent table</i></b>, whereas the table containing the foreign key is the <b><i>child table</i></b>.</li>
+                                <li class="pt-2">The <b><i>Check</i></b> constraint is used to limit the allowed values in a column. This is commonly used with catrgorical columns (e.g., Product Categories or Departments in an organization). When used in the <code>CREATE TABLE</code> statement, this has the following syntax: <br>
+                                    <code>CREATE TABLE [table_name] ([column_name] [data_type], [column_name] [data_type] CHECK([column_name] IN([value1], [value2], [value3])));</code></li>
+                                <li class="pt-2">The <b><i>Default</i></b> constraint is used to set a default value when no value is specified. This is useful for when there is a Not Null constraint applied. When used with the <code>CREATE TABLE</code> statement, this has the following syntax: <br>
+                                    <code>CREATE TABLE [table_name] ([column_name] [data_type], [column_name] [data_type] DEFAULT [default_value]);</code></li>
+                                <li class="pt-2"><b>NOTE:</b> When creating your tables, you must create the parent tables BEFORE the child tables (just like in the real-world).</li>
                             </ul>
                             <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Exercise</h2>
                             <p class="pt-3"><b>Congratulations!</b> You just completed the DDL Tutorial! We hope you learned a lot and feel more prepared to enter
@@ -210,40 +190,47 @@
                             </p>
                             <h4 class="pt-3">Instructions:</h4>
                             <ol>
-                                <li class="pt-2">Get access to an RDBMS system (e.g., PostgreSQL, MS Sql Server, MySQL)</li>
+                                <li class="pt-2">Open PgAdmin.</li>
                                 <li class="pt-2">Create a Database named "Sales".</li>
-                                <li class="pt-2">In the 'Sales" Database, create two schemas named "Orders" and "Employees".</li>
-                                <li class="pt-2">Using the "Orders" schema, create the following four tables:
-                                    <br><b>Customers</b>
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;customer_id (INT) [PRIMARY KEY]
+                                <li class="pt-2">In the "Sales" Database, create the following tables:</li>
+                                    <br><b>Employees</b>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;emp_id (INT) [PRIMARY KEY]
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;first_name (VARCHAR(100)) [NOT NULL]
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;last_name (VARCHAR(100)) [NOT NULL]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;street (VARCHAR(500))
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;hire_date (DATE)
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;wage (FLOAT) [NOT NULL]
+                                    <br>
+                                    <br><b>Inventory</b>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;item_id (INT) [PRIMARY KEY]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;name (VARCHAR(100)) [NOT NULL]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;description (VARCHAR(250)) [NOT NULL] 
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;price (FLOAT) [NOT NULL] 
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;name_brand (VARCHAR(5)) [NOT NULL]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;category_id (VARCHAR(25)) [FOREIGN KEY] REFERENCES categories(category_id)
+                                    <br>
+                                    <br><b>Customers</b>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;cust_id (INT) [PRIMARY KEY/FOREIGN KEY] 
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;first_name (INT) [NOT NULL]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;last_name (VARCHAR(250)) [NOT NULL]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;phone_num (CHAR(10)) [NOT NULL] [UNIQUE]
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;address (VARCHAR(250))
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;city (VARCHAR(100))
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;state (CHAR(2))
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;zip (CHAR(5))
                                     <br>
-                                    <br><b>Orders</b>
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;order_id (INT) [PRIMARY KEY]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;order_date (DATE)
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;customer_id (VARCHAR(100)) [FOREIGN KEY] 
-                                    <br>
-                                    <br><b>Order_Items</b>
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;order_id (INT) [PRIMARY KEY/FOREIGN KEY] 
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;item_num (INT) [PRIMARY KEY] 
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;item_name (VARCHAR(250)) [NOT NULL]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;item_description (VARCHAR(250))
-                                    <br>
+                                    <br><b>Categories</b>
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;category_id (INT) [PRIMARY KEY] 
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;name (VARCHAR(25)) [NOT NULL] CHECK(IN('sweets', 'beverages', 'ice cream'))
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;description (VARCHAR(100))
                                     <br><b>Colors</b>
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;color_id (INT) [PRIMARY KEY] 
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;name (VARCHAR(50)) [NOT NULL] 
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;description (VARCHAR(100))
                                 </li>
                                 <li class="pt-3">Drop the "Colors" table.</li>
-                                <li class="pt-2">Alter the "Order_Items" table by adding the following column: item_price (FLOAT).</li>
-                                <li class="pt-2">Alter the "Customers" table by changing the data type of the "state" column to VARCHAR(50).</li>
-                                <li class="pt-2">Drop the "Employees" schema.</li>
-                                <li class="pt-2">Design an ERD to visualize the "Orders" schema.</li>
+                                <li class="pt-2">Alter the "Customers" table by adding the following column: age (INT).</li>
+                                <li class="pt-2">Alter the "Inventory" table by adding a Check constraint to the "name_brand" column ensuring only the following values are entered: 'yes', 'no', 'unknown'.</li>
+                                <li class="pt-2">Design an ERD to visualize the relationships.</li>
                                 <div class="col">
                                     <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                                 </div>

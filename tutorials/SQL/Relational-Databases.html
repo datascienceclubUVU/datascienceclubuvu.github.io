@@ -152,20 +152,21 @@
                             <li class="pt-2"><b><i>Third Normal Form</i></b> states that once a database is in second normal form, all attributes
                             must be dependent only on the primary key, not on other keys.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Entity Relationship Diagrams (ERDs)</h2>
-                        <p>Now that you're familiar with how tables are related, the different types of relationships, and how to normalize a database
-                            schema, let's learn how to visualize these relationships:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=5nGC4fyFPes">Basic Concepts of Entity-Relationship Models</a>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How are Database Relations Visualized?</h2>
+                        <br>
+                        <a href="https://www.youtube.com/watch?v=5nGC4fyFPes&t=343s"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/5nGC4fyFPes/maxresdefault.jpg"></a>
+                        <br>
+                        <br>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">An <b><i>Entity</i></b> is a "thing" in the real world that is represented as a table in a relational database.</li>
-                            <li class="pt-2">An <b><i>Entity Relationship Diagram</i></b> is a chart that visualizes the relationship of entities stored in 
-                                a database schema. These are also used to help developers create databases based on a predefined schema.</li>
-                            <li class="pt-2"><b><i>Crows Foot Notation</i></b> is an ERD design practice that makes it easier to identify One-to-Many
-                                relationships between entities.</li>
+                            <li class="pt-2"><b>DISCLAIMER: Don't worry about the shapes mentioned in the video, they differ between databases and are rarely used when designing ERDs.</b></li>
+                            <li class="pt-2">An <b><i>Entity Relationship Diagram (ERD)</i></b> is a visualization that describes the relationships between tables in a database.</li> ERDs are built on three main components: Entities, Attributes, and Relationships.
+                            <li class="pt-2">An <b><i>Entity</i></b> is an object in an ERD that represents a table in the database. This table almost always represents real-world objects (such as students, courses, or products). A <b><i>Weak Entity</i></b> is what is created when splitting tables to fit your database to first or third normal forms. These are commonly known as <b><i>lookup tables</i></b>.</li>
+                            <li class="pt-2"><b><i>Attributes</i></b> are what describe the entity. For instance, a table titled "students" may have the following attributes: First Name, Last Name, Age, Gender.</li>
+                            <li class="pt-2"><b>NOTE:</b> When deploying ERDs in the real world, <b><i>Key Attributes</i></b>, or Primary/Foreign Keys, are designated with "PK" or "FK", respectively.</li>
+                            <li class="pt-2"><b>NOTE:</b> In the real world, <b><i>Composite Attributes</i></b> and <b><i>Multivalued Attributes</i></b> are rarely used as they do not conform to first normal form.</li>
+                            <li class="pt-2"><b>NOTE:</b> Although it's good to know about <b><i>Derived Attributes</i></b>, they are rarely pointed out in an ERD. They are typically shown as just another attribute.</li>
+                            <li class="pt-2"><b>NOTE:</b> In the real world, <b><i>one-to-many</i></b> and <b><i>many-to-many</i></b> relationships are most commonly visualized using Crow's Foot Notation. <b><i>Crow's Foot Notation</i></b> takes a single line from Table A and puts three "prongs" at the end (such as this: -------<-) where the "many" part of the relationship is shown. This allows the relationship to be shown intuitively.</li>
                         </ul>
                         <button class="btn btn-outline-primary py-2 w-25 text-center fs-5
                         border border-primary" style="margin-left:72%;"><a href="DDL.html" style="text-decoration:none;">Next Topic</a></button>

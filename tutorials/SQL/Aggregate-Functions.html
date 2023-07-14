@@ -88,8 +88,7 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
-                                   We recommend using either PostgreSQL, MS SQL Server, or MySQL.
+                                <b>DISCLAIMER: ANSI SQL (The SQL that's used universally) includes everything taught in this section. However, some of the syntax shown will vary between your Relational Database Management Service (RDBMS).
                                 </b><br><br>
                                 Isn't querying fun? Data Analysis is all about asking and answering questions using querying techniques such as
                                 SELECT statements. Let's expand our querying skills by learning how to work with numerical data. This lesson will
@@ -106,26 +105,22 @@
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Arithmetic Operators</h2>
-                        <p class="pt-3">When working with either numerical or categorical data (such as strings), you'll want to manipulate them to create
-                            new columns or find certain values. Watch the following video to get a better understanding of the arithmetic operators in SQL:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=ua7U2pmnbcE">Using SQL Arithmetic Operators</a>
-                        </ul>
+                        <a href="https://www.youtube.com/watch?v=hFEFEofFPDk"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/hFEFEofFPDk/maxresdefault.jpg"></a> <br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">To multiply a column by a certain value, use the <b>*</b> character with the following syntax:
-                                <br><code>SELECT [col_name] * [value]<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To either add a column by a certain value or concatenate/combine two or more columns, use the <b>+</b> character 
-                            with the following syntax (differs between RDBMSs):
-                                <br><code>SELECT [col_name] + [value]/[col_name2]<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To divide a column by a certain value, use the <b>/</b> character with the following syntax:
-                                <br><code>SELECT [col_name] / [value]<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the remainder as a result of dividing a column by a certain value, use the <b>%</b> character with the 
-                            following syntax:
-                                <br><code>SELECT [col_name] % [value]<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To subtract a column by a certain value, use the <b>-</b> character with the following syntax:
-                                <br><code>SELECT [col_name] - [value]<br> FROM [table_name];</code></li>
+                            <li class="pt-1">If you want to add two columns together, add a column by a certain value, or concatenate two or more columns, use the <b>+</b> symbol with the following syntax:
+                                <br><code>SELECT [column1] + [column2]<br> FROM [table_name];</code></li>
+                            <li class="pt-2">If you want to subtract one column from another or subtract the values in a column by a certain amount, use the <b>-</b> symbol with the following syntax:
+                                <br><code>SELECT [column1] - [column2]<br> FROM [table_name];</code></li>
+                            <li class="pt-2">If you want to multiply one column by another or multiply the values in a column by a certain amount, use the <b>*</b> symbol with the following syntax:
+                                <br><code>SELECT [column1] * [column2]<br> FROM [table_name];</code></li>
+                            <li class="pt-2">If you want to divide one column from another or divide the values in a column by a certain amount, use the <b>/</b> symbol with the following syntax:
+                                <br><code>SELECT [column1] / [column2]<br> FROM [table_name];</code></li>
+                            <li class="pt-2">If you are performing a division task and want to get the remainder, use the <b>%</b> symbol with the following syntax:
+                                <br><code>SELECT [column1] % [column2]<br> FROM [table_name];</code></li>
+                            <li class="pt-2"><b>NOTE:</b> Although SQL isn't a Programming Language by nature, you can still declare variables and perform arithmetic operations on them. We will discuss these in a leter tutorial.</li>
+                            <li class="pt-2"><b>NOTE:</b> When creating new columns from arithmetic operators, it's smart to give the new column an alias. This can be done using the <code>AS</code> keyword with the following syntax: <br>
+                                <code>SELECT [column1] + [column2] AS [new_column_name] <br> FROM [table_name];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">COUNT Function</h2>
                         <p class="pt-3">The COUNT Function can be used for both finding the number of items in a group or finding the total number of

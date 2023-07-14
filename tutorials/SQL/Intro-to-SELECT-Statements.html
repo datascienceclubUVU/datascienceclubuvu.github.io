@@ -88,11 +88,9 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
-                                   We recommend using either PostgreSQL, MS SQL Server, or MySQL.
+                                <b>DISCLAIMER: ANSI SQL (The SQL that's used universally) includes everything taught in this section. However, some of the syntax shown will vary between your Relational Database Management Service (RDBMS). <br><br>
+                                Also, this section is intended for individuals who have at least a basic knowledge of how relational databases work.
                                 </b><br><br>
-                                Hopefully the lessons in this learning series are giving you a good understanding of the underlying nature of
-                                relational databases because from here on out, we will be working almost exclusively with SELECT statements. 
                                 <b><i>SELECT statements</i></b> are the most common statements in SQL and are used to execute queries on 
                                 tables and views (we cover those in a later tutorial). To get started with SELECT statements, we'll cover the
                                 following learning objectives:
@@ -106,111 +104,31 @@
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SELECT Statement Syntax</h2>
-                        <p class="pt-3">As mentioned in the introduction, the SELECT statement is the most common statement in SQL,
-                            therefore it's critical to master the basic syntax. Watch the following video to get a better understanding of
-                            SELECT statement syntax:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=YufocuHbYZo">SELECT Statement Basics</a><br>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Are the Components of a SELECT Statement?</h2>
+                        <br>
+                        <p><b>Part I: SELECT, FROM, WHERE, ORDER BY, LIMIT Clauses</b></p>
+                        <a href="https://www.youtube.com/watch?v=YufocuHbYZo"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/YufocuHbYZo/maxresdefault.jpg"></a>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-2">The <b><i>Result Set</i></b> is the rows returned as a result of the query executed.</li>
-                            <li class="pt-1">To retrieve all rows in a specified table, use the following syntax:
-                                <br><code>SELECT * <br>FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the total number of rows in a specified table, use the following syntax (We will go over
-                                the COUNT function in the next tutorial):
+                            <li class="pt-2">If you want to get all the data from a table, use the following syntax: <br>
+                                <code>SELECT * <br>
+                                      FROM [table_name];</code></li>
+                            <li class="pt-1">If you want to see how many records are in a table, use the following syntax (we will go over more aggregate functions in a later tutorial):
                                 <br><code>SELECT COUNT(*) <br>FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve all the rows in a specified table but limit which columns are returned, use the following
-                                syntax:
+                            <li class="pt-2">If you only want to get data from specific columns in a table, use the following syntax:
                                 <br><code>SELECT [col1], [col2], [col3], [col4] <br>FROM [table_name];</code></li>
-                                <li class="pt-2">To filter the rows returned in the result set, use the <b>WHERE</b>
-                                clause with the following syntax:
+                                <li class="pt-2">If you want to filter the rows returned by your query, use the <code>WHERE</code> clause with the following syntax:
                                 <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)];</code></li>
-                                <li class="pt-2">To order the result set in either ascending or descending order, use the <b>ORDER BY</b> clause
-                                with the following syntax:
-                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC];</code></li>
-                                <li class="pt-2">When working with large result sets, it's a best practice to use the <b>LIMIT</b> Keyword
-                                to reduce the amount of memory your query uses:
-                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition(s)] <br>ORDER BY [col_name] [ASC/DESC] <br>LIMIT [integer];</code></li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">WHERE Clause</h2>
-                        <p class="pt-3">Filtering result sets may be the most important analytics activity, simply because it can prevent
-                            erroneous data and provide better insights. Watch the following video to get a better understanding of this
-                            concept:
-                        </p>
-                            <ul>
-                                <a href="https://www.youtube.com/watch?v=4Uv0o8IBqw0">How to Filter with the WHERE Clause in SQL</a><br>
-                            </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2">To filter the result set with a single condition, use the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name] <br>WHERE [col_name] = [value];</code></li>
-                            <li class="pt-2">To filter the result set by multiple conditions, use the <b>AND</b> and <b>OR</b> keywords with
-                                the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] = [value] [AND/OR] [col_name] = [value];</code></li>
-                            <li class="pt-2">To filter the result set by a text string fuzzy match, use the <b>LIKE</b> keyword and the <b>%</b> 
-                                wildcard operator with the following syntax: 
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] LIKE 'text_str%' OR [col_name] LIKE '%text_str' OR [col_name] LIKE '%text_str%';</code></li>
-                            <li class="pt-2">To filter the result set with a single negative condition, use the <b>NOT</b> keyword with the
-                                following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE NOT [col_name] LIKE 'text_str%';</code></li>
-                            <li class="pt-2">To filter the result set with a single condition within a range of numerical values, use the
-                                <b>BETWEEN</b> keyword in conjunction with the <b>AND</b> keyword with the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] BETWEEN [min_val] AND [max_val];</code>
-                            </li>
-                            <li class="pt-2">To filter a result set by a list of values, use the <b>IN</b> keyword with the following syntax:
-                            <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IN([val1], [val2], [val3]);</code></li>
-                            <li class="pt-2">To filter a result set by a null condition, use the <b>IS NULL</b> or the <b>IS NOT NULL</b> keywords
-                                with the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3]<br> FROM [table_name]<br> WHERE [col_name] IS [NOT] NULL;</code></li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">GROUP BY and HAVING Clauses</h2>
-                        <p class="pt-3">Filtering data is only part of the querying equation. As a Data Scientist/Analyst/Engineer, you'll
-                            eventually want to run some calculations on your data. This requires aggregating data into groups. Watch the
-                            following videos to get a better understanding of these clauses:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=nNrgRVIzeHg">How to Aggregate Data in SQL</a><br>
-                            <a href="https://www.youtube.com/watch?v=cAKTaHyDxWQ">Difference Between WHERE and HAVING Clauses</a>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2">The <b><i>GROUP BY</i></b> clause is used in conjunction with aggregate functions (e.g., COUNT(),
-                                    AVERAGE/AVG(), SUM()) to gather identical data into <i>groups.</i></li>
-                            <li class="pt-2">To group rows in a table based on one or more columns, use the following syntax:
-                                <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]
-                                    <br>GROUP BY [col1], [col2];</code></li>
-                            <li class="pt-2">The <b><i>HAVING</i></b> clause is used in conjunction with the <b><i>GROUP BY</i></b> clause
-                                    and is used to filter aggregated columns. This is used with the following syntax:
-                                <br><code>SELECT [col1], [col2], COUNT(*)<br> FROM [table_name]<br> GROUP BY [col1], [col2]<br> HAVING COUNT(*) >= 5;</code></li>
-                            <li class="pt-2">The difference between the <b><i>WHERE</i></b> clause and the <b><i>HAVING</i></b> clause is that the
-                                HAVING clause can only handle conditions based on aggregated columns, whereas the WHERE clause handles conditions based on
-                                non-aggregated columns.</li>
-                            <li class="pt-2"><b>QUICK TIP:</b> When dealing with a large number of columns, you can use column indexes when specifying columns in the GROUP BY clause rather than writing
-                            out the full column name. This is done with the following syntax:
-                                <br><code>SELECT [col1], [col2], [col3], COUNT(*)<br> FROM [table_name]<br> GROUP BY 1, 2, 3;</code></li>
-                            </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ORDER BY Clause</h2>
-                        <p class="pt-3">Once you've retrieved the correct columns, filtered the result set, and aggregated data, you'll want to
-                            organize it to make it more readable. Watch the following video to get a better understanding of the ORDER BY clause:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=wyWnJ7QYME4">How to Order Data in a Result Set</a><br>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2">To order a result set by a specific column in <b><i>Ascending order (A-Z, Lowest-Highest)</i></b>, use the following syntax:
-                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name];</code></li>
-                            <li class="pt-2">To order a result set by a specific column in <b><i>Descending order (Z-A, Highest-Lowest)</i></b>, use the following syntax:</b>
-                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] DESC;</code></li>
-                            <li class="pt-2">To order a result set by multiple columns in either ascending or descending order, use the following 
-                                syntax. This will sort the result set by the first specified column, THEN by the second column.
-                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] [DESC], [col_name] [DESC];</code></li>
-                            <li class="pt-2">To order a result set by specific column(s) and restrict the number of rows returned, use the following
-                                syntax:
-                                <br><code>SELECT *<br> FROM [table_name]<br> ORDER BY [col_name] [DESC], [col_name] [DESC]<br> LIMIT [integer];</code></li>
+                                <li class="pt-2">If you want to filter the rows returned by your query using multiple conditions, use the <code>AND</code> and/or <code>OR</code> keywords with the following syntax: 
+                                <br><code>SELECT * <br>FROM [table_name] <br>WHERE [condition1] [AND/OR] [condition2];</code></li>
+                                <li class="pt-2">If you want to sort the rows returned by your query in ASCENDING order, use the <code>ORDER BY</code> clause with the following syntax: <br>
+                                    <code>SELECT * <br>FROM [table_name] <br> ORDER BY [column1];</code></li>
+                                <li class="pt-2">If you want to sort the rows returned by your query in DESCENDING order, use the <code>ORDER BY</code> clause, in conjunction with the <code>DESC</code> keyword, with the following syntax: <br>
+                                    <code>SELECT * <br>FROM [table_name] <br> ORDER BY [column1] DESC;</code></li>
+                                <li class="pt-2">If you want to restrict the number of rows returned by your query, use the <code>LIMIT</code> keyword, followed by the number of rows to return, with the following syntax: <br>
+                                    <code>SELECT * <br>FROM [table_name] <br> ORDER BY [column1] <br> LIMIT [num_rows];</code></li>
+                                <li class="pt-2"><b>NOTE:</b> An <b><i>Alternative Key</i></b> is a column in the table that could also be used as the Prumary Key.</li>
+                                <li class="pt-2"><b>NOTE:</b> A <b><i>Result Set</i></b> is the temporary table returned by your query.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Intro to SQL Statements Tutorial! To help test your knowledge, let's use
@@ -221,16 +139,28 @@
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">Open your RDBMS Client.</li>
-                            <li class="pt-2">Using the "Sales" database, answer the following questions:</li>
+                            <li class="pt-2">Open your RDBMS Client (e.g., PostgreSQL, MySQL, MS SQL Server).</li>
+                            <li class="pt-2">Download the earthquake.csv File from Socratica's GitHub Repo.</li>
+                            <li class="pt-2">Import the CSV into a table called "earthquakes" (see links below for how to do this in your respective RDBMS Client):
+                                <ul><li class="pt-2">
+                                    <b>PostgreSQL:</b><a href="https://www.postgresqltutorial.com/postgresql-tutorial/import-csv-file-into-posgresql-table/"> Import CSV into New Table</a> 
+                                    </li>
+                                    <li class="pt-2">
+                                        <b>MySQL:</b><a href="https://www.mysqltutorial.org/import-csv-file-mysql-table/"> Import CSV into New Table</a>
+                                    </li>
+                                    <li class="pt-2">
+                                        <b>MS SQL Server:</b><a href="https://www.sqlshack.com/importing-and-working-with-csv-files-in-sql-server/"> Import CSV into New Table</a>
+                                    </li>
+                            </ul>
+                                
+                            </li>
+                            <li class="pt-2">Using the newly created "earthquake" table, answer the following questions:</li>
                             <ol type="a">
-                                <li class="pt-3"><b>How Many Rows are in the Orders Table?</b></li>
-                                <li class="pt-3"><b>How Many Orders Were Placed by the Customer with an ID of 1000?</b></li>
-                                <li class="pt-3"><b>When was the Latest Order Placed?</b></li>
-                                <li class="pt-3"><b>How Many Customers Live in California, Washington, or Utah?</b></li>
-                                <li class="pt-3"><b>How Many Items with the word "Camp" in the Name have been Ordered?</b></li>
-                                <li class="pt-3"><b>How Many Orders Contain MORE than 1 Item?</b></li>
-                                <li class="pt-3"><b>What are the Top 3 Largest Orders by Item Count? Limit The Result Set to 3 Rows.</b></li>
+                                <li class="pt-3"><b>How Many Rows are in the "earthquake" Table?</b></li>
+                                <li class="pt-3"><b>How Many Eathquakes occurred before 1/1/2010?</b></li>
+                                <li class="pt-3"><b>When was the First Earthquake Recorded?</b></li>
+                                <li class="pt-3"><b>Where did the Strongest Earthquake take place?</b></li>
+                                <li class="pt-3"><b>What are the Magnitudes for the 10 Weakest Earthquakes in the 1900s?</b></li>
                             </ol>
                             <li class="pt-2"><b>Exercise Completed! Click <a href="SELECT-Exercise-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">

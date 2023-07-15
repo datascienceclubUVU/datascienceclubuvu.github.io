@@ -104,7 +104,7 @@
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Arithmetic Operators</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Arithmetic Operators are Available in SQL?</h2> <br>
                         <a href="https://www.youtube.com/watch?v=hFEFEofFPDk"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/hFEFEofFPDk/maxresdefault.jpg"></a> <br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
@@ -118,89 +118,39 @@
                                 <br><code>SELECT [column1] / [column2]<br> FROM [table_name];</code></li>
                             <li class="pt-2">If you are performing a division task and want to get the remainder, use the <b>%</b> symbol with the following syntax:
                                 <br><code>SELECT [column1] % [column2]<br> FROM [table_name];</code></li>
-                            <li class="pt-2"><b>NOTE:</b> Although SQL isn't a Programming Language by nature, you can still declare variables and perform arithmetic operations on them. We will discuss these in a leter tutorial.</li>
+                            <li class="pt-2"><b>NOTE:</b> Although SQL isn't a programming language by nature, you can still declare variables and perform arithmetic operations on them. We will discuss these in a leter tutorial.</li>
                             <li class="pt-2"><b>NOTE:</b> When creating new columns from arithmetic operators, it's smart to give the new column an alias. This can be done using the <code>AS</code> keyword with the following syntax: <br>
                                 <code>SELECT [column1] + [column2] AS [new_column_name] <br> FROM [table_name];</code></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">COUNT Function</h2>
-                        <p class="pt-3">The COUNT Function can be used for both finding the number of items in a group or finding the total number of
-                            rows in a table, as seen in the previous tutorial. Watch the following video to get a better understanding of this 
-                            function:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=yY0Go4a4IZU">Intro to SQL Count Function</a><br>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Aggregate Functions are Available in SQL?</h2> <br>
+                        <a href="https://www.youtube.com/watch?v=jcoJuc5e3RE"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/jcoJuc5e3RE/maxresdefault.jpg"></a> <br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">To retrieve the total number of rows in a table, use the following syntax:
-                                <br><code>SELECT COUNT(*) <br>FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the total number of rows in a filtered result set, use the following syntax:
-                                <br><code>SELECT COUNT(*) <br>FROM [table_name] <br>WHERE [condition(s)];</code></li>
-                            <li class="pt-2">To retrieve the total number of <b>DISTINCT</b> items in a specified column, use the COUNT function
-                                with the <b><i>DISTINCT</i></b> keyword using the following syntax:
-                                <br><code>SELECT COUNT(DISTINCT [col_name]) <br>FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the total number of <b>NON-NULL</b> rows in a specific column, use the following syntax:
-                                <br><code>SELECT COUNT([col_name]) <br>FROM [table_name];</code></li>
+                            <li class="pt-1">The <b><i>COUNT()</i></b> function is used to count the number of values either in a specific column or an entire table. This function is used with the following syntax:
+                                <br><code>SELECT COUNT([column_name]) <br>FROM [table_name];</code></li>
+                            <li class="pt-2">The <b><i>SUM()</i></b> function is used to add together all values in the specified column to get a grand total. This is used with the following syntax:</li>
+                                <code>SELECT SUM([column_name]) <br>FROM [table_name];</code>
+                            <li class="pt-2">The <b><i>MIN()</i></b> function is used to retrieve the smallest value in the specified column. This function is used with the following syntax:
+                                <br><code>SELECT MIN([column_name]) <br>FROM [table_name];</code></li>
+                            <li class="pt-2">The <b><i>MAX()</i></b> function is used to retrieve the largest value in the specified column. This function is used with the following syntax:
+                                <br><code>SELECT MAX([column_name]) <br>FROM [table_name];</code></li>
+                            <li class="pt-2">If you want to view the range of values contained in a specific column, use the following syntax:
+                                <br><code>SELECT MIN([column_name]), MAX(column_name) <br>FROM [table_name];</code></li>
+                            <li class="pt-2">The <b><i>AVG()</i></b> function is used to get the average of all values in the specified column. This is used with the following syntax:
+                                <br><code>SELECT AVG([column_name]) <br>FROM [table_name];</code></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">SUM Function</h2>
-                        <p class="pt-3">Gathering totals is probably the most common type of analytics activity. In SQL, this is conducted using the SUM
-                            function. It should be noted that this function only works on <b><i>NUMERIC</i></b> columns. Watch the following video to get a better understanding of this function:
-                        </p>
-                            <ul>
-                                <a href="https://www.youtube.com/watch?v=pI_n_RPcsnM">Intro to SQL Sum Function</a><br>
-                            </ul>
-                        <h4 class="pt-3">Summary:</h4>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How do you include Non-Aggregate Fields with Aggregated SQL Queries?</h2> <br>
+                        <a href="https://www.youtube.com/watch?v=nNrgRVIzeHg"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/nNrgRVIzeHg/maxresdefault.jpg"></a> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To retrieve the total of all values in a specific column, use the following syntax::
-                                <br><code>SELECT SUM([col_name])<br> FROM [table_name]</code></li>
-                            <li class="pt-2">To retrieve the total of all values in a specific column based on a set of conditions, use
-                                the following syntax:
-                                <br><code>SELECT SUM([col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
-                            <li class="pt-2">When working with aggregated columns, it's best to rename the columns. This can be done with the
-                                following syntax:
-                                <br><code>SELECT SUM([col_name]) [new_name]<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To calculate the average of one or more columns, use the following syntax:
-                                <br><code>SELECT SUM([col_name]), COUNT([col_name]), SUM([col_name])/COUNT([col_name])<br> FROM [table_name];</code></li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">AVERAGE/AVG Function</h2>
-                        <p class="pt-3">If you've taken basic Algebra, you'll know that an average of a set of numbers is computed as the sum of that
-                            list divided by the count of the items in that list. However, SQL enables you to reduce this to one step using the
-                            <b><i>AVERAGE/AVG</i></b> function (the actual function name differs between RDBMSs). Watch the following video to get a
-                            better understanding of this function:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=9DLG0GBo0WE">Intro to SQL Average Function</a><br>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2">To retrieve the average value from a specific column, use the following syntax (differs between RDBMSs):
-                                <br><code>SELECT AVG([col_name])<br> FROM [table_name];</code>
+                            <li class="pt-1">The <b><i>GROUP BY</i></b> clause is used to group all non-aggregate fields in an aggregated SQL query. When used with the SUM() function, it is used with the following syntax:
+                                <br><code>SELECT [column_name1], [column_name2], SUM([column_name3]) <br>FROM [table_name] <br>GROUP BY [column_name1], [column_name2];</code></li>
+                            <li class="pt-2">The <b><i>HAVING</i></b> clause is used in conjunction with the GROUP BY clause. This is used to filter aggregated fields similar to the WHERE clause. This is used with the following syntax:</li>
+                                <code>SELECT [column_name1], [column_name2], SUM([column_name3]) <br>FROM [table_name] <br>GROUP BY [column1], [column2] <br> HAVING SUM(column_name3) > 1;</code>
+                            <li class="pt-2">The <b><i>WHERE</i></b> clause is used to filter all <u>non-aggregate</u> fields, whereas the <b><i>HAVING</i></b> clause is used to filter all <u>aggregate</u> fields being used in the query.</li>
+                            <li class="pt-2">If you want to save some time when writing your queries, you can write the column index number in the GROUP BY and/or ORDER BY clauses. In the example below, the "first_name" column would have an index of 1, whereas the "last_name" column would have an index of 2. Example:
+                                <br><code>SELECT first_name, last_name <br>FROM customers <br>ORDER BY 2, 1;</code>
                             </li>
-                            <li class="pt-2">To retrieve the average value from a specific column based on a set of conditions, use
-                                the following syntax (differs between RDBMSs):
-                                <br><code>SELECT AVG([col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
-                            <li class="pt-2"><b>QUICK NOTE:</b> Some RDBMSs may include NULL row values when calculating averages. In this scenario,
-                                use the following syntax to calculate the average:
-                                <br><code>SELECT SUM([col_name])/COUNT([col_name])<br> FROM [table_name];</code></li>
-                            </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">MIN/MAX Functions</h2>
-                        <p class="pt-3">When doing Data Analysis, it's good to know the range of values you're working with. This can be found using
-                            SQL's MIN and MAX Functions. Watch the following video to get a better understanding of these functions:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=VKJvhwrjU9U">Intro to SQL Min Function</a><br>
-                            <a href="https://www.youtube.com/watch?v=TC4h5XN20-o">Intro to SQL Max Function</a>
-                        </ul>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2">To retrieve the smallest number in a specific column, use the following syntax:
-                                <br><code>SELECT MIN([col_name])<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the smallest number in a specific column based on a set of conditions, use the following syntax:</b>
-                                <br><code>SELECT MIN([col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
-                            <li class="pt-2">To retrieve the largest number in a specific column, use the following syntax:
-                                <br><code>SELECT MAX([col_name])<br> FROM [table_name];</code></li>
-                            <li class="pt-2">To retrieve the largest number in a specific column based on a set of conditions, use the following syntax:
-                                <br><code>SELECT MAX(col_name])<br> FROM [table_name]<br> WHERE [col_name] = [value];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Aggregate Functions Tutorial! To help test your knowledge, let's use
@@ -211,18 +161,14 @@
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">Open your RDBMS Client.</li>
-                            <li class="pt-2">Using the "Sales" database, answer the following questions:</li>
+                            <li class="pt-2">Open your RDBMS Client (e.g., MySQL, PostgreSQL, Microsoft SQL Server).</li>
+                            <li class="pt-2">Using the "earthquake" table, answer the following questions:</li>
                             <ol type="a">
-                                <li class="pt-3"><b>How Many Items Cost More than $20?</b></li>
-                                <li class="pt-3"><b>How Many Customers Placed at least 2 Orders? Name the Aggregated Column "num_orders".</b></li>
-                                <li class="pt-3"><b>What is the Total Purchase Price for the Order Number 189230191? Name the Aggregated Column "total_purchase_price".</b></li>
-                                <li class="pt-3"><b>How Many Items Cost between $5 and $15?</b></li>
-                                <li class="pt-3"><b>What is the Price of the Least Expensive Item Purchased?</b></li>
-                                <li class="pt-3"><b>What is the Average Purchase Price for all Orders? Show the Order ID Column and Name the Aggregated Column "avg_purchase_price".
-                                    Order the Result Set by the Aggregated Column in Descending Order.</b></li>
-                                <li class="pt-3"><b>What are the Top 3 Most Expensive Orders by Total Purchase Price? Show the Order ID Column, Limit The Result Set to 3 Rows, 
-                                    Name the Aggregated Column "total_purchase_price", and Order the Result Set by the Aggregated Column in Descending Order.</b></li>
+                                <li class="pt-3"><b>What are the Top 5 Places with the Highest Average Magnitude of Earthquakes?</b></li>
+                                <li class="pt-3"><b>What was the Magnitude of the Largest Earthquake that took place in the 21st Century?</b></li>
+                                <li class="pt-3"><b>What are the Average Depths for each Cause?</b></li>
+                                <li class="pt-3"><b>What was the Total Depth for All Earthquakes Caused by a Nuclear Explosion?</b></li>
+                                <li class="pt-3"><b>Write a Query to Show How Many Earthquakes Occurred at each Place. Limit the Result Set to Include Only Places with at Least 3 Confirmed Earthquakes.</b></li>
                             </ol>
                             <li class="pt-2"><b>Exercise Completed! Click <a href="./Aggregate-Exercise-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">

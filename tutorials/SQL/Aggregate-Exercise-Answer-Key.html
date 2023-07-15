@@ -77,24 +77,16 @@
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
-                            <li class="pt-2">There are <b>3</b> items that cost more than $20. Query used:
-                                <br><code>SELECT COUNT(*)<br> FROM orders.order_items<br> WHERE item_price > 20;</code></li>
-                            <li class="pt-2">There are <b>2</b> customers who placed at least 2 orders. Query used:
-                                <br><code>SELECT customer_id, COUNT(*) num_orders<br> FROM orders.orders<br> GROUP BY customer_id HAVING COUNT(*) > 1</code></li>
-                            <li class="pt-2">The Total Purchase Price for Order #189230191 is <b>$97.47</b>. Query used:
-                                <br><code>SELECT order_id, SUM(item_price) total_purchase_price<br> FROM orders.order_items<br> 
-                                        WHERE order_id = 189230191<br> GROUP BY order_id;</code></li>
-                            <li class="pt-2">There are <b>5</b> Items that cost between $5 and $15. Query used:
-                                <br><code>SELECT COUNT(*)<br> FROM orders.order_items<br> WHERE item_price BETWEEN 5 AND 15;</code></li>
-                            <li class="pt-2">The Price of the Least Expensive Item Purchased is <b>$3.99</b>. Query used:
-                                <br><code>SELECT MIN(item_price)<br> FROM orders.order_items;</code></li>
+                            <li class="pt-2">The top 5 places with the highest average magnitude of earthquakes are: <b>(1) 101km SSW of Tres Picos, Mexico, (2) 76km W of Lata, Solomon Islands, (3) 19km SE of Little Sitkin Island, Alaska, (4) 54km E of Taron, Papua New Guinea, (5) 35km WNW of Panguna, Papua New Guinea</b>. Query used:
+                                <br><code>SELECT place, AVG(magnitude)<br> FROM earthquake<br> GROUP BY place <br>ORDER BY AVG(magnitude) DESC <br>LIMIT 5;</code></li>
+                            <li class="pt-2">The magnitude of the largest earthquake to take place in the 21st century was <b>9.1</b>. Query used:
+                                <br><code>SELECT MAX(magnitude)<br> FROM earthquake<br> WHERE occurred_on >= '1/1/2000' <br>ORDER BY MAX(magnitude) DESC;</code></li>
+                            <li class="pt-2">The average depths for each cause are: <b>explosion: 0.00 (decimal overflow error, explained later), nuclear explosion: 0.28, earthquake: 71.71</b>. Query used:
+                                <br><code>SELECT cause, AVG(depth)<br> FROM earthquake <br>GROUP BY 1;</code></li>
+                            <li class="pt-2">The total depth for all earthquakes caused by a nuclear explosion is <b>48.7 meters</b>. Query used:
+                                <br><code>SELECT SUM(depth)<br> FROM earthquake<br> WHERE cause = 'nuclear explosion';</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT order_id, AVG(item_price) avg_purchase_price<br> FROM orders.order_items<br> GROUP BY order_id<br> 
-                                    ORDER BY avg_purchase_price DESC;</code></li>
-                            <li class="pt-2">The Top 3 Most Expensive Orders by Total Purchase Price have IDs of <b>189230191, 189230193, and 189230192.</b> Query used:
-                                <br><code>SELECT order_id, SUM(item_price) total_purchase_price<br> FROM orders.order_items<br> GROUP BY order_id
-                                <br> ORDER BY total_purchase_price DESC
-                                <br> LIMIT 3;</code></li>
+                                <br><code>SELECT place, COUNT(*)<br> FROM earthquake <br>GROUP BY place <br>HAVING COUNT(*) >= 3;</code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

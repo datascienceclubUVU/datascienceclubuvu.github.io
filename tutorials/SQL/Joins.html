@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>SQL Tutorials: Joins | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                SQL TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            SQL Tutorials: Joins
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/joins.jfif"
+                                alt="%UPDATE% Picture of the word python written on a stick note."
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
+                                   We recommend using either PostgreSQL, MS SQL Server, or MySQL.
+                                </b><br><br>
+                                Congratulations! You have now progressed to the Intermediate-Level Tutorials! The topics covered in the Beginner-level
+                                laid the groundwork for this level. To start off the Intermediate level, we will transition from writing queries
+                                with one table to writing queries with multiple tables using <b><i>Joins</i></b>. In this tutorial, we will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>INNER Joins</li>
+                                <li>LEFT and RIGHT OUTER Joins</li>
+                                <li>FULL OUTER Joins</li>
+                                <li>CROSS Joins</li>
+                                <li>SELF Joins</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is an Inner Join?</h2> <br>
+                        <a href="https://www.youtube.com/watch?v=a-xlrdG-fpY"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/a-xlrdG-fpY/hqdefault.jpg"></a> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">In relational databases, A <b><i>Join</i></b> is how you query data from multiple tables.</li>
+                            <li class="pt-2">The <b><i>Inner Join</i></b> is the most common type of join and consists of gathering all the data from two tables based on matching Primary and Foreign Keys. To conduct an inner join, use the following syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code>
+                            </li>
+                            <li class="pt-2"><b>NOTE:</b> The "INNER" keyword is optional and is rarely used when writing queries in a business
+                                context.</li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What are Left and Right Joins?</h2> <br>
+                        <p><b>NOTE: To avoid confusion, please stop the video at the 6:16 mark.</b></p>
+                        <a href="https://www.youtube.com/watch?v=Ev2rH5qu_-8"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/Ev2rH5qu_-8/hqdefault.jpg"></a> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>LEFT JOIN</i></b> retrieves all rows in the left table and all rows that match the primary key
+                                in the right table. All other rows that don't match the primary key will be null. To create a left join, use the
+                                following syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> LEFT JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
+                            <li class="pt-2">The <b><i>RIGHT JOIN</i></b> retrieves all rows in the right table and all rows that match the primary key
+                                in the left table. All other rows that don't match the primary key will be null. To create a right join, use the 
+                                following syntax:
+                                <br><code>SELECT *<br>FROM [tableA]<br> RIGHT JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
+                            <li class="pt-2"><b>NOTE:</b> The "OUTER" keyword, as shown in the video, is optional. It's a best practice to leave that keyword out as it's implied.</li>    
+                            <li class="pt-2"><b>NOTE:</b> These types of joins can be used interchangeably by simply changing which table you
+                                specify in the "FROM" clause. However, it's a best practice to use LEFT JOIN as default to keep your queries consistent.</li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is a Full Join?</h2> <br>
+                        <a href="https://www.youtube.com/watch?v=Ev2rH5qu_-8&t=375s"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/Ev2rH5qu_-8/hqdefault.jpg"></a> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>FULL JOIN</i></b> is used to retrieve all rows from both
+                                tables contained in the join clause, whether or not they match the primary key. To create a full join, use the
+                                following syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> FULL JOIN [tableB] ON [tableA].[primaryKey] = [tableB].[foreignKey];</code></li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is a Cross Join?</h2><br>
+                        <a href="https://www.youtube.com/watch?v=MwpZhYaEOrk"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/MwpZhYaEOrk/hqdefault.jpg"></a> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>CROSS JOIN</i></b> creates a cartesian product. A <b><i>Cartesian Product</i></b> is when you
+                                create every possible combination of attributes. To create a cross join, use the following syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> CROSS JOIN [tableB];</code></li>
+                            <li class="pt-4"><b>NOTE:</b> These are easily the least used joins because they tend to provide little value. However, they are useful when you need to join a table to a temporary table created using a CTE (discussed later) that doesn't have any connection to the original table.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is a Self Join?</h2><br>
+                        <a href="https://www.youtube.com/watch?v=7T8b7g7aV1A"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/7T8b7g7aV1A/hqdefault.jpg"></a> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>SELF JOIN</i></b> is used to extract an underlying hierarchy within
+                                a single table. This is used the following
+                                syntax:
+                                <br><code>SELECT *<br> FROM [tableA]<br> JOIN [tableA] AS [alias] ON [tableA].[primaryKey] = [alias].[foreignKey];</code></li>
+                            <li class="pt-4"><b>NOTE:</b> Self Joins use the concept of recursion to create recursive queries. These are used when the foreign key in the table refers to the primary key of the same table. These are commonly used in hierarchical structures, such as organizational hierarchies or governmental hierarchies, where there are multiple levels.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the Joins and Unions Tutorial! To help test your knowledge, let's use
+                            the "NBA" database to run some queries using multiple tables.<br>**<b><i>It's highly recommended that you
+                            complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </i></b>
+                        </p>
+                        <h4 class="pt-3">Instructions:</h4> <br>
+                        <h4><b>DISCLAIMER: This Exercise requires some experience with DDL (creating database objects). If you're unfamiliar with this part of SQL, view the following tutorial: <a href="../SQL/DDL.html">DDL Tutorial</a></b></h3>
+
+                        <ol>
+                            <li class="pt-2">Open your RDBMS Client (e.g., MySQL, PostgreSQL, MS SQL Server).</b></li>
+                            <li class= "pt-2">Download the Exercise Files <a href="../SQL/IntermediateDB"><b>here</b>.</a></li>
+                            <li class="pt-2">Use the ERD Below to Create the Tables and Relevant Keys*:</li> <br>
+                            <img src="../SQL/IntermediateDB/downloads_schema.png">
+                            <p class="pt-2"><b>*It's recommend to create the tables in the following order: themes, part_categories, colors, parts, sets, inventories, inventory_sets, inventory_parts.</b></p>
+                            <p><b><i><u>The Database used in this exercise includes data on hundreds of Lego sets and their associated parts, colors, and themes.</u></i></b></p>
+                            <li class="pt-4">Using the "lego" database, Write the Following Queries:</li>
+                            <ol type="a">
+                                <li class="pt-3"><b>Write a query that counts the number of times any part with the substring "Base" occurs in the total inventory. <br><br>
+                                </b></li>
+                                <li class="pt-3"><b>Write a query that counts the number of sets in inventory that have a theme of "Fire".</b></li>
+                                <li class="pt-3"><b>Write a query that shows all parts that are out of stock (not in inventory).</b></li>
+                                <li class="pt-3"><b>Write a query that shows every possible combination of "Sets" and "Themes".</b></li>
+                                <li class="pt-3"><b>Write a query that shows every theme and it's parent. Only include the child's ID, child's name, child's parent's ID, and the parent's name.
+                                </b></li>
+                            </ol>
+                            <li class="pt-2"><b>Exercise Completed! Click <a href="./Joins-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <div class="col">
+                                <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                            </div>
+                        </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="Query-Formatting.html">
+                            Previous Topic
+                        </a>
+                        <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="Case-Statements.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

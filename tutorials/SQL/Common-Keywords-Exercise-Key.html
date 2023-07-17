@@ -77,19 +77,16 @@
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
-                            <li class="pt-2">There are <b>4</b> items that either cost less than $5 or cost more than $25. Query used:
-                                <br><code>SELECT COUNT(*)<br> FROM orders.order_items<br> WHERE item_price < 5 OR item_price > 20
-                                <br>ORDER BY item_price DESC;</code></li>
-                            <li class="pt-2">There are <b>6</b> distinct orders in the "Order_Items" table. Query used:
-                                <br><code>SELECT COUNT(DISTINCT order_id) AS num_orders<br> FROM orders.order_items;</code></li>
-                            <li class="pt-2">There are <b>5</b> items that either have the substring "Mel" or cost more than 15. Query used:
-                                <br><code>SELECT COUNT(*) AS num_items<br> FROM orders.order_items<br> 
-                                        WHERE item_name LIKE '%Mel%' OR item_price > 15;</code></li>
-                            <li class="pt-2">Query used:
-                                <br><code>SELECT *<br> FROM orders.customers<br> WHERE first_name LIKE 'S%' AND zip LIKE '%0';</code></li>
-                            <li class="pt-2">Query used:
-                                <br><code>SELECT *<br> FROM orders.orders<br> WHERE order_date BETWEEN '2020-08-01' AND '2021-09-01'
-                                <br>ORDER BY order_date ASC;</code></li>
+                            <li class="pt-2"><b>12</b> earthquakes occurred in Northern California with a magnitude between 6.0 and 7.0. Query used:
+                                <br><code>SELECT DISTINCT *<br> FROM earthquake<br> WHERE place LIKE '%Northern California%' AND magnitude BETWEEN 6.0 AND 7.0;</code></li>
+                            <li class="pt-2">The deepest earthquake that occurred in either Utah, Oregon, Wyoming, or Egypt was <b>21.5</b> meters deep. Query used:
+                                <br><code>SELECT MAX(depth) AS max_depth<br> FROM earthquake <br>WHERE place IN('Utah', 'Oregon', 'Wyoming', 'Egypt');</code></li>
+                            <li class="pt-2">There are <b>0</b> NULL values in the "place" column. Query used:
+                                <br><code>SELECT COUNT(*)<br> FROM earthquake<br> WHERE place IS NULL;</code></li>
+                            <li class="pt-2">There are <b>978</b> places that either start with an "A" or end with an "r". Query used:
+                                <br><code>SELECT DISTINCT COUNT(*)<br> FROM earthquake<br> WHERE place LIKE 'A%' OR place LIKE '%r';</code></li>
+                            <li class="pt-2">The average depth for all earthquakes that occurred between 1/1/1970 and 1/1/1990, had a magnitude of at least 6.0 and were caused by an earthquake is <b>69.83</b> meters. Query used:
+                                <br><code>SELECT AVG(depth) AS avg_depth<br> FROM earthquake<br> WHERE occurred_on BETWEEN '1/1/1970' AND '1/1/1990' AND magnitude >= 6.0 AND cause = 'earthquake';</code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

@@ -94,179 +94,91 @@
                                 use of a conditional column. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>Using the CASE Statement in SELECT Statements</li>
-                                <li>Using the CASE Statement in Aggregate Functions</li>
-                                <li>Using the CASE Statement in the GROUP BY Clause</li>
-                                <li>Using the CASE Statement in the ORDER BY Clause</li>
-                                <li>Using the CASE Statement with UPDATE Statements</li>
+                                <li>CASE Statement Syntax</li>
+                                <li>CASE Statement Use Cases</li>
+                                <li>CASE Statements with Aggregate Functions</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in SELECT Statements</h2>
-                        <p class="pt-3">When writing complex queries, it's useful to use conditional columns to better categorize data for grouping
-                            or sorting purposes. In SQL, this can be done using the CASE statement. Watch the following video to get a better 
-                            understanding of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=Twusw__OzA8">Case Statements in SQL SELECT Statements</a>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Create Conditional Column in SQL</h2> <br>
+                        <p><b>DISCLAIMER: To avoid confusion, please stop the video at the 4:00 mark.</b></p>
+                        <a href="https://www.youtube.com/watch?v=mf_IFI3I7to"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/mf_IFI3I7to/hqdefault.jpg"></a> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
                             <li class="pt-1">The <b><i>CASE</i></b> statement is used to create a column whose values are derived from the value of
                                 one or more other columns. To create a CASE statement, use the following syntax:
-                                        <br><code>SELECT [col1], [col2],
+                                        <br><code>SELECT [column_name], [column_name],
                                             <br>&ensp;&ensp;&ensp;CASE
                                         <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [value]
                                         <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [value]
                                         <br>&ensp;&ensp;&ensp;ELSE [value]
-                                        <br>&ensp;&ensp;&ensp;END AS [new_col_name]
+                                        <br>&ensp;&ensp;&ensp;END AS [new_column_name]
                                         <br>FROM [table_name];
                                 </code>
                             </li>
-                            <li class="pt-4">This technique can be used with any data type, though the resulting column must be the same data type
+                            <li class="pt-2">This technique can be used with any data type, though the resulting column must be the same data type
                                 across conditions.
                             </li>
-                            <li class="pt-4"><b>QUICK TIP:</b> This technique is very useful when categorizing data for grouping purposes.
+                            <li class="pt-2"><b>NOTE:</b> As mentioned in the video, CASE statements work in a top-down approach, meaning that once a condition is met, the lower conditions will be ignored.</li>
+                            <li class="pt-2"><b>NOTE:</b> The CASE statement can be used in other clauses, such as the WHERE, GROUP BY, and ORDER BY clauses. We will cover these in a later tutorial.
                             </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in Aggregate Functions</h2>
-                        <p class="pt-3">If you've ever used Excel or Google Sheets, you may be familiar with the SUMIF or COUNTIF functions. Simply
-                            put, these functions aggregate data that meet a specific condition. In SQL, this can be done by nesting a CASE statement
-                            in the aggregate function. Watch the following video to get a better understanding of this concept:
-                        </p>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use CASE Statements in Aggregate Functions</h2> <br>
+                        <p><b>DISCLAIMER: To avoid confusion, please stop the video at the 4:00 mark.</b></p>
+                        <a href="https://www.youtube.com/watch?v=ImiEKaEBvjE"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/ImiEKaEBvjE/hqdefault.jpg"></a> <br><br>
+                        <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=ImiEKaEBvjE">CASE WHEN with Aggregate Functions</a>
-                        </ul>
-                        <h4 class="pt-4">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">CASE statements can be used in conjunction with aggregate functions to aggregate data that meets a
-                                certain condition. To create a conditional aggregate function, use the following syntax:
-                                <br><code>SELECT [col1], [col2], COUNT(CASE WHEN [condition] THEN [col_to_aggregate] END) AS [alias]
+                            <li class="pt-1">When used in Aggregate Functions, the <b><i>CASE</i></b> statement is used to as both a filter and an IF/THEN clause. To create a CASE statement within the COUNT Function, use the following syntax:
+                                        <br><code>SELECT [column_name], [column_name],
+                                            <br>&ensp;&ensp;&ensp;COUNT(CASE
+                                        <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [integer]
+                                        <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [integer]
+                                        <br>&ensp;&ensp;&ensp;ELSE [integer] END) AS [new_column_name]
+                                        <br>FROM [table_name]
+                                        <br> GROUP BY [column_name], [column_name];
+                                </code>
+                            </li>
+                            <li class="pt-2">When including a CASE statement in the SUM or AVG Function, use the following syntax:
+                                <br><code>SELECT [column_name], [column_name],
+                                    <br>&ensp;&ensp;&ensp;SUM(CASE
+                                <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [column_name]
+                                <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [column_name]
+                                <br>&ensp;&ensp;&ensp;ELSE [integer] END) AS [new_column_name]
                                 <br>FROM [table_name]
-                                <br>GROUP BY [col1], [col2];
-                                </code>
+                                <br> GROUP BY [column_name], [column_name];
+                        </code>
                             </li>
-                            <li class="pt-4">As mentioned in the Aggregate Functions tutorial, the COUNT function can be used to aggregate both
-                                string and numeric columns, whereas the other aggregate functions can only be used with numeric columns.
-                            </li>
-                            <li class="pt-4">When working with any aggregate function other than COUNT, you can use multiple conditions to set
-                                a condition as a specific numerical value to change its weight. To implement this, use the following syntax:
-                                <br><code>SELECT [col1], [col2], 
-                                <br>&ensp;&ensp;&ensp;SUM(CASE WHEN [condition] THEN [integer]
-                            <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;WHEN [condition] THEN [integer]) AS [alias]
-                            <br>FROM [table_name]
-                            <br>GROUP BY [col1], [col2];</code>
-                            </li>
+                            <li class="pt-2"><b>NOTE:</b>As mentioned in the video, CASE statements work in a top-down approach, meaning that once a condition is met, the lower conditions will be ignored.</li>
                             </ul>
-                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the GROUP BY Clause</h2>
-                            <p class="pt-3">Once you've estalished the conditions by which you want to populate your new column, you'll likely want
-                                to group that data to get an idea of how many values you're working with. This can be done by using a CASE
-                                statement in the GROUP BY Clause in addition to using the same CASE statement in your SELECT statement. Watch the
-                                following video to get a better understanding of this concept:
-                            </p>
-                            <ul>
-                                <a href="https://youtube.com/clip/Ugkxr_qL6wqQ2v52C9hyMAlYCqtx9Njf3H0m">Group Data by Conditional Column SQL</a>
-                            </ul>
-                            <h4 class="pt-4">Summary:</h4>
-                            <ul>
-                                <li class="pt-1">When aggregating data based on a conditional column, you'll need to use the same CASE statement in
-                                    both the SELECT statement and the GROUP BY Clause. To implement this, use the following syntax:
-                                    <br><code>SELECT [col1], [col2],
-                                    <br>&ensp;&ensp;&ensp;CASE
-                                    <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [value]
-                                    <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [value]
-                                    <br>&ensp;&ensp;&ensp;ELSE [value]
-                                    <br>&ensp;&ensp;&ensp;END AS [new_col_name], COUNT(*) AS [alias]
-                                    <br>FROM [table_name]
-                                    <br> GROUP BY [col1], [col2],
-                                    <br>&ensp;&ensp;&ensp;CASE
-                                    <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [value]
-                                    <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [value]
-                                    <br>&ensp;&ensp;&ensp;ELSE [value]
-                                    <br>&ensp;&ensp;&ensp;END;
-                                    </code>
-                                </li>
-                                <li class="pt-4">As you may have noticed, this query becomes very long very quickly. To help simplify the logic
-                                    behind this query, it's a best practice to use a Common Table Expression (CTE). We will cover how to create
-                                    those in a future tutorial.
-                                </li>
-                            </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement in the ORDER BY Clause</h2>
-                        <p class="pt-3">When building reports, sorting data may be dependent on what the stakeholder is looking for. If you are
-                            working with categorical data and need to present it in a specific order, you can use a conditional statement in the
-                            ORDER BY Clause. Watch the following video to get a better idea of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://youtube.com/clip/Ugkxbc5j0by9AmGSkx1FUyZVrAEZf_EaNZBe">CASE Statement in ORDER BY Clause</a>
-                        </ul>
-                        <h4 class="pt-4">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">The ORDER BY Clause is limited to sorting values in either ascending or descending order. However,
-                                you can work around this by adding a CASE statement to the order by clause. To implement this, use the following
-                                syntax:
-                                <br><code>SELECT [col1], [col2], [col3]
-                                <br>FROM [table_name]
-                                <br>ORDER BY CASE [col_to_sort_by]
-                                <br>&ensp;&ensp;&ensp;WHEN [value] THEN 1
-                                <br>&ensp;&ensp;&ensp;WHEN [value] THEN 2
-                                <br>&ensp;&ensp;&ensp;WHEN [value] THEN 3
-                                <br>&ensp;&ensp;&ensp;ELSE 4
-                                <br>END;
-                                </code>
-                            </li>
-                            <li class="pt-4">Although rarely used, this technique is a good thing to know when working with picky stakeholders
-                                that want to preview data in a specific order.
-                            </li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Using the CASE Statement with UPDATE Statements</h2>
-                        <p class="pt-3">When applying updates to database objects, you may come across numerous categorical columns that may have an
-                            impact on another value in the table. In this scenario, it's recommended to use a CASE statement in the UPDATE statement
-                            to reduce the lines of code your update query uses. Read the following article to get a better understanding of this
-                            concept:
-                        </p>
-                        <ul>
-                            <a href="https://www.ibm.com/docs/en/informix-servers/12.10?topic=rows-case-expression-update-column">CASE Expression to Update a Column</a>
-                        </ul>
-                        <h4 class="pt-4">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">When applying an UPDATE statement with multiple conditions, it's a best practice to use a CASE statement. To implement
-                                this, use the following syntax:
-                                <br><code>UPDATE [table_name] SET [col_name] = CASE
-                                <br>&ensp;&ensp;&ensp;WHEN [condition1] THEN [new_value]
-                                <br>&ensp;&ensp;&ensp;WHEN [condition2] THEN [new_value]
-                                <br>&ensp;&ensp;&ensp;ELSE [other_value]
-                                <br>&ensp;&ensp;&ensp;END;
-                                </code>
-                            </li>
-                            <li class="pt-4">Although you may not be using this type of SQL query very often, it's good to know that it's possible to use the CASE
-                                statement in this scenario since it's a common interview question.
-                            </li>
-                        </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the CASE Statements Tutorial! To help test your knowledge, let's
-                            use the "Sales" database to run some queries with CASE statements. This exercise is based on the exercise of 
-                            the previous tutorial. <br>**<b><i>It's highly recommended that you
+                            use the "lego" database to run some queries with CASE statements. This exercise is based on the exercise of 
+                            the "Joins" tutorial. <br><br>**<b><i>It's highly recommended that you
                             complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
                             </i></b>
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">Open your RDBMS Client</li>
-                            <li class="pt-4">Using the "Sales" Database, solve the following problems:</li>
+                            <li class="pt-2">Open your RDBMS Client (e.g., MySQL, PostgreSQL, MS SQL Server).</b></li>
+                            <li class= "pt-2">If you haven't created the "lego" database yet, please view the instructions in the "Joins" tutorial.
+                            <li class="pt-2">"lego" database ERD:</li> <br>
+                            <img src="../SQL/IntermediateDB/downloads_schema.png">
+                            <p><b><i><u>The Database used in this exercise includes data on hundreds of Lego sets and their associated parts, colors, and themes.</u></i></b></p>
+                            <li class="pt-2">With the "lego" database, write the following queries:</li>
                             <ol type="a">
-                                <li class="pt-2"><b>Write a query that shows whether or not each customer placed an order 
-                                    between January 1, 2022 and February 1, 2023 sorted by order_date in descending order. Create a column called 
-                                    "placed_order" that indicates whehter or not the customer placed an order.
+                                <li class="pt-2"><b>Write a query that includes a conditional column that states whether or not a part is in inventory. if it's not in inventory, mark it with "Not Available". Only include the part_num, name fields (and the conditional column). Make sure to give the conditional column a descriptive name.
                                 </b></li>
-                                <li class="pt-2"><b>Write a query that shows each unique customer and the total amount of money they have spent.
-                                    Order the result set by state in the following order: 'WA', 'CA', 'AZ', 'UT', 'CO', 'IL', 'VA', 'CT'. Name
-                                    the aggregated column "total_amount_spent". 
+                                <li class="pt-2"><b>Write a query that includes a conditional column that states the category of theme of a given set in inventory. Only include the set_num and the set name (and the conditional column). Make sure to give your conditional column a descriptive name. The categories are listed below: </b><br>
+                                    <ul>
+                                        <li><b>Kids:</b> 4 Juniors, Animals, Cars, Dino, Dino 2010, Dino Attack</li>
+                                        <li><b>Young Teens:</b> Adventurers, Agents, Avengers, Ben 10, Coast Guard</li>
+                                        <li><b>Older Teens:</b> Harry Potter, Indiana Jones, Lamborghini</li>
+                                    </ul> 
+                                </li>
+                                <li class="pt-2"><b>Write a query that shows the popularity status of all sets in inventory. If the quantity is greater than 20, mark the set as 'Popular', if the quantity if between 10 and 20, then mark the set as 'Average', if the quantity is less than 10, mark the set as 'Not Popular'.
                                 </b></li>
-                                <li class="pt-2"><b>Write a query that updates all records in the "Customers" table with zip code of 91020 if
-                                    the customer lives in Los Angeles, 98122 if the customer lives in Seattle, and 02840 if they live in CT.
-                                    Otherwise keep the original value.
-                                </b></li>
+                                <li class="pt-2"><b>Write a query that recommends the number of each set in inventory for the Holiday Season with the following conditions: if the current quantity is greater than 20, the recommended quantity should be double the current quantity, if the current quantity is between 10 and 20, the recommended quantity should be 1.75 times the current quantity, else the quantity should be the same. Name the conditonal column 'Recommended Quantity'. Include the set's name and the current quantity.</b></li>
                             </ol>
                             <li class="pt-4"><b>Exercise Completed! Click <a href="Case-Statements-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">

@@ -78,30 +78,31 @@
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT DISTINCT c.*, CASE <br>&ensp;&ensp;&ensp;WHEN o.order_date IS NULL OR o.order_date NOT BETWEEN '2022-01-01' AND
-                                '2023-02-01' THEN 'No'<br> &ensp;&ensp;&ensp;ELSE 'Yes'
-                                <br>&ensp;&ensp;&ensp;END AS placed_order<br>FROM customers AS c<br> LEFT JOIN orders AS o ON c.customer_id = o.customer_id
-                                <br>ORDER BY o.order_date DESC;</code></li>
-                            <li class="pt-2">Query used [PostgreSQL Specific]:
-                                <br><code>SELECT c.*, SUM(item_price) AS total_amt_spent, CASE state<br> &ensp;&ensp;&ensp;WHEN 'WA' THEN 1
-                                <br>&ensp;&ensp;&ensp;WHEN 'CA' THEN 2 <br>&ensp;&ensp;&ensp;WHEN 'AZ' THEN 3 <br>&ensp;&ensp;&ensp;WHEN 'UT' THEN 4
-                                <br>&ensp;&ensp;&ensp;WHEN 'CO' THEN 5 <br>&ensp;&ensp;&ensp;WHEN 'IL' THEN 6 <br>&ensp;&ensp;&ensp;WHEN 'VA' THEN 7
-                                <br>&ensp;&ensp;&ensp;WHEN 'CT' THEN 8 <br>&ensp;&ensp;&ensp;END AS order_index
-                                <br> FROM orders.customers AS c<br> LEFT JOIN orders.orders AS o ON customers.customer_id = orders.customer_id
-                                <br> LEFT JOIN orders.order_items AS oi ON o.order_id = oi.order_id <br>GROUP BY c.customer_id, c.first_name, c.last_name,
-                                c.street, c.city, c.state, c.zip
-                                <br> ORDER BY CASE state<br> &ensp;&ensp;&ensp;WHEN 'WA' THEN 1
-                                <br>&ensp;&ensp;&ensp;WHEN 'CA' THEN 2 <br>&ensp;&ensp;&ensp;WHEN 'AZ' THEN 3 <br>&ensp;&ensp;&ensp;WHEN 'UT' THEN 4
-                                <br>&ensp;&ensp;&ensp;WHEN 'CO' THEN 5 <br>&ensp;&ensp;&ensp;WHEN 'IL' THEN 6 <br>&ensp;&ensp;&ensp;WHEN 'VA' THEN 7
-                                <br>&ensp;&ensp;&ensp;WHEN 'CT' THEN 8 <br>&ensp;&ensp;&ensp;END;</code></li>
+                                <br><code>SELECT parts.part_num, parts.name, CASE <br>&ensp;&ensp;&ensp;WHEN inventory_id IS NULL THEN 'Not Available'<br> &ensp;&ensp;&ensp;ELSE 'Available'
+                                <br>&ensp;&ensp;&ensp;END AS status<br>FROM parts<br> LEFT JOIN inventory_parts ON parts.part_num = inventory_parts.part_num;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>UPDATE orders.customers SET zip = CASE
-                                    <br>&ensp;&ensp;&ensp;WHEN city = 'Los Angeles' THEN '91020'
-                                    <br>&ensp;&ensp;&ensp;WHEN city = 'Seattle' THEN '98122'
-                                    <br>&ensp;&ensp;&ensp;WHEN state = 'CT' THEN '02840'
-                                    <br>&ensp;&ensp;&ensp;ELSE zip
-                                    <br>&ensp;&ensp;&ensp;END;
+                                <br><code>SELECT sets.set_num, sets.name, CASE<br> &ensp;&ensp;&ensp;WHEN themes.name IN('4 Juniors', 'Animals', 'Cars', 'Dino', 'Dino 2010', 'Dino Attack') THEN 'Kids'
+                                <br>&ensp;&ensp;&ensp;WHEN themes.name IN('Adventurers', 'Agents', 'Avengers', 'Ben 10', 'Coast Guard') THEN 'Young Teens' <br>&ensp;&ensp;&ensp;WHEN themes.name IN('Harry Potter', 'Indiana Jones', 'Lamborghini') THEN 'Older Teens'<br>&ensp;&ensp; END AS category
+                                <br> FROM sets <br> LEFT JOIN inventory_sets ON sets.set_num = inventory_sets.set_num
+                                <br> JOIN themes ON sets.theme_id = themes.id;</code></li>
+                            <li class="pt-2">Query used:
+                                <br><code>SELECT *, CASE
+                                    <br>&ensp;&ensp;&ensp;WHEN quantity > 20 THEN 'Popular'
+                                    <br>&ensp;&ensp;&ensp;WHEN quantity BETWEEN 10 AND 20 THEN 'Average'
+                                    <br>&ensp;&ensp;&ensp;WHEN quantity < 10 THEN 'Not Popular'
+                                    <br>&ensp;&ensp;&ensp;END AS popularity
+                                    <br>FROM inventory_sets
                                 </code></li>
+                            <li class="pt-2">Query used:
+                                <br><code>SELECT name, quantity, 
+                                    <br>&ensp;&ensp;&ensp;SUM(CASE WHEN quantity > 20 THEN quantity * 2
+                                    <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;WHEN quantity BETWEEN 10 AND 20 THEN quantity * 1.75
+                                    <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ELSE quantity END) AS recommended_quantity
+                                    <br>FROM inventory_sets
+                                    <br>JOIN sets ON inventory_sets.set_num = sets.set_num
+                                    <br>GROUP BY name, quantity;
+                                </code>
+                            </li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

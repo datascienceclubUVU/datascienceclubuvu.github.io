@@ -71,23 +71,22 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Joins Exercise Answer Key
+                            Unions Exercise Answer Key
                         </h2>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT COUNT(*) AS num_occurrences <br>FROM inventory_parts <br>JOIN parts ON inventory_parts.part_num = parts.part_num <br>WHERE parts.name LIKE '%Base%';</code></li>
+                                <br><code>SELECT part_num AS id, name <br>FROM parts <br>UNION <br>SELECT set_num AS id, name <br>FROM sets;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT COUNT(*)<br> FROM inventory_sets<br> JOIN sets ON inventory_sets.set_num = sets.set_num <br>JOIN themes ON sets.theme_id = themes.id <br>WHERE themes.name = 'Fire';</code></li>
+                                <br><code>SELECT part_num <br>FROM parts <br>INTERSECT <br>SELECT part_num <br>FROM inventory_parts;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT *<br> FROM inventory_parts<br> LEFT JOIN parts ON inventory_parts.part_num = parts.part_num WHERE parts.part_num IS NULL; <br><br></code>
-                                <b>There should be 182 rows.</b></li>
+                                <br><code>SELECT set_num<br> FROM sets<br> EXCEPT ALL <br>SELECT set_num <br>FROM inventory_sets;</code>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT *<br> FROM sets <br> CROSS JOIN themes;</code></li>
+                                <br><code>SELECT name<br> FROM themes <br> UNION ALL <br>SELECT name <br>FROM sets <br>UNION ALL <br>SELECT name <br>FROM parts <br>UNION ALL <br>SELECT name <br>FROM part_categories;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT child_theme.id, child_theme.name AS child_name, child_theme.parent_id, parent_theme.name AS parent_name<br> FROM themes AS child_theme<br> JOIN themes AS parent_theme ON child_theme.id = parent_theme.parent_id;</code></li>
+                                <br><code>SELECT set_num <br>FROM sets <br>JOIN themes ON sets.theme_id = themes.id <br>WHERE themes.name = 'Fire' <br>EXCEPT <br>SELECT set_num <br>FROM inventory_sets;</code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

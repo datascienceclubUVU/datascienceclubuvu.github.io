@@ -89,7 +89,10 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                As you can tell, aggregating data is a very popular task in data analytics. Because of this, SQL provides various
+                                <b>DISCLAIMER: Before starting this tutorial, it's highly recommended that you download an RDBMS to follow along.
+                                    We recommend using either PostgreSQL, MS SQL Server, or MySQL.
+                                 </b><br><br>
+                                Aggregating data is a very popular task in data analytics. Because of this, SQL provides various
                                 extensions to the GROUP BY Clause to give you more power with your aggregations. This tutorial will cover the
                                 following learning objectives:
                             </p>
@@ -101,61 +104,37 @@
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">ROLLUP Extension</h2>
-                        <p class="pt-3">The SUM function is limited in its analytical abilities. It can only aggregate columns based on row
-                            conditions. However, SQL provides a tool that enables you to gather subtotals by groups by speciying the groups
-                            in the GROUP BY clause. Watch the following video to get a better understanding of the concept:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=gTxwd6ga9Ss">Subtotals with SQL using ROLLUP</a><br>
-                            <a href="https://www.sqltutorial.org/sql-rollup/">ROLLUP in SQL</a>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Create Subtotals in SQL</h2> <br>
+                        <a href="https://www.youtube.com/watch?v=gTxwd6ga9Ss"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/gTxwd6ga9Ss/hqdefault.jpg"></a> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
                             <li class="pt-1">The <b><i>ROLLUP Clause</i></b> is a subclause of the GROUP BY Clause and assumes there is a hierarchy
                                 among columns. It's primary purpose is to generate subtotals for reporting. To implement this extension
                                 use the following syntax:
-                                        <br><code>SELECT [col1], SUM([col2]) AS [alias]<br> FROM [table_name]<br> GROUP BY ROLLUP ([col1]);</code>
+                                        <br><code>SELECT [column_name1], SUM([column_name2])<br> FROM [table_name]<br> GROUP BY ROLLUP ([column_name1]);</code>
                             </li>
-                            <li class="pt-4">If you only have a date column that represents a single day in time, you can use the MONTH() and YEAR()
-                                functions to change the granularity of the data and get more out of the ROLLUP extension. To implement this, use the
-                                following syntax:
-                                <br><code>SELECT [date_col], YEAR([date_col]) AS [alias1], MONTH([date_col]) AS [alias2], SUM([col2]) AS [alias3]
-                                <br> FROM [table_name] <br>GROUP BY ROLLUP ([alias1], [alias2], [date_col])</code>
-                            </li>
-                            <li class="pt-4">If you don't want to include a grand total in your result set, use the following syntax:
+                            <li class="pt-2">If you don't want to include a grand total in your result set, use the following syntax:
                                 <br><code>SELECT [col1], [col2], [col3], SUM([col4]) <br>FROM [table_name] <br>GROUP BY [col1],
                                 ROLLUP ([col2], [col3])</code>
                             </li>
+                            <li class="pt-2">In the outputted Result Set, you'll notice that the subgroups will have NULL values in the other dimensional columns. When this occurs, that means it's a subtotal row for that particular dimension. It's assumed that all dimensions don't have any NULLs.
+                            </li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">CUBE Extension</h2>
-                        <p class="pt-3">The ROLLUP extension is a great tool that can provide data professionals with clear and quick insights into
-                            various metrics on different granularities. But what if you wanted to see how different combinations of groups relate?
-                            That's where the CUBE extension comes in. Watch the following video to get a better understanding of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://youtube.com/clip/UgkxSC1PVi8og9c0MsadcgW7oJICA7xZKxkp">Working with Cubes in SQL</a><br>
-                            <a href="https://www.sqltutorial.org/sql-cube/">CUBE in SQL (Article)</a>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Create Multi-Dimensional Subtotals in SQL</h2> <br>
+                        <a href="https://www.youtube.com/watch?v=3bTirTxQbSk"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/3bTirTxQbSk/hqdefault.jpg"></a> <br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1">The <b><i>CUBE</i></b> operator allows you to find the sum of every combination of a list of attributes
                                 (or dimensions) to compare subtotals across groups. To implement this extension, use the following syntax:
-                                <br><code>SELECT [col1], [col2], SUM([col2])<br> FROM [table_name]<br> GROUP BY CUBE([col1], [col2]);</code>
+                                <br><code>SELECT [column_name1], [column_name2], SUM([column_name3]) AS [alias1]<br> FROM [table_name]<br> GROUP BY CUBE([column_name1], [column_name2]);</code>
                             </li>
                             <li class="pt-4">Although not used very often, the <b><i>CUBE</i></b> extension is a common SQL Interview question as
                                 it shows that you know the different grouping methods available in SQL.
                             </li>
+                            <li class="pt-2">Similar to the Rollup Extension, the Cub Clause will show the subtotals for each dimension as nullified rows for each level in the hierarchy.</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">GROUPING SETS Extension</h2>
-                        <p class="pt-3">Grouping data by similar categories enables analysts to compare metrics across geographic regions and
-                            product categories. The CUBE extension provides a great glance at how to compare different levels of detail, but what
-                            if you want to limit the levels of detail returned in the result set? That's where the GROUPING SETS extension comes in.
-                            Watch the following video to get a better understanding of this topic:</p>
-                        <ul>
-                            <a href="https://youtube.com/clip/Ugkx71GbE1NBqxSFeatJhjHBaWSmPlUR2_ay">Working with Grouping Sets in SQL</a><br>
-                            <a href="https://www.sqlservertutorial.net/sql-server-basics/sql-server-grouping-sets/">Grouping Sets in SQL (Article)</a>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Create Customized Grouped Dimenions in SQL</h2> <br>
+                        <a href="https://www.youtube.com/watch?v=8oUPGYq0Vvc&t=65s"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/3bTirTxQbSk/hqdefault.jpg"></a> <br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1">The <b><i>GROUPING SETS</i></b> extension is a more refined version of the CUBE extension in that
@@ -178,24 +157,16 @@
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">Open your RDBMS Client</li>
-                            <li class="pt-4">Alter the "Orders" table by adding two new columns: "order_year" and "order_month" with data type INT.</li>
-                            <li class="pt-4">Set the values in the two new columns to the year and month of the "order_date" column, respectively.
-                                If you're unfamiliar with extracting parts of dates in SQL, search for your RDBMS' documentation for
-                                more details.
-                            </li>
-                            <li class="pt-4">Using the "Sales" database, solve the following problems:</li>
+                            <li class="pt-2">Open your RDBMS Client (e.g., MySQL, PostgreSQL, MS SQL Server).</b></li>
+                            <li class= "pt-2">If you haven't created the "lego" database yet, please view the instructions in the "Joins" tutorial.
+                            <li class="pt-2">"lego" database ERD:</li> <br>
+                            <img src="../SQL/IntermediateDB/downloads_schema.png">
+                            <p><b><i><u>The Database used in this exercise includes data on hundreds of Lego sets and their associated parts, colors, and themes.</u></i></b></p>
+                            <li class="pt-4">Using the "lego" database, solve the following problems:</li>
                             <ol type="a">
-                                <li class="pt-2"><b>Write a query that generates subtotals across the order_year, order_month, and order_date attributes and 
-                                    the SUM of item_price. Give the aggregated column an appropriate alias. Order the result set first by order_year
-                                    then by order_month.
+                                <li class="pt-2"><b>Write a query that generates subtotals across the set name and theme name attributes (join required) for the total number of each set or theme in inventory. Order the result set by the total quantity in descending order. Give your aggregate column a descriptive name.
                                 </b></li>
-                                <li class="pt-4"><b>Write a query that creates a conditional column to categorize customer's addresses into the following regions:
-                                    If the state equals "WA", "CA", or "AZ", then region is "West". If the state equals "UT" or "CO", then the region
-                                    is "Mountain". If the state equals "IL" then the region is "Central". Otherwise, the region is "Northeast".
-                                    <br><br>Once you have the conditional column created, generate all possible combinations of comparison groups
-                                    between city, state, and region when comparing SUM of "item_price".
-                                </b></li>
+                                <li class="pt-4"><b>Write a query that generates subtotals across all dimensions across the part name and color name attributes (join required) for the total number of each part or color in inventory. Order the result set by the number of parts in descending order, the part name is ascending order, and the color name in ascending order. Give your aggregate column a descriptive name.</b></li>
                                 <li class="pt-4"><b>Write the same query as above, but include the GROUPING SETS operator. Play around and create
                                     custom grouping sets that make sense for analysis.
                                 </b></li>

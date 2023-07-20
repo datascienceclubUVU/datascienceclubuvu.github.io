@@ -134,18 +134,16 @@
                             <li class="pt-2">Similar to the Rollup Extension, the Cub Clause will show the subtotals for each dimension as nullified rows for each level in the hierarchy.</li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Create Customized Grouped Dimenions in SQL</h2> <br>
-                        <a href="https://www.youtube.com/watch?v=8oUPGYq0Vvc&t=65s"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/3bTirTxQbSk/hqdefault.jpg"></a> <br><br>
+                        <a href="https://www.youtube.com/watch?v=ZDutbxaiaWM"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/ZDutbxaiaWM/hqdefault.jpg"></a> <br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1">The <b><i>GROUPING SETS</i></b> extension is a more refined version of the CUBE extension in that
                                 rather than giving you every possible combination of groups, GROUPING SETS allows you to specify which combinations
                                 you want to compare. To implement this extension, use the following syntax:
-                                <br><code>SELECT [col1], [col2], SUM([col3]) AS [alias]<br> FROM [table_name]<br> GROUP BY GROUPING SETS 
-                                ([col1], [col2], ([col1], [col2]));</code>
+                                <br><code>SELECT [column_name1], [column_name2], SUM([column_name3]) AS [alias]<br> FROM [table_name]<br> GROUP BY GROUPING SETS 
+                                (([column_name1]), ([column_name2]), ([column_name1], [colUmn_name2]));</code>
                             </li>
-                            <li class="pt-4">This extension is very widely used when doing basic aggregations and table calculations within data
-                                visualizations. This tool is also widely used as a unit testing measure for data engineers to make sure values
-                                in numerical columns are correct.
+                            <li class="pt-4">If you've ever working with Pivot Tables in Excel or a similar tool, this may look familiar. GROUPING SETS allows you to customize how you drill down your dimensions and focus only on the categories you want rather than every possible combination of categories.
                             </li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>

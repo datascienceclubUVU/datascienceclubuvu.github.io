@@ -87,12 +87,9 @@
                                 <br>GROUP BY CUBE(colors.name, parts.name)
                                 <br>ORDER BY num_parts DESC, part, color;</code></li>
                             <li class="pt-2">Query used:
-                                <br><code>SELECT city, state, CASE<br> &ensp;&ensp;&ensp;WHEN state IN('WA', 'CA', 'AZ') THEN 'West'
-                                    <br>&ensp;&ensp;&ensp;WHEN state IN('UT', 'CO') THEN 'Mountain'<br> &ensp;&ensp;&ensp;WHEN state = 'IL' THEN 'Central'
-                                    <br>&ensp;&ensp;&ensp;ELSE 'Northeast'
-                                    <br>&ensp;&ensp;&ensp;END AS region, SUM(item_price) AS total_revenue <br>FROM orders.customers AS c
-                                    <br>JOIN orders.orders AS o ON c.customer_id = o.customer_id <br>JOIN orders.order_items AS oi ON o.order_id = oi.order_id
-                                    <br>GROUP BY GROUPING SETS((city, state), (region));</code>
+                                <br><code>SELECT parts.name AS part, colors.name AS color, SUM(quantity) AS num_parts <br>FROM inventory_parts
+                                    <br>JOIN parts ON inventory_parts.part_num = parts.part_num <br>JOIN inventory_parts ON inventory_parts.color_id = colors.id
+                                    <br>GROUP BY GROUPING SETS((part), (color), (part, color));</code>
                             </li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->

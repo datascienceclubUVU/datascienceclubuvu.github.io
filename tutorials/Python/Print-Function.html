@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>Python Tutorials: Print Function | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                PYTHON TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            Python Tutorials: Print Function
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/python-print.jpg"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                When building functions, debugging scripts, or writing code in general, you'll need to add come commentary to make sure evrything is working as it should. This is where the <b><i>print()</i></b> function comes in. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>Different Ways to Use the Print Function</li>
+                                <li>How and Why to Use F-Strings</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Different Ways to Use the Print Function</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/czG2YOtGOG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">If you want to pass a basic message to the Terminal (a.k.a Console), use the following syntax: <br>
+                                <code>print("[message]")</code></li>
+                            <li class="pt-2">If you want to pass a message with multiple value, use the following syntax: <br>
+                                <code>print([value1], [value2], [value3])</code></li>
+                            <li class="pt-2">The default ending for a printed message is a new line. If you want to override this, use the <b><i>end</i></b> argument with the following syntax: <br>
+                                <code>print([value1], end="")</code></li>
+                            <li class="pt-2"><b>NOTE:</b> If the Terminal in VS Code doesn't open by default, simply press "CTRL + `" (tick mark to the left of the number 1 on your keyboard) to open it. This would be "CMD + `" on Mac.</li>
+                            <li class="pt-2"><b>NOTE:</b>If you want to clear your VS Code Terminal, simply type "clear".</li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How and Why to Use F-Strings</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/c8nHlLEmtNg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>F-String</i></b> is used to easily combine raw strings with variables of different data types without needing to change data types. This is used with the following syntax: <br>
+                                <code>f'[string] {[variable_name]}'</code></li>
+                            <li class="pt-2">F-Strings are much easier to use than multi-string concatenation (as shown in the previous tutorial), as it allows you to combine multiple data types without type casting. Example: <br>
+                                <code>name = 'Melissa'</code> <br>
+                                <code>age = 35</code> <br>
+                                <code>experience = 2.5</code> <br>
+                                <code>f'Hello, my name is {name}! I am {age} years old and have {experience} years of coding experience.'</code> <br><br>
+                            <code><b>OUTPUT:</b> "Hello, my name is Melissa! I am 35 years old and have 2.5 years of coding experience."</code></li>
+                            <li class="pt-2">F-Strings are commonly used in conjunction with the print function to print out dynamic strings. Example: <br>
+                                <code>name = 'Ian'</code> <br>
+                                <code>print(f'{name} has arrived at the station.')</code>
+                            </li>
+                            </ul> <br>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                            <p><b>Congratulations!</b> You just completed the Print Function Tutorial! To help test your knowledge, let's
+                                practice outputting some messages to the Terminal.</i></b>
+                                </i></b>
+                                <br>**<b><i>It's highly recommended that you
+                                    complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </p>
+                            <h4 class="pt-3">Instructions:</h4>
+                            <ol>
+                                <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
+                                <li class= "pt-2">Create a New Python File. Name it "print-function.py"</li>
+                                <li class="pt-4">In the Newly Created Python File, complete the following tasks:</li>
+                                <ol type="a">
+                                    <li class="pt-2"><b>Declare a variable named "company" and give it a value of 'XYZ Corporation'.</b></li>
+                                    <li class="pt-2"><b>Declare a variabled named "stock_price" and give it a value of 14.50.</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "stock_exchange" and give it a value of 'NASDAQ'.</b></li>
+                                    <li class="pt-2"><b>Print out the following message: "The Stock Exchange has Opened!"</b></li>
+                                    <li class="pt-2"><b>Print out the following message: "The Buying and Selling Process will Begin NOW!"</b></li>
+                                    <li class="pt-2"><b>Print out the following message: "[company]'s Stock Price is opening at $[stock_price] on the [stock_exchange]."</b></li>
+                                </ol>
+                                <li class="pt-4"><b>Exercise Completed! Click <a href="./Print-Function-Answer-Key.html">here</a> to view the answers.</b></li>
+                                <div class="col">
+                                    <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                                </div>
+                            </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <div class="col-0 col-sm-8"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="#">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>Python Tutorials: Variables & Data Types | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                PYTHON TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            Python Tutorials: Variables & Data Types
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/python-dtypes.webp"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                At the core of any Object-Oriented Programming (OOP) language are variables and data types. These are the foundation that everything else is built upon. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>What Variables Represent and How They Work</li>
+                                <li>What Data Types are Available in Python</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Variables Represent and How They Work</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ghCbURMWBD8?end=49" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">A <b><i>variable</i></b> is a type of storage unit that has an assigned name and holds data that you can change or use later. The list below are all examples of variables: <br>
+                            <code>age = 21 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;# integer data type</code> <br>
+                            <code>name = "Joshua" &ensp;&ensp;&ensp;&ensp;&ensp; # string data type</code> <br>
+                            <code>percentage = 75.66 &ensp;&ensp;&ensp;# float data type</code></li>
+                            <li class="pt-2">In Python, data types are inferred, thus making it unnecessary to explicitly define a variable's data type when declaring it.</li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Data Types are Available in Python</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/KrToaEvDzdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>type()</i></b> function is used to output the data type of a specific variable. This function has the following syntax: <br>
+                                <code>type([variable])</code> <br>
+                                <b>OR</b> <br>
+                                <code>type([value])</code></li>
+                            <li class="pt-2">An <b><i>Integer</i></b> is a positive or negative whole number; without a decimal point. The variables below all hold integers: <br>
+                                <code>age = 21</code> <br>
+                                <code>quantity = 10</code> <br>
+                                <code>attendance_count = 500</code>
+                            </li>
+                            <li class="pt-2">The <b><i>int()</i></b> function is used to convert a float into an integer. It does this by truncating all decimal places and keeps only the whole number on the left side of the decimal. If the number is less than 0, the new value will be 0. This function has the following syntax: <br>
+                                <code>int([variable])</code> <br>
+                                <b>OR</b> <br>
+                                <code>int([value])</code></li>
+                            <li class="pt-2">A <b><i>Floating Point Number (float)</i></b> is a real number; a number with finite number of decimal points. The variables below all hold floats: <br>
+                                <code>percentage = 98.07</code> <br>
+                                <code>final_grade = 97.77786</code> <br>
+                                <code>accidents_per_million = 107.1213</code></li>
+                            <li class="pt-2">The <b><i>float()</i></b> function is used to convert an integer into a float. This function has the following syntax: <br>
+                                <code>float([variable])</code> <br>
+                                <b>OR</b> <br>
+                                <code>float([value])</code></li>
+                            <li class="pt-2">A <b><i>Boolean</i></b> value is used to represent a binary condition (e.g., True/False, Yes/No, Correct/Incorrect). The variables below all hold Boolean values: <br>
+                                <code>has_cancer = False</code> <br>
+                                <code>is_awesome = True</code></li>
+                            <li class="pt-2">When assigning a variable a Boolean value, you MUST keep the Boolean in sentence case (capitalize the first letter). If you don't, a NameError will be returned.</li>
+                            <li class="pt-2">A <b><i>String</i></b> is a text value compsoed of a sequence of characters. The variables below all hold strings: <br>
+                                <code>name = "Thomas"</code> <br>
+                                <code>major = 'Computer Science'</code> <br>
+                                <code>description = 'I am awesome, good looking, and tall'</code></li>
+                            <li class="pt-2">The <b><i>str()</i></b> function is used to convert any type of variable or raw value into a string. This function has the following syntax: <br>
+                                <code>str([variable])</code> <br>
+                                <b>OR</b> <br>
+                                <code>str([value])</code></li>
+                            <li class="pt-2">The <b><i>print()</i></b> function, as shown in the video, is used to output a message to the console. This can be either a variable, a raw value, or a combination of both. When combining non-string variables with strings, you'll need to convert the variable to the string data type using the <b>str()</b> function. Example: <br>
+                                <code>print(str(age) + "years old")</code></li>
+                            <li class="pt-2"><b>NOTE:</b> When defining a variable with an apostrophe or a single quote, you'll need to either place the string between double quotes OR escape the character in question. Example: <br>
+                                <code>sentence = "I'm writing Python code."</code> <br>
+                                <b>OR</b> <br>
+                                <code>sentence = 'I\'m writing Python code.'</code></li>
+                            </ul> <br>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <div class="col-0 col-sm-8"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="#">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

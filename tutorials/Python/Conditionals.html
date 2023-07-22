@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>Python Tutorials: Conditionals | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                PYTHON TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            Python Tutorials: Conditionals
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/python-operators.jpg"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                When writing scripts or defining functions, you'll likely come across the need for tasks to be accomplished based on a variable's value or a similar condition. <b><i>Conditional Statements</i></b> provide a solution to this problem. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>How and When to Use If-Else Statements</li>
+                                <li>How and When to Use If-Elif-Else Statements</li>
+                                <li>How and When to Use Logical Operators</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How and When to Use If-Else Statements</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/wKQRmXR3jhc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">If you want to perform an action based on a single condition, use an <b><i>If-Else Statement</i></b>. This is used with the following syntax: <br>
+                                <code>if [variable/value] [Relational Operator] [variable/value]:</code> <br>
+                                <code>&ensp;&ensp;&ensp;[task to perform]</code> <br>
+                                <code>else:</code> <br>
+                                <code>&ensp;&ensp;&ensp;[task to perform]</code></li>
+                            <li class="pt-2">If you have a variable with a Boolean data type to be used as a condition, use the following syntax: <br>
+                                <code>if [variable]:</code> <br>
+                                <code>&ensp;&ensp;&ensp;[task to perform]</code><br>
+                                <code>else:</code> <br>
+                                <code>&ensp;&ensp;&ensp;[task to perform]</code></li>
+                            <li class="pt-2"><b>NOTE:</b> Notice that the line of code after the initial "if" statement is indented. This is Python's way of knowing when code is grouped together into a <b><i>block of code</i></b>.</li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How and When to Use If-Elif-Else Statements</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/42MBMSOZgD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">If you want to perform an action based on more than one condition, use an <b><i>If-Elif-Else Statement</i></b>. This is used with the following syntax: <br>
+                                <code>if [variable/value] [Relational Operator] [variable/value]:</code> <br>
+                                <code>&ensp;&ensp;&ensp;[task to perform]</code> <br>
+                                <code>elif [variable/value] [Relational Operator] [variable/value]:</code> <br>
+                                <code>&ensp;&ensp;&ensp;[task to perform]</code> <br>
+                                <code>else:</code> <br>
+                                <code>&ensp;&ensp;&ensp;[task to perform]</code></li>
+                            <li class="pt-2"><b>NOTE:</b> In conditonal statements, the first condition that gets tested as "True" will be executed and all other conditions will be ignored. Thus, it's important to orde your conditions carefully.</li>
+                            </ul> 
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How and When to Use Logical Operators</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/W7luvtXeQTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">In Python, <b><i>Logical Operators</i></b> are used in conditional statements to create multiple conditions within a single block of code (a single level of an if-elif-else statement).</li>
+                            <li class="pt-2">The <b><i>and</i></b> operator is used to check if two or more conditions are true. Example: <br>
+                                <code>if age >= 18 and gender == 'Male':</code> <br>
+                                <code>&ensp;&ensp;&ensp;print('Adult Male')</code> <br>
+                                <code>else:</code> <br>
+                                <code>&ensp;&ensp;&ensp;print('Not an Adult Male')</code></li>
+                            <li class="pt-2">The <b><i>or</i></b> operator is used to check if at least one condition in a list of conditions is true. Example: <br>
+                                <code>if price < 100 or color = 'brown':</code> <br>
+                                <code>&ensp;&ensp;&ensp;print('Item matches search parameters')</code> <br>
+                                <code>else:</code> <br>
+                                <code>&ensp;&ensp;&ensp;print('Item does not match search parameters')</code></li>
+                            <li class="pt-2">The <b><i>not</i></b> operator is used to switch the value of a Boolean variable. Example: <br>
+                                <code>if not discounted:</code> <br>
+                                <code>&ensp;&ensp;&ensp;print('item is not discounted')</code> <br>
+                                <code>else:</code> <br>
+                                <code>&ensp;&ensp;&ensp;print('Item is discounted.')</code></li>
+                            </ul><br>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                            <p><b>Congratulations!</b> You just completed the Conditionals Tutorial! To help test your knowledge, let's
+                                practice creating some If-Else Statements combined with logical operators.</i></b>
+                                </i></b>
+                                <br>**<b><i>It's highly recommended that you
+                                    complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </p>
+                            <h4 class="pt-3">Instructions:</h4>
+                            <ol>
+                                <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
+                                <li class= "pt-2">Create a New Python File. Name it "conditionals.py"</li>
+                                <li class="pt-4">In the Newly Created Python File, complete the following tasks:</li>
+                                <ol type="a">
+                                    <li class="pt-2"><b>Declare a variable named "calories" and give it a value of 500.</b></li>
+                                    <li class="pt-2"><b>Declare a variabled named "protein_amt" and give it a value of 12.</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "sugar_amt" and give it a value of 33.</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "organic" and give it a value of True.</b></li>
+                                    <li class="pt-2"><b>Create a Conditonal Statement that outputs "This food is healthy" if "calories" is less than or equal to 500 and "protein_amt" is greater than 5. Otherwise, output "This food is unhealthy".</b></li>
+                                    <li class="pt-2"><b>Create a Conditional Statement that outputs "This food is within your diet" if "sugar_amt" is less than 20 or "organic" is True. Otherwise output "This food is not within your diet".</b></li>
+                                    <li class="pt-2"><b>Create a Conditional Statement that switches the Boolean state of "organic" and outputs "This food is not organic". Otherwise, if "protein_amt" is equal to 10 then output "This food matches your protein intake levels". Otherwise output "You shouldn't consume this food because it's not organic and doesn't match your protein intake levels".</b></li>
+                                </ol>
+                                <li class="pt-4"><b>Exercise Completed! Click <a href="./Conditionals-Answer-Key.html">here</a> to view the answers.</b></li>
+                                <div class="col">
+                                    <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                                </div>
+                            </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                        <div class="row mt-4 mt-md-5 mb-2 px-3">
+                            <a
+                                class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                                href="./Operators.html">
+                                Previous Topic
+                            </a>
+                            <div class="col-0 col-sm-4"></div>
+                            <a
+                                class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                                href="./Conditionals.html">
+                                Next Topic
+                            </a>
+                        </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

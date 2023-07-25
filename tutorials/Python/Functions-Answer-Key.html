@@ -71,41 +71,30 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Loops Exercise Answer Key
+                            Functions Exercise Answer Key
                         </h2>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
-                            <li class="pt-4"><code>names = ["Josh", "Samuel", "Arnold", "Leonard", "Tabitha"]</code></li>
-                            <li class="pt-4"><code>for name in names: <br>
-                                &ensp;&ensp;&ensp;print(name)</code></li>
-                            <li class="pt-4"><code>names = names.append(45)</code><br><br>
-                                <code>for name in names: <br>
-                                    &ensp;&ensp;&ensp;if name != 45: <br>
-                                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;print(name) <br>
-                                    &ensp;&ensp;&ensp;else: <br>
-                                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;print('That name is not valid')
-                                </code></li>
-                            <li class="pt-4"><code>age_input = int(input("Enter your age: "))</code></li>
-                            <li class="pt-4"><code>while True: <br>
-                                &ensp;&ensp;&ensp;if age > 0 and age < 100: <br>
-                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;break <br>
-                                &ensp;&ensp;&ensp;else: <br>
-                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;pass</code></li>
-                            <li class="pt-4"><code>for name in names: <br>
-                                &ensp;&ensp;&ensp;if name != 'Tabitha': <br>
-                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;print(name) <br>
-                                &ensp;&ensp;&ensp;else: <br>
-                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;continue</code></li>
-                            <li class="pt-4"><code>while age_input == 21: <br>
-                                &ensp;&ensp;&ensp;pass</code></li>
+                            <li class="pt-4"><code>def triple_list_elements(list): <br>
+                                &ensp;&ensp;&ensp;for element in list:
+                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;element**3 <br><br>
+                            quantities = [10, 15, 12, 3, 16] <br>
+                            triple_list_elements(quantities) <br><br>
+                            <b>OUTPUT:</b> [1000, 3375, 1728, 27, 4096]</code></li>
+                            <li class="pt-4"><code>def get_username(): <br>
+                                &ensp;&ensp;&ensp;username = input("Enter your username: ") <br>
+                                &ensp;&ensp;&ensp;return print(username)</code></li>
+                            <li class="pt-4"><code>def add_numbers(number1, number2, number3): <br>
+                                &ensp;&ensp;&ensp;result = number1 + number 2 + number3 <br>
+                                &ensp;&ensp;&ensp;return print(result)</code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="/tutorials/Python/Loops.html#exercise">
+                            href="/tutorials/Python/Functions.html#exercise">
                             Return to Exercise
                         </a>
                 </section>

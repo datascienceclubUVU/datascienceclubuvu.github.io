@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>Python Tutorials: Functions | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                PYTHON TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            Python Tutorials: Functions
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/python-functions.webp"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                Programming is all about automating repetitive tasks. What better way to do this than to encapsulate multiple lines of code into a single line of code. <b><i>Functions</i></b> allow you to contain multiple lines of code to execute a repeatable action. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>How to Define Functions</li>
+                                <li>Difference Between Args and Kwargs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Define Functions</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/89cGQjB5R4M?end=508" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">A <b><i>Function</i></b> is a block of reusable code. To invoke, or call a function, place a pair of parantheses ("()") after the function name. Example: <br>
+                                <code>def hello_message(): <br>
+                                &ensp;&ensp;&ensp;print("Hello, World!") <br><br>
+                                hello_message() <br>
+                                <b>OUTPUT</b>: "Hello, World"!</code></li>
+                            <li class="pt-2">Functions allow <b><i>Arguments</i></b> which allow users to input custom data to make the function fit their needs. Example: <br>
+                                <code>def hello_message(name): <br>
+                                &ensp;&ensp;&ensp;print(f'Hello, {name}!') <br><br>
+                                hello_message('Greg') <br>
+                                <b>OUTPUT:</b> "Hello, Greg!"</code></li>
+                            <li class="pt-2">The <b><i>Return</i></b> statement is used to end a function and send a result back to the caller. Example: <br>
+                                <code>def create_username(first_name, last_name, age): <br>
+                                &ensp;&ensp;&ensp;username = f'{first_name}{last_name}{age}' <br>
+                                &ensp;&ensp;&ensp;return username <br><br>
+                                create_username('Thomas', 'Smith', 23) <br>
+                                <b>OUTPUT:</b> "ThomasSmith23"</code></li>
+                            <li class="pt-2"><b>NOTE: </b>When placing a float in an f-string, it's smart to specify the number of decimal places the value will display. The example below shows how to display only two decimal places:<br>
+                                <code>print(f"You owe ${amount:.2f}")<br>
+                                &ensp;&ensp;&ensp;print(character)</code></li>
+                            <li class="pt-2"><b>NOTE:</b> The difference between Arguments and Parameters is very thin. Arguments are the dynamic data storage units created when the function is defined, whereas Parameters are what the user enters to change the function's output.</li>
+                            </ul><br>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                            <p><b>Congratulations!</b> You just completed the Functions Tutorial! To help test your knowledge, let's
+                                practice creating some Functions.</i></b>
+                                </i></b>
+                                <br>**<b><i>It's highly recommended that you
+                                    complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </p>
+                            <h4 class="pt-3">Instructions:</h4>
+                            <ol>
+                                <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
+                                <li class= "pt-2">Create a New Python File. Name it "functions.py"</li>
+                                <li class="pt-2">In the Newly Created Python File, complete the following tasks:</li>
+                                <ol type="a">
+                                    <li class="pt-2"><b>Define a function named "triple_list_elements" that iterates over each element in a given list of numbers and exponentiates each element to the power of three. Add an Argument that allows the user to specify the list. Test the function with a customized list.</b></li>
+                                    <li class="pt-2"><b>Define a function named "get_username" that gets a user's input from a specified prompt. Add a Return statement that returns the username.</b></li>
+                                    <li class="pt-2"><b>Define a function that adds three numbers together and returns the output as another variable, printed in the Console.</b></li>
+                                </ol>
+                                <li class="pt-4"><b>Exercise Completed! Click <a href="./Functions-Answer-Key.html">here</a> to view the answers.</b></li>
+                                <div class="col">
+                                    <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                                </div>
+                            </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                        <div class="row mt-4 mt-md-5 mb-2 px-3">
+                            <a
+                                class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                                href="./Data-Structures.html">
+                                Previous Topic
+                            </a>
+                            <!-- <div class="col-0 col-sm-4"></div>
+                            <a
+                                class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                                href="./Conditionals.html">
+                                Next Topic
+                            </a>
+                        </div> -->
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

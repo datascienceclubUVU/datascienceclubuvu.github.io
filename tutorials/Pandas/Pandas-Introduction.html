@@ -88,39 +88,33 @@
                     <!-- Description. -->
                     <div class="row mt-2 mb-3">
                         <div class="col">
+                            <h5><b>DISCLAIMER: Since Pandas is a Python Library, it is assumed you have a basic understanding of the Fundamentals of Programming in Python. This includes but is not limited to: Variables & Data Types, Operators, Conditionals, Loops, and Functions.</b></h5>
                             <p class="pt-2">
-                                Programming is all about automating repetitive tasks. What better way to do this than to encapsulate multiple lines of code into a single line of code. <b><i>Functions</i></b> allow you to contain multiple lines of code to execute a repeatable action. This tutorial will cover the following learning objectives:
+                                When working with data, there are hundreds, possibly thousands, of different ways to analyze, manipulate, and process specific data points to produce value. <b><i>Pandas</i></b> allows data professionals with the ability to automate these processes. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Define Functions</li>
-                                <li>Difference Between Args and Kwargs</li>
+                                <li>What is Pandas</li>
+                                <li>Why Pandas is Important</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Define Functions</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/89cGQjB5R4M?end=508" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is Pandas</h2> <br>
+                        <h6><b>NOTE: To follow along with this tutorial, you can Download a Jupyter Notebook or activate a Notebook in Kaggle.</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/_Eb0utIRdkw?&start=-60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">A <b><i>Function</i></b> is a block of reusable code. To invoke, or call a function, place a pair of parantheses ("()") after the function name. Example: <br>
-                                <code>def hello_message(): <br>
-                                &ensp;&ensp;&ensp;print("Hello, World!") <br><br>
-                                hello_message() <br>
-                                <b>OUTPUT</b>: "Hello, World"!</code></li>
-                            <li class="pt-2">Functions allow <b><i>Arguments</i></b> which allow users to input custom data to make the function fit their needs. Example: <br>
-                                <code>def hello_message(name): <br>
-                                &ensp;&ensp;&ensp;print(f'Hello, {name}!') <br><br>
-                                hello_message('Greg') <br>
-                                <b>OUTPUT:</b> "Hello, Greg!"</code></li>
+                            <li class="pt-1"><b><i>Pandas</i></b> is a Python library that provides easy-to-use Data Structures and Data Analysis tools.</li>
+                            <li class="pt-2">When first working with Pandas in a new Notebook, run the lines of code below. It's important to note that Pandas is built on top of NumPy, another Python Library, which means that it uses all of NumPy's data types and data structures. This is why it's very common to import both libraries at the same time. <br>
+                                <code>import pandas as pd</code> <br>
+                                <code>import numpy as np</code></li>
                             <li class="pt-2">The <b><i>Return</i></b> statement is used to end a function and send a result back to the caller. Example: <br>
                                 <code>def create_username(first_name, last_name, age): <br>
                                 &ensp;&ensp;&ensp;username = f'{first_name}{last_name}{age}' <br>
                                 &ensp;&ensp;&ensp;return username <br><br>
                                 create_username('Thomas', 'Smith', 23) <br>
                                 <b>OUTPUT:</b> "ThomasSmith23"</code></li>
-                            <li class="pt-2"><b>NOTE: </b>When placing a float in an f-string, it's smart to specify the number of decimal places the value will display. The example below shows how to display only two decimal places:<br>
-                                <code>print(f"You owe ${amount:.2f}")<br>
-                                &ensp;&ensp;&ensp;print(character)</code></li>
+                            <li class="pt-2"><b>NOTE: </b>If you don't currently have Pandas installed in your local environment, you can do so by running the following line of code in your terminal: <code>pip install pandas==2.0.0</code></li>
                             <li class="pt-2"><b>NOTE:</b> The difference between Arguments and Parameters is very thin. Arguments are the dynamic data storage units created when the function is defined, whereas Parameters are what the user enters to change the function's output.</li>
                             </ul><br>
                             <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>

@@ -29,14 +29,14 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Python Tutorials: Conditionals</title>
+    <title>Pandas Tutorials: DataFrames vs. Series</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
     <header class="container-fluid">
         <div class="row py-4 bg-primary">
             <h1 class="col text-center text-white">
-                PYTHON TUTORIALS
+                PANDAS TUTORIALS
             </h1>
         </div>
     </header>
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Python Tutorials: Conditionals
+                            Pandas Tutorials: DataFrames vs. Series
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/python-conditionals.jpg"
+                                src="../../imgs/dataframe-vs-series.jpg"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -88,31 +88,28 @@
                     <!-- Description. -->
                     <div class="row mt-2 mb-3">
                         <div class="col">
+                            <h5><b>DISCLAIMER: In 99% of Use Cases, Pandas is shortened to "pd", thus you should get used to seeing and using this abbreviation.</b></h5>
                             <p class="pt-2">
-                                When writing scripts or defining functions, you'll likely come across the need for tasks to be accomplished based on a variable's value or a similar condition. <b><i>Conditional Statements</i></b> provide a solution to this problem. This tutorial will cover the following learning objectives:
+                                Pandas merges the utlities provided in Excel, the logic of SQL, and the efficiency of Python into one complete package. <b><i>DataFrames</i></b>are the primary data structure used by pandas to perform data cleaning/manipulation tasks, whereas <b><i>Series</i></b> are used to make changes on a single Column more efficiently. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How and When to Use If-Else Statements</li>
-                                <li>How and When to Use If-Elif-Else Statements</li>
-                                <li>How and When to Use Logical Operators</li>
+                                <li>What a Series is and When to Use It</li>
+                                <li>What a DataFrame is and When to Use It</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How and When to Use If-Else Statements</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/wKQRmXR3jhc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What a Series is and When to Use It</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/HKVsVksViXo?end=262" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">If you want to perform an action based on a single condition, use an <b><i>If-Else Statement</i></b>. This is used with the following syntax: <br>
-                                <code>if [variable/value] [Relational Operator] [variable/value]:</code> <br>
-                                <code>&ensp;&ensp;&ensp;[task to perform]</code> <br>
-                                <code>else:</code> <br>
-                                <code>&ensp;&ensp;&ensp;[task to perform]</code></li>
-                            <li class="pt-2">If you have a variable with a Boolean data type to be used as a condition, use the following syntax: <br>
-                                <code>if [variable]:</code> <br>
-                                <code>&ensp;&ensp;&ensp;[task to perform]</code><br>
-                                <code>else:</code> <br>
-                                <code>&ensp;&ensp;&ensp;[task to perform]</code></li>
+                            <li class="pt-1">A <b><i>Series</i></b> is similar to a column in Excel. It's a list of data points all of the same data type. To create a Pandas Series, use the following syntax: <br>
+                                <code>series1 = pd.Series(data)</code></li>
+                            <li class="pt-2">If you don't have a file or database connection setup, you can use NumPy's random module to create a random assortment of values. Example: <br>
+                                <code>series1 = pd.Series(np.random.randn(5))</code></li>
+                            <li class="pt-2">The <b><i>Index</i></b> of a series is the unique identifier for each row. By default, the Index starts at 0 and goes up to the last row in the Series. You can specify different index values, though the length of the index must match the number of values in the Series, thus it can get quite tedious.</li>
+                            <li class="pt-2">The <b><i>Name</i></b> of a Series, not to be confused with the variable name assigned to the value, is used when combining multiple Series into a DataFrame (discussed in the next section). This parameter can be used with the following syntax: <br>
+                                <code>series1 = pd.Series(data, name='[name]')</code></li>
                             <li class="pt-2"><b>NOTE:</b> Notice that the line of code after the initial "if" statement is indented. This is Python's way of knowing when code is grouped together into a <b><i>block of code</i></b>.</li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How and When to Use If-Elif-Else Statements</h2> <br>
@@ -179,7 +176,7 @@
                         <div class="row mt-4 mt-md-5 mb-2 px-3">
                             <a
                                 class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                                href="./Operators.html">
+                                href="./Pandas-Introduction.html">
                                 Previous Topic
                             </a>
                             <div class="col-0 col-sm-4"></div>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>Python Tutorials: Loops | Data Science Club @ UVU</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                PYTHON TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            Python Tutorials: Loops
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/python-loops.jpg"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                When making changes to Data Structures, it can be tedious to make changes to individual elements when there could be tens or hundreds of elements. <b><i>Loops</i></b> provide a way to iterate over each element in a data structure, or perform an action until a condition has been met, to efficiently apply necessary changes. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>What For Loops Are and When to Use Them</li>
+                                <li>What While Loops Are and When to Use Them</li>
+                                <li>What Loop Control Statements Are and When to Use Them</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What For Loops Are and When to Use Them</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/KWgYha0clzw?end=206" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">A <b><i>For Loop</i></b> will execute a block of code a fixed number of times. You can iterate over a range of values, a string, or elements in a data structure. To create a For Loop, use the following syntax: <br>
+                                <code>for [iterator] in [iterable]: <br>
+                                &ensp;&ensp;&ensp;[perform action on iterator]</code></li>
+                            <li class="pt-2">The <b><i>Range</i></b> function is used to define a sequence of numbers between a minimum and maximum. To use this in a For Loop, use the following syntax: <br>
+                                <code>for [iterator] in range([min_number], [max_number]): <br>
+                                &ensp;&ensp;&ensp;[perform action on iterator]</code></li>
+                            <li class="pt-2">If you want to reverse the range of numbers defined in the Range function, use the <b><i>Reversed</i></b> Function. This is used with the following syntax: <br>
+                                <code>for [iterator] in reversed(range([min_number], [max_number])): <br>
+                                &ensp;&ensp;&ensp;[perform action on iterator]</code></li>
+                            <li class="pt-2">If you want to change the steps associated with a defined sequence of numbers, use the <b><i>Step</i></b> argument of the Range Function. This is used the following syntax: <br>
+                                <code>for [iterator] in range([min_number], [max_number], [step_count]): <br>
+                                    &ensp;&ensp;&ensp;[perform action on iterator]
+                                </code></li>
+                            <li class="pt-2">When iterating over a string, the loop will iterate over each character in the string. Example<br>
+                                <code>for characeter in "My Name is Henry": <br>
+                                &ensp;&ensp;&ensp;print(character)</code></li>
+                            <li class="pt-2"><b>NOTE:</b> When defining the maximum number in the Range function, always add one to the maximum number you wan to exclude since the function is "exclusive", meaning it excludes the maximum number as defined, by default.</li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What While Loops Are and When to Use Them</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/rRTjPnVooxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">A <b><i>While Loop</i></b> will execute a block of code WHILE a condition remains TRUE. TO create a While Loop, use the following syntax: <br>
+                                <code>while [condition]: <br>
+                                &ensp;&ensp;&ensp;[perform an action]</code></li>
+                            <li class="pt-2">The <b><i>Input</i></b> function is used to make your Python script interaction in the Terminal/Console. THis is helpful for when you want to test your code against some test inputs. This function is used with the following syntax: <br>
+                                <code>input("[string]: ")</code> <br>
+                                <code><b>Console:</b> "[string]": [user inputs STRNG here]</code></li>
+                            <li class="pt-2">If you want to prompt the user to enter an Integer, use the <b><i>Int</i></b> function as discussed in the <a href="./Variables-Data-Types.html">Data Types Tutorial</a> in conjunction with the Input function. Example: <br>
+                                <code>int(input("[string]: ")) <br>
+                                <b>Console:</b> "[string]": [user inputs INTEGER here]</code></li>
+                            <li class="pt-2">An <b><i>Infinite Loop</i></b> is created when you specify a condition that will ALWAYS be true (e.g., 1==1, 2>1, True==True). Example: <br>
+                                <code>while 1==1: <br>
+                                &ensp;&ensp;&ensp;[perform an action]</code></li>
+                            <li class="pt-2"><b>NOTE:</b> The only time you should use an Infinite Loop is when you want an action to take place the entire time your application or script is running.</li>
+                            </ul> 
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Loop Control Statements Are and When to Use Them</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/97NdNoA3XUQ?end=245" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">A <b><i>Loop Control Statement</i></b> is used to change a loop's execution cycle from its normal sequence.</li>
+                            <li class="pt-2">The <b><i>Break</i></b> Control Statement is used to terminate the loop entirely if a specific condition is met. This Control Statement is very useful for breaking out of Infinite Loops. Example: <br>
+                                <code>while True: <br>
+                                &ensp;&ensp;&ensp;food = input("What is your favorite food? ") <br>
+                                &ensp;&ensp;&ensp;if food != "": <br>
+                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;break</code></li>
+                            <li class="pt-2">The <b><i>Continue</i></b> Control Statement is used to skip to the next iteration of the loop. This is useful for when you want your loop to skip over erroneous data. Example: <br>
+                                <code>ages = [22, 35, -10, 195, 55] <br>
+                                for age in ages: <br>
+                                &ensp;&ensp;&ensp;if age < 0 or age > 100: <br>
+                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;continue <br>
+                                &ensp;&ensp;&ensp;else: <br>
+                                &ensp;&ensp;&ensp;&ensp;&ensp;print("Age is valid")</code></li>
+                            <li class="pt-2">The <b><i>Pass</i></b> Control Statement is used as a placeholder until an action is placed. This is useful for when your still building the logic of your application or script. Example: <br>
+                                <code>while user_input > 30: <br>
+                                &ensp;&ensp;&ensp;pass</code></li>
+                            <li class="pt-2"><b>NOTE:</b> You should use a set rather than a list if you want to check if a specific value is in a range of values (whether strings or numeric values).</li>
+                            </ul><br>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                            <p><b>Congratulations!</b> You just completed the Data Structures Tutorial! To help test your knowledge, let's
+                                practice creating and manipulating various Data Structures.</i></b>
+                                </i></b>
+                                <br>**<b><i>It's highly recommended that you
+                                    complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                            </p>
+                            <h4 class="pt-3">Instructions:</h4>
+                            <ol>
+                                <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
+                                <li class= "pt-2">Create a New Python File. Name it "data-structures.py"</li>
+                                <li class="pt-2">In the Newly Created Python File, complete the following tasks:</li>
+                                <ol type="a">
+                                    <li class="pt-2"><b>Declare a variable named "fruits" and give it the following values: "apple", "apple", "banana", "grape", "orange", "orange". Assume this variable allows duplicate elements. What type of Data Structure is this?</b></li>
+                                    <li class="pt-2"><b>Remove the "grape" element from the "fruits" variable.</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "manager" and give it the following values: "Robert", "Senior Software Engineering Manager", 42, "Columbus, OH". Assume the values in this variable can't be changed. What type of Data Structure is this?</b></li>
+                                    <li class="pt-2"><b>What is the index position of the "42" element in the "manager" variable?</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "national_brands" and give it the following values: "Nike", "Vans", "Converse", "New Balance". Assume this variable doesn't accept duplicate values. What type of Data Structure is this?</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "global_brands" and give it the following values: "Nike", "Vans", "Fila", "Ecco". Ensure this variable is a Set. What do the "local_brands" and "global_brands" variables have in common?</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "inventory" and give it the following values: <br>
+                                        <ul>
+                                            <li>"Small T-Shirts": 45</li>
+                                            <li>"Medium T-Shirts": 72</li>
+                                            <li>"Large T-Shirts": 55</li>
+                                            <li>"XL T-Shirts": 60</li>
+                                        </ul> <br>
+                                    What type of Data Structure is this?</b></li>
+                                    <li class="pt-2"><b>Remove the key-value pair with the smallest value.</b></li>
+                                </ol>
+                                <li class="pt-4"><b>Exercise Completed! Click <a href="./Data-Structures-Answer-Key.html">here</a> to view the answers.</b></li>
+                                <div class="col">
+                                    <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                                </div>
+                            </ol>
+                        <!-- Previous/Next Topic buttons. -->
+                        <div class="row mt-4 mt-md-5 mb-2 px-3">
+                            <a
+                                class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                                href="./Data-Structures.html">
+                                Previous Topic
+                            </a>
+                            <!-- <div class="col-0 col-sm-4"></div>
+                            <a
+                                class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                                href="./Conditionals.html">
+                                Next Topic
+                            </a>
+                        </div> -->
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

@@ -107,44 +107,23 @@
                                 <code>series1 = pd.Series(data)</code></li>
                             <li class="pt-2">If you don't have a file or database connection setup, you can use NumPy's random module to create a random assortment of values. Example: <br>
                                 <code>series1 = pd.Series(np.random.randn(5))</code></li>
-                            <li class="pt-2">The <b><i>Index</i></b> of a series is the unique identifier for each row. By default, the Index starts at 0 and goes up to the last row in the Series. You can specify different index values, though the length of the index must match the number of values in the Series, thus it can get quite tedious.</li>
+                            <li class="pt-2">The <b><i>Index</i></b> of a series is the unique identifier for each row. By default, the Index starts at 0 and goes up to the last row in the Series.</li>
                             <li class="pt-2">The <b><i>Name</i></b> of a Series, not to be confused with the variable name assigned to the value, is used when combining multiple Series into a DataFrame (discussed in the next section). This parameter can be used with the following syntax: <br>
                                 <code>series1 = pd.Series(data, name='[name]')</code></li>
-                            <li class="pt-2"><b>NOTE:</b> Notice that the line of code after the initial "if" statement is indented. This is Python's way of knowing when code is grouped together into a <b><i>block of code</i></b>.</li>
+                            <li class="pt-2"><b>NOTE: </b>You can specify different index values, though the length of the index must match the number of values in the Series, thus it can get quite tedious.</li>
+                            <li class="pt-2"><b>NOTE:</b> Throughout this series of tutorials, you'll see a combination of NumPy Arrays and Pandas Series. Just know that these two are the same when it comes to representing one-dimensional data. However, NumPy Arrays won't have access to the same transformational methods as Pandas Series.</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How and When to Use If-Elif-Else Statements</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/42MBMSOZgD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What a DataFrame is and When to Use It</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/KB-19V-cSs4?end=156" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">If you want to perform an action based on more than one condition, use an <b><i>If-Elif-Else Statement</i></b>. This is used with the following syntax: <br>
-                                <code>if [variable/value] [Relational Operator] [variable/value]:</code> <br>
-                                <code>&ensp;&ensp;&ensp;[task to perform]</code> <br>
-                                <code>elif [variable/value] [Relational Operator] [variable/value]:</code> <br>
-                                <code>&ensp;&ensp;&ensp;[task to perform]</code> <br>
-                                <code>else:</code> <br>
-                                <code>&ensp;&ensp;&ensp;[task to perform]</code></li>
-                            <li class="pt-2"><b>NOTE:</b> In conditonal statements, the first condition that gets tested as "True" will be executed and all other conditions will be ignored. Thus, it's important to orde your conditions carefully.</li>
-                            </ul> 
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How and When to Use Logical Operators</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/W7luvtXeQTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h4 class="pt-4">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">In Python, <b><i>Logical Operators</i></b> are used in conditional statements to create multiple conditions within a single block of code (a single level of an if-elif-else statement).</li>
-                            <li class="pt-2">The <b><i>and</i></b> operator is used to check if two or more conditions are true. Example: <br>
-                                <code>if age >= 18 and gender == 'Male':</code> <br>
-                                <code>&ensp;&ensp;&ensp;print('Adult Male')</code> <br>
-                                <code>else:</code> <br>
-                                <code>&ensp;&ensp;&ensp;print('Not an Adult Male')</code></li>
-                            <li class="pt-2">The <b><i>or</i></b> operator is used to check if at least one condition in a list of conditions is true. Example: <br>
-                                <code>if price < 100 or color = 'brown':</code> <br>
-                                <code>&ensp;&ensp;&ensp;print('Item matches search parameters')</code> <br>
-                                <code>else:</code> <br>
-                                <code>&ensp;&ensp;&ensp;print('Item does not match search parameters')</code></li>
-                            <li class="pt-2">The <b><i>not</i></b> operator is used to switch the value of a Boolean variable. Example: <br>
-                                <code>if not discounted:</code> <br>
-                                <code>&ensp;&ensp;&ensp;print('item is not discounted')</code> <br>
-                                <code>else:</code> <br>
-                                <code>&ensp;&ensp;&ensp;print('Item is discounted.')</code></li>
+                            <li class="pt-1">A <b><i>DataFrame</i></b> is a two-dimensional data structure comprised of one or more Series. The first dimension is the column headers and the second dimension is the actual row values. To create a Pandas DataFrame, use the following syntax: <br>
+                                <code>df1 = pd.DataFrame(data)</code></li>
+                            <li class="pt-2">Just like in a Series, DataFrames have an <b><i>Index</i></b> that is used to uniquely identify each row.</li>
+                            <li class="pt-2">If you want to create a DataFrame from a custom assortment of data, use the following syntax: <br>
+                                <code>data = {[column_name1]: [list of values], [column_name2]: [list of values]}</code></li>
+                            <li class="pt-2"><b>NOTE:</b> Since the vast majority of Pandas' objects are DataFrames, it's wise to NOT put the commonly used "df" abbrevation when naming variables that contain a DataFrame.</li>
+                            <li class="pt-2"><b>NOTE:</b> In both NumPy and Pandas, NULLs are commonly represented as "NaN". This is short for "Not A Number".</li>
                             </ul><br>
                             <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                             <p><b>Congratulations!</b> You just completed the Conditionals Tutorial! To help test your knowledge, let's
@@ -156,18 +135,19 @@
                             <h4 class="pt-3">Instructions:</h4>
                             <ol>
                                 <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                                <li class= "pt-2">Create a New Python File. Name it "conditionals.py"</li>
-                                <li class="pt-2">In the Newly Created Python File, complete the following tasks:</li>
+                                <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "dataframes-vs-series.ipynb"</li>
+                                <li class="pt-2">In the Newly Created Notebook, complete the following tasks:</li>
                                 <ol type="a">
-                                    <li class="pt-2"><b>Declare a variable named "calories" and give it a value of 500.</b></li>
-                                    <li class="pt-2"><b>Declare a variable named "protein_amt" and give it a value of 12.</b></li>
-                                    <li class="pt-2"><b>Declare a variable named "sugar_amt" and give it a value of 33.</b></li>
-                                    <li class="pt-2"><b>Declare a variable named "organic" and give it a value of True.</b></li>
-                                    <li class="pt-2"><b>Create a Conditonal Statement that outputs "This food is healthy" if "calories" is less than or equal to 500 and "protein_amt" is greater than 5. Otherwise, output "This food is unhealthy".</b></li>
-                                    <li class="pt-2"><b>Create a Conditional Statement that outputs "This food is within your diet" if "sugar_amt" is less than 20 or "organic" is True. Otherwise output "This food is not within your diet".</b></li>
-                                    <li class="pt-2"><b>Create a Conditional Statement that switches the Boolean state of "organic" and outputs "This food is not organic". Otherwise, if "protein_amt" is equal to 10 then output "This food matches your protein intake levels". Otherwise output "You shouldn't consume this food because it's not organic and doesn't match your protein intake levels".</b></li>
+                                    <li class="pt-2"><b>Import the Pandas library with its common abbreviation.</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "points_scored" and assign it a value of a Pandas Series with the following values: [21.9, 22.4, 19.8, 14.2, 16.7, 22.0]. Name the Series "ppg".</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "rebounds_grabbed" and assign it a value of a Pandas Series with the following values: [4.4, 6.0, 11.2, 2.1, 0.2, 5.5]. Name the Series "rpg".</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "assists_made" and assign it a value of a Pandas Series with the following values: [6.6, 2.1, 1.6, 9.7, 8.0, 4.1]. Name the series "apg".</b></li>
+                                    <li class="pt-2"><b>Declare a variable named "player_stats" and define the data as a combination of the three Series objects you just created. <br><br>
+                                    HINT: Use the series.name method to specify the column name as the Series name previously defined.</b></li>
+                                    <li class="pt-2"><b>Give the "player_stats" DataFrame the following Index values: ["Point Guard", "Shooting Guard", "Center", "Small Forward", "Power Forward", "6th Man"] <br><br>
+                                    HINT: Use the dataframe.index method to assign the list of values to the DataFrame's index AFTER you assigned the DataFrame to the variable.</b></li>
                                 </ol>
-                                <li class="pt-4"><b>Exercise Completed! Click <a href="./Conditionals-Answer-Key.html">here</a> to view the answers.</b></li>
+                                <li class="pt-4"><b>Exercise Completed! Click <a href="./Dataframes-Series-Answer-Key.html">here</a> to view the answers.</b></li>
                                 <div class="col">
                                     <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                                 </div>
@@ -179,11 +159,11 @@
                                 href="./Pandas-Introduction.html">
                                 Previous Topic
                             </a>
-                            <div class="col-0 col-sm-4"></div>
+                           <!-- <div class="col-0 col-sm-4"></div>
                             <a
                                 class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
                                 href="./Data-Structures.html">
-                                Next Topic
+                                Next Topic -->
                             </a>
                         </div>
                 </section>

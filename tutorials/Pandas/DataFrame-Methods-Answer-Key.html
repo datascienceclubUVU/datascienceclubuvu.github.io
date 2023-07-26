@@ -71,24 +71,24 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            DataFrames vs. Series Exercise Answer Key
+                            DataFrame Methods Exercise Answer Key
                         </h2>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
-                            <li class="pt-4"><code>import pandas as pd</code></li>
-                            <li class="pt-4"><code>points_scored = pd.Series([21.9, 22.4, 19.8, 14.2, 16.7, 22.0], name="ppg")</code></li>
-                            <li class="pt-4"><code>rebounds_grabbed = pd.Series([4.4, 6.0, 11.2, 2.1, 0.2, 5.5], name="rpg")</code></li>
-                            <li class="pt-4"><code>assists_made = pd.Series([6.6, 2.1, 1.6, 9.7, 8.0, 4.1], name="apg")</code></li>
-                            <li class="pt-4"><code>player_stats = pd.DataFrame({points_scored.name: points_scored, rebounds_grabbed.name: rebounds_grabbed, assists_made.name:assists_made})</code></li>
-                            <li class="pt-4"><code>player_stats.index = ['Point Guard', 'Shooting Guard', 'Center', 'Small Forward', 'Power Forward', '6th Man']</code></li>
+                            <li class="pt-4"><code>player_stats.head(10)</code></li>
+                            <li class="pt-4"><code>player_stats.tail(8)</code></li>
+                            <li class="pt-4"><code>player_stats.loc['Center', ['ppg', 'rpg']]</code></li>
+                            <li class="pt-4"><code>player_stats['player_name'] = ['Donnovan Mitchell', 'Darius Garland', 'Jarrett Allen', 'Evan Mobley', 'Isaac Okoro', 'Ricky Rubio']</code></li>
+                            <li class="pt-4"><code>player_stats.info()</code></li>
+                            <li class="pt-4"><code>player_stats.describe().T</code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="/tutorials/Pandas/Dataframe-Series.html#exercise">
+                            href="/tutorials/Pandas/Dataframe-Functions.html#exercise">
                             Return to Exercise
                         </a>
                 </section>

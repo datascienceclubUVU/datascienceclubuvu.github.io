@@ -185,33 +185,24 @@
                         <li class="pt-2"><b>NOTE:</b> When slicing values in Python, use the following notation: <code>starting_value:ending_value.</code> If you want to slice values in reverse, use the following notation: <code>starting_value:ending_value:-1</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Export a DataFrame into Another File Format</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/Z6RU_MFjevU?end=230" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h6><b>Export DataFrame to CSV File</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ZftcMsvhE48?end=274" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h6><b>Export DataFrame to JSON File</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/6L6whtUm82Y?start=157&end=184" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>Copy</i></b> method is used to create an exact copy of the specified DataFrame. This is commonly used when testing transformations. This is used with the following syntax: <br>
-                                <code>dataframe2 = dataframe1.copy()</code></li>
-                            <li class="pt-2">The <b><i>astype</i></b> method is used to convert the data type of a specified Series in a DataFrame. This is used with the following syntax: <br>
-                                <code>dataframe1['column_name'] = dataframe['column_name'].astype([new_data_type])</code></li>
-                            <li class="pt-2">The <b><i>Transpose/T</i></b> method, or attribute, is used to switch the column and index values. This is used with the following syntax: <br>
-                                <code>dataframe1.transpose()</code><br>
-                                <b>OR</b><br>
-                                <code>dataframe1.T</code></li>
-                            <li class="pt-2">The <b><i>Head</i></b> method will give you the first "n" number of rows in the DataFrame. If no number is specified, the default is 5. This is used with the following syntax: <br>
-                                <code>dataframe1.head([n])</code></li>
-                            <li class="pt-2">The <b><i>Tail</i></b> method will give you the last "n" number of rows in the DataFrame. Just like the Head method, if no number is specified, the default is 5. This is used with the following syntax: <br>
-                                <code>dataframe1.tail([n])</code></li>
-                            <li class="pt-2">The <b><i>Sample</i></b> method will return a random selection of "n" number of rows in the DataFrame. If no number is specified, the default is 1. This is used with the following syntax:<br>
-                                <code>dataframe1.sample([n])</code></li>
-                            <li class="pt-2">The <b><i>Info</i></b> method returns a summary of your DataFrame, this includes the number of values in the Index, the total number of columns, a list of all the columns, how many NULL values occur in each column, and the Data Type of each column. This is used with the following syntax: <br>
-                                <code>dataframe1.info()</code></li>
-                            <li class="pt-2">The <b><i>Describe</i></b> method returns descriptive statistics of your DataFrame columns. These include a count of all values, the number of unique values, the mean, standard deviation, minimum, maximum, 25th percentile, 50th percentile, and 75th percentile of all values in each column. This is used with the following syntax: <br>
-                                <code>dataframe1.describe()</code></li>
-                            <li class="pt-2"><b>NOTE:</b> In most cases, your DataFrame will have more than 10 columns, thus making it near impossible to view all the column statistics when using the Describe method. To fix this, you can use the Transpose Method or the T attribute to make the descriptive statistics the new column headers, and the column names as the new row values. Example: <br>
-                                <code>dataframe1.describe().T</code></li>
+                            <li class="pt-1">The <b><i>to_csv</i></b> method is used to export a DataFrame to a CSV File. This is used with the following syntax: <br>
+                                <code>dataframe.to_csv('file_name.csv')</code></li>
+                            <li class="pt-2">While working with DataFrames, Indices can be useful in ensuring you have no duplicates in your data and conducting various data quality checks. However, once you export your DataFrame, the Index doesn't provide much of a benefit. Thus, it's usually wise to not include the index. To exclude the Index when exporting a DataFrame to a CSV File, use the following syntax: <br>
+                                <code>dataframe.to_csv('file_name.csv', index=False)</code></li>
+                            <li class="pt-2">When appending a DataFrame to an existing CSV file, you shouldn't include the column headers as those would already be included in the file. To exclude column headers when uploading a DataFrame to a CSV file, use the following syntax: <br>
+                                <code>dataframe.to_csv('file_name.csv', headers=False)</code><br></li>
+                            <li class="pt-2">The <b><i>to_json</i></b> method is used to export a DataFrame to a JSON File. Just like in the <b><i>read_json</i></b> method, you can specify how you would like to orient the JSON data using the <b><i>orient</i></b> parameter. This is used with the following syntax: <br>
+                                <code>dataframe.to_json('file_name.json', orient='orientation')</code></li>
                             </ul><br>
                             <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                            <p><b>Congratulations!</b> You just completed the DataFrame Methods Tutorial! To help test your knowledge, let's
-                                practice doing some basic queries on DataFrames.</i></b>
+                            <p><b>Congratulations!</b> You just completed the Working with Text Files Tutorial! To help test your knowledge, let's
+                                practice Reading and Writing some Text Files into and from DataFrames.</i></b>
                                 </i></b>
                                 <br>**<b><i>It's highly recommended that you
                                     complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
@@ -219,17 +210,22 @@
                             <h4 class="pt-3">Instructions:</h4>
                             <ol>
                                 <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                                <li class= "pt-2">Use the Same Notbeook that you created in the previous exercise.</li>
+                                <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "text-files.ipynb"</li>
                                 <li class="pt-2">In the Notebook, complete the following tasks:</li>
                                 <ol type="a">
-                                    <li class="pt-2"><b>Show the first 10 rows in the "player_stats" DataFrame.</b></li>
-                                    <li class="pt-2"><b>Show the last 8 rows in the "player_stats" DataFrame.</b></li>
-                                    <li class="pt-2"><b>Show only the "ppg" and "rpg" columns for the Team's Center (use the Index).</b></li>
-                                    <li class="pt-2"><b>Add a New Column to the DataFrame titled "player_name" and give it the following values: ['Donnovan Mitchell', 'Darius Garland', 'Jarrett Allen', 'Evan Mobley', 'Isaac Okoro', 'Ricky Rubio']</b></li>
-                                    <li class="pt-2"><b>Show a summary of the DataFrame.</b></li>
-                                    <li class="pt-2"><b>Show the DataFrame's Descriptive Statistics. Transpose the DataFrame to make it more readable.</b></li>
+                                    <li class="pt-2"><b>Download the Following Files:</b> <br>
+                                        <ul>
+                                            <li><a href="./Exercise Files/unclean_listings.xlsx">Sample Excel Workbook</a></li>
+                                            <li><a href="./Exercise Files/unclean_listings.csv">Sample CSV File</a></li>
+                                            <li><a href="./Exercise Files/unclean_listings.json">Sample JSON File</a></li>
+                                        </ul></li>
+                                    <li class="pt-2"><b>Read the Excel Workbook into a DataFrame object named "unclean_listings_excel"</b></li>
+                                    <li class="pt-2"><b>Read the CSV File into a DataFrame Object named "unclean_listings_csv"</b></li>
+                                    <li class="pt-2"><b>Read the JSON File into a DataFrame Obejct named "unclean_listings_json"</b></li>
+                                    <li class="pt-2"><b>Export the "unclean_listings_excel" variable to a CSV file named "converted_listings.csv". Exclude the index.</b></li>
+                                    <li class="pt-2"><b>Export the "unclean_listings_json" variable to a JSON file named "converted_listings.json". Orient the data to "Split" format.</b></li>
                                 </ol>
-                                <li class="pt-4"><b>Exercise Completed! Click <a href="./Dataframe-Methods-Answer-Key.html">here</a> to view the answers.</b></li>
+                                <li class="pt-4"><b>Exercise Completed! Click <a href="./Text-Files-Answer-Key.html">here</a> to view the answers.</b></li>
                                 <div class="col">
                                     <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                                 </div>

@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: DataFrame Functions</title>
+    <title>Pandas Tutorials: Working with Text Files</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: DataFrame Methods
+                            Pandas Tutorials: Working with Text Files
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/pandas-dataframe.webp"
+                                src="../../imgs/pandas-text-files.webp"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,63 +89,102 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                DataFrames are the heart and soul of Pandas. They take large amounts of both Structured and Unstructured Data from various sources to make transforming, merging, and exporting data much easier. This tutorial will cover the following learning objectives:
+                                What makes Pandas so popular is it's ability to convert various types of files into DataFrames. Whether you're working with an Excel Workbook, CSV/TSV File, or JSON, Pandas can convert it into a DataFrame This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>What Attributes Are Associated with DataFrames</li>
-                                <li>How to Extract Data from a DataFrame</li>
-                                <li>How to Query Data in a DataFrame</li>
-                                <li>What Common DataFrame Methods Are Available</li>
+                                <li>How to Convert an Excel Workbook into a DataFrame</li>
+                                <li>How to Convert a CSV File into a DataFrame</li>
+                                <li>How to Convert a JSON File into a DataFrame</li>
+                                <li>How to Export a DataFrame into Another File Format</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Attributes Are Associated with DataFrames</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/KB-19V-cSs4?start=156&end=188" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Convert an Excel Workbook into a DataFrame</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/Q3ppdzyDZnY?start=156" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">Since DataFrames are objects within a class, they inherit certain Attributes. <b><i>Attributes</i></b> are descriptive calls to the object that return specific information about the object.</li>
-                            <li class="pt-2">The <b><i>Columns</i></b> attribute is used to return all the columns in the specified DataFrame. This is used with the following syntax: <br>
-                                <code>dataframe.columns</code></li>
-                            <li class="pt-2">The <b><i>Columns</i></b> attribute can also be used to rename the columns in the specified DataFrame. Example: <br>
-                                <code>dataframe.columns = ['name', 'age', 'gender']</code></li>
-                            <li class="pt-2">The <b><i>Index</i></b> attribute is used to return all the index values of the specified DataFrane. This is used with the following syntax: <br>
-                                <code>dataframe.index</code></li>
-                            <li class="pt-2">The <b><i>Index</i></b> attribute can also be used to change the index values of the specified DataFrame. Example: <br>
-                                <code>dataframe.index = ['2020', '2021', '2022', '2023']</code></li>
-                            <li class="pt-2"><b>NOTE: </b>You can specify different index values, though the length of the index must match the number of values in the Series, thus it can get quite tedious.</li>
+                            <li class="pt-1">The <b><i>read_excel</i></b> method is used to convert an Excel Workbook into a DataFrame. This is used with the following syntax, showing the first sheet in the workbook as default: <br>
+                                <code>pd.read_excel('file_name.xlsx')</code></li>
+                            <li class="pt-2">If you want to read a specific sheet within an Excel Workbook, use the following syntax: <br>
+                                <code>pd.read_excel('file_name.xlsx', sheet_name='sheet_name')</code></li>
+                            <li class="pt-2">If you want to list out all the Sheets in your Workbook into a single DataFrame, use the syntax below. This will return a dictionary and you simply need to specify the key to create a DataFrame off a specific DataFrame in the dictionary.<br>
+                                <code>all_sheets = pd.read_excel('file_name.xlsx', sheet_name=None) <br>
+                                all_sheets[key]</code></li>
+                            <li class="pt-2">If you want to combine all the Sheets in your Workbook into a single DataFrame, use the following syntax: <br>
+                                <code>pd.concat(pd.read_excel('file_name.xlsx', sheet_name=None), ignore_index=True)</code></li>
+                            <li class="pt-2"><b>NOTE: </b>Although you can use the Sheet's Index when specifying the sheet to read into the DataFrame, it's a best practice to always use the Sheet's Name since it's easier for others to understand your code.</li>
+                            <li class="pt-2"><b>NOTE:</b> If the file you want to use is not in your working directory, you'll need to specify either the Absolute or Relative file path.</li>
                             </ul>
-                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Extract Data from a DataFrame</h2> <br>
-                    <iframe width="650" height="400" src="https://www.youtube.com/embed/KB-19V-cSs4?start=188&end=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Convert a CSV File into a DataFrame</h2> <br>
+                    <iframe width="650" height="400" src="https://www.youtube.com/embed/4YI9z1qUpew?start=156" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                     <h4 class="pt-4">Summary</h4>
                     <ul>
-                        <li class="pt-1">With DataFrames, <b><i>Slicing</i></b> is the process of getting either a subset of columns or a subset of rows. To output a single column as a Series, use the following syntax: <br>
-                            <code>dataframe['column_name']</code></li>
-                        <li class="pt-2">A common exercise in Pandas is to create what's known as a Calculated Field. A <b><i>Calculated Field</i></b> is created by either creating an arithmetic equation between two or more columns OR to add, multiply, subtract, or divide a column by a static value. Example: <br>
-                            <code>dataframe['profit'] = dataframe['revenue'] - dataframe['expenses']</code> <br>
+                        <li class="pt-1">The <b><i>read_csv</i></b> method is used to convert a CSV file into a DataFrame. This method is used with the following syntax: <br>
+                            <code>pd.read_csv('file_name.csv')</code></li>
+                        <li class="pt-2"><b>NOTE:</b> If you need to specify the Absolute or Relative file path, you can either put an "r" in front of the file path, or separate the levels of hierarchy by double back slashes "\\". Example: <br>
+                            <code>pd.read_csv(r"C:\Users\name\Documents\test.csv")</code> <br>
                             <b>OR</b> <br>
-                            <code>dataframe['salary_doubled'] = dataframe['salary'] * 2</code></li>
-                        <li class="pt-2">If you want to extract data from more than one column in a DataFrame, use the syntax below. This will return a DataFrame object. <br>
-                            <code>dataframe[['column_name1', 'column_name2']]</code></li>
+                            <code>pd.read_csv("C:\\Users\\name\\Documents\\test.csv")</code></li>
                         </ul>
-                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter Data from a DataFrame</h2> <br>
-                    <iframe width="650" height="400" src="https://www.youtube.com/embed/KB-19V-cSs4?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Convert a JSON File into a DataFrame</h2> <br>
+                    <iframe width="650" height="400" src="https://www.youtube.com/embed/cL545kw0FnA?end=268" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe><br><br>
                     <h4 class="pt-4">Summary</h4>
                     <ul>
-                        <li class="pt-1">The <b><i>Loc</i></b> method is used to query a DataFrame in a SQL-like format. This is used with the following syntax: <br>
-                            <code>dataframe.loc['row_filter', 'column_filter']</code><br><br>
-                            <b>SQL Equivalent:</b> SELECT 'column_filter' FROM dataframe WHERE 'row_filter' <br><br>
-                            <b>Example:</b> <br>
-                            <code>dataframe.loc[dataframe['revenue']>= 10000, ['month', 'year', 'revenue', 'expenses']]</code></li>
-                        <li class="pt-2">The <b><i>Loc</i></b> method can also be used to filter rows by their corresponding Index value. Example: <br>
-                            <code>dataframe.loc[3, ['month', 'year', 'revenue']</code></li>
-                        <li class="pt-2">The <b><i>Iloc</i></b> method is similar in to the Loc method, though the Iloc method is used to query data using only the row and column indices. This is useful for when you want to get a subset of data but don't know the column names or row values. This is used with the following syntax: <br>
-                            <code>dataframe.iloc['row_indices', 'column_indices']</code> <br><br>
-                            <b>Example:</b> <br>
-                            <code>dataframe.iloc[3:6, 1:5]</code></li>
+                        <li class="pt-1"><b><i>JSON</i></b>, JavaScript Object Notation, is a lightweight format for storing and transporting data across the web. It's formatted as a list of key-value pairs and arrays (nested dictionaries).</li>
+                        <li class="pt-2">The <b><i>read_json</i></b> method is used to convert a JSON file into a DataFrame. This process is also known as <b><i>Flattening.</i></b></i> The style of JSON used below is known as "column" style. This method is used with the following syntax: <br><br>
+                            <b>Sample Format:</b><br>
+                            <code>data = {<br>
+                                &ensp;&ensp;&ensp;"Column1": {"0":"row1_value1", "1":"row2_value1"},<br>
+                                &ensp;&ensp;&ensp;"Column2": {"0":"row1_value2", "1":"row2_value2"},<br>
+                                &ensp;&ensp;&ensp;"Column3": {"0":"row1_value3", "1":"row2_value3"}<br>
+                            }
+                            </code><br><br>
+                            <b>Syntax:</b><br>
+                            <code>pd.read_json('file_name.json')</code><br>
+                            <b>OR</b><br>
+                            <code>pd.read_json('file_name.json', orient='columns')</code></li>
+                        <li class="pt-2">If the JSON file you're reading is in a "split" format, see example below, use the following syntax: <br><br>
+                            <b>Sample Format:</b><br>
+                            <code>data = { <br>
+                            &ensp;&ensp;&ensp;"index":["0", "1"],<br>
+                            &ensp;&ensp;&ensp;"columns":["Column1", "Column2", "Column3"], <br>
+                            &ensp;&ensp;&ensp;"data":["row1_value1", "row1_value2", "row1_value3"], <br>
+                            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;["row2_value1" "row2_value2", "row2_value3"]<br>
+                            &ensp;&ensp;]<br>
+                            }<br><br></code>
+                            <b>Syntax:</b><br>
+                            <code><b>pd.read_json('file_name.json', orient='split')</b></code></li>
+                        <li class="pt-2">If the JSON file you're reading is in a "Index" format, see example below, use the following syntax: <br><br>
+                            <b>Sample Format:</b><br>
+                            <code>data = { <br>
+                            &ensp;&ensp;&ensp;"0":{"Column1":"row1_value1", "Column2":"row1_value2", "Column3":"row1_value3"},<br>
+                            &ensp;&ensp;&ensp;"1":{"Column1":"row2_value1", "Column2":"row2_value2", "Column3":"row2_value3"}, <br>
+                            &ensp;&ensp;&ensp;"2":{"Column1":"row3_value1", "Column2:"row3_value2", "Column3":"row3_value3" }, <br>
+                            }<br><br></code>
+                            <b>Syntax:</b><br>
+                            <code><b>pd.read_json('file_name.json', orient='index')</b></code></li>
+                        <li class="pt-2">If the JSON file you're reading is in a "Records" format, see example below, use the following syntax: <br><br>
+                            <b>Sample Format:</b><br>
+                            <code>data = { <br>
+                            &ensp;&ensp;&ensp;{"Column1":"row1_value1", "Column2":"row1_value2", "Column3":"row1_value3"},<br>
+                            &ensp;&ensp;&ensp;{"Column1":"row2_value1", "Column2":"row2_value2", "Column3":"row2_value3"}, <br>
+                            &ensp;&ensp;&ensp;{"Column1":"row3_value1", "Column2:"row3_value2", "Column3":"row3_value3"}, <br>
+                            }<br><br></code>
+                            <b>Syntax:</b><br>
+                            <code><b>pd.read_json('file_name.json', orient='records')</b></code></li>
+                        <li class="pt-2">If the JSON file you're reading is in a "Values" format, see example below, use the following syntax: <br><br>
+                            <b>Sample Format:</b><br>
+                            <code>data = [ <br>
+                            &ensp;&ensp;&ensp;["row1_value1", "row1_value2", "row1_value3"],<br>
+                            &ensp;&ensp;&ensp;["row2_value1", "row2_value2", "row2_value3"], <br>
+                            &ensp;&ensp;&ensp;["row3_value1", "row3_value2", "row3_value3"], <br>
+                            ]<br><br></code>
+                            <b>Syntax:</b><br>
+                            <code><b>pd.read_json('file_name.json', orient='values')</b></code></li>
                         <li class="pt-2"><b>NOTE:</b> When slicing values in Python, use the following notation: <code>starting_value:ending_value.</code> If you want to slice values in reverse, use the following notation: <code>starting_value:ending_value:-1</code></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Common DataFrame Methods Are Available</h2> <br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Export a DataFrame into Another File Format</h2> <br>
                         <iframe width="650" height="400" src="https://www.youtube.com/embed/Z6RU_MFjevU?end=230" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
@@ -199,13 +238,13 @@
                         <div class="row mt-4 mt-md-5 mb-2 px-3">
                             <a
                                 class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                                href="./Dataframes-Series.html">
+                                href="./Dataframe-Functions.html">
                                 Previous Topic
                             </a>
                            <div class="col-0 col-sm-4"></div>
                             <a
                                 class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                                href="./Text-Files.html">
+                                href="./Dataframe-Functions.html">
                                 Next Topic
                             </a>
                         </div>

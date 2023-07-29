@@ -133,7 +133,7 @@
                         <li class="pt-2"><b>NOTE: </b>Although the <b><i>read_sql_query</i></b> works when reading a running a raw SQL query against a database connection, the <b><i>read_sql</i></b> method is much simpler and more commonly used. This method has the same syntax as the <b><i>read_sql_query</i></b> method.</li>
                         </ul>
                     <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Convert a JSON File into a DataFrame</h2> <br>
-                    <iframe width="650" height="400" src="https://www.youtube.com/embed/M-4EpNdlSuY?start=478" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe><br><br>
+                    <iframe width="650" height="400" src="https://www.youtube.com/embed/M-4EpNdlSuY?start=478&end=630" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe><br><br>
                     <h4 class="pt-4">Summary</h4>
                     <ul>
                         <li class="pt-1">The <b><i>to_sql</i></b> method is used to upload a Dataframe either as a new table or added to an existing table. This method is used with the following syntax: <br>
@@ -155,21 +155,44 @@
                         <ol>
                             <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
                             <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "text-files.ipynb"</li>
+                            <li class="pt-2">Using either MySQL or Oracle, create a database with the following configurations: </li>
+                            <ul>
+                                <li><b>Username:</b> test</li>
+                                <li><b>password:</b> test</li>
+                                <li><b>Database Name:</b> ecommerce_shop</li>
+                                <li><b>Schema:</b>
+                                    <ul>
+                                        <li>Customers
+                                            <ul>
+                                                <li>id (Integer Primary Key)</li>
+                                                <li>first_name (VARCHAR(50) NOT NULL)</li>
+                                                <li>last_name (VARCHAR(50) NOT NULL)</li>
+                                                <li>phone_num (CHAR(10) NOT NULL)</li>
+                                            </ul>
+                                        </li>
+                                        <li>Orders
+                                            <ul>
+                                                <li>id (Integer Primary Key)</li>
+                                                <li>num_items (Integer NOT NULL)</li>
+                                                <li>total_price (Integer NOT NULL)</li>
+                                                <li>order_date (DATE NOT NULL)</li>
+                                                <li>status (VARCHAR(25) IN('Completed', 'In Progress', 'Cancelled'))</li>
+                                                <li>customer_id (Integer Foreign Key References id column in Customers Table)</li>
+                                            </ul>
+                                        </li>
+                                    </ul></li>
+                            </ul>
+                            <li>Fill in the Database Tables with Dummy Data</li>
                             <li class="pt-2">In the Notebook, complete the following tasks:</li>
                             <ol type="a">
-                                <li class="pt-2"><b>Download the Following Files:</b> <br>
-                                    <ul>
-                                        <li><a href="./Exercise Files/unclean_listings.xlsx">Sample Excel Workbook</a></li>
-                                        <li><a href="./Exercise Files/unclean_listings.csv">Sample CSV File</a></li>
-                                        <li><a href="./Exercise Files/unclean_listings.json">Sample JSON File</a></li>
-                                    </ul></li>
-                                <li class="pt-2"><b>Read the Excel Workbook into a DataFrame object named "unclean_listings_excel"</b></li>
-                                <li class="pt-2"><b>Read the CSV File into a DataFrame Object named "unclean_listings_csv"</b></li>
-                                <li class="pt-2"><b>Read the JSON File into a DataFrame Obejct named "unclean_listings_json"</b></li>
-                                <li class="pt-2"><b>Export the "unclean_listings_excel" variable to a CSV file named "converted_listings.csv". Exclude the index.</b></li>
-                                <li class="pt-2"><b>Export the "unclean_listings_json" variable to a JSON file named "converted_listings.json". Orient the data to "Split" format.</b></li>
+                                <li class="pt-2"><b>Create a Connection to your Database (Answer will vary).</b></li>
+                                <li class="pt-2"><b>View All the Data in the "Customers" Table.</b></li>
+                                <li class="pt-2"><b>View All the Data in the "Orders Table".</b></li>
+                                <li class="pt-2"><b>Write a SQL Query that shows the Customer's First and Last Names and the Date of their Most Recent Order. Output the Result as a DataFrame.</b></li>
+                                <li class="pt-2"><b>Write a SQL Query that shows the Top 5 Most Expensive Orders. Output the Result as a DataFrame.</b></li>
+                                <li class="pt-2"><b>Export the Results of the Query Produced in Step "d" to a New Table Called "most_recent_orders".</b></li>
                             </ol>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Text-Files-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Database-Connections-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

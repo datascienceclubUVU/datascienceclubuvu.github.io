@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: Working with Databases</title>
+    <title>Pandas Tutorials: Working with Other Files</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: Working with Databases
+                            Pandas Tutorials: Working with Other Files
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/pandas-databases.webp"
+                                src="../../imgs/pandas-text-files.webp"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -90,46 +90,40 @@
                         <div class="col">
                             <h5><b>DISCLAIMER: Before starting this tutorial, you should have a basic knowledge of Relational Databases and SQL.</b></h5>
                             <p class="pt-2">
-                                Text Files are great for when you are getting started with Pandas or working on a small-scale Data Science project. However, once you start collecting data on a regular basis, you'll need a database. This tutorial will cover the following learning objectives:
+                                Text Files are very common for use in small-scale data storage. However, when you have very large amounts of tabular data that needs to be compressed, you'll likely use a different file format. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Use SQLAlchemy with Pandas</li>
-                                <li>How to Execute a SQL Query Against a Database with Pandas</li>
-                                <li>How to Append a DataFrame to an Existing Database Table</li>
+                                <li>How to Import and Export Pickle Files</li>
+                                <li>How to Import and Export Parquet Files</li>
+                                <li>How to Import and Export HTML Tables</li>
+                                <li>How to Export a DataFrame into Another File Format</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use SQLAlchemy with Pandas</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/M-4EpNdlSuY?start=0&end=136" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Import and Export Pickle Files</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/LQnf70x7GXg?start=300" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>SQLAlchemy</i></b> library is a popular tool to connect Relational Databases to Python via an API. The most popular database supported by this library are MySQL, PostgreSQL, and Oracle.</li>
-                            <li class="pt-2">Before getting started with SQLAlchemy, you'll need to install it into your local environment AND the database driver. Run the following code to get started: <br>
-                                <code>pip install sqlalchemy</code><br><br>
-                                <b>MySQL:</b><br>
-                                <code>pip install pymysql</code><br><br>
-                                <b>PostgreSQL:</b><br>
-                                <code>pip install psycopg2</code></li>
-                            <li class="pt-2">Once you have the correct libraries installed, you need to create the connection string for the connection engine. Run the following code to continue: <br>
-                                <code>from sqlalchemy import create_engine</code><br><br>
-                                <b>MySQL:</b><br>
-                                <code>engine = create_engine('mysql+pymysql://[username]:[password]@localhost:3306/[database_name]')</code><br><br>
-                                <b>PostgreSQL:</b><br>
-                                <code>engine = create_engine('postgresql+psycopg2://[username]:[password]@localhost:5432/[database_name]')</code></li>
+                            <li class="pt-1">The <b><i>Pickle</i></b> file format is a binary file used for serializing and deserializing data. This is commonly used on web servers when embedding large amounts of data on the backend.</li>
+                            <li class="pt-2">The <b><i>read_pickle</i></b> method is used to convert a Pickle File into a DataFrame. This is used with the following syntax: <br>
+                                <code>pd.read_pickle('test.pkl')</code></li>
+                            <li class="pt-2">The <b><i>to_pickle</i></b> method is used to export a DataFrame to a Pickle file. This is used with the following syntax: <br>
+                                <code>dataframe.to_pickle('test.pkl')</code></li>
+                            <li class="pt-2">If you specify a compression algorithm when using the <b><i>to_pickle</i></b> method, you need to specify the same algorthm in the <b><i>read_pickle</i></b> method. This is used with the following syntax: <br>
+                                <code>dataframe.to_pickle('test.pkl', compression='gzip')</code><br>
+                                <code>pd.read_pickle('test.pkl', compression='gzip')</code></li>
+                            <li class="pt-2"><b>NOTE:</b> Unlike the video, you DON'T need to import the Pickle library before reading a Pickle file into a Pandas DataFrame.</li>
 
-                            <li class="pt-2"><b>NOTE:</b> If the file you want to use is not in your working directory, you'll need to specify either the Absolute or Relative file path.</li>
                             </ul>
-                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Execute a SQL Query Against a Database with Pandas</h2> <br>
-                    <iframe width="650" height="400" src="https://www.youtube.com/embed/M-4EpNdlSuY?start=137&end=345" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Import and Export Parquet Files</h2> <br>
+                    <h6><b>What is Apache Parquet and Why to Use It??</b></h6>
+                    <iframe width="650" height="400" src="https://www.youtube.com/embed/PaDUxrI6ThA?start=300" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                     <h4 class="pt-4">Summary</h4>
                     <ul>
-                        <li class="pt-2">When you have established the connection to your database, the <b><i>read_sql_table</i></b> mathod can be used to view the contents of a table (SQL Equivalent: <b>SELECT * FROM table</b>). This is used with the following syntax: <br>
-                            <code>pd.read_sql_table('table_name', con=[engine_variable])</code></li>
-                        <li class="pt-2">The <b><i>read_sql_table</i></b> method also contains a parameter that lets you specify the columns to return from the table (SQL Equivalent: <b>SELECT [columns] FROM table</b>). This is used with the following syntax: <br>
-                            <code>pd.read_sql_table('table_name', con=[engine_variable], columns=['column1', 'column2', 'column3'])</code></li>
-                        <li class="pt-2">The <b><i>read_sql_query</i></b> method is used to run a raw SQL query against a database connection. This method is used with the following syntax: <br>
-                            <code>pd.read_sql_query('enter query here', con=[engine_variable])</code></li>
+                        <li class="pt-2">Unlike Excel Workbooks or CSV Files, Parquet Files are designed with Big Data Analytics in mind. This File Format is specifically built for reading and writing large amounts of tabular data in very short periods of time.</li>
+                        <li class="pt-2">Excel Workbooks and CSV Files are row-oriented, meaning they are read row-by-row. This makes reading the files very slow when a certain threshold is reached (about 100,000 rows on average). Parquet is column-oriented, meaning it's read by column values. This makes it much faster at reading thousands of rows in a fraction of the time it takes traditional Text Files.</li>
+                        <li class="pt-2">On the basis of storing repeated values, Text Files don't do anything with them. On the other hand, column-oriented File Formats, such as Parquet, encode repeated values to form a "lookup" metedata table to make reading operations significantly faster.</li>
                         <li class="pt-2"><b>NOTE: </b>Although the <b><i>read_sql_query</i></b> works when reading a running a raw SQL query against a database connection, the <b><i>read_sql</i></b> method is much simpler and more commonly used. This method has the same syntax as the <b><i>read_sql_query</i></b> method.</li>
                         </ul>
                     <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Append a DataFrame to an Existing Database Table</h2> <br>
@@ -201,7 +195,7 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="./Other-Files.html">
+                            href="./Dataframe-Functions.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>

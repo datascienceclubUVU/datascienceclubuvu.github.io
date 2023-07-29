@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: Working with Text Files</title>
+    <title>Pandas Tutorials: Working with Databases</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: Working with Text Files
+                            Pandas Tutorials: Working with Databases
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/pandas-text-files.webp"
+                                src="../../imgs/pandas-databases.webp"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -88,44 +88,49 @@
                     <!-- Description. -->
                     <div class="row mt-2 mb-3">
                         <div class="col">
+                            <h5><b>DISCLAIMER: Before starting this tutorial, you should have a basic knowledge of Relational Databases and SQL.</b></h5>
                             <p class="pt-2">
-                                What makes Pandas so popular is it's ability to convert various types of files into DataFrames. Whether you're working with an Excel Workbook, CSV/TSV File, or JSON, Pandas can convert it into a DataFrame. This tutorial will cover the following learning objectives:
+                                Text Files are great for when you are getting started with Pandas or working on a small-scale Data Science project. However, once you start collecting data on a regular basis, you'll need a database. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Convert an Excel Workbook into a DataFrame</li>
-                                <li>How to Convert a CSV File into a DataFrame</li>
-                                <li>How to Convert a JSON File into a DataFrame</li>
-                                <li>How to Export a DataFrame into Another File Format</li>
+                                <li>How to Use SQLAlchemy with Pandas</li>
+                                <li>How to Execute a SQL Query Against a Database with Pandas</li>
+                                <li>How to Output a DataFrame as a Database Table</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Convert an Excel Workbook into a DataFrame</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/Q3ppdzyDZnY?start=156" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use SQLAlchemy with Pandas</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/M-4EpNdlSuY?start=0&end=136" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>read_excel</i></b> method is used to convert an Excel Workbook into a DataFrame. This is used with the following syntax, showing the first sheet in the workbook as default: <br>
-                                <code>pd.read_excel('file_name.xlsx')</code></li>
-                            <li class="pt-2">If you want to read a specific sheet within an Excel Workbook, use the following syntax: <br>
-                                <code>pd.read_excel('file_name.xlsx', sheet_name='sheet_name')</code></li>
-                            <li class="pt-2">If you want to list out all the Sheets in your Workbook into a single DataFrame, use the syntax below. This will return a dictionary and you simply need to specify the key to create a DataFrame off a specific DataFrame in the dictionary.<br>
-                                <code>all_sheets = pd.read_excel('file_name.xlsx', sheet_name=None) <br>
-                                all_sheets[key]</code></li>
-                            <li class="pt-2">If you want to combine all the Sheets in your Workbook into a single DataFrame, use the following syntax: <br>
-                                <code>pd.concat(pd.read_excel('file_name.xlsx', sheet_name=None), ignore_index=True)</code></li>
-                            <li class="pt-2"><b>NOTE: </b>Although you can use the Sheet's Index when specifying the sheet to read into the DataFrame, it's a best practice to always use the Sheet's Name since it's easier for others to understand your code.</li>
+                            <li class="pt-1">The <b><i>SQLAlchemy</i></b> library is a popular tool to connect Relational Databases to Python via an API. The most popular database supported by this library are MySQL, PostgreSQL, and Oracle.</li>
+                            <li class="pt-2">Before getting started with SQLAlchemy, you'll need to install it into your local environment AND the database driver. Run the following code to get started: <br>
+                                <code>pip install sqlalchemy</code><br><br>
+                                <b>MySQL:</b><br>
+                                <code>pip install pymysql</code><br><br>
+                                <b>PostgreSQL:</b><br>
+                                <code>pip install psycopg2</code></li>
+                            <li class="pt-2">Once you have the correct libraries installed, you need to create the connection string for the connection engine. Run the following code to continue: <br>
+                                <code>from sqlalchemy import create_engine</code><br><br>
+                                <b>MySQL:</b><br>
+                                <code>engine = create_engine('mysql+pymysql://[username]:[password]@localhost:3306/[database_name]')</code><br><br>
+                                <b>PostgreSQL:</b><br>
+                                <code>engine = create_engine('postgresql+psycopg2://[username]:[password]@localhost:5432/[database_name]')</code></li>
+
                             <li class="pt-2"><b>NOTE:</b> If the file you want to use is not in your working directory, you'll need to specify either the Absolute or Relative file path.</li>
                             </ul>
-                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Convert a CSV File into a DataFrame</h2> <br>
-                    <iframe width="650" height="400" src="https://www.youtube.com/embed/4YI9z1qUpew?start=156" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Execute a SQL Query Against a Database with Pandas</h2> <br>
+                    <iframe width="650" height="400" src="https://www.youtube.com/embed/M-4EpNdlSuY?start=137&end=345" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                     <h4 class="pt-4">Summary</h4>
                     <ul>
-                        <li class="pt-1">The <b><i>read_csv</i></b> method is used to convert a CSV file into a DataFrame. This method is used with the following syntax: <br>
-                            <code>pd.read_csv('file_name.csv')</code></li>
-                        <li class="pt-2"><b>NOTE:</b> If you need to specify the Absolute or Relative file path, you can either put an "r" in front of the file path, or separate the levels of hierarchy by double back slashes "\\". Example: <br>
-                            <code>pd.read_csv(r"C:\Users\name\Documents\test.csv")</code> <br>
-                            <b>OR</b> <br>
-                            <code>pd.read_csv("C:\\Users\\name\\Documents\\test.csv")</code></li>
+                        <li class="pt-2">When you have established the connection to your database, the <b><i>read_sql_table</i></b> mathod can be used to view the contents of a table (SQL Equivalent: <b>SELECT * FROM table</b>). This is used with the following syntax: <br>
+                            <code>pd.read_sql_table('table_name', con=[engine_variable])</code></li>
+                        <li class="pt-2">The <b><i>read_sql_table</i></b> method also contains a parameter that lets you specify the columns to return from the table (SQL Equivalent: <b>SELECT [columns] FROM table</b>). This is used with the following syntax: <br>
+                            <code>pd.read_sql_table('table_name', con=[engine_variable], columns=['column1', 'column2', 'column3'])</code></li>
+                        <li class="pt-2">The <b><i>read_sql_query</i></b> method is used to run a raw SQL query against a database connection. This method is used with the following syntax: <br>
+                            <code>pd.read_sql_query('enter query here', con=[engine_variable])</code></li>
+                        <li class="pt-2"><b>NOTE: </b>Although the <b><i>read_sql_query</i></b> works when reading a running a raw SQL query against a database connection, the <b><i>read_sql</i></b> method is much simpler and more commonly used. This method has the same syntax as the <b><i>read_sql_query</i></b> method.</li>
                         </ul>
                     <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Convert a JSON File into a DataFrame</h2> <br>
                     <iframe width="650" height="400" src="https://www.youtube.com/embed/cL545kw0FnA?end=268" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe><br><br>

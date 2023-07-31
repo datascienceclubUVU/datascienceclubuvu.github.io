@@ -117,14 +117,24 @@
 
                             </ul>
                     <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Import and Export Parquet Files</h2> <br>
-                    <h6><b>What is Apache Parquet and Why to Use It??</b></h6>
-                    <iframe width="650" height="400" src="https://www.youtube.com/embed/PaDUxrI6ThA?start=300" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                    <h6><b>What is Apache Parquet and Why to Use It?</b></h6>
+                    <iframe width="650" height="400" src="https://www.youtube.com/embed/PaDUxrI6ThA?end=432" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                    <h6><b>How to Import and Export Parquet Files Using Pandas</b></h6>
+                    <iframe width="650" height="400" src="https://www.youtube.com/embed/XFO5jdGsMek?end=183" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                     <h4 class="pt-4">Summary</h4>
                     <ul>
                         <li class="pt-2">Unlike Excel Workbooks or CSV Files, Parquet Files are designed with Big Data Analytics in mind. This File Format is specifically built for reading and writing large amounts of tabular data in very short periods of time.</li>
                         <li class="pt-2">Excel Workbooks and CSV Files are row-oriented, meaning they are read row-by-row. This makes reading the files very slow when a certain threshold is reached (about 100,000 rows on average). Parquet is column-oriented, meaning it's read by column values. This makes it much faster at reading thousands of rows in a fraction of the time it takes traditional Text Files.</li>
                         <li class="pt-2">On the basis of storing repeated values, Text Files don't do anything with them. On the other hand, column-oriented File Formats, such as Parquet, encode repeated values to form a "lookup" metedata table to make reading operations significantly faster.</li>
-                        <li class="pt-2"><b>NOTE: </b>Although the <b><i>read_sql_query</i></b> works when reading a running a raw SQL query against a database connection, the <b><i>read_sql</i></b> method is much simpler and more commonly used. This method has the same syntax as the <b><i>read_sql_query</i></b> method.</li>
+                        <li class="pt-2"><b><i>Dictionary Encoding</i></b> takes each distinct value in a column, sorts it in ascending order, and gives each value a key to represent it. This create a type of "lookup" table, similar to an index in a relational database.</li>
+                        <li class="pt-2"><b><i>Delta Encoding</i></b> parses the values in each column and assigns a key to the portion of the string based on its frequency (the more it occurs, the higher the larger the key).</li>
+                        <li class="pt-2"><b><i>File Compression</i></b> is the process of scanning a file and taking out redundant parts. This saves spaces, making the file significantly smaller. With Parquet, you can use wither LZO, GZIP, or Snappy. On Windows machines, GZIP is the default, though Snappy offers the best performance.</li>
+                        <li class="pt-2">The <b><i>read_parquet</i></b> method is used to convert a Parquet File into a DataFrame. This is used with the following syntax: <br>
+                            <code>pd.read_parquet('test.parquet', engine='pyarrow')</code></li>
+                        <li class="pt-2">The <b><i>to_parquet</i></b> method is used to export a DataFrame as a Parquet file. This is used with the following syntax: <br>
+                            <code>dataframe.to_parquet('test.parquet', compression=['gzip', 'snappy'])</code></li>
+                        <li class="pt-2"><b>NOTE:</b> Before using the <b><i>read_parquet</i></b> method, you must install the PyArrow library. This can be done by running the following line of code in your Terminal: <br>
+                            <code>pip install pyarrow</code></li>
                         </ul>
                     <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Append a DataFrame to an Existing Database Table</h2> <br>
                     <iframe width="650" height="400" src="https://www.youtube.com/embed/M-4EpNdlSuY?start=478&end=630" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe><br><br>

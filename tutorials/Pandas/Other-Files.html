@@ -95,8 +95,6 @@
                             <ul>
                                 <li>How to Import and Export Pickle Files</li>
                                 <li>How to Import and Export Parquet Files</li>
-                                <li>How to Import and Export HTML Tables</li>
-                                <li>How to Export a DataFrame into Another File Format</li>
                             </ul>
                         </div>
                     </div>
@@ -135,22 +133,11 @@
                             <code>dataframe.to_parquet('test.parquet', compression=['gzip', 'snappy'])</code></li>
                         <li class="pt-2"><b>NOTE:</b> Before using the <b><i>read_parquet</i></b> method, you must install the PyArrow library. This can be done by running the following line of code in your Terminal: <br>
                             <code>pip install pyarrow</code></li>
-                        </ul>
-                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Append a DataFrame to an Existing Database Table</h2> <br>
-                    <iframe width="650" height="400" src="https://www.youtube.com/embed/M-4EpNdlSuY?start=478&end=630" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe><br><br>
-                    <h4 class="pt-4">Summary</h4>
-                    <ul>
-                        <li class="pt-1">The <b><i>to_sql</i></b> method is used to upload a Dataframe either as a new table or added to an existing table. This method is used with the following syntax: <br>
-                            <code>dataframe.to_sql('table_name', con=[engine_variable])</code></li>
-                        <li class="pt-2">When using the <b><i>to_sql</i></b> method to upload a DataFrame as a new table, you should NEVER include the DataFrame's index. This is can easily cause confusion in your relational model. To exclude the index, use the following syntax: <br>
-                            <code>dataframe.to_sql('table_name', con=[engine_variable], index=False)</code></li>
-                        <li class="pt-2">When appending a DataFrame to an existing table, the <b><i>to_sql</i></b> method offers a parameter called <b><i>if_exists</i></b>. This parameter gives you the following options: <b>Fail</b> (stop code execution if the table already exists, <b>Replace</b> (drop the table, recreate the table, and insert the DataFrame's contents), and <b>Append</b> (add the DataFrame's contents to the end of the existing table). This is used with the following syntax: <br>
-                            <code>dataframe.to_sql('table_name', con=[engine_variable], index=False, if_exists=["fail", "replace", "append"])</code></li>
                         </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Working with Text Files Tutorial! To help test your knowledge, let's
-                            practice Reading and Writing some Text Files into and from DataFrames.</i></b>
+                        <p><b>Congratulations!</b> You just completed the Working with Other Files Tutorial! To help test your knowledge, let's
+                            practice Reading and Writing some Files into and from DataFrames.</i></b>
                             </i></b>
                             <br>**<b><i>It's highly recommended that you
                                 complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
@@ -158,45 +145,20 @@
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "text-files.ipynb"</li>
-                            <li class="pt-2">Using either MySQL or Oracle, create a database with the following configurations: </li>
-                            <ul>
-                                <li><b>Username:</b> test</li>
-                                <li><b>password:</b> test</li>
-                                <li><b>Database Name:</b> ecommerce_shop</li>
-                                <li><b>Schema:</b>
-                                    <ul>
-                                        <li>Customers
-                                            <ul>
-                                                <li>id (Integer Primary Key)</li>
-                                                <li>first_name (VARCHAR(50) NOT NULL)</li>
-                                                <li>last_name (VARCHAR(50) NOT NULL)</li>
-                                                <li>phone_num (CHAR(10) NOT NULL)</li>
-                                            </ul>
-                                        </li>
-                                        <li>Orders
-                                            <ul>
-                                                <li>id (Integer Primary Key)</li>
-                                                <li>num_items (Integer NOT NULL)</li>
-                                                <li>total_price (Integer NOT NULL)</li>
-                                                <li>order_date (DATE NOT NULL)</li>
-                                                <li>status (VARCHAR(25) IN('Completed', 'In Progress', 'Cancelled'))</li>
-                                                <li>customer_id (Integer Foreign Key References id column in Customers Table)</li>
-                                            </ul>
-                                        </li>
-                                    </ul></li>
-                            </ul>
-                            <li>Fill in the Database Tables with Dummy Data</li>
+                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "other-files.ipynb"</li>
                             <li class="pt-2">In the Notebook, complete the following tasks:</li>
                             <ol type="a">
-                                <li class="pt-2"><b>Create a Connection to your Database (Answer will vary).</b></li>
-                                <li class="pt-2"><b>View All the Data in the "Customers" Table.</b></li>
-                                <li class="pt-2"><b>View All the Data in the "Orders Table".</b></li>
-                                <li class="pt-2"><b>Write a SQL Query that shows the Customer's First and Last Names and the Date of their Most Recent Order. Output the Result as a DataFrame.</b></li>
-                                <li class="pt-2"><b>Write a SQL Query that shows the Top 5 Most Expensive Orders. Output the Result as a DataFrame.</b></li>
-                                <li class="pt-2"><b>Export the Results of the Query Produced in Step "d" to a New Table Called "most_recent_orders".</b></li>
+                                <li class="pt-2"><b>Download the Following Files:</b> <br>
+                                    <ul>
+                                        <li><a href="./Exercise Files/unclean_listings.pkl">Sample Pickle File</a></li>
+                                        <li><a href="./Exercise Files/unclean_listings.parquet">Sample Parquet File</a></li>
+                                    </ul></li>
+                                <li class="pt-2"><b>Read the Pickle File into a DataFrame object named "unclean_listings_pkl"</b></li>
+                                <li class="pt-2"><b>Read the Parquet File into a DataFrame Object named "unclean_listings_parquet"</b></li>
+                                <li class="pt-2"><b>Export the "unclean_listings_pkl" variable to a Parquet file named "converted_listings.parquet". Exclude the index and use "Snappy" compression.</b></li>
+                                <li class="pt-2"><b>Export the "unclean_listings_parquet" variable to a Pickle file named "converted_listings.pkl"</b></li>
                             </ol>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Database-Connections-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Other-Files-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

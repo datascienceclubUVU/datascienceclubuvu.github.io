@@ -128,31 +128,30 @@
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Filtering DataFrames Tutorial! To help test your knowledge, let's
-                            practice applying various filters to DataFrames.</i></b>
+                        <p><b>Congratulations!</b> You just completed the Sorting DataFrames Tutorial! To help test your knowledge, let's
+                            practice applying sorting DataFrames in various ways.</i></b>
                             </i></b>
                             <br>**<b><i>It's highly recommended that you
                                 complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
                         </p>
-                        <b><i>NOTE: The "drivetrain", "transmission", and "location" columns have a LEADING space, thus you should include a space in front of the characters in the string.</i></b>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "filters.ipynb"</li>
+                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "sorting-dataframes.ipynb"</li>
                             <li class="pt-2">In the Notebook, complete the following tasks:</li>
                             <ol type="a">
                                 <li class="pt-2"><b>Download the Following Files:</b> <br>
                                     <ul>
-                                        <li><a href="./Exercise Files/unclean_listings.csv">Sample CSV File</a></li>
+                                        <li><a href="./Exercise Files/unclean_listings.parquet">Sample Parquet File</a></li>
                                     </ul></li>
-                                <li class="pt-2"><b>Read the CSV File into a DataFrame object named "listings"</b></li>
-                                <li class="pt-2"><b>Use a Boolean Mask to select all rows in the DataFrame that have an Automatic Transmission</b></li>
-                                <li class="pt-2"><b>Use a Boolean Mask to select all rows in the DataFrame that have a FWD drivetrain or a Manual Transmission.</b>
+                                <li class="pt-2"><b>Read the Parquet File into a DataFrame object named "listings"</b></li>
+                                <li class="pt-2"><b>Sort the DataFrame by the "mileage" column in descending order.</b></li>
+                                <li class="pt-2"><b>Sort the DataFrame by the "location", "transmission", and "drivetrain" columns. Sort the "location" column in descending order and all other columns in ascending order. Make the changes to the DataFrame permenant. </b>
                                     </li>
-                                <li class="pt-2"><b>Use the "query" method to select all rows that have a location of "Chicago, IL".</b></li>
-                                <li class="pt-2"><b>Use the "query" method to select all rows that don't have a Manual Transmission.</b></li>
+                                <li class="pt-2"><b>Sort the index.</b></li>
+                                <li class="pt-2"><b>Reset the index. Make sure to use the correct parameters.</b></li>
                             </ol>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Filtering-DataFrames-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Sorting-DataFrames-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

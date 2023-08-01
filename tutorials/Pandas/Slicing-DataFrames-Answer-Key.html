@@ -71,16 +71,18 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Working with Other Files Exercise Answer Key
+                            Slicing DataFrames Exercise Answer Key
                         </h2>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
-                            <li class="pt-4"><code>unclean_listings_pkl = pd.read_pickle('unclean_listings.pkl')</code></li>
-                            <li class="pt-4"><code>unclean_listings_parquet = pd.read_parquet('unclean_listings.parquet')</code></li>
-                            <li class="pt-4"><code>unclean_listings_pkl.to_parquet('converted_listings.parquet', compression='snappy', index=False)</code></li>
-                            <li class="pt-4"><code>unclean_listings_parquet.to_pickle('converted_listings.pkl', index=False)</code></li>
+                            <li class="pt-4"><code>listings = pd.read_csv('unclean_listings.csv')</code></li>
+                            <li class="pt-4"><code>listings['header']</code></li>
+                            <li class="pt-4"><code>listings['exterior_color'][15:91]</code></li>
+                            <li class="pt-4"><code>listings[['header', 'mileage', 'price']]</code></li>
+                            <li class="pt-4"><code>listings.loc['drivetrain' == ' AWD', ['header', 'drivetrain']]</code></li>
+                            <li class="pt-4"><code>listings.iloc[35:121, 12]</code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

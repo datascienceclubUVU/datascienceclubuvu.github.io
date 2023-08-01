@@ -89,50 +89,44 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Text Files are very common for use in small-scale data storage. However, when you have very large amounts of tabular data that needs to be compressed, you'll likely use a different file format. This tutorial will cover the following learning objectives:
+                                Most of the time, your DataFrames will have more than 10 columns, which makes choosing specific columns quite tedious. <b><i>Slicing</i></b> makes this process much less tedious. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Import and Export Pickle Files</li>
-                                <li>How to Import and Export Parquet Files</li>
+                                <li>How to Slice DataFrame Columns</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Import and Export Pickle Files</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/LQnf70x7GXg?start=300" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Slice DataFrame Columns</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/2vFu4YtzfgE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>Pickle</i></b> file format is a binary file used for serializing and deserializing data. This is commonly used on web servers when embedding large amounts of data on the backend.</li>
-                            <li class="pt-2">The <b><i>read_pickle</i></b> method is used to convert a Pickle File into a DataFrame. This is used with the following syntax: <br>
-                                <code>pd.read_pickle('test.pkl')</code></li>
-                            <li class="pt-2">The <b><i>to_pickle</i></b> method is used to export a DataFrame to a Pickle file. This is used with the following syntax: <br>
-                                <code>dataframe.to_pickle('test.pkl')</code></li>
-                            <li class="pt-2">If you specify a compression algorithm when using the <b><i>to_pickle</i></b> method, you need to specify the same algorthm in the <b><i>read_pickle</i></b> method. This is used with the following syntax: <br>
-                                <code>dataframe.to_pickle('test.pkl', compression='gzip')</code><br>
-                                <code>pd.read_pickle('test.pkl', compression='gzip')</code></li>
-                            <li class="pt-2"><b>NOTE:</b> Unlike the video, you DON'T need to import the Pickle library before reading a Pickle file into a Pandas DataFrame.</li>
-
-                            </ul>
-                    <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Import and Export Parquet Files</h2> <br>
-                    <h6><b>What is Apache Parquet and Why to Use It?</b></h6>
-                    <iframe width="650" height="400" src="https://www.youtube.com/embed/PaDUxrI6ThA?end=432" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
-                    <h6><b>How to Import and Export Parquet Files Using Pandas</b></h6>
-                    <iframe width="650" height="400" src="https://www.youtube.com/embed/XFO5jdGsMek?end=183" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
-                    <h4 class="pt-4">Summary</h4>
-                    <ul>
-                        <li class="pt-2">Unlike Excel Workbooks or CSV Files, Parquet Files are designed with Big Data Analytics in mind. This File Format is specifically built for reading and writing large amounts of tabular data in very short periods of time.</li>
-                        <li class="pt-2">Excel Workbooks and CSV Files are row-oriented, meaning they are read row-by-row. This makes reading the files very slow when a certain threshold is reached (about 100,000 rows on average). Parquet is column-oriented, meaning it's read by column values. This makes it much faster at reading thousands of rows in a fraction of the time it takes traditional Text Files.</li>
-                        <li class="pt-2">On the basis of storing repeated values, Text Files don't do anything with them. On the other hand, column-oriented File Formats, such as Parquet, encode repeated values to form a "lookup" metedata table to make reading operations significantly faster.</li>
-                        <li class="pt-2"><b><i>Dictionary Encoding</i></b> takes each distinct value in a column, sorts it in ascending order, and gives each value a key to represent it. This create a type of "lookup" table, similar to an index in a relational database.</li>
-                        <li class="pt-2"><b><i>Delta Encoding</i></b> parses the values in each column and assigns a key to the portion of the string based on its frequency (the more it occurs, the higher the larger the key).</li>
-                        <li class="pt-2"><b><i>File Compression</i></b> is the process of scanning a file and taking out redundant parts. This saves spaces, making the file significantly smaller. With Parquet, you can use wither LZO, GZIP, or Snappy. On Windows machines, GZIP is the default, though Snappy offers the best performance.</li>
-                        <li class="pt-2">The <b><i>read_parquet</i></b> method is used to convert a Parquet File into a DataFrame. This is used with the following syntax: <br>
-                            <code>pd.read_parquet('test.parquet', engine='pyarrow')</code></li>
-                        <li class="pt-2">The <b><i>to_parquet</i></b> method is used to export a DataFrame as a Parquet file. This is used with the following syntax: <br>
-                            <code>dataframe.to_parquet('test.parquet', compression=['gzip', 'snappy'])</code></li>
-                        <li class="pt-2"><b>NOTE:</b> Before using the <b><i>read_parquet</i></b> method, you must install the PyArrow library. This can be done by running the following line of code in your Terminal: <br>
-                            <code>pip install pyarrow</code></li>
-                        </ul><br>
+                            <li class="pt-1">If you want to selct a single column from a DataFrame, use the following syntax: <br>
+                                <code>dataframe['column_name']</code></li>
+                            <li class="pt-2">If you want to select specific rows in a single column, use the following syntax: <br>
+                                <code>dataframe['column_name'][min_index:max_index]</code></li>
+                            <li class="pt-2">If you want to select multiple columns from a DataFrame, use the following syntax: <br>
+                                <code>dataframe[['column1', 'column2', 'column2']]</code></li>
+                            <li class="pt-2">The <b><i>loc</i></b> method is used to filter a DataFrame on either Rows, Columns, or both Rows and Columns. This is used with the following syntax: <br>
+                                <code>dataframe.loc[[row_filter], [column_filter]]</code></li>
+                            <li class="pt-2">If you want to select all the rows in a DataFrame but only a few adjacent columns, use the following syntax:<br>
+                                <code>dataframe.loc[:, 'column1':'column5']</code></li>
+                            <li class="pt-2">If you want to select all the rows in a DataFrame but only a few non-adjacent columns, use the following syntax: <br>
+                                <code>dataframe.loc[:, ['column1', 'column4', 'column18']]</code></li>
+                            <li class="pt-2">If you want to select rows that match a specific condition AND select all columns, use the following syntax: <br>
+                                <code>dataframe.loc[[row_filter], :]</code> <br><br>
+                                <b>Example:</b><br>
+                                <code>customers.loc['first_name' == 'Janice', :]</code></li>
+                            <li class="pt-2">The <b><i>iloc</i></b> method is identical to the <b><i>loc</i></b> method, except that <b><i>iloc</i></b> uses the indices of each Row and Column rather than names. This is used with the following syntax: <br>
+                                <code>dataframe.iloc[[row_filter], [column_filter]]</code></li>
+                            <li class="pt-2">In the example below, we'll use the <b><i>iloc</i></b> method to select rows 50-100 and only include the name, price, and description columns: <br>
+                                <code>inventory.iloc[50:101, [2, 3, 5]]</code></li>
+                            <li class="pt-2">If you want to view a Series as a DataFrame, use the following syntax: <br>
+                                <code>dataframe[['column_name']]</code><br>
+                                <b>OR</b><br>
+                                <code>pd.DataFrame(dataframe['column_name'])</code></li>
+                            <li class="pt-2"><b>NOTE:</b> As mentioned in the video, when slicing a DataFrame using Indices, the end index is EXCLUSIVE, meaning it ignores the last item, thus you should always add one to the last item you want (e.g., if you want columns 1-3, specify the indices 1:4).</li>
+                            </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Working with Other Files Tutorial! To help test your knowledge, let's
@@ -144,20 +138,22 @@
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "other-files.ipynb"</li>
+                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "slicing.ipynb"</li>
                             <li class="pt-2">In the Notebook, complete the following tasks:</li>
                             <ol type="a">
                                 <li class="pt-2"><b>Download the Following Files:</b> <br>
                                     <ul>
-                                        <li><a href="./Exercise Files/unclean_listings.pkl">Sample Pickle File</a></li>
-                                        <li><a href="./Exercise Files/unclean_listings.parquet">Sample Parquet File</a></li>
+                                        <li><a href="./Exercise Files/unclean_listings.csv">Sample CSV File</a></li>
                                     </ul></li>
-                                <li class="pt-2"><b>Read the Pickle File into a DataFrame object named "unclean_listings_pkl"</b></li>
-                                <li class="pt-2"><b>Read the Parquet File into a DataFrame Object named "unclean_listings_parquet"</b></li>
-                                <li class="pt-2"><b>Export the "unclean_listings_pkl" variable to a Parquet file named "converted_listings.parquet". Exclude the index and use "Snappy" compression.</b></li>
-                                <li class="pt-2"><b>Export the "unclean_listings_parquet" variable to a Pickle file named "converted_listings.pkl"</b></li>
+                                <li class="pt-2"><b>Read the CSV File into a DataFrame object named "listings"</b></li>
+                                <li class="pt-2"><b>Select the "header" column WITHOUT using the loc method.</b></li>
+                                <li class="pt-2"><b>Select rows 15 through 90 in the "exterior_color" column WITHOUT using the loc method.</b></li>
+                                <li class="pt-2"><b>Select the "header", "mileage", and "price" columns WITHOUT using the loc method.</b></li>
+                                <li class="pt-2"><b>Using the loc method, select all rows that have a drivetrain of "AWD". Include only the "header" and "drivetrain" columns.</b><br><br>
+                                    <b><i>NOTE: The "drivetrain" column has a LEADING space, thus you should include a space in front of the characters in the string.</i></b></li>
+                                <li class="pt-2"><b>Using the iloc method, select rows 35 through 120 in the "engine" column. Only include the "engine" column.</b></li>
                             </ol>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Other-Files-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Slicing-DataFrames-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

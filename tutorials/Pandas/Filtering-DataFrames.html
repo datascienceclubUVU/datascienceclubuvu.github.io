@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: Slicing DataFrames</title>
+    <title>Pandas Tutorials: Filtering DataFrames</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: Slicing DataFrames
+                            Pandas Tutorials: Filtering DataFrames
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -89,48 +89,56 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Most of the time, your DataFrames will have more than 10 columns, which makes choosing specific columns quite tedious. <b><i>Slicing</i></b> makes this process much less tedious. This tutorial will cover the following learning objectives:
+                                The difference between Slicing and Filtering can be quite hazy. However, it never hurts to know the various ways of how to apply filters to DataFrames. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Slice DataFrame Columns</li>
+                                <li>How to Filter DataFrames Using a Boolean Mask</li>
+                                <li>How to Filter DataFrames Using the "query" Method</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Slice DataFrame Columns</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/2vFu4YtzfgE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter DataFrames Using a Boolean Mask</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ni9ng4Jy3Z8?end=406" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">If you want to selct a single column from a DataFrame, use the following syntax: <br>
-                                <code>dataframe['column_name']</code></li>
-                            <li class="pt-2">If you want to select specific rows in a single column, use the following syntax: <br>
-                                <code>dataframe['column_name'][min_index:max_index]</code></li>
-                            <li class="pt-2">If you want to select multiple columns from a DataFrame, use the following syntax: <br>
-                                <code>dataframe[['column1', 'column2', 'column2']]</code></li>
-                            <li class="pt-2">The <b><i>loc</i></b> method is used to filter a DataFrame on either Rows, Columns, or both Rows and Columns. This is used with the following syntax: <br>
-                                <code>dataframe.loc[[row_filter], [column_filter]]</code></li>
-                            <li class="pt-2">If you want to select all the rows in a DataFrame but only a few adjacent columns, use the following syntax:<br>
-                                <code>dataframe.loc[:, 'column1':'column5']</code></li>
-                            <li class="pt-2">If you want to select all the rows in a DataFrame but only a few non-adjacent columns, use the following syntax: <br>
-                                <code>dataframe.loc[:, ['column1', 'column4', 'column18']]</code></li>
-                            <li class="pt-2">If you want to select rows that match a specific condition AND select all columns, use the following syntax: <br>
-                                <code>dataframe.loc[[row_filter], :]</code> <br><br>
+                            <li class="pt-1">The <b><i>shape</i></b> Attribute is used to show the dimensions of the DataFrame (how many rows and how many columns). This is used with the following syntax: <br>
+                                <code>dataframe.shape</code></li>
+                            <li class="pt-2">A <b><i>Boolean Mask</i></b> is used to represent a condition that is used across the entire DataFrame. This is used with the following syntax: <br>
+                                <code>dataframe[dataframe['column_name'] [condition]]</code><br><br>
                                 <b>Example:</b><br>
-                                <code>customers.loc['first_name' == 'Janice', :]</code></li>
-                            <li class="pt-2">The <b><i>iloc</i></b> method is identical to the <b><i>loc</i></b> method, except that <b><i>iloc</i></b> uses the indices of each Row and Column rather than names. This is used with the following syntax: <br>
-                                <code>dataframe.iloc[[row_filter], [column_filter]]</code></li>
-                            <li class="pt-2">In the example below, we'll use the <b><i>iloc</i></b> method to select rows 50-100 and only include the name, price, and description columns: <br>
-                                <code>inventory.iloc[50:101, [2, 3, 5]]</code></li>
-                            <li class="pt-2">If you want to view a Series as a DataFrame, use the following syntax: <br>
-                                <code>dataframe[['column_name']]</code><br>
-                                <b>OR</b><br>
-                                <code>pd.DataFrame(dataframe['column_name'])</code></li>
-                            <li class="pt-2"><b>NOTE:</b> As mentioned in the video, when slicing a DataFrame using Indices, the end index is EXCLUSIVE, meaning it ignores the last item, thus you should always add one to the last item you want (e.g., if you want columns 1-3, specify the indices 1:4).</li>
+                                <code>sales[sales['month'] == 'January']</code></li>
+                            <li class="pt-2">Boolean Masks can also be used to apply multiple conditions. This is used with the following syntax: <br>
+                                <code>dataframe[(condition1) [Bitwise Operator] (condition2)]</code><br><br>
+                                <b>Example:</b><br>
+                                <code>sales[(sales['month'] == 'January') & (sales['year'] == 2023)]</code></li>
+                            <li class="pt-2">When applying multiple conditions using Boolean Masks, the <b><i>& (ampersand)</i></b> symbol is used to state that both conditions must be met, whereas the <b><i>| (pipe operator)</i></b> symbol is used to state that at keast one condition must be met.</li>
+                            <li class="pt-2">If you are writing multiple conditions and want to switch the logic on one or more conditions, use the <b><i>~ (tilde)</i></b> symbol. This is used with the following syntax: <br>
+                                <code>dataframe[~(condition1) & (condition2)]</code><br><br>
+                                <b>Example:</b><br>
+                                <code>sales(~(sales['month'] == 'January') & (sales['year'] == 2023))</code></li>
+                            <li class="pt-2"><b>NOTE:</b> Boolean Masks are by far the simplest way to apply a conditions to a DataFrame. However, when used in production, it can make your code difficult to read, so it's best to use this approach in development.</li>
+                            <li class="pt-2"><b>NOTE:</b> The symbols used to either combine or separate conditions are known as <b><i>Bitwise Operators</i></b>. These are identical in purpose to Logical Operators, though Bitwise Operators are interpreted differently in the Python Compiler.</li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter DataFrames Using the "query" Method</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ni9ng4Jy3Z8?start=517&end=644" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>query</i></b> method is used to filter a DataFrame by one or more conditions. This is used with the following syntax: <br>
+                                <code>dataframe.query("condition1")</code><br><br>
+                                <b>Example:</b><br>
+                                <code>sales.query("month == 'January' & year == 2023")</code></li>
+                            <li class="pt-2">A <b><i>Boolean Mask</i></b> is used to represent a condition that is used across the entire DataFrame. This is used with the following syntax: <br>
+                                <code>dataframe[dataframe['column_name'] [condition]]</code><br><br>
+                                <b>Example:</b><br>
+                                <code>sales[sales['month'] == 'January']</code></li>
+                            <li class="pt-2"><b>NOTE:</b> When specifying the set of conditions, it's a best practice to place the entire set of conditions between double quotation marks to make filtering string values possible.</li>
+                            <li class="pt-2"><b>NOTE:</b> When deciding which method to use when filtering DataFrames, consider whether readability or performance is more important. It's important to remember that Pandas isn;t built for large datasets, thus readability should be a higher priority.</li>
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Slicing DataFrames Tutorial! To help test your knowledge, let's
-                            practice Selecting Rows and Columns from DataFrames.</i></b>
+                        <p><b>Congratulations!</b> You just completed the Filtering DataFrames Tutorial! To help test your knowledge, let's
+                            practice applying various filters to DataFrames.</i></b>
                             </i></b>
                             <br>**<b><i>It's highly recommended that you
                                 complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
@@ -138,7 +146,7 @@
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "slicing.ipynb"</li>
+                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "filters.ipynb"</li>
                             <li class="pt-2">In the Notebook, complete the following tasks:</li>
                             <ol type="a">
                                 <li class="pt-2"><b>Download the Following Files:</b> <br>
@@ -146,12 +154,12 @@
                                         <li><a href="./Exercise Files/unclean_listings.csv">Sample CSV File</a></li>
                                     </ul></li>
                                 <li class="pt-2"><b>Read the CSV File into a DataFrame object named "listings"</b></li>
-                                <li class="pt-2"><b>Select the "header" column WITHOUT using the loc method.</b></li>
-                                <li class="pt-2"><b>Select rows 15 through 90 in the "exterior_color" column WITHOUT using the loc method.</b></li>
-                                <li class="pt-2"><b>Select the "header", "mileage", and "price" columns WITHOUT using the loc method.</b></li>
-                                <li class="pt-2"><b>Using the loc method, select all rows that have a drivetrain of "AWD". Include only the "header" and "drivetrain" columns.</b><br><br>
-                                    <b><i>NOTE: The "drivetrain" column has a LEADING space, thus you should include a space in front of the characters in the string.</i></b></li>
-                                <li class="pt-2"><b>Using the iloc method, select rows 35 through 120 in the "engine" column. Only include the "engine" column.</b></li>
+                                <li class="pt-2"><b>Use a Boolean Mask to select all rows in the DataFrame that have an Automatic Transmission</b></li>
+                                <li class="pt-2"><b>Use a Boolean Mask to select all rows in the DataFrame that have a FWD drivetrain or a Manual Transmission.</b><br><br>
+                                    <b><i>NOTE: The "drivetrain" and "transmission" columns have a LEADING space, thus you should include a space in front of the characters in the string.</i></b></li>
+                                <li class="pt-2"><b>Use the "query" method to select all rows that have a location of "Chicago, IL".</b></li>
+                                <li class="pt-2"><b>Use the "query" method to select all rows that don't have a Manual Transmission.</b><br><br>
+                                    <b><i>NOTE: The "drivetrain" and "transmission" columns have a LEADING space, thus you should include a space in front of the characters in the string.</i></b></li>
                             </ol>
                             <li class="pt-4"><b>Exercise Completed! Click <a href="./Slicing-DataFrames-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
@@ -162,13 +170,13 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="./Database-Connections.html">
+                            href="./Slicing-DataFrames.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="./Filtering-DataFrames.html">
+                            href="./Database-Connections.html">
                             Next Topic
                         </a>
                     </div>

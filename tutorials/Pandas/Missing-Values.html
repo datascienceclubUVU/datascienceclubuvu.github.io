@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: Organizing Columns</title>
+    <title>Pandas Tutorials: Working with Missing Values</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: Organizing Columns
+                            Pandas Tutorials: Working with Missing Values
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/pandas-dataframe.webp"
+                                src="../../imgs/pandas-nulls.webp"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,48 +89,62 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                <b><i>Data Cleaning</i></b> is the process of filtering, manipulating, and organizing data for use in Analytics and Machine Learning. Pandas provides a vast array of techniques to clean data. Over the next several tutorials, we'll discuss the most prominent techniques used by Data Scientists. This tutorial will cover the following learning objectives:
+                                The next technique related to Data Cleaning is Working with Missing Values. Missing Values can cause a huge problem when creating linear models or conducting analysis on a dataset. Pandas provides methods to either fill/replace missing valeus or remove them altogether. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Rename DataFrame Columns</li>
-                                <li>How to Reorder DataFrame Columns</li>
-                                <li>How to Drop DataFrame Columns</li>
+                                <li>How to Fill Missing Values Using the "fillna" Method</li>
+                                <li>How to Remove Missing Values Using the "dropna" Method</li>
+                                <li>Predicting Missing Values Using the "interpolate" Method</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Rename DataFrame Columns</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/jj-6-DUpG5o?end=306" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Fill Missing Values Using the "fillna" Method</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/juPkzK_nfK0?end=192" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>rename</i></b> method is used to rename one or more columns. This is used with the following syntax: <br>
-                                <code>dataframe.rename(columns={'old_column_name':'new_column_name', 'old_column_name':'new_column_name'})</code></li>
-                            <li class="pt-2">If you have the correct column names but they're not in the right order, you can switch the column names using the following syntax: <br>
-                                <code>dataframe.columns = ['column1', 'column3', 'column2']</code></li>
+                            <li class="pt-1">The <b><i>fillna</i></b> method is used to fill/replace missing values in the entire DataFrame with a specified value. This is used with the following syntax: <br>
+                                <code>dataframe.fillna([value])</code></li>
+                            <li class="pt-2">You can also use the <b><i>method</i></b> parameter to specify how to fill in missing values. The <b><i>ffill (Forward Fill)</i></b> method is used to replace the missing value with the value of the row above. The <b><i>bfill (Backward Fill)</i></b> method is used to replace the missing value with the value of the row below. This is used with the following syntax: <br>
+                                <code>dataframe.fillna(method='ffill')</code></li>
+                            <li class="pt-2">You can also mix and match the "ffill" and "bfill" methods by using the <b><i>limit</i></b> parameter. This allows you to specify a number of NaN values to be filled using a specific method. Example: <br>
+                                <code>inventory.fillna(method='ffill', limit=3, inplace=True)</code><br>
+                                <code>inventory.fillna(method='bfill', limit=10, inplace=True)</code></li>
+                            <li class="pt-2">If you want to fill in missing values on a per column basis, you can use a dictionary to specify which columns will get which values. This is used with the following syntax: <br>
+                                <code>dataframe.fillna({'column1':[value], 'column2':[value]})</code></li>
+                            <li class="pt-2"><b>NOTE:</b> As mentioned in the video, you can also fill in missing values with an equation (e.g., the current mean of the column). We will learn how to apply aggregations in the next tutorial.</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Reorder DataFrame Columns</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/p2KahbsCAP4?end=143" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Remove Missing Values Using the "dropna" Method</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/jXNkKKR5b80" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">We were introduced to the power of the <b><i>sort_index</i></b> method in the previous tutorial. However, the sort_index method sorts the indices of the rows by default. If you want to sort columns alphabetically, use the following syntax: <br>
-                                <code>dataframe.sort_index(axis=1)</code></li>
-                            <li class="pt-2">If you want to sort the columns in a DataFrame manually, use the following syntax: <br>
-                                <code>dataframe[['column5', 'column9', 'column1', 'column3']]</code></li>
-                            <li class="pt-2"><b>NOTE:</b> You'll rarely need to sort columns alphabetically, so it would be wise to get in the habit of reordering columns using the manual approach.</li>
+                            <li class="pt-1">The <b><i>dropna</i></b> method is used to remove missing values. By default, this method drops all columns that contain one or more missing values. This is used with the following syntax: <br>
+                                <code>dataframe.dropna()</code></li>
+                            <li class="pt-2">If you want to drop all rows that have ONLY missing values, use the following syntax: <br>
+                                <code>dataframe.dropna(how='all')</code></li>
+                            <li class="pt-2">The <b><i>thresh</i></b> parameter is used to specify how many missing values are allowed in each row. If a row exceeds this threshold, it will be dropped. This is used with the following syntax: <br>
+                                <code>dataframe.dropna(thresh=[integer])</code></li>
+                            <li class="pt-2">The <b><i>subset</i></b> parameter allows you to drop rows that have missing values in a subset of columns. This is used with the following syntax: <br>
+                                <code>dataframe.dropna(subset=['column1', 'column2'])</code></li>
+                            <li class="pt-2"><b>NOTE:</b> When building a Linear model, removing missing values is critical. Also, if you're building any type of Supervised Learning model, the Label must not contain any missing values.</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Drop DataFrame Columns</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/8PN1eXQGZ9c?end=203" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Predict Missing Values Using the "interpolate" Method</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/EaGbS7eWSs0?start=825&end=1007" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>drop</i></b> method is used to drop either columns or rows matching a specific condition. When used to drop columns, this is used with the following syntax: <br>
-                                <code>dataframe.drop(['column1', 'column2'], axis=1)</code></li>
-                            <li class="pt-2">If you want to drop columns by their index values, use the following syntax: <br>
-                                <code>dataframe.drop(df.columns[[0,1]], axis=1)</code></li>
-                            <li class="pt-2"><b>NOTE:</b> Unless you know your dataset inside and out, it would be wise to get in the habit of using the first method mentioned in the video above.</li>
+                            <li class="pt-1"><b><i>Interpolation</i></b> is a Statistical process in which a specific vaue is derived from existing data points. The <b><i>interpolate</i></b> methods predicts the value of a missing value based on the data points in the column. This is used with the following syntax: <br>
+                                <code>dataframe.interpolate()</code></li>
+                            <li class="pt-2">If you want to only interpolate the missing values for a specific column, use the following syntax: <br>
+                                <code>dataframe['column_name'].interpolate()</code></li>
+                            <li class="pt-2">The <b><i>Method</i></b> parameter is used to specify how missing values are interpolated. By default, the linear method is used, though many other are available including time, quadratic, and polynomial. This is used with the following syntax: <br>
+                                <code>dataframe.interpolate(method='method')</code></li>
+                            <li class="pt-2">The <b><i>subset</i></b> parameter allows you to drop rows that have missing values in a subset of columns. This is used with the following syntax: <br>
+                                <code>dataframe.dropna(subset=['column1', 'column2'])</code></li>
+                            <li class="pt-2"><b>NOTE:</b> When working with time-series datasets, the "time" method should be used. This is specific to the granularity of the dataset rather than individual data points.</li>
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Organizing Columns Tutorial! To help test your knowledge, let's
+                        <p><b>Congratulations!</b> You just completed the Working with Missing Values Tutorial! To help test your knowledge, let's
                             practice Renaming, Reordering, and Dropping Columns.</i></b>
                             </i></b>
                             <br>**<b><i>It's highly recommended that you
@@ -161,7 +175,7 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="./Filtering-DataFrames.html">
+                            href="./Organizing-Columns.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>

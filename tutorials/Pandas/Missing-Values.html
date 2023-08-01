@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>Pandas Tutorials: Organizing Columns</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                PANDAS TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            Pandas Tutorials: Organizing Columns
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/pandas-dataframe.webp"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                <b><i>Data Cleaning</i></b> is the process of filtering, manipulating, and organizing data for use in Analytics and Machine Learning. Pandas provides a vast array of techniques to clean data. Over the next several tutorials, we'll discuss the most prominent techniques used by Data Scientists. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>How to Rename DataFrame Columns</li>
+                                <li>How to Reorder DataFrame Columns</li>
+                                <li>How to Drop DataFrame Columns</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Rename DataFrame Columns</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/jj-6-DUpG5o?end=306" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>rename</i></b> method is used to rename one or more columns. This is used with the following syntax: <br>
+                                <code>dataframe.rename(columns={'old_column_name':'new_column_name', 'old_column_name':'new_column_name'})</code></li>
+                            <li class="pt-2">If you have the correct column names but they're not in the right order, you can switch the column names using the following syntax: <br>
+                                <code>dataframe.columns = ['column1', 'column3', 'column2']</code></li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Reorder DataFrame Columns</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/p2KahbsCAP4?end=143" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">We were introduced to the power of the <b><i>sort_index</i></b> method in the previous tutorial. However, the sort_index method sorts the indices of the rows by default. If you want to sort columns alphabetically, use the following syntax: <br>
+                                <code>dataframe.sort_index(axis=1)</code></li>
+                            <li class="pt-2">If you want to sort the columns in a DataFrame manually, use the following syntax: <br>
+                                <code>dataframe[['column5', 'column9', 'column1', 'column3']]</code></li>
+                            <li class="pt-2"><b>NOTE:</b> You'll rarely need to sort columns alphabetically, so it would be wise to get in the habit of reordering columns using the manual approach.</li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Drop DataFrame Columns</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/8PN1eXQGZ9c?end=203" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>drop</i></b> method is used to drop either columns or rows matching a specific condition. When used to drop columns, this is used with the following syntax: <br>
+                                <code>dataframe.drop(['column1', 'column2'], axis=1)</code></li>
+                            <li class="pt-2">If you want to drop columns by their index values, use the following syntax: <br>
+                                <code>dataframe.drop(df.columns[[0,1]], axis=1)</code></li>
+                            <li class="pt-2"><b>NOTE:</b> Unless you know your dataset inside and out, it would be wise to get in the habit of using the first method mentioned in the video above.</li>
+                            </ul><br>
+                    
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
+                        <p><b>Congratulations!</b> You just completed the Organizing Columns Tutorial! To help test your knowledge, let's
+                            practice Renaming, Reordering, and Dropping Columns.</i></b>
+                            </i></b>
+                            <br>**<b><i>It's highly recommended that you
+                                complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
+                        </p>
+                        <h4 class="pt-3">Instructions:</h4>
+                        <ol>
+                            <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
+                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "organizing-columns.ipynb"</li>
+                            <li class="pt-2">In the Notebook, complete the following tasks:</li>
+                            <ol type="a">
+                                <li class="pt-2"><b>Download the Following Files:</b> <br>
+                                    <ul>
+                                        <li><a href="./Exercise Files/unclean_listings.pkl">Sample Pickle File</a></li>
+                                    </ul></li>
+                                <li class="pt-2"><b>Read the Pickle File into a DataFrame object named "listings"</b></li>
+                                <li class="pt-2"><b>Rename the "header" column to "listing_title" and the "transmission" column to "transmission_type". Make the changes permenant.</b></li>
+                                <li class="pt-2"><b>Reorder the columns to reflect the following: <i>vin, price, listing_title, trim, engine, mileage, transmission_type, drivetrain, fuel_type, mpg, exterior_color, interior_color, location</i></b></li>
+                                <li class="pt-2"><b>Drop the Column with the index of 13.</b></li>
+                                <li class="pt-2"><b>Drop the "mpg" column. Make the changes permenant.</b></li>
+                            </ol>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Organizing-Columns-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <div class="col">
+                                <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                            </div>
+                        </ol>
+                    <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
+                            href="./Filtering-DataFrames.html">
+                            Previous Topic
+                        </a>
+                        <div class="col-0 col-sm-4"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="./Database-Connections.html">
+                            Next Topic
+                        </a>
+                    </div>
+            </section>
+        </div>
+        <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+    </div>
+</div>
+<!-- Footer at bottom of page. -->
+<footer class="container-fluid bg-secondary">
+    <div class="row align-items-center h-100">
+        <h4 class="col m-0 text-center text-white">
+            © 2023 Data Science Club @ UVU
+        </h4>
+    </div>
+</footer>
+</body>
+</html>

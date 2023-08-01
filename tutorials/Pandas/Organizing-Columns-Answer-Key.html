@@ -71,17 +71,17 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Sorting DataFrames Exercise Answer Key
+                            Organizing Columns Exercise Answer Key
                         </h2>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
-                            <li class="pt-4"><code>listings = pd.read_parquet('unclean_listings.parquet', engine='pyarrow')</code></li>
-                            <li class="pt-4"><code>listings.sort_values(by='mileage', ascending=False)</code></li>
-                            <li class="pt-4"><code>listings.sort_values(by=['location', 'transmission', 'drivetrain'], ascending=[False, True, True], inplace=True)</code></li>
-                            <li class="pt-4"><code>listings.sort_index()</code></li>
-                            <li class="pt-4"><code>listings.reset_index(drop=True)</code></li>
+                            <li class="pt-4"><code>listings = pd.read_pickle('unclean_listings.pkl')</code></li>
+                            <li class="pt-4"><code>listings.rename(columns={'header':'listing_title', 'transmission':'transmission_type'}, inplace=True)</code></li>
+                            <li class="pt-4"><code>listings[['vin', 'price', 'listing_title', 'trim', 'engine', 'mileage', 'transmission_type', 'drivetrain', 'fuel_type', 'mpg', 'exterior_color', 'interior_color', 'location']]</code></li>
+                            <li class="pt-4"><code>listings.drop(df.columns[[13]], axis=1)</code></li>
+                            <li class="pt-4"><code>listings.drop(['mpg'], axis=1, inplace=True)</code></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: Filtering DataFrames</title>
+    <title>Pandas Tutorials: Sorting DataFrames</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: Filtering DataFrames
+                            Pandas Tutorials: Sorting DataFrames
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -89,63 +89,42 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                The difference between Slicing and Filtering can be quite hazy. However, it never hurts to know the various ways of how to apply filters to DataFrames. This tutorial will cover the following learning objectives:
+                                Once you have the data you want, it's helpful to view it from different perspectives. <b><i>Sorting</i></b> allows you to look at the values in your DataFrames in different orders. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Filter DataFrames Using a Boolean Mask</li>
-                                <li>How to Filter DataFrames Using the "query" Method</li>
-                                <li>How to Filter DataFrames Using the "where" Method</li>
+                                <li>How to Sort DataFrame Columns Using the "sort_values" Method</li>
+                                <li>How to Sort a DataFrame Using the "sort_index" Method</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter DataFrames Using a Boolean Mask</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ni9ng4Jy3Z8?end=406" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Sort DataFrame Columns Using the "sort_values" Method</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/-UmvrdtT3-Y?end=190" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>shape</i></b> Attribute is used to show the dimensions of the DataFrame (how many rows and how many columns). This is used with the following syntax: <br>
-                                <code>dataframe.shape</code></li>
-                            <li class="pt-2">A <b><i>Boolean Mask</i></b> is used to represent a condition that is used across the entire DataFrame. This is used with the following syntax: <br>
-                                <code>dataframe[dataframe['column_name'] [condition]]</code><br><br>
-                                <b>Example:</b><br>
-                                <code>sales[sales['month'] == 'January']</code></li>
-                            <li class="pt-2">Boolean Masks can also be used to apply multiple conditions. This is used with the following syntax: <br>
-                                <code>dataframe[(condition1) [Bitwise Operator] (condition2)]</code><br><br>
-                                <b>Example:</b><br>
-                                <code>sales[(sales['month'] == 'January') & (sales['year'] == 2023)]</code></li>
-                            <li class="pt-2">When applying multiple conditions using Boolean Masks, the <b><i>& (ampersand)</i></b> symbol is used to state that both conditions must be met, whereas the <b><i>| (pipe operator)</i></b> symbol is used to state that at keast one condition must be met.</li>
-                            <li class="pt-2">If you are writing multiple conditions and want to switch the logic on one or more conditions, use the <b><i>~ (tilde)</i></b> symbol. This is used with the following syntax: <br>
-                                <code>dataframe[~(condition1) & (condition2)]</code><br><br>
-                                <b>Example:</b><br>
-                                <code>sales(~(sales['month'] == 'January') & (sales['year'] == 2023))</code></li>
-                            <li class="pt-2"><b>NOTE:</b> Boolean Masks are by far the simplest way to apply a conditions to a DataFrame. However, when used in production, it can make your code difficult to read, so it's best to use this approach in development.</li>
-                            <li class="pt-2"><b>NOTE:</b> The symbols used to either combine or separate conditions are known as <b><i>Bitwise Operators</i></b>. These are identical in purpose to Logical Operators, though Bitwise Operators are interpreted differently in the Python Compiler.</li>
+                            <li class="pt-1">The <b><i>sort_values</i></b> method is used to sort a DataFrame by the values in one or more columns. Just like the SQL ORDER BY Clause, the sort_values method sorts columns in ascending order by default. This is used with the following syntax (for a single column): <br>
+                                <code>dataframe.sort_values(by='column_name')</code></li>
+                            <li class="pt-2">If you want to sort your DataFrame by a single column in DESCENDING order, use the following syntax: <br>
+                                <code>dataframe.sort_values(by='column_name', ascending=False)</code></li>
+                            <li class="pt-2">If you want to easily see the missing values in a particular column, use the following syntax: <br>
+                                <code>dataframe.sort_values(by='column_name', na_position='first')</code></li>
+                            <li class="pt-2">Unlike traditional objects in Python, the <b><i>inplace</i></b> argument allows you to permenantly change the state of the variable. When used with the sort_values method, this is used with the following syntax: <br>
+                                <code>dataframe.sort_values(by='column_name', inplace=True)</code></li>
+                            <li class="pt-2">If you want to sort your DataFrame on multiple columns, use the following syntax:: <br>
+                                <code>dataframe.sort_values(by=['column1', 'column2', 'column3'])</code></li>
+                            <li class="pt-2">If you are sorting your DataFrame on multiple columns but you want one column to be sort in ascending order and another in descending order, use the following syntax: <br>
+                                <code>dataframe.sort_values(by=['column1', 'column2', 'column3'], ascending=[True, False, False])</code></li>
+                            <li class="pt-2"><b>NOTE:</b> When sorting on multiple columns, Pandas will sort the DataFrame by the first column mentioned, and then go down the list of column names supplied.</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter DataFrames Using the "query" Method</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ni9ng4Jy3Z8?start=517&end=644" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to sort a DataFrame Using the "sort_index" Method</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/-fhpCuxbPwY?end=162" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>query</i></b> method is used to filter a DataFrame by one or more conditions. This is used with the following syntax: <br>
-                                <code>dataframe.query("condition1")</code><br><br>
-                                <b>Example:</b><br>
-                                <code>sales.query("month == 'January' & year == 2023")</code></li>
-                            <li class="pt-2">A <b><i>Boolean Mask</i></b> is used to represent a condition that is used across the entire DataFrame. This is used with the following syntax: <br>
-                                <code>dataframe[dataframe['column_name'] [condition]]</code><br><br>
-                                <b>Example:</b><br>
-                                <code>sales[sales['month'] == 'January']</code></li>
-                            <li class="pt-2"><b>NOTE:</b> When specifying the set of conditions, it's a best practice to place the entire set of conditions between double quotation marks to make filtering string values possible.</li>
-                            <li class="pt-2"><b>NOTE:</b> When deciding which method to use when filtering DataFrames, consider whether readability or performance is more important. It's important to remember that Pandas isn;t built for large datasets, thus readability should be a higher priority.</li>
-                            </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter DataFrames Using the "where" Method</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/9dtrakWNE44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
-                        <h4 class="pt-4">Summary</h4>
-                        <ul>
-                            <li class="pt-1">The <b><i>where</i></b> method is used to filter a DataFrame by one or more conditions. This is used with the following syntax: <br>
-                                <code>dataframe.where([condition1])</code><br><br>
-                                <b>Example:</b><br>
-                                <code>sales.where(sales['month'] == 'January')</code></li>
-                            <li class="pt-2">The primary difference between the <b><i>query</i></b> and <b><i>where</i></b> methods is that the when a filter is applied using the <b><i>query</i></b> method, only the rows matching the conditions are returned, whereas with the <b><i>where</i></b> method, all the rows are returned but the rows that DON'T match the filter are shown as NaNs (Pandas version of NULL values).</li>
-                            <li class="pt-2"><b>NOTE:</b> The <b><i>where</i></b> method is very rarely used because it tends to cause confusion among team members. Try to use either Boolean Masks or the <b><i>query</i></b> method whenever possible.</li>
+                            <li class="pt-1">When you first create a DataFrame, the index will almost always be in ascending order, starting at 0. However, when you apply some filters or sort the values, the index can become scrambled. The <b><i>sort_index</i></b> method is used to reorder the index. This is used with the following syntax: <br>
+                                <code>dataframe.sort_index()</code></li>
+                            <li class="pt-2">The main issue with the <b><i>sort_index</i></b> method is that the values get rearranged as well. For example, if you has a DataFrame sorted by column "A", and you then applied the sort_index method, that sort order would get overwritten. The <b><i>reset_index</i></b> method is used to fix this problem. When you apply some filters and sort the values to your liking, you can apply the reset_index method to keep the sort order but make the index look the way it should. This is used with the following syntax: <br>
+                                <code>dataframe.reset_index(drop=True)</code></li>
+                            <li class="pt-2"><b>NOTE:</b> When using the <b><i>reset_index</i></b> method, it's critical that you set the "drop" parameter to TRUE. If you don;t do this, a new column will be created representing the former index.</li>
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
@@ -182,13 +161,13 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="./Slicing-DataFrames.html">
+                            href="./Filtering-DataFrames.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="./Sorting-DataFrames.html">
+                            href="./Database-Connections.html">
                             Next Topic
                         </a>
                     </div>

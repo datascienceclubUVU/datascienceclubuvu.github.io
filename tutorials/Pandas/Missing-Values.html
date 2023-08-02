@@ -112,6 +112,10 @@
                                 <code>inventory.fillna(method='bfill', limit=10, inplace=True)</code></li>
                             <li class="pt-2">If you want to fill in missing values on a per column basis, you can use a dictionary to specify which columns will get which values. This is used with the following syntax: <br>
                                 <code>dataframe.fillna({'column1':[value], 'column2':[value]})</code></li>
+                            <li class="pt-2">The <b><i>isna</i></b> method can be applied to a standalone Series or a Series in a DataFrame to check if there are any values in the Series that are missing. This is used with the following syntax: <br>
+                                <code>dataframe['column_name'].isna()</code><br>
+                                <b>OR</b><br>
+                                <code>series.isna()</code></li>
                             <li class="pt-2"><b>NOTE:</b> As mentioned in the video, you can also fill in missing values with an equation (e.g., the current mean of the column). We will learn how to apply aggregations in the next tutorial.</li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Remove Missing Values Using the "dropna" Method</h2> <br>
@@ -138,14 +142,12 @@
                                 <code>dataframe['column_name'].interpolate()</code></li>
                             <li class="pt-2">The <b><i>Method</i></b> parameter is used to specify how missing values are interpolated. By default, the linear method is used, though many other are available including time, quadratic, and polynomial. This is used with the following syntax: <br>
                                 <code>dataframe.interpolate(method='method')</code></li>
-                            <li class="pt-2">The <b><i>subset</i></b> parameter allows you to drop rows that have missing values in a subset of columns. This is used with the following syntax: <br>
-                                <code>dataframe.dropna(subset=['column1', 'column2'])</code></li>
-                            <li class="pt-2"><b>NOTE:</b> When working with time-series datasets, the "time" method should be used. This is specific to the granularity of the dataset rather than individual data points.</li>
+                            <li class="pt-2">Interpolation is a technique that is widely used with Time-Series analytics. It's not recommended to use this technique with linear regression, as it could skew the model's accuracy.</li>
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Working with Missing Values Tutorial! To help test your knowledge, let's
-                            practice Renaming, Reordering, and Dropping Columns.</i></b>
+                            practice Replacing, Dropping, and Interpolating Missing Values.</i></b>
                             </i></b>
                             <br>**<b><i>It's highly recommended that you
                                 complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
@@ -153,20 +155,20 @@
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "organizing-columns.ipynb"</li>
+                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "missing-values.ipynb"</li>
                             <li class="pt-2">In the Notebook, complete the following tasks:</li>
                             <ol type="a">
                                 <li class="pt-2"><b>Download the Following Files:</b> <br>
                                     <ul>
-                                        <li><a href="./Exercise Files/unclean_listings.pkl">Sample Pickle File</a></li>
+                                        <li><a href="./Exercise Files/clean_listings.parquet">Sample Parquet File</a></li>
                                     </ul></li>
-                                <li class="pt-2"><b>Read the Pickle File into a DataFrame object named "listings"</b></li>
-                                <li class="pt-2"><b>Rename the "header" column to "listing_title" and the "transmission" column to "transmission_type". Make the changes permenant.</b></li>
-                                <li class="pt-2"><b>Reorder the columns to reflect the following: <i>vin, price, listing_title, trim, engine, mileage, transmission_type, drivetrain, fuel_type, mpg, exterior_color, interior_color, location</i></b></li>
-                                <li class="pt-2"><b>Drop the Column with the index of 13.</b></li>
-                                <li class="pt-2"><b>Drop the "mpg" column. Make the changes permenant.</b></li>
+                                <li class="pt-2"><b>Read the Parquet File into a DataFrame object named "listings"</b></li>
+                                <li class="pt-2"><b>Filter the "listings" DataFrame to only include listings that are missing a value in the "hwy_mpg" column. Assign the filtered DataFrame to a new variable called "temp"</b></li>
+                                <li class="pt-2"><b>In the "temp" DataFrame, replace all the Missing Values in the "hwy_mpg" column with the value of the "city_mpg" multiplied by 1.15. Make the changes inplace.</i></b></li>
+                                <li class="pt-2"><b>In the "temp" DataFrame, drop all values that have a Missing Value in the "price" column. Make the changes inplace.</b></li>
+                                <li class="pt-2"><b>In the "listings" DataFrame, interpolate the Missing Values in the "hwy_mpg" column.</b></li>
                             </ol>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Organizing-Columns-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Missing-Values-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

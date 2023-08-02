@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: Working with Missing Values</title>
+    <title>Pandas Tutorials: Aggregating Data</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: Working with Missing Values
+                            Pandas Tutorials: Aggregating Data
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/pandas-nulls.webp"
+                                src="../../imgs/pandas-groupby.webp"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,67 +89,55 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                The next technique related to Data Cleaning is <b><i>Working with Missing Values</i></b>. Missing Values can cause a huge problem when creating linear models or conducting analysis on a dataset. Pandas provides methods to either fill/replace missing valeus or remove them altogether. This tutorial will cover the following learning objectives:
+                                The next technique related to Data Cleaning is <b><i>Aggregating Data</i></b>. Aggregation consists of gathering related data and comparing it against one or more groups (e.g., average grade per student). This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Fill Missing Values Using the "fillna" Method</li>
-                                <li>How to Remove Missing Values Using the "dropna" Method</li>
-                                <li>Predicting Missing Values Using the "interpolate" Method</li>
+                                <li>How to Aggregate Data Using the "groupby" Method</li>
+                                <li>How to Measure Numerical Data Using Common Aggregation Methods</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Fill Missing Values Using the "fillna" Method</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/juPkzK_nfK0?end=192" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Aggregate Data Using the "groupby" Method</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ipoSjrN0oh0?end=223" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>fillna</i></b> method is used to fill/replace missing values in the entire DataFrame with a specified value. This is used with the following syntax: <br>
-                                <code>dataframe.fillna([value])</code></li>
-                            <li class="pt-2">You can also use the <b><i>method</i></b> parameter to specify how to fill in missing values. The <b><i>ffill (Forward Fill)</i></b> method is used to replace the missing value with the value of the row above. The <b><i>bfill (Backward Fill)</i></b> method is used to replace the missing value with the value of the row below. This is used with the following syntax: <br>
-                                <code>dataframe.fillna(method='ffill')</code></li>
-                            <li class="pt-2">You can also mix and match the "ffill" and "bfill" methods by using the <b><i>limit</i></b> parameter. This allows you to specify a number of NaN values to be filled using a specific method. Example: <br>
-                                <code>inventory.fillna(method='ffill', limit=3, inplace=True)</code><br>
-                                <code>inventory.fillna(method='bfill', limit=10, inplace=True)</code></li>
-                            <li class="pt-2">If you want to fill in missing values on a per column basis, you can use a dictionary to specify which columns will get which values. This is used with the following syntax: <br>
-                                <code>dataframe.fillna({'column1':[value], 'column2':[value]})</code></li>
-                            <li class="pt-2">The <b><i>isna</i></b> method can be applied to a standalone Series or a Series in a DataFrame to check if there are any values in the Series that are missing. This is used with the following syntax: <br>
-                                <code>dataframe['column_name'].isna()</code><br>
-                                <b>OR</b><br>
-                                <code>series.isna()</code></li>
-                            <li class="pt-2"><b>NOTE:</b> As mentioned in the video, you can also fill in missing values with an equation (e.g., the current mean of the column). We will learn how to apply aggregations in the next tutorial.</li>
-                            <li class="pt-2"><b>NOTE:</b> If you're importing a CSV File, you can auto fill Missing Values by using the "na_values" parameter. This is used with the following syntax: <br>
-                                <code>pd.read_csv('file_name.csv', na_values='character_to_fill')</code></li>
+                            <li class="pt-1">The <b><i>groupby</i></b> method is the most common method used to aggregate data using one or more columns. When aggregating data, you must specify a measure (or calculation) to compare against the groups. This is used with the following syntax: <br>
+                                <code>dataframe.groupby(['group_column1', 'group_column2'])['measure_column'].[aggregate_method]()</code><br><br>
+                                <b>Example:</b><br>
+                                <code>orders.groupby(['customer_name'])['purchase_amount'].sum()</code></li>
+                            <li class="pt-2">If you want to use multiple measures to compare against a single field, use the following syntax: <br>
+                                <code>dataframe.groupby(['group_column1'])[['measure_column1', 'measure_column2']].[aggregate_method]()</code><br><br>
+                                <b>Example:</b><br>
+                                <code>orders.groupby(['customer_name'])[['purchase_amount', 'num_items']].sum()</code></li>
+                            <li class="pt-2">If you want to compare a single measure against multiple fields, use the following syntax: <br>
+                                <code>dataframe.groupby(['group_column1', 'group_column2'])['measure_column'].[aggregate_method]()</code><br><br>
+                                <b>Example:</b><br>
+                                <code>orders.groupby(['customer_name', 'purchase_year'])['purchase_amount'].sum()</code></li>
+                            <li class="pt-2">The <b><i>as_index</i></b> parameter is used to change the output DataFrame from a MultiIndex DataFrame to an average DataFrame. This tends to only be helpful when using more than one field as a group. This is used with the following syntax: <br>
+                                <code>dataframe.groupby(['group_column1', 'group_column2'], as_index=False)['measure_column'].[aggregate_method]()</code><br><br>
+                                <b>Example:</b><br>
+                                <code>orders.groupby(['customer_name', 'purchase_year'], as_index=False)['purchase_amount'].sum()</code></li>
+                            <li class="pt-2"><b>NOTE:</b> A <b><i>Multiindex DataFrame</i></b> is a DataFrame that contains multiple indices in a hierarchical structure. This is commonly used when drilling down groups (such as going from year to quarter to month).</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Remove Missing Values Using the "dropna" Method</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/jXNkKKR5b80" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Measure Numerical Data Using Common Aggregation Methods</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ipoSjrN0oh0?start=223&end=276" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>dropna</i></b> method is used to remove missing values. By default, this method drops all columns that contain one or more missing values. This is used with the following syntax: <br>
-                                <code>dataframe.dropna()</code></li>
-                            <li class="pt-2">If you want to drop all rows that have ONLY missing values, use the following syntax: <br>
-                                <code>dataframe.dropna(how='all')</code></li>
-                            <li class="pt-2">The <b><i>thresh</i></b> parameter is used to specify how many missing values are allowed in each row. If a row exceeds this threshold, it will be dropped. This is used with the following syntax: <br>
-                                <code>dataframe.dropna(thresh=[integer])</code></li>
-                            <li class="pt-2">The <b><i>subset</i></b> parameter allows you to drop rows that have missing values in a subset of columns. This is used with the following syntax: <br>
-                                <code>dataframe.dropna(subset=['column1', 'column2'])</code></li>
-                            <li class="pt-2"><b>NOTE:</b> When building a Linear model, removing missing values is critical. Also, if you're building any type of Supervised Learning model, the Label must not contain any missing values.</li>
-                            </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Predict Missing Values Using the "interpolate" Method</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/EaGbS7eWSs0?start=825&end=1007" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
-                        <h4 class="pt-4">Summary</h4>
-                        <ul>
-                            <li class="pt-1"><b><i>Interpolation</i></b> is a Statistical process in which a specific vaue is derived from existing data points. The <b><i>interpolate</i></b> methods predicts the value of a missing value based on the data points in the column. This is used with the following syntax: <br>
-                                <code>dataframe.interpolate()</code></li>
-                            <li class="pt-2">If you want to only interpolate the missing values for a specific column, use the following syntax: <br>
-                                <code>dataframe['column_name'].interpolate()</code></li>
-                            <li class="pt-2">The <b><i>Method</i></b> parameter is used to specify how missing values are interpolated. By default, the linear method is used, though many other are available including time, quadratic, and polynomial. This is used with the following syntax: <br>
-                                <code>dataframe.interpolate(method='method')</code></li>
-                            <li class="pt-2">Interpolation is a technique that is widely used with Time-Series analytics. It's not recommended to use this technique with linear regression, as it could skew the model's accuracy.</li>
+                            <li class="pt-1">The <b><i>agg</i></b> method is used to specify which aggregation method(s) you'd like to include in the output DataFrame. This is used with the following syntax: <br>
+                                <code>dataframe.groupby(['group_column1'])['measure_column'].agg(['aggregation_method1', 'aggregation_method2'])</code></li>
+                            <li class="pt-2">The <b><i>sum</i></b> method is used to add together all values in the column. This can only be used with numeric columns.</li>
+                            <li class="pt-2">The <b><i>mean</i></b> method is used to add together all values in the column and divide by the number of values in the column. This can only be used with numeric columns. This is also known as the <b><i>average</i></b>.</li>
+                            <li class="pt-2">The <b><i>count</i></b> method is used to count the number of distinct values in the column. This can be used with either numeric or string columns.</li>
+                            <li class="pt-2">The <b><i>min</i></b> method is used to find the smallest value in the column. This can be used with either numeric or string columns.</li>
+                            <li class="pt-2">The <b><i>max</i></b> method is used to find the largest value in the column. This can be used with either numeric or string columns.</li>
+                            <li class="pt-2">The <b><i>median</i></b> method is used to sort the values in the column from least to greatest and find the middle value, also known as the <b><i>50th percentile</i></b>. This can only be used with numeric columns.</li>
+                            <li class="pt-2"><b>NOTE:</b> When getting the mean of a binary column (where the values are either 0 or 1), the value returned is the proportion of 1's to 0's (e.g., if the mean is 0.37, that means 37% of the values are 1's).</li>
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Working with Missing Values Tutorial! To help test your knowledge, let's
-                            practice Replacing, Dropping, and Interpolating Missing Values.</i></b>
+                        <p><b>Congratulations!</b> You just completed the Aggregating Data Tutorial! To help test your knowledge, let's
+                            practice comparing measures across various combinations of groups using various aggregation methods.</i></b>
                             </i></b>
                             <br>**<b><i>It's highly recommended that you
                                 complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
@@ -179,13 +167,13 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="./Organizing-Columns.html">
+                            href="./Missing-Values.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="./Aggregating-Data.html">
+                            href="./Database-Connections.html">
                             Next Topic
                         </a>
                     </div>

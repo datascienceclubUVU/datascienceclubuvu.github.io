@@ -132,6 +132,7 @@
                             <li class="pt-2">The <b><i>min</i></b> method is used to find the smallest value in the column. This can be used with either numeric or string columns.</li>
                             <li class="pt-2">The <b><i>max</i></b> method is used to find the largest value in the column. This can be used with either numeric or string columns.</li>
                             <li class="pt-2">The <b><i>median</i></b> method is used to sort the values in the column from least to greatest and find the middle value, also known as the <b><i>50th percentile</i></b>. This can only be used with numeric columns.</li>
+                            <li class="pt-2">The <b><i>std</i></b> method is used to calculate the <b><i>Standard Deviation</i></b> of the values in the column.</li>
                             <li class="pt-2"><b>NOTE:</b> When getting the mean of a binary column (where the values are either 0 or 1), the value returned is the proportion of 1's to 0's (e.g., if the mean is 0.37, that means 37% of the values are 1's).</li>
                             </ul><br>
                     
@@ -145,7 +146,7 @@
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "missing-values.ipynb"</li>
+                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "aggregating-data.ipynb"</li>
                             <li class="pt-2">In the Notebook, complete the following tasks:</li>
                             <ol type="a">
                                 <li class="pt-2"><b>Download the Following Files:</b> <br>
@@ -153,12 +154,12 @@
                                         <li><a href="./Exercise Files/clean_listings.parquet">Sample Parquet File</a></li>
                                     </ul></li>
                                 <li class="pt-2"><b>Read the Parquet File into a DataFrame object named "listings"</b></li>
-                                <li class="pt-2"><b>Filter the "listings" DataFrame to only include listings that are missing a value in the "hwy_mpg" column. Assign the filtered DataFrame to a new variable called "temp"</b></li>
-                                <li class="pt-2"><b>In the "temp" DataFrame, replace all the Missing Values in the "hwy_mpg" column with the value of the "city_mpg" multiplied by 1.15. Make the changes inplace.</i></b></li>
-                                <li class="pt-2"><b>In the "temp" DataFrame, drop all values that have a Missing Value in the "price" column. Make the changes inplace.</b></li>
-                                <li class="pt-2"><b>In the "listings" DataFrame, interpolate the Missing Values in the "hwy_mpg" column.</b></li>
+                                <li class="pt-2"><b>Retrieve the SUM of the "price" column and group by the "make" column. Assign the output DataFrame to a variable named "value_by_make"</b></li>
+                                <li class="pt-2"><b>Retrieve the MEAN of the "mileage" column and group by the "year", "make", and "model" columns. Assign the output DataFrame to a variable named "avg_mileage_by_vehicle"</b></li>
+                                <li class="pt-2"><b>Retrieve the MIN and MAX of the "city_mpg" column and group by the "transmission" and "drivetrain" columns. Assign the output DataFrame to a variable named "city_mpg_ranges". Make sure the output DataFrame doesn't have a MultiIndex.</b></li>
+                                <li class="pt-2"><b>Retrieve the MEDIAN and STANDARD DEVIATION of the "hwy_mpg" column and group by the "fuel_type" column. Assign the output DataFrame to a variable named "median_hwy_mpg_by_fuel". Make sure the output DataFrame doesn't have a MultiIndex.</b></li>
                             </ol>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Missing-Values-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Aggregating-Data-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

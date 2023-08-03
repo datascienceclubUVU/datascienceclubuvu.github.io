@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: Combining DataFrames</title>
+    <title>Pandas Tutorials: Manipulating Strings</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: Combining DataFrames
+                            Pandas Tutorials: Manipulating Strings
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/pandas-joins.webp"
+                                src="../../imgs/python-strings.webp"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,29 +89,33 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                The next technique related to Data Cleaning is <b><i>Combining DataFrames</i></b>. If you want to merge two DataFrames but they don't have a shred column, you can combine them into one DataFrame. This tutorial will cover the following learning objectives:
+                                The next technique related to Data Cleaning is <b><i>Manipulating Strings</i></b>. There are dozens of possible ways to manipulate strings including replacing substrings, converting strings to lowercase, uppercase, or title case, and finding the length of a string. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Combine Multiple DataFrames Using the "concat" Method</li>
+                                <li>How to Format Strings Using the "lower", "upper", and "title" Methods</li>
+                                <li>How to Filter DataFrame Columns by Substrings Using the "contains", "startswith", "endswith", "isalpha", "isnumeric", and "isalnum" Methods</li>
+                                <li>How to Get Information From Strings Using the "isupper", "islower", "len", and "find" Methods</li>
+                                <li>How to Clean Strings Using the "strip", "lstrip", "rstrip", "replace", and "split", Methods</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Combine Multiple DataFrames Using the "concat" Method</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/WGOEFok1szA?end=851" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Format String Using the "lower", "upper", and "title" Methods</h2> <br>
+                        <h6><b>How to Use the "lower", "upper", and "title" Methods on Raw Strings</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/poITVEJZCYI?end=99" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h6><b>How to Use the "lower", "upper", and "title" Methods on a Pandas Series</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/poITVEJZCYI?start=129&end=331" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>concat</i></b> method is used to combine two or more DataFrames. This is the same as Unions in Relational Databases. This is used with the following syntax: <br>
-                                <code>pd.concat([dataframe1, dataframe2])</code></li>
-                            <li class="pt-2">The <b><i>ignore_index</i></b> parameter is used to flatten the new index to make it look cleaner. THis is useful for reducing the number of steps in your pipeline (e.g., having to use <b><i>reset_index</i></b> "n" number of times). This is used with the following syntax: <br>
-                                <code>pd.concat([dataframe1, dataframe2], ignore_index=True)</code></li>
-                            <li class="pt-2">The <b><i>keys</i></b> parameter is used to create a MultiIndex that helps show where each group of records comes from. This is similar to the "indicator" parameter of the "merge" method. This parameter DOES NOT work with the "ignore_index" parameter, as they would cancel each other out. This is used with the following syntax: <br>
-                                <code>pd.concat([dataframe1, dataframe2], keys=['key1', 'key2'])</code></li>
-                            <li class="pt-2">If you want to combine two or more DataFrames that have different schemas (that is different columns), then use the following syntax: <br>
-                                <code>pd.concat([dataframe1, dataframe2], axis=1)</code></li>
-                            <li class="pt-2">If you want to combine a DataFrame and a Series, use the following syntax: <br>
-                                <code>pd.concat([dataframe1, series1], axis=1)</code></li>
-                            <li class="pt-2"><b>NOTE:</b> If the two DataFrames don't have the same number of columns, the DataFrame with the lesser number of columns will have its records be filled with NaNs in the columns that aren't present.</li>
+                            <li class="pt-1">When working with a Pandas Series that has a "string" data type, you need to use Python's String accessor, <b><i>str</i></b>, to tell the Python interpreter to act like the Series object is a string.</li>
+                            <li class="pt-2">The <b><i>lower</i></b> method is used to convert all characters in a specified string to lowercase. This is used with the following syntax: <br>
+                                <code>dataframe['column_name'].str.lower()</code></li>
+                            <li class="pt-2">The <b><i>upper</i></b> method is used to convert all characters in a specified string to uppercase. This is used with the following syntax: <br>
+                                <code>dataframe['column_name'].str.upper()</code></li>
+                            <li class="pt-2">The <b><i>title</i></b> method is used to convert the first letter of each word in a specified string to uppercase. This is used with the following syntax: <br>
+                                <code>dataframe['column_name'].str.title()</code></li>
+                            <li class="pt-2"><b>NOTE:</b> <b><i>Chaining</i></b> is the process of combining multiple methods in a single command. This is a very efficient way of writing code in Pandas and is considered a best practice. The example below shows a Pandas Series being converted to lowercase, then uppercase, and finally title case. Example: <br>
+                                <code>cities['name'].str.lower().str.upper().str.title()</code></li>
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
@@ -151,13 +155,13 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="./Joining-DataFrames.html">
+                            href="./Combining-DataFrames.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="./String-Methods.html">
+                            href="./Database-Connections.html">
                             Next Topic
                         </a>
                     </div>

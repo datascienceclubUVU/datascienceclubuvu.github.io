@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: Joining DataFrames</title>
+    <title>Pandas Tutorials: Combining DataFrames</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: Joining DataFrames
+                            Pandas Tutorials: Combining DataFrames
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -89,61 +89,34 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                The next technique related to Data Cleaning is <b><i>Joining DataFrames</i></b>. Joining consists of combining datasets from multiple sources that have at least one column in common. This tutorial will cover the following learning objectives:
+                                The next technique related to Data Cleaning is <b><i>Combining DataFrames</i></b>. If you want to merge two DataFrames but they don't have a shred column, you can combine them into one DataFrame. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Join Multiple DataFrames Using the "merge" Method</li>
-                                <li>How to Use Different Join Types</li>
+                                <li>How to Combine Multiple DataFrames Using the "concat" Method</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Join Multiple DataFrames Using the "merge" Method</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/h4hOPGo4UVU?end=106" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Combine Multiple DataFrames Using the "concat" Method</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/WGOEFok1szA?end=851" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>merge</i></b> method is the used to combine two or more DataFrames on a shared column. This is the same as Joins in Relational Databases. This is used with the following syntax: <br>
-                                <code>pd.merge(dataframe1, dataframe2, on='shared_column')</code><br>
-                                <b>OR</b><br>
-                                <code>dataframe1.merge(dataframe2, on='shared_column')</code></li>
-                            <li class="pt-2"><b>NOTE:</b> If you want to combine two DataFrames that don't have a shared column, you can conduct use the <b><i>concat</i></b> method which we will discuss in the next tutorial.</li>
-                            </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use Different Join Types</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/h4hOPGo4UVU?start=106&end=443" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
-                        <h4 class="pt-4">Summary</h4>
-                        <ul>
-                            <li class="pt-1">An <b><i>inner join</i></b> follows the concepts presented in Set Theory and returns only those values that are represented in BOTH DataFrames. This is the most common type of join and one you should become very familiar with.</li>
-                            <li class="pt-2">An <b><i>outer join</i></b> follows the concepts presented in Set Theory and returns all values in BOTH DataFrames. If a value is present in only one of the DataFrames, the columns in the other DataFrame will be NaN values.</li>
-                            <li class="pt-2">The <b><i>how</i></b> parameter is used to specify which type of join you want to use. This is used with the following syntax: <br>
-                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', how='join_type')</code><br>
-                                <b>OR</b><br>
-                                <code>dataframe1.merge(dataframe2, on='shared_column', how='join_type')</code></li>
-                            <li class="pt-2">A <b><i>left outer</i></b> join is used to return all the values from the left DataFrame and only the share values in the right DataFrame. All values that are not present in the right DataFrame will be left as NaNs. This is used with the following syntax: <br>
-                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', how='left')</code><br>
-                                <b>OR</b><br>
-                                <code>dataframe1.merge(dataframe2, on='shared_column', how='left')</code></li>
-                            <li class="pt-2">A <b><i>right outer</i></b> join is the opposite of a left outer join. This join type is used to return all values from the right DataFrame and only the shared values in the left DataFrame. All values that are not present will be left as NaNs. This is not used very often as you can simply switch the order of DataFrames in a left outer join. This is used with the following syntax: <br>
-                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', how='right')</code><br>
-                                <b>OR</b><br>
-                                <code>dataframe1.merge(dataframe2, on='shared_column', how='right')</code></li>
-                            <li class="pt-2">The <b><i>indicator</i></b> parameter is used to show where each record appears (either "left_only", "right_only", or both). This is helpful when filtering a DataFrame based on unique values shared by each DataFrame. This is used with the following syntax: <br>
-                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', indicator=True)</code><br>
-                                <b>OR</b><br>
-                                <code>dataframe1.merge(dataframe2, on='shared_column', indicator=True)</code></li>
-                            <li class="pt-2">The <b><i>suffixes</i></b> parameter is used to differentiate duplicate columns when two DataFrames have the same column names (excluding the shared column). This is used with the following syntax: <br>
-                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', suffixes=(['suffix_left_dataframe', 'suffix_right_dataframe']))</code><br>
-                                <b>OR</b><br>
-                                <code>dataframe1.merge(dataframe2, on='shared_column', suffixes=(['suffix_left_dataframe', 'suffix_right_dataframe']))</code></li>
-                            <li class="pt-2">The <b><i>left_on</i></b> and <b><i>right_on</i></b> parameters are used when the shared column is named something else in each DataFrame (e.g., "id" column in the left DataFrame and "customer_id" in the right DataFrame). These are used with the following syntax: <br>
-                                <code>pd.merge(dataframe1, dataframe2, left_on='left_shared_column_name', right_on='right_shared_column_name')</code><br>
-                                <b>OR</b><br>
-                                <code>dataframe1.merge(dataframe2, left_on='left_shared_column_name', right_on='right_shared_column_name')</code></li></li>
-                            <li class="pt-2"><b>NOTE:</b> If you don't specify a value in the <b><i>how</i></b> parameter, an "inner join" will be used by default.</li>
+                            <li class="pt-1">The <b><i>concat</i></b> method is used to combine two or more DataFrames. This is the same as Unions in Relational Databases. This is used with the following syntax: <br>
+                                <code>pd.concat([dataframe1, dataframe2])</code></li>
+                            <li class="pt-2">The <b><i>ignore_index</i></b> parameter is used to flatten the new index to make it look cleaner. THis is useful for reducing the number of steps in your pipeline (e.g., having to use <b><i>reset_index</i></b> "n" number of times). This is used with the following syntax: <br>
+                                <code>pd.concat([dataframe1, dataframe2], ignore_index=True)</code></li>
+                            <li class="pt-2">The <b><i>keys</i></b> parameter is used to create a MultiIndex that helps show where each group of records comes from. This is similar to the "indicator" parameter of the "merge" method. This parameter DOES NOT work with the "ignore_index" parameter, as they would cancel each other out. This is used with the following syntax: <br>
+                                <code>pd.concat([dataframe1, dataframe2], keys=['key1', 'key2'])</code></li>
+                            <li class="pt-2">If you want to combine two or more DataFrames that have different schemas (that is different columns), then use the following syntax: <br>
+                                <code>pd.concat([dataframe1, dataframe2], axis=1)</code></li>
+                            <li class="pt-2">If you want to combine a DataFrame and a Series, use the following syntax: <br>
+                                <code>pd.concat([dataframe1, series1], axis=1)</code></li>
+                            <li class="pt-2"><b>NOTE:</b> If the two DataFrames don't have the same number of columns, the DataFrame with the lesser number of columns will have its records be filled with NaNs in the columns that aren't present.</li>
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Joining DataFrames Tutorial! To help test your knowledge, let's
-                            practice Joining Multiple DataFrames.</i></b>
+                        <p><b>Congratulations!</b> You just completed the Combining DataFrames Tutorial! To help test your knowledge, let's
+                            practice Combining Multiple DataFrames.</i></b>
                             </i></b>
                             <br>**<b><i>It's highly recommended that you
                                 complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
@@ -184,7 +157,7 @@
                         <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="./Combining-DataFrames.html">
+                            href="./Database-Connections.html">
                             Next Topic
                         </a>
                     </div>

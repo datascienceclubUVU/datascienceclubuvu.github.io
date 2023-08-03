@@ -109,7 +109,7 @@
                             <li class="pt-2"><b>NOTE:</b> If you want to combine two DataFrames that don't have a shared column, you can conduct use the <b><i>concat</i></b> method which we will discuss in the next tutorial.</li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use Different Join Types</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/h4hOPGo4UVU?start=106" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/h4hOPGo4UVU?start=106&end=443" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
                             <li class="pt-1">An <b><i>inner join</i></b> follows the concepts presented in Set Theory and returns only those values that are represented in BOTH DataFrames. This is the most common type of join and one you should become very familiar with.</li>
@@ -142,8 +142,8 @@
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Aggregating Data Tutorial! To help test your knowledge, let's
-                            practice comparing measures across various combinations of groups using various aggregation methods.</i></b>
+                        <p><b>Congratulations!</b> You just completed the Joining DataFrames Tutorial! To help test your knowledge, let's
+                            practice Joining Multiple DataFrames.</i></b>
                             </i></b>
                             <br>**<b><i>It's highly recommended that you
                                 complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
@@ -151,20 +151,25 @@
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "aggregating-data.ipynb"</li>
+                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "joining-dataframes.ipynb"</li>
                             <li class="pt-2">In the Notebook, complete the following tasks:</li>
                             <ol type="a">
                                 <li class="pt-2"><b>Download the Following Files:</b> <br>
                                     <ul>
-                                        <li><a href="./Exercise Files/clean_listings.parquet">Sample Parquet File</a></li>
+                                        <li><a href="./Exercise Files/american_listings.csv">American Used Car Listings CSV File</a></li>
+                                        <li><a href="./Exercise Files/non_american_listings.csv">Non-American Used Car Listings CSV File</a></li>
+                                        <li><a href="./Exercise Files/subsetA.csv">Subset A CSV File</a></li>
+                                        <li><a href="./Exercise Files/subsetB.csv">Subset B CSV File</a></li>
                                     </ul></li>
-                                <li class="pt-2"><b>Read the Parquet File into a DataFrame object named "listings"</b></li>
-                                <li class="pt-2"><b>Retrieve the SUM of the "price" column and group by the "make" column. Assign the output DataFrame to a variable named "value_by_make"</b></li>
-                                <li class="pt-2"><b>Retrieve the MEAN of the "mileage" column and group by the "year", "make", and "model" columns. Assign the output DataFrame to a variable named "avg_mileage_by_vehicle"</b></li>
-                                <li class="pt-2"><b>Retrieve the MIN and MAX of the "city_mpg" column and group by the "transmission" and "drivetrain" columns. Assign the output DataFrame to a variable named "city_mpg_ranges". Make sure the output DataFrame doesn't have a MultiIndex.</b></li>
-                                <li class="pt-2"><b>Retrieve the MEDIAN and STANDARD DEVIATION of the "hwy_mpg" column and group by the "fuel_type" column. Assign the output DataFrame to a variable named "median_hwy_mpg_by_fuel". Make sure the output DataFrame doesn't have a MultiIndex.</b></li>
+                                <li class="pt-2"><b>Read the "Amercain Used Car Listings" CSV File into a variable named "american_listings"</b></li>
+                                <li class="pt-2"><b>Read the "Non-American Used Car Listings" CSV File into a variable named "non_american_listings"</b></li>
+                                <li class="pt-2"><b>Read the "Subset A" CSV File into a variable named "listings_subset_a"</b></li>
+                                <li class="pt-2"><b>Read the "Subset B" CSV File into a variabled named "listings_subset_b"</b></li>
+                                <li class="pt-2"><b>Conduct an Inner Join between the "listings_subset_a" and "listings_subset_b" DataFrames.</b></li>
+                                <li class="pt-2"><b>Conduct an Outer Join between the "american_listings" and "non_american_listings" DataFrames. Give relevant suffixes to the duplicated columns.</b></li>
+                                <li class="pt-2"><b>Conduct a Left Join between the "listings_subset_a" and "listings_subset_b" DataFrames. Show which records belong to which DataFrame(s).</b></li>
                             </ol>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Aggregating-Data-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Joining-DataFrames-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

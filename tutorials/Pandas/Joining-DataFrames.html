@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>Pandas Tutorials: Aggregating Data</title>
+    <title>Pandas Tutorials: Joining DataFrames</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            Pandas Tutorials: Aggregating Data
+                            Pandas Tutorials: Joining DataFrames
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/pandas-groupby.webp"
+                                src="../../imgs/pandas-joins.webp"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,51 +89,56 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                The next technique related to Data Cleaning is <b><i>Aggregating Data</i></b>. Aggregation consists of gathering related data and comparing it against one or more groups (e.g., average grade per student). This tutorial will cover the following learning objectives:
+                                The next technique related to Data Cleaning is <b><i>Joining DataFrames</i></b>. Joining consists of combining datasets from multiple sources that have at least one column in common. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>How to Aggregate Data Using the "groupby" Method</li>
-                                <li>How to Measure Numerical Data Using Common Aggregation Methods</li>
+                                <li>How to Join Multiple DataFrames Using the "merge" Method</li>
+                                <li>How to Use Different Join Types</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Aggregate Data Using the "groupby" Method</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ipoSjrN0oh0?end=223" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Join Multiple DataFrames Using the "merge" Method</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/h4hOPGo4UVU?end=106" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>groupby</i></b> method is the most common method used to aggregate data using one or more columns. When aggregating data, you must specify a measure (or calculation) to compare against the groups. This is used with the following syntax: <br>
-                                <code>dataframe.groupby(['group_column1', 'group_column2'])['measure_column'].[aggregate_method]()</code><br><br>
-                                <b>Example:</b><br>
-                                <code>orders.groupby(['customer_name'])['purchase_amount'].sum()</code></li>
-                            <li class="pt-2">If you want to use multiple measures to compare against a single field, use the following syntax: <br>
-                                <code>dataframe.groupby(['group_column1'])[['measure_column1', 'measure_column2']].[aggregate_method]()</code><br><br>
-                                <b>Example:</b><br>
-                                <code>orders.groupby(['customer_name'])[['purchase_amount', 'num_items']].sum()</code></li>
-                            <li class="pt-2">If you want to compare a single measure against multiple fields, use the following syntax: <br>
-                                <code>dataframe.groupby(['group_column1', 'group_column2'])['measure_column'].[aggregate_method]()</code><br><br>
-                                <b>Example:</b><br>
-                                <code>orders.groupby(['customer_name', 'purchase_year'])['purchase_amount'].sum()</code></li>
-                            <li class="pt-2">The <b><i>as_index</i></b> parameter is used to change the output DataFrame from a MultiIndex DataFrame to an average DataFrame. This tends to only be helpful when using more than one field as a group. This is used with the following syntax: <br>
-                                <code>dataframe.groupby(['group_column1', 'group_column2'], as_index=False)['measure_column'].[aggregate_method]()</code><br><br>
-                                <b>Example:</b><br>
-                                <code>orders.groupby(['customer_name', 'purchase_year'], as_index=False)['purchase_amount'].sum()</code></li>
-                            <li class="pt-2"><b>NOTE:</b> A <b><i>Multiindex DataFrame</i></b> is a DataFrame that contains multiple indices in a hierarchical structure. This is commonly used when drilling down groups (such as going from year to quarter to month).</li>
+                            <li class="pt-1">The <b><i>merge</i></b> method is the used to combine two or more DataFrames on a shared column. This is the same as Joins in Relational Databases. This is used with the following syntax: <br>
+                                <code>pd.merge(dataframe1, dataframe2, on='shared_column')</code><br>
+                                <b>OR</b><br>
+                                <code>dataframe1.merge(dataframe2, on='shared_column')</code></li>
+                            <li class="pt-2"><b>NOTE:</b> If you want to combine two DataFrames that don't have a shared column, you can conduct use the <b><i>concat</i></b> method which we will discuss in the next tutorial.</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Measure Numerical Data Using Common Aggregation Methods</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ipoSjrN0oh0?start=223&end=276" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use Different Join Types</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/h4hOPGo4UVU?start=106" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>agg</i></b> method is used to specify which aggregation method(s) you'd like to include in the output DataFrame. This is used with the following syntax: <br>
-                                <code>dataframe.groupby(['group_column1'])['measure_column'].agg(['aggregation_method1', 'aggregation_method2'])</code></li>
-                            <li class="pt-2">The <b><i>sum</i></b> method is used to add together all values in the column. This can only be used with numeric columns.</li>
-                            <li class="pt-2">The <b><i>mean</i></b> method is used to add together all values in the column and divide by the number of values in the column. This can only be used with numeric columns. This is also known as the <b><i>average</i></b>.</li>
-                            <li class="pt-2">The <b><i>count</i></b> method is used to count the number of distinct values in the column. This can be used with either numeric or string columns.</li>
-                            <li class="pt-2">The <b><i>min</i></b> method is used to find the smallest value in the column. This can be used with either numeric or string columns.</li>
-                            <li class="pt-2">The <b><i>max</i></b> method is used to find the largest value in the column. This can be used with either numeric or string columns.</li>
-                            <li class="pt-2">The <b><i>median</i></b> method is used to sort the values in the column from least to greatest and find the middle value, also known as the <b><i>50th percentile</i></b>. This can only be used with numeric columns.</li>
-                            <li class="pt-2">The <b><i>std</i></b> method is used to calculate the <b><i>Standard Deviation</i></b> of the values in the column.</li>
-                            <li class="pt-2"><b>NOTE:</b> When getting the mean of a binary column (where the values are either 0 or 1), the value returned is the proportion of 1's to 0's (e.g., if the mean is 0.37, that means 37% of the values are 1's).</li>
+                            <li class="pt-1">An <b><i>inner join</i></b> follows the concepts presented in Set Theory and returns only those values that are represented in BOTH DataFrames. This is the most common type of join and one you should become very familiar with.</li>
+                            <li class="pt-2">An <b><i>outer join</i></b> follows the concepts presented in Set Theory and returns all values in BOTH DataFrames. If a value is present in only one of the DataFrames, the columns in the other DataFrame will be NaN values.</li>
+                            <li class="pt-2">The <b><i>how</i></b> parameter is used to specify which type of join you want to use. This is used with the following syntax: <br>
+                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', how='join_type')</code><br>
+                                <b>OR</b><br>
+                                <code>dataframe1.merge(dataframe2, on='shared_column', how='join_type')</code></li>
+                            <li class="pt-2">A <b><i>left outer</i></b> join is used to return all the values from the left DataFrame and only the share values in the right DataFrame. All values that are not present in the right DataFrame will be left as NaNs. This is used with the following syntax: <br>
+                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', how='left')</code><br>
+                                <b>OR</b><br>
+                                <code>dataframe1.merge(dataframe2, on='shared_column', how='left')</code></li>
+                            <li class="pt-2">A <b><i>right outer</i></b> join is the opposite of a left outer join. This join type is used to return all values from the right DataFrame and only the shared values in the left DataFrame. All values that are not present will be left as NaNs. This is not used very often as you can simply switch the order of DataFrames in a left outer join. This is used with the following syntax: <br>
+                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', how='right')</code><br>
+                                <b>OR</b><br>
+                                <code>dataframe1.merge(dataframe2, on='shared_column', how='right')</code></li>
+                            <li class="pt-2">The <b><i>indicator</i></b> parameter is used to show where each record appears (either "left_only", "right_only", or both). This is helpful when filtering a DataFrame based on unique values shared by each DataFrame. This is used with the following syntax: <br>
+                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', indicator=True)</code><br>
+                                <b>OR</b><br>
+                                <code>dataframe1.merge(dataframe2, on='shared_column', indicator=True)</code></li>
+                            <li class="pt-2">The <b><i>suffixes</i></b> parameter is used to differentiate duplicate columns when two DataFrames have the same column names (excluding the shared column). This is used with the following syntax: <br>
+                                <code>pd.merge(dataframe1, dataframe2, on='shared_column', suffixes=(['suffix_left_dataframe', 'suffix_right_dataframe']))</code><br>
+                                <b>OR</b><br>
+                                <code>dataframe1.merge(dataframe2, on='shared_column', suffixes=(['suffix_left_dataframe', 'suffix_right_dataframe']))</code></li>
+                            <li class="pt-2">The <b><i>left_on</i></b> and <b><i>right_on</i></b> parameters are used when the shared column is named something else in each DataFrame (e.g., "id" column in the left DataFrame and "customer_id" in the right DataFrame). These are used with the following syntax: <br>
+                                <code>pd.merge(dataframe1, dataframe2, left_on='left_shared_column_name', right_on='right_shared_column_name')</code><br>
+                                <b>OR</b><br>
+                                <code>dataframe1.merge(dataframe2, left_on='left_shared_column_name', right_on='right_shared_column_name')</code></li></li>
+                            <li class="pt-2"><b>NOTE:</b> If you don't specify a value in the <b><i>how</i></b> parameter, an "inner join" will be used by default.</li>
                             </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
@@ -168,13 +173,13 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="./Missing-Values.html">
+                            href="./Aggregating-Data.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="./Joining-DataFrames.html">
+                            href="./Database-Connections.html">
                             Next Topic
                         </a>
                     </div>

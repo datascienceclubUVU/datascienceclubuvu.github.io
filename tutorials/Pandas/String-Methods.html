@@ -190,16 +190,19 @@
                                 <li class="pt-2"><b>Read the Pickle File into a variable named "unclean_listings"</b></li>
                                 <li class="pt-2"><b>Filter the "unclean_listings" DataFrame to only include the "header", "price", and "mileage" columns.</b></li>
                                 <li class="pt-2"><b>Convert the "header" column to uppercase.</b></li>
-                                <li class="pt-2"><b>Only include rows that have a "header" that either starts with "C" or ends with "e"</b></li>
-                                <li class="pt-2"><b>Only include rows where the "price" contains "25"</b></li>
-                                <li class="pt-2"><b>Only include rows that have a "header" less than or equal to 20 characters in length.</b></li>
+                                <li class="pt-2"><b>Only include rows that have a "header" that either starts with "201" or ends with "e". Reset the index inplace.</b></li>
+                                <li class="pt-2"><b>Only include rows where the "price" contains "25". Reset the index inplace.</b></li>
+                                <li class="pt-2"><b>Only include rows that have a "header" less than or equal to 20 characters in length. Reset the index inplace.</b></li>
                                 <li class="pt-2"><b>Remove all whitespace from the column headers.</b></li>
                                 <li class="pt-2"><b>Remove all whitespace from the "header" and "price" columns.</b></li>
                                 <li class="pt-2"><b>Replace the " miles" and "," substrings in the "mileage" column with empty strings.</b></li>
-                                <li class="pt-2"><b>Split the "price" column into 2 partitions. Name the new columns "first_split" and "new_price". Drop the "first_split" column.</b></li>
+                                <li class="pt-2"><b>Split the "price" column into 2 partitions. Name the new columns "first_split" and "price". Drop the "first_split" column.</b></li>
+                                <li class="pt-2"><b>Only include rows that have a "price" that does NOT contain the "$" character.</b></li>
+                                <li class="pt-2"><b>Replace the "," character in the "price" column with an empty string.</b></li>
                                 <li class="pt-2"><b>Split the "header" column into 3 partitions. Name the new columns "model_year", "make", and "model". Drop the "header" column.</b></li>
+                                <li class="pt-2"><b>Reorder the columns into the following order: <i>price, model_year, make, model, mileage</i></b></li>
                             </ol>
-                            <li class="pt-4"><b>Exercise Completed! Click <a href="./Combining-DataFrames-Answer-Key.html">here</a> to view the answers.</b></li>
+                            <li class="pt-4"><b>Exercise Completed! Click <a href="./String-Methods-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

@@ -153,6 +153,8 @@
                             <iframe width="650" height="400" src="https://www.youtube.com/embed/NIP9C3Eid_k?end=141" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                             <h6><b>How to Use the "replace" Method</b></h6>
                             <iframe width="650" height="400" src="https://www.youtube.com/embed/HU0re8UJViM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                            <h6><b>How to Use the "split" Method</b></h6>
+                            <iframe width="650" height="400" src="https://www.youtube.com/embed/vPKwm1XZjp8?start=332" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             <h4 class="pt-4">Summary</h4>
                             <ul>
                                 <li class="pt-1">The <b><i>strip</i></b> method is used to remove all whitespace (leading and trailing spaces) from a string. This is used with the following syntax: <br>
@@ -162,12 +164,15 @@
                                 </li>
                                 <li class="pt-2">The <b><i>replace</i></b> method is used to replace an existing substring with a new substring. This is used with the following syntax: <br>
                                     <code>dataframe['column_name'].str.replace('old_substring', 'new_substring')</code></li>
+                                <li class="pt-2">When working with a Pandas DataFrame, the <b><i>split</i></b> method is primarily used for splitting a string column into multiple columns using a delimiter (such as a space or comma). The quickest way to split a single string column into multiple columns uses the following syntax: <br>
+                                    <code>datframe[['new_column1', 'new_column2']] = dataframe['string_column'].str.split(pat='delimiter', n=[num_splits], expand=True)</code></li>
+                                <li class="pt-2">By default, the <b><i>split</i></b> method returns the split values as a list. This can cause some data quality issues, so the "expand" parameter is used. The <b><i>expand</i></b> parameter is used to convert the split values into individual Series (or columns in a DataFrame).</li>
                                 <li class="pt-2"><b>NOTE:</b> The <b>len</b> method is commonly used to identify any leading or trailing spaces. It's also commonly used for Data Quality checks to ensure strings are within a certain range of lengths.</li>
                                 </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
-                        <p><b>Congratulations!</b> You just completed the Combining DataFrames Tutorial! To help test your knowledge, let's
-                            practice Combining Multiple DataFrames.</i></b>
+                        <p><b>Congratulations!</b> You just completed the Manipulating Strings Tutorial! To help test your knowledge, let's
+                            practice Formatting, Extracting Information From, and Cleaning Strings.</i></b>
                             </i></b>
                             <br>**<b><i>It's highly recommended that you
                                 complete the exercise outlined in the previous tutorial before beginning this exercise.**</i></b>
@@ -175,23 +180,24 @@
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
                             <li class="pt-2">Open your IDE (e.g., VS Code, PyCharm, Spyder).</b></li>
-                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "joining-dataframes.ipynb"</li>
+                            <li class= "pt-2">Create a New Jupyter Notebook, or similar Notebook Environment. Name it "manipulating-strings.ipynb"</li>
                             <li class="pt-2">In the Notebook, complete the following tasks:</li>
                             <ol type="a">
                                 <li class="pt-2"><b>Download the Following Files:</b> <br>
                                     <ul>
-                                        <li><a href="./Exercise Files/american_listings.csv">American Used Car Listings CSV File</a></li>
-                                        <li><a href="./Exercise Files/non_american_listings.csv">Non-American Used Car Listings CSV File</a></li>
-                                        <li><a href="./Exercise Files/subsetA.csv">Subset A CSV File</a></li>
-                                        <li><a href="./Exercise Files/subsetB.csv">Subset B CSV File</a></li>
+                                        <li><a href="./Exercise Files/unclean_listings.pkl">Sample Pickle File</a></li>
                                     </ul></li>
-                                <li class="pt-2"><b>Read the "Amercain Used Car Listings" CSV File into a variable named "american_listings"</b></li>
-                                <li class="pt-2"><b>Read the "Non-American Used Car Listings" CSV File into a variable named "non_american_listings"</b></li>
-                                <li class="pt-2"><b>Read the "Subset A" CSV File into a variable named "listings_subset_a"</b></li>
-                                <li class="pt-2"><b>Read the "Subset B" CSV File into a variabled named "listings_subset_b"</b></li>
-                                <li class="pt-2"><b>Combine the "american_listings" and "non_american_listings" DataFrames into a single DataFrame named "all_listings"</b></li>
-                                <li class="pt-2"><b>Combine the "listings_subset_a" and "listings_subset_b" DataFrames into a single DataFrame named "combined_subset"</b></li>
-                                <li class="pt-2"><b>Combine all four DataFrames into a single DataFrame named "all_listings_duplicates"</b></li>
+                                <li class="pt-2"><b>Read the Pickle File into a variable named "unclean_listings"</b></li>
+                                <li class="pt-2"><b>Filter the "unclean_listings" DataFrame to only include the "header", "price", and "mileage" columns.</b></li>
+                                <li class="pt-2"><b>Convert the "header" column to uppercase.</b></li>
+                                <li class="pt-2"><b>Only include rows that have a "header" that either starts with "C" or ends with "e"</b></li>
+                                <li class="pt-2"><b>Only include rows where the "price" contains "25"</b></li>
+                                <li class="pt-2"><b>Only include rows that have a "header" less than or equal to 20 characters in length.</b></li>
+                                <li class="pt-2"><b>Remove all whitespace from the column headers.</b></li>
+                                <li class="pt-2"><b>Remove all whitespace from the "header" and "price" columns.</b></li>
+                                <li class="pt-2"><b>Replace the " miles" and "," substrings in the "mileage" column with empty strings.</b></li>
+                                <li class="pt-2"><b>Split the "price" column into 2 partitions. Name the new columns "first_split" and "new_price". Drop the "first_split" column.</b></li>
+                                <li class="pt-2"><b>Split the "header" column into 3 partitions. Name the new columns "model_year", "make", and "model". Drop the "header" column.</b></li>
                             </ol>
                             <li class="pt-4"><b>Exercise Completed! Click <a href="./Combining-DataFrames-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">

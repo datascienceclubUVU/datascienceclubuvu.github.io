@@ -93,7 +93,7 @@
                             </p>
                             <ul>
                                 <li>How to Format Strings Using the "lower", "upper", and "title" Methods</li>
-                                <li>How to Filter DataFrame Columns by Substrings Using the "contains", "startswith", "endswith", "isalpha", "isnumeric", and "isalnum" Methods</li>
+                                <li>How to Filter DataFrame Columns by Substrings Using the "contains", "startswith", and "endswith" Methods</li>
                                 <li>How to Get Information From Strings Using the "isupper", "islower", "len", and "find" Methods</li>
                                 <li>How to Clean Strings Using the "strip", "lstrip", "rstrip", "replace", and "split", Methods</li>
                             </ul>
@@ -116,7 +116,30 @@
                                 <code>dataframe['column_name'].str.title()</code></li>
                             <li class="pt-2"><b>NOTE:</b> <b><i>Chaining</i></b> is the process of combining multiple methods in a single command. This is a very efficient way of writing code in Pandas and is considered a best practice. The example below shows a Pandas Series being converted to lowercase, then uppercase, and finally title case. Example: <br>
                                 <code>cities['name'].str.lower().str.upper().str.title()</code></li>
-                            </ul><br>
+                            </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter DataFrame Columns by Substrings Using the "startswith", "endswith", "contains", and "isin" Methods</h2><br>
+                            <h6><b>How to Use the "startswith", "endswith", and "contains" Methods</b></h6>
+                            <iframe width="650" height="400" src="https://www.youtube.com/embed/HqG7Gvq1dWI?start=88&end=623" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                            <h6><b>How to Use the "isin" Method</b></h6>
+                            <iframe width="650" height="400" src="https://www.youtube.com/embed/6zG0vzgYaYE?end=153" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                            <h4 class="pt-4">Summary</h4>
+                            <ul>
+                                <li class="pt-1">The <b><i>startswith</i></b> method is used to filter a DataFrame Column, or a Pandas Series object, by a substring that the string starts with. This is equivalent to the following SQL query: <b>SELECT * FROM table WHERE column <u><i>LIKE 'ABC%'</i></u></b>. This is used with the following syntax: <br>
+                                    <code>dataframe[dataframe['column_name'].str.startswith('substring')]</code></li>
+                                <li class="pt-2">The <b><i>endswith</i></b> method is used to filter a DataFrame Column, or a Pandas Series object, by a substring that the string ends with. This is equivalent to the following SQL query: <b>SELECT * FROM table WHERE column <u><i>LIKE '%ABC'</i></u></b>. This is used with the following syntax: <br>
+                                    <code>dataframe[dataframe['column_name'].str.endswith('substring')]</code></li>
+                                <li class="pt-2">The <b><i>contains</i></b> method is used to filter a DataFrame Column, or a Pandas Series object, by a substring that appears anywhere in the string. This is equivalent to the following SQL query: <b>SELECT * FROM table WHERE column LIKE '&ABC%'</b>. This is used with the following syntax: <br>
+                                    <code>dataframe[dataframe['column_name'].str.contains('substring')]</code></li>
+                                <li class="pt-2">The <b><i>isin</i></b> method is used to filter a DataFrame Column, or a Pandas Series object, by a list of values. <U>This is NOT used with the <b>str</b> accessor</U>. This is used with the following syntax: <br>
+                                    <code>dataframe[dataframe['column_name'].isin(['value1', 'value2', 'value3'])]</code></li>
+                                <li class="pt-2"><b>NOTE:</b> If you want to apply a filter to a DataFrame via Slicing, you can specify which columns to return by using the following syntax: <br>
+                                    <code>dataframe[dataframe['column'] [filter]][['column1', 'column2']]</code><br><br>
+                                    <b>Example:</b><br>
+                                    <code>cities[cities['name'].str.endswith('City')][['name', 'population']]</code></li>
+                                <li class="pt-2"><b>NOTE:</b> The <b>unique</b> method is used to return an array of all the unique values in a DataFrame Series. This is used with the following syntax: <br>
+                                    <code>dataframe['column'].unique()</code></li>
+                                <li class="pt-2"><b>NOTE:</b> When filtering by raw string values (such as with the <b>isin</b> Method), make sure to include any leading or trailing spaces that may be present. We will discuss how to remove these in the next section of this tutorial.</li>
+                                </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Combining DataFrames Tutorial! To help test your knowledge, let's

@@ -94,8 +94,8 @@
                             <ul>
                                 <li>How to Format Strings Using the "lower", "upper", and "title" Methods</li>
                                 <li>How to Filter DataFrame Columns by Substrings Using the "contains", "startswith", and "endswith" Methods</li>
-                                <li>How to Get Information From Strings Using the "isupper", "islower", "len", and "find" Methods</li>
-                                <li>How to Clean Strings Using the "strip", "lstrip", "rstrip", "replace", and "split", Methods</li>
+                                <li>How to Get Information From Strings Using the "len" Method</li>
+                                <li>How to Clean Strings Using the "strip", "replace", and "split" Methods</li>
                             </ul>
                         </div>
                     </div>
@@ -139,6 +139,30 @@
                                 <li class="pt-2"><b>NOTE:</b> The <b>unique</b> method is used to return an array of all the unique values in a DataFrame Series. This is used with the following syntax: <br>
                                     <code>dataframe['column'].unique()</code></li>
                                 <li class="pt-2"><b>NOTE:</b> When filtering by raw string values (such as with the <b>isin</b> Method), make sure to include any leading or trailing spaces that may be present. We will discuss how to remove these in the next section of this tutorial.</li>
+                                </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Get Information From Strings Using the "len" Method</h2><br>
+                            <iframe width="650" height="400" src="https://www.youtube.com/embed/poITVEJZCYI?start=331&end=426" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                            <h4 class="pt-4">Summary</h4>
+                            <ul>
+                                <li class="pt-1">The <b><i>len</i></b> method is used to retrieve the length (or number of characters) in a string.  This is used with the following syntax: <br>
+                                    <code>dataframe['column_name'].str.len()</code></li>
+                                <li class="pt-2"><b>NOTE:</b> The <b>len</b> method is commonly used to identify any leading or trailing spaces. It's also commonly used for Data Quality checks to ensure strings are within a certain range of lengths.</li>
+                                </ul>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Clean Strings Using the "strip", "replace", and "split" Methods</h2><br>
+                            <h6><b>How to Use the "strip" Method</b></h6>
+                            <iframe width="650" height="400" src="https://www.youtube.com/embed/NIP9C3Eid_k?end=141" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                            <h6><b>How to Use the "replace" Method</b></h6>
+                            <iframe width="650" height="400" src="https://www.youtube.com/embed/HU0re8UJViM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                            <h4 class="pt-4">Summary</h4>
+                            <ul>
+                                <li class="pt-1">The <b><i>strip</i></b> method is used to remove all whitespace (leading and trailing spaces) from a string. This is used with the following syntax: <br>
+                                    <code>dataframe['column_name'].str.strip()</code></li>
+                                <li class="pt-2">If you want to strip all leading and trailing spaces from every column header, use the following syntax: <br>
+                                    <code>df.columns = df.columns.str.strip()</code>
+                                </li>
+                                <li class="pt-2">The <b><i>replace</i></b> method is used to replace an existing substring with a new substring. This is used with the following syntax: <br>
+                                    <code>dataframe['column_name'].str.replace('old_substring', 'new_substring')</code></li>
+                                <li class="pt-2"><b>NOTE:</b> The <b>len</b> method is commonly used to identify any leading or trailing spaces. It's also commonly used for Data Quality checks to ensure strings are within a certain range of lengths.</li>
                                 </ul><br>
                     
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>

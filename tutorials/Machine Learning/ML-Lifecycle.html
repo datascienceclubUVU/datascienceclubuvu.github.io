@@ -123,7 +123,85 @@
                                                 </ul>
                                             </li>
                                         </ul>
+                                    <li class="pt-1"><b>Data Collection</b></li>
+                                        <ul>
+                                            <li>If you work for a business, there will likely be an existing Data Warehouse or Data Lake with plenty of data available to train your model. However, if you're working on a personal project or creating an independent ML Application, you'll need to collect data from various sources. Listed below are the most common types of data sources:
+                                                <ul>
+                                                    <li>APIs</li>
+                                                    <li>Text Files (e.g., CSV, TSV, JSON)</li>
+                                                    <li>Web Scraping</li>
+                                                    <li>OLTP Databases (PostgreSQL, MySQL, MS SQL Server)</li>
+                                                </ul>
+                                            <li><b><i>Data Annotation</i></b> is the process of adding tags, or labels, to images to help Image Recognition models know what to look for when comparing images.</li>
+                                            </li>
+                                        </ul>
+                                    <li class="pt-1"><b>Data Preparation (Not Mentioned in the video)</b></li>
+                                        <ul>
+                                            <li>Just because you collected data from a trustworthy source doesn't mean the data is in a valid format for model training. This step typically involves the following:
+                                                <ul>
+                                                    <li>Building an ETL (Extract, Transform, Load) Pipeline to clean the data to fit your model's needs.</li>
+                                                    <li>Building a Feature Store to view all potential features.</li>
+                                                    <li>Creating Unit Tests for Data Pipelines to ensure the data meets certain criteria.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    <li class="pt-1"><b>Exploratory Data Analysis (Not Mentioned in the video)</b></li>
+                                        <ul>
+                                            <li>Once your data is clean to your organization's, or your personal, standards, you need to do a deep dive on your data. This step typically involves the following steps:
+                                                <ul>
+                                                    <li>Create Box Plots to identify and remove any outliers.</li>
+                                                    <li>Using SQL to identify and remove any NULL values.</li>
+                                                    <li>Create Histograms to ensure your data fits a normal distribution (critical for linear models).</li>
+                                                    <li>Create Correlation Matrices to eliminate collinearity.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    <li class="pt-1"><b>Training, Tuning, and Evaluation</b>
+                                        <ul>
+                                            <li>Assuming you're confident with the accuracy and quality of your Training Data, you can move on to fitting your Training Data to your model. This step typically involves the following steps:
+                                                <ul>
+                                                    <li><b>Determine whether you want to use a Statistical Model or a Deep Learning Model</b></li>
+                                                    <li><b>Hyperparameter Tuning</b></li>
+                                                    <li><b>Evaluation on Test Dataset</b></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="pt-1"><b>Deployment</b>
+                                        <ul>
+                                            <li>Once you're satisfied with your model's performance, you can move onto serving your model to your end users. This step typically involves the following steps:
+                                                <ul>
+                                                    <li><b>Identifying a Serving Framework</b></li>
+                                                    <li><b>Deployment to Cloud (typically via Docker)</b></li>
+                                                    <li><b>Artifacts Management</b></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="pt-1"><b>Monitoring</b>
+                                        <ul>
+                                            <li>The reason why the MDLC is called a "lifecycle" is because it goes in a continuous loop. Monitoring your model's performance as it's used in production is critical to maintaining a consistent infrastructure. This step typically involves the following steps:
+                                                <ul>
+                                                    <li><b>Live Monitoring</b></li>
+                                                    <li><b>Inference Accuracy Measurement</b></li>
+                                                    <li><b>Set Notifications and Track Logs</b></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="pt-1"><b>Retrain</b>
+                                        <ul>
+                                            <li>Following the concept of Continuous Integration/Continuous Deployment (CI/CD), you will want to add new features to your model and collect new training and testing data from your users to enhance your model's performance.
+                                                <ul>
+                                                    <li>You should retrain your model based on production monitoring logs and changing business requirements.</li>
+                                                    <li>Collect new data from user inputs and retrain your model with the new data.</li>
+                                                    <li>Continuously perform hyperparameter tuning to ensure your model is performing at its best.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </ol></li>
+                            <li class="pt-2">Although the MDLC can seem like a lot to handle, existing frameworks such as MLFlow, AWS SageMaker, and KubeFlow make monitoring your MDLC simple.</li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                         <div class="row mt-4 mt-md-5 mb-2 px-3">

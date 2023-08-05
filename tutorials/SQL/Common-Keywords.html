@@ -96,15 +96,18 @@
                                 are tens of keywords in SQL, so we'll just cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>Column/Table Aliases</li>
-                                <li>Removing Duplicate Rows</li>
-                                <li>ORDER BY Clause Keywords</li>
+                                <li>How to Use The "AS" Keyword</li>
+                                <li>How to Use the "DISTINCT" Keyword</li>
+                                <li>How to Use the "LIKE" Keyword</li>
+                                <li>How to Use the "IN" Function</li>
+                                <li>How to Use the "IS NULL" Keyword</li>
+                                <li>How to Use the "BETWEEN" Keyword</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use Aliases in SQL Queries</h2> <br>
-                        <a href="https://www.youtube.com/watch?v=ngPeJ06f4-A"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/ngPeJ06f4-A/maxresdefault.jpg"></a> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use the "AS" Keyword</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ngPeJ06f4-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <ul>
                             <li class="pt-1">The <b><i>AS</i></b> keyword is used to assign an alias to column or table. To use this keyword, use the following syntax:
                                 <br><code>SELECT [column_name] AS [new_name]<br> FROM [table_name];</code><br><b>OR</b><br>
@@ -113,16 +116,16 @@
                                 <code>SELECT [column_name] AS "[new_name]" <br>FROM [table_name];</code></li>
                             <li class="pt-4"><b>NOTE:</b> Although the <b><i>AS</i></b> keyword is not required when giving a column or table an alias, it's a best practice to use this keyword to make it more obvious that the column or table is being temporarily renamed. </li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Remove Duplicate Records From a Result Set</h2> <br>
-                        <a href="https://www.youtube.com/watch?v=C29WO7CUKAQ"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/C29WO7CUKAQ/maxresdefault.jpg"></a> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use the "DISTINCT" Keyword"</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/C29WO7CUKAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <ul>
                             <li class="pt-1">The <b><i>DISTINCT</i></b> keyword is used to remove all duplicate records from a result set. To use this keyword, use the following syntax:
                                 <br><code>SELECT DISTINCT [column_name], [column_name]<br> FROM [table_name];</code></li>
                             <li class="pt-2"><b>NOTE:</b> A commonly asked question during interviews for Data-related roles is, "How do you get only unique values from a query?". This keyword is the easiest way to answer that question.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter String-Based Columns Based on Substrings</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use the "LIKE" Keyword</h2>
                         <br>
-                        <a href="https://www.youtube.com/watch?v=vEt7bDnXlnY"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/vEt7bDnXlnY/maxresdefault.jpg"></a> <br><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/vEt7bDnXlnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <ul>
                             <li class="pt-1">The <b><i>LIKE</i></b> keyword is used to filter a string-based column on a substring. To use this keyword, use the following syntax:
                                 <br><code>SELECT *<br> FROM [table_name]<br>WHERE [column_name] LIKE '[substring]';</code></li>
@@ -138,9 +141,9 @@
                             </li>
                             <li class="pt-2"><b>NOTE:</b> Although you have the option to use the underscore (_) character to match on a single character, it's rarely used as some strings may have leading or trailing spaces that are invisible in the result set.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter Columns by a List of Values</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use the "IN" Function</h2>
                         <br>
-                        <a href="https://www.youtube.com/watch?v=qZz6q06wsMY"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/qZz6q06wsMY/maxresdefault.jpg"></a> <br><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/qZz6q06wsMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <ul>
                             <li class="pt-1">The <b><i>IN</i></b> keyword is used to filter a column based on a list of values. To use this keyword, use the following syntax:
                                 <br><code>SELECT *<br> FROM [table_name]<br>WHERE [column_name] IN([value1], [value2], [value3]);</code></li>
@@ -148,9 +151,9 @@
                                 <code>SELECT * <br>FROM [table_name] <br>WHERE [column_name] NOT IN([value1], [value2], [value3]);</code></li>
                             <li class="pt-2"><b>NOTE:</b> In interviews where thay ask you SQL-related questions, it's important to know that the <b><i>IN</i></b> keyword can slow down your queries as it has to find multiple exact matches. We'll disucss a more efficient approach in a later tutorial.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter Columns Based on NULL Status</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use the "IS NULL" Keyword</h2>
                         <br>
-                        <a href="https://www.youtube.com/watch?v=DUGppOtEX-s"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/DUGppOtEX-s/maxresdefault.jpg"></a> <br><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/DUGppOtEX-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <ul>
                             <li class="pt-1">A <b><i>NULL</i></b> value means there is no value in the particular cell. This is different from a zero or blank string, as those represent actual values with measurable meaning.</li>
                             <li class="pt-2">The <b><i>IS NULL</i></b> keyword is used to filter a column based on if the value is NULL. To use this keyword, use the following syntax:
@@ -158,9 +161,9 @@
                             <li class="pt-2">If you want to filter out any NULL values in a particular column, use the following syntax: <br>
                                 <code>SELECT * <br>FROM [table_name] <br>WHERE [column_name] IS NOT NULL;</code></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Filter Columns Based on a Range of Numeric Values</h2>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Use the "BETWEEN" Keyword</h2>
                         <br>
-                        <a href="https://www.youtube.com/watch?v=oiOvdZudb_I"><img class="img-fluid", width= 75%, src="https://i.ytimg.com/vi/oiOvdZudb_I/maxresdefault.jpg"></a> <br><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/oiOvdZudb_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <ul>
                             <li class="pt-2">The <b><i>BETWEEN</i></b> keyword is used to filter a column based on if the column value falls within a specified range. To use this keyword, use the following syntax:
                                 <br><code>SELECT *<br> FROM [table_name]<br>WHERE [column_name] BETWEEN [min_number] AND [max_number];</code></li>

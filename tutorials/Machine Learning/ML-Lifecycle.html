@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>ML Tutorials: ML Lifecycle</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                MACHINE LEARNING TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            ML Tutorials: Machine Learning Lifecycle
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/ml-lifecycle.png"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                You may have heard the phrase, "Your [Machine Learning] model is only as good as its training data". If not, no worries. In this tutorial, we'll explore how to get from raw data to a productionalize Machine Learning Application using the <b><i>Machine Learning Lifecycle</i></b>.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Machine Learning Lifecycle (MDLC)</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/SPExESsO4ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">Similar to the Software Development Lifecycle (SDLC), the <b><i>Model Development Lifecycle (MDLC),</i></b> or "Machine Learning Lifecycle, is used as an iterative process by Data Scientists when developing and productionalizing new Machine Learning Models.</li>
+                            <li class="pt-2">The MDLC consists of the following steps: <br>
+                                <ol>
+                                    <li class="pt-1"><b>Business Understanding</b><br>
+                                        <ul>
+                                            <li>Before any action takes place, you need to understand the problem that is trying to be solved either by the company ou work for, or the outcome you are trying to produce.</li>
+                                            <li>This steps consists of
+                                                <ul>
+                                                    <li><b>Gathering Requirements</b> (e.g, tools, budget, team members)</li>
+                                                    <li><b>Setting Goals and Milestones</b> (e.g., when to check-in with stakeholders, what tasks to accomplish in which time frames)</li>
+                                                    <li><b>Conducting an ROI analysis</b> (this is used by businesses to understand if the benefits outweigh the costs of producing this model).</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="pt-1"><b>Model Selection</b></li>
+                                        <ul>
+                                            <li>Once you have a clear understanding of the problem that needs to be solves or the outcome that needs to be produced, the following needs to take place:
+                                                <ul>
+                                                    <li><b>Deciding if an ML Model is necessary.</b> As mentioned in the video, if a rule-based system or a similar approach can be taken, it should, as it will almost always keep costs low and reduce necessary overhead (such as number of employees overseeing the model's performance).</li>
+                                                    <li><b>Classification vs. Regression</b>. If you decide that ML is the way to go, you need to decide if you need to predict a value based on a specified set of Features (discussed in a later tutorial), or classify items into a set number of classes based on a specified set of Features.</li>
+                                                    <li><b>Can you use a ready-made solution?</b> As the business world has evolved, large companies such as Amazon and Google have developed templated ML models on their respective Cloud Services. Some examples include Google's DialogFlow (for Natural Language Processing) and Vision AI (for Image Recognition). These solutions can save a lot of time and money, though if you're working with sensitive data, such as financial transactions, you should NOT use these pre-trained models.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                </ol></li>
+                        </ul><br>
+                        <!-- Previous/Next Topic buttons. -->
+                        <div class="row mt-4 mt-md-5 mb-2 px-3">
+                            <div class="col-0 col-sm-8">
+                                <a
+                                class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                                href="../Machine Learning/AI-ML-DL.html">
+                                Previous Topic
+                            </a>
+                            </div>
+
+                        </div>
+                        <!-- <div class="row mt-4 mt-md-5 mb-2 px-3">
+                            <div class="col-0 col-sm-8"></div>
+                            <a
+                                class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                                href="../Machine Learning/ML-Lifecycle.html">
+                                Next Topic
+                            </a>
+                        </div> -->
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

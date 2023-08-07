@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>ML Tutorials: Types of ML</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                MACHINE LEARNING TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            ML Tutorials: Types of ML
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/types-of-ml.png"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                As you may know, Machine Learning can take many forms and perform a wide variety of tasks. However, before you build you first model, you first have to understand how to train it. In this tutorial, we'll discuss the different ways of training ML models. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>Supervised Learning</li>
+                                <li>Unsupervised Learning</li>
+                                <li>Reinforcement Learning</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Supervised Learning</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/Mu3POlNoLdc?end=312" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">In <b><i>Supervised Learning</i></b>, the computer learns by making use of labeled data. In this context, <b><i>Labels</i></b> are what you're trying to predict. For example, if you're building a model to predict house prices, the input data would include house listings with the prices included so the computer can identify trends between the price and other attributes, or <b><i>features</i></b>, provided in the listing.</li>
+                            <li class="pt-2"><b><i>Data</i></b> is a collection of information used by ML models to output predictions. This may include user data, text data (such as from Product Reviews on Amazon), images, metadata (such as image attributes like size, color, and location), and JSON data produced by websites.</li>
+                            <li class="pt-1"><b><i>Features</i></b> are the "X" attributes that are used to predict the "Y" output. For example, if you're trying to predict house prices, some features may include the size, number of bathrooms, number of bedrooms, and the location.</li>
+                            <li class="pt-2">In Supervised Learning, the <b><i>target</i></b> variable, or attribute, is what you're trying to predict. Whether you're trying to classify a set of observations, or predict a value on a continuous scale, the label is used to guide the computer in identifying trends between the features and the target.</li>
+                            <li class="pt-2">A <b><i>sample</i></b>, or <b><i>observation</i></b>, is a single record, or row, of data that represents a single entity. For example, if you had a dataset of 100 house listings, one sample, or row, in the dataset would represent a single house listing.</li>
+                            <li class="pt-2">In Supervised Learning, the <b><i>Training Data</i></b> contains the "target" variable with the labels included, whereas the <b><i>Testing Data</i></b> includes a new set of observations that has masked labels, or labels that you can see, but the computer cannot. This allows you to evaluate the performance of your model more effectively.</li>
+                            <li class="pt-2">There are two types of Supervised Learning: Classification and Regression. With <b><i>Classification</i></b>, you're trying to predict a <b>discrete</b>. class label based on the various features. An example of this could be predicting what breed a dog is based on its height, weight, and length. With <b><i>Regression</i></b>, you're trying to predict a continuous value based on the various features. An example of this is predicting the price of a used car based on its mileage, age, and title status.</li>
+                            <li class="pt-2"><b><i>Discrete</i></b> values are distinct numbers or classes that can represent the output. These are typically represented either by integers or text-based classes. <b><i>Continuous</i></b> values are numbers on a number line. These are alomost always represented by floating point numbers.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Unsupervised Learning</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/yteYU_QpUxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">In <b><i>Unsupervised Learning</i></b>, the computer learns by making use of unlabeled data.</li>
+                            <li class="pt-2">Clustering and Object Identification algorithms are common examples of Unservised learning, as the computer needs to find trends between samples without any guidance. This is useful for reducing bias in training samples and gaining data-driven insights.</li>
+                            <li class="pt-2"><b><i>Clustering</i></b> is the process of grouping a set of samples in such a way that similar objects fall into the same group. Foe example, suppose you have a dataset of 500 songs. Your goal is to assign each song to a particular genre. However, you don't know which song is currently assigned to which genre. You can use a clustering algorithm to group songs with similar characteristics to create genre groups.</li>
+                            <li class="pt-2">Unsupervised learning can be used to speed up outlier detection. <b><i>Outliers</i></b> are data points that exist two standard deviations above or below the mean. Outliers can produce bias within Supervised Learning models, so this technique is commonly used when building Supervised Learning models.</li>
+                            <li class="pt-2"><b><i>Latent variables</i></b> are variables that aren't directly measured on an individual sample but are rather inferred from other variables. An example of a latent variable could be the "health status" of an individual based on the amount of time exercising, amount of ruit and vegetables consumed, and illness frequency.</li>
+                            <li class="pt-2"><b><i>Autoencoding</i></b> is a process used by Neural Networks to reduce noise. This topic is dicussed in the "Deep Learning" section of this Tutorial Topic.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Reinforcement Learning</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/nIgIv4IfJ6s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">In <b><i>Reinforcement Learning</i></b>, the computer learns by making mistakes and getting rewarded. Rather than retrieving Training Data, the computer receives a task to complete and then goes through a series of trial and error, receiving rewards for when it succeeds, in order to learn.</li>
+                            <li class="pt-2">In the real world, children learn most things by getting rewards for doing something correctly, and reaping natural consequences for doing something incorrectly. A similar pattern is followed when training models to complete complex tasks. The model receives some sort of positive signal when it's going in the right direction, and a negative signal when it does the opposite.</li>
+                            <li class="pt-2">In the context of Reinforcement Learning, an <b><i>Agent</i></b> is the machine that is performing the task and receives feedback. Agents perform tasks based on inputs known as <b><i>states</i></b>.</li>
+                            <li class="pt-2">In the context of Reinforcement Learning, the <b><i>Environment</i></b> is the virtual, or sometimes physical, location where the machine performs the assigned task.</li>
+                            <li class="pt-2">Just like showing your work in Algebra class, the same principle applies to Reinforcement Learning models. If the Agent performs a task successfully but doesn't know how it accomplished it, how can it do it again? <b><i>States</i></b> track the steps taken by the Agent in the specific iteration. This allows the Agent to analyze the steps and the result to reproduce the results in different scenarios. This process keeps going until the Agent performs the task successfully, with minimal error, in every assigned scenario (such as different terrain, different times of year, or with obstacles).</li>
+                            <li class="pt-2"><b><i>Credit Assignments</i></b> are very similar to Exams. They test the Agent's ability to perform the assigned task in a realistic environment. <b><i>Values</i></b> are numerical representations given to possible rewards. Some rewards are more risky but provide much greater performance, whereas others guarantee successful outcome, but the performance may be lacking. <b><i>Policies</i></b> are assigned to the Agent to go after specific values based on their risk-reward criteria. The Agent iterates through every possible value and policy to find the most efficient way to perform the task assigned.</li>
+                            <li class="pt-2">In Reinforcement Learning, <b><i>Exploitation</i></b> is where the agent takes the first path it finds successful. Although this guarantees success, it can also be very inefficient in reaching the goal. With <b><i>Exploration</i></b>, the Agent is able to explore new ways of finding success while optimizing its rewards.</li>
+                        </ul><br>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <div class="col-0 col-sm-8">
+                            <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/AI-ML-DL.html">
+                            Previous Topic
+                            </a>
+                        </div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/ML-Lifecycle.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

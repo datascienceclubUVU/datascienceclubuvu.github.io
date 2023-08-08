@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>ML Tutorials: Supervised Learning Algorithms</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                MACHINE LEARNING TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            ML Tutorials: Supervised Learning Algorithms
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/supervised-learning.jpg"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                Supervised Learning is currently the most used type of Machine Learning. Why? Simply because it's simple to understand, cheap and efficient to deploy into Production Environments, and helps automate various business processes using a data-driven approach. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>Linear Regression</li>
+                                <li>Logistic Regression</li>
+                                <li>Naive Bayes</li>
+                                <li>Decision Trees</li>
+                                <li>Random Forests</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Linear Regression</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/m88h75F3Rl8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Linear Regression</i></b> is a linear approximation of a causal relationship between two or more variables. The basis for this algorithm is the slope-intercept formula: <b>y = mx + b</b></li>
+                            <li class="pt-2">The <b><i>Dependent Variable</i></b> "y" in the slope-intercept formula, is predicted using one or more <b>Independent Variables</b>, the "mx" and "b" in the slope-intercept formula.</li>
+                            <li class="pt-1">The <b><i>Simple Linear Regression Model</i></b> is used to predict a dependent variable based on a single independent variable. This model is represented by the following equation (for complete populations): <br>
+                                    <b>y = β0 + β1X1 + ε</b>
+                                <ul>
+                                    <li class="pt-1"><b><i>y</i></b> represents the dependent variable that is being predicted, for example the price of a house.</li>
+                                    <li class="pt-1"><b><i>β0</i></b> represents the Constant, on the minimum value the dependent value can be without any interaction with the independent variable.</li>
+                                    <li class="pt-1"><b><i>x</i></b> represents the independent variable that is being used to predict the dependent variable, for example the square footage of the house.</li>
+                                    <li class="pt-1"><b><i>β1</i></b> represents the coefficient related to the independent variable. This shows that for every one unit increase in the independent variable, the dependent variable will be increased by that much.</li>
+                                    <li class="pt-1"><b><i>ε</i></b> equals the measured error between the observed values of the dependent variable, and the predicted values of the dependent variable. This is used to offset the difference between the predicted values produced by your model and the actual values shown in your Training Data.</li>
+                                </ul></li>
+                            <li class="pt-2">For incomplete populations, or samples, the following equation is used: <br>
+                                <b>ŷ = b0 + b1x1</b></li>
+                            <li class="pt-2">A <b><i>Causal Relationship</i></b> is where there is a clear relationship between the independent and dependent variable. Whether positive or negative, a perfect causal relaitionship is the equvivalent to "if x increases by 1, then y increases by 1", or "if x increases by 1 then y descreases by one".</li>
+                            <li class="pt-2"><b>NOTE:</b> Understanding the concept of causal relationships is critical to becoming an effective Data Scientist or ML Engineer. This concept is typically called "<b>Model Inference"</b>. We will discuss this topic in a later tutorial.</li>
+                            <li class="pt-2"><b>NOTE:</b> Linear Regression models only work well with numeric features. Thus, if you have categorical features (e.g., color, gender), then you must exclude those to get an effective model.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Logistic Regression</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/C5268D9t9Ak?end=473" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Regression</i></b> is a statistical method for modeling relationships between variables. It makes it possible to infer or predict a variable based on one or more other variables.</li>
+                            <li class="pt-2">The difference between Linear Regression and Logistic Regression is that with <b><i>Linear Regression</i></b>, the dependent variable is a <b><i>continuous value</i></b>, whereas with <b><i>Logistic Regression</i></b>, the dependent variable is a <b><i>binary value</i></b> (can only be one of two possible values).</li>
+                            <li class="pt-2">Logistic Regression is represented by the following equation: <br>
+                                <b>f(z) = 1 / 1 + e (to the power of "-z")</b>
+                                <ul>
+                                    <li class="pt-1"><b>z</b> represents the equation used for Linear Regression.</li>
+                                </ul></li>
+                            <li class="pt-2">Since Logistic Regression is used to predict the probability of an outcome, the Linear Regression Equation is used to find how each independent variable contributes, positively or ngeatively, to the probability of the outcome.</li>
+                            <li class="pt-2">When interpreting the results of a Logistic Regression Model, remember that the floating point number assigned to the target variable is the probability that the sample meets the condition (e.g., if the coefficient for an independent variable is 0.08, that means there is a positive correlation between the independent and dependent variables where for every increase in the independent variable, the probability of the dependent variable meeting the positive condition increases by 8%).</li>
+                            <li class="pt-2"><b>NOTE:</b> Just like with Linear Regression, Logistic Regression Models only work well with numeric features. Thus, if you have categorical features (e.g., color, gender), then you must exclude those to get an effective model.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Naive Bayes</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/CPqOCI0ahss?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Naive Bayes</i></b> is a common classification algorithm used by Data Scientists to determine the class of a target variable based on categorical independent variables. This algorithm can be used for either Binary Classification or Multiclass Classification.</li>
+                            <li class="pt-2">The primary difference between Naive Bayes and Logistic Regression is that <b><i>Logistic Regression</i></b> requires numeric independent variables, whereas <b><i>Naive Bayes</i></b> can work with string-based, or categorical, independent variables.</li>
+                            <li class="pt-2">Naive Bayes is based on Bayes Theorem, a conditional theorem, which can be described as an evidence-based trust theorem (the more evidence present to support the condition, the more trust is given). Bayes Theorem is based on the concept of "how much you should trust the evidence". Bayes Theorem is represented by the following equation: <br>
+                                <b>P(A|C) = P(C|A) * P(A)/ P(C)</b>
+                            <ul>
+                                <li class="pt-1"><b>P(A)</b> equals the <b><i>Prior Probability</i></b>, which describes the degree to which we believe the model accurately describes reality based on all of our prior information.</li>
+                                <li class="pt-1"><b>P(C|A)</b> equals the <b><i>Likelihood</i></b>, which describes how well the model predicts the data.</li>
+                                <li class="pt-1"><b>P(C)</b> equals the <b><i>Normalizing Constant</i></b>, which is the constant that makes the Posterior Density integrate to one (add up all probabilities to 1.0).</li>
+                                <li class="pt-1"><b>P(A|C)</b> equals the <b><i>Posterior Probability</i></b>, which represents the degree to which we believe a given model accurately describes the situation given the Training Data.</li>
+                            </ul></li>
+                            <li class="pt-2">The reason why Naive Bayes is "Naive" is because if there are two or more features that are not correlated, then the probability of seeing those features in the same class is just the product of all the probabilities.</li>
+                            <li class="pt-2"><b>Naive Bayes Pros and Cons:</b>
+                                <ul>
+                                    <li><b>Pros:</b>
+                                    <ul>
+                                        <li>It's fast and easy to predict a class.</li>
+                                        <li>It provides better performance than Logistic Regression when conducting Binary Classification.</li>
+                                        <li>It performs well in the case of categorical features compared to numerical features.</li>
+                                    </ul></li>
+                                    <li><b>Cons:</b>
+                                    <ul>
+                                        <li>If you forget to include all possible classes of the target variable in the Training Data, the Tetsing Data will predict a 0 probability score for the samples matching that missing class. Although this can be fixed using smoothing techniques, it's just another step to work through.</li>
+                                        <li>Since Naive Bayes heavily relies on probabilities, it's bad at estimating classes based on feature correlations.</li>
+                                        <li>If independent features are present, which can be defined as features that are not correlated to any other features, this can cause bias in the classification process.</li>
+                                    </ul></li>
+                                </ul></li>
+                            <li class="pt-2"><b>NOTE:</b> Naive Bayes is traditionally only used when real-time decisions need to be made, since Decision Trees, Random Forests, and Neural Networks tend to provide much better results with lower error rates.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Decision Trees</h2> <br>
+                        <h6><b>Decision Tree Classification</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ZVR2Way4nwQ?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h6><b>Decision Tree Regression</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/UhY5vPfQIrA?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Decision Trees</i></b> are binary trees that recursively split the Training Data into separate classes until a prediction is returned. These are commonly used by Data Scientists and ML Engineers to conduct Binary and Multi-Class Classification.</li>
+                            <li class="pt-2">There are three types of nodes within a Decision Tree: The <b><i>Root Node</i></b> is the base of the tree and create the first split of the data based on a specific condition, <b><i>Decision Nodes</i></b> further split the data until it has reached a specific threshold, and <b><i>Leaf Nodes</i></b> contain the final predictions that assign a class to the data points inside.</li>
+                            <li class="pt-2"><b><i>Pure Leaf Nodes</i></b> occur when all the data points in a Leaf Node are assigned to a single class. When you have a large number of data points, this may not be possible.</li>
+                            <li class="pt-2"><b><i>Information Gain</i></b> is the process used by Decision Trees to find the optimal conditions to create pure leaf nodes. The best possible information gain split is where the data gets split evenly into two classes. When working with more than two classes, the best possible scenario is to find the smallest amount of conditions to create pure leaf nodes.</li>
+                            <li class="pt-2"><b><i>Entropy</i></b> is the measure of information contained in a state. In the context of Decision Trees, the state would be the subset of data contained in each Decision Node. The higher the Entropy, the less amount of clear information is present in the Decision Node.</li>
+                            <li class="pt-2">When using a Decision Tree for Regression, also known as a <b><i>Regression Tree</i></b>, you'll run into leaf nodes that have more than one data point. Rather than assigning each data point the same value, we find the mean of the data points by summing them and dividing by the number of points in the leaf node. This will produce the prediction for the target variable.</li>
+                            <li class="pt-2"><b><i>Variance Reduction</i></b> is a Regression technique in which the goal is to reduce the amount of space between the data points. When visualizing a Regression model, you'll view the "line of best fit", the <b><i>line of best fit</i></b>, or <b><i>trend line</i></b>, represents all the predicted values. This is created by finding either the Root Mean Squared Error (RMSE) or Sqaured Correlation (r-squared). We'll discuss these metrics in a later tutorial.</li>
+                            <li class="pt-2">In the context of Regression Trees, <b><i>Variance Reduction</i></b> is used to reduce the amount of space between the data points in each decision node. This is the equivalent of how Entropy is used to determine the ideal split condition for each Decision Node.</li>
+                            <li class="pt-2"><b>NOTE:</b> Decision Trees are the best Supervised Learning algorithm for both Classification and Regression when working with categorical features (e.g., make and model of a car).</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Random Forests</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/v6VJ2RO66Ag?start=473" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Random Forests</i></b> are a collection of Decision Trees that are used by Data Scientists and ML Engineers to reduce Overfitting (a concept we will discuss in a later tutorial).</li>
+                            <li class="pt-2">When creating a Random Forest, you must specify the number of trees you'd like to fit your Training Data to. <b><i>Bootstrapping</i></b> is the concept of grabbing random samples and features from the training dataset and creating subsets to be used in each tree. Each subset will contain the same number of rows as the original Training Data, but NOT the same number of features.</li>
+                            <li class="pt-2">When using a Random Forest for Classification, new data points are passed through each Decision Tree and the class with the most "votes" from each tree gets assigned. This helps your model understand the importance of each individual feature and how they interact with each other in the context of correlation.</li>
+                            <li class="pt-2"><b><i>Aggregation</i></b> is the process of collecting the results from each Decision Tree created by the Random Forest and counting the number of occurrences of each class from all trees. The class with the highest number of occurrences gets assigned to the data point.</li>
+                            <li class="pt-2">Random Forests are better than basic Decision Trees becuase they allow your model to give weights to features based on the impact they have on predictions. If a single feature consistently provides the same predictions as other trees, it's considered to be very important.</li>
+                            <li class="pt-2">When deciding how many features to include in each Decision Tree, it's wise to use the log or square root of the number of features available. This has been found to be the best method to reduce observational bias.</li>
+                            <li class="pt-2">When used with Regression problems, rather than aggregating the count of each class, the mean of all predictions is taken to provide the output prediciton for each data point.</li>
+                            <li class="pt-2"><b>NOTE:</b> Whenever you suspect bias in your data, or any form of uneven distribution, always go with Random Forests. This will reduce overfitting and focus more on important features rather than equal weights on all features.</li>
+                        </ul><br>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <div class="col-0 col-sm-8">
+                            <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/AI-ML-DL.html">
+                            Previous Topic
+                            </a>
+                        </div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/Supervised-Algorithms.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

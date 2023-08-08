@@ -93,8 +93,9 @@
                             </p>
                             <ul>
                                 <li>K-Means Clustering</li>
+                                <li>Hierarchical Clustering</li>
                                 <li>Principal Component Analysis (PCA)</li>
-                                <li>Support Vector Machines (SVMs)</li>
+
                             </ul>
                         </div>
                     </div>
@@ -134,6 +135,16 @@
                             <li class="pt-2">The <b><i>Elbow Method</i></b> calculate the summed distance between the points and the Centroid where with every iteration, the another cluster is added to the algorithm until it meets the max number of clusters specified. In each interation, the summed distance between the points and the Centroid gets smaller. When anaylzing the results of the Elbow Method, you look for where the change in efficiency starts to plateau and that is considered the optimal number of clusters.</li>
                             <li class="pt-2"><b>NOTE:</b> K-Means is best used for creating classes for use in training a Decision Tree. For example, say you want to classify customers into three classes: Target Market, Common, and Less Valuable. You can use K-Means to cluster the customers based on their features and then use a Decision Tree Classifier and/or Random Forest to find which features best predict the classes</li>
                         </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Hierarchical Clustering</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ijUMKMC4f9I?start=473" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Hierarchical Clustering</i></b> is a technique used for clustering clusters of groups into tiers. These tiers become more specific as you go down the list.</li>
+                            <li class="pt-2">There are two types of Hierarchical Clustering: Agglomerative and Divisive. <b><i>Divisive Clustering</i></b> takes a top-down approach where all data points begin in the same cluster and then get broken down into sub-clusters based on similar features. <b><i>Agglomerative Clustering</i></b> takes a bottom-up approach where you start with individual data points and start grouping them into ever increasing groups based on similar features.</li>
+                            <li class="pt-2"><b><i>Agglomerative Clustering</i></b> starts with each data point representing its own cluster, then using <b><i>euclidean distance</i></b>, the formula that is used in K-Means to find the distance between a data point and a Centroid, a new cluster gets created with two data points. This process gets repeated until one massive cluster remains.</li>
+                            <li class="pt-2">A <b><i>Dendrogram</i></b> is the visualization of Hierarchical Clusters. This allows you to map how each data point relates to others and what features separate each cluster. The distance between links in the Dendrogram show how similar or different two data points are. The closer they are, the more closely they are related.</li>
+                            <li class="pt-2"><b>NOTE:</b> Hierarchical Clustering is very computationally expensive, meaning that the more data points you have, and the more potential clusters that can be created, the computing power necessary increases exponentially (starting at a certain point, differs between systems).</li>
+                        </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Principal Component Analysis (PCA)</h2> <br>
                         <iframe width="650" height="400" src="https://www.youtube.com/embed/Ollp2nSQCLY?start=473" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
@@ -145,68 +156,6 @@
                             <li class="pt-2"><b><i>Factor Loading</i></b> is the process of identifying how correlated each feature is with its assigned factor.</li>
                             <li class="pt-2">The <b><i>Eigenvalue</i></b> explains how effective the number of factors is at explaining the amount of variance across all variables. The reason why you don't want to choose the number of factors with the highest eigenvalue is because you want to find a perfect medium between an even distribution and a highly explained variance.</li>
                             <li class="pt-2"><b>NOTE:</b> When developing a PCA in a pre-built tool such as RapidMiner or SciKit-Learn, the rotated component matrix will automatically be applied to allow you to best analyze the results without any bias.</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Support Vector Machines</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/CPqOCI0ahss?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h4 class="pt-4">Summary</h4>
-                        <ul>
-                            <li class="pt-1"><b><i>Naive Bayes</i></b> is a common classification algorithm used by Data Scientists to determine the class of a target variable based on categorical independent variables. This algorithm can be used for either Binary Classification or Multiclass Classification.</li>
-                            <li class="pt-2">The primary difference between Naive Bayes and Logistic Regression is that <b><i>Logistic Regression</i></b> requires numeric independent variables, whereas <b><i>Naive Bayes</i></b> can work with string-based, or categorical, independent variables.</li>
-                            <li class="pt-2">Naive Bayes is based on Bayes Theorem, a conditional theorem, which can be described as an evidence-based trust theorem (the more evidence present to support the condition, the more trust is given). Bayes Theorem is based on the concept of "how much you should trust the evidence". Bayes Theorem is represented by the following equation: <br>
-                                <b>P(A|C) = P(C|A) * P(A)/ P(C)</b>
-                            <ul>
-                                <li class="pt-1"><b>P(A)</b> equals the <b><i>Prior Probability</i></b>, which describes the degree to which we believe the model accurately describes reality based on all of our prior information.</li>
-                                <li class="pt-1"><b>P(C|A)</b> equals the <b><i>Likelihood</i></b>, which describes how well the model predicts the data.</li>
-                                <li class="pt-1"><b>P(C)</b> equals the <b><i>Normalizing Constant</i></b>, which is the constant that makes the Posterior Density integrate to one (add up all probabilities to 1.0).</li>
-                                <li class="pt-1"><b>P(A|C)</b> equals the <b><i>Posterior Probability</i></b>, which represents the degree to which we believe a given model accurately describes the situation given the Training Data.</li>
-                            </ul></li>
-                            <li class="pt-2">The reason why Naive Bayes is "Naive" is because if there are two or more features that are not correlated, then the probability of seeing those features in the same class is just the product of all the probabilities.</li>
-                            <li class="pt-2"><b>Naive Bayes Pros and Cons:</b>
-                                <ul>
-                                    <li><b>Pros:</b>
-                                    <ul>
-                                        <li>It's fast and easy to predict a class.</li>
-                                        <li>It provides better performance than Logistic Regression when conducting Binary Classification.</li>
-                                        <li>It performs well in the case of categorical features compared to numerical features.</li>
-                                    </ul></li>
-                                    <li><b>Cons:</b>
-                                    <ul>
-                                        <li>If you forget to include all possible classes of the target variable in the Training Data, the Tetsing Data will predict a 0 probability score for the samples matching that missing class. Although this can be fixed using smoothing techniques, it's just another step to work through.</li>
-                                        <li>Since Naive Bayes heavily relies on probabilities, it's bad at estimating classes based on feature correlations.</li>
-                                        <li>If independent features are present, which can be defined as features that are not correlated to any other features, this can cause bias in the classification process.</li>
-                                    </ul></li>
-                                </ul></li>
-                            <li class="pt-2"><b>NOTE:</b> Naive Bayes is traditionally only used when real-time decisions need to be made, since Decision Trees, Random Forests, and Neural Networks tend to provide much better results with lower error rates.</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Decision Trees</h2> <br>
-                        <h6><b>Decision Tree Classification</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ZVR2Way4nwQ?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h6><b>Decision Tree Regression</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/UhY5vPfQIrA?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h4 class="pt-4">Summary</h4>
-                        <ul>
-                            <li class="pt-1"><b><i>Decision Trees</i></b> are binary trees that recursively split the Training Data into separate classes until a prediction is returned. These are commonly used by Data Scientists and ML Engineers to conduct Binary and Multi-Class Classification.</li>
-                            <li class="pt-2">There are three types of nodes within a Decision Tree: The <b><i>Root Node</i></b> is the base of the tree and create the first split of the data based on a specific condition, <b><i>Decision Nodes</i></b> further split the data until it has reached a specific threshold, and <b><i>Leaf Nodes</i></b> contain the final predictions that assign a class to the data points inside.</li>
-                            <li class="pt-2"><b><i>Pure Leaf Nodes</i></b> occur when all the data points in a Leaf Node are assigned to a single class. When you have a large number of data points, this may not be possible.</li>
-                            <li class="pt-2"><b><i>Information Gain</i></b> is the process used by Decision Trees to find the optimal conditions to create pure leaf nodes. The best possible information gain split is where the data gets split evenly into two classes. When working with more than two classes, the best possible scenario is to find the smallest amount of conditions to create pure leaf nodes.</li>
-                            <li class="pt-2"><b><i>Entropy</i></b> is the measure of information contained in a state. In the context of Decision Trees, the state would be the subset of data contained in each Decision Node. The higher the Entropy, the less amount of clear information is present in the Decision Node.</li>
-                            <li class="pt-2">When using a Decision Tree for Regression, also known as a <b><i>Regression Tree</i></b>, you'll run into leaf nodes that have more than one data point. Rather than assigning each data point the same value, we find the mean of the data points by summing them and dividing by the number of points in the leaf node. This will produce the prediction for the target variable.</li>
-                            <li class="pt-2"><b><i>Variance Reduction</i></b> is a Regression technique in which the goal is to reduce the amount of space between the data points. When visualizing a Regression model, you'll view the "line of best fit", the <b><i>line of best fit</i></b>, or <b><i>trend line</i></b>, represents all the predicted values. This is created by finding either the Root Mean Squared Error (RMSE) or Sqaured Correlation (r-squared). We'll discuss these metrics in a later tutorial.</li>
-                            <li class="pt-2">In the context of Regression Trees, <b><i>Variance Reduction</i></b> is used to reduce the amount of space between the data points in each decision node. This is the equivalent of how Entropy is used to determine the ideal split condition for each Decision Node.</li>
-                            <li class="pt-2"><b>NOTE:</b> Decision Trees are the best Supervised Learning algorithm for both Classification and Regression when working with categorical features (e.g., make and model of a car).</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Random Forests</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/v6VJ2RO66Ag?start=473" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h4 class="pt-4">Summary</h4>
-                        <ul>
-                            <li class="pt-1"><b><i>Random Forests</i></b> are a collection of Decision Trees that are used by Data Scientists and ML Engineers to reduce Overfitting (a concept we will discuss in a later tutorial).</li>
-                            <li class="pt-2">When creating a Random Forest, you must specify the number of trees you'd like to fit your Training Data to. <b><i>Bootstrapping</i></b> is the concept of grabbing random samples and features from the training dataset and creating subsets to be used in each tree. Each subset will contain the same number of rows as the original Training Data, but NOT the same number of features.</li>
-                            <li class="pt-2">When using a Random Forest for Classification, new data points are passed through each Decision Tree and the class with the most "votes" from each tree gets assigned. This helps your model understand the importance of each individual feature and how they interact with each other in the context of correlation.</li>
-                            <li class="pt-2"><b><i>Aggregation</i></b> is the process of collecting the results from each Decision Tree created by the Random Forest and counting the number of occurrences of each class from all trees. The class with the highest number of occurrences gets assigned to the data point.</li>
-                            <li class="pt-2">Random Forests are better than basic Decision Trees becuase they allow your model to give weights to features based on the impact they have on predictions. If a single feature consistently provides the same predictions as other trees, it's considered to be very important.</li>
-                            <li class="pt-2">When deciding how many features to include in each Decision Tree, it's wise to use the log or square root of the number of features available. This has been found to be the best method to reduce observational bias.</li>
-                            <li class="pt-2">When used with Regression problems, rather than aggregating the count of each class, the mean of all predictions is taken to provide the output prediciton for each data point.</li>
-                            <li class="pt-2"><b>NOTE:</b> Whenever you suspect bias in your data, or any form of uneven distribution, always go with Random Forests. This will reduce overfitting and focus more on important features rather than equal weights on all features.</li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

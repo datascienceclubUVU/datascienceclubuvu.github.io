@@ -97,6 +97,7 @@
                                 <li>Naive Bayes</li>
                                 <li>Decision Trees</li>
                                 <li>Random Forests</li>
+                                <li>K-Nearest Neighbors</li>
                                 <li>Support Vector Machine (SVM)</li>
                             </ul>
                         </div>
@@ -199,6 +200,48 @@
                             <li class="pt-2">When deciding how many features to include in each Decision Tree, it's wise to use the log or square root of the number of features available. This has been found to be the best method to reduce observational bias.</li>
                             <li class="pt-2">When used with Regression problems, rather than aggregating the count of each class, the mean of all predictions is taken to provide the output prediciton for each data point.</li>
                             <li class="pt-2"><b>NOTE:</b> Whenever you suspect bias in your data, or any form of uneven distribution, always go with Random Forests. This will reduce overfitting and focus more on important features rather than equal weights on all features.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">K-Nearest Neighbors</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/MDniRwXizWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>K-Nearest Neighbors</i></b> is an algorithm used to classify a data point based on its proximity to other data points. This is a sister algorithm commonly used in conjunction with <b><i>K-Means Clustering</i></b>, an Unsupervised Learning algorithm explained in the next tutorial.</li>
+                            <li class="pt-2"><b><i>K</i></b> refers to the number of nearest neighbors included in the cluster.</li>
+                            <li class="pt-2">KNN is used explicitly for classification, thus your label must have distinct classes. When a new data point is introduced, such as in a Testing Dataset, you specify the "K" nearest neighbors to include in the classification and the majority voting occurs, meaning the class with the most representation in the specified cluster will be assigned to that data point.</li>
+                            <li class="pt-2"><b><i>Euclidean distance</i></b> is the default measure used for finding the nearest neighbors. This concept is covered in the Statistics Tutorial Series (Coming Soon).</li>
+                            <li class="pt-2">KNN is very advantageous for working will large Training Datasets, requires no Training Data as it simply runs the algorithm on the base set, and is well liked for its ability to learn complex data models easily.</li>
+                            <li class="pt-2">KNN is NOT advantageous when you're working with a high number of features, as this will increase the amount of computing power requried dramatically. It can also be difficult to determine the optimal number for "K".</li>
+                            <li class="pt-2"><b>NOTE:</b> As mentioned in the video, "K" should ALWAYS be an odd number to avoid ties in the voting process.</li>
+                            <li class="pt-2"><b>NOTE:</b> Whenever you suspect bias in your data, or any form of uneven distribution, always go with Random Forests. This will reduce overfitting and focus more on important features rather than equal weights on all features.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Support Vector Machines</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/Y6RRHw9uN9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">A <b><i>Support Vector Machine (SVM)</i></b> is a classification algorithm best suited for extreme cases. In its most simple form, an SVM can only be used for binary classification.</li>
+                            <li class="pt-2">A <b><i>Hyperplane</i></b> is the gap between the two classes that help the algorithm differentiate between the two classes. The boundaries of the hyperplane are drawn by <b><i>Support Vectors</i></b>, which are the extreme data points in each class. These support vectors constitute the end of the class as far as the maximum or minimum amounts in each feature (e.g., weight, height, age).</li>
+                            <li class="pt-2">Rather than relying on the entire Training Dataset for understanding the relationships between features, SVMs rely on the Support Vectors for determining classes.</li>
+                            <li class="pt-2"><b><i>D+</i></b> is the shortest distance to the first positive point (first class), whereas <b><i>D-</i></b> is the shortest distance to the first negative point (second class). The Positive and Negative terms com from the "Binary" nature of the classification. In your Training Data, your label could be titled "is_dog" and be marked 1 if the sample is a dog, otherwise 0 if the sample is a cat.</li>
+                            <li class="pt-2">SVMs support multi-dimensional classifications where you use more than two features to predict the output. This is extremely difficult to visualize, especially if you have more than four features. Could you image a 7-Dimensional Scatter Plot?</li>
+                            <li class="pt-2"><b><i>Kernels</i></b> allow you to work with non-linear data without having to use exponentially more computing power. There are various types of kernels, but the basic idea behind them is you input your Training Data, specify how you want it to be transformed, and it returns the <b><i>dot product</i></b> of each data point to make it possible to create a clear Hyperplane.</li>
+                            <li class="pt-2">The <b><i>dot product</i></b> is an algebraic operation that takes two equal-length sequences of numbers (such as data points in a Training Dataset), and returns a single number. Click <b><a href="https://www.khanacademy.org/math/multivariable-calculus/thinking-about-multivariable-function/x786f2022:vectors-and-matrices/a/dot-products-mvc">here</a></b> to learn more.</li>
+                            <li class="pt-2">Common Kernel Types include the following:
+                                <ul>
+                                    <li>Polynomial Kernel</li>
+                                    <li>Radial Basis Function (RBF) Kernel</li>
+                                    <li>Sigmoid Kernel</li>
+                                </ul>
+                            </li>
+                            <li class="pt-2"><b>SVM Advantages:</b>
+                                <ul>
+                                    <li>SVMs are highly effective in high-dimensional spaces. If you have a high number of features, SVMs should be highly considered.</li>
+                                    <li>Different Kernel Functions are available for various decision functions. This makes SVMs very flexible with both linear and non-linear Training Datasets.</li>
+                                </ul></li>
+                            <li class="pt-2"><b>SVM Disadvantages:</b>
+                                <ul>
+                                    <li>SVMs perform poorly when the number of features exceed the number of samples (very rare when working with large datasets).</li>
+                                    <li>SVMs don't provide probability metrics for its classification assignments, as compared to Naive Bayes.</li>
+                                </ul></li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

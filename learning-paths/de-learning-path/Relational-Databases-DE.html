@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>DE Learning Path: Relational Databases</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                DATA ENGINEERING LEARNING PATH
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            DE Learning Path: Relational Databases
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/relational-database.jfif"
+                                alt="%UPDATE% Picture of the word python written on a stick note."
+                                width="100%"
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                Welcome to the first lesson in the Data Engineering (DE) Learning Path! As a Data Engineer, you'll be working with three main types of data: Structured, Semi-Structured, and Unstructured. To keep things simple, we'll start off with Structured data. Most of the time, Structured data is stored in a Relational Model, whether that's a database or a data warehouse. Thus, you should have a good understanding of what the Relational Model is, what it's composed of, and why it has been used for over 50 years. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>Database Objects</li>
+                                <li>Primary Keys vs. Foreign Keys</li>
+                                <li>Normalization</li>
+                                <li>Types of Relationships</li>
+                                <li>Data Types</li>
+                                <li>Entity Relationship Diagrams (ERDs)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is a Relational Database? What are it's Primary Components?</h2>
+                        <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/OqjJjpjDRLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <br>
+                        <br>
+                        <h4 class="pt-4">Summary:</h4>
+                        <ul>
+                            <li class="pt-1">A <b><i>Relational Database</i></b> is a system comprised of tables that represent real-world objects
+                            and contain Attributes (Columns) and rows of data.</li>
+                            <li class="pt-2">A <b><i>Table</i></b> is a database object that represents an entity (such as products). Tables
+                            contain Columns (AKA Attributes) that describe each feature of the entity, Rows (or records) that represent a single
+                        data point, and an ID field to uniquely identify each record in the table.</li>
+                            <li class="pt-2"><b><i>Structured Query Language (SQL)</i></b> is the primary coding language used to query one or more tables in a relational database.
+                            </li>
+                            <li class="pt-2"><b><i>Relationships</i></b> are defined between the ID fields in various tables. The most common type
+                            of relationship is <b><i>one-to-many</i></b>. In this relationship, one record in Table A matches with multiple records in Table B.</li>
+                            <li class="pt-2">Another popular type of relationship is <b><i>one-to-one</i></b>. In this relationship, one record in Table A matches ONLY ONE record in Table B.</li>
+                            <li class="pt-2">Relationships are created using Primary Keys and Foreign Keys. A <b><i>Primary Key</i></b> is the field in the table that uniquely identifies each record, whereas a <b><i>Foreign Key</i></b> is the Primary Key in Table A being represented in Table B and is used to create an explicit relationship between the two tables.</li>
+                            <li class="pt-2"><b>NOTE:</b> An <b><i>Index</i></b> is used on commonly used fields to help speed up queries. These take each unique value in the column and stores it in a cached "lookup" table for reference. <b><i>Don't worry, we'll go over indices in much greater detail in later tutorials.</i></b></li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Are the Most Common Data Types Found in Relational Databases?</h2>
+                        <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/4MoUJJNZqbM?start=68" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <br><br>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2"><b><i>INT/INTEGER</i></b> data types represent numerical data without decimal places. This data type can traditionally hold values between -2,147,483,648 and 2,147,483,647. The <b><i>SMALLINT</i></b> variation is used when you want to save space on disk or limit the range of values.</li>
+                            <li class="pt-2"><b><i>DECIMAL/NUMERIC/FLOAT</i></b> data types represent numerical data with decimal points. These are used interchangeably. These data types accept optional parameters called Precision and Scale. <b><i>Precision</i></b> refers to how many numbers can be shown in total (between the numbers before and after the decimal point), whereas <b><i>Scale</i></b> is used to specify the count of numbers allowed AFTER the decimal point.</li>
+                            <li class="pt-2">The <b><i>CHAR</i></b> data type represents textual data. This is used when you want the text to be a fixed length (such as a phone number or state abbreviation).</li>
+                            <li class="pt-2">The <b><i>VARCHAR</i></b> data types also represents textual data. This is used when you want the text to fit a variable length with a spcified maximum (much like Tweets).</li>
+                            <li class="pt-2"><b><i>DATE/TIME/DATETIME/TIMESTAMP</i></b> data types represent time-series data, or data that occurs along a timeline. 
+                            This may include both date and time data or simply just dates or times separately.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How is Data in a Relational Database Kept Consistent?</h2>
+                        <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/J-drts33N8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2"><b><i>First Normal Form</i></b> states that all rows in a given table are unique and all cells
+                            (intersections between columns and rows) must contain only one value (no lists, arrays, or dictionaries).</li>
+                            <li class="pt-2"><b><i>Second Normal Form</i></b> states that once a database is in first normal form, all
+                            attribute values should be dependent on the primary key (not another common attribute). Rather than having
+                            a composite key (two columns that are used together as a Primary Key) that describes two different entities, it's better to separate the entities into two different tables and create a relationship.</li>
+                            <li class="pt-2"><b><i>Third Normal Form</i></b> states that once a database is in second normal form, all attributes
+                            must be dependent only on the primary key, not on other keys.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How are Database Relations Visualized?</h2>
+                        <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/5nGC4fyFPes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2"><b>DISCLAIMER: Don't worry about the shapes mentioned in the video, they differ between databases and are rarely used when designing ERDs.</b></li>
+                            <li class="pt-2">An <b><i>Entity Relationship Diagram (ERD)</i></b> is a visualization that describes the relationships between tables in a database.</li> ERDs are built on three main components: Entities, Attributes, and Relationships.
+                            <li class="pt-2">An <b><i>Entity</i></b> is an object in an ERD that represents a table in the database. This table almost always represents real-world objects (such as students, courses, or products). A <b><i>Weak Entity</i></b> is what is created when splitting tables to fit your database to first or third normal forms. These are commonly known as <b><i>lookup tables</i></b>.</li>
+                            <li class="pt-2"><b><i>Attributes</i></b> are what describe the entity. For instance, a table titled "students" may have the following attributes: First Name, Last Name, Age, Gender.</li>
+                            <li class="pt-2"><b>NOTE:</b> When deploying ERDs in the real world, <b><i>Key Attributes</i></b>, or Primary/Foreign Keys, are designated with "PK" or "FK", respectively.</li>
+                            <li class="pt-2"><b>NOTE:</b> In the real world, <b><i>Composite Attributes</i></b> and <b><i>Multivalued Attributes</i></b> are rarely used as they do not conform to first normal form.</li>
+                            <li class="pt-2"><b>NOTE:</b> Although it's good to know about <b><i>Derived Attributes</i></b>, they are rarely pointed out in an ERD. They are typically shown as just another attribute.</li>
+                            <li class="pt-2"><b>NOTE:</b> In the real world, <b><i>one-to-many</i></b> and <b><i>many-to-many</i></b> relationships are most commonly visualized using Crow's Foot Notation. <b><i>Crow's Foot Notation</i></b> takes a single line from Table A and puts three "prongs" at the end (such as this: -------<-) where the "many" part of the relationship is shown. This allows the relationship to be shown intuitively.</li>
+                        </ul>
+                        <button class="btn btn-outline-primary py-2 w-25 text-center fs-5
+                        border border-primary" style="margin-left:72%;">
+                        <a href="./SQL-Tutorials-DE.html" style="text-decoration:none;">
+                            Next Topic</a></button>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

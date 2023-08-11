@@ -112,9 +112,9 @@
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1">The <b><i>INSERT INTO</i></b> statement is used to insert one or more rows into a table. This is commonly used when filling in a test table to make sure your constraints and data types are working correctly. This is used with the following syntax:
-                                <br><code>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.);</code></li>
+                                <br><code>INSERT INTO table_name VALUES (column1_value, column2_value, etc.);</code></li>
                             <li class="pt-2">If you want to insert multiple rows in the same statement, use the following syntax:
-                                <br><code>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.), ([col_value], [col_value], etc.);</code></li>
+                                <br><code>INSERT INTO table_name VALUES (column1_value, column2_value, etc.), (column1_value, column2_value, etc.);</code></li>
                             <li class="pt-2">Using PgAdmin, you can import CSV data into a table using the GUI (see detailed instructions in the video above).</li>
                             <li class="pt-2">If you want to customize your CSV import using SQL, use the following syntax (PostgreSQL specific):
                                 <br><code>COPY table_name(column1, column2, column3, column4, column5)<br>
@@ -128,26 +128,23 @@
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
                             <li class="pt-2">The <b><i>UPDATE</i></b> statement is used to change the values in a column. This is used with the following syntax:
-                                <br><code>UPDATE [table_name]<br> SET [col_name] = [new_value];</code></li>
+                                <br><code>UPDATE table_name<br> SET column = new_value;</code></li>
                             <li class="pt-2">It's a best practice to ALWAYS use the WHERE clause when updating column values. This ensures you don't accidentally update every value in the column. When updating a table based on a condition, use the following syntax:
-                                <br><code>UPDATE [table_name]<br> SET [col_name] = [new_value]<br> WHERE [condition];</code></li>
+                                <br><code>UPDATE table_name<br> SET column = new_value<br> WHERE [condition];</code></li>
                             <li class="pt-2">If you want to update multiple columns in the same statement, use the following syntax: 
-                                <br><code>UPDATE [table_name]<br> SET [col_name] = [new_value], [col_name] = [new_value]<br> WHERE [condition];</code></li>
+                                <br><code>UPDATE table_name<br> SET column1 = new_value, column2 = new_value<br> WHERE [condition];</code></li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Deleting Data</h2>
-                        <p class="pt-3">Similar to the previous section, as your business grows, you'll naturally lose customers and employees,
-                            which may require deleting sensitive data that's no longer necessary. Watch the following video to get a better
-                            understanding of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://youtube.com/clip/UgkxvL2pVL9QZZBlVJ3ZFL7CmcJk7GoX9do6">How to Delete Data From a Table</a><br>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Deleting Data</h2><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/c7AAkX39_Wo?end=278" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To delete all the data in a table, refer to the <b>TRUNCATE</b> statement in the previous tutorial.</li>
+                            <li class="pt-1">The <b><i>DELETE</i></b> statement is used to remove data from a table based on a condition. This is used with the following syntax:<br>
+                                <code>DELETE FROM table_name<br>
+                                      WHERE [condition];</code>
+                            </li>
                             <li class="pt-2">To delete specific rows in a table, use the following syntax:
                                 <br><code>DELETE FROM [table_name] WHERE [condition];</code></li>
-                            <li class="pt-2">Make sure to <b><i>double-check</i></b> your code before executing the statement.</li>
+                            <li class="pt-2"><b>NOTE:</b> It's a best practice to ALWAYS run a SELECT statement with the same conditions mentioned in the WHERE clause of your proposed DELETE statement to ensure you're only removing data that is no longer needed.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Exercise</h2>
                         <p class="pt-3"><b>Congratulations!</b> You just completed the DML Tutorial! To help test your knowledge, let's complete the exercise
@@ -158,50 +155,38 @@
                         </p>
                         <h4 class="pt-3">Instructions:</h4>
                         <ol>
-                            <li class="pt-2">Open your RDBMS Client.</li>
-                            <li class="pt-2">Insert the following data into the "Customers" table in the "Orders" schema of the
-                                            "Sales" database:
-                                            1000, John, Thornton, 123 Main Street, Chicago, IL, 12345<br>
-                                            1001, Susan, Freeman, 700 Huntington Avenue, Los Angeles, CA, 91980<br>
-                                            1002, Barbara, Smith, 303 Polish Road, Denver, CO, 81210<br>
-                                            1003, Gregory, Turis, 35 Frankfurt Way #104, Seattle, WA, 91772<br>
-                                            1004, Gregory, Hurst, 656 N 705 W, New Haven, CT, 21342<br>
-                                            1005, Samantha, Olivier, NULL, NULL, NULL, NULL
+                            <li class="pt-2"><b>Open your RDBMS Client.</b></li>
+                            <li class="pt-2"><b>Open the "Sales" Database created in the previous tutorial.</b></li>
+                            <li class="pt-2"><b>Create a New Table named "Orders" with the following schema:</b>
+                                <ul>
+                                    <li>id (INT) [PRIMARY KEY]</li>
+                                    <li>order_date (DATE) [NOT NULL]</li>
+                                    <li>num_items (INT) [NOT NULL]</li>
+                                    <li>subtotal_amount (FLOAT) [NOT NULL]</li>
+                                    <li>tax_amount (FLOAT) [NOT NULL]</li>
+                                    <li>customer_id (INT) [FOREIGN KEY REFERENCES customers(id)</li>
+                                    <li>employee_id (INT) [FOREIGN KEY REFERENCES employees(id)</li>
+                                </ul>
                             </li>
-                            <li class="pt-2">Insert the following data into the "Orders" table in the "Orders" schema of the
-                                            "Sales" database:<br>
-                                            189230191, 2021-09-01, 1000<br>
-                                            189230192, 2021-09-01, 1000<br>
-                                            189230193, 2021-09-02, 1001<br>
-                                            189230009, 2020-12-13, 1000<br>
-                                            189212443, 2019-05-06, 1004<br>
-                                            190000124, 2022-10-11, 1002<br>
-                                            189229132, 2020-08-12, 1002<br>
-                                            190001121, 2023-01-04, 1003
-                                        </li>
-                            <li class="pt-2">Insert the following data into the "Orders" table in the "Orders" schema of the
-                                            "Sales" database:<br>
-                                            189230191, 1, Camping Chair (Black), Luxury Camping Chair made by Trident, 29.99<br>
-                                            189230191, 2, Camping Tent, 4-person Tent with Rain Cover and Exterior Shoe Rack, 54.99<br>
-                                            189230191, 3, Fire Roasting Sticks (4-Pack), Metal Rods used for Roasting Hot Dogs and Marshmallows over Campfire, 12.49<br>
-                                            189230192, 1, X-Large Tarp, 20ft x 20ft Tarp used for Camping Tents, 19.99<br>
-                                            189230193, 1, White Noise Machine, Electronic device used to create soothing noises for sleeping, 39.99<br>
-                                            189230193, 2, Sleeping Mask (Black), Cloth to place over eyes while sleeping, 5.69<br>
-                                            189230193, 3, Melatonin (5 mg, 500 ML), Over-the-Counter pills to improve sleep, 17.49<br>
-                                            189230009, 1, White Undershirt (XL), XL White Undershirt made by Fruit of the Loom, 8.99<br>
-                                            189212443, 1, White Socks (6-Pair), Plain White Socks made by Fruit of the Loom, 6.99<br>
-                                            190000124, 1, Rubber Bands (125-Pack), Plain Rubber Bands, 3.99<br>
-                                            190000124, 2, Scissors (2-Pack), Small Blue Scissors made by Elmer, 9.99
+                            <li class="pt-2"><b>Download the following files:</b>
+                                <ul>
+                                    <li><a href="../SQL/BackendDB/customers.csv">Customers Table Mock Data CSV File</a></li>
+                                    <li><a href="../SQL/BackendDB/employees.csv">Employees Table Mock Data CSV File</a></li>
+                                    <li><a href="../SQL/BackendDB/orders.csv">Orders Table Mock Data CSV File</a></li>
+                                </ul>
                             </li>
-                            <li class="pt-3">In the "Orders" Table, delete the row with an "order_id" of <b><i>190001121</i></b> since
-                                            it was canceled.</li>
-                            <li class="pt-2">A Customer Service Representative reached out to Samantha Olivier and got her address. Update
-                                            the appropriate row in the "Customers" table.<br>
-                                            <b><i>424 Seashell Avenue, Newport Beach, CA, 91080</i></b></li>
-                            <li class="pt-2">It looks like John Thornton prefers to go by Johnny. Update the appropriate row in the "Customers"
-                                            table with the new information.
+                            <li class="pt-2"><b>Insert the data from the "customers.csv" file into the "Customer" table.</b>
                             </li>
-                            <li class="pt-2"><b>Exercise Completed!</b></li>
+                            <li class="pt-2"><b>Insert the data from the "employees.csv" file into the "Employees" table.</b>
+                            </li>
+                            <li class="pt-2"><b>Insert the data from the "orders.csv" file into the "Orders" table.</b>
+                            </li>
+                            <li class="pt-3"><b>Update the "wage" column in the "Employees" table by multiplying the current value by 1.5 for all employees hired before 3/1/2020.</b></li>
+                            <li class="pt-2"><b>Update the "tax_amount" column in the "Orders" table by dividing the current value by 2 for all orders that had more than 10 items in it.</b>
+                            </li>
+                            <li class="pt-2"><b>Delete all rows from the "Customers" table where the "city" column is not null and the "state" column is null.</b>
+                            </li>
+                            <li class="pt-2"><b>Exercise Completed! Click <a href="DML-Answer-Key.html">here</a> to view the answers.</b></li>
                             <div class="col">
                                 <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                             </div>

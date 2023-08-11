@@ -104,25 +104,24 @@
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Inserting Data</h2>
-                        <p class="pt-3">Once you have your initial database, schema, and tables, you'll want to start adding data.
-                            Watch the following videos to get a better understanding of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=VkabxQgtGsA">How to Insert Data into a Table</a><br>
-                            <a href="https://www.youtube.com/watch?v=fAETcQ5CST0">How to Insert Data from CSV to SQL Server</a>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Inserting Data</h2><br>
+                        <h6><b>Importing Data Using the INSERT INTO Statement</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/VkabxQgtGsA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h6><b>Importing Data from a CSV File into an Existing Table</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/UdMj8iKSCoc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">To insert a single row into a database table, use the following syntax (may differ between RDBMSs).
-                                It should be noted that the order of the list of values MUST follow the order of the columns when you created the
-                                table.
+                            <li class="pt-1">The <b><i>INSERT INTO</i></b> statement is used to insert one or more rows into a table. This is commonly used when filling in a test table to make sure your constraints and data types are working correctly. This is used with the following syntax:
                                 <br><code>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.);</code></li>
-                            <li class="pt-2">To insert multiple rows into a database table, use the following syntax (may differ between RDBMSs):
+                            <li class="pt-2">If you want to insert multiple rows in the same statement, use the following syntax:
                                 <br><code>INSERT INTO [table_name] VALUES ([col_value], [col_value], etc.), ([col_value], [col_value], etc.);</code></li>
-                            <li class="pt-2">To import CSV data into a database, use the following syntax (differs between RDBMSs):
-                                <br><code>BULK INSERT [table_name] FROM '[file_path]'<br>WITH (FIELDTERMINATOR='[delimiter]', ROWTERMINATOR='\n', 
-                                    <br>FIRSTROW=[first non-header row]);</code></li>
+                            <li class="pt-2">Using PgAdmin, you can import CSV data into a table using the GUI (see detailed instructions in the video above).</li>
+                            <li class="pt-2">If you want to customize your CSV import using SQL, use the following syntax (PostgreSQL specific):
+                                <br><code>COPY table_name(column1, column2, column3, column4, column5)<br>
+                                FROM 'file_path'<br>
+                                DELIMITER ","<br>
+                                CSV HEADER;</code></li>
+                            <li class="pt-2"><b>NOTE:</b> To avoid any errors, you need to ensure that the data types and column orders align when importing data from a CSV.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Updating Data</h2>
                         <p class="pt-3">As your business grows, you may need to make changes to customer or employee data based on industry changes or

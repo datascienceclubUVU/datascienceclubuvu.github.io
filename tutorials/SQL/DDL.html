@@ -187,47 +187,57 @@
                             </p>
                             <h4 class="pt-3">Instructions:</h4>
                             <ol>
-                                <li class="pt-2">Open PgAdmin.</li>
-                                <li class="pt-2">Create a Database named "Sales".</li>
-                                <li class="pt-2">In the "Sales" Database, create the following tables:</li>
-                                    <br><b>Employees</b>
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;emp_id (INT) [PRIMARY KEY]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;first_name (VARCHAR(100)) [NOT NULL]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;last_name (VARCHAR(100)) [NOT NULL]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;hire_date (DATE)
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;wage (FLOAT) [NOT NULL]
-                                    <br>
-                                    <br><b>Inventory</b>
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;item_id (INT) [PRIMARY KEY]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;name (VARCHAR(100)) [NOT NULL]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;description (VARCHAR(250)) [NOT NULL] 
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;price (FLOAT) [NOT NULL] 
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;name_brand (VARCHAR(5)) [NOT NULL]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;category_id (VARCHAR(25)) [FOREIGN KEY] REFERENCES categories(category_id)
-                                    <br>
-                                    <br><b>Customers</b>
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;cust_id (INT) [PRIMARY KEY/FOREIGN KEY] 
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;first_name (INT) [NOT NULL]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;last_name (VARCHAR(250)) [NOT NULL]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;phone_num (CHAR(10)) [NOT NULL] [UNIQUE]
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;address (VARCHAR(250))
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;city (VARCHAR(100))
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;state (CHAR(2))
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;zip (CHAR(5))
-                                    <br>
-                                    <br><b>Categories</b>
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;category_id (INT) [PRIMARY KEY] 
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;name (VARCHAR(25)) [NOT NULL] CHECK(IN('sweets', 'beverages', 'ice cream'))
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;description (VARCHAR(100))
-                                    <br><b>Colors</b>
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;color_id (INT) [PRIMARY KEY] 
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;name (VARCHAR(50)) [NOT NULL] 
-                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;description (VARCHAR(100))
+                                <li class="pt-2"><b>Open PgAdmin.</b></li>
+                                <li class="pt-2"><b>Create a Database named "Sales".</b></li>
+                                <li class="pt-2"><b>In the "Sales" Database, create the following tables:</b>
+                                <ol type="a">
+                                    <li><b>Table Name:</b> Employees<br>
+                                        <b>Columns:</b><br>
+                                        id (INT) [PRIMARY KEY] <br>
+                                        first_name (VARCHAR(100)) [NOT NULL] <br>
+                                        last_name (VARCHAR(100)) [NOT NULL] <br>
+                                        hire_date (DATE) <br>
+                                        wage (FLOAT) [NOT NULL]</li>
+                                    </li>
+                                    <li class="pt-4"><b>Table Name:</b> Customers<br>
+                                        <b>Columns:</b><br>
+                                        id (INT) [PRIMARY KEY] <br>
+                                        first_name (VARCHAR(100)) [NOT NULL] <br>
+                                        last_name (VARCHAR(100)) [NOT NULL] <br>
+                                        phone_num (CHAR(10)) [NOT NULL] [UNIQUE] <br>
+                                        address (VARCHAR(250)) <br>
+                                        city (VARCHAR(100)) <br>
+                                        state (CHAR(2)) <br>
+                                        zip (CHAR(5)) <br>
+                                    </li>
+                                    <li class="pt-4"><b>Table Name:</b> Categories<br>
+                                        <b>Columns:</b><br>
+                                        category_id (INT) [PRIMARY KEY] <br>
+                                        name (VARCHAR(25)) [NOT NULL] CHECK(IN('sweets', 'beverages', 'ice cream')) <br>
+                                        description (VARCHAR(100)) <br>
+                                    </li>
+                                    <li class="pt-4"><b>Table Name:</b> Colors<br>
+                                        <b>Columns:</b><br>
+                                        color_id (INT) [PRIMARY KEY] <br>
+                                        name (VARCHAR(50)) [NOT NULL] <br>
+                                        description (VARCHAR(100))
+                                    </li>
+                                    <li class="pt-4"><b>Table Name:</b> Inventory<br>
+                                        <b>Columns:</b><br>
+                                        item_id (INT) [PRIMARY KEY] <br>
+                                        name (VARCHAR(100)) [NOT NULL] <br>
+                                        description (VARCHAR(250)) [NOT NULL] <br>
+                                        price (FLOAT) [NOT NULL] <br>
+                                        name_brand (VARCHAR(5)) [NOT NULL] <br>
+                                        category_id (VARCHAR(25)) [FOREIGN KEY] REFERENCES categories(category_id)
+                                    </li>
+                                </ol>
                                 </li>
-                                <li class="pt-3">Drop the "Colors" table.</li>
-                                <li class="pt-2">Alter the "Customers" table by adding the following column: age (INT).</li>
-                                <li class="pt-2">Alter the "Inventory" table by adding a Check constraint to the "name_brand" column ensuring only the following values are entered: 'yes', 'no', 'unknown'.</li>
-                                <li class="pt-2">Design an ERD to visualize the relationships.</li>
+                                <li class="pt-3"><b>Drop the "Colors" table.</b></li>
+                                <li class="pt-2"><b>Alter the "Customers" table by adding the following column: age (INT).</b></li>
+                                <li class="pt-2"><b>Alter the "Inventory" table by adding a Check constraint to the "name_brand" column ensuring only the following values are entered: 'yes', 'no', 'unknown'.</b></li>
+                                <li class="pt-2"><b>Design an ERD to visualize the relationships. This can be done in a tool such as Word or Lucid Charts.</b></li>
+                                <li class="pt-2"><b>Exercise Completed! Click <a href="DDL-Answer-Key.html">here</a> to view the answers.</b></li>
                                 <div class="col">
                                     <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
                                 </div>

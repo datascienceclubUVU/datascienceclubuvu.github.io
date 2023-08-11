@@ -78,13 +78,14 @@
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Answer Key</h2>
                         <ol>
                             <li class="pt-2"><code><b>CREATE TABLE</b> employees(id <b>INT PRIMARY KEY</b>, first_name <b>VARCHAR(100) NOT NULL</b>, last_name <b>VARCHAR(100) NOT NULL</b>, hire_date <b>DATE</b>, wage <b>FLOAT NOT NULL</b>);</code></li>
-                            <li class="pt-2"> <code><b>CREATE TABLE</b> customers(id <b>INT PRIMARY KEY</b>, first_name <b>VARCHAR(100) NOT NULL</b>, last_name <b>VARCHAR(100) NOT NULL</b>, phone_num <b>CHAR(10) NOT NULL UNIQUE</b>, address <b>VARCHAR(250)</b>, city <b>VARCHAR(100)</b>, state <b>CHAR(2)</b>, zip <b>CHAR(5)</b>);</code></li>
-                            <li class="pt-2">The First Earthquake took place on <b>1/1/1969</b>. Query used:
-                                <br><code>SELECT occurred_on<br> FROM earthquake<br> ORDER BY occurred_on<br> LIMIT 1;</code></li>
-                            <li class="pt-2">The Weakest Earthquake took place in <b>Turkmenistan-Iran border region</b>. Query used:
-                                <br><code>SELECT place<br> FROM earthquake<br> ORDER BY magnitude DESC <br> LIMIT 1;</code></li>
-                            <li class="pt-2">The magnitudes for the 10 Weakest Eeathquakes in the 1900s are all <b>5.5</b>. Query used:
-                                <br><code>SELECT magnitude<br> FROM earthquake<br> WHERE occurred_on < '1/1/2000' <br>ORDER BY magnitude <br>LIMIT 10;</code></li>
+                            <li class="pt-4"> <code><b>CREATE TABLE</b> customers(id <b>INT PRIMARY KEY</b>, first_name <b>VARCHAR(100) NOT NULL</b>, last_name <b>VARCHAR(100) NOT NULL</b>, phone_num <b>CHAR(10) NOT NULL UNIQUE</b>, address <b>VARCHAR(250)</b>, city <b>VARCHAR(100)</b>, state <b>CHAR(2)</b>, zip <b>CHAR(5)</b>);</code></li>
+                            <li class="pt-4"><code><b>CREATE TABLE</b> categories(id <b>INT PRIMARY KEY</b>, name <b>VARCHAR(25) NOT NULL</b>, description <b>VARCHAR(100)</b>);</code></li>
+                            <li class="pt-4"><code><b>CREATE TABLE</b> colors(id <b>INT PRIMARY KEY</b>, name <b>VARCHAR(50) NOT NULL</b>, description <b>VARCHAR(100)</b>);</code></li>
+                            <li class="pt-4"><code><b>CREATE TABLE</b> inventory(id <b>INT PRIMARY KEY</b>, name <b>VARCHAR(100) NOT NULL</b>, description <b>VARCHAR(250) NOT NULL</b>, quantity <b>INT NOT NULL</b>, price <b>FLOAT NOT NULL</b>, name_brand <b>VARCHAR(5) NOT NULL</b>, category_id <b>INT NOT NULL</b>, color_id <b>INT NOT NULL</b>, <b>FOREIGN KEY</b> (category_id) <b>REFERENCES</b> categories(id), <b>FOREIGN KEY</b> (color_id) <b>REFERENCES</b> colors(id));</code></li>
+                            <li class="pt-4"><code><b>DROP TABLE</b> colors;</code></li>
+                            <li class="pt-4"><code><b>ALTER TABLE</b> customers <b>ADD COLUMN</b> age <b>INT</b>;</code></li>
+                            <li class="pt-4"><code><b>ALTER TABLE</b> inventory <b>ADD CONSTRAINT</b> name_brand_chk <b>CHECK</b> (name_brand IN('yes', 'no', 'unknown'));</code></li>
+                            <li class="pt-4"><img src="../../imgs/ddl-erd.png"></li>
                         </ol>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

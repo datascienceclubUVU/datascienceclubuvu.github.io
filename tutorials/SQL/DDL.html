@@ -212,24 +212,25 @@
                                     </li>
                                     <li class="pt-4"><b>Table Name:</b> Categories<br>
                                         <b>Columns:</b><br>
-                                        category_id (INT) [PRIMARY KEY] <br>
-                                        name (VARCHAR(25)) [NOT NULL] CHECK(IN('sweets', 'beverages', 'ice cream')) <br>
+                                        id (INT) [PRIMARY KEY] <br>
+                                        name (VARCHAR(25)) [NOT NULL] <br>
                                         description (VARCHAR(100)) <br>
                                     </li>
                                     <li class="pt-4"><b>Table Name:</b> Colors<br>
                                         <b>Columns:</b><br>
-                                        color_id (INT) [PRIMARY KEY] <br>
+                                        id (INT) [PRIMARY KEY] <br>
                                         name (VARCHAR(50)) [NOT NULL] <br>
                                         description (VARCHAR(100))
                                     </li>
                                     <li class="pt-4"><b>Table Name:</b> Inventory<br>
                                         <b>Columns:</b><br>
-                                        item_id (INT) [PRIMARY KEY] <br>
+                                        id (INT) [PRIMARY KEY] <br>
                                         name (VARCHAR(100)) [NOT NULL] <br>
                                         description (VARCHAR(250)) [NOT NULL] <br>
+                                        quantity (INT) [NOT NULL] <br>
                                         price (FLOAT) [NOT NULL] <br>
                                         name_brand (VARCHAR(5)) [NOT NULL] <br>
-                                        category_id (VARCHAR(25)) [FOREIGN KEY] REFERENCES categories(category_id)
+                                        category_id (INT) [NOT NULL] [FOREIGN KEY] REFERENCES categories(id) <br>
                                     </li>
                                 </ol>
                                 </li>

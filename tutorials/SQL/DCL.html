@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>SQL Tutorials: DML</title>
+    <title>SQL Tutorials: DCL</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            SQL Tutorials: DML
+                            SQL Tutorials: DCL
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -91,28 +91,21 @@
                                 <b>DISCLAIMER: The Examples in this Tutorial use PostgreSQL. It's highly recommended that you download this application at the link below to follow along: <br><br>
                                     <a href="https://www.postgresql.org/download/">Download PostgreSQL</a>
                                 </b><br><br>
-                                Congratulations on creating your first database! Now that you have a clear understanding of the first third of SQL,
-                                let's continue the journey. <b><i>Data Manipulation Language (DML)</i></b> is a form of SQL used
-                                 specifically for inserting, updating, selecting, and deleting data stored in database objects. 
-                                 Listed below are the learning objectives in this lesson:
+                                So far in this Learning Series, we have explored how to create, manipulate, and delete both database objects and the data inside those objects. In this tutorial, we'll explore how <b><i>Data Control Language (DCL)</i></b> can be used to limit access to database objects and provide security for database operations. This tutorial covers the following learning objectives:
                             </p>
                             <ul>
-                                <li>Inserting Data</li>
-                                <li>Updating Data</li>
-                                <li>Deleting Data</li>
+                                <li>Granting User Access</li>
+                                <li>Revoking User Access</li>
+                                <li>Specifying User Policies</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Inserting Data</h2><br>
-                        <h6><b>Importing Data Using the INSERT INTO Statement</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/VkabxQgtGsA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
-                        <h6><b>Importing Data from a CSV File into an Existing Table</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/UdMj8iKSCoc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Granting User Access</h2><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/XfQGPEVgQvE?start=32" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
-                            <li class="pt-1">The <b><i>INSERT INTO</i></b> statement is used to insert one or more rows into a table. This is commonly used when filling in a test table to make sure your constraints and data types are working correctly. This is used with the following syntax:
-                                <br><code>INSERT INTO table_name VALUES (column1_value, column2_value, etc.);</code></li>
+                            <li class="pt-1"><b><i>Data Control Language (DCL)</i></b> is used to give access to or take access away from specific users. Like all digital systems, databases need to be secured. DCL enables Database Administrators (DBAs) to <i>control</i> who has access to which database objects, and what they can do with those objects (whether they can both query and insert data into the object, or just query the object).</li>
                             <li class="pt-2">If you want to insert multiple rows in the same statement, use the following syntax:
                                 <br><code>INSERT INTO table_name VALUES (column1_value, column2_value, etc.), (column1_value, column2_value, etc.);</code></li>
                             <li class="pt-2">Using PgAdmin, you can import CSV data into a table using the GUI (see detailed instructions in the video above).</li>
@@ -202,13 +195,13 @@
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary mb-3 mb-sm-0 py-2 fs-5"
-                            href="DDL.html">
+                            href="Triggers.html">
                             Previous Topic
                         </a>
                         <div class="col-0 col-sm-4"></div>
                         <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="Stored-Procedures.html">
+                            href="TCL.html">
                             Next Topic
                         </a>
                     </div>

@@ -123,22 +123,16 @@
                                 CSV HEADER;</code></li>
                             <li class="pt-2"><b>NOTE:</b> To avoid any errors, you need to ensure that the data types and column orders align when importing data from a CSV.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Updating Data</h2>
-                        <p class="pt-3">As your business grows, you may need to make changes to customer or employee data based on industry changes or
-                                natural changes such as someone moving addresses. Watch the following video to get a better understanding of this concept:
-                        </p>
-                            <ul>
-                                <a href="https://www.youtube.com/watch?v=cd-hSl7_pGQ">How to Update Data in a Table</a><br>
-                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Updating Data</h2><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/cd-hSl7_pGQ?end=252" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-3">Summary:</h4>
                         <ul>
-                            <li class="pt-2">To update all the rows in a column, use the following syntax: 
-                                <br><code>UPDATE [table_name] SET [col_name] = [new_value];</code></li>
-                            <li class="pt-2">To update specific rows in a column, use the following syntax. We will learn more about
-                                            the <b>WHERE</b> clause in the next tutorial.
-                                <br><code>UPDATE [table_name] SET [col_name] = [new_value] WHERE [condition];</code></li>
-                            <li class="pt-2">To update multiple columns in the same statement, use the following syntax: 
-                                <br><code>UPDATE [table_name] SET [col_name] = [new_value], [col_name] = [new_value];</code></li>
+                            <li class="pt-2">The <b><i>UPDATE</i></b> statement is used to change the values in a column. This is used with the following syntax:
+                                <br><code>UPDATE [table_name]<br> SET [col_name] = [new_value];</code></li>
+                            <li class="pt-2">It's a best practice to ALWAYS use the WHERE clause when updating column values. This ensures you don't accidentally update every value in the column. When updating a table based on a condition, use the following syntax:
+                                <br><code>UPDATE [table_name]<br> SET [col_name] = [new_value]<br> WHERE [condition];</code></li>
+                            <li class="pt-2">If you want to update multiple columns in the same statement, use the following syntax: 
+                                <br><code>UPDATE [table_name]<br> SET [col_name] = [new_value], [col_name] = [new_value]<br> WHERE [condition];</code></li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Deleting Data</h2>
                         <p class="pt-3">Similar to the previous section, as your business grows, you'll naturally lose customers and employees,

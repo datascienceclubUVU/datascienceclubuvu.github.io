@@ -96,49 +96,56 @@
                             <ul>
                                 <li>Granting User Access</li>
                                 <li>Revoking User Access</li>
-                                <li>Specifying User Policies</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Granting User Access</h2><br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/XfQGPEVgQvE?start=32" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h6><b>What is DCL?</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/XfQGPEVgQvE?start=32&end=97" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
+                        <h6><b>The GRANT Statement</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/R82sE0YVk34?end=82" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1"><b><i>Data Control Language (DCL)</i></b> is used to give access to or take access away from specific users. Like all digital systems, databases need to be secured. DCL enables Database Administrators (DBAs) to <i>control</i> who has access to which database objects, and what they can do with those objects (whether they can both query and insert data into the object, or just query the object).</li>
-                            <li class="pt-2">If you want to insert multiple rows in the same statement, use the following syntax:
-                                <br><code>INSERT INTO table_name VALUES (column1_value, column2_value, etc.), (column1_value, column2_value, etc.);</code></li>
-                            <li class="pt-2">Using PgAdmin, you can import CSV data into a table using the GUI (see detailed instructions in the video above).</li>
-                            <li class="pt-2">If you want to customize your CSV import using SQL, use the following syntax (PostgreSQL specific):
-                                <br><code>COPY table_name(column1, column2, column3, column4, column5)<br>
-                                FROM 'file_path'<br>
-                                DELIMITER ","<br>
-                                CSV HEADER;</code></li>
-                            <li class="pt-2"><b>NOTE:</b> To avoid any errors, you need to ensure that the data types and column orders align when importing data from a CSV.</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Updating Data</h2><br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/cd-hSl7_pGQ?end=252" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-2">The <b><i>UPDATE</i></b> statement is used to change the values in a column. This is used with the following syntax:
-                                <br><code>UPDATE table_name<br> SET column = new_value;</code></li>
-                            <li class="pt-2">It's a best practice to ALWAYS use the WHERE clause when updating column values. This ensures you don't accidentally update every value in the column. When updating a table based on a condition, use the following syntax:
-                                <br><code>UPDATE table_name<br> SET column = new_value<br> WHERE [condition];</code></li>
-                            <li class="pt-2">If you want to update multiple columns in the same statement, use the following syntax: 
-                                <br><code>UPDATE table_name<br> SET column1 = new_value, column2 = new_value<br> WHERE [condition];</code></li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Deleting Data</h2><br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/c7AAkX39_Wo?end=278" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
-                        <h4 class="pt-3">Summary:</h4>
-                        <ul>
-                            <li class="pt-1">The <b><i>DELETE</i></b> statement is used to remove data from a table based on a condition. This is used with the following syntax:<br>
-                                <code>DELETE FROM table_name<br>
-                                      WHERE [condition];</code>
+                            <li class="pt-2">The <b><i>GRANT</i></b> statement is used to give specific users access to database objects. This is used with the following syntax:
+                                <br><code>GRANT specific_privilege<br>
+                                    ON database_name.object_name <br>
+                                    TO user_name;</code></li>
+                            <li class="pt-2">Privileges tend to differ between RDBMSs, though here is a general list:
+                                <ul>
+                                    <li><b><i>all</i></b> is used to give the user every privilege available.</li>
+                                    <li><b><i>create</i></b> gives the user the ability to create tables.</li>
+                                    <li><b><i>select</i></b> gives the user the ability to execute SELECT statements on the object specified.</li>
+                                    <li><b><i>insert</i></b> gives the user the ability to insert new rows into the object specified.</li>
+                                    <li><b><i>update</i></b> gives the user the ability to update roes in the object specified.</li>
+                                    <li><b><i>delete</i></b> gives the user the ability to delete rows from the object specified.</li>
+                                    <li><b><i>alter</i></b> gives the user the ability to use the ALTER TABLE command to change the specified table's schema.</li>
+                                    <li><b><i>drop</i></b> gives the user the ability to drop the specified object from the database.</li>
+                                </ul>
                             </li>
-                            <li class="pt-2">To delete specific rows in a table, use the following syntax:
-                                <br><code>DELETE FROM [table_name] WHERE [condition];</code></li>
-                            <li class="pt-2"><b>NOTE:</b> It's a best practice to ALWAYS run a SELECT statement with the same conditions mentioned in the WHERE clause of your proposed DELETE statement to ensure you're only removing data that is no longer needed.</li>
+                            <li class="pt-2"><b>NOTE:</b> It's always a good idea to use the <b><i>Principle of Least Privilege</i></b>, which states that users should be given only the amount of privileges that they need to perform their jobs.</li>
                         </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Revoking User Access</h2><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/R82sE0YVk34?start=210&end=301" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <h4 class="pt-3">Summary:</h4>
+                        <ul>
+                            <li class="pt-2">The <b><i>REVOKE</i></b> statement is used to remove database privileges from a specific user. This is used with the following syntax:
+                                <br><code>REVOKE privilege_name <br>
+                                          ON database_name.object_name <br>
+                                          FROM user_name;</code></li>
+                            <li class="pt-2">If you're a DBA, you can revoke all privileges given to a specific user and that user's ability to grant privileges for other users using the following syntax:
+                                <br><code>REVOKE all, grant option <br>
+                                          FROM user_name;</code></li>
+                            <li class="pt-2">If you're NOT a DBA and you need to remove all privileges given to a specific user and that user's ability to grant privileges fot other users, use the following syntax:
+                                <br><code>REVOKE all <br>
+                                          ON database_name.* <br>
+                                          FROM user_name; <br><br>
+                                         
+                                          REVOKE grant option <br>
+                                          ON database_name.* <br>
+                                          FROM user_name;</code></li>
+                        </ul><br>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Exercise</h2>
                         <p class="pt-3"><b>Congratulations!</b> You just completed the DML Tutorial! To help test your knowledge, let's complete the exercise
                             outlined below. This exercise is based on the exercise of the previous tutorial. 

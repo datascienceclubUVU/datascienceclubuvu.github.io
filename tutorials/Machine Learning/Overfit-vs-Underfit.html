@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>ML Tutorials: Overfitting vs. Underfitting</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                MACHINE LEARNING TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            ML Tutorials: Overfitting vs. Underfitting
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/overfit-underfit.png"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                When applying training data to supervised algorithms, there tends to be bias when splitting the data into training and evaluation datasets. On one hand, you want your model to have the most information as possible, while on the other hand you want to have a good test sample to evaluate your model's performance effectively. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>Overfitting</li>
+                                <li>Underfitting</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Overfitting</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/W-0-u6XVbE4?si=KYpVC7l_aovdSA_-&amp;end=183" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Overfitting</i></b> occurs when the ratio between the training data fitted to the model and the evaluation data is too much, resulting in a model that can't accept new data points without breaking the efficacy of the algorithm.</li>
+                            <li class="pt-2">In the context of Machine Learning, <b><i>Noise</i></b> occurs when data points in a data set are erroneous, thus causing the output of the ML algorithm to be altered negatively. A common example of noise are outliers or data points that were not cleaned proeprly (e.g., the weight value is in the age value, resulting in bias).</li>
+                            <li class="pt-2">Overfitting can occur when a particular feature has high variance. This can cause the model to fit the regression line close to some data points, but leave out the rest. High variance typically occurs when other variables that are not considered in the dataset impact other features (such as the wind example in the video).</li>
+                            <li class="pt-2">One of the most common cause of overfitting is lack of training data. If you only have 100 data points, it may not be near enough for the model to infer new values based on the given inputs.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Underfitting</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/W-0-u6XVbE4?si=SCHa1Ag8yoBx5gta&amp;start=182&end=319" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Underfitting</i></b> occurs when the ratio between the training data fitted to the model and the evaluation data is too little, resulting in a model that is too generalized to make an effective prediction.</li>
+                            <li class="pt-2">Just like with overfitting, underfitting can be caused by Noise present in the data. If the data is not cleaned properly, the model will not be able to find an existing trend between features.</li>
+                            <li class="pt-2">Bias is a leading cause in underfitting. If you are predicting house prices and 90% of your training data contains homes that are 5000 sq. ft or larger, then when smaller houses are trying to be predicted, the model will output a garbage value because it's biased towards larger homes.</li>
+                            <li class="pt-2">Just like with overfitting, underfitting can be caused by a lack of training data. If you don't have enough data present, your model will be too generalized to make a valid prediction.</li>
+                        </ul><br>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <div class="col-0 col-sm-8">
+                            <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/Reinforcement-Algorithms.html">
+                            Previous Topic
+                            </a>
+                        </div>
+                        <!-- <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/Reinforcement-Algorithms.html">
+                            Next Topic
+                        </a> -->
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

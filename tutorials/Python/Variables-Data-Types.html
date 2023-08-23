@@ -74,17 +74,6 @@
                             Python Tutorials: Variables & Data Types
                         </h2>
                     </div>
-                    <!-- Title/image. -->
-                    <div class="row">
-                        <div class="d-flex justify-content-center">
-                            <img
-                                class="img-fluid"
-                                src="../../imgs/python-dtypes.webp"
-                                alt="[Enter image here]"
-                                width=100%
-                            >  <!-- %UPDATE% -->
-                        </div>
-                    </div>
                     <!-- Description. -->
                     <div class="row mt-2 mb-3">
                         <div class="col">
@@ -92,47 +81,51 @@
                                 At the core of any Object-Oriented Programming (OOP) language are variables and data types. These are the foundation that everything else is built upon. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>What Variables Represent and How They Work</li>
-                                <li>What Data Types are Available in Python</li>
+                                <li>What variables represent and how they work</li>
+                                <li>What Data Types are available in Python</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Variables Represent and How They Work</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ghCbURMWBD8?end=49" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/9mkTG23w-yE?end=138" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
                             <li class="pt-1">A <b><i>variable</i></b> is a type of storage unit that has an assigned name and holds data that you can change or use later. The list below are all examples of variables: <br>
-                            <code>age = 21 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;# integer data type</code> <br>
-                            <code>name = "Joshua" &ensp;&ensp;&ensp;&ensp;&ensp; # string data type</code> <br>
-                            <code>percentage = 75.66 &ensp;&ensp;&ensp;# float data type</code></li>
-                            <li class="pt-2">In Python, data types are inferred, thus making it unnecessary to explicitly define a variable's data type when declaring it.</li>
+                            <code>age = 21 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;# integer data type (whole number)</code> <br>
+                            <code>name = "Joshua" &ensp;&ensp;&ensp;&ensp;&ensp; # string data type (words, letters, anything text-like)</code> <br>
+                            <code>percentage = 75.66 &ensp;&ensp;&ensp;# float data type (number with decimal point)</code></li>
+                            <li class="pt-2">In Python, data types are inferred, so you don't have to explicitly define a variable's data type when declaring it.</li>
                             </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Data Types are Available in Python</h2> <br>
                         <iframe width="650" height="400" src="https://www.youtube.com/embed/KrToaEvDzdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                            <p>Note: if you try the examples from the video, you might get this error:
+                                <li class="pt-1"><code>SyntaxError: Missing parentheses in call to 'print'.</li><br>
+                                </code>If this happened, don't panic! The syntax is just a bit old. Instead of typing this:<br><code>print 3, 5</code><br>try adding parentheses:<br><code>print( 3, 5 )</code><br>
+                            </p>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1">The <b><i>type()</i></b> function is used to output the data type of a specific variable. This function has the following syntax: <br>
-                                <code>type([variable])</code> <br>
+                                <code>type(variable)</code> <br>
                                 <b>OR</b> <br>
-                                <code>type([value])</code></li>
+                                <code>type(value)</code></li>
                             <li class="pt-2">An <b><i>Integer</i></b> is a positive or negative whole number; without a decimal point. The variables below all hold integers: <br>
                                 <code>age = 21</code> <br>
                                 <code>quantity = 10</code> <br>
                                 <code>attendance_count = 500</code>
                             </li>
-                            <li class="pt-2">The <b><i>int()</i></b> function is used to convert a float into an integer. It does this by truncating all decimal places and keeps only the whole number on the left side of the decimal. If the number is less than 0, the new value will be 0. This function has the following syntax: <br>
-                                <code>int([variable])</code> <br>
+                            <li class="pt-2">The <b><i>int()</i></b> function is used to convert a float into an integer. It does this by truncating (cutting off) all decimal places and keeps only the whole number on the left side of the decimal. If the number is less than 0, the new value will be 0. This function has the following syntax: <br>
+                                <code>int(variable)</code> <br>
                                 <b>OR</b> <br>
-                                <code>int([value])</code></li>
+                                <code>int(value)</code></li>
                             <li class="pt-2">A <b><i>Floating Point Number (float)</i></b> is a real number; a number with finite number of decimal points. The variables below all hold floats: <br>
                                 <code>percentage = 98.07</code> <br>
                                 <code>final_grade = 97.77786</code> <br>
                                 <code>accidents_per_million = 107.1213</code></li>
                             <li class="pt-2">The <b><i>float()</i></b> function is used to convert an integer into a float. This function has the following syntax: <br>
-                                <code>float([variable])</code> <br>
+                                <code>float(variable)</code> <br>
                                 <b>OR</b> <br>
-                                <code>float([value])</code></li>
+                                <code>float(value)</code></li>
                             <li class="pt-2">A <b><i>Boolean</i></b> value is used to represent a binary condition (e.g., True/False, Yes/No, Correct/Incorrect). The variables below all hold Boolean values: <br>
                                 <code>has_cancer = False</code> <br>
                                 <code>is_awesome = True</code></li>
@@ -142,9 +135,9 @@
                                 <code>major = 'Computer Science'</code> <br>
                                 <code>description = 'I am awesome, good looking, and tall'</code></li>
                             <li class="pt-2">The <b><i>str()</i></b> function is used to convert any type of variable or raw value into a string. This function has the following syntax: <br>
-                                <code>str([variable])</code> <br>
+                                <code>str(variable)</code> <br>
                                 <b>OR</b> <br>
-                                <code>str([value])</code></li>
+                                <code>str(value)</code></li>
                             <li class="pt-2">The <b><i>print()</i></b> function, as shown in the video, is used to output a message to the console. This can be either a variable, a raw value, or a combination of both. When combining non-string variables with strings, you'll need to convert the variable to the string data type using the <b>str()</b> function. Example: <br>
                                 <code>print(str(age) + "years old")</code></li>
                             <li class="pt-2"><b>NOTE:</b> When defining a variable with an apostrophe or a single quote, you'll need to either place the string between double quotes OR escape the character in question. Example: <br>
@@ -172,7 +165,7 @@
                                 </ol>
                                 <li class="pt-4"><b>Exercise Completed! Click <a href="./Variables-Data-Types-Answer-Key.html">here</a> to view the answers.</b></li>
                                 <div class="col">
-                                    <p class="pt-4">Have any issues with the above exercise? Post your question on Discord!</p>
+                                    <p class="pt-4">Have any issues with the above exercise? Post your question on <a target="_blank" href="https://discord.com/invite/CQefpPzW3N">Discord</a>!</p>
                                 </div>
                             </ol>
                         <!-- Previous/Next Topic buttons. -->

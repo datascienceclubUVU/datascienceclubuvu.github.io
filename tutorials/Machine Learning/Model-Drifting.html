@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>ML Tutorials: Overfitting vs. Underfitting</title>
+    <title>ML Tutorials: Model Drifting</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -109,7 +109,7 @@
                             <li class="pt-2"><b><i>Model Drifting</i></b> can be contributed to numerous factors including irrelevant data, poor hyperparameters, or feature irrelevance.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Different Types of Model Drifting</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/5KjpZCj853k?start=95" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/5KjpZCj853k?start=95&end=346" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
                             <li class="pt-1">A <b><i>Covariate Shift</i></b> occurs when there is a change in the distributions of one or more features. This can happen when data collected by user input changes due to seasonality, consumer trends, or product placement.</li>
@@ -121,6 +121,44 @@
                                 <li>A <b><i>Recurring Concept Drift</i></b> is a concept shift that is caused by seasonality. For example, if you're trying to predict swimsuit sales and you build and train your model on only Summer sales data, what heppens when Winter comes around? Although seasonality is a common occurrence in time-series forecasting models, if it's not labeled correctly, the model's inference can be negatively impacted.</li>
                             </ol></li>
                             <li class="pt-2">Just like with overfitting, underfitting can be caused by a lack of training data. If you don't have enough data present, your model will be too generalized to make a valid prediction.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Common Causes of Model Drifting</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/5KjpZCj853k?start=347&end=402" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">Sampling mismatch refers to the sample of your training data being fitted to your model for training purposes. Depending on your sampling strategy, bias could be present, leading to poor predictive outcomes.</li>
+                            <li class="pt-2">When you copy and paste your algorithm, keeping the same hyperparameters, to a different dataset, the predictions are not going to be in sync, and leads to poor predictions since the model doesn't accurately fit the data.</li>
+                            <li class="pt-2">Anomalies, or outliers, can appear both in the features and the label. These effect the distributions of the dataset as a whole and can skew the predictions toward the anomalous data point(s).</li>
+                            <li class="pt-2">As mentioned before, seasonal effects that aren't labeled correctly can create bias in your training dataset.</li>
+                            <li class="pt-2">There are a variety of data quality issues, such as incorrect input data, incorrect data procesisng steps, and duplications that can cause the model to produce a poor output or take the input and use it as a poor reference point for predictions.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Detect Model Drifting</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/5KjpZCj853k?start=402&end=559" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>Kolmogorov-Smirnov (K-S) Test</i></b> is a nonparametric, statistical test that takes the cumulative distribution of the training and evaluation datasets and comapres them. This test is used exclusively for numerical features. If you have categorical features, the <b><i>chi-squared test</i></b> can be used to detect data drift. This test has the following hypotheses: 
+                            <ul>
+                                <li><b>H0</b> - Distributions are same in both datasets</li>
+                                <li><b>H1</b> - Distributions are not the same.</li>
+                            </ul></li>
+                            <li class="pt-2">In the <b><i>Population Stability Index</i></b>, the distribution of the evaluation dataset's label is compared to the training dataset that was used to create the model. The results of this test can be interpreted in the following ways:
+                            <ul>
+                                <li><b>PSI <= 1</b>: This indicates that distributions of the two datsets have not changes or shifted.</li>
+                                <li><b>0.1 < PSI < 0.2</b>: This indicates that a modest modification or shift has taken place.</li>
+                                <li><b>PSI > 0.2</b>: This suggests that the distribution has changed significantly between the two datasets.</li>
+                            </ul></li>
+                            <li class="pt-2">Detecting data drift between two populations (the training and evaluation datasets) can also be done using a ML model-based technique. When using this approach, you should consider the following: 
+                                <ul>
+                                    <li>The real-time data (new data points created after the model was deployed) should be labeled as 1, and the data used to train the current model in production should be labeled as 0.</li>
+                                    <li>You can then create a Logistic Regression model to predict the label. The evaluation metrics can be interpreted in the following ways: 
+                                        <ul>
+                                            <li>High Accuracy, Good Distinction - <b>No Drift Detected</b></li>
+                                            <li>Low Accuracy, Low Distinction - <b>Drift Occurs</b></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="pt-2">The <b><i>Adaptive Windowing</i></b> algorithm uses a sliding window approach to detect concept drift. The window size is fixed and the algorithm slides the fixed window for detecting any change in the newly arriving data. This is commonly used in fraud detection algorithms and real-time machine learning application where predictions need to be made rapidly. If a certain threshold is exceeded, an alaert can be generated by the system.</li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

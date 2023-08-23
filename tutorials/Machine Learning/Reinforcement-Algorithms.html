@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>ML Tutorials: Unsupervised Learning Algorithms</title>
+    <title>ML Tutorials: Reinforcement Learning Algorithms</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            ML Tutorials: Unsupervised Learning Algorithms
+                            ML Tutorials: Reinforcement Learning Algorithms
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/unsupervised-learning.webp"
+                                src="../../imgs/reinforcement-learning.webp"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,60 +89,35 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Unsupervised Learning has been gaining momentum as Recommendation Systems have grown in popularity. These algorithms tend to be used in more advanced use cases, though understanding them is key to becoming an effective Data Scientist or ML Engineer. This tutorial will cover the following learning objectives:
+                                Reinforcement Learning is a newer branch of Data Science focused on allowing the machine to learn from itself, just as a dog would when learning how to respond to basic commands. Since this is a more advanced topic, this tutotial will be VERY high level. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>K-Means Clustering</li>
-                                <li>Hierarchical Clustering</li>
+                                <li>Reinforcement Learning Overview</li>
+                                <li>Model-based RL vs. Model-free RL</li>
                                 <li>Principal Component Analysis (PCA)</li>
 
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">K-Means Clustering</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/GZj6ikx8PAc?end=364" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Reinforcement Learning Overview</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/i7q8bISGwMQ?start=157&end=435" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"><b><i>K-Means</i></b> is the most common algorithm for conducting cluster analysis. "k" represents the number of clusters specified. This algorithm allows you to input a set of Training Data, specify a number of clusters, and use the algorithm to cluster the data points by the means of the features provided.</li>
-                            <li class="pt-2">K-Means is considered "Unsupervised" because you are allowing the algorithm to assign the Training Data to specific classes rather than telling it which class each data point is assigned to.</li>
-                            <li class="pt-2">To perform a cluster analysis with the K-Means alorith, use the following steps:
-                                <ol class="pt-2">
-                                    <li class="pt-1"><b>Define the number of clusters</b></li>
-                                    <li class="pt-1"><b>Set cluster centers randomly</b>
-                                    <ul>
-                                        <li>The center for each cluster is known as a <b><i>Centroid</i></b></li>
-                                    </ul></li>
-                                    <li class="pt-1"><b>Assign points to clusters</b>
-                                    <ul>
-                                        <li>The algorithm will then measure the distance for each data point between each Centroid. The data point will be assigned to a cluster based on the closest Centroid.</li>
-                                    </ul></li>
-                                    <li><b>Calculate the center of each cluster</b>
-                                    <ul>
-                                        <li>Once the initial clusters have been created, the official Centroids will be established as close to the middle of the cluster as possible.</li>
-                                    </ul></li>
-                                    <li><b>Assign points to the new clusters</b>
-                                    <ul>
-                                        <li>With the new Centroids created, we'll now repeat step 3 by assigning each data point to a cluster based on the Centroid closest to it.</li>
-                                    </ul></li>
-                                    <li><b>Repeat Steps 4 and 5 Until Convergence is reached</b>
-                                    <ul>
-                                        <li><b><i>Convergence</i></b> is when every cluster is as equally distrributed as possible, given the centroid distances and locations.</li>
-                                    </ul></li>
-                                </ol>
+                            <li class="pt-1">In <b><i>Reinforcement Learning</i></b>, the agent interacts with an environment and is controlled by a policy that states what it can and can't do. The agent performs actions based on a reward. The user (you) changes the policy based on the agent's state.</li>
+                            <li class="pt-2">A common real-world example of Reinforcement Learning is training a dog to sit. Typically, you'll first give the command (tell the dog "Sit!") and get its initial reaction to set a baseline. You then use a reward system, such as a treat or toy, to reinforce good behavior and prevent bad behavior. In this example, the <b><i>agent</i></b> is the dog, the <b><i>environment</i></b> is your home, or wherever you're training the dog, the <b><i>reward</i></b> is the treat or toy, the <b><i>policy</i></b> is the command you're giving, the <b><i>action</i></b> is the dog's response to the policy, and the <b><i>state</i></b> is the dog's response to the policy in the environment. However, the state can change based on the current, state. For example, if the dog is already sitting, what will it do when you tell it to sit?
                             </li>
-                            <li class="pt-2">When using pre-built K-Means tools such as RapidMiner or SciKit-Learn, the initial clusters have been optimized to reduce biases.</li>
-                            <li class="pt-2">The <b><i>Elbow Method</i></b> calculate the summed distance between the points and the Centroid where with every iteration, the another cluster is added to the algorithm until it meets the max number of clusters specified. In each interation, the summed distance between the points and the Centroid gets smaller. When anaylzing the results of the Elbow Method, you look for where the change in efficiency starts to plateau and that is considered the optimal number of clusters.</li>
-                            <li class="pt-2"><b>NOTE:</b> K-Means is best used for creating classes for use in training a Decision Tree. For example, say you want to classify customers into three classes: Target Market, Common, and Less Valuable. You can use K-Means to cluster the customers based on their features and then use a Decision Tree Classifier and/or Random Forest to find which features best predict the classes</li>
+                            <li class="pt-2">A <b><i>Value Function</i></b> is a probability measure that states, given the current environment and present states, what is the probability of the policy returning a positive action? The <b><i>Discount Rate</i></b> is a variable in the function that determines the likelihood of the action occurring based on previous situations in the same environment. If the Discount Rate is high, that probably means the action has become a habit for the machine (or for the dog in the example above).</li>
+                            <li class="pt-2">The overall goal of Reinforcement Learning is to optimize the policy to maximize future rewards. Following the example above, you could adjust the policy of telling the dog "Sit!" by changing your tone, volume, or facial expressions to identify how the agent (the dog) best responds.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Hierarchical Clustering</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ijUMKMC4f9I?start=473" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Model-based RL vs. Model-free RL</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/i7q8bISGwMQ?start=473" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"><b><i>Hierarchical Clustering</i></b> is a technique used for clustering clusters of groups into tiers. These tiers become more specific as you go down the list.</li>
-                            <li class="pt-2">There are two types of Hierarchical Clustering: Agglomerative and Divisive. <b><i>Divisive Clustering</i></b> takes a top-down approach where all data points begin in the same cluster and then get broken down into sub-clusters based on similar features. <b><i>Agglomerative Clustering</i></b> takes a bottom-up approach where you start with individual data points and start grouping them into ever increasing groups based on similar features.</li>
-                            <li class="pt-2"><b><i>Agglomerative Clustering</i></b> starts with each data point representing its own cluster, then using <b><i>euclidean distance</i></b>, the formula that is used in K-Means to find the distance between a data point and a Centroid, a new cluster gets created with two data points. This process gets repeated until one massive cluster remains.</li>
-                            <li class="pt-2">A <b><i>Dendrogram</i></b> is the visualization of Hierarchical Clusters. This allows you to map how each data point relates to others and what features separate each cluster. The distance between links in the Dendrogram show how similar or different two data points are. The closer they are, the more closely they are related.</li>
+                            <li class="pt-1"><b><i>Model-based RL</i></b> follows a decision-making process, such as the <b><i>Markov Decision Process</i></b>, as a framework for creating and adjusting a policy. These are commonly used when the problem you're trying to solve is based on probability rather than random state.</li>
+                            <li class="pt-2"><b><i>Model-based RL</i></b> sets a pre-configured starting state and then follows the process of <b><i>Policy Iteration</i></b> to then iteratively compare each combination of variable to get the best possible outcome. Within Policy Iteration, the process of <b><i>Value Iteration</i></b> is used to compute the outcome of each policy combination to then create the reward based on the efficiency and effectiveness of the policy.</li>
+                            <li class="pt-2"><b><i>Model-based RL</i></b> can also be used with non-linear issues, such as self-driving cars which can take potentially thousands of possible actions to achieve the desired outcome. </li>
+                            <li class="pt-2"><b><i>Model-free RL</i></b> can be broken out into two sub-categories: Gradient free and Graident based.</li>
                             <li class="pt-2"><b>NOTE:</b> Hierarchical Clustering is very computationally expensive, meaning that the more data points you have, and the more potential clusters that can be created, the computing power necessary increases exponentially (starting at a certain point, differs between systems).</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Principal Component Analysis (PCA)</h2> <br>
@@ -162,7 +137,7 @@
                         <div class="col-0 col-sm-8">
                             <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="../Machine Learning/Supervised-Algorithms.html">
+                            href="../Machine Learning/Unsupervised-Algorithms.html">
                             Previous Topic
                             </a>
                         </div>

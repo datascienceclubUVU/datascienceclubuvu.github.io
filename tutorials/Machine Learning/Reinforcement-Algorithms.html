@@ -93,8 +93,7 @@
                             </p>
                             <ul>
                                 <li>Reinforcement Learning Overview</li>
-                                <li>Model-based RL vs. Model-free RL</li>
-                                <li>Principal Component Analysis (PCA)</li>
+                                <li>Model-free RL vs. Model-based RL</li>
 
                             </ul>
                         </div>
@@ -110,27 +109,25 @@
                             <li class="pt-2">A <b><i>Value Function</i></b> is a probability measure that states, given the current environment and present states, what is the probability of the policy returning a positive action? The <b><i>Discount Rate</i></b> is a variable in the function that determines the likelihood of the action occurring based on previous situations in the same environment. If the Discount Rate is high, that probably means the action has become a habit for the machine (or for the dog in the example above).</li>
                             <li class="pt-2">The overall goal of Reinforcement Learning is to optimize the policy to maximize future rewards. Following the example above, you could adjust the policy of telling the dog "Sit!" by changing your tone, volume, or facial expressions to identify how the agent (the dog) best responds.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Model-based RL vs. Model-free RL</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/i7q8bISGwMQ?start=473" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Model-free RL vs. Model-based RL</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ztT2ZLWTfXw?end=460" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"><b><i>Model-based RL</i></b> follows a decision-making process, such as the <b><i>Markov Decision Process</i></b>, as a framework for creating and adjusting a policy. These are commonly used when the problem you're trying to solve is based on probability rather than random state.</li>
-                            <li class="pt-2"><b><i>Model-based RL</i></b> sets a pre-configured starting state and then follows the process of <b><i>Policy Iteration</i></b> to then iteratively compare each combination of variable to get the best possible outcome. Within Policy Iteration, the process of <b><i>Value Iteration</i></b> is used to compute the outcome of each policy combination to then create the reward based on the efficiency and effectiveness of the policy.</li>
-                            <li class="pt-2"><b><i>Model-based RL</i></b> can also be used with non-linear issues, such as self-driving cars which can take potentially thousands of possible actions to achieve the desired outcome. </li>
-                            <li class="pt-2"><b><i>Model-free RL</i></b> can be broken out into two sub-categories: Gradient free and Graident based.</li>
-                            <li class="pt-2"><b>NOTE:</b> Hierarchical Clustering is very computationally expensive, meaning that the more data points you have, and the more potential clusters that can be created, the computing power necessary increases exponentially (starting at a certain point, differs between systems).</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Principal Component Analysis (PCA)</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/Ollp2nSQCLY?start=473" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h4 class="pt-4">Summary</h4>
-                        <ul>
-                            <li class="pt-1"><b><i>Principal Component Analysis</i></b>, also known as <b><i>Exploratory Factor Analysis</i></b>, is a statistical method for identifying structures in your Training Data. This is useful when you have many features to consider and want to investigate the correlations between them. These correlations are the basis of PCA.</li>
-                            <li class="pt-2">PCA is used to group features that are most highly correlated. This is used to create a sort of "cause and effect" diagram to visualize how one feature impacts another.</li>
-                            <li class="pt-2">In PCA, a <b><i>factor</i></b> is a hidden variable that affects several other variables. For example, someone who smokes could have lung cancer. In this example, the factor is the smoking and the effect is the lung cancer.</li>
-                            <li class="pt-2">Just like finding the optimal number of cluster in K-Means, the <b><i>Scree Test</i></b> allows you to create a descending line chart that shows the number of factors used in the iteration on the x-axis and the measure of effectiveness on the y-axis. However, when interpretting the "Screeplot", you choose the largest value that has an "eigenvalue" greater than 1 as the optimal number of factors to consider in the algorithm.</li>
-                            <li class="pt-2"><b><i>Factor Loading</i></b> is the process of identifying how correlated each feature is with its assigned factor.</li>
-                            <li class="pt-2">The <b><i>Eigenvalue</i></b> explains how effective the number of factors is at explaining the amount of variance across all variables. The reason why you don't want to choose the number of factors with the highest eigenvalue is because you want to find a perfect medium between an even distribution and a highly explained variance.</li>
-                            <li class="pt-2"><b>NOTE:</b> When developing a PCA in a pre-built tool such as RapidMiner or SciKit-Learn, the rotated component matrix will automatically be applied to allow you to best analyze the results without any bias.</li>
+                            <li class="pt-1"><b><i>Model-free RL</i></b> uses its direct experience with the environment to adjust its policy and reinforce its actions.</li>
+                            <li class="pt-2"><b><i>Model-based RL</i></b> uses a model to create a simulated environment to set a baseline for its actions within the environment.</li>
+                            <li class="pt-2">The <b><i>State Space</i></b> is a two-dimensional model that represents all possible combination of actions the agent could take to achieve the desired outcome. With <b><i>Model-free RL</i></b>, the agent takes random actions until it finds the most efficient way to achieve the desired outcome, whereas with <b><i>Model-based RL</i></b>, the agent can simulate a wider range of actions to identify potential "cost-savings" in its journey to the desired outcome.</li>
+                            <li class="pt-2"><b><i>Model-free RL</i></b> in a nutshell:
+                            <ul>
+                                <li>Comparably straight-forward to implement (No models or simulations to setup)</li>
+                                <li>Uses the accurate environment instead of models</li>
+                            </ul></li>
+                            <li class="pt-2"><b><i>Model-based RL</i></b> in a nutshell:
+                            <ul>
+                                <li>Sample efficiency (it can learn from a sample environment before going into the real environment)</li>
+                                <li>Lower chance of damaging hardware (for physical models such as self-driving cars)</li>
+                                <li>Models can run faster than real-time</li>
+                                <li>Easier to reach different states</li>
+                            </ul></li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
@@ -141,11 +138,11 @@
                             Previous Topic
                             </a>
                         </div>
-                        <a
+                        <!-- <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
                             href="../Machine Learning/Reinforcement-Algorithms.html">
                             Next Topic
-                        </a>
+                        </a> -->
                     </div>
                 </section>
             </div>

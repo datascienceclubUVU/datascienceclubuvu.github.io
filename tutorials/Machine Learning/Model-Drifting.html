@@ -94,6 +94,7 @@
                             <ul>
                                 <li>What is Model Drifting?</li>
                                 <li>Different Types of Model Drifting</li>
+                                <li>Common Causes of Model Drifting</li>
                                 <li>How to Detect Model Drifting</li>
 
                             </ul>
@@ -108,12 +109,17 @@
                             <li class="pt-2"><b><i>Model Drifting</i></b> can be contributed to numerous factors including irrelevant data, poor hyperparameters, or feature irrelevance.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Different Types of Model Drifting</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/W-0-u6XVbE4?si=SCHa1Ag8yoBx5gta&amp;start=182&end=319" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/5KjpZCj853k?start=95" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"><b><i>Underfitting</i></b> occurs when the ratio between the training data fitted to the model and the evaluation data is too little, resulting in a model that is too generalized to make an effective prediction.</li>
-                            <li class="pt-2">Just like with overfitting, underfitting can be caused by Noise present in the data. If the data is not cleaned properly, the model will not be able to find an existing trend between features.</li>
-                            <li class="pt-2">Bias is a leading cause in underfitting. If you are predicting house prices and 90% of your training data contains homes that are 5000 sq. ft or larger, then when smaller houses are trying to be predicted, the model will output a garbage value because it's biased towards larger homes.</li>
+                            <li class="pt-1">A <b><i>Covariate Shift</i></b> occurs when there is a change in the distributions of one or more features. This can happen when data collected by user input changes due to seasonality, consumer trends, or product placement.</li>
+                            <li class="pt-2">A <b><i>Prior Probability Shift</i></b> occurs when the distribution of the features remains the same but the distribution of the label changes. This is very common with classification models when users prefer other product categories, or consumers shift industries during a recession.</li>
+                            <li class="pt-2">A <b><i>Concept Shift</i></b> occurs when the correlation between one or more features and the label change. This causes the output prediction to decay over time due to lack of statistical evidence. This commonly occurs in time-series forecast models when seasonality is not correctly identified or noted. There are three types of Concept Shifts:
+                            <ol>
+                                <li>A <b><i>Gradual Concept Drift</i></b> is a concept shift that happens over time and can be difficult to detect. An example of this is predicting web traffic for a startup who is slowly gaining more revenue, thus causing the relationship between the actual traffic feature and the estimated traffic label to change over time.</li>
+                                <li>A <b><i>Sudden Concept Drift</i></b> is a concept shift that happens out-of-the-blue. This can be caused by a damatic event, such as bankruptcy, or a globl economic event, such as a Pandemic.</li>
+                                <li>A <b><i>Recurring Concept Drift</i></b> is a concept shift that is caused by seasonality. For example, if you're trying to predict swimsuit sales and you build and train your model on only Summer sales data, what heppens when Winter comes around? Although seasonality is a common occurrence in time-series forecasting models, if it's not labeled correctly, the model's inference can be negatively impacted.</li>
+                            </ol></li>
                             <li class="pt-2">Just like with overfitting, underfitting can be caused by a lack of training data. If you don't have enough data present, your model will be too generalized to make a valid prediction.</li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->

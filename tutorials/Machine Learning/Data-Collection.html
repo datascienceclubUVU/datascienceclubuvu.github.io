@@ -158,21 +158,30 @@
                             <li class="pt-2"><b><i>Producers</i></b> are the data sources for data streams. This is where IOT comes into play. IOT devices can generate large amounts of data depending on their use cases. These producers are setup to write data to a log file, to maintain data integrity, then each record is placed in a queue, similar to a line in a supermarket.</li>
                             <li class="pt-2"><b><i>Consumers</i></b> are the end point that the consumers are sending data to. This could be a staging area, such as a cloud storage bucket or data lake, or a NoSQL database designed to handle incoming data streams, such as Apache Druid.</li>
                             <li class="pt-2"><b>NOTE:</b> To help keep Data Streams efficient, message queues are typically parallel processed by aggregating similar events into separate queues. This helps keep things organized and running smoothly.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from Data Lakes</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/pQuHDlF8N04?si=RkB33CN_aznqNKOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"> A <b><i>Data Lake</i></b> is a centralized repository for all raw, unstructured data within an organization. These are commonly used to store images, binary files, log files, and other types of data that can't be stored in a traditional relational database architecture.</li>
+                            <li class="pt-2">Nowadays, the most common form of Data Lakes are Cloud Storage Buckets. These allow you to store very large amounts of data (think petabyte-scale) in a single location, or multiple locations to sort items into groups, without having to fit a strict schema.
+                            </li>
+                            <li class="pt-2">Rather than using SQL or a similar query language to retrieve files from a data lake, cloud providers provide APIs and Python libraries to allow easy access to objects stored within a specific bucket.</li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <div class="col-0 col-sm-8">
                             <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="../Machine Learning/Reinforcement-Algorithms.html">
+                            href="../Machine Learning/ML-Lifecycle.html">
                             Previous Topic
                             </a>
                         </div>
-                        <a
+                        <!-- <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
                             href="../Machine Learning/ML-Lifecycle.html">
                             Next Topic
-                        </a>
+                        </a> -->
                     </div>
                 </section>
             </div>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>ML Tutorials: Intro to MLOps and ML Engineering</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                MACHINE LEARNING TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            ML Tutorials: Intro to MLOps and ML Engineering
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/data-collection.jpg"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                According to a report conducted by Gartner, 85% of data science projects fail. In this learning series, we explore why these initiatives fail and how organizations have found ways to overcome setbacks. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>Why Do Data Science Initiatives Fail?</li>
+                                <li>What is MLOps?</li>
+                                <li>What is ML Engineering?</li>
+                                <li>How to Become a ML Engineer?</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Why Do Data Science Initiatives Fail?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/Lhc4ObgzhP8?si=XussJ8dqFGg-DbyS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">Since the early 2010s, organizations big and small have realized the value of data and what it can do for product development and placement. They go on to hire teams of Data Scientists, Data Analysts, and Data Engineers without having a solid infrastructure in place. This goes on to create massive technical debt in the form of high cloud computing costs and high salaries to be paid.</li>
+                            <li class="pt-2">According to the Gartner report mentioned above and in the video, Data Science teams mentioned common issues in the following areas:
+                                <ul>
+                                    <li class="pt-1"><b>DATA:</b> Data Science teams mentioned issues with poor data quality, trouble obtaining data from multiple sources, and privacy issues surrounding Personally Identifiable Information (PII) (e.g., Social Security Numbers, Birth Dates, Home Addresses). This led to Data Scientists not being able to trust the data enough to train their models on.</li>
+                                    <li class="pt-2"><b>HUMAN FACTORS:</b> According to the Gartner Report, over 40% of respondants stated that they felt ML Engineers were not qualified to be working on high-end models in production. This led to a mistrust between team members and a lack of communication between stakeholders and Data Science Teams. Common issues mentioned in the report include the following:
+                                    <ul>
+                                        <li>Lack of managerial support</li>
+                                        <li>Lack of clear questions to address</li>
+                                        <li>Results (extracted from the models) are not used or implemented by the business</li>
+                                        <li>Difficulty Deploying Models and Coordinating Permissions with IT</li>
+                                        <li>Difficulty Explaining Data Science Principles to Non-Technical Stakeholders</li>
+                                    </ul></li>
+                                    <li class="pt-2"><b>TOOLS:</b> Most Data Science tools used by organizations in the early- to mid-2010s were unable to keep up with the increasing amount of data genrated by businesses. During this time, businesses were using on-premises and open-source tools that were cheap and effective, though were inefficient in working with large amounts of data and doing complex calculations, such as Neural Networks.</li>
+                                    <li class="pt-2"><b>FINANCING:</b> In the Gartner Report, almost 37% of respondants stated that their projects were unable to be completed due to lack of financial support. Even nowadays, with cloud service providers, organizations often need to set budgets on certain initiatives to prevent any financial losses. However, if these budgets are too tight, the business may never experience the planned ROI.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is MLOps</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ZVWg18AXXuE?si=1xtRNLMXKP-qm9EV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Machine learning Operations (MLOps)</i></b> is a core function of ML Engineering, focused on streamlining the process of taking ML models to production, and then maintaining and monitoring them.</li>
+                            <li class="pt-2">MLOps can best be seen as DevOps principles applied to Machine learning initiatives.</li>
+                            <li class="pt-2">MLOps helps organizations achieve the following goals:
+                                <ol>
+                                    <li>Faster experimentation and model development</li>
+                                    <li>Faster deployment of updated models into production</li>
+                                    <li>Quality assurance</li>
+                                </ol>
+                            </li>
+                            <li class="pt-2">The main reason MLOps exists in the first place is to help organizations overcome the most difficult hurdle in any Data Science initiative: <b>DATA</b>. MLOps assists developers in creating a framework to improve data quality, version source data using cleaning techniques, and keep track of metadata that helps Data Scientists built trust in the data.</li>
+                            <li class="pt-2">When a client communicates with a server, it needs to specify which action the server needs to take. This is done via <b><i>HTTP Requests</i></b>. There are several HTTP Request Methods:
+                            <ul>
+                                <li><b>GET:</b> This is used to retrieve data from a source. This is the most common method used by ML Engineers during the Data Collection stage of the ML Lifecycle.</li>
+                                <li><b>PUT:</b> This is used to update data within a source. This is used by Software Engineers to continuously update URL paths on a website or data objects on a backend server.</li>
+                                <li><b>POST:</b> This is used to insert new data to a source. This is used by ML Engineers to input users entries into the training dataset. This is used at the end of the ML Lifecycle when you have deployed your model into Production.</li>
+                                <li><b>DELETE:</b> This is used to remove data from a source. This is used by Software Engineers to continuously keep the data presented on websites or backend servers relevant and comply with data security standards.</li>
+                            </ul></li>
+                            <li class="pt-2"><b><i>JavaScript Object Notation (JSON)</i></b> is the object format used by APIs to transport data between applications. This data is represented in a key-value pair format, similar to a dictionary in Python.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from IOT Devices</h2> <br>
+                        <h6><b>What is the Internet of Things (IOT)?</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/6mBO2vqLv38?si=glX2NQX9__fIfNdS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h6><b>What is Data Streaming?</b></h6>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/SLHCfIUTYZI?si=-_vXS8IS3A9wlm2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"> The <b><i>Internet of Things (IOT)</i></b> is the connection and collaboration of internet-based devices to create "Smart" appliances. An <b><i>IOT device</i></b> is simply any piece of technology that can access the internet, such as televisions, bluetooth speakers, smart thermometers, and security cameras.</li>
+                            <li class="pt-2">IOT devices can be separated into two categories:
+                                <ul>
+                                    <li><b>General Devices:</b> These are generic pieces of technology that are typically connected via Wi-Fi or bluetooth. Examples: Television, Smart Speaker, Smart Lightbulbs.</li>
+                                    <li><b>Sensing Devices:</b> These are hardwired devices that are used to collect data in real-time for use in either predicitive analytics or descriptive analytics. These use data streams to send data in real-time to mobile applications for user consumption.</li>
+                                </ul>
+                            </li>
+                            <li class="pt-2"><b><i>Data Streaming</i></b> is the continuous flow of data as it's generated from a source so that it can be used for real-time processing and analytics.</li>
+                            <li class="pt-2"><b><i>Batch Scheduling</i></b> refers to the collection and processing of data in batches at a regularly scheduled interval. A good example of this is retail transactions. Rather than getting data on how much money a retail store made every hour, it can be collected and aggregated on a daily basis.</li>
+                            <li class="pt-2">In the context of machine learning, Data Streaming is useful for creating real-time predicitons. For example, suppose you are tasked with creating a model that predicts, in real-time whether a financial transaction is fraudulent or not. Rather than querying a data warehouse every minute or hour to analyze these records, it would be helpful to get the results as close to real-time as possible.</li>
+                            <li class="pt-2">Data Streams capture events. In the context of Data Streaming, <b><i>Events</i></b> can be defined as an action that occurs at a specific point in time. This could be when a user clicks a button on a website, a sensor is triggered based on an algorithm, or a sale takes place online.</li>
+                            <li class="pt-2"><b><i>Producers</i></b> are the data sources for data streams. This is where IOT comes into play. IOT devices can generate large amounts of data depending on their use cases. These producers are setup to write data to a log file, to maintain data integrity, then each record is placed in a queue, similar to a line in a supermarket.</li>
+                            <li class="pt-2"><b><i>Consumers</i></b> are the end point that the consumers are sending data to. This could be a staging area, such as a cloud storage bucket or data lake, or a NoSQL database designed to handle incoming data streams, such as Apache Druid.</li>
+                            <li class="pt-2"><b>NOTE:</b> To help keep Data Streams efficient, message queues are typically parallel processed by aggregating similar events into separate queues. This helps keep things organized and running smoothly.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from Data Lakes</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/pQuHDlF8N04?si=RkB33CN_aznqNKOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"> A <b><i>Data Lake</i></b> is a centralized repository for all raw, unstructured data within an organization. These are commonly used to store images, binary files, log files, and other types of data that can't be stored in a traditional relational database architecture.</li>
+                            <li class="pt-2">Nowadays, the most common form of Data Lakes are Cloud Storage Buckets. These allow you to store very large amounts of data (think petabyte-scale) in a single location, or multiple locations to sort items into groups, without having to fit a strict schema.
+                            </li>
+                            <li class="pt-2">Rather than using SQL or a similar query language to retrieve files from a data lake, cloud providers provide APIs and Python libraries to allow easy access to objects stored within a specific bucket.</li>
+                        </ul><br>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <div class="col-0 col-sm-8">
+                            <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/ML-Lifecycle.html">
+                            Previous Topic
+                            </a>
+                        </div>
+                        <!-- <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/ML-Lifecycle.html">
+                            Next Topic
+                        </a> -->
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

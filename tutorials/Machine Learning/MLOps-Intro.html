@@ -123,7 +123,7 @@
                             </li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is MLOps</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ZVWg18AXXuE?si=1xtRNLMXKP-qm9EV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ZVWg18AXXuE?si=1xtRNLMXKP-qm9EV&end=312" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
                             <li class="pt-1"><b><i>Machine learning Operations (MLOps)</i></b> is a core function of ML Engineering, focused on streamlining the process of taking ML models to production, and then maintaining and monitoring them.</li>
@@ -136,14 +136,18 @@
                                 </ol>
                             </li>
                             <li class="pt-2">The main reason MLOps exists in the first place is to help organizations overcome the most difficult hurdle in any Data Science initiative: <b>DATA</b>. MLOps assists developers in creating a framework to improve data quality, version source data using cleaning techniques, and keep track of metadata that helps Data Scientists built trust in the data.</li>
-                            <li class="pt-2">When a client communicates with a server, it needs to specify which action the server needs to take. This is done via <b><i>HTTP Requests</i></b>. There are several HTTP Request Methods:
-                            <ul>
-                                <li><b>GET:</b> This is used to retrieve data from a source. This is the most common method used by ML Engineers during the Data Collection stage of the ML Lifecycle.</li>
-                                <li><b>PUT:</b> This is used to update data within a source. This is used by Software Engineers to continuously update URL paths on a website or data objects on a backend server.</li>
-                                <li><b>POST:</b> This is used to insert new data to a source. This is used by ML Engineers to input users entries into the training dataset. This is used at the end of the ML Lifecycle when you have deployed your model into Production.</li>
-                                <li><b>DELETE:</b> This is used to remove data from a source. This is used by Software Engineers to continuously keep the data presented on websites or backend servers relevant and comply with data security standards.</li>
-                            </ul></li>
-                            <li class="pt-2"><b><i>JavaScript Object Notation (JSON)</i></b> is the object format used by APIs to transport data between applications. This data is represented in a key-value pair format, similar to a dictionary in Python.</li>
+                            <li class="pt-2">At the core of MLOps is the <b><i>Machine Learning Lifecycle</i></b>. We will go into further detail on this in the next tutorial. For the time being, just know that <b><i>Experimentation</i></b> refers to the process of selecting/generating features, selecting algorithms, tuning hyperparameters, and fitting the model.</li>
+                            <li class="pt-2">Why is MLOps used? It covers the following organizational needs:
+                                <ul>
+                                    <li>Learn from your mistakes (re-training/re-building models in an iterative fashion)</li>
+                                    <li>Track Training and Evaluation Metrics</li>
+                                    <li>Source Control the code (to ensure dependencies are in tact)</li>
+                                    <li>Checkpoint Steps in the ML Lifecycle through the use of ML Pipelines</li>
+                                    <li>Automating proper validation/staged deployment</li>
+                                </ul>
+                            </li>
+                            <li class="pt-2">Before MLOps became an industry standard, Data Science teams would regularly deploy models into production assuming it met the business's needs. This would lead to reduced ROI and increase technical debt.</li>
+                            <li class="pt-2">It's worth mentioning that MLOps also introduced the idea of <b><i>Responsible ML</i></b>, which addressed the issue raised by the respondants in the Gartner Report surrounding Data Privacy concerns. Responsible ML provided a framework for ML Engineers to understand the interpretability and fairness of their models to reduce any outstanding biases. This also protected users and internal stakeholders from any unethical use cases from external hackers.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from IOT Devices</h2> <br>
                         <h6><b>What is the Internet of Things (IOT)?</b></h6>

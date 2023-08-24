@@ -126,7 +126,7 @@
                         <iframe width="650" height="400" src="https://www.youtube.com/embed/ZVWg18AXXuE?si=1xtRNLMXKP-qm9EV&end=312" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"><b><i>Machine learning Operations (MLOps)</i></b> is a core function of ML Engineering, focused on streamlining the process of taking ML models to production, and then maintaining and monitoring them.</li>
+                            <li class="pt-1"><b><i>Machine Learning Operations (MLOps)</i></b> is a core function of ML Engineering, focused on streamlining the process of taking ML models to production, and then maintaining and monitoring them.</li>
                             <li class="pt-2">MLOps can best be seen as DevOps principles applied to Machine learning initiatives.</li>
                             <li class="pt-2">MLOps helps organizations achieve the following goals:
                                 <ol>
@@ -149,51 +149,63 @@
                             <li class="pt-2">Before MLOps became an industry standard, Data Science teams would regularly deploy models into production assuming it met the business's needs. This would lead to reduced ROI and increase technical debt.</li>
                             <li class="pt-2">It's worth mentioning that MLOps also introduced the idea of <b><i>Responsible ML</i></b>, which addressed the issue raised by the respondants in the Gartner Report surrounding Data Privacy concerns. Responsible ML provided a framework for ML Engineers to understand the interpretability and fairness of their models to reduce any outstanding biases. This also protected users and internal stakeholders from any unethical use cases from external hackers.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from IOT Devices</h2> <br>
-                        <h6><b>What is the Internet of Things (IOT)?</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/6mBO2vqLv38?si=glX2NQX9__fIfNdS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h6><b>What is Data Streaming?</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/SLHCfIUTYZI?si=-_vXS8IS3A9wlm2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is ML Engineering?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/GDCnydDWRnM?si=moBYRQLRLgsp2KLu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"> The <b><i>Internet of Things (IOT)</i></b> is the connection and collaboration of internet-based devices to create "Smart" appliances. An <b><i>IOT device</i></b> is simply any piece of technology that can access the internet, such as televisions, bluetooth speakers, smart thermometers, and security cameras.</li>
-                            <li class="pt-2">IOT devices can be separated into two categories:
+                            <li class="pt-1">A <b><i>Machine Learning Engineer (ML Engineer)</i></b> works with Data Scientists to solve business problems using Machine Learning systems. ML Engineers utilize MLOps principles and the ML Lifecycle to design, develop, and deploy Machine Learning applications.</li>
+                            <li class="pt-2">ML Engineers have the following responsibilities:
                                 <ul>
-                                    <li><b>General Devices:</b> These are generic pieces of technology that are typically connected via Wi-Fi or bluetooth. Examples: Television, Smart Speaker, Smart Lightbulbs.</li>
-                                    <li><b>Sensing Devices:</b> These are hardwired devices that are used to collect data in real-time for use in either predicitive analytics or descriptive analytics. These use data streams to send data in real-time to mobile applications for user consumption.</li>
+                                    <li><b>Prepare Data.</b> Before any work goes into building a model or implementing an algorithm, data needs to be presented in an interpretable format. This may include changing data types, removing erroneous values, or creating calculated metrics based on what business stakeholders expect.</li>
+                                    <li><b>Feature Engineering</b>. Once relevant data has been collected and prepared, independent variables, known as <b><i>features</i></b> must be identified. Although, just because a certain attribute <i>can</i> be used to predict an outcome, doesn't mean it should. <b><i>We will discuss feature engineering best practices in a later tutorial.</i></b></li>
+                                    <li><b>Algorithm Selection.</b> ML Engineers need to have a moderately deep understanding of not only what algorithms are available, but which one to use based on the type of data, the expected predictive accuracy of the model, and how resource intensive the model is. For instance, if you are creating a classification model with a model that has resource constraints, a Random Forest may be the best option rather than a Neural Network.</li>
+                                    <li><b>Model Fitting.</b> ML Engineers must have a deep understanding of overfitting and underfitting. With most supervised models, this can be avoided using basic statistical methods and tests. However, when building a model from scratch it's a bets practice to use various subsets to compare results and validate the evaluation metrics before deploying the model into production.</li>
+                                    <li><b>Model Deployment.</b> Once the model has been effectively trained, evaluated, and validated by business stakeholders, it can be put into a production environment. This is typically done using containers and clusters through software systems such as Docker and Kubernetes. Once the application has been containerized, it can be placed into a web or mobile application for users to experience.</li>
+                                    <li><b>Model Performance Monitoring and Evaluation.</b> Just because the model and application works in a simulated environment doesn't mean it can keep up in the real world. ML Engineers need to constantly be checking on model performance, checking for instances of model drift and server downtime.</li>
                                 </ul>
                             </li>
-                            <li class="pt-2"><b><i>Data Streaming</i></b> is the continuous flow of data as it's generated from a source so that it can be used for real-time processing and analytics.</li>
-                            <li class="pt-2"><b><i>Batch Scheduling</i></b> refers to the collection and processing of data in batches at a regularly scheduled interval. A good example of this is retail transactions. Rather than getting data on how much money a retail store made every hour, it can be collected and aggregated on a daily basis.</li>
-                            <li class="pt-2">In the context of machine learning, Data Streaming is useful for creating real-time predicitons. For example, suppose you are tasked with creating a model that predicts, in real-time whether a financial transaction is fraudulent or not. Rather than querying a data warehouse every minute or hour to analyze these records, it would be helpful to get the results as close to real-time as possible.</li>
-                            <li class="pt-2">Data Streams capture events. In the context of Data Streaming, <b><i>Events</i></b> can be defined as an action that occurs at a specific point in time. This could be when a user clicks a button on a website, a sensor is triggered based on an algorithm, or a sale takes place online.</li>
-                            <li class="pt-2"><b><i>Producers</i></b> are the data sources for data streams. This is where IOT comes into play. IOT devices can generate large amounts of data depending on their use cases. These producers are setup to write data to a log file, to maintain data integrity, then each record is placed in a queue, similar to a line in a supermarket.</li>
-                            <li class="pt-2"><b><i>Consumers</i></b> are the end point that the consumers are sending data to. This could be a staging area, such as a cloud storage bucket or data lake, or a NoSQL database designed to handle incoming data streams, such as Apache Druid.</li>
-                            <li class="pt-2"><b>NOTE:</b> To help keep Data Streams efficient, message queues are typically parallel processed by aggregating similar events into separate queues. This helps keep things organized and running smoothly.</li>
+                            <li class="pt-2">So you want to become an ML Engineer? What Background or Skillsets do you need to have? The following is a good baseline to start with:
+                                <ul>
+                                    <li>Statistics</li>
+                                    <li>SQL</li>
+                                    <li>Data Visualization (Histograms, Scatter Plots, etc.)</li>
+                                    <li>ML Algorithms and Architectures (e.g., Decision Trees, Support Vector Machines, Naive Bayes, Neural Networks)</li>
+                                    <li>Python (including the following libraries: Pandas/Polars, SciKit-Learn, TensorFlow, Keras)</li>
+                                    <li>Apache Spark (for Distributed Computing Frameworks)</li>
+                                </ul>
+                            </li>
+                            <li class="pt-2"><b>What's the Difference Between a Data Scientist and an ML Engineer?</b>
+                            <ul>
+                                <li>A <b><i>Data Scientist</i></b> is traditionally tasked with communicating with business stakeholders about business needs, conducting A/B tests, and apply statistical methods to business metrics. Although they may use ML models and algorithms to complete this work, they don't deploy them into a production environment, just for their own internal use case.</li>
+                                <li>An <b><i>ML Engineer</i></b> is traditionally tasked with developing ML applications or microservices built within an existing application. They work alongside Data Scientists most of the time to develop working products to solve business needs and provide business value. Rather than only using ML algorithms and models for internal use cases, ML Engineers use these for external use cases.</li>
+                            </ul></li>
+                            <li class="pt-2"><b>NOTE:</b> The job title of <b><i>ML Engineer</i></b> is essentially the new "entry-level Data Scientist". Because Data Scientists are tasked with having a deep understanding of the business and communicating with both technical and non-technical stakeholders, it's traditional for most Data Scientists job listings to require at least 5 years of work experience.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from Data Lakes</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/pQuHDlF8N04?si=RkB33CN_aznqNKOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">How to Become an ML Engineer?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/xKYDdk4r88w?si=0CTnaAWjDX_q4Cej" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"> A <b><i>Data Lake</i></b> is a centralized repository for all raw, unstructured data within an organization. These are commonly used to store images, binary files, log files, and other types of data that can't be stored in a traditional relational database architecture.</li>
-                            <li class="pt-2">Nowadays, the most common form of Data Lakes are Cloud Storage Buckets. These allow you to store very large amounts of data (think petabyte-scale) in a single location, or multiple locations to sort items into groups, without having to fit a strict schema.
+                            <li class="pt-1">Since a large portion of organizational data is stored in a structured format, ML Engineers need to have a strong knowledge of SQL. They don't need to know every nook and cranny, but should be at an intermediate level to perform moderately advanced queries. Looking to get started with or improve your skills in SQL? Check out our <b><a href="../SQL-Tutorial.html">SQL Tutorials</a></b>.</li>
+                            <li class="pt-2">As has been mentioned in various videos throughout this Tutorial Series, Python has become the defacto language of Data Science. Thus, it's critical for you to have a good understanding of this programming language. Looking to get started with or improve your skills in Python? Check out our <b><a href="../Python-Tutorials.html">Python Tutorials</a></b>.</li>
+                            <li class="pt-2">The next most valuable skill an ML Engineer can have is that of data cleaning. Similar to why SQL is so critical, <b><i>Pandas</i></b>, the most popular Python library for data cleaning, is critical to know because it's built to clean data in a structured format. Looking to get started with or improve your skills in Pandas? Check out our <b><a href="../Pandas-Tutorials.html">Pandas Tutorials</a></b>.
                             </li>
-                            <li class="pt-2">Rather than using SQL or a similar query language to retrieve files from a data lake, cloud providers provide APIs and Python libraries to allow easy access to objects stored within a specific bucket.</li>
+                            <li class="pt-2">ML Pipelines are basically templates for training and re-training models in both development and production environments. Some of the most cmoon tools used for ML Pipelines include SciKit-Learn, MLFlor, and KubeFlow. However, MLFlow and KubeFlow are more niche products used within specific domains (particularly companies that sell AI products). Thus, it's wise to get started with SciKit-Learn. <b><i>SciKit-Learn Tutorials will be available in Late Fall 2023 or Early Spring 2024.</i></b></li>
+                            <li class="pt-2"><b>NOTE:</b> Although Pandas may be on every job listing for entry-level ML Engineer roles, just know that <b><i>Polars</i></b> has joined the chat. Polars is a Rust-based Python library built to be Pandas on steroids. The main limitation with Pandas is its inability to handle large amounts of data. However, since Polars is based on Rust, it's just as capable as Pandas but much faster at cleaning large amounts of data.</li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">
                         <div class="col-0 col-sm-8">
                             <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
-                            href="../Machine Learning/ML-Lifecycle.html">
+                            href="../Machine Learning/Overfit-vs-Underfit.html">
                             Previous Topic
                             </a>
                         </div>
-                        <!-- <a
+                        <a
                             class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
                             href="../Machine Learning/ML-Lifecycle.html">
                             Next Topic
-                        </a> -->
+                        </a>
                     </div>
                 </section>
             </div>

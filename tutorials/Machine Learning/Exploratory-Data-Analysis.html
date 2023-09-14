@@ -95,7 +95,6 @@
                                 <li>What is EDA?</li>
                                 <li>Why is EDA Necessary?</li>
                                 <li>What Methods are Commonly Used in EDA?</li>
-                                <li>How Does EDA Differ Between Algorithms?</li>
 
                             </ul>
                         </div>
@@ -110,14 +109,22 @@
                             <li class="pt-2"><b><i>Univariate EDA</i></b> is used to analyze and interpret data contained by a single variable/feature. This is helpful when you have a certain field in your dataset that has high variability or that you suspect to have outliers. Univariate EDA is commonly used on continuous, numeric fields.</li>
                             <li class="pt-2"><b><i>Multivariate EDA</i></b> is used to identify relationships between variables and identify basic trends in the data. This is commonly used to compare business logic with your dataset to verify the data is representative of the issue you're trying to solve or the opportunity you're trying to take advantage of.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Why is EDA Necessary?</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/_CDl-mznhec?si=RwKxXj5s_1BREG-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Methods are Commonly Used in EDA?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/QiqZliDXCCg?si=uVY6cb7nPGn7EvGd&amp;start=142" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">In the context of Machine Learning, EDA ensures that the model your fitting to your model is free from bias, anomalies/outliers, and unexpected values.</li>
-                            <li class="pt-2">In the real world, data is messy and often unrealistic. EDA is the most common method used by ML Engineers to guarantee the data being used to train models realistically reflects events in the real world, thus leading to more accurate predictions.</li>
-                            <li class="pt-2">Bias is a leading cause in underfitting. If you are predicting house prices and 90% of your training data contains homes that are 5000 sq. ft or larger, then when smaller houses are trying to be predicted, the model will output a garbage value because it's biased towards larger homes.</li>
-                            <li class="pt-2">Just like with overfitting, underfitting can be caused by a lack of training data. If you don't have enough data present, your model will be too generalized to make a valid prediction.</li>
+                            <li class="pt-1">Common methods used in Univariate EDA include the following:
+                                <ul>
+                                    <li class="pt-2"><b>Histograms (continuous variables):</b> These are used to show the distribution of values contained in the variable. These contain "bins" which represent a defined range of values. You can change the number of bins to best represent your data. These are used to visualize how normally distributed the values in the variable are.</li>
+                                    <li class="pt-2"><b>Bar Charts (discrete variables):</b> These are used to show the frequency of values across categories shown in the variable. For example, for a variable called "color", you could create a bar chart showing how frequently each value in the variable occurs in the dataset. These are used to visually compare the frequency of categories compared to what occurs in the real world.</li>
+                                </ul>
+                            </li>
+                            <li class="pt-2">Common methods used in Multivariate EDA include the following:
+                                <ul>
+                                    <li class="pt-2"><b>Descriptive Statistics (numeric variables):</b> Some tools allow you to take all the numeric variables present in your dataset and view <b><i>Descriptive Statistics</i></b> such as Min, Max, Mean, Percentiles, and Counts. These are used to compare the values in the table to what you'd expect to see in the real world.</li>
+                                    <li class="pt-2"><b>Correlation Matrices (numeric variables):</b> These are tables that show the relationship between variables. The <b><i>Pearson Correlation Ratio</i></b>, the method most commonly used by Data Scientists, is a measure of how strongly correlated two variables are. This ratio ranges from -1 to 1, where -1 means a perfect <i>negative</i> correlation (when variable A goes up 1 unit, variable B goes down 1 unit) and 1 means a perfect <i>positive</i> correlation (when variable A goes up 1 unit, variable B goes down 1 unit).</li>
+                                </ul>
+                            </li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

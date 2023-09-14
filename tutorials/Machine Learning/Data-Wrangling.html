@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>ML Tutorials: Data Collection Techniques</title>
+    <title>ML Tutorials: Data Wrangling</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            ML Tutorials: Data Collection Techniques
+                            ML Tutorials: Data Wrangling
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/data-collection.jpg"
+                                src="../../imgs/data-wrangling.png"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,33 +89,35 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Before beginning any Machine Learning, you need to have data. In the age of the Internet of Things, large amounts of data can be collected from a wide variety of sources including internal Data Warehouses, IOT devices (such as sensors or cameras), and APIs. As an ML Engineer, you need to understand how to collect data from each of these sources to give your models an adewuate amount of training data. This tutorial will cover the following learning objectives:
+                                Once you have identified relevant data sources and collected it into one cohesive dataset, it's easy to assume the data is ready to be fitted to a model. However, in the real world data is messy. Some values may be missing, integers could be stored as strings, or calculated fields could be miscalculated. <b><i>Data Wrangling</i></b> is the process of identifying all these errors and gets rid of them. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>Collecting Data from Data Warehouses</li>
-                                <li>Collecting Data from APIs</li>
-                                <li>Collecting Data from IOT Devices</li>
-                                <li>Collecting Data from Data Lakes</li>
+                                <li>Handling Missing Values</li>
+                                <li>Converting Data Types</li>
+                                <li>Common String Operations</li>
 
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from Data Warehouses</h2> <br>
-                        <h6><b>What is a Data Warehouse?</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/AHR_7jFCMeY?si=ep2GL6s_vZzijXIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h6><b>Why Do Data Scientists Need to Know SQL?</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/fuYDkh_u5qg?si=UjdYizeR41FG9GNc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Handling Missing Values</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/FPvMBl8LvGA?si=kyeh9Yd4ElSRw-4-&amp;start=142" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">A <b><i>Data Warehouse</i></b> is a storage device used by businesses to store large amounts of structured data. These are used to act as a single source of truth to ensure data quality standards are maintained.</li>
-                            <li class="pt-2"><b><i>Structured Data</i></b> refers to data that has a strict schema assigned to it. The most common types of Structured Data include relational databases and text files such as CSV and Excel.</li>
-                            <li class="pt-2">Just like in relational databases, Data Warehouses are <b><i>subject-oriented</i></b>. This means that every entity, known as <b><i>tables</i></b>, are granular to a single subject (e.g., customers, orders, employees).</li>
-                            <li class="pt-2">What makes Data Warehouses so popular for use in Data Science is the fact that Data Warehouses are <b><i>Non-Volatile</i></b>, meaning that once data arrives in the Data Warehouse, it's guaranteed to be clean, accurate, and useable for business intelligence, reporting, and machine learning.</li>
-                            <li class="pt-2"><b><i>Structured Query Language (SQL)</i></b> is a programming language used primarily by databases to allow users to gather data in a useable format.</li>
-                            <li class="pt-2">As an ML Engineer, SQL will be one of your most valuable skills as you'll need to collect large amounts of data from Data Warehouses efficiently and correctly.</li>
-                            <li class="pt-2">As a baseline, 95% of the time, you'll be working exclusively with SELECT statements. Thus you should understand the syntax, semantics, and order of execution of these statements. Also, you need to have a general understanding of Primary and Foreign Keys, Joins, and Unions to gather data from multiple tables.</li>
-                            <li class="pt-2"><b>TO GET STARTED WITH SQL, CHECK OUT OUR TUTORIALS:</b> <a href="../SQL-Tutorial.html">SQL Tutorials</a></li>
+                            <li class="pt-1">Missing values are a common occurrence in source systems. These can occur due to a skipped entry on a survey, an unknown value collected from an IOT sensor, or a value that couldn't be computed due to lack of data in other fields.</li>
+                            <li class="pt-2">When identifying missing values in a dataset, it can be easy to simply filter them out or fill them with a default value. However, it's HIGHLY recommended that you analyze your data model and see if you can retrieve the data from other source systems (e.g., perform a join to collect data from other tables in a data warehouse).</li>
+                            <li class="pt-2">If only 1% of the values in a particular field are missing, it's generally acceptable to omit those records from the dataset. On the other hand, if 99% of the values in a particular field are missing, it's generally acceptable to omit the field from the dataset.</li>
+                            <li class="pt-2">It's generally acceptable to omit missing data from a dataset when the values in the other fields are random in nature and are correlated in any sense. However, if the records with missing values have other field values in common, it's worth investigating further using EDA.</li>
+                            <li class="pt-2">One of the most common ways ML Engineers fill missing values is by using a process called Imputation. <b><i>Imputation</i></b> is the process of inferring the value of a missing data point by analyzing the points around it. This is done using several methods including:
+                            <ul>
+                                <li class="pt-2"><b>Mean/Median Imputation:</b> This is used to fill in missing values for numerical fields. In this method, you find the Mean or Median of the existing values in the field and use that value to fill in the missing values. This keeps the value normally distributed.</li>
+                                <li class="pt-2"><b>Categorical Imputation:</b> This is used to fill in missing values for non-numeric fields. In this method, you find the most common value in the field and use that to fill in the missing values. This should only be used when one category occurs more frequently in the field.</li>
+                                <li class="pt-2"><b>Interpolation:</b> This is used to fill in missing values for numeric fields on a time-series axis. In this method, you plot the existing data on a line chart and then connect the gaps by getting the average of the points on either end of the gap.</li>
+                                <li class="pt-2"><b>Supervised Imputation:</b> This is used to fill in the missing values of any specified field using a supervised model. In this method, you train a model using your current dataset and set the field you want to impute as your label. The model will then use it's knowledge to predict the values based on the features provided.</li>
+                            </ul></li>
+                            <li class="pt-2"><b>NOTE:</b> Be careful when omitting records from a dataset. Although they may contain missing values, they could provide valuable insight to the model with the values stored in the other fields.</li>
+                            <li class="pt-2"><b>NOTE:</b> A general rule of thumb is to omit features when 70% or more of the values are missing.</li>
+                            <li class="pt-2"><b>NOTE:</b> The Supervised Imputation method should be used sparingly, as it adds compelxity to your project and forces you to change your model for only a small portion of your data.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from APIs</h2> <br>
                         <h6><b>What is an API?</b></h6>

@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>ML Tutorials: Overfitting vs. Underfitting</title>
+    <title>ML Tutorials: Exploratory Data Analysis (EDA)</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            ML Tutorials: Overfitting vs. Underfitting
+                            ML Tutorials: Exploratory Data Analysis (EDA)
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/overfit-underfit.png"
+                                src="../../imgs/eda.png"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,31 +89,33 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                When applying training data to supervised algorithms, there tends to be bias when splitting the data into training and evaluation datasets. On one hand, you want your model to have the most information as possible, while on the other hand you want to have a good test sample to evaluate your model's performance effectively. This tutorial will cover the following learning objectives:
+                                Assuming the data you collected and prepared for your model is unbiased, normally distributed (when applicable), and free from errors is a dangerous assumption. <b><i>Exploratory Data Analysis</i></b>, arguably the most boring yet most important aspect of the ML Lifecycle, ensures that the data you're feeding your model meets your expectations and is of high quality. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>Overfitting</li>
-                                <li>Underfitting</li>
+                                <li>What is EDA?</li>
+                                <li>Why is EDA Necessary?</li>
+                                <li>What Methods are Commonly Used in EDA?</li>
+                                <li>How Does EDA Differ Between Algorithms?</li>
 
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Overfitting</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/W-0-u6XVbE4?si=KYpVC7l_aovdSA_-&amp;end=183" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is EDA?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/QiqZliDXCCg?si=hc7cZPZj196Kh8Yh&end=142" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"><b><i>Overfitting</i></b> occurs when the ratio between the training data fitted to the model and the evaluation data is too much, resulting in a model that can't accept new data points without breaking the efficacy of the algorithm.</li>
-                            <li class="pt-2">In the context of Machine Learning, <b><i>Noise</i></b> occurs when data points in a data set are erroneous, thus causing the output of the ML algorithm to be altered negatively. A common example of noise are outliers or data points that were not cleaned proeprly (e.g., the weight value is in the age value, resulting in bias).</li>
-                            <li class="pt-2">Overfitting can occur when a particular feature has high variance. This can cause the model to fit the regression line close to some data points, but leave out the rest. High variance typically occurs when other variables that are not considered in the dataset impact other features (such as the wind example in the video).</li>
-                            <li class="pt-2">One of the most common cause of overfitting is lack of training data. If you only have 100 data points, it may not be near enough for the model to infer new values based on the given inputs.</li>
+                            <li class="pt-1"><b><i>Exploratory Data Analysis (EDA)</i></b> is a method used by Data Scientists to analyze datasets and identify its main characteristics. It's helps determine the best ways to manipulate datasets to best fit the algorithm you're basing your model on.</li>
+                            <li class="pt-2">When collecting large amounts of data from disparate sources (e.g., Databases, websites, APIs), there will likely be anomalies/outliers present, fields that are displayed as strings but should be numeric, and/or calculated fields that were calculated incorrectly. EDA is used to address all these issues.</li>
+                            <li class="pt-2"><b><i>Univariate EDA</i></b> is used to analyze and interpret data contained by a single variable/feature. This is helpful when you have a certain field in your dataset that has high variability or that you suspect to have outliers. Univariate EDA is commonly used on continuous, numeric fields.</li>
+                            <li class="pt-2"><b><i>Multivariate EDA</i></b> is used to identify relationships between variables and identify basic trends in the data. This is commonly used to compare business logic with your dataset to verify the data is representative of the issue you're trying to solve or the opportunity you're trying to take advantage of.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Underfitting</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/W-0-u6XVbE4?si=SCHa1Ag8yoBx5gta&amp;start=182&end=319" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Why is EDA Necessary?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/_CDl-mznhec?si=RwKxXj5s_1BREG-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"><b><i>Underfitting</i></b> occurs when the ratio between the training data fitted to the model and the evaluation data is too little, resulting in a model that is too generalized to make an effective prediction.</li>
-                            <li class="pt-2">Just like with overfitting, underfitting can be caused by Noise present in the data. If the data is not cleaned properly, the model will not be able to find an existing trend between features.</li>
+                            <li class="pt-1">In the context of Machine Learning, EDA ensures that the model your fitting to your model is free from bias, anomalies/outliers, and unexpected values.</li>
+                            <li class="pt-2">In the real world, data is messy and often unrealistic. EDA is the most common method used by ML Engineers to guarantee the data being used to train models realistically reflects events in the real world, thus leading to more accurate predictions.</li>
                             <li class="pt-2">Bias is a leading cause in underfitting. If you are predicting house prices and 90% of your training data contains homes that are 5000 sq. ft or larger, then when smaller houses are trying to be predicted, the model will output a garbage value because it's biased towards larger homes.</li>
                             <li class="pt-2">Just like with overfitting, underfitting can be caused by a lack of training data. If you don't have enough data present, your model will be too generalized to make a valid prediction.</li>
                         </ul><br>

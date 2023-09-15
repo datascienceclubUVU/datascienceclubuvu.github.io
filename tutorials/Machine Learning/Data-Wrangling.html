@@ -92,14 +92,32 @@
                                 Once you have identified relevant data sources and collected it into one cohesive dataset, it's easy to assume the data is ready to be fitted to a model. However, in the real world data is messy. Some values may be missing, integers could be stored as strings, or calculated fields could be miscalculated. <b><i>Data Wrangling</i></b> is the process of identifying all these errors and gets rid of them. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>Handling Missing Values</li>
-                                <li>Converting Data Types</li>
+                                <li>What is Data Data Wrangling?</li>
+                                <li>How to Handle Missing Values</li>
                                 <li>Common String Operations</li>
 
                             </ul>
                         </div>
                     </div>
                     <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is Data Wrangling?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/iTDltBXOHVM?si=IRe90uDu0i5k_jDj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Data Wrangling</i></b>, also known as <b><i>Data Cleaning</i></b>, is the process of transforming raw data into interpretable data.</li>
+                            <li class="pt-2">In the context of Machine Learning, Data Wrangling is a powerful process that allows you to analyze your data using a process called <b><i>Exploratory Data Analysis</i></b>.</li>
+                            <li class="pt-2">There are six steps in the Data Wrangling process:
+                                <ol>
+                                    <li class="pt-2"><b>Discovering</b>. In this step, you analyze the schema (structure) of your dataset to understand what each feature represents, its potential impact on the label, and potential features that could be extracted from current features.</li>
+                                    <li class="pt-2"><b>Structuring</b>. Most of the time, you will be working with nested structures (e.g., JSON strings, nested arrays) that will need to be expanded to obtain the actual values. In this step, you will obtain the actual structure of the data from your dataset and normalize the features across all values. This invovles ensuring all values have the same structure to keep your data consistent.</li>
+                                    <li class="pt-2"><b>Cleaning</b>. In this step, you will identify steps that need to be taken to make sure your features have the correct data types, nested structures have been extracted and aligned, null/missing values have been handled appropriately (see next sub-section for details), and categorical variables are labeled appropriately.</li>
+                                    <li class="pt-2"><b>Enriching</b>. Once you have a formalized pipeline to clean your data, it's wise to collect more data to provide your model with more clarity and reduce bias in its predicitons.</li>
+                                    <li class="pt-2"><b>Validating</b>. In this step, you will apply your organizations Data Quality standards to ensure categories are labeled appropriately (e.g., all records representing "Walmart" all have the same spelling), numeric values are within an acceptable range (e.g., no customers over the age of 100), and all numeric features are of a numeric data type (e.g., an integer column could be shown as a string by your compiler).</li>
+                                    <li class="pt-2"><b>Publishing</b>. In this step, you export your cleaned and validated data to your organization's data repository (e.g, an S3 Bucket, Data Warehouse, Data Lake) to be consumed by other models or reporting dashboards.</li>
+                                </ol>
+                            </li>
+                            <li class="pt-2"><b>NOTE:</b> Data Wrangling typically takes 70-80% of a Machine Learning project, thus it's arguably the most boring. However, if this step is skipped, you won't have a job much longer.</li>
+                        </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Handling Missing Values</h2> <br>
                         <iframe width="650" height="400" src="https://www.youtube.com/embed/FPvMBl8LvGA?si=kyeh9Yd4ElSRw-4-&amp;start=142" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>

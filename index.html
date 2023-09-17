@@ -169,7 +169,6 @@
                         <div class="col-1"></div>
                         <div class="col-1"></div>
                         <div class="col-1"></div>
-                        <div class="col-1"></div>
                         <!-- removed d-flex  from line below to fix indicator alignment issue -->
                         <div class="col-1 justify-content-center align-items-center carouselTabContainer"> 
                             <button
@@ -191,28 +190,31 @@
                                     px-lg-1 px-xl-2 px-xxl-3 border-0 carouselTab">
                             </button>
                         </div>
-                        <!-- added this to add a third indicator since we've added a third image -->
+                        <!-- added a third indicator since we have three images in the carousel now.  -->
                         <div class="col-1 justify-content-center align-items-center carouselTabContainer">
                             <button
-                            type="button" 
-                            data-bs-target="#newsCarousel"
-                            data-bs-slide-to="2"
-                            class="mb-1 mb-sm-2 mb-md-3 mb-lg-2 mb-xl-3 mb-xxl-3
-                                px-lg-1 px-xl-2 px-xxl-3 border-0 carouselTab">
+                                type="button" 
+                                data-bs-target="#newsCarousel"
+                                data-bs-slide-to="1"
+                                class="mb-1 mb-sm-2 mb-md-3 mb-lg-2 mb-xl-3 mb-xxl-3
+                                    px-lg-1 px-xl-2 px-xxl-3 border-0 carouselTab">
                             </button>
-                        </div> 
+                        </div>
+                        <!-- I moved this column from before the indicators to after, in order to help align everythign better -->
                         <div class="col-1"></div> 
                         <div class="col-1"></div> 
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
                     </div>
                     <!-- Carousel images. -->
                     <div class="carousel-inner">
                         <!-- First image. -->
                         <div class="carousel-item active">
-                            <img src="imgs/mc_causal_slide.png" class="d-block w-100" alt="...">
+                            <img src="imgs/mc_causal_slide.png" alt="">
                         </div>
                         <!-- second image -->
-                        <div class="carousel-item active">
-                            <img src="imgs/mc_quantum_slide.png" class="d-block w-100" alt="...">
+                        <div class="carousel-item">
+                            <img src="imgs/mc_quantum_slide.png" alt="">
                         </div>
                         <!-- third image -->
                         <div class="carousel-item">

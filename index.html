@@ -191,8 +191,16 @@
                                     px-lg-1 px-xl-2 px-xxl-3 border-0 carouselTab">
                             </button>
                         </div>
-                        
-                        <div class="col-1"></div> 
+                        <!-- added this to add a third indicator since we've added a third image -->
+                        <div class="col-1 justify-content-center align-items-center carouselTabContainer">
+                            <button
+                            type="button" 
+                            data-bs-target="#newsCarousel"
+                            data-bs-slide-to="2"
+                            class="mb-1 mb-sm-2 mb-md-3 mb-lg-2 mb-xl-3 mb-xxl-3
+                                px-lg-1 px-xl-2 px-xxl-3 border-0 carouselTab">
+                            </button>
+                        </div> 
                         <div class="col-1"></div> 
                         <div class="col-1"></div> 
                     </div>
@@ -200,10 +208,13 @@
                     <div class="carousel-inner">
                         <!-- First image. -->
                         <div class="carousel-item active">
-                            <a href="fall-landing-page.html">
-                                <img src="imgs\fall_2023_slide.png" class="d-block w-100" alt="...">
-                            </a>
+                            <img src="imgs/mc_causal_slide.png" class="d-block w-100" alt="...">
                         </div>
+                        <!-- second image -->
+                        <div class="carousel-item active">
+                            <img src="imgs/mc_quantum_slide.png" class="d-block w-100" alt="...">
+                        </div>
+                        <!-- third image -->
                         <div class="carousel-item">
                             <a href="leadership.html">
                                 <img src="imgs/president-ad-slide.jpg" class="d-block w-100" alt="...">

@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
-    <title>ML Tutorials: Exploratory Data Analysis (EDA)</title>
+    <title>ML Tutorials: Feature Engineering</title>
 </head>
 <body>
     <!-- Header for title of webpage. -->
@@ -71,7 +71,7 @@
                     <!-- Title. -->
                     <div class="row">
                         <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
-                            ML Tutorials: Exploratory Data Analysis (EDA)
+                            ML Tutorials: Feature Engineering
                         </h2>
                     </div>
                     <!-- Title/image. -->
@@ -79,7 +79,7 @@
                         <div class="d-flex justify-content-center">
                             <img
                                 class="img-fluid"
-                                src="../../imgs/eda.png"
+                                src="../../imgs/feature-engineering.jpg"
                                 alt="[Enter image here]"
                                 width=100%
                             >  <!-- %UPDATE% -->
@@ -89,42 +89,126 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Assuming the data you collected and prepared for your model is unbiased, normally distributed (when applicable), and free from errors is a dangerous assumption. <b><i>Exploratory Data Analysis</i></b>, arguably the most boring yet most important aspect of the ML Lifecycle, ensures that the data you're feeding your model meets your expectations and is of high quality. This tutorial will cover the following learning objectives:
+                                Data is the fuel that keeps your models relevant and accurate. However, not all of it is helpful or useful. This is where Feature Engineering comes in. <b><i>Feature Engineering</i></b> ensures that the features you include in your model make an impact and are statistically significant. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>What is EDA?</li>
-                                <li>Why is EDA Necessary?</li>
-                                <li>What Methods are Commonly Used in EDA?</li>
+                                <li>What are Features?</li>
+                                <li>What is Feature Engineering?</li>
+                                <li>Feature Engineering Best Practices</li>
 
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is EDA?</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/QiqZliDXCCg?si=hc7cZPZj196Kh8Yh&end=142" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What are Features?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/hsJidtpHHyo?si=vcA_JU5KcjeQQ4_1&end=147" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"><b><i>Exploratory Data Analysis (EDA)</i></b> is a method used by Data Scientists to analyze datasets and identify its main characteristics. It's helps determine the best ways to manipulate datasets to best fit the algorithm you're basing your model on.</li>
-                            <li class="pt-2">When collecting large amounts of data from disparate sources (e.g., Databases, websites, APIs), there will likely be anomalies/outliers present, fields that are displayed as strings but should be numeric, and/or calculated fields that were calculated incorrectly. EDA is used to address all these issues.</li>
-                            <li class="pt-2"><b><i>Univariate EDA</i></b> is used to analyze and interpret data contained by a single variable/feature. This is helpful when you have a certain field in your dataset that has high variability or that you suspect to have outliers. Univariate EDA is commonly used on continuous, numeric fields.</li>
-                            <li class="pt-2"><b><i>Multivariate EDA</i></b> is used to identify relationships between variables and identify basic trends in the data. This is commonly used to compare business logic with your dataset to verify the data is representative of the issue you're trying to solve or the opportunity you're trying to take advantage of.</li>
+                            <li class="pt-1">In a Machine Learning context, <b><i>Features</i></b> are the variables (x) that you're using to predict the target variable (y).
+                            <ul>
+                                <li><b>Example:</b> Suppose you're trying to predict the price of a home. You collect data from thousands of listings with the following features: <ul>
+                                    <li>price</li>
+                                    <li>home_size</li>
+                                    <li>num_baths</li>
+                                    <li>num_beds</li>
+                                    <li>yard_size</li>
+                                    <li>location</li>
+                                </ul>
+                                <li><b><i>Price</i></b> would be your target variable (since that's what you're trying to predict), and <b><i>Home Size, # of Bathrooms, # of Bedrooms, Yard Size, and Location</i></b> are your <u><i>features.</i></u></li></li>
+                            </ul></li>
+                            <li class="pt-2"><b>NOTE:</b> Not all variables present in a dataset can, or should, be used as features. For instance, if you have an ID field, such as an employee or student ID, this is irrelevant for use in a model since it's a randomly assigned value.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Methods are Commonly Used in EDA?</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/QiqZliDXCCg?si=uVY6cb7nPGn7EvGd&amp;start=142" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is Feature Engineering?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/yQ5wTC4E5us?si=-iwtYqId9Cui9uJ0&end=434" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">Common methods used in Univariate EDA include the following:
+                            <li class="pt-1"><b><i>Feature Engineering</i></b> is the process of cleaning and filtering data AFTER performing EDA to enhance your model's performance. Common tasks in this process include excluding outliers, excluding features that are not statistically significant, or imputing missing values.
+                            </li>
+                            <li class="pt-2">It's easy to get confused on the difference between Feature Engineering and Data Wrangling. However, just remember that the purpose of <b><i>Data Wrangling</i></b> is to clean and prepare your data for EDA, whereas <b><i>Feature Engineering</i></b> is applying the insights you gained from the EDA process to your dataset to prepare and enhance your dataset for Model Training.
+                            </li>
+                            <li class="pt-2"><b><i>Obvious Feature Engineering</i></b> involves fixing problems in your training data that can be seen without doing EDA. This can include excluding ID columns, creating calculated fields based on existing features to enhance your model's performance, or adding features from other datasets that are relevant to predicting your target variable.</li>
+                            <li class="pt-2"><b><i>Non-Obvious Feature Engineering</i></b> involves fixing problems that you identify in the EDA process. This can include imputing missing values, excluding outliers, or excluding features that aren't correlated with the target variable.</li>
+                            <li class="pt-2"><b><i>Domain Knowledge</i></b> is the process of understanding how a specific entity or process works. This typically refers to understanding how your business collects data, creates and uses KPIs to track performance, and general industry knowledge surrounding correlations between variables and knowing what certain acronyms or abbreviations mean. As you get more experience as an ML Engineer, you'll naturally gain domain knowledge either within the business you work for or the industry you're in.</li>
+                            <li class="pt-2"><b>NOTE:</b> As mentioned in the video above, Feature Engineering can include encoding categorical values for use in Model Training. However, this step is typically associated with <b><i>Data Preprocessing</i></b>, the next step in the MLOps Lifecycle.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Feature Engineering Best Practices</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/7tW29jBceRw?si=odCX0I6VfFupsZfZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Feature Selection</i></b> is the process of selecting a subset of features present in your dataset AFTER performing EDA.
+                            </li>
+                            <li class="pt-2">Feature Selection is a critical step in the Feature Engineering process and allows you to:
                                 <ul>
-                                    <li class="pt-2"><b>Histograms (continuous variables):</b> These are used to show the distribution of values contained in the variable. These contain "bins" which represent a defined range of values. You can change the number of bins to best represent your data. These are used to visualize how normally distributed the values in the variable are.</li>
-                                    <li class="pt-2"><b>Bar Charts (discrete variables):</b> These are used to show the frequency of values across categories shown in the variable. For example, for a variable called "color", you could create a bar chart showing how frequently each value in the variable occurs in the dataset. These are used to visually compare the frequency of categories compared to what occurs in the real world.</li>
+                                    <li class="pt-1"><b>Reduce the dimensionality of your dataset</b>. If your dataset has more than 100 features, there are likely several features you can trim to make your dataset more readable.</li>
+                                    <li class="pt-1"><b>Improve Training Efficiency</b>. When perfoming Hyperparameter Tuning (See Next Tutorial), it helps to have a smaller and more impactful subset of features to more efficiently tune your model's performance.</li>
+                                    <li class="pt-1"><b>Remove Noise and Redundancies.</b> If you're using a Gradient-Boosted Model, as discussed in our "Deep Learning" Tutorial Series (Coming Soon), irrelevant features will distract the model from performing calculations on impactful features that will ultimately lead to better results. <b><i>Noise</i></b> is what's created by these irrelevant features and distracts the model from optimizing itself on impactful features.</li>
                                 </ul>
                             </li>
-                            <li class="pt-2">Common methods used in Multivariate EDA include the following:
+                            <li class="pt-2"><b><i>Intrinsic Methods</i></b> use ensembles (random pairings of features) to find and optimize relationships between variables, which ultimately lead to a predictive outcome. Intrinsic Methods are used with the following models: <ul>
+                                <li class="pt-1"><b>Tree-Based Models.</b> A common example of this is a <b><i>Random Forest</i></b> which is used with Decision Trees to randomly pair small subsets of features to find the optimal route to the prediction while optimizing your evaluation metric(s).</li>
+                                <li class="pt-1"><b>Regularization Models.</b> Models such as Linear Regression, Support Vector Machine (SVMs), and Neural Networks use various regularization methods to assign weights to features based on their impact on the predictive outcome. The higher the weight, the higher the impact. These are very good at reducing noise.</li>
+                            </ul></li>
+                            <li class="pt-2">Intrinsic Methods Pros and Cons:
                                 <ul>
-                                    <li class="pt-2"><b>Descriptive Statistics (numeric variables):</b> Some tools allow you to take all the numeric variables present in your dataset and view <b><i>Descriptive Statistics</i></b> such as Min, Max, Mean, Percentiles, and Counts. These are used to compare the values in the table to what you'd expect to see in the real world.</li>
-                                    <li class="pt-2"><b>Correlation Matrices (numeric variables):</b> These are tables that show the relationship between variables. The <b><i>Pearson Correlation Ratio</i></b>, the method most commonly used by Data Scientists, is a measure of how strongly correlated two variables are. This ratio ranges from -1 to 1, where -1 means a perfect <i>negative</i> correlation (when variable A goes up 1 unit, variable B goes down 1 unit) and 1 means a perfect <i>positive</i> correlation (when variable A goes up 1 unit, variable B goes down 1 unit).</li>
+                                    <li class="pt-1"><b>Pros:</b>
+                                    <ul>
+                                        <li class="pt-1">Efficient, due to the fact that they are embedded in the algorithms.</li>
+                                        <li class="pt-1">No external tools or methods need to be used, leading to lower overhead costs.</li>
+                                        <li class="pt-1">Optimizes feature importance, leading to optimal model performance.</li>
+                                    </ul></li>
+                                </ul>
+                                <ul>
+                                    <li class="pt-1"><b>Cons:</b>
+                                    <ul>
+                                        <li class="pt-1">Limited number of algorithms have these methods embedded. However, the algorithms that do utilize these methods are commonly used.</li>
+                                    </ul></li>
                                 </ul>
                             </li>
+                            <li class="pt-2"><b><i>Filter Methods</i></b> take advantage of descriptive statistics to visualize the relationships between the target variable and all the features. This approach can be universally applied, whereas Intrinsic Methods are naturally embedded in a limited number of algorithms. These methods can be applied in the following ways:
+                            <ul>
+                                <li class="pt-1"><b>Univariate Statistical Analysis</b>. This method is primarily used in the EDA process. With this method, you utilize inferential statistics to analyze the relationship between the target variable and another feature. Then, you set a benchmark score (such as a Correlation Score of at least 0.45) to filter out features until you have only the most relevant ones remaining.</li>
+                                <li class="pt-1"><b>Feature-Importance Based</b>. This method is used AFTER you fitted your training data to your model with all features present. You then visualize the impact each feature had on predicitng the outcome. You use a benchmark score (such as the one provided by SciKit-Learn) to filter out features that aren't impactful beyond a certain measure. This is commonly used when comparing p-values with Linear and Logistic Regression.</li>
+                            </ul></li>
+                            <li class="pt-2">Filter Methods Pros and Cons:
+                                <ul>
+                                    <li class="pt-1"><b>Pros:</b>
+                                    <ul>
+                                        <li class="pt-1">Simple and fast to compute.</li>
+                                        <li class="pt-1">Can be used regardless of algorithm being used.</li>
+                                    </ul>
+                                </li>
+                                </ul>
+                                <ul>
+                                    <li class="pt-1"><b>Cons:</b>
+                                    <ul>
+                                        <li class="pt-1">Selection bias present. Commonly associated with selecting redundant or duplicate features.</li>
+                                        <li class="pt-1">Ignores relationships between features. Focuses only on relationships between features and the target variable.</li>
+                                    </ul></li>
+                                </ul>
+                            </li>
+                            <li class="pt-2"><b><i>Wrapper Methods</i></b> take an iterative approach to feature selection. Rather than being embedded in an algorithm natively, these take random subsets of features, fit those subsets to the model, and output a result. The process ends when the model retrieves the best score possible (score varies based on algorithm being used). Wrapper Methods can be applied in the following ways:
+                            <ul>
+                                <li class="pt-1"><b>Sequential Feature Selection (SFS)</b>. Tools such as SciKit-Learn have built-in capabilities that alow this process to occur in your ML pipeline. These use a <b><i>greedy search algorithm</i></b> to quickly take every possible combination of features, run it through the algorithm, and output an evaluation score. Once the iteration ends, it select the subset of features that produced the best result and uses those for the evaluation phase. There are two flavors of SFS:
+                                <ul>
+                                    <li class="pt-1"><b><i>Forward SFS</i></b> starts with the feature that has the highest impact on the target variable, adds another feature, and then cross-validates the score until it retrieves a higher score. It loops through this process until it retrieves the best possible combination of features.</li>
+                                    <li class="pt-1"><b><i>Backward SFS</i></b> starts with ALL features present in the dataset and iteratively removes features one by one, starting with the feature with the least impact on the target variable, until it retrieves the best possible combination of features.</li>
+                                </ul></li>
+                            </ul></li>
+                            <li class="pt-2">Wrapper Methods Pros and Cons:
+                                <ul>
+                                    <li class="pt-1"><b>Pros:</b>
+                                    <ul>
+                                        <li class="pt-1">Extremely efficient for finding the optimal combination of features.</li>
+                                        <li class="pt-1">Considers all features available, rather than a subset.</li>
+                                    </ul></li>
+                                    <li class="pt-1"><b>Cons:</b>
+                                    <ul>
+                                        <li class="pt-1">Prone to overfitting features.</li>
+                                        <li class="pt-1">Computationally intensive, especially when a large number of features is present.</li>
+                                    </ul></li>
+                                </ul>
+                            </li>
+                            <li class="pt-2"><b>NOTE:</b> Domain Knowledge is critical in the Feature Selection process. Since you'll be working with samples of populations, you'll need to use inferential statistics to measure the actual impact a feature will have on the target variable. Domain Knowledge enables you to use a combination of intuition and data-driven insights to select the best features for your model.</li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

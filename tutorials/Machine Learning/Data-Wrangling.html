@@ -94,7 +94,7 @@
                             <ul>
                                 <li>What is Data Data Wrangling?</li>
                                 <li>How to Handle Missing Values</li>
-                                <li>Common String Operations</li>
+                                <li>Data Wrangling with Pandas</li>
 
                             </ul>
                         </div>
@@ -137,56 +137,13 @@
                             <li class="pt-2"><b>NOTE:</b> A general rule of thumb is to omit features when 70% or more of the values are missing.</li>
                             <li class="pt-2"><b>NOTE:</b> The Supervised Imputation method should be used sparingly, as it adds compelxity to your project and forces you to change your model for only a small portion of your data.</li>
                         </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from APIs</h2> <br>
-                        <h6><b>What is an API?</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/ByGJQzlzxQg?si=ijOaSTAPELp2fUrf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h6><b>What are HTTP Request Methods?</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/PO3kQeNMbaY?si=231wt2TfE5pEWnzJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Data Wrangling with Pandas</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/IShjRUzJtbw?si=QVQS3wgMJbk23qa9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"> An <b><i>Application Programming Interface (API)</i></b> is simply a tool used to connect applications. An <b><i>Application</i></b> can be thought of as a collection fo code run on a server.</li>
-                            <li class="pt-2">When sending data between applications, the data collected must be the same "shape", or have the same definition as stated in the backend. This shape of data is known as a <b><i>schema</i></b> and is used to explicitly define the required fields for each input record.</li>
-                            <li class="pt-2">When using an external API (an API developed by an organization other than your own), you'll liekly need an <b><i>API Key</i></b>. This acts as a login token to grant you access to the API's backend. These are used to prevent hackers from performing Brute Force attacks on the API's servers.</li>
-                            <li class="pt-2"><b><i>API Documentation</i></b> is used to keep track of all the different types of records stored in the API backend, what they are used for, what permissions are required, and how to obtain an API Key. Before using any API, it's critical to read through the documentation to get a better understanding of how to get the correct information.</li>
-                            <li class="pt-2">When a client communicates with a server, it needs to specify which action the server needs to take. This is done via <b><i>HTTP Requests</i></b>. There are several HTTP Request Methods:
-                            <ul>
-                                <li><b>GET:</b> This is used to retrieve data from a source. This is the most common method used by ML Engineers during the Data Collection stage of the ML Lifecycle.</li>
-                                <li><b>PUT:</b> This is used to update data within a source. This is used by Software Engineers to continuously update URL paths on a website or data objects on a backend server.</li>
-                                <li><b>POST:</b> This is used to insert new data to a source. This is used by ML Engineers to input users entries into the training dataset. This is used at the end of the ML Lifecycle when you have deployed your model into Production.</li>
-                                <li><b>DELETE:</b> This is used to remove data from a source. This is used by Software Engineers to continuously keep the data presented on websites or backend servers relevant and comply with data security standards.</li>
-                            </ul></li>
-                            <li class="pt-2"><b><i>JavaScript Object Notation (JSON)</i></b> is the object format used by APIs to transport data between applications. This data is represented in a key-value pair format, similar to a dictionary in Python.</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from IOT Devices</h2> <br>
-                        <h6><b>What is the Internet of Things (IOT)?</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/6mBO2vqLv38?si=glX2NQX9__fIfNdS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h6><b>What is Data Streaming?</b></h6>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/SLHCfIUTYZI?si=-_vXS8IS3A9wlm2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h4 class="pt-4">Summary</h4>
-                        <ul>
-                            <li class="pt-1"> The <b><i>Internet of Things (IOT)</i></b> is the connection and collaboration of internet-based devices to create "Smart" appliances. An <b><i>IOT device</i></b> is simply any piece of technology that can access the internet, such as televisions, bluetooth speakers, smart thermometers, and security cameras.</li>
-                            <li class="pt-2">IOT devices can be separated into two categories:
-                                <ul>
-                                    <li><b>General Devices:</b> These are generic pieces of technology that are typically connected via Wi-Fi or bluetooth. Examples: Television, Smart Speaker, Smart Lightbulbs.</li>
-                                    <li><b>Sensing Devices:</b> These are hardwired devices that are used to collect data in real-time for use in either predicitive analytics or descriptive analytics. These use data streams to send data in real-time to mobile applications for user consumption.</li>
-                                </ul>
-                            </li>
-                            <li class="pt-2"><b><i>Data Streaming</i></b> is the continuous flow of data as it's generated from a source so that it can be used for real-time processing and analytics.</li>
-                            <li class="pt-2"><b><i>Batch Scheduling</i></b> refers to the collection and processing of data in batches at a regularly scheduled interval. A good example of this is retail transactions. Rather than getting data on how much money a retail store made every hour, it can be collected and aggregated on a daily basis.</li>
-                            <li class="pt-2">In the context of machine learning, Data Streaming is useful for creating real-time predicitons. For example, suppose you are tasked with creating a model that predicts, in real-time whether a financial transaction is fraudulent or not. Rather than querying a data warehouse every minute or hour to analyze these records, it would be helpful to get the results as close to real-time as possible.</li>
-                            <li class="pt-2">Data Streams capture events. In the context of Data Streaming, <b><i>Events</i></b> can be defined as an action that occurs at a specific point in time. This could be when a user clicks a button on a website, a sensor is triggered based on an algorithm, or a sale takes place online.</li>
-                            <li class="pt-2"><b><i>Producers</i></b> are the data sources for data streams. This is where IOT comes into play. IOT devices can generate large amounts of data depending on their use cases. These producers are setup to write data to a log file, to maintain data integrity, then each record is placed in a queue, similar to a line in a supermarket.</li>
-                            <li class="pt-2"><b><i>Consumers</i></b> are the end point that the consumers are sending data to. This could be a staging area, such as a cloud storage bucket or data lake, or a NoSQL database designed to handle incoming data streams, such as Apache Druid.</li>
-                            <li class="pt-2"><b>NOTE:</b> To help keep Data Streams efficient, message queues are typically parallel processed by aggregating similar events into separate queues. This helps keep things organized and running smoothly.</li>
-                        </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Collecting Data from Data Lakes</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/pQuHDlF8N04?si=RkB33CN_aznqNKOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
-                        <h4 class="pt-4">Summary</h4>
-                        <ul>
-                            <li class="pt-1"> A <b><i>Data Lake</i></b> is a centralized repository for all raw, unstructured data within an organization. These are commonly used to store images, binary files, log files, and other types of data that can't be stored in a traditional relational database architecture.</li>
-                            <li class="pt-2">Nowadays, the most common form of Data Lakes are Cloud Storage Buckets. These allow you to store very large amounts of data (think petabyte-scale) in a single location, or multiple locations to sort items into groups, without having to fit a strict schema.
-                            </li>
-                            <li class="pt-2">Rather than using SQL or a similar query language to retrieve files from a data lake, cloud providers provide APIs and Python libraries to allow easy access to objects stored within a specific bucket.</li>
+                            <li class="pt-1"> <b>Pandas</b> is a popular Python library used by Data Scientists and ML Engineers to perform Data Wrangling and EDA.</li>
+                            <li class="pt-2">Pandas is built on the NumPy library and thus supports the same data types.</li>
+                            <li class="pt-2">Want to Get Started with Pandas? Check out our <b><a href="../Pandas-Tutorials.html">Pandas Tutorials!</b></li>
                         </ul><br>
                         <!-- Previous/Next Topic buttons. -->
                     <div class="row mt-4 mt-md-5 mb-2 px-3">

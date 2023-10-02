@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">
+    <title>Stats Tutorials: Types of Variables</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                STATISTICS TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            Stats Tutorials: Types of Variables
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/variable-types.png"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                At the heart of Linear Algebra and Statistics are <b><i>variables</i></b>. These typically represent a characteristic of an observation. An <b><i>observation</i></b> is a term in statistics that refers to a record or row in a table (e.g., a customer in a database, a sale that took place). There are various types of variables that need to be explored. In this tutorial, we'll cover the following learning objectives: <br>
+                                <ul>
+                                    <li>Discrete vs. Continuous Variables</li>
+                                    <li>Ordinal vs. Nominal Variables</li>
+                                    <li>Interval vs. Ratio Variables</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Discrete vs. Continuous Variables</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/uNqu2zxTXYA?si=0FDOkIhwaJtNmtbf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Discrete Variables/Discrete Data</i></b> are countable and can only accept numbers in a finite range. This data is typically represented as integers. When representing text, or strings, there is a finite number of categories (e.g, country, color, product category).</li>
+                            <li class="pt-2">The primary characteristic of Discrete Variables is the notion that there can't be any values between the fixed intervals (e.g., if you have a field showing the number of items in a customer's shopping cart, there can't be 5.75 items).</li>
+                            <li class="pt-2"><b><i>Continuous Variables/Continuous Data</i></b> are infinite and any values can exist between the intervals. For example, if you are measuring how much a person weighs, their weight can be anywhere on a scale from 0 to "x" number of pounds.</li>
+                            <li class="pt-2">The <b><i>Scale/Grain</i></b> of your data can convert a Variable between Discrete and Continuous. For example, when measuring a person's weight, you could round up to the nearest whole pound, or get an exact measurement. It all depends on how you want the data to be measured.</li>
+                            <li class="pt-2"><b>NOTE:</b> When identifying variables in a statistical experiment, it's critical to understand the scale associated with each variable to correctly categorize the variable as either Discrete or Continuous. This has a strong impact on the rest of your experiment, as will be shown in later tutorials.</li>
+                        </ul>
+                        <div>
+                            <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Ordinal vs. Nominal Variables</h2> <br>
+                            <iframe width="650" height="400" src="https://www.youtube.com/embed/5Yh-9xdJzAs?si=Cig1-8uPEKwCPjT9&end=329" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                            <h4 class="pt-4">Summary</h4>
+                            <ul>
+                                <li class="pt-1"><b><i>Categorical Data</i></b> is another name for Discrete Data. This data can be represented either as integers or categories (e.g., colors, product categories).</li>
+                                <li class="pt-2"><b><i>Numerical Data</i></b> is any data that can directly be measured. This data can be either Discrete OR Continuous, depending on the scale (e.g., Age, Height, Weight).</li>
+                                <li class="pt-2"><b><i>Nominal Data</i></b> is a subset of Categorical Data that represents categories with no inherent rank or order. For example the color of a product doesn't have a natural order. This type of data is commonly used to compare values across groups, such as number of occurrences, or how different groups interact with numeric variables.</li>
+                                <li class="pt-2"><b><i>Ordinal Data</i></b> is a subset of Categorical Data that represents categories with an inherent rank or order. For example, a product review with 5 stars will have a greater value than one with only 1 star. These make it easier to convert the text data into numerical data based on a given scale to then measure the data.</li>
+                                <li class="pt-2"><b>NOTE:</b> As mentioned both in the video and the previous section, it's important to understand what level of measurement each of your variables represents as it impacts what statistical tests can be conducted on your dataset.</li>
+                            </ul>
+                            <div>
+                                <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Interval vs. Ratio Variables</h2> <br>
+                                <iframe width="650" height="400" src="https://www.youtube.com/embed/5Yh-9xdJzAs?si=Cig1-8uPEKwCPjT9&start=329" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                                <h4 class="pt-4">Summary</h4>
+                                <ul>
+                                    <li class="pt-1"><b><i>Interval Data</i></b> is a subset of Numerical Data that represents quantitative data within a specific range and are at fixed lengths. For example, if you're measuring a person's weight and you round to the nearest pound, the variable would be classified as Interval.</li>
+                                    <li class="pt-2">The primary characteristic of Interval Data is that there is no fixed "zero point". For example, if you're measuring tempurature and get a value of 0, that doesn't mean there isn't a reading, it could easily mean that the temperature was 0 degrees.</li>
+                                    <li class="pt-2"><b><i>Ratio Data</i></b> is a subset of Numerical Data that represents quantitative data with a fixed zero point. For example, the age of a person has to be 0 or above. This type of data is the most granular and the best to work with as it's easy to compare against similar variables in your dataset.</li>
+                                </ul><br>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <div class="col-0 col-sm-8"></div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/Supervised-Unsupervised.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

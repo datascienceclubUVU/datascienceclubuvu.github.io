@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (IBM Plex Sans Condensed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap (5.2.3) -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">  <!-- %UPDATE% -->
+    <script defer src="../../js/bootstrap.bundle.min.js"></script>  <!-- %UPDATE% -->
+
+    <!-- Favicon. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/website-base.css">  <!-- %UPDATE% -->
+    <title>Stats Tutorials: Descriptive Statistics</title>
+</head>
+<body>
+    <!-- Header for title of webpage. -->
+    <header class="container-fluid">
+        <div class="row py-4 bg-primary">
+            <h1 class="col text-center text-white">
+                STATISTICS TUTORIALS
+            </h1>
+        </div>
+    </header>
+    <!--- Navigation banner. -->
+    <nav class="navbar navbar-expand-lg sticky-top py-0 navbar-dark bg-secondary">
+        <!-- Container for entire navbar. -->
+        <div class="container-fluid justify-content-end px-1">
+            <!-- Hamburger menu that appears when screen gets smaller. -->
+            <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Container for navbar items. -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../index.html">Home</a>  <!-- %UPDATE% -->
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center" href="../../tutorials.html">Tutorials</a>  <!-- %UPDATE% -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Outer wrapper for main content. -->
+    <div class="container-fluid" id="contentWrapper">
+        <div class="row">
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+            <!-- Container for main content. -->
+            <div class="col-12 col-md-10 col-lg-8 col-xxl-6 my-md-4 py-3 py-sm-4 px-0 px-sm-3 bg-white">
+                <section class="container-fluid">
+                    <!-- Title. -->
+                    <div class="row">
+                        <h2 class="col mb-3 mx-2 mx-sm-1 text-start border-start border-3 border-secondary text-primary">
+                            Stats Tutorials: Descriptive Statistics
+                        </h2>
+                    </div>
+                    <!-- Title/image. -->
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                class="img-fluid"
+                                src="../../imgs/desc-stats.jpg"
+                                alt="[Enter image here]"
+                                width=100%
+                            >  <!-- %UPDATE% -->
+                        </div>
+                    </div>
+                    <!-- Description. -->
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <p class="pt-2">
+                                Once you have identified the structure and nature of all the variables in your dataset, you'll want to understand how the values are distributed. In Machine Learning, this is covered in the Exploratory Data Analysis (EDA) Phase (<a href="../Machine Learning/Exploratory-Data-Analysis.html">EDA Tutorial</a>). <b><i>Descriptive Statistics</i></b> provide a high-level overview of how values are distributed and represented across each variable in your dataset. This tutorial will cover the following learning objectives:
+                            </p>
+                            <ul>
+                                <li>What Are Descriptive Statistics?</li>
+                                <li>Measure of Central Tendency</li>
+                                <li>Measure of Variability</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Are Descriptive Statistics?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/PJfvYQsz5do?si=c2gsMXEu_E1wYqrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"><b><i>Descriptive Statistics</i></b> are meant for summarizing the data, as opposed to drawing inferences or conclusions from the data.</li>
+                            <li class="pt-2">Various methods can be used to visualize Descriptive Statistics such as Tables, Histograms, and Bar Charts.</li>
+                            <li class="pt-2">There are three types of Descriptive Statistics:
+                                <ol>
+                                    <li class="pt-2"><b>Frequency Distribution</b>. This is used to describe how frequently values in a particular variable occur. This can be used for both Qualitative and Quantitative data. Histograms (for Continuous variables) and Bar Charts (for Discrete data) are commonly used to visualize this form of Descriptive Statistics.</li>
+                                    <li class="pt-2"><b>Measure of Central Tendency</b>. This is used to identify the middle value in an ordered set of values for a particular variable. For Qualitative data, this is commonly shown as the <b><i>mode</i></b>, whereas for Quantitative data, this is commonly shown either as the <b><i>mean</i></b> or <b><i>median</i></b>.</li>
+                                    <li class="pt-2"><b>Measure of Variability</b>. This is used to describe how spread out the values in a particular variable are. The <b><i>Range</i></b> and <b><i>Standard Deviation</i></b> are commonly used to communicate how spread out values are.</li>
+                                </ol>
+                            </li>
+                            <li class="pt-2"><b>NOTE:</b> Descriptive Statistics is arguably the most important concept to understand in Machine Learning, as it can make or break your model. However, this skill is often overlooked so make sure you have a deep understand of which Statistics to use for which variables.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Measure of Central Tendency</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/EN5SQY92ebc?si=8MBzd25c84_yUFMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">The <b><i>Measure of Central Tendency</i></b> is a method used to evaluate the central value in a given variable.</li>
+                            <li class="pt-2">Measure of Central Tendency is critical to understanding how values in a variable are distributed and for detecting potential outliers. It's also useful for comparing variables between datasets (e.g., samples of a population).</li>
+                            <li class="pt-2">There are three common Measures of Central Tendency:
+                            <ul>
+                                <li class="pt-2"><b>Mean:</b> Also known as the <b><i>Average</i></b>, this is used to represent the dataset across all values. This is calculated by dividing the sum of all values by the count of all values. This is used specifically for numerical data and is the most commonly used measure of central tendency.</li>
+                                <li class="pt-2"><b>Median:</b> This is the middle most value in the variable. This is calculated by arranging all values in the variable from least to greatest and then finding the middle value. This is particularly useful because outliers in the variable won't effect the output, whereas it would do so when using the <b><i>Mean</i></b>. This can only be used for numerical data.</li>
+                                <li class="pt-2"><b>Mode:</b> This is used to represent the most frequently occurring value in a variable. This is used for Discrete data, meaning it can be string categorical data or discrete numerical data (e.g., Age, Weight, Height).</li>
+                            </ul></li>
+                            <li class="pt-2"><b>NOTE:</b> A general rule of thumb is to use the Median whenever possible to avoid outliers effecting your decision making process or initial analysis of your data.</li>
+                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Measure of Variability</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/R4yfNi_8Kqw?si=jyC0P3X9kk8bU-t4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1"> <i><b>Range</b></i> is a statistical measurement used to evaluate the difference between the smallest and largest value in a particular variable. The larger the difference, the more spread out the data is.</li>
+                            <li class="pt-2">The <b><i>Interquartile Range (IQR)</i></b> is used to describe the middle 50% of your data. When calculating the Median of a variable, the values are sorted from least to greatest. Once sorted, they are then broken evenly into four segments known as <b><i>quartiles</i></b>. The IQR is used to describe the middle 2 quartiles.</li>
+                            <li class="pt-2">To calculate the IQR, your first find the Median, then find the Median of the two halves on either side of the median. This then breaks the values into four evenly divided quartiles. The IQR is the difference between the third quartile and the second quartile.</li>
+                            <li class="pt-2"><b><i>Variance</i></b> is a statistical measurement used to describe how spread out the data in the entire dataset is. The formula described in the variable works on a population, though would be biased on a sample. Since statistical samples are random in nature, the variance would not be consistent, thus not accurately representing the population.</li>
+                            <li class="pt-2"><b><i>Standard Deviation</i></b> is used to represent the average distince each data point is from the median. This is the square root of the Variance and is used much more frequently when measuring value distributions.</li>
+                        </ul><br>
+                        <!-- Previous/Next Topic buttons. -->
+                    <div class="row mt-4 mt-md-5 mb-2 px-3">
+                        <div class="col-0 col-sm-8">
+                            <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Statistics/Variable-Types.html">
+                            Previous Topic
+                            </a>
+                        </div>
+                        <a
+                            class="col-12 col-sm-4 btn btn-outline-primary py-2 fs-5"
+                            href="../Machine Learning/Exploratory-Data-Analysis.html">
+                            Next Topic
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-1 col-lg-2 col-xxl-3"></div>
+        </div>
+    </div>
+    <!-- Footer at bottom of page. -->
+    <footer class="container-fluid bg-secondary">
+        <div class="row align-items-center h-100">
+            <h4 class="col m-0 text-center text-white">
+                © 2023 Data Science Club @ UVU
+            </h4>
+        </div>
+    </footer>
+</body>
+</html>

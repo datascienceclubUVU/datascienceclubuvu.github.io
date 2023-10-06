@@ -89,30 +89,26 @@
                     <div class="row mt-2 mb-3">
                         <div class="col">
                             <p class="pt-2">
-                                Once you have identified the structure and nature of all the variables in your dataset, you'll want to understand how the values are distributed. In Machine Learning, this is covered in the Exploratory Data Analysis (EDA) Phase (<a href="../Machine Learning/Exploratory-Data-Analysis.html">EDA Tutorial</a>). <b><i>Descriptive Statistics</i></b> provide a high-level overview of how values are distributed and represented across each variable in your dataset. This tutorial will cover the following learning objectives:
+                                Now that you have a solid grasp of how to describe a dataset using statistics, let's shift gears into learning about distributions. In the traditional sense, linear data tends to have a <b><i>Normal Distribution</i></b>, meaning there is an equal representation among the value on a Continuous scale. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>What Are Descriptive Statistics?</li>
-                                <li>Measure of Central Tendency</li>
+                                <li>What is a Normal Distribution?</li>
+                                <li>What is a Standard Deviation?</li>
                                 <li>Measure of Variability</li>
 
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What Are Descriptive Statistics?</h2> <br>
-                        <iframe width="650" height="400" src="https://www.youtube.com/embed/PJfvYQsz5do?si=c2gsMXEu_E1wYqrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is a Normal Distribution?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/rBjft49MAO8?si=Td4IN4XoeT-BAC3t&end=361" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1"><b><i>Descriptive Statistics</i></b> are meant for summarizing the data, as opposed to drawing inferences or conclusions from the data.</li>
-                            <li class="pt-2">Various methods can be used to visualize Descriptive Statistics such as Tables, Histograms, and Bar Charts.</li>
-                            <li class="pt-2">There are three types of Descriptive Statistics:
-                                <ol>
-                                    <li class="pt-2"><b>Frequency Distribution</b>. This is used to describe how frequently values in a particular variable occur. This can be used for both Qualitative and Quantitative data. Histograms (for Continuous variables) and Bar Charts (for Discrete data) are commonly used to visualize this form of Descriptive Statistics.</li>
-                                    <li class="pt-2"><b>Measure of Central Tendency</b>. This is used to identify the middle value in an ordered set of values for a particular variable. For Qualitative data, this is commonly shown as the <b><i>mode</i></b>, whereas for Quantitative data, this is commonly shown either as the <b><i>mean</i></b> or <b><i>median</i></b>.</li>
-                                    <li class="pt-2"><b>Measure of Variability</b>. This is used to describe how spread out the values in a particular variable are. The <b><i>Range</i></b> and <b><i>Standard Deviation</i></b> are commonly used to communicate how spread out values are.</li>
-                                </ol>
-                            </li>
+                            <li class="pt-1">In a <b><i>Normal Distribution</i></b>, the values in a given variable are spread out evenly. At the center of the distribution curve, AKA <b><i>Bell Curve</i></b>, is the <b><i>Mean</i></b>. This represents the most popular value in the variable.</li>
+                            <li class="pt-2">In Statistics, you will almost always be working with a <b><i>sample</i></b> of the population. This means rather than collecting all the data points for a given subject, you get a portion. For example, if you're wanting to measure the household income for every citizen in a country, it will be impossible to survey every citizen. Rather, you would simply get a randomized <i>sample</i> of the population and use it for your experiment.</li>
+                            <li class="pt-2">Just because the sample isn't normally distributed doesn't mean the population isn't. Continuing with the household income example, if you send a survey out to random groups of people, there could be a bias in the sense of the people who tend to respond to surveys have lower income since they have more time, thus it wouldn't be an accurate representation of the entire population.</li>
+                            <li class="pt-2">The <b><i>Central Limit Theorum</i></b> states that as your sample size gets bigger, the more it resembles the distribution of the population. Following this logic, it means when collecting data for a Machine learning project, you should aim for collecting as much random data as possible to gain a more accurate insight.</li>
+                            <li class="pt-2">The Mean of a random sample will always be the same as the population they're derived from. With large random samples, the sample Mean will be a pretty good estimate of the true population Mean.</li>
                             <li class="pt-2"><b>NOTE:</b> Descriptive Statistics is arguably the most important concept to understand in Machine Learning, as it can make or break your model. However, this skill is often overlooked so make sure you have a deep understand of which Statistics to use for which variables.</li>
                         </ul>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Measure of Central Tendency</h2> <br>

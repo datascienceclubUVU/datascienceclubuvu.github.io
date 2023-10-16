@@ -94,41 +94,32 @@
                                 interviews as it tests how you think about queries. This tutorial will cover the following learning objectives:
                             </p>
                             <ul>
-                                <li>Subqueries in the SELECT Clause</li>
+                                <li>What is a Subquery?</li>
                                 <li>Subqueries in the FROM Clause</li>
+                                <li>What is a Correlated Subquery?</li>
                                 <li>Subqueries in the WHERE Clause</li>
+                                <li>Subqueries in the SELECT Clause</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the SELECT Clause</h2>
-                        <p class="pt-3">Subqueries are traditionally used to create intermediate calculations between raw tables and
-                            output datasets. These calculations can be used as numerators/denominators, or references to make sure you
-                            output the correct answer. Watch the following video to get a better understanding of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=Xz25sCRHxBg">Subqueries in the SELECT Clause</a>
-                        </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is a Subquery?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/tlvxb7UduJw?si=ERSernoGuZF9qZko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <li class="pt-1">A <b><i>Subquery</i></b> is a query nested inside another query. When used in the SELECT Clause, the
-                                subquery MUST return exactly one row with exactly one column.
+                            <li class="pt-1">A <b><i>Subquery</i></b> is a query nested inside another query.
                             </li>
-                            <li class="pt-4">This particular type of subquery is commonly used in conjunction with aggregate functions since they
-                                return only one value. To write a subquery in the SELECT Clause, use the following syntax:
-                                <br><code>SELECT [col1], [col2], (SELECT SUM([col3]) FROM [table_name2]) AS [alias]<br>
-                                    FROM [table_name1];</code>
+                            <li class="pt-2">Subqueries should be used when the results from one query need to be used in another query. Example: <br>
+                                <code>SELECT * <br>FROM products <br>WHERE price > (SELECT AVG(price) FROM products);</code>
                             </li>
+                            <li class="pt-2">Although subqueries can sometimes be used to replace a join, it's recommended to use a join to help mkae the query more readable.</li>
+                            <li class="pt-2"><b>NOTE:</b> It should be mentioned that you need to have a deep understanding of the semantics behind where each subquery is placed to avoid semantic errors in your query engine. We'll discuss these semantics in the next few subsections.</li>
+                            <li class="pt-2"><b>NOTE:</b> In the video, it showed the <b><i>IN</i></b> operator. This allows you to specify items in a list that meet a condition. For instance, a query that answers a questions like "How many customers live in either Utah, Colorado, or Arizona" would look something like: <br><code>SELECT COUNT(*) <br>FROM customers <br>WHERE state IN('Utah', 'Colorado', 'Arizona').</code></li>
+                            <li class="pt-2"><b>NOTE:</b> One major disadvantage of Subqueries is that they can be very difficult to read. Thus, SQL provides another option that we will explore in the next tutorial.</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the FROM Clause</h2>
-                        <p class="pt-3">When comparing aggregates, you may need to find an aggregate of an aggregate. For example, you
-                            may need to find the highest average salary by department. However, you can't find the highest average salary
-                            without nesting an aggregate function inside another aggregate function. This can be done using a subquery in
-                            the FROM Clause. Watch the following video to get a better understanding of this concept:
-                        </p>
-                        <ul>
-                            <a href="https://www.youtube.com/watch?v=SM6ZJCPJZLY">Subqueries in the FROM Clause</a>
-                        </ul>
+                        
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the FROM Clause</h2><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/SM6ZJCPJZLY?si=sghTEFaR0cyvnz51" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1">Subqueries in the FROM Clause are used to create a temporary table based on a query. This enables you
@@ -137,38 +128,63 @@
                                 <br>FROM (SELECT * FROM [table_name] WHERE [list of conditions]);
                                 </code>
                             </li>
-                            <li class="pt-4">As mentioned above, this type of subquery can be used to run aggregates on aggregated columns. To write
+                            <li class="pt-2">As mentioned above, this type of subquery can be used to run aggregates on aggregated columns. To write
                                 this type of subquery, use the following syntax:
-                                <br><code>SELECT MAX([aggregated column])
-                                <br>FROM (SELECT [col1], SUM([col2]) FROM [table_name] GROUP BY [col1]);
+                                <br><code>SELECT MAX(aggregated_column)
+                                <br>FROM (SELECT [col1], SUM([col2]) AS aggregated_column FROM [table_name] GROUP BY [col1]);
                                 </code>
                             </li>
-                            <li class="pt-4">These types of Subqueries are commonly referred to as <b><i>Derived Tables.</i></b></li>
+                            <li class="pt-2">These types of Subqueries are commonly referred to as <b><i>Derived Tables.</i></b></li>
+                            <li class="pt-2"><b>NOTE:</b> As mentioned in the previous subsection, there is an easier and more preferred way of nesting subqueries used in SQLcalled <b><i>Common Table Expressions (CTEs).</i></b> We will explore these in the next tutorial.</li>
                             </ul>
-                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the WHERE Clause</h2>
-                        <p class="pt-3">This is the most common use case of Subqueries. When writing queries, you may need to create filters that include
-                            pre-filtered values. Watch the following video to get a better understanding of this concept:
-                        </p>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">What is a Correlated Subquery?</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/TUxadt94L0M?si=ejXFM-OvUepG5LtE&amp;start=392" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe>
+                        <h4 class="pt-4">Summary</h4>
                         <ul>
-                            <a href="https://www.youtube.com/watch?v=um3GXj_TB5U">Subqueries in the WHERE Clause</a>
-                        </ul>
+                            <li class="pt-1">A <b><i>Correlated Subquery</i></b> is a subquery that depends on an object referenced in the outer query.
+                            </li>
+                            <li class="pt-2">Subqueries should be used when the results from one query need to be used in another query. Example: <br>
+                                <code>SELECT * <br>FROM products <br>WHERE price > (SELECT AVG(price) FROM products);</code>
+                            </li>
+                            <li class="pt-2">Although subqueries can sometimes be used to replace a join, it's recommended to use a join to help mkae the query more readable.</li>
+                            <li class="pt-2"><b>NOTE:</b> It should be mentioned that you need to have a deep understanding of the semantics behind where each subquery is placed to avoid semantic errors in your query engine. We'll discuss these semantics in the next few subsections.</li>
+                            <li class="pt-2"><b>NOTE:</b> In the video, it showed the <b><i>IN</i></b> operator. This allows you to specify items in a list that meet a condition. For instance, a query that answers a questions like "How many customers live in either Utah, Colorado, or Arizona" would look something like: <br><code>SELECT COUNT(*) <br>FROM customers <br>WHERE state IN('Utah', 'Colorado', 'Arizona').</code></li>
+                            <li class="pt-2"><b>NOTE:</b> One major disadvantage of Subqueries is that they can be very difficult to read. Thus, SQL provides another option that we will explore in the next tutorial.</li>
+                            </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the WHERE Clause</h2><br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/GpC0XyiJPEo?si=RiWPM5zGBeyoewzL&amp;start=392" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <h4 class="pt-4">Summary:</h4>
                         <ul>
                             <li class="pt-1">Subqueries used in the WHERE Clause allow you to filter the result set of the
-                                outer query by the values of the subquery. To write a subquery in the WHERE Clause, use the following syntax:
+                                outer query by the values of the subquery. To write a subquery in the WHERE Clause in conjunction with the IN operator, use the following syntax:
                                 <br><code>SELECT [col1], [col2]
                                 <br>FROM [table_name1]
                                 <br>WHERE [col1] IN(SELECT [col] FROM [table_name2]);
                                 </code>
                             </li>
-                            <li class="pt-4">Although rarely used, you can write a subquery in the WHERE Clause where the condition outputs true
+                            <li class="pt-2">Although rarely used, you can write a subquery in the WHERE Clause where the condition outputs true
                                 for a single value. To write this type of subquery, use the following syntax: 
                                 <br><code>SELECT [col1], [col2]
                                 <br>FROM [table_name1]
                                 <br>WHERE [col1] = (SELECT SUM([col] FROM [table_name2]));
                                 </code>
                             </li>
+                            <li class="pt-2"><b>NOTE:</b> When comparing a numeric column to an aggregate used in a subquery in the WHERE clause, the subquery result set must have only a single value. For example:<br>
+                            <code>SELECT * <br>
+                            FROM products <br>
+                            WHERE price > (SELECT AVG(price) FROM products);</code></li>
                             </ul>
+                        <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary">Subqueries in the SELECT Clause</h2> <br>
+                        <iframe width="650" height="400" src="https://www.youtube.com/embed/Xz25sCRHxBg?si=5vuCyjt4MzRE0oWS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <h4 class="pt-4">Summary</h4>
+                        <ul>
+                            <li class="pt-1">This particular type of subquery is commonly used in conjunction with aggregate functions since they
+                                return only one value. To write a subquery in the SELECT Clause, use the following syntax:
+                                <br><code>SELECT [col1], [col2], (SELECT SUM([col3]) FROM [table_name2]) AS [alias]<br>
+                                    FROM [table_name1];</code>
+                            </li>
+                            <li class="pt-2"><b>NOTE:</b> As mentioned in the video, a subquery in the SELECT clause must only return a single row and a single column.</li>
+                            </ul><br><br>
                         <h2 class="mt-5 px-4 px-sm-3 border-start border-3 border-secondary" id="exercise">Exercise</h2>
                         <p><b>Congratulations!</b> You just completed the Subqueries Tutorial! To help test your knowledge, let's
                             practice using them with some real-world applications. This exercise is based on the exercise of 
